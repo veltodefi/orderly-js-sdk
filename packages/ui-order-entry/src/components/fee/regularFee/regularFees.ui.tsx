@@ -19,7 +19,7 @@ export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
         <AuthGuard
           fallback={() => (
             <Text className="oui-truncate" size="2xs">
-              {t("dmm.taker")}: --% / {t("dmm.maker")}: --%
+              {t("dmm.taker")}: 0.0000% / {t("dmm.maker")}: 0.0000%
             </Text>
           )}
         >
