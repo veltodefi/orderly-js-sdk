@@ -1,13 +1,14 @@
 declare global {
   interface Window {
-      __ORDERLY_VERSION__?: {
-          [key: string]: string;
-      };
+    __ORDERLY_VERSION__?: {
+      [key: string]: string;
+    };
   }
 }
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
-  window.__ORDERLY_VERSION__["@veltodefi/wallet-connector-privy"] = "2.8.6-velto-main.1";
+  window.__ORDERLY_VERSION__["@veltodefi/wallet-connector-privy"] =
+    "2.8.6-velto-main.2";
 }
 
-export default "2.8.6-velto-main.1";
+export default "2.8.6-velto-main.2";
