@@ -2,6 +2,7 @@ export {
   CommuntiyXIcon,
   CommuntiyTelegramIcon,
   CommuntiyDiscordIcon,
+  CommunityDappRadarIcon,
 } from "./communtiyIcons";
 export { OrderlyTextIcon } from "./orderlyNetworkTextIcon";
 export { SignalIcon } from "./signal";

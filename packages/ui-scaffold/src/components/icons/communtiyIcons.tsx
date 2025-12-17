@@ -1,5 +1,5 @@
-import { BaseIconProps } from "@veltodefi/ui";
 import React from "react";
+import { BaseIconProps } from "@veltodefi/ui";
 
 export const CommuntiyTelegramIcon = React.forwardRef<
   SVGSVGElement,
@@ -41,7 +41,26 @@ export const CommuntiyDiscordIcon = React.forwardRef<
     </svg>
   );
 });
-export const CommuntiyXIcon = React.forwardRef<
+export const CommuntiyXIcon = React.forwardRef<SVGSVGElement, BaseIconProps>(
+  (props, ref) => {
+    const { size = 20, ...rest } = props;
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 20 20"
+        ref={ref}
+        fill="#fff"
+        fillOpacity=".54"
+        xmlns="http://www.w3.org/2000/svg"
+        {...rest}
+      >
+        <path d="m4.42 4.73 4.633 6.194-4.662 5.037H5.44l4.082-4.41 3.298 4.41h3.57l-4.893-6.543 4.34-4.689h-1.05l-3.759 4.062-3.037-4.062zm1.543.772h1.64l7.244 9.686h-1.64z" />
+      </svg>
+    );
+  },
+);
+export const CommunityDappRadarIcon = React.forwardRef<
   SVGSVGElement,
   BaseIconProps
 >((props, ref) => {
@@ -50,14 +69,14 @@ export const CommuntiyXIcon = React.forwardRef<
     <svg
       width={size}
       height={size}
-      viewBox="0 0 20 20"
+      viewBox="0 0 16 16"
       ref={ref}
       fill="#fff"
       fillOpacity=".54"
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <path d="m4.42 4.73 4.633 6.194-4.662 5.037H5.44l4.082-4.41 3.298 4.41h3.57l-4.893-6.543 4.34-4.689h-1.05l-3.759 4.062-3.037-4.062zm1.543.772h1.64l7.244 9.686h-1.64z" />
+      <path d="M13.9678 6.61331L12.1561 3.40298C11.6692 2.53131 10.7787 2 9.80607 2H6.19355C5.21986 2 4.3304 2.53131 3.83261 3.39287L2.03182 6.61331C1.54498 7.47374 1.54498 8.53637 2.03182 9.39792L3.84355 12.6071C4.3304 13.4687 5.2308 14 6.2034 14H9.81592C10.7896 14 11.6802 13.4687 12.1659 12.6071L13.9776 9.39792C14.4536 8.53637 14.4536 7.47374 13.9678 6.61331ZM8.12891 12.15C8.0567 12.15 7.99434 12.0871 7.99434 12.0118V11.449C7.99434 11.3749 8.04576 11.321 8.11906 11.3109C9.81592 11.2468 11.2239 9.77984 11.2239 7.99495C11.2239 6.09211 9.66056 4.5622 7.78757 4.67902C5.21001 4.83853 3.8534 7.9736 5.43757 10.0247L6.01741 9.44061C4.80631 7.73996 6.18261 5.27324 8.27442 5.51811C9.40237 5.64617 10.3028 6.59197 10.4165 7.75007C10.5511 9.19573 9.47458 10.4078 8.13985 10.4819C8.06655 10.4819 8.00528 10.4179 8.00528 10.3437V9.77984C8.00528 9.71693 8.0567 9.65291 8.12891 9.65291C8.9571 9.59899 9.62993 8.87672 9.62993 7.99495C9.62993 7.01657 8.80174 6.23027 7.8182 6.34709C6.66946 6.47515 6.01741 7.84555 6.61804 8.84527L7.22851 8.21735C7.10379 7.77141 7.39371 7.27155 7.84993 7.18731C8.36741 7.0806 8.82253 7.48498 8.82253 8.00505C8.83347 8.5476 8.30505 8.95086 7.79741 8.80258L7.60158 9.00477L5.7067 10.9391C5.55135 11.0986 5.29316 11.0986 5.1378 10.9391C5.03387 10.8324 4.94087 10.7256 4.86867 10.6302C2.7878 8.07919 4.48575 4.06234 7.74599 3.87138C10.0851 3.72199 12.0313 5.63493 12.0313 8.01629C12.0423 10.2482 10.282 12.0871 8.12891 12.15Z" />
     </svg>
   );
 });
@@ -65,3 +84,4 @@ export const CommuntiyXIcon = React.forwardRef<
 CommuntiyXIcon.displayName = "CommuntiyXIcon";
 CommuntiyTelegramIcon.displayName = "CommuntiyTelegramIcon";
 CommuntiyDiscordIcon.displayName = "CommuntiyDiscordIcon";
+CommunityDappRadarIcon.displayName = "CommunityDappRadarIcon";
