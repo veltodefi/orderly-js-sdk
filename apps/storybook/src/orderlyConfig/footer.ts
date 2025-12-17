@@ -4,4 +4,5 @@ export const footerConfig: FooterProps = {
   telegramUrl: "https://orderly.network",
   discordUrl: "https://discord.com/invite/orderlynetwork",
   twitterUrl: "https://twitter.com/OrderlyNetwork",
+  dappRadarUrl: "https://dappradar.com/dapp/velto",
 };

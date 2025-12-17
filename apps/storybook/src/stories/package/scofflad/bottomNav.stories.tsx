@@ -32,6 +32,7 @@ export const CumstomizeUrls: Story = {
           telegramUrl: "https://orderly.network",
           discordUrl: "https://orderly.network",
           twitterUrl: "https://orderly.network",
+          dappRadarUrl: "https://orderly.network",
           trailing: (
             <a
               onClick={() => window.open("https://orderly.network")}
