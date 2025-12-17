@@ -6,6 +6,7 @@ import {
   CommuntiyDiscordIcon,
   CommuntiyTelegramIcon,
   CommuntiyXIcon,
+  CommunityDappRadarIcon,
   OrderlyTextIcon,
   SignalIcon,
 } from "../icons/index";
@@ -83,6 +84,14 @@ export const Footer: FC<FooterReturns & FooterProps> = (props) => {
                 fill="currentColor"
                 fillOpacity={1}
                 onClick={(e) => openUrl(props.twitterUrl)}
+              />
+            )}
+            {typeof props.dappRadarUrl !== "undefined" && (
+              <CommunityDappRadarIcon
+                className="oui-fill-white/[.54] hover:oui-fill-white/[.98] oui-cursor-pointer"
+                fill="currentColor"
+                fillOpacity={1}
+                onClick={(e) => openUrl(props.dappRadarUrl)}
               />
             )}
           </Flex>

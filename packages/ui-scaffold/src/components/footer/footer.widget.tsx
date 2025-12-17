@@ -6,6 +6,7 @@ export type FooterProps = {
   telegramUrl?: string;
   twitterUrl?: string;
   discordUrl?: string;
+  dappRadarUrl?: string;
   trailing?: ReactNode;
 };
 
