@@ -64,7 +64,6 @@ export const WalletConnectContent = (props: WalletConnectContentProps) => {
     setState(accountState.status);
   }, [accountState]);
 
-  // Sempre mostrar os dois steps, independentemente do estado inicial
   const steps = useMemo(
     () => [
       {
