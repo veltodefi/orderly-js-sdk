@@ -62,6 +62,14 @@ export const WalletConnectContent = (props: WalletConnectContentProps) => {
 
   useEffect(() => {
     setState(accountState.status);
+
+    if (accountState.status === AccountStatusEnum.NotSignedIn) {
+      setActiveStep(0);
+    }
+
+    if (accountState.status === AccountStatusEnum.DisabledTrading) {
+      setActiveStep(1);
+    }
   }, [accountState]);
 
   const steps = useMemo(
@@ -192,7 +200,7 @@ export const WalletConnectContent = (props: WalletConnectContentProps) => {
   };
 
   return (
-    <Box id="oui-wallet-connect-dialog-content" className="oui-font-semibold">
+    <Box id="oui-wallet-connect-dialog-content" className="oui-font-normal">
       <Text intensity={54} size="xs">
         {t("connector.expired")}
       </Text>
@@ -235,7 +243,7 @@ export const WalletConnectContent = (props: WalletConnectContentProps) => {
         </Flex>
       )}
       <Flex justify={"center"} mt={8} className="oui-w-full">
-        <Box className="oui-w-full">
+        <Box className="oui-w-full action-button">
           <ActionButton
             state={state}
             signIn={onSignIn}
@@ -247,18 +255,15 @@ export const WalletConnectContent = (props: WalletConnectContentProps) => {
         </Box>
       </Flex>
       {state > AccountStatusEnum.NotConnected && (
-        <Flex
-          justify={"center"}
-          mt={4}
-          gap={1}
-          className="oui-w-full oui-cursor-pointer oui-text-primary"
+        <button
+          className="oui-flex oui-gap-1 oui-mt-4 oui-w-full oui-cursor-pointer oui-text-primary justify-center disconnect-button"
           onClick={onDisconnect}
         >
           <DisconnectIcon />
           <Text className="oui-text-sm oui-text-primary">
             {t("connector.disconnectWallet")}
           </Text>
-        </Flex>
+        </button>
       )}
     </Box>
   );
