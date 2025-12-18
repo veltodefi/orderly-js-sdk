@@ -35,6 +35,7 @@ export type QuantityInputProps = {
   tokenBalances?: Record<string, string>;
   tokenValueFormatter?: (value: string) => ReactNode;
   tokenShowCaret?: boolean;
+  highlightOnHover?: boolean;
 } & Omit<InputProps, "onClear" | "suffix" | "onValueChange">;
 
 export const QuantityInput: FC<QuantityInputProps> = (props) => {
@@ -58,6 +59,7 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
     tokenBalances,
     tokenValueFormatter,
     tokenShowCaret,
+    highlightOnHover = false,
     ...rest
   } = props;
 
@@ -112,6 +114,7 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
           setOpen(false);
         }}
         open={selectOpen}
+        highlightOnHover={props.highlightOnHover}
       />
     );
   };
@@ -132,12 +135,14 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
   );
 
   const suffix = (
-    <div className="oui-absolute oui-right-0">
+    <div
+      className={`oui-absolute oui-right-${props.highlightOnHover ? "3" : "0"}`}
+    >
       <Select.tokens
         open={selectOpen}
         onOpenChange={setOpen}
         disabled={rest.disabled}
-        variant="text"
+        variant={props.highlightOnHover ? "contained" : "text"}
         tokens={tokenOptions}
         value={token?.display_name || token?.symbol}
         size={rest.size}
@@ -146,6 +151,11 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         valueFormatter={tokenValueFormatter}
         showCaret={tokenShowCaret}
         optionRenderer={optionRenderer}
+        classNames={{
+          trigger: props.highlightOnHover
+            ? "oui-border oui-border-line-6 oui-bg-[#575757] oui-rounded-[24px]"
+            : "",
+        }}
         contentProps={{
           onCloseAutoFocus: (event) => {
             event.preventDefault();
@@ -158,7 +168,9 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
           style: { width },
           align: "end",
           sideOffset: 5,
-          className: "oui-border oui-border-line-6",
+          className: props.highlightOnHover
+            ? "oui-bg-[#3B3B3B]"
+            : "oui-border oui-border-line-6",
         }}
       />
     </div>

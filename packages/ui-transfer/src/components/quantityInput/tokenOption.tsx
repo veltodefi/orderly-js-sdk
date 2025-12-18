@@ -1,15 +1,7 @@
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { API } from "@veltodefi/types";
-import {
-  Badge,
-  Box,
-  cn,
-  Flex,
-  Spinner,
-  Text,
-  TokenIcon,
-} from "@veltodefi/ui";
+import { Badge, Box, cn, Flex, Spinner, Text, TokenIcon } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { isYieldBearingAsset } from "../../constants/yieldBearingAssets";
 import { useYieldAPY } from "../depositForm/hooks/useYieldAPY";
@@ -28,6 +20,7 @@ interface TokenOptionProps {
   index?: number;
   displayType?: "balance" | "vaultBalance";
   open?: boolean;
+  highlightOnHover?: boolean;
 }
 
 export const TokenOption: React.FC<TokenOptionProps> = (props) => {
@@ -54,7 +47,12 @@ export const TokenOption: React.FC<TokenOptionProps> = (props) => {
           "group",
           "oui-h-[30px]",
           "oui-text-2xs oui-font-semibold",
-          isActive && "oui-bg-base-5",
+          props.highlightOnHover
+            ? [
+                "hover:oui-bg-[#575757] hover:bg-[#575757]",
+                isActive && "oui-bg-[#575757] bg-[#575757]",
+              ]
+            : [isActive && "oui-bg-base-5"],
           props.index !== 0 && "oui-mt-[2px]",
           "oui-cursor-not-allowed",
         )}
@@ -102,10 +100,18 @@ export const TokenOption: React.FC<TokenOptionProps> = (props) => {
       r="base"
       className={cn(
         "group",
-        "oui-h-[30px] hover:oui-bg-base-5",
+        "oui-h-[30px]",
         "oui-text-2xs oui-font-semibold",
         "oui-cursor-pointer",
-        isActive && "oui-bg-base-5",
+        props.highlightOnHover
+          ? [
+              "hover:oui-bg-[#575757] hover:bg-[#575757]",
+              isActive && "oui-bg-[#575757] bg-[#575757]",
+            ]
+          : [
+              "hover:oui-bg-base-5 hover:bg-base-5",
+              isActive && "oui-bg-base-5",
+            ],
         props.index !== 0 && "oui-mt-[2px]",
       )}
       onClick={() => {

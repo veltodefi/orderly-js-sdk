@@ -191,7 +191,13 @@ export const DepositForm: FC<DepositFormScriptReturn> = (props) => {
   const renderContent = () => {
     if (needSwap || needCrossSwap) {
       return (
-        <Flex direction="column" itemAlign="start" mt={1} gapY={1}>
+        <Flex
+          direction="column"
+          className="oui-bg-base-6 oui-rounded-[8px] oui-p-[16px]"
+          itemAlign="start"
+          mt={1}
+          gapY={1}
+        >
           <Flex width={"100%"} itemAlign="center" justify="between">
             <Text size="2xs" intensity={36}>
               {t("transfer.deposit.convertRate")}
@@ -215,7 +221,13 @@ export const DepositForm: FC<DepositFormScriptReturn> = (props) => {
     }
 
     return (
-      <Flex direction="column" itemAlign="start" mt={2} gap={1}>
+      <Flex
+        direction="column"
+        className="oui-bg-base-6 oui-rounded-[8px] oui-p-[16px]"
+        itemAlign="start"
+        mt={2}
+        gap={2}
+      >
         <CollateralRatioWidget value={collateralRatio} />
         <CollateralContribution
           // it need to use USDC precision
@@ -256,6 +268,7 @@ export const DepositForm: FC<DepositFormScriptReturn> = (props) => {
             onTokenChange={onSourceTokenChange}
             status={inputStatus}
             hintMessage={hintMessage}
+            highlightOnHover={!!sourceTokens.length}
             fetchBalance={fetchBalance}
             tokenBalances={props.tokenBalances}
             tokenShowCaret={showRegularTokenRenderer}
@@ -295,7 +308,7 @@ export const DepositForm: FC<DepositFormScriptReturn> = (props) => {
           value={targetQuantity}
           loading={targetQuantityLoading}
           classNames={{
-            root: "oui-mt-3 oui-border-transparent focus-within:oui-outline-transparent",
+            root: "oui-mt-3 oui-mb-4 oui-border-transparent focus-within:oui-outline-transparent",
           }}
           disabled={!props.isLoggedIn}
         />
