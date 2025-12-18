@@ -26,7 +26,7 @@ export const StepItem = (props: StepItemProps) => {
         <Text as="div" intensity={98} size={"sm"}>
           {title}
         </Text>
-        <Text as="div" intensity={54} size={"2xs"}>
+        <Text as="div" intensity={54} size={"2xs"} className="oui-font-normal">
           {description}
         </Text>
       </Box>
