@@ -57,7 +57,7 @@ export const LtvUI: React.FC<
   return (
     <Flex width="100%" itemAlign="center" justify="between">
       <Flex justify="start" itemAlign="center">
-        <Text size="2xs" intensity={36}>
+        <Text size="sm" intensity={36}>
           {t("transfer.LTV")}
         </Text>
         <Tooltip
@@ -75,14 +75,14 @@ export const LtvUI: React.FC<
       {showDiff ? (
         <Flex itemAlign="center" justify="between" gap={1}>
           <Text
-            size="2xs"
+            size="sm"
             className={cn("oui-font-semibold", calculateTextColor(currentLtv))}
           >
             {currentLtv}%
           </Text>
           →
           <Text
-            size="2xs"
+            size="sm"
             className={cn("oui-font-semibold", calculateTextColor(nextLTV))}
           >
             {nextLTV}%
@@ -90,7 +90,7 @@ export const LtvUI: React.FC<
         </Flex>
       ) : (
         <Text
-          size="2xs"
+          size="sm"
           className={cn("oui-font-semibold", calculateTextColor(currentLtv))}
         >
           {currentLtv}%

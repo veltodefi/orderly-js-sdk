@@ -12,21 +12,21 @@ export const CollateralContribution: React.FC<{
   return (
     <Flex width="100%" itemAlign="center" justify="between">
       <Flex itemAlign="center" justify="start">
-        <Text size="2xs" intensity={36}>
+        <Text size="sm" intensity={36}>
           {t("transfer.deposit.collateralContribution")}
         </Text>
       </Flex>
       <Flex itemAlign="center" justify="end" gap={1}>
         <Text.numeral
           dp={precision}
-          size="2xs"
+          size="sm"
           rm={Decimal.ROUND_DOWN}
           className={cn("oui-font-semibold")}
           padding={false}
         >
           {value}
         </Text.numeral>
-        <Text size="2xs" intensity={36} className="oui-select-none">
+        <Text size="sm" intensity={36} className="oui-select-none">
           USDC
         </Text>
       </Flex>

@@ -151,11 +151,6 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         valueFormatter={tokenValueFormatter}
         showCaret={tokenShowCaret}
         optionRenderer={optionRenderer}
-        classNames={{
-          trigger: props.highlightOnHover
-            ? "oui-border oui-border-line-6 oui-bg-[#575757] oui-rounded-[24px]"
-            : "",
-        }}
         contentProps={{
           onCloseAutoFocus: (event) => {
             event.preventDefault();
