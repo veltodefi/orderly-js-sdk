@@ -151,6 +151,9 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         valueFormatter={tokenValueFormatter}
         showCaret={tokenShowCaret}
         optionRenderer={optionRenderer}
+        classNames={{
+          trigger: "oui-bg-transparent",
+        }}
         contentProps={{
           onCloseAutoFocus: (event) => {
             event.preventDefault();
