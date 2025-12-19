@@ -329,7 +329,7 @@ export const DepositForm: FC<DepositFormScriptReturn> = (props) => {
         networkId={networkId}
       />
 
-      <Flex justify="center">
+      <Box width="100%">
         <ActionButton
           actionType={actionType}
           symbol={sourceToken?.symbol}
@@ -340,7 +340,7 @@ export const DepositForm: FC<DepositFormScriptReturn> = (props) => {
           onApproveAndDeposit={onApproveAndDeposit}
           networkId={networkId}
         />
-      </Flex>
+      </Box>
     </Box>
   );
 };

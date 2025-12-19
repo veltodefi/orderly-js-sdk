@@ -16,11 +16,12 @@ export const Fee: FC<FeeProps> = (props) => {
     const content = (
       <div className="oui-text-2xs">
         <Flex gapX={1}>
-          <Text size="2xs" intensity={54}>
+          <Text size="sm" intensity={54}>
             {`${t("transfer.deposit.destinationGasFee")}: `}
           </Text>
           <Text.numeral
             intensity={80}
+            size="sm"
             dp={dp}
             rm={Decimal.ROUND_UP}
             padding={false}
@@ -30,7 +31,7 @@ export const Fee: FC<FeeProps> = (props) => {
           <Text intensity={54}>{nativeSymbol}</Text>
         </Flex>
         <Box mt={2}>
-          <Text intensity={36}>
+          <Text size="sm" intensity={36}>
             {t("transfer.deposit.destinationGasFee.description")}
           </Text>
         </Box>
@@ -47,15 +48,15 @@ export const Fee: FC<FeeProps> = (props) => {
 
   return (
     <Text
-      size="2xs"
+      size="sm"
       intensity={36}
       className="oui-border-dashed oui-border-b oui-border-line-12 oui-cursor-pointer"
       onClick={onShowFee}
     >
       {`${t("transfer.deposit.estGasFee")} ≈ `}
-      <Text size="2xs" intensity={80}>
+      <Text size="sm" intensity={80}>
         $
-        <Text.numeral dp={2} padding={false} rm={Decimal.ROUND_UP}>
+        <Text.numeral size="sm" dp={2} padding={false} rm={Decimal.ROUND_UP}>
           {feeAmount!}
         </Text.numeral>{" "}
       </Text>
@@ -63,7 +64,12 @@ export const Fee: FC<FeeProps> = (props) => {
         <span>
           (
           <Text intensity={54}>
-            <Text.numeral dp={dp} padding={false} rm={Decimal.ROUND_UP}>
+            <Text.numeral
+              size="sm"
+              dp={dp}
+              padding={false}
+              rm={Decimal.ROUND_UP}
+            >
               {feeQty!}
             </Text.numeral>
             {nativeSymbol}

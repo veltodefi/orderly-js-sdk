@@ -31,7 +31,7 @@ export const CollateralRatioUI: React.FC<{ value: number }> = (props) => {
   return (
     <Flex width="100%" itemAlign="center" justify="between">
       <Flex justify="start" itemAlign="center">
-        <Text size="2xs" intensity={36}>
+        <Text size="sm" intensity={36}>
           {t("portfolio.overview.column.collateralRatio")}
         </Text>
         <Tooltip className="oui-p-2" content={<TooltipContent />}>
@@ -41,6 +41,7 @@ export const CollateralRatioUI: React.FC<{ value: number }> = (props) => {
       <Text.numeral
         dp={2}
         rm={Decimal.ROUND_DOWN}
+        size="sm"
         coloring
         className="oui-font-semibold"
         rule="percentages"
