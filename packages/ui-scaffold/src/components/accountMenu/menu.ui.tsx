@@ -26,6 +26,7 @@ export type AccountMenuProps = {
   wrongNetwork: boolean;
   disabledConnect?: boolean;
   isMobile: boolean;
+  onConnectWalletClick?: () => void;
 };
 
 export const AccountMenu = (props: AccountMenuProps) => {
@@ -37,6 +38,7 @@ export const AccountMenu = (props: AccountMenuProps) => {
     wrongNetwork,
     onSwitchNetwork,
     isMobile,
+    onConnectWalletClick,
   } = props;
   const disabled = state.validating || props.disabledConnect;
 
@@ -78,6 +80,11 @@ export const AccountMenu = (props: AccountMenuProps) => {
         loading={state.validating}
         disabled={disabled}
         onClick={() => {
+          if (onConnectWalletClick) {
+            onConnectWalletClick();
+            return;
+          }
+
           props
             .connect()
             .then((r) => {
