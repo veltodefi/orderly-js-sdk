@@ -2,11 +2,7 @@ import React, { ReactElement, useMemo } from "react";
 import { useAccount, useMediaQuery } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
-import {
-  AccountStatusEnum,
-  MEDIA_TABLET,
-  NetworkId,
-} from "@veltodefi/types";
+import { AccountStatusEnum, MEDIA_TABLET, NetworkId } from "@veltodefi/types";
 import {
   Button,
   Either,
@@ -68,6 +64,8 @@ export type AuthGuardProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
   networkId?: NetworkId;
 
+  onConnectWalletClick?: () => void;
+
   // validatingIndicator?: ReactElement;
 };
 
@@ -83,6 +81,7 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
     networkId,
     id,
     bridgeLessOnly,
+    onConnectWalletClick,
     // ...rest
   } = props;
   const { t } = useTranslation();
@@ -150,6 +149,7 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
         labels={labels}
         descriptions={descriptions}
         disabledConnect={disabledConnect}
+        onConnectWalletClick={onConnectWalletClick}
       />
     );
   }, [state.status, state.validating, buttonProps, wrongNetwork]);
@@ -189,8 +189,9 @@ const DefaultFallback: React.FC<{
   bridgeLessOnly?: boolean;
   descriptions?: alertMessages;
   disabledConnect?: boolean;
+  onConnectWalletClick?: () => void;
 }> = (props) => {
-  const { buttonProps, labels, descriptions } = props;
+  const { buttonProps, labels, descriptions, onConnectWalletClick } = props;
   const { t } = useTranslation();
   const { connectWallet } = useAppContext();
   const { account } = useAccount();
@@ -209,6 +210,11 @@ const DefaultFallback: React.FC<{
   };
 
   const onConnectWallet = async () => {
+    if (onConnectWalletClick) {
+      onConnectWalletClick();
+      return;
+    }
+
     const res = await connectWallet();
 
     if (!res) {

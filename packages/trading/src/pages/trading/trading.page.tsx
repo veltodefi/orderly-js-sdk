@@ -15,6 +15,7 @@ export const TradingPage: React.FC<TradingPageProps> = (props) => {
       tradingRewards={props.tradingRewards}
       bottomSheetLeading={props.bottomSheetLeading}
       sharePnLConfig={props.sharePnLConfig}
+      onConnectWalletClick={props.onConnectWalletClick}
     >
       <TradingWidget />
     </TradingPageProvider>
