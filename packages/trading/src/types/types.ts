@@ -156,5 +156,4 @@ export type TradingPageProps = BaseTradingPageProps & {
   referral?: ReferralProps;
   tradingRewards?: TradingRewardsProps;
   bottomSheetLeading?: React.ReactNode | string;
-  onConnectWalletClick?: () => void;
 };

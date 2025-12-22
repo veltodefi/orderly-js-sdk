@@ -64,8 +64,6 @@ export type AuthGuardProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
   networkId?: NetworkId;
 
-  onConnectWalletClick?: () => void;
-
   // validatingIndicator?: ReactElement;
 };
 
@@ -81,7 +79,6 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
     networkId,
     id,
     bridgeLessOnly,
-    onConnectWalletClick,
     // ...rest
   } = props;
   const { t } = useTranslation();
@@ -149,7 +146,6 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
         labels={labels}
         descriptions={descriptions}
         disabledConnect={disabledConnect}
-        onConnectWalletClick={onConnectWalletClick}
       />
     );
   }, [state.status, state.validating, buttonProps, wrongNetwork]);
@@ -189,11 +185,10 @@ const DefaultFallback: React.FC<{
   bridgeLessOnly?: boolean;
   descriptions?: alertMessages;
   disabledConnect?: boolean;
-  onConnectWalletClick?: () => void;
 }> = (props) => {
-  const { buttonProps, labels, descriptions, onConnectWalletClick } = props;
+  const { buttonProps, labels, descriptions } = props;
   const { t } = useTranslation();
-  const { connectWallet } = useAppContext();
+  const { connectWallet, veltoProps } = useAppContext();
   const { account } = useAccount();
   const { isMobile } = useScreen();
   const matches = useMediaQuery(MEDIA_TABLET);
@@ -210,26 +205,28 @@ const DefaultFallback: React.FC<{
   };
 
   const onConnectWallet = async () => {
-    if (onConnectWalletClick) {
-      onConnectWalletClick();
-      return;
-    }
+    const defaultConnectWallet = async () => {
+      const res = await connectWallet();
 
-    const res = await connectWallet();
-
-    if (!res) {
-      return;
-    }
-
-    if (res.wrongNetwork) {
-      switchChain();
-    } else {
-      if (
-        (res?.status ?? AccountStatusEnum.NotConnected) <
-        AccountStatusEnum.EnableTrading
-      ) {
-        onConnectOrderly();
+      if (!res) {
+        return;
       }
+
+      if (res.wrongNetwork) {
+        switchChain();
+      } else {
+        if (
+          (res?.status ?? AccountStatusEnum.NotConnected) <
+          AccountStatusEnum.EnableTrading
+        ) {
+          onConnectOrderly();
+        }
+      }
+    };
+
+    if (veltoProps?.onConnectWallet) {
+      veltoProps?.onConnectWallet(defaultConnectWallet);
+      return;
     }
   };
 

@@ -146,7 +146,6 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
     marketsWidth,
     tradindviewMaxHeight,
     dataListMinHeight,
-    onConnectWalletClick,
   } = props;
 
   const { showCountdown, closeCountdown } = useShowRwaCountdown(props.symbol);
@@ -473,7 +472,6 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
             <React.Suspense fallback={null}>
               <LazyAssetViewWidget
                 isFirstTimeDeposit={props.isFirstTimeDeposit}
-                onConnectWalletClick={props.onConnectWalletClick}
               />
             </React.Suspense>
             <DepositStatusWidget

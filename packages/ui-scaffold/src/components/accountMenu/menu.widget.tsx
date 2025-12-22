@@ -8,12 +8,12 @@ import { AccountMenu, AccountMenuProps } from "./menu.ui";
 import { useAccountMenu } from "./useWidgetBuilder.script";
 
 export const AccountMenuWidget = ({
-  onConnectWalletClick,
+  onConnectWallet,
 }: {
-  onConnectWalletClick?: () => void;
+  onConnectWallet?: (defaultConnectWallet: () => Promise<void>) => void;
 }) => {
   const state = useAccountMenu();
-  return <AccountMenu {...state} onConnectWalletClick={onConnectWalletClick} />;
+  return <AccountMenu {...state} onConnectWallet={onConnectWallet} />;
 };
 
 installExtension<AccountMenuProps>({
