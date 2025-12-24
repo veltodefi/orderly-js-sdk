@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { uniqBy } from "ramda";
+import uniqBy from "ramda/es/uniqBy";
 import { useConfig } from "@veltodefi/hooks";
 import { useVaultsStore } from "../../store";
 import { VaultSupportedChain } from "../../types/vault";

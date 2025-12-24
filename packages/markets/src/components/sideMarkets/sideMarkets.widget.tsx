@@ -1,5 +1,5 @@
 import React from "react";
-import { pick } from "ramda";
+import pick from "ramda/es/pick";
 import { MarketsProvider, MarketsProviderProps } from "../marketsProvider";
 import { useSideMarketsScript } from "./sideMarkets.script";
 import type { SideMarketsProps } from "./sideMarkets.ui";

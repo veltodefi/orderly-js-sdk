@@ -1,4 +1,4 @@
-import { propOr } from "ramda";
+import propOr from "ramda/es/propOr";
 import { account, positions } from "@veltodefi/perp";
 import { API } from "@veltodefi/types";
 import { Decimal, zero } from "@veltodefi/utils";

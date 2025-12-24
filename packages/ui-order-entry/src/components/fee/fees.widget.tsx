@@ -1,5 +1,5 @@
 import React from "react";
-import { pick } from "ramda";
+import pick from "ramda/es/pick";
 import { useFeeState, useRwaSymbolsInfoStore } from "@veltodefi/hooks";
 import { EffectiveFeesWidget } from "./effectiveFee";
 import { RegularFeesWidget } from "./regularFee";

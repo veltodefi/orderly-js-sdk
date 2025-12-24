@@ -1,5 +1,5 @@
 import React from "react";
-import { pick } from "ramda";
+import pick from "ramda/es/pick";
 import { i18n } from "@veltodefi/i18n";
 import { registerSimpleDialog, registerSimpleSheet } from "@veltodefi/ui";
 import { usePerformanceScript } from "..";

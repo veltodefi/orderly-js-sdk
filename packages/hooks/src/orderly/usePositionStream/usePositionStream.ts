@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
-import { pathOr } from "ramda";
-import { omit } from "ramda";
+import omit from "ramda/es/omit";
+import pathOr from "ramda/es/pathOr";
 import { type SWRConfiguration } from "swr";
 import {
   AlgoOrderRootType,

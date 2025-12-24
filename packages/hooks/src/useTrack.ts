@@ -1,8 +1,8 @@
 import { useCallback } from "react";
-import { debounce } from "lodash";
 import { TrackerEventName } from "@veltodefi/types";
 import { windowGuard } from "@veltodefi/utils";
 import { useEventEmitter } from "./useEventEmitter";
+import { debounce } from "./utils/debounce";
 import { useWalletConnector } from "./walletConnectorContext";
 
 export const useTrack = () => {
@@ -24,8 +24,7 @@ export const useTrack = () => {
           page_url: url,
           page_domain: origin,
           user_agent: userAgent,
-          sdk_version:
-            window?.__ORDERLY_VERSION__?.["@veltodefi/net"] ?? "",
+          sdk_version: window?.__ORDERLY_VERSION__?.["@veltodefi/net"] ?? "",
         });
         if (eventName === TrackerEventName.placeOrderSuccess) {
           Object.assign(params, {

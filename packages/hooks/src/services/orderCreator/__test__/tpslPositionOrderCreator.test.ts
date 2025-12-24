@@ -1,4 +1,3 @@
-import { test } from "ramda";
 import { TPSLPositionOrderCreator } from "../tpslPositionOrderCreator";
 
 describe("tpslPositionOrderCreator", () => {

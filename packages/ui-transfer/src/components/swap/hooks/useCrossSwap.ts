@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Environment, createClient } from "@layerzerolabs/scan-client";
-import { pick } from "ramda";
+import pick from "ramda/es/pick";
 import { utils } from "@veltodefi/core";
 import {
   useAccountInstance,
