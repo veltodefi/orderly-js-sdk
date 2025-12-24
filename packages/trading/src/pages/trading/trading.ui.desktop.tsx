@@ -20,19 +20,13 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS, Transform } from "@dnd-kit/utilities";
-import {
-  useGetRwaSymbolOpenStatus,
-  useLocalStorage,
-} from "@veltodefi/hooks";
+import { useGetRwaSymbolOpenStatus, useLocalStorage } from "@veltodefi/hooks";
 import {
   SideMarketsWidget,
   SymbolInfoBarFullWidget,
   HorizontalMarketsWidget,
 } from "@veltodefi/markets";
-import {
-  OrderEntrySortKeys,
-  TradingviewFullscreenKey,
-} from "@veltodefi/types";
+import { OrderEntrySortKeys, TradingviewFullscreenKey } from "@veltodefi/types";
 import { Box, cn, Flex } from "@veltodefi/ui";
 import { OrderEntryWidget } from "@veltodefi/ui-order-entry";
 import { TradingviewWidget } from "@veltodefi/ui-tradingview";

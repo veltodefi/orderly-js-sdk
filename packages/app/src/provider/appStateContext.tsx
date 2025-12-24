@@ -17,6 +17,10 @@ export type WidgetConfigs = {
   };
 };
 
+export type VeltoProps = {
+  onConnectWallet?: (defaultConnectWallet?: () => Promise<void>) => void;
+};
+
 export type AppContextState = {
   connectWallet: ReturnType<typeof useWalletStateHandle>["connectWallet"];
   /**
@@ -36,6 +40,7 @@ export type AppContextState = {
   setShowAnnouncement: (show: boolean) => void;
   onRouteChange?: (option: RouteOption) => void;
   widgetConfigs?: WidgetConfigs;
+  veltoProps?: VeltoProps;
 };
 
 export const AppStateContext = createContext<AppContextState>({

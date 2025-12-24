@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
   ExtensionPositionEnum,
   ExtensionSlot,
@@ -5,11 +6,14 @@ import {
 } from "@veltodefi/ui";
 import { AccountMenu, AccountMenuProps } from "./menu.ui";
 import { useAccountMenu } from "./useWidgetBuilder.script";
-import { FC } from "react";
 
-export const AccountMenuWidget = () => {
+export const AccountMenuWidget = ({
+  onConnectWallet,
+}: {
+  onConnectWallet?: (defaultConnectWallet: () => Promise<void>) => void;
+}) => {
   const state = useAccountMenu();
-  return <AccountMenu {...state} />;
+  return <AccountMenu {...state} onConnectWallet={onConnectWallet} />;
 };
 
 installExtension<AccountMenuProps>({

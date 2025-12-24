@@ -16,6 +16,18 @@ const calculateTextColor = (val: number): string => {
   }
 };
 
+const calculateDataAccentColor = (val: number): string => {
+  if (val >= 0 && val < 50) {
+    return "profit";
+  } else if (val >= 50 && val < 80) {
+    return "neutral";
+  } else if (val >= 80) {
+    return "loss";
+  } else {
+    return "";
+  }
+};
+
 const TooltipContent: React.FC<{
   isLoading: boolean;
   ltv_threshold: string;
@@ -75,6 +87,7 @@ export const LtvUI: React.FC<
       {showDiff ? (
         <Flex itemAlign="center" justify="between" gap={1}>
           <Text
+            data-accent-color={calculateDataAccentColor(currentLtv)}
             size="sm"
             className={cn("oui-font-semibold", calculateTextColor(currentLtv))}
           >
@@ -82,6 +95,7 @@ export const LtvUI: React.FC<
           </Text>
           →
           <Text
+            data-accent-color={calculateDataAccentColor(nextLTV)}
             size="sm"
             className={cn("oui-font-semibold", calculateTextColor(nextLTV))}
           >
@@ -90,6 +104,7 @@ export const LtvUI: React.FC<
         </Flex>
       ) : (
         <Text
+          data-accent-color={calculateDataAccentColor(currentLtv)}
           size="sm"
           className={cn("oui-font-semibold", calculateTextColor(currentLtv))}
         >

@@ -33,6 +33,7 @@ const OrderlyAppProvider: React.FC<OrderlyAppProviderProps> = (props) => {
     onChainChanged,
     defaultChain,
     widgetConfigs,
+    veltoProps,
     ...configProps
   } = props;
 
@@ -56,6 +57,7 @@ const OrderlyAppProvider: React.FC<OrderlyAppProviderProps> = (props) => {
             restrictedInfo={props.restrictedInfo}
             onRouteChange={props.onRouteChange}
             widgetConfigs={widgetConfigs}
+            veltoProps={veltoProps}
           >
             <UILocaleProvider locale={uiLocale}>
               <TooltipProvider delayDuration={300}>

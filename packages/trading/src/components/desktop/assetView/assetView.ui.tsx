@@ -361,7 +361,9 @@ const AssetValueList: FC<AssetValueListProps> = (props) => {
 };
 
 export const AssetView: FC<
-  AssetViewState & { isFirstTimeDeposit?: boolean }
+  AssetViewState & {
+    isFirstTimeDeposit?: boolean;
+  }
 > = ({
   networkId,
   isFirstTimeDeposit,

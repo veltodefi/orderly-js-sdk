@@ -2,11 +2,7 @@ import React, { ReactElement, useMemo } from "react";
 import { useAccount, useMediaQuery } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
-import {
-  AccountStatusEnum,
-  MEDIA_TABLET,
-  NetworkId,
-} from "@veltodefi/types";
+import { AccountStatusEnum, MEDIA_TABLET, NetworkId } from "@veltodefi/types";
 import {
   Button,
   Either,
@@ -192,7 +188,7 @@ const DefaultFallback: React.FC<{
 }> = (props) => {
   const { buttonProps, labels, descriptions } = props;
   const { t } = useTranslation();
-  const { connectWallet } = useAppContext();
+  const { connectWallet, veltoProps } = useAppContext();
   const { account } = useAccount();
   const { isMobile } = useScreen();
   const matches = useMediaQuery(MEDIA_TABLET);
@@ -209,21 +205,28 @@ const DefaultFallback: React.FC<{
   };
 
   const onConnectWallet = async () => {
-    const res = await connectWallet();
+    const defaultConnectWallet = async () => {
+      const res = await connectWallet();
 
-    if (!res) {
-      return;
-    }
-
-    if (res.wrongNetwork) {
-      switchChain();
-    } else {
-      if (
-        (res?.status ?? AccountStatusEnum.NotConnected) <
-        AccountStatusEnum.EnableTrading
-      ) {
-        onConnectOrderly();
+      if (!res) {
+        return;
       }
+
+      if (res.wrongNetwork) {
+        switchChain();
+      } else {
+        if (
+          (res?.status ?? AccountStatusEnum.NotConnected) <
+          AccountStatusEnum.EnableTrading
+        ) {
+          onConnectOrderly();
+        }
+      }
+    };
+
+    if (veltoProps?.onConnectWallet) {
+      veltoProps?.onConnectWallet(defaultConnectWallet);
+      return;
     }
   };
 

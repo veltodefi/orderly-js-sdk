@@ -1,4 +1,5 @@
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import { AccountStatusEnum } from "@veltodefi/types";
 import {
   Button,
@@ -26,6 +27,7 @@ export type AccountMenuProps = {
   wrongNetwork: boolean;
   disabledConnect?: boolean;
   isMobile: boolean;
+  onConnectWallet?: (defaultConnectWallet?: () => Promise<void>) => void;
 };
 
 export const AccountMenu = (props: AccountMenuProps) => {
@@ -37,8 +39,10 @@ export const AccountMenu = (props: AccountMenuProps) => {
     wrongNetwork,
     onSwitchNetwork,
     isMobile,
+    // onConnectWallet,
   } = props;
   const disabled = state.validating || props.disabledConnect;
+  const { veltoProps } = useAppContext();
 
   if (!disabled && wrongNetwork) {
     return (
@@ -78,12 +82,21 @@ export const AccountMenu = (props: AccountMenuProps) => {
         loading={state.validating}
         disabled={disabled}
         onClick={() => {
-          props
-            .connect()
-            .then((r) => {
-              console.log("*****", r);
-            })
-            .catch((e) => console.error(e));
+          const defaultConnectWallet = async () => {
+            props
+              .connect()
+              .then((r) => {
+                console.log("*****", r);
+              })
+              .catch((e) => console.error(e));
+          };
+
+          if (veltoProps?.onConnectWallet) {
+            veltoProps?.onConnectWallet(defaultConnectWallet);
+            return;
+          }
+
+          defaultConnectWallet();
         }}
       >
         {isMobile ? t("connector.connect") : t("connector.connectWallet")}
