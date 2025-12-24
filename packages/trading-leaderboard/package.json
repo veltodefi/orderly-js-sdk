@@ -25,7 +25,7 @@
     "@veltodefi/ui-connector": "workspace:*",
     "@veltodefi/utils": "workspace:*",
     "date-fns": "^3.6.0",
-    "ramda": "^0.29.0"
+    "ramda": "^0.31.3"
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",

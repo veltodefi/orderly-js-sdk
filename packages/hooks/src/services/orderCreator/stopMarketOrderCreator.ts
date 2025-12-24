@@ -1,4 +1,4 @@
-import { pick } from "ramda";
+import pick from "ramda/es/pick";
 import {
   AlgoOrderEntity,
   AlgoOrderRootType,

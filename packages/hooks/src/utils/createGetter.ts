@@ -1,5 +1,4 @@
-import { isNil } from "ramda";
-import { API } from "@veltodefi/types";
+import isNil from "ramda/es/isNil";
 
 /** Defines the depth of object access (1 or 2 levels) */
 type ObjectDepth = 1 | 2;

@@ -25,7 +25,6 @@ This is the core React hooks library for Orderly Network, providing a comprehens
 - **SWR**: 2.2.4 for data fetching and caching
 - **Zustand**: ^4.5.5 for state management
 - **Immer**: ^10.1.1 for immutable state updates
-- **Lodash**: ^4.17.21 utility functions
 - **Ramda**: ^0.29.0 functional programming utilities
 - **use-debounce**: ^9.0.4 for debounced values
 

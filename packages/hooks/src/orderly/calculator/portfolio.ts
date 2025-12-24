@@ -1,4 +1,4 @@
-import { pathOr } from "ramda";
+import pathOr from "ramda/es/pathOr";
 import { account } from "@veltodefi/perp";
 import { API, EMPTY_LIST } from "@veltodefi/types";
 import { Decimal } from "@veltodefi/utils";
