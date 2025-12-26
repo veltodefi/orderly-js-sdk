@@ -1,13 +1,10 @@
 import { FC, useEffect, useRef } from "react";
 import jsQR from "jsqr";
+import { QRCODE_WIDTH, QRCODE_HEIGHT, RATIO } from "./constants";
 
 type ScannerProps = {
   onSuccess?: (data: string) => void;
 };
-
-export const QRCODE_WIDTH = 320;
-export const QRCODE_HEIGHT = 320;
-const RATIO = 2;
 
 /**
  * QR Code Scanner
