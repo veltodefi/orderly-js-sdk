@@ -60,7 +60,7 @@ const ScanQRCodeContent: FC<ScanQRCodeProps> = (props) => {
               style={{ width: QRCODE_WIDTH, height: QRCODE_HEIGHT }}
               className="oui-flex oui-items-center oui-justify-center oui-rounded-2xl oui-bg-base-10"
             >
-              <Spinner size="md" color="primary" />
+              <Spinner size="md" color="primaryContrast" />
             </div>
           }
         >

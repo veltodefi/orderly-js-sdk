@@ -1,5 +1,4 @@
-import { FC, useEffect, useRef } from "react";
-import jsQR from "jsqr";
+import { FC, useEffect, useRef, useState } from "react";
 import { QRCODE_WIDTH, QRCODE_HEIGHT, RATIO } from "./constants";
 
 type ScannerProps = {
@@ -13,11 +12,12 @@ type ScannerProps = {
 export const QRCodeScanner: FC<ScannerProps> = (props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [jsQR, setJsQR] = useState<any>(null);
 
   const tick = () => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
-    if (!video || !canvas) return;
+    if (!video || !canvas || !jsQR) return;
 
     const ctx = canvas.getContext("2d")!;
 
@@ -71,8 +71,15 @@ export const QRCodeScanner: FC<ScannerProps> = (props) => {
   };
 
   useEffect(() => {
+    // Dynamically import jsQR
+    import("jsqr").then((module) => {
+      setJsQR(() => module.default);
+    });
+  }, []);
+
+  useEffect(() => {
     const video = videoRef.current;
-    if (!open || !video) return;
+    if (!open || !video || !jsQR) return;
 
     // Use facingMode: environment to attemt to get the front camera on phones
     navigator?.mediaDevices
@@ -111,7 +118,7 @@ export const QRCodeScanner: FC<ScannerProps> = (props) => {
       }
       video.srcObject = null;
     };
-  }, [videoRef, canvasRef]);
+  }, [videoRef, canvasRef, jsQR]);
 
   return (
     <>
