@@ -1,4 +1,4 @@
-import { FC, SVGProps } from "react";
+import { FC, SVGProps, lazy, Suspense } from "react";
 import { useTranslation, Trans } from "@veltodefi/i18n";
 import {
   Box,
@@ -7,10 +7,15 @@ import {
   SimpleDialog,
   Text,
   Tooltip,
+  Spinner,
 } from "@veltodefi/ui";
 import { MainLogo } from "../main/mainLogo";
+import { QRCODE_WIDTH, QRCODE_HEIGHT } from "./constants";
 import { UseScanQRCodeScriptReturn } from "./scanQRCode.script";
-import { QRCodeScanner, QRCODE_WIDTH, QRCODE_HEIGHT } from "./scanner";
+
+const QRCodeScanner = lazy(() =>
+  import("./scanner").then((module) => ({ default: module.QRCodeScanner })),
+);
 
 type ScanQRCodeProps = UseScanQRCodeScriptReturn;
 
@@ -49,7 +54,18 @@ const ScanQRCodeContent: FC<ScanQRCodeProps> = (props) => {
   return (
     <Flex justify="center" direction="column" gapY={5}>
       <Box width={QRCODE_WIDTH} height={QRCODE_HEIGHT} className="oui-relative">
-        <QRCodeScanner onSuccess={props.onScanSuccess} />
+        <Suspense
+          fallback={
+            <div
+              style={{ width: QRCODE_WIDTH, height: QRCODE_HEIGHT }}
+              className="oui-flex oui-items-center oui-justify-center oui-rounded-2xl oui-bg-base-10"
+            >
+              <Spinner size="md" color="primary" />
+            </div>
+          }
+        >
+          <QRCodeScanner onSuccess={props.onScanSuccess} />
+        </Suspense>
         <>
           <LineGradient />
           <RadiusGradient className="oui-absolute oui-left-[-1.5px] oui-top-[-1.5px]" />
