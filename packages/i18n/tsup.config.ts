@@ -5,7 +5,7 @@ export default defineConfig((options) => ({
   format: ["esm", "cjs"],
   target: "es2020",
   // minify: !options.watch,
-  splitting: false,
+  splitting: true,
   sourcemap: true,
   treeshake: true,
   clean: !options.watch,

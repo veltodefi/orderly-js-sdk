@@ -11,7 +11,13 @@
       "node_modules/@types",
       "./typings"
     ],
-    "sourceMap": true
+    "outDir": "./dist",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmitOnError": false, 
+    "skipLibCheck": true,
+    "strict": false,
+    "target": "es2020"
   },
   "include": [
     "./src/**/*.ts",

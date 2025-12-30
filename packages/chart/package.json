@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/chart",
-  "version": "2.8.6-velto-main.26",
+  "version": "2.8.6-velto-main.32",
   "description": "Charting library for Orderly Network",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -11,7 +11,8 @@
   },
   "keywords": [],
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "publishConfig": {
     "access": "public"

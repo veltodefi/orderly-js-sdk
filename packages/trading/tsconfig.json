@@ -63,7 +63,8 @@
         "../core/src"
       ],
       "@veltodefi/portfolio": [
-        "../portfolio/src"
+        "../portfolio/src",
+        "../portfolio/dist"
       ]
     }
   }

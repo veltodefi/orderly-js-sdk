@@ -2,7 +2,7 @@
 import { defineConfig } from "tsup";
 var tsup_config_default = defineConfig((options) => ({
   entry: ["src/index.ts"],
-  splitting: false,
+  splitting: true,
   minify: !options.watch,
   format: ["cjs", "esm"],
   target: "es6",

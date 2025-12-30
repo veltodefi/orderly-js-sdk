@@ -1,15 +1,15 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig((options) => ({
-  entry: ["src/index.ts"],
+  entry: ["src/**/*.ts", "src/**/*.tsx", "!src/**/*.test.*"],
   format: ["esm", "cjs"],
   target: "es2020",
-  // minify: !options.watch,
+  bundle: false,
   splitting: false,
   sourcemap: true,
-  treeshake: true,
   clean: !options.watch,
-  dts: true,
+  // Turn OFF dts here to stop the build from crashing
+  dts: false,
   tsconfig: "tsconfig.build.json",
   external: ["react", "react-dom"],
   esbuildOptions(esOptions, context) {

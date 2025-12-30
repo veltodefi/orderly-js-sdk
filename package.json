@@ -20,6 +20,7 @@
     "release:minor": "cross-env RELEASE_VERSION_TYPE=minor ts-node ./scripts/release.ts",
     "release:major": "cross-env RELEASE_VERSION_TYPE=major ts-node ./scripts/release.ts",
     "release:velto": "node ./scripts/version-velto.js",
+    "release:velto:dev": "node ./scripts/version-velto-dev.js",
     "update:tsconfigPaths": "ts-node ./scripts/tsconfigPaths.ts",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",

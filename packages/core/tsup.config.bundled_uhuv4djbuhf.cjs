@@ -39,7 +39,7 @@ var import_tsup = require("tsup");
 var tsup_config_default = (0, import_tsup.defineConfig)((options) => ({
   // shims: true,
   entry: ["src/index.ts"],
-  splitting: false,
+  splitting: true,
   minify: !options.watch,
   format: ["cjs", "esm"],
   target: "es2020",

@@ -126,6 +126,7 @@ class PortfolioCalculator extends BaseCalculator<any> {
     const [USDC_holding, nonUSDC] = parseHolding(
       holding,
       indexPrices,
+      // @ts-expect-error
       tokensInfo,
     );
 

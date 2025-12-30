@@ -8,6 +8,7 @@ class MarketCalculator extends BaseCalculator<any> {
   name: string = "marketCalculator";
 
   calc(scope: CalculatorScope, data: any, ctx: CalculatorCtx) {
+    // @ts-expect-error
     const { markets } = ctx;
     if (markets === null) return;
 

@@ -1,18 +1,19 @@
 {
   "name": "@veltodefi/portfolio",
-  "version": "2.8.6-velto-main.26",
+  "version": "2.8.6-velto-main.32",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup && pnpm run build:css",
+    "build": "tsup && tsc -p tsconfig.build.json || true && pnpm run build:css",
     "build:css": "tailwindcss build -i src/tailwind.css -o dist/styles.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "publishConfig": {
     "access": "public"

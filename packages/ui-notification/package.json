@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-notification",
-  "version": "2.8.6-velto-main.26",
+  "version": "2.8.6-velto-main.32",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -14,7 +14,8 @@
     "Notification"
   ],
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "publishConfig": {
     "access": "public"
