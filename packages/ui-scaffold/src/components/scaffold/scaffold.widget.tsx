@@ -1,14 +1,25 @@
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { lazy, PropsWithChildren, ReactNode, Suspense } from "react";
 import { type RouterAdapter } from "@veltodefi/types";
+import { Spinner, Flex } from "@veltodefi/ui";
 import { BottomNavProps } from "../bottomNav/bottomNav.widget";
 import { FooterProps } from "../footer";
 import { LeftNavProps } from "../leftNav";
 import { MainNavWidgetProps } from "../main/mainNav.widget";
 import { SideBarProps } from "../sidebar";
-import { MobileScaffold } from "./scaffold.mobile.ui";
 import { useScaffoldScript } from "./scaffold.script";
-import { DesktopScaffold } from "./scaffold.ui";
 import { ScaffoldProvider } from "./scaffoldProvider";
+
+const MobileScaffold = lazy(() =>
+  import("./scaffold.mobile.ui").then((module) => ({
+    default: module.MobileScaffold,
+  })),
+);
+
+const DesktopScaffold = lazy(() =>
+  import("./scaffold.ui").then((module) => ({
+    default: module.DesktopScaffold,
+  })),
+);
 
 export type ScaffoldProps = {
   /**
@@ -91,7 +102,15 @@ export const Scaffold: React.FC<PropsWithChildren<ScaffoldProps>> = (props) => {
       footerHeight={state.footerHeight}
       announcementHeight={state.announcementHeight}
     >
-      {renderContent()}
+      <Suspense
+        fallback={
+          <Flex itemAlign="center" justify="center" grow>
+            <Spinner size="sm" />
+          </Flex>
+        }
+      >
+        {renderContent()}
+      </Suspense>
     </ScaffoldProvider>
   );
 };
