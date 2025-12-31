@@ -231,7 +231,7 @@ const DefaultFallback: React.FC<{
   };
 
   const switchChain = () => {
-    account.once("validate:end", (status) => {
+    account.once("validate:end", (status: AccountStatusEnum) => {
       if (status < AccountStatusEnum.EnableTrading) {
         onConnectOrderly();
       } else {

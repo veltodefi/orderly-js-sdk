@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { JsonRpcProvider, Contract } from "ethers";
 import { API } from "@veltodefi/types";
 import getAppUlnConfigAbi from "./abi/getAppUlnConfigAbi.json";
 import { getEndpointId } from "./endpointId";
@@ -24,9 +24,9 @@ export async function getChainConfirmations(chain: API.Chain) {
 
   const address = "0x0000000000000000000000000000000000000000";
 
-  const provider = new ethers.JsonRpcProvider(publicRpcUrl);
+  const provider = new JsonRpcProvider(publicRpcUrl);
 
-  const contract = new ethers.Contract(
+  const contract = new Contract(
     contractAddress,
     // full abi: https://explorer-orderly-mainnet-0.t.conduit.xyz/address/0xCFf08a35A5f27F306e2DA99ff198dB90f13DEF77?tab=contract_abi
     // this only need to use getAppUlnConfig abi, other functions are not needed

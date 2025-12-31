@@ -55,20 +55,31 @@ async function addPrereleaseTag() {
     const pkgJson = JSON.parse(fs.readFileSync(pkgJsonPath, "utf8"));
 
     const currentVersion = pkgJson.version;
-    const prereleasePattern = /-velto-main\.(\d+)$/;
-    const match = currentVersion.match(prereleasePattern);
+    const prereleasePatternMain = /-velto-main\.(\d+)$/;
+    const prereleasePatternDev = /-velto-dev\.(\d+)$/;
 
-    if (match) {
+    const matchMain = currentVersion.match(prereleasePatternMain);
+    const matchDev = currentVersion.match(prereleasePatternDev);
+
+    if (matchMain) {
       // Increment existing prerelease number
-      const currentNum = parseInt(match[1], 10);
+      const currentNum = parseInt(matchMain[1], 10);
       const newNum = currentNum + 1;
       pkgJson.version = currentVersion.replace(
-        prereleasePattern,
-        `-velto-main.${newNum}`,
+        prereleasePatternMain,
+        `-velto-dev.${newNum}`,
+      );
+    } else if (matchDev) {
+      // Increment existing prerelease number
+      const currentNum = parseInt(matchDev[1], 10);
+      const newNum = currentNum + 1;
+      pkgJson.version = currentVersion.replace(
+        prereleasePatternDev,
+        `-velto-dev.${newNum}`,
       );
     } else {
       // Add new prerelease tag
-      pkgJson.version = `${currentVersion}-velto-main.0`;
+      pkgJson.version = `${currentVersion}-velto-dev.0`;
     }
 
     fs.writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, 2) + "\n");

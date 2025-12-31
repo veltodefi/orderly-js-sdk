@@ -1,6 +1,6 @@
 import * as ed from "@noble/ed25519";
 import { encode as bs58encode, decode as bs58Decode } from "bs58";
-import { ethers } from "ethers";
+import { parseUnits, formatUnits } from "ethers";
 import type { BigNumberish } from "ethers/src.ts/utils";
 import { API, SDKError, ChainNamespace } from "@veltodefi/types";
 import { Account } from "../account";
@@ -120,11 +120,11 @@ abstract class BaseWalletAdapter<Config> implements WalletAdapter<Config> {
   }
 
   parseUnits(amount: string, decimals: number) {
-    return ethers.parseUnits(amount, decimals).toString();
+    return parseUnits(amount, decimals).toString();
   }
 
   formatUnits(amount: BigNumberish, decimals: number) {
-    return ethers.formatUnits(amount, decimals);
+    return formatUnits(amount, decimals);
   }
 
   on(eventName: string, listener: (...args: any[]) => void): void {

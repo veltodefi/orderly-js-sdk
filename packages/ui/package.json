@@ -1,12 +1,12 @@
 {
   "name": "@veltodefi/ui",
-  "version": "2.8.6-velto-main.32",
+  "version": "2.8.6-velto-dev.45",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsup && pnpm run build:css",
+    "build": "tsup && tsc -p tsconfig.build.json || true && pnpm run build:css",
     "build:css": "npx tailwindcss -i ./src/tailwind.css -o ./dist/styles.css --minify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,28 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "sideEffects": [
+    "./dist/version.mjs",
+    "./dist/version.js",
+    "./dist/plugin/plugins/deposit/index.mjs",
+    "./dist/plugin/plugins/deposit/index.js",
+    "./dist/table/emptyDataState.mjs",
+    "./dist/table/emptyDataState.js"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./dist/styles.css": "./dist/styles.css",
+    "./styles.css": "./dist/styles.css",
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.js"
+    }
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.3",

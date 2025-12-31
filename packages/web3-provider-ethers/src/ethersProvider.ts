@@ -1,4 +1,12 @@
-import { BrowserProvider, Eip1193Provider, ethers } from "ethers";
+import {
+  BrowserProvider,
+  Eip1193Provider,
+  parseUnits,
+  formatUnits,
+  Contract,
+  JsonRpcProvider,
+  TransactionRequest,
+} from "ethers";
 import { Web3Provider } from "@veltodefi/default-evm-adapter";
 import { API } from "@veltodefi/types";
 import { parseError } from "./parseError";
@@ -8,11 +16,11 @@ class EthersProvider implements Web3Provider {
   private _originalProvider!: Eip1193Provider;
 
   parseUnits(amount: string, decimals?: number): string {
-    return ethers.parseUnits(amount, decimals).toString();
+    return parseUnits(amount, decimals).toString();
   }
 
   formatUnits(amount: string, decimals?: number): string {
-    return ethers.formatUnits(amount, decimals);
+    return formatUnits(amount, decimals);
   }
 
   set provider(provider: Eip1193Provider) {
@@ -69,7 +77,7 @@ class EthersProvider implements Web3Provider {
       }
     }
     const singer = await this.browserProvider.getSigner();
-    const contract = new ethers.Contract(address, options.abi, singer);
+    const contract = new Contract(address, options.abi, singer);
 
     return contract[method].apply(null, params).catch(async (error) => {
       const parsedEthersError = await parseError(error);
@@ -92,7 +100,7 @@ class EthersProvider implements Web3Provider {
       throw new Error("singer is not exist");
     }
 
-    const contract = new ethers.Contract(
+    const contract = new Contract(
       contractAddress,
       options.abi,
       this.browserProvider,
@@ -104,7 +112,7 @@ class EthersProvider implements Web3Provider {
       payload.data,
     );
 
-    const tx: ethers.TransactionRequest = {
+    const tx: TransactionRequest = {
       from: payload.from,
       to: payload.to,
       data: encodeFunctionData,
@@ -165,9 +173,9 @@ class EthersProvider implements Web3Provider {
     params: any[],
     options: { abi: any },
   ): Promise<any> {
-    const provider = new ethers.JsonRpcProvider(chain.public_rpc_url);
+    const provider = new JsonRpcProvider(chain.public_rpc_url);
 
-    const contract = new ethers.Contract(address, options.abi, provider);
+    const contract = new Contract(address, options.abi, provider);
 
     return contract[method].apply(null, params).catch(async (error) => {
       const parsedEthersError = await parseError(error);

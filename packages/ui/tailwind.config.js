@@ -1,13 +1,13 @@
 const { withTV } = require("tailwind-variants/transformer");
 
-const { sizePlugin } = require("@veltodefi/ui/dist/tailwind/size");
-const { gradientPlugin } = require("@veltodefi/ui/dist/tailwind/gradient");
-const { positionPlugin } = require("@veltodefi/ui/dist/tailwind/position");
-const { basePlugin } = require("@veltodefi/ui/dist/tailwind/base");
-const { componentsPlugin } = require("@veltodefi/ui/dist/tailwind/components");
-const { themePlugin } = require("@veltodefi/ui/dist/tailwind/theme");
-const { scrollBarPlugin } = require("@veltodefi/ui/dist/tailwind/scrollBar");
-const { chartPlugin } = require("@veltodefi/ui/dist/tailwind/chart");
+const { sizePlugin } = require("./dist/tailwind/size");
+const { gradientPlugin } = require("./dist/tailwind/gradient");
+const { positionPlugin } = require("./dist/tailwind/position");
+const { basePlugin } = require("./dist/tailwind/base");
+const { componentsPlugin } = require("./dist/tailwind/components");
+const { themePlugin } = require("./dist/tailwind/theme");
+const { scrollBarPlugin } = require("./dist/tailwind/scrollBar");
+const { chartPlugin } = require("./dist/tailwind/chart");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withTV({

@@ -5,9 +5,21 @@
     "module": "esnext",
     "resolveJsonModule": true,
     // "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmitOnError": false, 
+    "strict": false,
+    "target": "es2020"
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ],
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],
     "out": "docs",

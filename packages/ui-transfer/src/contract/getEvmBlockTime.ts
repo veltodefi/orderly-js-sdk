@@ -1,12 +1,10 @@
-import { ethers } from "ethers";
+import { JsonRpcProvider } from "ethers";
 import type { API } from "@veltodefi/types";
 
 const blockCount = 5;
 
 export async function getEvmBlockTime(chain: API.Chain) {
-  const provider = new ethers.JsonRpcProvider(
-    chain.network_infos.public_rpc_url,
-  );
+  const provider = new JsonRpcProvider(chain.network_infos.public_rpc_url);
 
   const latest = await provider.getBlockNumber();
 

@@ -1,3 +1,6 @@
+import { copyFileSync, mkdirSync } from "fs";
+import { globSync } from "glob";
+import { dirname } from "path";
 import { defineConfig } from "tsup";
 
 export default defineConfig((options) => ({
@@ -15,6 +18,16 @@ export default defineConfig((options) => ({
   esbuildOptions(opts) {
     if (!options.watch) {
       opts.drop = ["console", "debugger"];
+    }
+  },
+  async onSuccess() {
+    // Copy JSON files to dist, preserving directory structure
+    const jsonFiles = globSync("src/**/*.json");
+    for (const file of jsonFiles) {
+      const destPath = file.replace(/^src/, "dist");
+      mkdirSync(dirname(destPath), { recursive: true });
+      copyFileSync(file, destPath);
+      console.log(`Copied: ${file} -> ${destPath}`);
     }
   },
 }));

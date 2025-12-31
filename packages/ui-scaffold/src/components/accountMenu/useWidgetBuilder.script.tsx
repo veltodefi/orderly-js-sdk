@@ -1,9 +1,5 @@
 import { useCallback } from "react";
-import {
-  useAccount,
-  useChains,
-  useWalletConnector,
-} from "@veltodefi/hooks";
+import { useAccount, useChains, useWalletConnector } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
 import { AccountStatusEnum } from "@veltodefi/types";
@@ -65,7 +61,7 @@ export const useAccountMenu = (): any => {
   };
 
   const switchChain = () => {
-    account.once("validate:end", (status) => {
+    account.once("validate:end", (status: AccountStatusEnum) => {
       if (status < AccountStatusEnum.EnableTrading) {
         statusChangeHandler({ status });
       } else {
