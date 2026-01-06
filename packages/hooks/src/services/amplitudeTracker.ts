@@ -1,4 +1,11 @@
-import * as amplitude from "@amplitude/analytics-browser";
+import {
+  Identify,
+  init as amplitudeInit,
+  setUserId as amplitudeSetUserId,
+  track as amplitudeTrack,
+  identify as amplitudeIdentify,
+} from "@amplitude/analytics-browser";
+import type { Types } from "@amplitude/analytics-browser";
 import { SimpleDI } from "@veltodefi/core";
 import { EventEmitter } from "@veltodefi/core";
 import { TrackerEventName } from "@veltodefi/types";
@@ -20,9 +27,9 @@ function getAmplitudeConfig(
   env: ENVType,
   amplitudeConfig?: {
     amplitudeId?: string;
-    serverZone?: amplitude.Types.ServerZoneType;
+    serverZone?: Types.ServerZoneType;
   },
-): { amplitudeId: string; options: amplitude.Types.BrowserOptions } {
+): { amplitudeId: string; options: Types.BrowserOptions } {
   if (!amplitudeConfig) {
     return {
       amplitudeId: apiKeyMap[env],
@@ -36,7 +43,7 @@ function getAmplitudeConfig(
     amplitudeId: amplitudeId!,
     options: serverZone
       ? {
-          serverZone: serverZone as amplitude.Types.ServerZoneType,
+          serverZone: serverZone as Types.ServerZoneType,
         }
       : {},
   };
@@ -51,12 +58,12 @@ export class AmplitudeTracker {
   constructor(
     env: ENVType,
     amplitudeConfig:
-      | { amplitudeId: string; serverZone?: amplitude.Types.ServerZoneType }
+      | { amplitudeId: string; serverZone?: Types.ServerZoneType }
       | undefined,
     sdkInfo: any,
   ) {
     const { amplitudeId, options } = getAmplitudeConfig(env, amplitudeConfig);
-    amplitude.init(amplitudeId!, options);
+    amplitudeInit(amplitudeId!, options);
     this.setSdkInfo(sdkInfo);
     this._bindEvents();
   }
@@ -65,7 +72,7 @@ export class AmplitudeTracker {
     if (userId === this._userId) {
       return;
     }
-    amplitude.setUserId(userId);
+    amplitudeSetUserId(userId);
     this._userId = userId;
   }
 
@@ -76,15 +83,15 @@ export class AmplitudeTracker {
   }
 
   identify(properties: any) {
-    const identify = new amplitude.Identify();
+    const identify = new Identify();
     Object.entries(properties).forEach(([key, value]) => {
       identify.set(key, value as string);
     });
-    amplitude.identify(identify);
+    amplitudeIdentify(identify);
   }
 
   track(eventName: TrackerEventName, properties?: any) {
-    amplitude.track(eventName, properties);
+    amplitudeTrack(eventName, properties);
   }
 
   private _bindEvents() {
