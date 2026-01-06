@@ -1,4 +1,3 @@
-import { BN, Program } from "@coral-xyz/anchor";
 import type { WalletAdapterProps } from "@solana/wallet-adapter-base";
 import {
   ComputeBudgetProgram,
@@ -23,10 +22,7 @@ import {
   InternalTransferInputs,
 } from "@veltodefi/core";
 import { DexRequestInputs } from "@veltodefi/core";
-import {
-  DEFAUL_ORDERLY_KEY_SCOPE,
-  LedgerWalletKey,
-} from "@veltodefi/types";
+import { DEFAUL_ORDERLY_KEY_SCOPE, LedgerWalletKey } from "@veltodefi/types";
 import {
   DVN_PROGRAM_ID,
   ENDPOINT_PROGRAM_ID,
@@ -66,6 +62,15 @@ import {
   getVaultAuthorityPda,
   getSolVaultPda,
 } from "./solana.util";
+
+// Lazy load anchor to improve startup time
+let anchorCache: any = null;
+const getAnchor = async () => {
+  if (!anchorCache) {
+    anchorCache = await import("@coral-xyz/anchor");
+  }
+  return anchorCache;
+};
 
 export function addOrderlyKeyMessage(
   inputs: AddOrderlyKeyInputs & { chainId: number },
@@ -403,6 +408,7 @@ export async function getDepositQuoteFee({
   const appProgramId = new PublicKey(vaultAddress);
   const DST_EID = getDstEID(appProgramId);
 
+  const { Program } = await getAnchor();
   const program = new Program<SolanaVault>(VaultIDL, appProgramId, {
     connection,
   });
@@ -430,7 +436,7 @@ export async function getDepositQuoteFee({
   const messageLibInfoPDA = getMessageLibInfoPda(messageLibPDA);
   const vaultAuthorityPDA = getVaultAuthorityPda(appProgramId);
 
-  const depositParams = getDepositParams(userAddress, depositData);
+  const depositParams = await getDepositParams(userAddress, depositData);
 
   // deposit fee
   const quoteFee = await program.methods
@@ -589,7 +595,7 @@ export async function getDepositQuoteFee({
   );
   return decodedBuffer.readBigUInt64LE(0);
 }
-const getDepositParams = (
+const getDepositParams = async (
   userAddress: string,
   depositData: {
     tokenHash: string;
@@ -599,6 +605,7 @@ const getDepositParams = (
     tokenAmount: string;
   },
 ) => {
+  const { BN } = await getAnchor();
   const brokerHash = depositData.brokerHash;
   const codedBrokerHash = Array.from(Buffer.from(brokerHash.slice(2), "hex"));
 
@@ -645,6 +652,7 @@ export async function deposit({
 
   console.log("-- vault address", vaultAddress);
   const appProgramId = new PublicKey(vaultAddress);
+  const { Program, BN } = await getAnchor();
   const program = new Program<SolanaVault>(VaultIDL, appProgramId, {
     connection,
   });
@@ -683,7 +691,7 @@ export async function deposit({
   const priceFeedPDA = getPriceFeedPda();
   const dvnConfigPDA = getDvnConfigPda();
 
-  const vaultDepositParams = getDepositParams(userAddress, depositData);
+  const vaultDepositParams = await getDepositParams(userAddress, depositData);
 
   const buildSendRemainingAccounts = () => [
     // ENDPOINT solana/programs/programs/uln/src/instructions/endpoint/send.rs
