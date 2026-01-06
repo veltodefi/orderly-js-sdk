@@ -116,8 +116,8 @@ async function main() {
     console.log("📦 Publishing packages...");
     const npmRegistry = process.env.NPM_REGISTRY;
     const publishCmd = npmRegistry
-      ? `npm_config_registry=${npmRegistry} pnpm -r publish --tag velto-main --no-git-checks`
-      : "pnpm -r publish --tag velto-main --no-git-checks";
+      ? `npm_config_registry=${npmRegistry} pnpm -r publish --tag velto-dev --no-git-checks`
+      : "pnpm -r publish --tag velto-dev --no-git-checks";
 
     execSync(publishCmd, { stdio: "inherit" });
     console.log("\n✓ Packages published successfully\n");
