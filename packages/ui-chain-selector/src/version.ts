@@ -8,7 +8,7 @@ declare global {
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
   window.__ORDERLY_VERSION__["@veltodefi/ui-chain-selector"] =
-    "2.8.6-velto-dev.49";
+    "2.8.6-velto-main.50";
 }
 
-export default "2.8.6-velto-dev.49";
+export default "2.8.6-velto-main.50";
