@@ -1,5 +1,5 @@
 import { FC, useMemo } from "react";
-import { difference } from "ramda";
+import difference from "ramda/es/difference";
 import { cn, Box, useScreen } from "@veltodefi/ui";
 import { LeaderboardTab } from "../../../type";
 import { CampaignRankingWidget } from "../../ranking/campaignRanking";

@@ -1,10 +1,6 @@
-import { compose, head } from "ramda";
-import {
-  API,
-  OrderlyOrder,
-  OrderSide,
-  OrderType,
-} from "@veltodefi/types";
+import compose from "ramda/es/compose";
+import head from "ramda/es/head";
+import { API, OrderlyOrder, OrderSide, OrderType } from "@veltodefi/types";
 import { Decimal } from "@veltodefi/utils";
 import { FullOrderState } from "../next/useOrderEntry/useOrderStore";
 import { tpslCalculateHelper } from "../orderly/useTakeProfitAndStopLoss/tp_slUtils";

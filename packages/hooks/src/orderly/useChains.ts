@@ -1,5 +1,5 @@
 import { useCallback, useContext, useMemo, useRef } from "react";
-import { prop } from "ramda";
+import prop from "ramda/es/prop";
 import useSWR, { SWRConfiguration } from "swr";
 import {
   NetworkId,

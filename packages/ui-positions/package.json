@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-positions",
-  "version": "2.8.6-velto-main.24",
+  "version": "2.8.6-velto-main.50",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -24,6 +24,7 @@
   "dependencies": {
     "@veltodefi/hooks": "workspace:*",
     "@veltodefi/i18n": "workspace:*",
+    "@veltodefi/perp": "workspace:*",
     "@veltodefi/react-app": "workspace:*",
     "@veltodefi/types": "workspace:*",
     "@veltodefi/ui": "workspace:*",
@@ -32,13 +33,10 @@
     "@veltodefi/ui-share": "workspace:*",
     "@veltodefi/ui-tpsl": "workspace:*",
     "@veltodefi/utils": "workspace:*",
-    "@veltodefi/perp": "workspace:*",
     "date-fns": "^3.6.0",
-    "immer": "^10.1.1",
-    "ramda": "^0.29.0"
+    "immer": "^10.1.1"
   },
   "devDependencies": {
-    "@types/ramda": "^0.29.3",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "react": "^18.2.0",
