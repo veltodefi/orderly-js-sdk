@@ -181,6 +181,61 @@ module.exports = withTV({
               "rgb(var(--oui-color-trading-profit-contrast) / <alpha-value>)",
           },
         },
+        mainButton: {
+          DEFAULT: "rgb(var(--oui-color-main-button) / <alpha-value>)",
+          contrast:
+            "rgb(var(--oui-color-main-button-contrast) / <alpha-value>)",
+          hover: "rgb(var(--oui-color-main-button-hover) / <alpha-value>)",
+          hoverContrast:
+            "rgb(var(--oui-color-main-button-hover-contrast) / <alpha-value>)",
+          pressed: "rgb(var(--oui-color-main-button-pressed) / <alpha-value>)",
+          pressedContrast:
+            "rgb(var(--oui-color-main-button-pressed-contrast) / <alpha-value>)",
+          focus: "rgb(var(--oui-color-main-button-focus) / <alpha-value>)",
+          focusContrast:
+            "rgb(var(--oui-color-main-button-focus-contrast) / <alpha-value>)",
+          disabled:
+            "rgb(var(--oui-color-main-button-disabled) / <alpha-value>)",
+          disabledContrast:
+            "rgb(var(--oui-color-main-button-disabled-contrast) / <alpha-value>)",
+          disabledBorder:
+            "rgb(var(--oui-color-main-button-disabled-border) / <alpha-value>)",
+          loading: "rgb(var(--oui-color-main-button-loading) / <alpha-value>)",
+          loadingContrast:
+            "rgb(var(--oui-color-main-button-loading-contrast) / <alpha-value>)",
+          loadingSpinnerRing:
+            "rgb(var(--oui-color-main-button-loading-spinner-ring) / <alpha-value>)",
+          loadingSpinnerFill:
+            "rgb(var(--oui-color-main-button-loading-spinner-fill) / <alpha-value>)",
+          inverted:
+            "rgb(var(--oui-color-main-button-inverted) / <alpha-value>)",
+          invertedContrast:
+            "rgb(var(--oui-color-main-button-inverted-contrast) / <alpha-value>)",
+          invertedHover:
+            "rgb(var(--oui-color-main-button-inverted-hover) / <alpha-value>)",
+          invertedHoverContrast:
+            "rgb(var(--oui-color-main-button-inverted-hover-contrast) / <alpha-value>)",
+          invertedPressed:
+            "rgb(var(--oui-color-main-button-inverted-pressed) / <alpha-value>)",
+          invertedPressedContrast:
+            "rgb(var(--oui-color-main-button-inverted-pressed-contrast) / <alpha-value>)",
+          invertedFocus:
+            "rgb(var(--oui-color-main-button-inverted-focus) / <alpha-value>)",
+          invertedFocusContrast:
+            "rgb(var(--oui-color-main-button-inverted-focus-contrast) / <alpha-value>)",
+          invertedDisabled:
+            "rgb(var(--oui-color-main-button-inverted-disabled) / <alpha-value>)",
+          invertedDisabledContrast:
+            "rgb(var(--oui-color-main-button-inverted-disabled-contrast) / <alpha-value>)",
+          invertedLoading:
+            "rgb(var(--oui-color-main-button-inverted-loading) / <alpha-value>)",
+          invertedLoadingContrast:
+            "rgb(var(--oui-color-main-button-inverted-loading-contrast) / <alpha-value>)",
+          invertedLoadingSpinnerRing:
+            "rgb(var(--oui-color-main-button-inverted-loading-spinner-ring) / <alpha-value>)",
+          invertedLoadingSpinnerFill:
+            "rgb(var(--oui-color-main-button-inverted-loading-spinner-fill) / <alpha-value>)",
+        },
         // gradient: {
         //   success: 'linear-gradient(var(--oui-linear-degree, 90deg), var(--oui-color-success) 0%, var(--oui-color-success-darken) 100%)',
         // }
