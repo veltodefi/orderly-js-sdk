@@ -4,7 +4,7 @@ import { useWalletConnector } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { ChainNamespace } from "@veltodefi/types";
 import {
-  Button,
+  MainButton,
   cn,
   TokenIcon,
   Text,
@@ -177,11 +177,10 @@ const AssetMobileItem: React.FC<AssetMobileItemProps> = (props) => {
       </Flex>
       <Flex justify={"between"} itemAlign={"center"} gap={2}>
         {item.token !== "USDC" && namespace !== ChainNamespace.solana && (
-          <Button
+          <MainButton
             fullWidth
-            variant="outlined"
+            variant="secondary"
             size="sm"
-            color="gray"
             onClick={() => {
               modal.show("ConvertSheetId", {
                 accountId: item.account_id,
@@ -193,13 +192,12 @@ const AssetMobileItem: React.FC<AssetMobileItemProps> = (props) => {
             )}
           >
             {t("transfer.convert")}
-          </Button>
+          </MainButton>
         )}
-        <Button
+        <MainButton
           fullWidth
-          variant="outlined"
+          variant="secondary"
           size="sm"
-          color="gray"
           onClick={() => {
             modal.show("TransferSheetId", {
               accountId: item.account_id,
@@ -211,7 +209,7 @@ const AssetMobileItem: React.FC<AssetMobileItemProps> = (props) => {
           )}
         >
           {t("common.transfer")}
-        </Button>
+        </MainButton>
       </Flex>
     </div>
   );

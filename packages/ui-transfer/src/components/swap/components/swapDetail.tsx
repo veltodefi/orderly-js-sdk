@@ -8,7 +8,7 @@ import {
   TokenIcon,
   Icon,
   Divider,
-  Button,
+  MainButton,
 } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { feeDecimalsOffset } from "../../../utils";
@@ -205,9 +205,9 @@ export const SwapDetail: FC<SwapDetailProps> = (props) => {
 
   const swapButton = (
     <Flex justify="center" mt={8}>
-      <Button className="oui-w-full lg:oui-w-[184px]" onClick={props.onConfirm}>
+      <MainButton  variant="primary" className="oui-w-full lg:oui-w-[184px]" onClick={props.onConfirm}>
         {t("transfer.swapDeposit.confirmSwap")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 

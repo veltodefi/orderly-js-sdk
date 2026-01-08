@@ -3,11 +3,10 @@ import { useAccount, useWalletConnector } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   ABSTRACT_CHAIN_ID_MAP,
-  ABSTRACT_TESTNET_CHAINID,
   AccountStatusEnum,
 } from "@veltodefi/types";
 import {
-  Button,
+  MainButton,
   cn,
   Flex,
   formatAddress,
@@ -72,10 +71,10 @@ const RenderUserCenter = (props: any) => {
   }
   if (state.status <= AccountStatusEnum.NotConnected || disabled) {
     return (
-      <Button
+      <MainButton
         data-testid="oui-testid-nav-bar-connectWallet-btn"
         size="md"
-        variant={disabled ? undefined : "gradient"}
+        variant="primary"
         angle={45}
         className={cn(
           "wallet-connect-button",
@@ -92,7 +91,7 @@ const RenderUserCenter = (props: any) => {
         }}
       >
         {isMobile ? t("connector.connect") : t("connector.connectWallet")}
-      </Button>
+      </MainButton>
     );
   }
 
@@ -107,9 +106,9 @@ const RenderUserCenter = (props: any) => {
         }}
       >
         <div onClick={() => connect()}>
-          <Button
+          <MainButton
             size="md"
-            variant="gradient"
+            variant="primary"
             angle={45}
             data-testid="oui-testid-nav-bar-address-btn"
             className="oui-px-2 oui-flex oui-items-center oui-justify-center oui-gap-1"
@@ -127,16 +126,16 @@ const RenderUserCenter = (props: any) => {
             >
               {formatAddress(userAddress!)}
             </Text.formatted>
-          </Button>
+          </MainButton>
         </div>
       </AuthGuard>
     );
   }
   return (
     <div onClick={() => connect()}>
-      <Button
+      <MainButton
         size="md"
-        variant="gradient"
+        variant="primary"
         angle={45}
         data-testid="oui-testid-nav-bar-address-btn"
         className="oui-flex oui-items-center oui-justify-center oui-gap-2"
@@ -151,7 +150,7 @@ const RenderUserCenter = (props: any) => {
         <Text.formatted rule="address" className="oui-text-[rgba(0,0,0,.88)]">
           {formatAddress(userAddress!)}
         </Text.formatted>
-      </Button>
+      </MainButton>
     </div>
   );
 };

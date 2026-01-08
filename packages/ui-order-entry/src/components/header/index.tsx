@@ -1,6 +1,6 @@
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderlyOrder, OrderSide, OrderType } from "@veltodefi/types";
-import { Button, cn } from "@veltodefi/ui";
+import { MainButton, cn } from "@veltodefi/ui";
 import { OrderTypeSelect } from "../orderTypeSelect";
 import { LeverageBadge } from "./LeverageBadge";
 
@@ -25,7 +25,8 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           "oui-grid-cols-2",
         )}
       >
-        <Button
+        <MainButton
+          variant="primary"
           onClick={() => {
             props.setOrderValue("side", OrderSide.BUY);
           }}
@@ -40,8 +41,9 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           data-testid="oui-testid-orderEntry-side-buy-button"
         >
           {t("common.buy")}
-        </Button>
-        <Button
+        </MainButton>
+        <MainButton
+          variant="primary"
           onClick={() => {
             props.setOrderValue("side", OrderSide.SELL);
           }}
@@ -56,7 +58,7 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           data-testid="oui-testid-orderEntry-side-sell-button"
         >
           {t("common.sell")}
-        </Button>
+        </MainButton>
       </div>
       <div
         className={cn(

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Button } from "@veltodefi/ui";
+import { MainButton } from "@veltodefi/ui";
 import { EditBtnState } from "./editBtn.script";
 
 export const EditBtn: FC<EditBtnState> = (props) => {
@@ -8,10 +8,9 @@ export const EditBtn: FC<EditBtnState> = (props) => {
 
   return (
     <>
-      <Button
-        variant="outlined"
+      <MainButton
+        variant="secondary"
         fullWidth
-        color="secondary"
         size="sm"
         className="oui-border-base-contrast-36"
         onClick={() => {
@@ -19,7 +18,7 @@ export const EditBtn: FC<EditBtnState> = (props) => {
         }}
       >
         {t("common.edit")}
-      </Button>
+      </MainButton>
     </>
   );
 };

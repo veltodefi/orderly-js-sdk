@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { cn, Text, ChevronRightIcon, Button } from "@veltodefi/ui";
+import { cn, Text, ChevronRightIcon, MainButton } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { useCanTrade } from "../../../hooks/useCanTrade";
 import { CampaignConfig, PrizePool } from "../type";
@@ -63,10 +63,9 @@ export const PricePoolDesktopUI: FC<PricePoolDesktopUIProps> = ({
             }}
           >
             {shouldShowJoinButton && (
-              <Button
+              <MainButton
                 size={"md"}
-                variant="gradient"
-                color="primary"
+                variant="primary"
                 className="oui-flex-1"
                 loading={isJoining}
                 disabled={isJoining}
@@ -82,20 +81,19 @@ export const PricePoolDesktopUI: FC<PricePoolDesktopUIProps> = ({
                 fullWidth
               >
                 {t("tradingLeaderboard.joinNow")}
-              </Button>
+              </MainButton>
             )}
             {showTradeButton && (
-              <Button
+              <MainButton
                 size={"md"}
-                variant="gradient"
-                color="primary"
+                variant="primary"
                 className="oui-flex-1"
                 onClick={onTradeNow}
                 fullWidth
               >
                 {campaign?.trading_config?.format ||
                   t("tradingLeaderboard.tradeNow")}
-              </Button>
+              </MainButton>
             )}
           </AuthGuard>
         </div>
@@ -187,10 +185,10 @@ export const PricePoolDesktopUI: FC<PricePoolDesktopUIProps> = ({
       >
         {isMobile && campaign?.rule_url && (
           <div className="oui-w-full">
-            <Button
+            <MainButton
               fullWidth
               size="md"
-              variant="outlined"
+              variant="secondary"
               className="oui-flex-1 
       oui-border-[rgb(var(--oui-gradient-brand-start))] 
       oui-text-[rgb(var(--oui-gradient-brand-start))] 
@@ -200,7 +198,7 @@ export const PricePoolDesktopUI: FC<PricePoolDesktopUIProps> = ({
               onClick={onLearnMore}
             >
               {t("tradingLeaderboard.viewRules")}
-            </Button>
+            </MainButton>
           </div>
         )}
         {renderButton()}

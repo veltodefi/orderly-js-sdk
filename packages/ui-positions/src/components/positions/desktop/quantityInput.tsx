@@ -8,7 +8,7 @@ import {
   Flex,
   Text,
   Slider,
-  Button,
+  MainButton,
   inputFormatter,
 } from "@veltodefi/ui";
 import { Input } from "@veltodefi/ui";
@@ -120,10 +120,9 @@ const PercentButtons = (props: { onClick: (value: number) => void }) => {
     <Flex gap={2} width={"100%"}>
       {list.map((item, index) => {
         return (
-          <Button
+          <MainButton
             key={index}
-            variant="outlined"
-            color="secondary"
+            variant="secondary"
             size="xs"
             onClick={(e) => {
               e.stopPropagation();
@@ -132,7 +131,7 @@ const PercentButtons = (props: { onClick: (value: number) => void }) => {
             className="oui-w-1/5"
           >
             {item.label}
-          </Button>
+          </MainButton>
         );
       })}
     </Flex>

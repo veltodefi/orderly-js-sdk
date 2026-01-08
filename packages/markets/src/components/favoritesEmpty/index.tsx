@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
-  Button,
+  MainButton,
   cn,
   EmptyStateIcon,
   Flex,
@@ -24,8 +24,8 @@ export const FavoritesEmpty: FC<FavoritesEmptyProps> = (props) => {
       className={cn("oui-text-center", props.className)}
     >
       <EmptyStateIcon />
-      <Button
-        color="gray"
+      <MainButton
+        variant="primary"
         size="xs"
         className="oui-bg-base-4"
         onClick={props.onClick}
@@ -36,7 +36,7 @@ export const FavoritesEmpty: FC<FavoritesEmptyProps> = (props) => {
           size={12}
         />
         <Text intensity={98}>{t("markets.favorites.addFavorites")}</Text>
-      </Button>
+      </MainButton>
     </Flex>
   );
 };

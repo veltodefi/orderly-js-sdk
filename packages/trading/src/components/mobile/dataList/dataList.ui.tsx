@@ -4,7 +4,7 @@ import { useTranslation } from "@veltodefi/i18n";
 import { AssetsModule } from "@veltodefi/portfolio";
 import { OrderStatus } from "@veltodefi/types";
 import {
-  Button,
+  MainButton,
   Checkbox,
   Divider,
   Flex,
@@ -78,17 +78,16 @@ const SymbolControlHeader: React.FC<
           {t("trading.hideOtherSymbols")}
         </Text>
       </Flex>
-      <Button
-        variant="outlined"
+      <MainButton
+        variant="secondary"
         size="xs"
-        color="secondary"
         onClick={() => props.onCloseAll(props.type)}
         disabled={cancelAllDisabled}
       >
         {!props.showAllSymbol
           ? t("orders.cancelAll.ofSymbol", { symbol: formattedSymbol })
           : t("orders.cancelAll")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 };

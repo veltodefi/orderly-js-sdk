@@ -5,7 +5,7 @@ import {
   ArrowDownShortIcon,
   ArrowLeftRightIcon,
   ArrowUpShortIcon,
-  Button,
+  MainButton,
   cn,
   Divider,
   EyeCloseIcon,
@@ -22,8 +22,6 @@ import {
   Statistic,
   Text,
 } from "@veltodefi/ui";
-import { LeverageProps, LeverageSlider } from "@veltodefi/ui-leverage";
-import { USDCIcon } from "../accountSheet/icons";
 import {
   getMarginRatioColor,
   PortfolioSheetState,
@@ -383,47 +381,49 @@ const Buttons: FC<PortfolioSheetState> = (props) => {
         pt={2}
         pb={4}
       >
-        <Button
+        <MainButton
+          variant="primary"
           icon={<ArrowDownShortIcon color="white" opacity={0.8} />}
           size="md"
           fullWidth
           onClick={props.onDeposit}
         >
           {t("common.deposit")}
-        </Button>
+        </MainButton>
         {props.hasSubAccount && (
-          <Button
+          <MainButton
             icon={<ArrowLeftRightIcon color="white" opacity={0.8} />}
-            color="gray"
+            variant="invertedPrimary"
             size="md"
             onClick={props.onTransfer}
             data-testid="oui-testid-assetView-transfer-button"
           >
             <Text>{t("common.transfer")}</Text>
-          </Button>
+          </MainButton>
         )}
-        <Button
+        <MainButton
           icon={<ArrowUpShortIcon color="white" opacity={0.8} />}
           size="md"
+          variant="primary"
           fullWidth
           className="oui-bg-base-2 hover:oui-bg-base-2/50"
           onClick={props.onWithdraw}
         >
           {t("common.withdraw")}
-        </Button>
+        </MainButton>
       </Grid>
     );
   }
 
   return (
-    <Button
+    <MainButton
       fullWidth
-      color="secondary"
+      variant="secondary"
       size="md"
       onClick={props.onTransfer}
       data-testid="oui-testid-assetView-transfer-button"
     >
       <Text>{t("common.transfer")}</Text>
-    </Button>
+    </MainButton>
   );
 };

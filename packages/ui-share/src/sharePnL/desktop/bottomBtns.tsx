@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, Flex } from "@veltodefi/ui";
+import { MainButton, Flex } from "@veltodefi/ui";
 import { useTranslation } from "@veltodefi/i18n";
 export const BottomButtons: FC<{
   onClickDownload: any;
@@ -10,8 +10,8 @@ export const BottomButtons: FC<{
 
   return (
     <Flex px={8} gap={3} mt={3} itemAlign={"center"}>
-      <Button
-        color={"secondary"}
+      <MainButton
+        variant="secondary"
         className="oui-flex-1 oui-flex oui-gap-1"
         onClick={onClickDownload}
       >
@@ -19,14 +19,14 @@ export const BottomButtons: FC<{
           <DownloadIcon />
         </span>
         {t("common.download")}
-      </Button>
+      </MainButton>
 
-      <Button className="oui-flex-1 oui-flex oui-gap-1" onClick={onClickCopy}>
+      <MainButton variant="primary" className="oui-flex-1 oui-flex oui-gap-1" onClick={onClickCopy}>
         <span>
           <CopyIcon />
         </span>
         {t("common.copy")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 };

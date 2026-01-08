@@ -2,7 +2,7 @@ import React, { FC, useId } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Box,
-  Button,
+  MainButton,
   Flex,
   Input,
   Slider,
@@ -130,18 +130,18 @@ export const LeverageFooter: FC<LeverageProps & { isMobile?: boolean }> = (
   const { t } = useTranslation();
   return (
     <Flex direction={"row"} gap={2} width={"100%"} mt={0} pt={5}>
-      <Button
-        variant="contained"
-        color="gray"
+      <MainButton
+        variant="secondary"
         fullWidth
         onClick={props.onCancel}
         data-testid="oui-testid-leverage-cancel-btn"
         size={props.isMobile ? "md" : "lg"}
       >
         {t("common.cancel")}
-      </Button>
-      <Button
+      </MainButton>
+      <MainButton
         fullWidth
+        variant="primary"
         loading={props.isLoading}
         onClick={props.onSave}
         data-testid="oui-testid-leverage-save-btn"
@@ -149,7 +149,7 @@ export const LeverageFooter: FC<LeverageProps & { isMobile?: boolean }> = (
         size={props.isMobile ? "md" : "lg"}
       >
         {t("common.save")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 };

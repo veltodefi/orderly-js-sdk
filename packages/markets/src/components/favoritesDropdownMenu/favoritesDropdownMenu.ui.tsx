@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Box,
-  Button,
+  MainButton,
   CheckedSquareFillIcon,
   CheckSquareEmptyIcon,
   PlusIcon,
@@ -81,14 +81,15 @@ export const FavoritesDropdownMenu: React.FC<FavoritesDropdownMenuProps> = (
               }
             />
 
-            <Button
+            <MainButton
               className="oui-rounded-sm"
               size="sm"
+              variant="primary"
               onClick={addTab}
               disabled={!value || overLen}
             >
               {t("common.add")}
-            </Button>
+            </MainButton>
           </Flex>
 
           {overLen && (
@@ -209,26 +210,27 @@ export const FavoritesDropdownMenu: React.FC<FavoritesDropdownMenuProps> = (
 
   const footer = (
     <Flex gapX={3} mt={3}>
-      <Button
+      <MainButton
         key="secondary"
-        color="gray"
+        variant="secondary"
         onClick={hide}
         fullWidth
         className="oui-text-sm"
         size="md"
       >
         {t("common.cancel")}
-      </Button>
+      </MainButton>
 
-      <Button
+      <MainButton
         key="primary"
+        variant="primary"
         onClick={confirm}
         fullWidth
         className="oui-text-sm"
         size="md"
       >
         {t("common.confirm")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 

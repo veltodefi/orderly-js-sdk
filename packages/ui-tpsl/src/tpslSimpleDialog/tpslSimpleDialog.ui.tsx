@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { useOrderEntryFormErrorMsg } from "@veltodefi/react-app";
-import { Box, Button, cn, Divider, Flex, Text } from "@veltodefi/ui";
+import { Box, MainButton, cn, Divider, Flex, Text } from "@veltodefi/ui";
 import { TPSLQuantity } from "../components/tpslQty";
 import { useTPSLSimpleDialog } from "./tpslSimpleDialog.script";
 
@@ -18,9 +18,9 @@ export const TPSLSimpleDialogUI: React.FC<Props> = (props) => {
 
   const footer = (
     <Flex width="100%" itemAlign="center" gap={3} mt={4}>
-      <Button
+      <MainButton
         key="secondary"
-        color="gray"
+        variant="secondary"
         onClick={() => {
           props.onComplete?.();
           props.close?.();
@@ -30,9 +30,10 @@ export const TPSLSimpleDialogUI: React.FC<Props> = (props) => {
         size="md"
       >
         {t("common.cancel")}
-      </Button>
-      <Button
+      </MainButton>
+      <MainButton
         key="primary"
+        variant="primary"
         onClick={() => {
           props.onSubmit().then(() => {
             props.onComplete?.();
@@ -44,7 +45,7 @@ export const TPSLSimpleDialogUI: React.FC<Props> = (props) => {
         size="md"
       >
         {t("common.confirm")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 

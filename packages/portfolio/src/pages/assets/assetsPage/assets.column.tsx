@@ -3,7 +3,7 @@ import { useAppStore } from "@veltodefi/hooks";
 import { useWalletConnector } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { ChainNamespace } from "@veltodefi/types";
-import { Button, Flex, Text, TokenIcon } from "@veltodefi/ui";
+import { Button, Flex, Text, TokenIcon, MainButton } from "@veltodefi/ui";
 import type { Column } from "@veltodefi/ui";
 
 export interface ColumnsOptions {
@@ -123,24 +123,22 @@ export const useAssetsColumns = (options: ColumnsOptions) => {
               {token !== "USDC" &&
                 namespace !== ChainNamespace.solana &&
                 typeof onConvert === "function" && (
-                  <Button
+                  <MainButton
                     size={"sm"}
-                    variant={"outlined"}
-                    color={"secondary"}
+                    variant={"secondary"}
                     onClick={() => onConvert?.(id, token)}
                   >
                     {t("transfer.convert")}
-                  </Button>
+                  </MainButton>
                 )}
               {typeof onTransfer === "function" && (
-                <Button
+                <MainButton
                   size={"sm"}
-                  variant={"outlined"}
-                  color={"secondary"}
+                  variant={"secondary"}
                   onClick={() => onTransfer?.(id, token)}
                 >
                   {t("common.transfer")}
-                </Button>
+                </MainButton>
               )}
             </Flex>
           );

@@ -12,7 +12,7 @@ import {
 import { OrderlyOrder } from "@veltodefi/types";
 import {
   Badge,
-  Button,
+  MainButton,
   Checkbox,
   cn,
   Divider,
@@ -341,12 +341,12 @@ export const OrderConfirmDialog = (props: OrderConfirmDialogProps) => {
 
   const buttons = (
     <Grid cols={2} gapX={3}>
-      <Button color={"secondary"} size={"md"} onClick={() => onCancel()}>
+      <MainButton variant="secondary" size={"md"} onClick={() => onCancel()}>
         {t("common.cancel")}
-      </Button>
-      <Button size={"md"} onClick={() => onConfirm()}>
+      </MainButton>
+      <MainButton variant="primary" size={"md"} onClick={() => onConfirm()}>
         {t("common.confirm")}
-      </Button>
+      </MainButton>
     </Grid>
   );
 

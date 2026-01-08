@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderType } from "@veltodefi/types";
 import {
-  Button,
+  MainButton,
   cn,
   Divider,
   Flex,
@@ -89,10 +89,10 @@ export const DesktopClosePosition: FC<ClosePositionScriptReturn> = (props) => {
           ),
         }}
       />
-      <Button
+      <MainButton
         onClick={props.onMax}
         size="md"
-        variant="outlined"
+        variant="secondary"
         className={cn(
           "oui-text-2xs",
           isEntirePosition
@@ -101,7 +101,7 @@ export const DesktopClosePosition: FC<ClosePositionScriptReturn> = (props) => {
         )}
       >
         {t("common.position")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 
@@ -175,9 +175,9 @@ export const DesktopClosePosition: FC<ClosePositionScriptReturn> = (props) => {
             setPopoverOpen(true);
           }}
         >
-          <Button variant="outlined" size="sm" color="secondary">
+          <MainButton variant="secondary" size="sm">
             {t("positions.column.close")}
-          </Button>
+          </MainButton>
         </PopoverTrigger>
         <PopoverContent
           className={cn(

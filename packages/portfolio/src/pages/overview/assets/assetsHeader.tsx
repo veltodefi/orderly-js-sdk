@@ -4,9 +4,9 @@ import {
   ArrowDownSquareFillIcon,
   ArrowLeftRightIcon,
   ArrowUpSquareFillIcon,
-  Button,
   CardTitle,
   Flex,
+  MainButton,
 } from "@veltodefi/ui";
 
 type Props = {
@@ -26,9 +26,10 @@ export const AssetsHeader: FC<Props> = (props) => {
       <CardTitle>{t("common.overview")}</CardTitle>
       <Flex gap={3}>
         {props.isMainAccount && (
-          <Button
+          <MainButton
             disabled={props.disabled}
             size="md"
+            variant="primary"
             onClick={() => props.onDeposit?.()}
             icon={
               <ArrowDownSquareFillIcon className="oui-text-primary-contrast" />
@@ -36,30 +37,30 @@ export const AssetsHeader: FC<Props> = (props) => {
             data-testid="oui-testid-portfolio-assets-deposit-btn"
           >
             {t("common.deposit")}
-          </Button>
+          </MainButton>
         )}
         {props.hasSubAccount && (
-          <Button
+          <MainButton
             disabled={props.disabled}
             size="md"
-            color="secondary"
+            variant="secondary"
             onClick={() => props.onTransfer?.()}
             icon={<ArrowLeftRightIcon className="oui-text-base-contrast" />}
           >
             {t("common.transfer")}
-          </Button>
+          </MainButton>
         )}
         {props.isMainAccount && (
-          <Button
+          <MainButton
             disabled={props.disabled}
             size="md"
-            color="secondary"
+            variant="secondary"
             onClick={() => props.onWithdraw?.()}
             icon={<ArrowUpSquareFillIcon className="oui-text-base-contrast" />}
             data-testid="oui-testid-portfolio-assets-withdraw-btn"
           >
             {t("common.withdraw")}
-          </Button>
+          </MainButton>
         )}
       </Flex>
     </Flex>

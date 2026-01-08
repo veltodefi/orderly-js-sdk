@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { AccountStatusEnum, NetworkId } from "@veltodefi/types";
-import { Box, Button, ButtonProps } from "@veltodefi/ui";
+import { Box, MainButton, MainButtonProps } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { DepositAction } from "../../types";
 
@@ -30,7 +30,7 @@ export const ActionButton: React.FC<ActionButtonProps> = (props) => {
   const { t } = useTranslation();
 
   const buttonParams = useMemo(() => {
-    const params: Partial<Record<DepositAction, ButtonProps>> = {
+    const params: Partial<Record<DepositAction, MainButtonProps>> = {
       // [DepositAction.Approve]: {
       //   // Approve & Deposit
       //   children: t("transfer.deposit.approve"),
@@ -72,8 +72,9 @@ export const ActionButton: React.FC<ActionButtonProps> = (props) => {
           size: buttonSize,
         }}
       >
-        <Button
+        <MainButton
           fullWidth
+          variant="primary"
           disabled={disabled}
           loading={loading}
           size={buttonSize}

@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Button,
+  MainButton,
   cn,
   Flex,
   TabsBase,
@@ -31,9 +32,8 @@ export const Tab: FC<
   const extendNode = () => {
     if (props.isAffiliate && !props.isTrader) {
       return (
-        <Button
-          variant="contained"
-          color="success"
+        <MainButton
+          variant="primary"
           size="sm"
           className="oui-px-2 oui-flex oui-gap-1"
           style={{
@@ -48,14 +48,13 @@ export const Tab: FC<
         >
           <TraderIcon />
           <Text>{t("affiliate.asTrader.title")}</Text>
-        </Button>
+        </MainButton>
       );
     }
     if (!props.isAffiliate && props.isTrader) {
       return (
-        <Button
-          variant="contained"
-          color="primary"
+        <MainButton
+          variant="primary"
           size="sm"
           className="oui-px-2 oui-flex oui-gap-1"
           style={{
@@ -70,7 +69,7 @@ export const Tab: FC<
         >
           <AffiliateIcon />
           <Text>{t("affiliate.asAffiliate.title")}</Text>
-        </Button>
+        </MainButton>
       );
     }
 

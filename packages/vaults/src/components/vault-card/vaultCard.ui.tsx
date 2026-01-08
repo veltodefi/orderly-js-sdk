@@ -4,6 +4,7 @@ import {
   Text,
   cn,
   Button,
+  MainButton,
   ArrowRightUpSquareFillIcon,
   useScreen,
   Tooltip,
@@ -351,23 +352,24 @@ const VaultCardOperation: FC<VaultCardOperationProps> = (props) => {
     <AuthGuard buttonProps={{ size: "md", fullWidth: true }}>
       {isEVMConnected || isSOLConnected ? (
         <div className="oui-flex oui-items-center oui-gap-2">
-          <Button
+          <MainButton
             className="oui-flex-1"
             size="md"
+            variant="primary"
             disabled={isButtonsDisabled}
             onClick={() => openDepositAndWithdraw("deposit")}
           >
             {t("common.deposit")}
-          </Button>
-          <Button
+          </MainButton>
+          <MainButton
             className="oui-flex-1"
             size="md"
-            color="secondary"
+            variant="secondary"
             disabled={isButtonsDisabled}
             onClick={() => openDepositAndWithdraw("withdraw")}
           >
             {t("common.withdraw")}
-          </Button>
+          </MainButton>
         </div>
       ) : (
         <Button size="md" color="warning">

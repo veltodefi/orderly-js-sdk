@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Button, cn, Divider, Flex, Text } from "@veltodefi/ui";
+import { MainButton, cn, Divider, Flex, Text } from "@veltodefi/ui";
 import { removeTrailingZeros } from "@veltodefi/utils";
 import type { LTVTooltipScriptReturn } from "./LTVRiskTooltip.script";
 
@@ -78,15 +78,14 @@ export const LTVRiskTooltipUI: React.FC<LTVTooltipScriptReturn> = (props) => {
           usdcThreshold: isThresholdLoading ? "-" : negative_usdc_threshold,
         })}
       </Text>
-      <Button
+      <MainButton
         fullWidth
         size={"md"}
-        variant={"outlined"}
-        color={"secondary"}
+        variant="secondary"
         onClick={onConvert}
       >
         {t("transfer.convert.convertAssets")}
-      </Button>
+      </MainButton>
     </Flex>
   );
 };

@@ -13,6 +13,7 @@ import {
   EVMAvatar,
   Flex,
   Text,
+  MainButton,
 } from "@veltodefi/ui";
 
 export type AccountMenuProps = {
@@ -73,10 +74,10 @@ export const AccountMenu = (props: AccountMenuProps) => {
 
   if (state.status <= AccountStatusEnum.NotConnected || disabled) {
     return (
-      <Button
+      <MainButton
         data-testid="oui-testid-nav-bar-connectWallet-btn"
         size="md"
-        variant={disabled ? undefined : "gradient"}
+        variant="primary"
         angle={45}
         className="wallet-connect-button"
         loading={state.validating}
@@ -100,7 +101,7 @@ export const AccountMenu = (props: AccountMenuProps) => {
         }}
       >
         {isMobile ? t("connector.connect") : t("connector.connectWallet")}
-      </Button>
+      </MainButton>
     );
     // return (
     //   <Tooltip
@@ -117,9 +118,9 @@ export const AccountMenu = (props: AccountMenuProps) => {
 
   if (state.status <= AccountStatusEnum.NotSignedIn) {
     return (
-      <Button size="md" onClick={() => props.onCrateAccount()}>
+      <MainButton variant="primary"  size="md" onClick={() => props.onCrateAccount()}>
         {t("connector.createAccount")}
-      </Button>
+      </MainButton>
     );
     // return (
     //   <Tooltip
@@ -136,8 +137,9 @@ export const AccountMenu = (props: AccountMenuProps) => {
 
   if (state.status <= AccountStatusEnum.DisabledTrading) {
     return (
-      <Button
+      <MainButton
         size="md"
+        variant="primary"
         onClick={() => {
           props
             .onCreateOrderlyKey()
@@ -146,7 +148,7 @@ export const AccountMenu = (props: AccountMenuProps) => {
         }}
       >
         {t("connector.enableTrading")}
-      </Button>
+      </MainButton>
     );
     // return (
     //   <Tooltip
@@ -193,16 +195,16 @@ const WalletMenu = (props: {
   return (
     <DropdownMenuRoot>
       <DropdownMenuTrigger asChild>
-        <Button
+        <MainButton
           size="md"
-          variant="gradient"
+          variant="primary"
           angle={45}
           data-testid="oui-testid-nav-bar-address-btn"
         >
           <Text.formatted rule="address" className="oui-text-[rgba(0,0,0,.88)]">
             {address}
           </Text.formatted>
-        </Button>
+        </MainButton>
       </DropdownMenuTrigger>
       <DropdownMenuPortal>
         <DropdownMenuContent

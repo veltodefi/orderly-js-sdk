@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Button, cn, Flex, Slider, Text } from "@veltodefi/ui";
+import { MainButton, cn, Flex, Slider, Text } from "@veltodefi/ui";
 
 type QuantitySliderProps = {
   value: number;
@@ -22,11 +22,10 @@ export const QuantitySlider = (props: QuantitySliderProps) => {
     <>
       <Flex justify={"between"} width={"100%"} gap={2}>
         {[25, 50, 75, 100].map((e, index) => (
-          <Button
+          <MainButton
             key={index}
-            variant={"outlined"}
             size={"xs"}
-            color="secondary"
+            variant="secondary"
             onClick={() => {
               props.onValueChange(e);
               setSliderValue(e);
@@ -35,7 +34,7 @@ export const QuantitySlider = (props: QuantitySliderProps) => {
               "oui-w-1/4",
               sliderValue === e ? "oui-border-primary oui-text-primary" : "",
             )}
-          >{`${e}%`}</Button>
+          >{`${e}%`}</MainButton>
         ))}
       </Flex>
       <Slider

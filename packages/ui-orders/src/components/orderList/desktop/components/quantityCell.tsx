@@ -10,7 +10,7 @@ import {
   toast,
   Text,
   Slider,
-  Button,
+  MainButton,
   PopoverTrigger,
   PopoverRoot,
   PopoverContent,
@@ -558,10 +558,9 @@ const Buttons = (props: { onClick: (value: number) => void }) => {
     <Flex gap={2} width={"100%"}>
       {list.map((item, index) => {
         return (
-          <Button
+          <MainButton
             key={index}
-            variant="outlined"
-            color="secondary"
+            variant="secondary"
             size="xs"
             onClick={(e) => {
               e.stopPropagation();
@@ -571,7 +570,7 @@ const Buttons = (props: { onClick: (value: number) => void }) => {
             className="oui-w-1/5"
           >
             {item.label}
-          </Button>
+          </MainButton>
         );
       })}
     </Flex>

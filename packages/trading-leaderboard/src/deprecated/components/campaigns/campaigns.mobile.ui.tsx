@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { cn, Box, Text, Flex, Button, Select } from "@veltodefi/ui";
+import { cn, Box, Text, Flex, Button, Select, MainButton } from "@veltodefi/ui";
 import { CampaignsScriptReturn, CurrentCampaigns } from "./campaigns.script";
 
 export type CampaignsProps = {
@@ -111,9 +111,8 @@ const CampaignItem: FC<{ campaign: CurrentCampaigns }> = ({ campaign }) => {
           </Text>
         </Flex>
         <Flex justify="between" width="100%" gapX={3}>
-          <Button
-            variant="outlined"
-            color="secondary"
+          <MainButton
+            variant="secondary"
             fullWidth
             size="md"
             onClick={() => {
@@ -121,8 +120,9 @@ const CampaignItem: FC<{ campaign: CurrentCampaigns }> = ({ campaign }) => {
             }}
           >
             {t("tradingLeaderboard.learnMore")}
-          </Button>
-          <Button
+          </MainButton>
+          <MainButton
+            variant="primary"
             size="md"
             fullWidth
             onClick={() => {
@@ -130,7 +130,7 @@ const CampaignItem: FC<{ campaign: CurrentCampaigns }> = ({ campaign }) => {
             }}
           >
             {t("tradingLeaderboard.tradeNow")}
-          </Button>
+          </MainButton>
         </Flex>
       </Flex>
     </Box>

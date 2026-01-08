@@ -8,6 +8,7 @@ import {
   Text,
   Box,
   Button,
+  MainButton,
   ArrowDownShortIcon,
   EyeIcon,
   EyeCloseIcon,
@@ -387,19 +388,20 @@ export const AssetView: FC<
   const { t } = useTranslation();
 
   const transferButton = hasSubAccount && (
-    <Button
+    <MainButton
       fullWidth
-      color="secondary"
+      variant="secondary"
       size="md"
       onClick={onTransfer}
       data-testid="oui-testid-assetView-transfer-button"
     >
       <Text>{t("common.transfer")}</Text>
-    </Button>
+    </MainButton>
   );
 
   const depositButton = isMainAccount && (
-    <Button
+    <MainButton
+      variant="primary"
       data-testid="oui-testid-assetView-deposit-button"
       fullWidth
       size="md"
@@ -409,13 +411,13 @@ export const AssetView: FC<
         <ArrowDownShortIcon opacity={1} className="oui-text-primary-contrast" />
       )}
       <Text>{t("common.deposit")}</Text>
-    </Button>
+    </MainButton>
   );
 
   const withdrawButton = isMainAccount && (
-    <Button
+    <MainButton
       fullWidth
-      color="secondary"
+      variant="secondary"
       size="md"
       onClick={onWithdraw}
       data-testid="oui-testid-assetView-withdraw-button"
@@ -428,7 +430,7 @@ export const AssetView: FC<
         />
       )}
       <Text>{t("common.withdraw")}</Text>
-    </Button>
+    </MainButton>
   );
 
   return (
@@ -469,7 +471,8 @@ export const AssetView: FC<
                 </Text>
               </Flex>
             </Box>
-            <Button
+            <MainButton
+              variant="primary"
               data-testid="oui-testid-assetView-deposit-button"
               fullWidth
               size="md"
@@ -480,7 +483,7 @@ export const AssetView: FC<
                 className="oui-text-primary-contrast"
               />
               <Text>{t("common.deposit")}</Text>
-            </Button>
+            </MainButton>
 
             <Box className="oui-mt-3">
               <FaucetWidget />

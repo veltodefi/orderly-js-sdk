@@ -1,7 +1,7 @@
-import { FC, SVGProps, useRef } from "react";
+import { SVGProps, useRef } from "react";
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Box, Button, Divider, Flex, Text, Tooltip } from "@veltodefi/ui";
+import { Box, Button, Divider, Flex, Text, Tooltip, MainButton } from "@veltodefi/ui";
 import { OrderListInstance, OrdersWidget } from "@veltodefi/ui-orders";
 import { SharePnLConfig } from "@veltodefi/ui-share";
 
@@ -29,15 +29,15 @@ export const OrdersPage: React.FC<{ sharePnLConfig?: SharePnLConfig }> = (
       <Flex width="100%" justify="between">
         <Text size="lg">{t("common.orders")}</Text>
         <Tooltip content={t("orders.download.tooltip")}>
-          <Button
-            color="gray"
+          <MainButton
+            variant="primary"
             size="sm"
             className="oui-bg-base-4"
             onClick={onDownload}
           >
             {t("common.download")}
             <TooltipIcon className="oui-text-base-contrast-36 oui-ml-[5px]" />
-          </Button>
+          </MainButton>
         </Tooltip>
       </Flex>
       <Divider className="oui-w-full" />

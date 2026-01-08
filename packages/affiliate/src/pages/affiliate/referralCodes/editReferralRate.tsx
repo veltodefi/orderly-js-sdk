@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { cleanStringStyle, useMutation } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import {
-  Button,
+  MainButton,
   cn,
   Dialog,
   DialogContent,
@@ -172,7 +172,8 @@ export const EditReferralRate = modal.create<{
           )}
 
           <Flex width={"100%"} justify={"center"}>
-            <Button
+            <MainButton
+              variant="primary"
               id="referral_bind_referral_code_btn"
               disabled={
                 refereeRebateRate.length === 0 ||
@@ -190,7 +191,7 @@ export const EditReferralRate = modal.create<{
               }}
             >
               {t("common.confirm")}
-            </Button>
+            </MainButton>
           </Flex>
         </div>
       </DialogContent>

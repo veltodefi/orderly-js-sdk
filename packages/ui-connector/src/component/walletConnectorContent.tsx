@@ -20,6 +20,7 @@ import {
   TextField,
   toast,
   Tooltip,
+  MainButton,
 } from "@veltodefi/ui";
 import { StepItem } from "./step";
 
@@ -306,14 +307,15 @@ const ActionButton: FC<{
   if (state <= AccountStatusEnum.NotSignedIn) {
     return (
       <Flex direction={"column"} gap={3} className="oui-w-full">
-        <Button
+        <MainButton
+          variant="primary"
           fullWidth
           onClick={() => signIn()}
           loading={loading}
           disabled={disabled}
         >
           {t("connector.createAccount")}
-        </Button>
+        </MainButton>
         {showLedgerButton && (
           <WithLedgerButton
             onClick={() => signIn()}
@@ -326,14 +328,15 @@ const ActionButton: FC<{
 
   return (
     <Flex direction={"column"} gap={3} className="oui-w-full">
-      <Button
+      <MainButton
+        variant="primary"
         fullWidth
         onClick={() => enableTrading()}
         loading={loading}
         disabled={disabled}
       >
         {t("connector.enableTrading")}
-      </Button>
+      </MainButton>
       {showLedgerButton && (
         <WithLedgerButton
           onClick={() => enableTrading()}
@@ -412,9 +415,8 @@ const WithLedgerButton = ({
     return null;
   }
   return (
-    <Button
-      variant="outlined"
-      color="primary"
+    <MainButton
+      variant="primary"
       fullWidth
       onClick={() => {
         setLedgerAddress(address);
@@ -424,7 +426,7 @@ const WithLedgerButton = ({
       className="oui-w-full"
     >
       {content}
-    </Button>
+    </MainButton>
   );
 };
 
