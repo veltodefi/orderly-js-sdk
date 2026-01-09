@@ -118,7 +118,11 @@ export const AccountMenu = (props: AccountMenuProps) => {
 
   if (state.status <= AccountStatusEnum.NotSignedIn) {
     return (
-      <MainButton variant="primary"  size="md" onClick={() => props.onCrateAccount()}>
+      <MainButton
+        variant="primary"
+        size="md"
+        onClick={() => props.onCrateAccount()}
+      >
         {t("connector.createAccount")}
       </MainButton>
     );
@@ -201,9 +205,7 @@ const WalletMenu = (props: {
           angle={45}
           data-testid="oui-testid-nav-bar-address-btn"
         >
-          <Text.formatted rule="address" className="oui-text-[rgba(0,0,0,.88)]">
-            {address}
-          </Text.formatted>
+          <Text.formatted rule="address">{address}</Text.formatted>
         </MainButton>
       </DropdownMenuTrigger>
       <DropdownMenuPortal>

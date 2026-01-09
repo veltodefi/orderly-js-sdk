@@ -1,10 +1,7 @@
 import React, { useMemo } from "react";
 import { useAccount, useWalletConnector } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import {
-  ABSTRACT_CHAIN_ID_MAP,
-  AccountStatusEnum,
-} from "@veltodefi/types";
+import { ABSTRACT_CHAIN_ID_MAP, AccountStatusEnum } from "@veltodefi/types";
 import {
   MainButton,
   cn,
@@ -120,10 +117,7 @@ const RenderUserCenter = (props: any) => {
                 black={true}
               />
             )}
-            <Text.formatted
-              rule="address"
-              className="oui-text-[rgba(0,0,0,.88)] oui-font-semibold"
-            >
+            <Text.formatted rule="address">
               {formatAddress(userAddress!)}
             </Text.formatted>
           </MainButton>
@@ -147,7 +141,7 @@ const RenderUserCenter = (props: any) => {
             black={true}
           />
         )}
-        <Text.formatted rule="address" className="oui-text-[rgba(0,0,0,.88)]">
+        <Text.formatted rule="address">
           {formatAddress(userAddress!)}
         </Text.formatted>
       </MainButton>
