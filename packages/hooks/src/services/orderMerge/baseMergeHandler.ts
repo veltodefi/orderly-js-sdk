@@ -1,12 +1,12 @@
-import { lensIndex, over } from "ramda";
+import lensIndex from "ramda/es/lensIndex";
+import over from "ramda/es/over";
 import { WSMessage, API, OrderStatus } from "@veltodefi/types";
 import { IOrderMergeHandler } from "./interface";
 
 export abstract class BaseMergeHandler<
   T extends WSMessage.AlgoOrder[] | WSMessage.Order,
   D extends API.AlgoOrder | API.Order,
-> implements IOrderMergeHandler<T, D>
-{
+> implements IOrderMergeHandler<T, D> {
   data: D;
   constructor(private message: T) {
     this.data = this.formatOrder(message);

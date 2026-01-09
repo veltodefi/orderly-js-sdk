@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { mergeDeepRight } from "ramda";
-import { PosterPainter } from "./services/painter/painter";
+import mergeDeepRight from "ramda/es/mergeDeepRight";
+import { SDKError } from "@veltodefi/types";
 import { type DrawOptions } from "./services/painter/basePaint";
 import { DefaultLayoutConfig } from "./services/painter/layout.config";
-import { SDKError } from "@veltodefi/types";
+import { PosterPainter } from "./services/painter/painter";
 
 /**
  * Generates a poster image based on position information. You can set the size, background color, font color, font size, and content position of the poster.
@@ -28,11 +28,11 @@ export const usePoster = (
      * The ratio of the poster
      */
     ratio?: number;
-  }
+  },
 ) => {
   const [error, setError] = useState<Error | null>(null);
   const [canCopy, setCanCopy] = useState<boolean>(
-    () => typeof navigator.clipboard !== "undefined"
+    () => typeof navigator.clipboard !== "undefined",
   );
 
   const painterRef = useRef<PosterPainter | null>(null);
@@ -52,8 +52,8 @@ export const usePoster = (
       painterRef.current.draw(
         mergeDeepRight<Partial<DrawOptions>, DrawOptions>(
           { layout: DefaultLayoutConfig, fontFamily: "Manrope" },
-          data
-        )
+          data,
+        ),
       );
     }
   }, [target, data]);
@@ -89,7 +89,7 @@ export const usePoster = (
         target.toBlob(resolve, type, encoderOptions);
       });
     },
-    [target]
+    [target],
   );
 
   const ref = (ref: HTMLCanvasElement | null) => {
@@ -113,7 +113,7 @@ export const usePoster = (
       link.download = filename;
       link.click();
     },
-    [target]
+    [target],
   );
 
   const copy = useCallback(() => {

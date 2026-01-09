@@ -1,11 +1,7 @@
 import { useCallback, useEffect } from "react";
-import { compose, head } from "ramda";
-import {
-  type API,
-  OrderlyOrder,
-  OrderSide,
-  OrderType,
-} from "@veltodefi/types";
+import compose from "ramda/es/compose";
+import head from "ramda/es/head";
+import { type API, OrderlyOrder, OrderSide, OrderType } from "@veltodefi/types";
 import { priceToROI } from "../../orderly/useTakeProfitAndStopLoss/tp_slUtils";
 import { OrderCreator } from "../../services/orderCreator/interface";
 import {

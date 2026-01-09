@@ -1,4 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import compose from "ramda/es/compose";
+import head from "ramda/es/head";
+import omit from "ramda/es/omit";
+import pick from "ramda/es/pick";
+import { useDebouncedCallback } from "use-debounce";
+import { order as orderUtils } from "@veltodefi/perp";
 import {
   API,
   OrderEntity,
@@ -7,31 +13,28 @@ import {
   OrderType,
   SDKError,
 } from "@veltodefi/types";
-import { useSymbolsInfo } from "../orderly/useSymbolsInfo";
 import { Decimal, getPrecisionByNumber } from "@veltodefi/utils";
+import { useCollateral } from "../orderly/useCollateral";
+// import { availableOrderTypes } from "../utils/createOrder";
+import { useMarkPrice } from "../orderly/useMarkPrice";
+import { useMaxQty } from "../orderly/useMaxQty";
+import { usePositions } from "../orderly/usePositionStream/usePosition.store";
+import { useSymbolsInfo } from "../orderly/useSymbolsInfo";
+import { OrderFactory } from "../services/orderCreator/factory";
+import { useEventEmitter } from "../useEventEmitter";
 import { useMutation } from "../useMutation";
-import { compose, head, includes, omit, pick } from "ramda";
 import {
   baseInputHandle,
   getCalculateHandler,
   orderEntityFormatHandle,
 } from "../utils/orderEntryHelper";
-import { useCollateral } from "../orderly/useCollateral";
-import { useMaxQty } from "../orderly/useMaxQty";
-// import { availableOrderTypes } from "../utils/createOrder";
-import { useMarkPrice } from "../orderly/useMarkPrice";
-import { order as orderUtils } from "@veltodefi/perp";
-import { useEventEmitter } from "../useEventEmitter";
-import { useDebouncedCallback } from "use-debounce";
-import { OrderFactory } from "../services/orderCreator/factory";
-import { usePositions } from "../orderly/usePositionStream/usePosition.store";
 
 export type UseOrderEntryOptions = {
   commify?: boolean;
   // Whether to observe the orderbook,  if it is a limit order, the orderbook will automatically calculate the est. liq. price when it is updated.
   watchOrderbook?: boolean;
   validate?: (
-    data: OrderEntity
+    data: OrderEntity,
   ) => { [P in keyof OrderEntity]?: string } | null | undefined;
 };
 
@@ -61,7 +64,7 @@ export type UseOrderEntryReturn = {
     calculate: (
       values: Partial<OrderlyOrder>,
       field: keyof OrderEntity,
-      value: any
+      value: any,
     ) => Partial<OrderEntity>;
     validator: (values: Partial<OrderEntity>) => any;
     // clearErrors: () => void;
@@ -98,7 +101,7 @@ export type OrderParams = Required<
  */
 export function useOrderEntry(
   order: OrderParams,
-  options?: UseOrderEntryOptions
+  options?: UseOrderEntryOptions,
 ): UseOrderEntryReturn;
 /**
  * @deprecated
@@ -106,13 +109,13 @@ export function useOrderEntry(
 export function useOrderEntry(
   symbol: string,
   side: OrderSide,
-  reduceOnly: boolean
+  reduceOnly: boolean,
 ): UseOrderEntryReturn;
 export function useOrderEntry(
   symbolOrOrder: string | OrderParams,
   sideOrOptions?: OrderSide | UseOrderEntryOptions,
   reduceOnly?: boolean,
-  options?: UseOrderEntryOptions
+  options?: UseOrderEntryOptions,
 ): UseOrderEntryReturn {
   // if symbolOrOrder is string, then it's deprecated
   let isNewVersion = false;
@@ -196,7 +199,7 @@ export function useOrderEntry(
 
   const baseDP = useMemo(
     () => getPrecisionByNumber(symbolInfo[symbol]("base_tick", 0)),
-    [symbolInfo]
+    [symbolInfo],
   );
   const quoteDP = useMemo(() => {
     return getPrecisionByNumber(symbolInfo[symbol]("quote_tick", 0));
@@ -204,11 +207,11 @@ export function useOrderEntry(
 
   const baseIMR = useMemo(
     () => symbolInfo[symbol]("base_imr", 0),
-    [symbolInfo]
+    [symbolInfo],
   );
   const baseMMR = useMemo(
     () => symbolInfo[symbol]("base_mmr", 0),
-    [symbolInfo]
+    [symbolInfo],
   );
 
   const { data: markPrice } = useMarkPrice(symbol);
@@ -216,7 +219,7 @@ export function useOrderEntry(
 
   const diffOrderEntry = (
     prev: Partial<OrderParams>,
-    current: Partial<OrderParams>
+    current: Partial<OrderParams>,
   ): { key: keyof OrderParams; value: any; preValue: any } | null => {
     if (!prev) return null;
     let key, value, preValue;
@@ -225,8 +228,8 @@ export function useOrderEntry(
     for (let i = 0; i < keys.length; i++) {
       const k = keys[i];
 
-      let preveValue = prev[k];
-      let currentValue = current[k];
+      const preveValue = prev[k];
+      const currentValue = current[k];
 
       if (
         typeof preveValue === "undefined" &&
@@ -257,7 +260,7 @@ export function useOrderEntry(
   const parseString2Number = (
     order: OrderParams & Record<string, any>,
     key: keyof OrderParams,
-    dp?: number
+    dp?: number,
   ) => {
     if (typeof order[key] !== "string") return;
     // fix: delete the comma then remove the forward one of the string
@@ -278,7 +281,7 @@ export function useOrderEntry(
       if (hasPoint && !endOfPoint) {
         (order[key] as string) = `${decimalPart[0]}.${decimalPart[1].slice(
           0,
-          quoteDP
+          quoteDP,
         )}`;
       }
     }
@@ -302,7 +305,7 @@ export function useOrderEntry(
       "trigger_price",
     ])(
       //@ts-ignore
-      symbolOrOrder
+      symbolOrOrder,
     );
   }, [symbolOrOrder]);
 
@@ -361,7 +364,7 @@ export function useOrderEntry(
     parsedData?.order_type === OrderType.CLOSE_POSITION;
 
   const [doCreateOrder, { isMutating }] = useMutation<OrderEntity, any>(
-    isAlgoOrder ? "/v1/algo/order" : "/v1/order"
+    isAlgoOrder ? "/v1/algo/order" : "/v1/order",
   );
 
   // const maxQty = 3;
@@ -381,7 +384,7 @@ export function useOrderEntry(
 
     const orderCreator = OrderFactory.create(
       // @ts-ignore
-      values.order_type_ext ? values.order_type_ext : values.order_type
+      values.order_type_ext ? values.order_type_ext : values.order_type,
     );
 
     if (!orderCreator) {
@@ -407,7 +410,7 @@ export function useOrderEntry(
           ) {
             setErrors(errors);
             reject(
-              errors.order_price?.message || errors.order_quantity?.message
+              errors.order_price?.message || errors.order_quantity?.message,
             );
             // throw new SDKError(
             //   errors.order_price?.message ||
@@ -428,7 +431,7 @@ export function useOrderEntry(
                 // ...values,
                 // ...omit(["order_price"], values),
                 ...data,
-              })
+              }),
             ).then((res) => {
               // resolve(res);
               if (res && res.success) {
@@ -460,8 +463,8 @@ export function useOrderEntry(
     if (typeof reduceOnly === "boolean" && reduceOnly && !values.reduce_only) {
       return Promise.reject(
         new SDKError(
-          "The reduceOny parameter of hook does not match your order data"
-        )
+          "The reduceOny parameter of hook does not match your order data",
+        ),
       );
     }
     return createOrder({
@@ -481,14 +484,14 @@ export function useOrderEntry(
     (
       values: Partial<OrderlyOrder>,
       field: keyof OrderlyOrder,
-      value: any
+      value: any,
     ): Partial<OrderEntity> => {
       const fieldHandler = getCalculateHandler(field);
       const newValues = compose(
         head,
         orderEntityFormatHandle(baseDP, quoteDP),
         fieldHandler,
-        baseInputHandle
+        baseInputHandle,
       )([
         values,
         field,
@@ -499,7 +502,7 @@ export function useOrderEntry(
 
       return newValues as Partial<OrderEntity>;
     },
-    [markPrice]
+    [markPrice],
   );
 
   // const estLiqPrice = useMemo(() => {}, []);
@@ -590,7 +593,7 @@ export function useOrderEntry(
     if (isNewVersion) {
       if (!optionsValue?.watchOrderbook) {
         throw new SDKError(
-          "In order to calculate the estimated liquidation price, the `options.watchOrderbook` parameter must be set to true."
+          "In order to calculate the estimated liquidation price, the `options.watchOrderbook` parameter must be set to true.",
         );
       }
     } else {
@@ -613,7 +616,7 @@ export function useOrderEntry(
   //====== end ======
 
   const getPriceAndQty = (
-    symbolOrOrder: OrderEntity
+    symbolOrOrder: OrderEntity,
   ): { quantity: number; price: number } | null => {
     let quantity = Number(symbolOrOrder.order_quantity);
     const orderPrice = Number(symbolOrOrder.order_price);
@@ -624,7 +627,7 @@ export function useOrderEntry(
 
     if (!!options?.watchOrderbook && askAndBid.current.length === 0) {
       throw new SDKError(
-        "Please check if you are using the `useOrderbookStream` hook or if the orderBook has data."
+        "Please check if you are using the `useOrderbookStream` hook or if the orderBook has data.",
       );
     }
 

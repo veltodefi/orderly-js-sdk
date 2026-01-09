@@ -6,7 +6,8 @@ import React, {
   useEffect,
 } from "react";
 import { parseISO } from "date-fns";
-import { sortWith, descend } from "ramda";
+import descend from "ramda/es/descend";
+import sortWith from "ramda/es/sortWith";
 import {
   usePrivateQuery,
   RefferalAPI,

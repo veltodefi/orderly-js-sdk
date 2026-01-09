@@ -1,4 +1,5 @@
-import { lensIndex, over } from "ramda";
+import lensIndex from "ramda/es/lensIndex";
+import over from "ramda/es/over";
 import { API } from "@veltodefi/types";
 import { WSMessage } from "@veltodefi/types";
 import { AlgoOrderMergeHandler } from "../services/orderMerge/algoOrderMergeHandler";

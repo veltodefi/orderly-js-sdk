@@ -1,5 +1,5 @@
 import React from "react";
-import { pick } from "ramda";
+import pick from "ramda/es/pick";
 import { useTranslation } from "@veltodefi/i18n";
 import { Box, cn, Flex, Text } from "@veltodefi/ui";
 import { CollapseIcon, ExpandIcon } from "../../icons";

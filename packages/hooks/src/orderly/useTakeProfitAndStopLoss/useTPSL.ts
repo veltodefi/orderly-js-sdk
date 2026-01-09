@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { produce } from "immer";
-import { omit } from "ramda";
+import omit from "ramda/es/omit";
 import {
   API,
   AlgoOrderEntity,

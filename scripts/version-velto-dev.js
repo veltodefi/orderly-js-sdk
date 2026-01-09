@@ -67,7 +67,7 @@ async function addPrereleaseTag() {
       const newNum = currentNum + 1;
       pkgJson.version = currentVersion.replace(
         prereleasePatternMain,
-        `-velto-main.${newNum}`,
+        `-velto-dev.${newNum}`,
       );
     } else if (matchDev) {
       // Increment existing prerelease number
@@ -75,11 +75,11 @@ async function addPrereleaseTag() {
       const newNum = currentNum + 1;
       pkgJson.version = currentVersion.replace(
         prereleasePatternDev,
-        `-velto-main.${newNum}`,
+        `-velto-dev.${newNum}`,
       );
     } else {
       // Add new prerelease tag
-      pkgJson.version = `${currentVersion}-velto-main.0`;
+      pkgJson.version = `${currentVersion}-velto-dev.0`;
     }
 
     fs.writeFileSync(pkgJsonPath, JSON.stringify(pkgJson, null, 2) + "\n");
@@ -116,8 +116,8 @@ async function main() {
     console.log("📦 Publishing packages...");
     const npmRegistry = process.env.NPM_REGISTRY;
     const publishCmd = npmRegistry
-      ? `npm_config_registry=${npmRegistry} pnpm -r publish --tag velto-main --no-git-checks`
-      : "pnpm -r publish --tag velto-main --no-git-checks";
+      ? `npm_config_registry=${npmRegistry} pnpm -r publish --tag velto-dev --no-git-checks`
+      : "pnpm -r publish --tag velto-dev --no-git-checks";
 
     execSync(publishCmd, { stdio: "inherit" });
     console.log("\n✓ Packages published successfully\n");
