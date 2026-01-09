@@ -253,6 +253,7 @@ export const TPSL: React.FC<TPSLBuilderState & TPSLProps> = (props) => {
         <ThrottledButton
           size={"md"}
           data-testid={"tpsl-confirm"}
+          variant="primary"
           disabled={status.isCreateMutating || !tpslEnable}
           loading={status.isCreateMutating || status.isUpdateMutating}
           onClick={() => {

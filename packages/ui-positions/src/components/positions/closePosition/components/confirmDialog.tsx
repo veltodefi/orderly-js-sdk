@@ -62,6 +62,7 @@ export const ConfirmFooter: FC<{
         id="oui-positions-confirm-footer-confirm-button"
         onClick={props.onConfirm}
         fullWidth
+        variant="primary"
         loading={props.submitting}
         disabled={props.disabled}
         size="md"

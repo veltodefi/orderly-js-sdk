@@ -119,6 +119,7 @@ export const EditSheet: FC<EditSheetState> = (props) => {
         }}
         loading={props.submitting}
         disabled={disabled}
+        variant="primary"
       >
         {t("common.confirm")}
       </ThrottledButton>

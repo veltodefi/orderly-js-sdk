@@ -66,7 +66,7 @@ export const ConfirmContent = memo((props: ConfirmContentProps) => {
         >
           {t("common.cancel")}
         </MainButton>
-        <ThrottledButton size={"md"} loading={isSubmitting} onClick={onConfirm}>
+        <ThrottledButton variant="primary" size={"md"} loading={isSubmitting} onClick={onConfirm}>
           {t("common.confirm")}
         </ThrottledButton>
       </div>

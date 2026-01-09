@@ -160,6 +160,7 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
         fullWidth
         disabled={submitting || disabled}
         loading={submitting}
+        variant="primary"
         onClick={(e) => {
           e.stopPropagation();
           e.preventDefault();

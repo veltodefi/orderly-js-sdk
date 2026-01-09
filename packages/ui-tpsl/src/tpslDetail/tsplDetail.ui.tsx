@@ -265,9 +265,8 @@ export const AddButton = (props: {
   };
   return (
     <ThrottledButton
-      variant="outlined"
+      variant="secondary"
       size="sm"
-      color="gray"
       className="oui-h-6 oui-w-[94px] oui-text-2xs"
       onClick={onAdd}
     >
@@ -285,10 +284,9 @@ export const CancelAllBtn = (props: {
   return (
     <ThrottledButton
       loading={loading}
-      variant="outlined"
+      variant="secondary"
       disabled={!props.canCancelAll}
       size="sm"
-      color="gray"
       className="oui-h-6  oui-w-[94px] oui-text-2xs disabled:oui-border-base-contrast-16 disabled:oui-bg-transparent disabled:oui-text-base-contrast-20"
       onClick={() => {
         setLoading(true);

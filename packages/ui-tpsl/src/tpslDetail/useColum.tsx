@@ -196,8 +196,7 @@ export const CancelAllBtn = (props: {
     <ThrottledButton
       size="sm"
       loading={loading}
-      variant="text"
-      color="gray"
+      variant="tertiary"
       onClick={(e) => {
         e.stopPropagation();
         console.log("delete");

@@ -78,8 +78,7 @@ export const DeleteBtn = (props: {
       className="oui-h-6 oui-text-2xs oui-text-base-contrast-54"
       size="sm"
       loading={loading}
-      variant="outlined"
-      color="gray"
+      variant="secondary"
       onClick={(e) => {
         e.stopPropagation();
         setLoading(true);

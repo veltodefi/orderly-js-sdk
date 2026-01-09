@@ -21,7 +21,6 @@ export const AccountSheet: FC<AccountSheetState> = (props) => {
             onClick={props.onGetTestUSDC}
             fullWidth
             loading={props.gettingTestUSDC}
-            className="oui-border-primary-light oui-text-primary-light"
           >
             {t("trading.faucet.getTestUSDC")}
           </MainButton>

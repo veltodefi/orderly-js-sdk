@@ -95,7 +95,7 @@ export const SimpleDialogFooter: FC<SimpleDialogFooterProps> = (props) => {
           disabled={disabled || primaryLoading}
           loading={primaryLoading}
           fullWidth={fullWidth}
-          color={color}
+          variant="primary"
         >
           {label}
         </ThrottledButton>

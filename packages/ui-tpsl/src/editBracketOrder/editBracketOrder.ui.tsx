@@ -243,6 +243,7 @@ export const EditBracketOrderUI = (props: Props & { onClose?: () => void }) => {
         <ThrottledButton
           className="oui-w-[184px]"
           data-testid={"tpsl-confirm"}
+          variant="primary"
           disabled={!props.isPriceChanged}
           loading={props.isMutating}
           onClick={() => {
