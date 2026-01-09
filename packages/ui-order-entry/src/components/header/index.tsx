@@ -35,7 +35,7 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           data-type={OrderSide.BUY}
           className={cn(
             side === OrderSide.BUY && canTrade
-              ? "oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
+              ? ""
               : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
           )}
           data-testid="oui-testid-orderEntry-side-buy-button"
@@ -52,7 +52,7 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           size={"md"}
           className={cn(
             side === OrderSide.SELL && props.canTrade
-              ? "oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"
+              ? ""
               : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
           )}
           data-testid="oui-testid-orderEntry-side-sell-button"
