@@ -7,7 +7,7 @@ declare global {
 }
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
-  window.__ORDERLY_VERSION__["@veltodefi/react-app"] = "2.8.6-velto-dev.52";
+  window.__ORDERLY_VERSION__["@veltodefi/react-app"] = "2.8.6-velto-dev.53";
 }
 
-export default "2.8.6-velto-dev.52";
+export default "2.8.6-velto-dev.53";
