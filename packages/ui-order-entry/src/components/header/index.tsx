@@ -27,8 +27,9 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
       >
         <MainButton
           variant="primary"
-          onClick={() => {
+          onClick={(e) => {
             props.setOrderValue("side", OrderSide.BUY);
+            e.currentTarget.blur();
           }}
           size={"md"}
           fullWidth
@@ -44,8 +45,9 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
         </MainButton>
         <MainButton
           variant="primary"
-          onClick={() => {
+          onClick={(e) => {
             props.setOrderValue("side", OrderSide.SELL);
+            e.currentTarget.blur();
           }}
           data-type={OrderSide.SELL}
           fullWidth

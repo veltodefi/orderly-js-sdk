@@ -35,7 +35,9 @@ export const FavoritesEmpty: FC<FavoritesEmptyProps> = (props) => {
           opacity={1}
           size={12}
         />
-        <Text intensity={98}>{t("markets.favorites.addFavorites")}</Text>
+        <Text className="hover:oui-text-mainButton" intensity={98}>
+          {t("markets.favorites.addFavorites")}
+        </Text>
       </MainButton>
     </Flex>
   );
