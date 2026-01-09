@@ -8,7 +8,7 @@ declare global {
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
   window.__ORDERLY_VERSION__["@veltodefi/trading-leaderboard"] =
-    "2.8.6-velto-dev.54";
+    "2.8.6-velto-dev.55";
 }
 
-export default "2.8.6-velto-dev.54";
+export default "2.8.6-velto-dev.55";
