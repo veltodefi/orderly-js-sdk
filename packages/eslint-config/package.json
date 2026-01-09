@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/eslint-config",
-  "version": "2.8.6-velto-dev.53",
+  "version": "2.8.6-velto-dev.54",
   "main": "index.mjs",
   "module": "index.mjs",
   "license": "MIT",
