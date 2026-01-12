@@ -8,7 +8,7 @@ declare global {
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
   window.__ORDERLY_VERSION__["@veltodefi/ui-tradingview"] =
-    "2.8.6-velto-main.50";
+    "2.8.6-velto-main.56";
 }
 
-export default "2.8.6-velto-main.50";
+export default "2.8.6-velto-main.56";

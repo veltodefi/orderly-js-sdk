@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Button, cn, Flex, Text } from "@veltodefi/ui";
+import { cn, Flex, MainButton, Text } from "@veltodefi/ui";
 import { commifyOptional } from "@veltodefi/utils";
 import { ArrowRightIcon } from "../../../components/arrowRightIcon";
 import { USDCIcon } from "../../../components/usdcIcon";
@@ -127,13 +127,12 @@ const Bottom: FC<AsAnAffiliateReturns> = (props) => {
 
     return (
       <>
-        <Button
-          variant="contained"
-          color="light"
+        <MainButton
+          variant="primary"
           onClick={props.becomeAnAffiliate}
         >
           {t("affiliate.asAffiliate.button")}
-        </Button>
+        </MainButton>
         <Flex
           direction={"column"}
           justify={"between"}

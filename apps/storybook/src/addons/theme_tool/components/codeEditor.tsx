@@ -3,7 +3,7 @@ import { css } from "@codemirror/lang-css";
 import { githubLight } from "@uiw/codemirror-theme-github";
 import CodeMirror, { ViewUpdate } from "@uiw/react-codemirror";
 import { styled } from "storybook/theming";
-import { Button } from "@veltodefi/ui";
+import { MainButton } from "@veltodefi/ui";
 import { object2Css, parseCssToJson } from "../utils";
 import { useTheme } from "./context";
 
@@ -60,24 +60,21 @@ export const CodeEditor = () => {
       />
 
       <div style={{ position: "fixed", right: 30, bottom: 30 }}>
-        <Button
+        <MainButton
           size="md"
-          variant="outlined"
-          color="secondary"
+          variant="secondary"
           onClick={copy}
-          style={{ color: "#000" }}
         >
           Copy
-        </Button>
-        <Button
+        </MainButton>
+        <MainButton
           size="md"
-          variant="outlined"
-          color="secondary"
+          variant="secondary"
           onClick={download}
-          style={{ color: "#000", marginLeft: 8 }}
+          style={{ marginLeft: 8 }}
         >
           Download
-        </Button>
+        </MainButton>
       </div>
     </Container>
   );

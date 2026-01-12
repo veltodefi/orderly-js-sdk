@@ -2,7 +2,7 @@ import { FC, ReactNode, useMemo } from "react";
 import { useMediaQuery } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import {
-  Button,
+  MainButton,
   DataTable,
   Divider,
   Flex,
@@ -201,8 +201,8 @@ const MobileCell: FC<{
             setPinCode(data.code, !e);
           }}
         />
-        <Button
-          variant="outlined"
+        <MainButton
+          variant="secondary"
           size="xs"
           className="oui-px-[20px]"
           onClick={(e) => {
@@ -210,7 +210,7 @@ const MobileCell: FC<{
           }}
         >
           {t("affiliate.referralCodes.copyLink")}
-        </Button>
+        </MainButton>
       </Flex>
     </Flex>
   );
@@ -316,8 +316,8 @@ const DesktopLayout: FC<ReferralCodesReturns> = (props) => {
       width: 74,
       className: "!oui-px-0",
       render: (value, data) => (
-        <Button
-          variant="outlined"
+        <MainButton
+          variant="secondary"
           size="sm"
           className="oui-px-5"
           onClick={(e) => {
@@ -325,7 +325,7 @@ const DesktopLayout: FC<ReferralCodesReturns> = (props) => {
           }}
         >
           {t("affiliate.referralCodes.copyLink")}
-        </Button>
+        </MainButton>
       ),
     });
 

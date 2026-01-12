@@ -3,6 +3,7 @@ import { useTranslation } from "@veltodefi/i18n";
 import { AccountStatusEnum } from "@veltodefi/types";
 import {
   Button,
+  MainButton,
   cn,
   Dialog,
   DialogBody,
@@ -162,9 +163,9 @@ const EntryCode: FC<AsTraderReturns> = (props) => {
   return (
     <Dialog open={props.open} onOpenChange={props.setOpen}>
       <DialogTrigger>
-        <Button variant="contained" color="light">
+        <MainButton variant="primary">
           {t("affiliate.asTrader.button")}
-        </Button>
+        </MainButton>
       </DialogTrigger>
       <DialogContent className="oui-w-[320px] oui-font-semibold">
         <DialogHeader>
@@ -222,9 +223,8 @@ const EntryCode: FC<AsTraderReturns> = (props) => {
               </Text>
             )}
             <AuthGuard buttonProps={{ size: "md", fullWidth: true }}>
-              <Button
-                variant="contained"
-                color="primary"
+              <MainButton
+                variant="primary"
                 size="md"
                 className="oui-px-[40px]"
                 fullWidth
@@ -235,7 +235,7 @@ const EntryCode: FC<AsTraderReturns> = (props) => {
                 }}
               >
                 {t("common.confirm")}
-              </Button>
+              </MainButton>
             </AuthGuard>
           </Flex>
         </DialogBody>

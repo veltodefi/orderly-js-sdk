@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { AccountStatusEnum, NetworkId } from "@veltodefi/types";
-import { Box, Button, modal } from "@veltodefi/ui";
+import { Box, Button, modal, MainButton } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { Decimal } from "@veltodefi/utils";
 import { WithdrawTo } from "../../types";
@@ -77,30 +77,32 @@ export const WithdrawAction = (props: IProps) => {
   const renderButton = () => {
     if (props.withdrawTo === WithdrawTo.Account) {
       return (
-        <Button
+        <MainButton
           fullWidth
+          variant="primary"
           disabled={disabled}
           loading={loading}
           onClick={onTransfer}
           size={buttonSize}
         >
           {t("common.withdraw")}
-        </Button>
+        </MainButton>
       );
     }
 
     if (checkIsBridgeless) {
       return (
-        <Button
+        <MainButton
           data-testid="oui-testid-withdraw-dialog-withdraw-btn"
           fullWidth
+          variant="primary"
           disabled={disabled}
           loading={loading}
           onClick={preWithdraw}
           size={buttonSize}
         >
           {t("common.withdraw")}
-        </Button>
+        </MainButton>
       );
     }
     return <SwitchChainButton networkId={networkId} size={buttonSize} />;

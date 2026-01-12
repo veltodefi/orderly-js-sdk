@@ -2,7 +2,7 @@ import { FC, useCallback, useState } from "react";
 import { useConfig, useMutation } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderEntity } from "@veltodefi/types";
-import { Button } from "@veltodefi/ui";
+import { MainButton } from "@veltodefi/ui";
 
 export const Renew: FC<{ record: any }> = (props) => {
   const { record } = props;
@@ -47,10 +47,9 @@ export const Renew: FC<{ record: any }> = (props) => {
   }, []);
 
   return (
-    <Button
+    <MainButton
       size={"sm"}
-      variant={"outlined"}
-      color={"secondary"}
+      variant="secondary"
       loading={isMutating}
       disabled={isMutating}
       onClick={(event) => {
@@ -61,6 +60,6 @@ export const Renew: FC<{ record: any }> = (props) => {
       }}
     >
       {t("orders.history.renew")}
-    </Button>
+    </MainButton>
   );
 };

@@ -1,6 +1,6 @@
 import { PropsWithChildren, Component, ErrorInfo, ReactNode } from "react";
 import { i18n } from "@veltodefi/i18n";
-import { Button, cn, Flex, Text } from "@veltodefi/ui";
+import { MainButton, cn, Flex, Text } from "@veltodefi/ui";
 
 type ErrorBoundaryState = {
   hasError: boolean;
@@ -82,7 +82,7 @@ export class ErrorBoundary extends Component<
           >
             {this.props.description || i18n.t("errorBoundary.description")}
           </Text>
-          <Button
+          <MainButton
             onClick={() => {
               if (typeof this.props.onRefresh === "function") {
                 this.props.onRefresh();
@@ -91,12 +91,12 @@ export class ErrorBoundary extends Component<
               }
             }}
             className="oui-mt-4 oui-font-semibold"
-            variant="gradient"
+            variant="primary"
             size="md"
           >
             <RefreshIcon className="oui-mr-1" />
             {this.props.refreshButtonText || i18n.t("errorBoundary.refresh")}
-          </Button>
+          </MainButton>
           {/* {process.env.NODE_ENV === "development" && this.state.error && (
             <details className="mt-4 p-4 bg-red-50 border border-red-200 rounded text-left max-w-2xl">
               <summary className="cursor-pointer font-medium text-red-800">

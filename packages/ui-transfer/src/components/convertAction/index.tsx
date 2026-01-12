@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { AccountStatusEnum, NetworkId } from "@veltodefi/types";
-import { Box, Button } from "@veltodefi/ui";
+import { Box, MainButton } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 
 export interface ConvertActionButtonProps {
@@ -22,15 +22,16 @@ export const ConvertAction: React.FC<ConvertActionButtonProps> = (props) => {
         networkId={networkId}
         buttonProps={{ fullWidth: true, size: { initial: "md", lg: "lg" } }}
       >
-        <Button
+        <MainButton
           fullWidth
+          variant="primary"
           disabled={disabled}
           loading={loading}
           size={{ initial: "md", lg: "lg" }}
           onClick={onConvert}
         >
           {t("transfer.convert")}
-        </Button>
+        </MainButton>
       </AuthGuard>
     </Box>
   );

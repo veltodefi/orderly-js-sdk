@@ -1,7 +1,7 @@
 import { FC, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
-  Button,
+  MainButton,
   CloseCircleFillIcon,
   cn,
   Input,
@@ -261,7 +261,8 @@ export const MobileSharePnLContent: FC<{
       </ScrollArea>
 
       <div className="oui-pt-2">
-        <Button
+        <MainButton
+          variant="primary"
           fullWidth
           className="oui-h-[40px] oui-text-[16px]"
           onClick={() => {
@@ -272,7 +273,7 @@ export const MobileSharePnLContent: FC<{
           }}
         >
           {t("common.share")}
-        </Button>
+        </MainButton>
       </div>
     </div>
   );

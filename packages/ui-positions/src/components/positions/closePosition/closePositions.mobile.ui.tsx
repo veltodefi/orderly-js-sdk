@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Badge,
-  Button,
+  MainButton,
   cn,
   Divider,
   Flex,
@@ -152,14 +152,15 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
 
   const footer = (
     <Flex width={"100%"} gap={3} mt={2}>
-      <Button fullWidth color="secondary" onClick={props.onCloseSheet}>
+      <MainButton fullWidth variant="secondary" onClick={props.onCloseSheet}>
         {t("common.cancel")}
-      </Button>
+      </MainButton>
 
       <ThrottledButton
         fullWidth
         disabled={submitting || disabled}
         loading={submitting}
+        variant="primary"
         onClick={(e) => {
           e.stopPropagation();
           e.preventDefault();
@@ -173,9 +174,8 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
 
   return (
     <>
-      <Button
-        variant="outlined"
-        color="secondary"
+      <MainButton
+        variant="secondary"
         size="sm"
         className="oui-border-base-contrast-36"
         onClick={(e) => {
@@ -185,7 +185,7 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
         }}
       >
         {title}
-      </Button>
+      </MainButton>
 
       <SimpleSheet title={title} open={sheetOpen} onOpenChange={setSheetOpen}>
         <Flex

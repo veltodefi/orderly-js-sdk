@@ -10,7 +10,7 @@ import {
 } from "@veltodefi/types";
 import {
   Box,
-  Button,
+  MainButton,
   Flex,
   Grid,
   Text,
@@ -239,9 +239,9 @@ export const TPSL: React.FC<TPSLBuilderState & TPSLProps> = (props) => {
         </div>
       </ScrollArea>
       <Grid px={2} cols={2} gap={3} mt={4}>
-        <Button
+        <MainButton
           size={"md"}
-          color={"secondary"}
+          variant="secondary"
           data-testid={"tpsl-cancel"}
           onClick={() => {
             props.close?.();
@@ -249,10 +249,11 @@ export const TPSL: React.FC<TPSLBuilderState & TPSLProps> = (props) => {
           }}
         >
           {t("common.cancel")}
-        </Button>
+        </MainButton>
         <ThrottledButton
           size={"md"}
           data-testid={"tpsl-confirm"}
+          variant="primary"
           disabled={status.isCreateMutating || !tpslEnable}
           loading={status.isCreateMutating || status.isUpdateMutating}
           onClick={() => {

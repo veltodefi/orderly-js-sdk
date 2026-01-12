@@ -3,10 +3,10 @@ import { useTranslation } from "@veltodefi/i18n";
 import {
   Flex,
   ListView,
-  Button,
   Grid,
   Picker,
   DataFilter,
+  MainButton,
   cn,
   TableFeatures,
 } from "@veltodefi/ui";
@@ -215,9 +215,8 @@ const CancelAll: FC<OrdersBuilderState> = (props) => {
   const formattedSymbol = symbol ? formatSymbol(symbol, "base") : symbol;
 
   return (
-    <Button
-      variant="outlined"
-      color="secondary"
+    <MainButton
+      variant="secondary"
       size="xs"
       disabled={(props.dataSource?.length ?? 0) == 0}
       className="disabled:oui-bg-transport"
@@ -227,6 +226,6 @@ const CancelAll: FC<OrdersBuilderState> = (props) => {
       {symbol
         ? t("orders.cancelAll.ofSymbol", { symbol: formattedSymbol })
         : t("orders.cancelAll")}
-    </Button>
+    </MainButton>
   );
 };

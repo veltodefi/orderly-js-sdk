@@ -16,8 +16,7 @@ export const CancelButton: FC<{
   return (
     <ThrottledButton
       size="sm"
-      variant={"outlined"}
-      color={"secondary"}
+      variant={"secondary"}
       onClick={(event) => {
         if (!onCancelOrder) return;
         event.preventDefault();

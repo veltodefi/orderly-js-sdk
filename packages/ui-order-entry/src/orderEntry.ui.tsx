@@ -439,10 +439,11 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           id={"order-entry-submit-button"}
           // color={side === OrderSide.BUY ? "buy" : "sell"}
           data-type={OrderSide.BUY}
+          variant="primary"
           className={cn(
             side === OrderSide.BUY
-              ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
-              : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80",
+              ? "orderly-order-entry-submit-button-buy"
+              : "orderly-order-entry-submit-button-sell",
           )}
           onClick={validateSubmit}
           loading={props.isMutating}

@@ -1,6 +1,6 @@
 import { FC, useMemo, useState } from "react";
 import { useTranslation, Trans } from "@veltodefi/i18n";
-import { InfoCircleIcon, Tooltip, Text, Button, cn } from "@veltodefi/ui";
+import { InfoCircleIcon, Tooltip, Text, Button, cn, MainButton } from "@veltodefi/ui";
 import { commify } from "@veltodefi/utils";
 import { CampaignConfig, UserData } from "../campaigns/type";
 import {
@@ -230,9 +230,9 @@ export const RewardsDesktopUI: FC<RewardsDesktopUIProps> = ({
         ])}
       >
         {campaign?.rule_url && (
-          <Button
+          <MainButton
             size={isMobile ? "md" : "lg"}
-            variant="outlined"
+            variant="secondary"
             className={cn([
               "oui-border-[rgb(var(--oui-gradient-brand-start))] oui-text-[rgb(var(--oui-gradient-brand-start))] hover:oui-bg-[rgb(var(--oui-gradient-brand-start))]/[0.08] active:oui-bg-[rgb(var(--oui-gradient-brand-start))]/[0.08]",
               isMobile ? "oui-flex-1" : "oui-w-[140px]",
@@ -240,13 +240,12 @@ export const RewardsDesktopUI: FC<RewardsDesktopUIProps> = ({
             onClick={onLearnMore}
           >
             {t("tradingLeaderboard.viewRules")}
-          </Button>
+          </MainButton>
         )}
         {shouldShowJoinButton && (
-          <Button
+          <MainButton
             size={isMobile ? "md" : "lg"}
-            variant="gradient"
-            color="primary"
+            variant="primary"
             loading={isJoining}
             disabled={isJoining}
             className={cn([isMobile ? "oui-flex-1" : "oui-w-[140px]"])}
@@ -255,18 +254,17 @@ export const RewardsDesktopUI: FC<RewardsDesktopUIProps> = ({
             }
           >
             {t("tradingLeaderboard.joinNow")}
-          </Button>
+          </MainButton>
         )}
         {!shouldShowJoinButton && canTrade && (
-          <Button
+          <MainButton
             size={isMobile ? "md" : "lg"}
-            variant="gradient"
-            color="primary"
+            variant="primary"
             className={cn([isMobile ? "oui-flex-1" : "oui-w-[140px]"])}
             onClick={onTradeNow}
           >
             {t("tradingLeaderboard.tradeNow")}
-          </Button>
+          </MainButton>
         )}
       </div>
     </div>

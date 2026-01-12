@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
-import { ComputedAlgoOrder, useLocalStorage } from "@veltodefi/hooks";
+import { useLocalStorage } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { AlgoOrderRootType, API, PositionType } from "@veltodefi/types";
-import { Box, Button, modal, toast } from "@veltodefi/ui";
-import { ButtonProps } from "@veltodefi/ui";
+import { Box, MainButton, modal } from "@veltodefi/ui";
+import { MainButtonProps } from "@veltodefi/ui";
 import { TPSLDialogId } from "./positionTPSL";
 
 export const PositionTPSLPopover = (props: {
@@ -15,7 +15,7 @@ export const PositionTPSLPopover = (props: {
   /**
    * Button props
    */
-  buttonProps?: ButtonProps;
+  buttonProps?: MainButtonProps;
   isEditing?: boolean;
   children?: ReactNode;
 }) => {
@@ -43,17 +43,13 @@ export const PositionTPSLPopover = (props: {
   return (
     <Box onClick={onEdit} className="oui-cursor-pointer">
       {props.children || (
-        <Button
-          variant="outlined"
+        <MainButton
+          variant="secondary"
           size="sm"
-          color="secondary"
           {...buttonProps}
-          // onClick={() => {
-          //   setOpen(true);
-          // }}
         >
           {props.label}
-        </Button>
+        </MainButton>
       )}
     </Box>
   );

@@ -2,7 +2,7 @@ import { forwardRef, SVGProps, useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderSide } from "@veltodefi/types";
 import {
-  Button,
+  MainButton,
   Flex,
   Grid,
   DataTable,
@@ -189,12 +189,12 @@ export const ScaledOrderConfirm = (props: ScaledOrderConfirmProps) => {
       </div>
 
       <Grid cols={2} gapX={3}>
-        <Button color={"secondary"} size={"md"} onClick={onCancel}>
+        <MainButton variant="secondary" size={"md"} onClick={onCancel}>
           {t("common.cancel")}
-        </Button>
-        <Button size={"md"} onClick={onConfirm}>
+        </MainButton>
+        <MainButton variant="primary" size={"md"} onClick={onConfirm}>
           {t("common.confirm")}
-        </Button>
+        </MainButton>
       </Grid>
     </div>
   );

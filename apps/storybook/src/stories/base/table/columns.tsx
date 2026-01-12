@@ -1,4 +1,4 @@
-import { Button, Column, Flex, Text } from "@veltodefi/ui";
+import { MainButton, Column, Flex, Text } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 
 export const Columns: Column[] = [
@@ -141,14 +141,13 @@ export const Columns: Column[] = [
     align: "right",
     render: (value, record, index, context) => {
       return (
-        <Button
-          variant="outlined"
-          color="gray"
+        <MainButton
+          variant="secondary"
           size="sm"
           onClick={context.row.getToggleExpandedHandler()}
         >
           Action
-        </Button>
+        </MainButton>
       );
     },
     fixed: "right",

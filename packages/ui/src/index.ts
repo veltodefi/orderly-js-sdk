@@ -36,7 +36,7 @@ export * from "./icon";
 export * from "./modal";
 export { EVMAvatar, Avatar } from "./avatar";
 
-export type { ButtonProps } from "./button";
+export type { ButtonProps, MainButtonProps } from "./button";
 export type { BoxProps } from "./box";
 export type { FlexProps } from "./flex";
 export type { TextProps, NumeralProps } from "./typography";

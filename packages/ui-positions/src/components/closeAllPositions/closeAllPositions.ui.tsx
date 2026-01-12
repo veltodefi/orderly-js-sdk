@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Button, cn } from "@veltodefi/ui";
-import { formatSymbol } from "@veltodefi/utils";
+import { MainButton, cn } from "@veltodefi/ui";
 import type { CloseAllPositionsState } from "./closeAllPositions.script";
 
 export type CloseAllPositionsProps = CloseAllPositionsState & {
@@ -17,17 +16,16 @@ export const CloseAllPositions: FC<CloseAllPositionsProps> = (props) => {
     return <></>;
   }
   return (
-    <Button
+    <MainButton
       onClick={onCloseAll}
       disabled={!hasOpenPositions || isClosing}
       loading={isClosing}
-      variant="outlined"
-      color="secondary"
+      variant="secondary"
       size="xs"
       className={cn("disabled:oui-bg-transport", className)}
       style={style}
     >
       {t("positions.closeAll")}
-    </Button>
+    </MainButton>
   );
 };

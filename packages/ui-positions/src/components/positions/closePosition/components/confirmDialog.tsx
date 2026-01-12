@@ -2,7 +2,7 @@ import { FC, useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderEntity, OrderSide } from "@veltodefi/types";
 import {
-  Button,
+  MainButton,
   Text,
   CloseIcon,
   Flex,
@@ -49,19 +49,20 @@ export const ConfirmFooter: FC<{
       width={"100%"}
       className="oui-mt-3 oui-pb-1"
     >
-      <Button
+      <MainButton
         id="oui-positions-confirm-footer-cancel-button"
-        color={"secondary"}
+        variant="secondary"
         fullWidth
         onClick={props.onCancel}
         size="md"
       >
         {t("common.cancel")}
-      </Button>
+      </MainButton>
       <ThrottledButton
         id="oui-positions-confirm-footer-confirm-button"
         onClick={props.onConfirm}
         fullWidth
+        variant="primary"
         loading={props.submitting}
         disabled={props.disabled}
         size="md"

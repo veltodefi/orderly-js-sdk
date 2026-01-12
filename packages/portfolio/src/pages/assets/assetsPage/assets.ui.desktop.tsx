@@ -16,7 +16,7 @@ import {
   Tabs,
   TabPanel,
   ArrowDownShortIcon,
-  Button,
+  MainButton,
   Divider,
 } from "@veltodefi/ui";
 import { AuthGuard, AuthGuardDataTable } from "@veltodefi/ui-connector";
@@ -96,8 +96,9 @@ const DepositAndWithdrawButton: React.FC<
       itemAlign="center"
       gap={3}
     >
-      <Button
+      <MainButton
         disabled={mergedDisabled}
+        variant="primary"
         data-testid="oui-testid-assetView-deposit-button"
         fullWidth
         size="md"
@@ -109,11 +110,11 @@ const DepositAndWithdrawButton: React.FC<
           className="oui-rotate-0 oui-text-primary-contrast"
         />
         <Text>{t("common.deposit")}</Text>
-      </Button>
-      <Button
+      </MainButton>
+      <MainButton
         fullWidth
         disabled={mergedDisabled}
-        color="secondary"
+        variant="secondary"
         size="md"
         onClick={onWithdraw}
         data-testid="oui-testid-assetView-withdraw-button"
@@ -124,7 +125,7 @@ const DepositAndWithdrawButton: React.FC<
           className="oui-rotate-180 oui-text-base-contrast"
         />
         <Text>{t("common.withdraw")}</Text>
-      </Button>
+      </MainButton>
     </Flex>
   );
 };

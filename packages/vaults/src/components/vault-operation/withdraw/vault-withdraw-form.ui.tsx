@@ -3,13 +3,13 @@ import { useTranslation } from "@veltodefi/i18n";
 import {
   Box,
   Text,
-  Button,
   modal,
   SimpleDialog,
   SimpleSheet,
   useModal,
   cn,
   useScreen,
+  MainButton,
 } from "@veltodefi/ui";
 import {
   BrokerWallet,
@@ -87,15 +87,15 @@ export const VaultWithdrawForm: FC<VaultWithdrawFormScript> = (props) => {
         </div>
       )}
 
-      <Button
+      <MainButton
         fullWidth
-        color="primary"
+        variant="primary"
         disabled={disabledWithdraw}
         className="oui-mt-3"
         onClick={handleInitialWithdraw}
       >
         {t("common.withdraw")}
-      </Button>
+      </MainButton>
       <div className="oui-mt-3">
         <LatestWithdrawWidget vaultId={vaultId} />
       </div>
@@ -167,9 +167,9 @@ const WithdrawInitialContent = (props: WithdrawInitialContentProps) => {
         {t("vaults.withdraw.dialog.note")}
       </Text>
       <WithdrawProcessWidget />
-      <Button
+      <MainButton
         fullWidth
-        color="primary"
+        variant="primary"
         className="oui-mt-5"
         onClick={async () => {
           await handleWithdraw();
@@ -177,7 +177,7 @@ const WithdrawInitialContent = (props: WithdrawInitialContentProps) => {
         }}
       >
         {t("vaults.withdraw.dialog.initiateWithdrawal")}
-      </Button>
+      </MainButton>
     </div>
   );
 };

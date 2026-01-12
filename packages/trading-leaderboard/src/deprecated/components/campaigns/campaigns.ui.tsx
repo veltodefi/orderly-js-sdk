@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { cn, Box, Text, Flex, Button, Select } from "@veltodefi/ui";
+import { cn, Box, Text, Flex, Button,MainButton, Select } from "@veltodefi/ui";
 import { CampaignsScriptReturn, CurrentCampaigns } from "./campaigns.script";
 
 export type CampaignsProps = {
@@ -115,24 +115,24 @@ const CampaignItem: FC<CampaignItemProps> = ({
             {displayTime}
           </Text>
           <Flex gap={3}>
-            <Button
-              variant="outlined"
-              color="secondary"
+            <MainButton
+              variant="secondary"
               size="md"
               onClick={() => {
                 onLearnMore(campaign);
               }}
             >
               {t("tradingLeaderboard.learnMore")}
-            </Button>
-            <Button
+            </MainButton>
+            <MainButton
+              variant="primary"
               size="md"
               onClick={() => {
                 onTradeNow(campaign);
               }}
             >
               {t("tradingLeaderboard.tradeNow")}
-            </Button>
+            </MainButton>
           </Flex>
         </Flex>
       </Flex>

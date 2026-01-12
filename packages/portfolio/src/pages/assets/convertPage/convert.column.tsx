@@ -2,7 +2,7 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
-  Button,
+  MainButton,
   Flex,
   Text,
   TokenIcon,
@@ -191,14 +191,14 @@ export const useConvertColumns = (options: ConvertColumnsOptions) => {
         width: 80,
         render(convertId: number, record: ConvertRecord) {
           return (
-            <Button
+            <MainButton
               size="sm"
-              variant="text"
+              variant="tertiary"
               className="oui-text-primary"
               onClick={() => onDetailsClick?.(record.convert_id)}
             >
               {t("portfolio.overview.column.convert.details")}
-            </Button>
+            </MainButton>
           );
         },
       },

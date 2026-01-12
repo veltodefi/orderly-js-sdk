@@ -4,6 +4,7 @@ import { useTranslation } from "@veltodefi/i18n";
 import {
   Box,
   Button,
+  MainButton,
   Card,
   CopyIcon,
   Flex,
@@ -168,18 +169,17 @@ const Subtitle: React.FC<ApiManagerScriptReturns> = (props) => {
           wrongNetwork: t("portfolio.apiKey.create.wrongNetwork.tooltip"),
         }}
       >
-        <Button
+        <MainButton
           size="md"
           icon={<PlusIcon />}
-          variant="contained"
-          color="primary"
+          variant="primary"
           onClick={props.onCreateApiKey}
           disabled={!props.canCreateApiKey}
           // className="disabled:oui-cursor-default"
           data-testid="oui-testid-apiKey-createApiKey-btn"
         >
           {t("portfolio.apiKey.create.dialog.title")}
-        </Button>
+        </MainButton>
       </AuthGuardTooltip>
     </Flex>
   );
@@ -301,10 +301,9 @@ const EditButton: React.FC<{
 
   return (
     <>
-      <Button
+      <MainButton
         size="xs"
-        color="primary"
-        variant="contained"
+        variant="primary"
         onClick={(e) => {
           e.stopPropagation();
           setOpen(true);
@@ -312,7 +311,7 @@ const EditButton: React.FC<{
         data-testid="oui-testid-apiKey-keyList-edit-btn"
       >
         {t("common.edit")}
-      </Button>
+      </MainButton>
       {open && (
         <React.Suspense fallback={null}>
           <LazyEditAPIKeyDialog
@@ -337,10 +336,9 @@ const DeleteButton: React.FC<{
   const { t } = useTranslation();
   return (
     <>
-      <Button
+      <MainButton
         size="xs"
-        color="gray"
-        variant="contained"
+        variant="primary"
         onClick={(e) => {
           e.stopPropagation();
           setOpen(true);
@@ -348,7 +346,7 @@ const DeleteButton: React.FC<{
         data-testid="oui-testid-apiKey-keyList-delete-btn"
       >
         {t("common.delete")}
-      </Button>
+      </MainButton>
       {open && (
         <React.Suspense fallback={null}>
           <LazyDeleteAPIKeyDialog

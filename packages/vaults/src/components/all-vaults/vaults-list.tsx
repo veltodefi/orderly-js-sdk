@@ -6,6 +6,7 @@ import {
   Button,
   ArrowRightUpSquareFillIcon,
   useScreen,
+  MainButton,
   Tooltip,
   InfoCircleIcon,
 } from "@veltodefi/ui";
@@ -383,23 +384,24 @@ const VaultListRow: FC<{ vault: VaultInfo }> = ({ vault }) => {
         <AuthGuard buttonProps={{ size: "sm" }}>
           {isEVMConnected || isSOLConnected ? (
             <>
-              <Button
+              <MainButton
+                variant="primary"
                 size="sm"
                 className="oui-flex-1"
                 disabled={isButtonsDisabled}
                 onClick={() => openDepositAndWithdraw("deposit")}
               >
                 {t("common.deposit")}
-              </Button>
-              <Button
+              </MainButton>
+              <MainButton
                 size="sm"
-                color="secondary"
+                variant="secondary"
                 className="oui-flex-1"
                 disabled={isButtonsDisabled}
                 onClick={() => openDepositAndWithdraw("withdraw")}
               >
                 {t("common.withdraw")}
-              </Button>
+              </MainButton>
             </>
           ) : (
             <Button size="sm" color="warning" fullWidth>

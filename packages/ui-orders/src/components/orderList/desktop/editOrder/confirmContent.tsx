@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { useTranslation, Trans } from "@veltodefi/i18n";
-import { Button, CloseIcon, ThrottledButton } from "@veltodefi/ui";
+import { MainButton, CloseIcon, ThrottledButton } from "@veltodefi/ui";
 import { commify } from "@veltodefi/utils";
 import { EditType } from "../../../../type";
 
@@ -58,15 +58,15 @@ export const ConfirmContent = memo((props: ConfirmContentProps) => {
         {renderLabel()}
       </div>
       <div className="oui-mt-5 oui-grid oui-grid-cols-2 oui-gap-2">
-        <Button
-          color="secondary"
+        <MainButton
+          variant="secondary"
           size={"md"}
           onClick={cancelPopover}
           disabled={isSubmitting}
         >
           {t("common.cancel")}
-        </Button>
-        <ThrottledButton size={"md"} loading={isSubmitting} onClick={onConfirm}>
+        </MainButton>
+        <ThrottledButton variant="primary" size={"md"} loading={isSubmitting} onClick={onConfirm}>
           {t("common.confirm")}
         </ThrottledButton>
       </div>

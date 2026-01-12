@@ -4,13 +4,13 @@ import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
 import { AccountStatusEnum, MEDIA_TABLET, NetworkId } from "@veltodefi/types";
 import {
-  Button,
+  MainButton,
   Either,
   modal,
   Text,
   toast,
   useScreen,
-  type ButtonProps,
+  type MainButtonProps,
 } from "@veltodefi/ui";
 import { Flex } from "@veltodefi/ui";
 import { Box } from "@veltodefi/ui";
@@ -50,7 +50,7 @@ export type AuthGuardProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
   bridgeLessOnly?: boolean;
 
-  buttonProps?: ButtonProps;
+  buttonProps?: MainButtonProps;
 
   descriptions?: alertMessages;
 
@@ -125,6 +125,7 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
           angle={45}
           // fullWidth
           disabled
+          variant="primary"
           loading
           description={descriptions?.connectWallet}
           id={id}
@@ -179,7 +180,7 @@ const ModalTitle: React.FC = () => {
 const DefaultFallback: React.FC<{
   status: AccountStatusEnum;
   wrongNetwork: boolean;
-  buttonProps?: ButtonProps;
+  buttonProps?: MainButtonProps;
   networkId?: NetworkId;
   labels: alertMessages;
   bridgeLessOnly?: boolean;
@@ -266,7 +267,7 @@ const DefaultFallback: React.FC<{
   if (props.wrongNetwork && !props.disabledConnect) {
     return (
       <StatusInfo
-        color="warning"
+        variant="primary"
         // size="md"
         // fullWidth
         onClick={() => {
@@ -284,11 +285,10 @@ const DefaultFallback: React.FC<{
     return (
       <StatusInfo
         size="lg"
+        variant="primary"
         onClick={() => {
           onConnectWallet();
         }}
-        // fullWidth
-        variant={props.disabledConnect ? undefined : "gradient"}
         angle={45}
         description={descriptions?.connectWallet}
         disabled={props.disabledConnect}
@@ -303,6 +303,7 @@ const DefaultFallback: React.FC<{
     return (
       <StatusInfo
         size="lg"
+        variant="primary"
         onClick={() => {
           onConnectOrderly();
         }}
@@ -319,6 +320,7 @@ const DefaultFallback: React.FC<{
   return (
     <StatusInfo
       size="lg"
+      variant="primary"
       // fullWidth
       description={descriptions?.enableTrading}
       {...buttonProps}
@@ -384,13 +386,13 @@ const DefaultFallback: React.FC<{
 
 AuthGuard.displayName = "AuthGuard";
 
-const StatusInfo: React.FC<ButtonProps & { description?: string }> = (
+const StatusInfo: React.FC<MainButtonProps & { description?: string }> = (
   props,
 ) => {
   const { description, ...buttonProps } = props;
   return (
     <Flex direction={"column"}>
-      <Button {...buttonProps}></Button>
+      <MainButton {...buttonProps}></MainButton>
       {!!description && (
         <Box mt={4} className="oui-leading-none" style={{ lineHeight: 0 }}>
           <Text size="2xs" intensity={36}>

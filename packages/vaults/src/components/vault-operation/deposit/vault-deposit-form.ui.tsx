@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Box, Text, Button } from "@veltodefi/ui";
+import { Box, Text, Button, MainButton } from "@veltodefi/ui";
 import {
   BrokerWallet,
   QuantityInput,
@@ -81,15 +81,15 @@ export const VaultDepositForm: FC<VaultDepositFormScript> = (props) => {
           </Text>
         </div>
       )}
-      <Button
+      <MainButton
         fullWidth
-        color="primary"
+        variant="primary"
         disabled={disabledDeposit}
         className="oui-mt-3"
         onClick={handleDeposit}
       >
         {t("common.deposit")}
-      </Button>
+      </MainButton>
       <LatestDepositWidget vaultId={vaultId} />
     </div>
   );

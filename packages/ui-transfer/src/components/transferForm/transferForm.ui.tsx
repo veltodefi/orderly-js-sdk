@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Trans, useTranslation } from "@veltodefi/i18n";
-import { Box, Button, Flex, textVariants, Text, cn } from "@veltodefi/ui";
+import { Box, MainButton, Flex, textVariants, Text, cn } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { TransferVerticalIcon } from "../../icons";
 import { AccountSelect } from "../accountSelect";
@@ -150,7 +150,8 @@ export const TransferForm: FC<TransferFormProps> = (props) => {
               size: buttonSize,
             }}
           >
-            <Button
+            <MainButton
+              variant="primary"
               fullWidth
               disabled={disabled}
               loading={submitting}
@@ -158,7 +159,7 @@ export const TransferForm: FC<TransferFormProps> = (props) => {
               onClick={onTransfer}
             >
               {t("common.transfer")}
-            </Button>
+            </MainButton>
           </AuthGuard>
         </Box>
       </Flex>

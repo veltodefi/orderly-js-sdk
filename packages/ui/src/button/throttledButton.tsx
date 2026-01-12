@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, useCallback, useRef, useState } from "react";
-import { Button, ButtonProps } from ".";
+import { MainButtonProps, MainButton } from ".";
 
 const ThrottledButton = React.forwardRef<
   HTMLButtonElement,
-  PropsWithChildren<ButtonProps & { throttleDuration?: number }>
+  PropsWithChildren<MainButtonProps & { throttleDuration?: number }>
 >(({ onClick, throttleDuration = 700, ...props }, ref) => {
   const lastCall = useRef(0);
   const throttle = useCallback(
@@ -22,7 +22,7 @@ const ThrottledButton = React.forwardRef<
   );
 
   const debouncedClick = throttle(throttleDuration, onClick);
-  return <Button onClick={debouncedClick} ref={ref} {...props} />;
+  return <MainButton onClick={debouncedClick} ref={ref} {...props} />;
 });
 
 export { ThrottledButton };

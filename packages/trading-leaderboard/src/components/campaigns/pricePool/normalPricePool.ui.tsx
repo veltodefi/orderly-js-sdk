@@ -6,7 +6,8 @@ import {
   Tooltip,
   InfoCircleIcon,
   ChevronRightIcon,
-  Button,
+  MainButton,
+  MainButton,
 } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { CampaignsScriptReturn } from "../campaigns.script";
@@ -233,9 +234,9 @@ export const NormalPricePoolUI: FC<NormalPricePoolUIProps> = ({
           )}
         >
           {!isMobile && campaign?.rule_url && (
-            <Button
+            <MainButton
               size="md"
-              variant="outlined"
+              variant="secondary"
               className="oui-flex-1 
         oui-border-[rgb(var(--oui-gradient-brand-start))] 
         oui-text-[rgb(var(--oui-gradient-brand-start))] 
@@ -246,7 +247,7 @@ export const NormalPricePoolUI: FC<NormalPricePoolUIProps> = ({
               fullWidth
             >
               {t("tradingLeaderboard.viewRules")}
-            </Button>
+            </MainButton>
           )}
           {(shouldShowJoinButton || showTradeButton) && (
             <div className="oui-w-full">
@@ -258,10 +259,9 @@ export const NormalPricePoolUI: FC<NormalPricePoolUIProps> = ({
                 }}
               >
                 {shouldShowJoinButton && (
-                  <Button
+                  <MainButton
                     size={isMobile ? "sm" : "md"}
-                    variant="gradient"
-                    color="primary"
+                    variant="primary"
                     className="oui-flex-1"
                     loading={isJoining}
                     disabled={isJoining}
@@ -277,20 +277,19 @@ export const NormalPricePoolUI: FC<NormalPricePoolUIProps> = ({
                     fullWidth
                   >
                     {t("tradingLeaderboard.joinNow")}
-                  </Button>
+                  </MainButton>
                 )}
                 {showTradeButton && (
-                  <Button
+                  <MainButton
                     size={isMobile ? "sm" : "md"}
-                    variant="gradient"
-                    color="primary"
+                    variant="primary"
                     className="oui-flex-1"
                     onClick={onTradeNow}
                     fullWidth
                   >
                     {campaign?.trading_config?.format ||
                       t("tradingLeaderboard.tradeNow")}
-                  </Button>
+                  </MainButton>
                 )}
               </AuthGuard>
             </div>

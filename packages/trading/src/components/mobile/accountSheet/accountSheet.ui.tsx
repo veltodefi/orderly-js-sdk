@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { ArrowRightShortIcon, Button, Flex, Text } from "@veltodefi/ui";
+import { ArrowRightShortIcon, MainButton, Button, Flex, Text } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { AccountSheetState } from "./accountSheet.script";
 import { CopyIcon, HeadIcon, OrderlyIcon, USDCIcon } from "./icons";
@@ -15,17 +15,15 @@ export const AccountSheet: FC<AccountSheetState> = (props) => {
       <TradingRewardsInfo {...props} />
       <Flex gap={3} width={"100%"} justify={"center"}>
         {props.showGetTestUSDC && (
-          <Button
-            variant="outlined"
-            // color="primary"
+          <MainButton
+            variant="secondary"
             size="md"
             onClick={props.onGetTestUSDC}
             fullWidth
             loading={props.gettingTestUSDC}
-            className="oui-border-primary-light oui-text-primary-light"
           >
             {t("trading.faucet.getTestUSDC")}
-          </Button>
+          </MainButton>
         )}
         <Button
           variant="outlined"

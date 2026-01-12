@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, formatAddress } from "@veltodefi/ui";
+import { MainButton, formatAddress } from "@veltodefi/ui";
 import { AccountState } from "./account.script";
 import { AuthGuard } from "@veltodefi/ui-connector";
 
@@ -10,8 +10,8 @@ export const Account: FC<AccountState> = (props) => {
         size: "sm",
       }}
     >
-      <Button
-        variant="gradient"
+      <MainButton
+        variant="primary"
         size={"sm"}
         className="oui-max-w-[83px]"
         onClick={(e) => {
@@ -19,7 +19,7 @@ export const Account: FC<AccountState> = (props) => {
         }}
       >
         {formatAddress(props.address!, [4, 4])}
-      </Button>
+      </MainButton>
     </AuthGuard>
   );
 };

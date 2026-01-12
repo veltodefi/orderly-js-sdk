@@ -2,7 +2,7 @@ import { FC, useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { useOrderEntryFormErrorMsg } from "@veltodefi/react-app";
 import {
-  Button,
+  MainButton,
   Divider,
   Flex,
   SimpleDialog,
@@ -101,15 +101,15 @@ export const EditSheet: FC<EditSheetState> = (props) => {
 
   const buttons = (
     <Flex width={"100%"} gap={3} mt={2}>
-      <Button
+      <MainButton
         fullWidth
-        color="secondary"
+        variant="secondary"
         onClick={(e) => {
           props.onClose();
         }}
       >
         {t("common.cancel")}
-      </Button>
+      </MainButton>
       <ThrottledButton
         fullWidth
         onClick={(e) => {
@@ -119,6 +119,7 @@ export const EditSheet: FC<EditSheetState> = (props) => {
         }}
         loading={props.submitting}
         disabled={disabled}
+        variant="primary"
       >
         {t("common.confirm")}
       </ThrottledButton>

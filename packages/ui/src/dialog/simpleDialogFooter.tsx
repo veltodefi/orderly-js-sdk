@@ -1,12 +1,12 @@
 import { FC, useEffect, useMemo, useState } from "react";
+import { MainButton, MainButtonProps, ThrottledButton } from "../button";
 import { DialogFooter } from "./dialog";
-import { Button, ButtonProps, ThrottledButton } from "../button";
 
 export type DialogAction<T = any> = {
   label: string;
   onClick: (event: any) => Promise<T> | T;
 } & Pick<
-  ButtonProps,
+  MainButtonProps,
   | "size"
   | "disabled"
   | "className"
@@ -14,7 +14,6 @@ export type DialogAction<T = any> = {
   | "data-testid"
   | "loading"
   | "variant"
-  | "color"
 >;
 
 export type SimpleDialogFooterProps = {
@@ -28,7 +27,7 @@ export type SimpleDialogFooterProps = {
 export const SimpleDialogFooter: FC<SimpleDialogFooterProps> = (props) => {
   const { actions } = props;
   const [primaryLoading, setPrimaryLoading] = useState(
-    actions?.primary?.loading ?? false
+    actions?.primary?.loading ?? false,
   );
 
   useEffect(() => {
@@ -47,30 +46,24 @@ export const SimpleDialogFooter: FC<SimpleDialogFooterProps> = (props) => {
     const buttons = [];
 
     if (actions.secondary && typeof actions.secondary.onClick === "function") {
-      const {
-        fullWidth = true,
-        color = "gray",
-        label,
-        ...rest
-      } = actions.secondary;
+      const { fullWidth = true, label, ...rest } = actions.secondary;
 
       buttons.push(
-        <Button
+        <MainButton
           key="secondary"
+          variant="secondary"
           {...rest}
           data-testid={actions.secondary?.["data-testid"]}
-          color={color}
           fullWidth={fullWidth}
         >
           {label}
-        </Button>
+        </MainButton>,
       );
     }
 
     if (actions.primary && typeof actions.primary.onClick === "function") {
       const {
         fullWidth = true,
-        color,
         disabled,
         label,
         onClick,
@@ -95,10 +88,10 @@ export const SimpleDialogFooter: FC<SimpleDialogFooterProps> = (props) => {
           disabled={disabled || primaryLoading}
           loading={primaryLoading}
           fullWidth={fullWidth}
-          color={color}
+          variant="primary"
         >
           {label}
-        </ThrottledButton>
+        </ThrottledButton>,
       );
     }
 

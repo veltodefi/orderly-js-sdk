@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { API } from "@veltodefi/types";
-import { Flex, Button, cn, ThrottledButton, toast } from "@veltodefi/ui";
+import { Flex, Button, cn, ThrottledButton, MainButton, toast } from "@veltodefi/ui";
 import { AuthGuardDataTable } from "@veltodefi/ui-connector";
 import { useColumn } from "./useColum";
 
@@ -32,15 +32,14 @@ export const OrdersTableMobile = (props: {
       expandRowRender={(row) => {
         return (
           <Flex gap={2} justify={"end"}>
-            <Button
-              variant="outlined"
+            <MainButton
+              variant="secondary"
               size="sm"
-              color="gray"
               className="oui-h-6 oui-text-2xs oui-text-base-contrast-54"
               onClick={() => props.editTPSLOrder(row.original)}
             >
               {t("common.edit")}
-            </Button>
+            </MainButton>
             <DeleteBtn
               order={row.original}
               onCancelOrder={props.canCancelOrder}
@@ -79,8 +78,7 @@ export const DeleteBtn = (props: {
       className="oui-h-6 oui-text-2xs oui-text-base-contrast-54"
       size="sm"
       loading={loading}
-      variant="outlined"
-      color="gray"
+      variant="secondary"
       onClick={(e) => {
         e.stopPropagation();
         setLoading(true);

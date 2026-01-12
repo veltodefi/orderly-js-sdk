@@ -82,6 +82,7 @@ const LinkDevice: FC<LinkDeviceProps> = (props) => {
             onClick: hideDialog,
             size: "md",
             fullWidth: true,
+            variant: "secondary",
           },
           primary: {
             label: t("connector.disconnect"),
@@ -90,8 +91,7 @@ const LinkDevice: FC<LinkDeviceProps> = (props) => {
               hideDialog();
             },
             size: "md",
-            variant: "outlined",
-            color: "danger",
+            variant: "primary",
           },
         }}
       >
