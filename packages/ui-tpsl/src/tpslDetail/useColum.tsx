@@ -199,7 +199,6 @@ export const CancelAllBtn = (props: {
       variant="tertiary"
       onClick={(e) => {
         e.stopPropagation();
-        console.log("delete");
         setLoading(true);
         props
           .onCancelOrder?.(props.order)

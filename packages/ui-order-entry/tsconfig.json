@@ -34,6 +34,9 @@
       ],
       "@veltodefi/ui-tpsl": [
         "../ui-tpsl/src"
+      ],
+      "@veltodefi/ui-scaffold": [
+        "../ui-scaffold/src"
       ]
     }
   }

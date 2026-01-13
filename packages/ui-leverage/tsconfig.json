@@ -16,6 +16,9 @@
       ],
       "@veltodefi/perp": [
         "../perp/src"
+      ],
+      "@veltodefi/utils": [
+        "../utils/src"
       ]
     }
   }

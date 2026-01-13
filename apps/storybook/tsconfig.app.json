@@ -31,46 +31,92 @@
 
     /* Path mapping */
     "paths": {
-      // "@veltodefi/affiliate": ["../../packages/affiliate/src"],
-      // "@veltodefi/chart": ["../../packages/chart/src"],
-      "@veltodefi/core": ["../../packages/core/src"],
+      "@veltodefi/affiliate": [
+        "../../packages/affiliate/src"
+      ],
+      "@veltodefi/chart": [
+        "../../packages/chart/src"
+      ],
+      "@veltodefi/core": [
+        "../../packages/core/src"
+      ],
       "@veltodefi/default-evm-adapter": [
         "../../packages/default-evm-adapter/src"
       ],
       "@veltodefi/default-solana-adapter": [
         "../../packages/default-solana-adapter/src"
       ],
-      "@veltodefi/hooks": ["../../packages/hooks/src"],
-      "@veltodefi/i18n": ["../../packages/i18n/src"],
-      // "@veltodefi/markets": ["../../packages/markets/src"],
-      // "@veltodefi/portfolio": ["../../packages/portfolio/src"],
-      // "@veltodefi/react-app": ["../../packages/app/src"],
-      "@veltodefi/trading": ["../../packages/trading/src"],
+      "@veltodefi/hooks": [
+        "../../packages/hooks/src"
+      ],
+      "@veltodefi/i18n": [
+        "../../packages/i18n/src"
+      ],
+      "@veltodefi/markets": [
+        "../../packages/markets/src"
+      ],
+      "@veltodefi/portfolio": [
+        "../../packages/portfolio/src"
+      ],
+      "@veltodefi/react-app": [
+        "../../packages/app/src"
+      ],
+      "@veltodefi/trading": [
+        "../../packages/trading/src"
+      ],
       "@veltodefi/trading-leaderboard": [
         "../../packages/trading-leaderboard/src"
       ],
       "@veltodefi/trading-rewards": [
         "../../packages/trading-rewards/src"
       ],
-      "@veltodefi/types": ["../../packages/types/src"],
-      "@veltodefi/ui": ["../../packages/ui/src"],
-      // "@veltodefi/ui-chain-selector": [
-      //   "../../packages/ui-chain-selector/src"
-      // ],
-      // "@veltodefi/ui-connector": ["../../packages/ui-connector/src"],
-      // "@veltodefi/ui-leverage": ["../../packages/ui-leverage/src"],
-      // "@veltodefi/ui-order-entry": ["../../packages/ui-order-entry/src"],
-      "@veltodefi/ui-orders": ["../../packages/ui-orders/src"],
-      "@veltodefi/ui-positions": ["../../packages/ui-positions/src"],
-      "@veltodefi/ui-scaffold": ["../../packages/ui-scaffold/src"],
-      // "@veltodefi/ui-share": ["../../packages/ui-share/src"],
-      // "@veltodefi/ui-tpsl": ["../../packages/ui-tpsl/src"],
-      // "@veltodefi/ui-tradingview": ["../../packages/ui-tradingview/src"],
-      // "@veltodefi/ui-transfer": ["../../packages/ui-transfer/src"],
-      "@veltodefi/vaults": ["../../packages/vaults/src"],
-      "@veltodefi/utils": ["../../packages/utils/src"],
+      "@veltodefi/types": [
+        "../../packages/types/src"
+      ],
+      "@veltodefi/ui": [
+        "../../packages/ui/src"
+      ],
+      "@veltodefi/ui-chain-selector": [
+        "../../packages/ui-chain-selector/src"
+      ],
+      "@veltodefi/ui-connector": [
+        "../../packages/ui-connector/src"
+      ],
+      "@veltodefi/ui-leverage": [
+        "../../packages/ui-leverage/src"
+      ],
       "@veltodefi/ui-notification": [
         "../../packages/ui-notification/src"
+      ],
+      "@veltodefi/ui-order-entry": [
+        "../../packages/ui-order-entry/src"
+      ],
+      "@veltodefi/ui-orders": [
+        "../../packages/ui-orders/src"
+      ],
+      "@veltodefi/ui-positions": [
+        "../../packages/ui-positions/src"
+      ],
+      "@veltodefi/ui-scaffold": [
+        "../../packages/ui-scaffold/src"
+      ],
+      "@veltodefi/ui-share": [
+        "../../packages/ui-share/src"
+      ],
+      "@veltodefi/ui-tpsl": [
+        "../../packages/ui-tpsl/src"
+      ],
+      "@veltodefi/ui-tradingview": [
+        "../../packages/ui-tradingview/src"
+      ],
+      "@veltodefi/ui-transfer": [
+        "../../packages/ui-transfer/src"
+      ],
+      "@veltodefi/utils": [
+        "../../packages/utils/src"
+      ],
+      "@veltodefi/vaults": [
+        "../../packages/vaults/src"
       ],
       "@veltodefi/wallet-connector": [
         "../../packages/wallet-connector/src"

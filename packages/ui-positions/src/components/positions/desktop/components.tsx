@@ -1,13 +1,7 @@
-import { useLocalStorage, useLeverageBySymbol } from "@veltodefi/hooks";
+import { useLeverageBySymbol } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { PositionType } from "@veltodefi/types";
-import {
-  ChevronRightIcon,
-  cn,
-  EditIcon,
-  Text,
-  useScreen,
-} from "@veltodefi/ui";
+import { cn, EditIcon, Text, useScreen } from "@veltodefi/ui";
 import { modal } from "@veltodefi/ui";
 import {
   PositionTPSLPopover,
@@ -69,12 +63,12 @@ export const TPSLEditIcon = () => {
 
 export const AddIcon = (props: { positionType: PositionType }) => {
   const { position, baseDp, quoteDp, tpslOrder } = usePositionsRowContext();
-  const [needConfirm] = useLocalStorage("orderly_order_confirm", true);
   const { t } = useTranslation();
   const { isMobile } = useScreen();
   const onAdd = () => {
     const dialogId = isMobile ? TPSLSheetId : TPSLDialogId;
     const modalParams = {
+      position,
       symbol: position.symbol,
       baseDP: baseDp,
       quoteDP: quoteDp,

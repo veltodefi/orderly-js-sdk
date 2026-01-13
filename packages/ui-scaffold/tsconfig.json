@@ -25,6 +25,9 @@
       ],
       "@veltodefi/i18n": [
         "../i18n/src"
+      ],
+      "@veltodefi/ui-notification": [
+        "../ui-notification/src"
       ]
     }
   }
