@@ -36,6 +36,10 @@ export const TPSLAdvancedUI = (props: Props) => {
     props.slPriceError?.sl_trigger_price?.type ===
     ERROR_MSG_CODES.SL_PRICE_WARNING;
 
+  const isSlPriceError =
+    props.slPriceError?.sl_trigger_price?.type ===
+    ERROR_MSG_CODES.SL_PRICE_ERROR;
+
   const {
     formattedOrder,
     setValue: setOrderValue,
@@ -241,7 +245,9 @@ export const TPSLAdvancedUI = (props: Props) => {
               hideOrderPrice={
                 formattedOrder.position_type === PositionType.FULL
               }
-              errors={validated ? errors : null}
+              errors={
+                validated ? errors : isSlPriceError ? props.slPriceError : null
+              }
               inputWarnNode={
                 isSlPriceWarning && (
                   <DotStatus

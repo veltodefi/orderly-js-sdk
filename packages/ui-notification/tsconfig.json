@@ -16,6 +16,12 @@
       ],
       "@veltodefi/perp": [
         "../perp/src"
+      ],
+      "@veltodefi/react-app": [
+        "../app/src"
+      ],
+      "@veltodefi/utils": [
+        "../utils/src"
       ]
     }
   }

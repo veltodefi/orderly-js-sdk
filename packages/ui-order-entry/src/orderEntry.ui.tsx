@@ -110,17 +110,16 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
 
   const soundAlertId = useId();
 
-  const isSlPriceWarning =
-    props.slPriceError?.sl_trigger_price?.type ===
-    ERROR_MSG_CODES.SL_PRICE_WARNING;
-
   const { getErrorMsg } = useOrderEntryFormErrorMsg(validated ? errors : null);
 
   const buttonLabel = useMemo(() => {
+    if (isMobile && freeCollateral <= 0) {
+      return t("common.deposit");
+    }
     return side === OrderSide.BUY
       ? t("orderEntry.buyLong")
       : t("orderEntry.sellShort");
-  }, [side, t]);
+  }, [side, t, isMobile, freeCollateral]);
 
   useEffect(() => {
     if (validated) {
@@ -441,11 +440,21 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           data-type={OrderSide.BUY}
           variant="primary"
           className={cn(
-            side === OrderSide.BUY
-              ? "orderly-order-entry-submit-button-buy"
-              : "orderly-order-entry-submit-button-sell",
+            isMobile && freeCollateral <= 0
+              ? "oui-bg-primary-darken hover:oui-bg-primary-darken/80 active:oui-bg-primary-darken/80"
+              : side === OrderSide.BUY
+                ? "orderly-order-entry-submit-button-buy"
+                : "orderly-order-entry-submit-button-sell",
           )}
-          onClick={validateSubmit}
+          onClick={() => {
+            if (isMobile && freeCollateral <= 0) {
+              modal.show("DepositAndWithdrawWithSheetId", {
+                activeTab: "deposit",
+              });
+            } else {
+              validateSubmit();
+            }
+          }}
           loading={props.isMutating}
           disabled={!props.canTrade}
         >
@@ -492,7 +501,7 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
             onSwitchChanged={props.setTpslSwitch}
             orderType={formattedOrder.order_type!}
             errors={
-              validated || isSlPriceWarning
+              validated || props.slPriceError !== undefined
                 ? { ...errors, ...props.slPriceError }
                 : null
             }

@@ -1,9 +1,7 @@
 import { ReactNode } from "react";
-import { useLocalStorage } from "@veltodefi/hooks";
-import { useTranslation } from "@veltodefi/i18n";
 import { AlgoOrderRootType, API, PositionType } from "@veltodefi/types";
 import { Box, MainButton, modal } from "@veltodefi/ui";
-import { MainButtonProps } from "@veltodefi/ui";
+import type { MainButtonProps } from "@veltodefi/ui";
 import { TPSLDialogId } from "./positionTPSL";
 
 export const PositionTPSLPopover = (props: {
@@ -21,10 +19,6 @@ export const PositionTPSLPopover = (props: {
 }) => {
   const { position, order, baseDP, quoteDP, buttonProps, isEditing } = props;
 
-  const [needConfirm] = useLocalStorage("orderly_order_confirm", true);
-
-  const { t } = useTranslation();
-
   const isPositionTPSL = isEditing
     ? order?.algo_type === AlgoOrderRootType.POSITIONAL_TP_SL
     : undefined;
@@ -37,17 +31,14 @@ export const PositionTPSLPopover = (props: {
       quoteDP: quoteDP,
       positionType: isPositionTPSL ? PositionType.FULL : PositionType.PARTIAL,
       isEditing: isEditing,
+      position,
     });
   };
 
   return (
     <Box onClick={onEdit} className="oui-cursor-pointer">
       {props.children || (
-        <MainButton
-          variant="secondary"
-          size="sm"
-          {...buttonProps}
-        >
+        <MainButton variant="secondary" size="sm" {...buttonProps}>
           {props.label}
         </MainButton>
       )}
