@@ -21,6 +21,7 @@ export function EVMConnectArea({
     }
     connect(item);
   };
+
   return (
     <div className="">
       <div className="oui-mb-2 oui-text-sm oui-font-semibold oui-text-base-contrast-80">

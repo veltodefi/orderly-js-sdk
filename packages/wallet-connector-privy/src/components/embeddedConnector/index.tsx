@@ -1,0 +1,55 @@
+import React from "react";
+import type { WalletAdapter } from "@solana/wallet-adapter-base";
+import { Connector } from "wagmi";
+import { ScrollArea } from "@veltodefi/ui";
+import { useWallet } from "../../hooks/useWallet";
+import { useWalletConnectorPrivy } from "../../provider";
+import { WalletConnectType } from "../../types";
+import { ConnectProps } from "../../types";
+import { GeneralConnectArea } from "./generalConnector";
+import { PrivyConnectArea } from "./privyConnector";
+
+export function ConnectWallet() {
+  const { connect } = useWallet();
+  const { setOpenConnectDrawer } = useWalletConnectorPrivy();
+
+  const handleConnect = (params: ConnectProps) => {
+    connect(params);
+    if (params.walletType === WalletConnectType.PRIVY) {
+      setOpenConnectDrawer(false);
+    }
+  };
+
+  return (
+    <ScrollArea className="oui-flex oui-custom-scrollbar">
+      <div className={"oui-flex oui-flex-col"}>
+        <GeneralConnectArea
+          connect={(data) => {
+            // If this object contains an ID, it is a connector
+            if ("id" in data) {
+              return handleConnect({
+                walletType: WalletConnectType.EVM,
+                connector: data as unknown as Connector,
+              });
+            }
+
+            // If not, it is a wallet adapter instead
+            handleConnect({
+              walletType: WalletConnectType.SOL,
+              walletAdapter: data as unknown as WalletAdapter,
+            });
+          }}
+        />
+        <div className="oui-my-4 md:oui-my-6 oui-h-px oui-w-full oui-bg-base-6" />
+        <PrivyConnectArea
+          connect={(type) =>
+            handleConnect({
+              walletType: WalletConnectType.PRIVY,
+              extraType: type,
+            })
+          }
+        />
+      </div>
+    </ScrollArea>
+  );
+}

@@ -76,7 +76,7 @@ export function useWallet() {
       }
       if (params.walletType === WalletConnectType.PRIVY) {
         setConnectorKey(WalletConnectType.PRIVY);
-        connectPrivy();
+        connectPrivy({ provider: params.extraType as "google" | "twitter" });
       }
       if (params.walletType === WalletConnectType.ABSTRACT) {
         setConnectorKey(WalletConnectType.ABSTRACT);

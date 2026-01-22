@@ -19,6 +19,7 @@ const WALLET_ICONS: Record<string, string> = {
   frame: "https://oss.orderly.network/static/sdk/evm_wallets/frame.png",
   rabby: "https://oss.orderly.network/static/sdk/evm_wallets/rabby.png",
 };
+
 export const getWalletIcon = (type: string): string | undefined => {
   return WALLET_ICONS[type.toLowerCase()];
 };

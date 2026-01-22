@@ -1,6 +1,8 @@
 import { BaseIcon } from "./baseIcon";
 import { CombineIcon } from "./combine";
 
+export { BaseIcon } from "./baseIcon";
+
 export type { BaseIconProps } from "./baseIcon";
 export { CloseIcon } from "./close";
 export { CheckIcon } from "./check";
@@ -44,6 +46,7 @@ export { EarnInactiveIcon } from "./earnInactiveIcon";
 export { EditIcon } from "./edit";
 export { EyeIcon } from "./eye";
 export { ShareIcon } from "./share";
+export { EmailIcon } from "./emailIcon";
 export { EyeCloseIcon } from "./eyeClose";
 export { RefreshIcon } from "./refresh";
 export { OrderlyIcon } from "./orderly";

@@ -37,6 +37,7 @@ export function RenderConnector() {
       setOpenConnectDrawer(false);
     }
   };
+
   const renderPrivyConnectArea = () => {
     if (connectorWalletType.disablePrivy) {
       return null;
@@ -52,6 +53,7 @@ export function RenderConnector() {
       />
     );
   };
+
   const renderWagmiConnectArea = () => {
     if (connectorWalletType.disableWagmi) {
       return null;
@@ -59,6 +61,7 @@ export function RenderConnector() {
     if (!walletChainTypeConfig.hasEvm) {
       return null;
     }
+
     return (
       <EVMConnectArea
         connect={(connector) =>
@@ -136,6 +139,7 @@ export function RenderConnector() {
         return null;
     }
   };
+
   return (
     <ScrollArea className="oui-flex oui-grow oui-shrik oui-basis-auto oui-custom-scrollbar">
       <div className={cn("oui-flex oui-flex-col oui-gap-4", "md:oui-gap-5")}>
