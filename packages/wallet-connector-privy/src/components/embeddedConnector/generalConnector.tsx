@@ -1,9 +1,7 @@
 import React from "react";
 import { WalletAdapter } from "@solana/wallet-adapter-base";
 import { Connector } from "wagmi";
-import { ChainNamespace } from "@veltodefi/types";
 import { useScreen } from "@veltodefi/ui";
-import { useWallet } from "../../hooks/useWallet";
 import { useWalletConnectorPrivy } from "../../provider";
 import { useSolanaWallet } from "../../providers/solana/solanaWalletProvider";
 import { useWagmiWallet } from "../../providers/wagmi/wagmiWalletProvider";
@@ -33,12 +31,12 @@ export function RenderWalletIcon({
   );
 }
 
-export function GeneralConnectArea({
-  connect,
-}: {
+interface Props {
+  currentChainId: string;
   connect: (type: Connector | WalletAdapter) => void;
-}) {
-  const { namespace } = useWallet();
+}
+
+export function GeneralConnectArea({ currentChainId, connect }: Props) {
   const { connectors } = useWagmiWallet();
   const { wallets } = useSolanaWallet();
   const { setOpenConnectDrawer } = useWalletConnectorPrivy();
@@ -73,15 +71,16 @@ export function GeneralConnectArea({
     { ...ledgerWallet },
   ];
 
+  // 900900900 is Solana's chain ID, not defined by us or Orderly
+  const currentChainIsSolana = currentChainId.toString() === "900900900";
+
   return (
     <div>
       <div className="oui-grid oui-gap-1">
         {evmWallets.map((item, key) => (
           <div
-            key={key}
-            className={
-              "oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5"
-            }
+            key={`evm-${key}`}
+            className="oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5"
             onClick={() => onConnect(item)}
           >
             <item.Icon />
@@ -90,13 +89,23 @@ export function GeneralConnectArea({
             </div>
           </div>
         ))}
-        {namespace === ChainNamespace.solana &&
-          solWallets.map((item, key) => (
+
+        <div
+          className={`oui-overflow-hidden oui-transition-all oui-duration-200 ${
+            currentChainIsSolana
+              ? "oui-animate-collapsible-down oui-h-[120px]"
+              : "oui-animate-collapsible-up oui-h-0"
+          }`}
+          style={
+            {
+              "--radix-collapsible-content-height": "120px",
+            } as React.CSSProperties
+          }
+        >
+          {solWallets.map((item, key) => (
             <div
-              key={key}
-              className={
-                "oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5"
-              }
+              key={`sol-${key}`}
+              className="oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5 oui-mb-1"
               onClick={() => connect(item.adapter)}
             >
               {item.Icon ? (
@@ -109,6 +118,7 @@ export function GeneralConnectArea({
               </div>
             </div>
           ))}
+        </div>
       </div>
     </div>
   );

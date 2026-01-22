@@ -24,7 +24,11 @@ function MyWallet() {
   );
 }
 
-export function EmbeddedConnector() {
+interface Props {
+  currentChainId: string;
+}
+
+export function EmbeddedConnector(props: Props) {
   const { isConnected: isConnectedPrivy } = usePrivyWallet();
   const { isConnected: isConnectedEvm } = useWagmiWallet();
   const { isConnected: isConnectedSolana } = useSolanaWallet();
@@ -60,7 +64,11 @@ export function EmbeddedConnector() {
   return (
     <>
       <div className="oui-relative oui-z-10 oui-flex oui-h-full oui-grow oui-flex-col">
-        {isConnected ? <MyWallet /> : <ConnectWallet />}
+        {isConnected ? (
+          <MyWallet />
+        ) : (
+          <ConnectWallet currentChainId={props.currentChainId} />
+        )}
         {!isConnected && (
           <>
             {termsOfUse && (

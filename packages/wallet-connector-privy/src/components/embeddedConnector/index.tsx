@@ -9,7 +9,11 @@ import { ConnectProps } from "../../types";
 import { GeneralConnectArea } from "./generalConnector";
 import { PrivyConnectArea } from "./privyConnector";
 
-export function ConnectWallet() {
+interface Props {
+  currentChainId: string;
+}
+
+export function ConnectWallet(props: Props) {
   const { connect } = useWallet();
   const { setOpenConnectDrawer } = useWalletConnectorPrivy();
 
@@ -24,6 +28,7 @@ export function ConnectWallet() {
     <ScrollArea className="oui-flex oui-custom-scrollbar">
       <div className={"oui-flex oui-flex-col"}>
         <GeneralConnectArea
+          currentChainId={props.currentChainId}
           connect={(data) => {
             // If this object contains an ID, it is a connector
             if ("id" in data) {
