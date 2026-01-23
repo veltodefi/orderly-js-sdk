@@ -1092,5 +1092,7 @@
   "notification.delistingTitle": "代币下架通知",
   "notification.generalTitle": "常规更新",
   "notification.maintenanceTitle": "系统维护",
-  "notification.empty": "暂无公告"
+  "notification.empty": "暂无公告",
+  "connector.mainnetDescriptionTooltip": "用真实资金进行实盘交易",
+  "connector.testnetDescriptionTooltip": "用虚拟资金练习交易"
 }

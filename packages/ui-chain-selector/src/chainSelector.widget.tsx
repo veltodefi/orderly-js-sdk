@@ -4,7 +4,6 @@ import {
   UseChainSelectorScriptOptions,
 } from "./chainSelector.script";
 import { ChainSelector, ChainSelectorProps } from "./chainSelector.ui";
-import { i18n } from "@veltodefi/i18n";
 
 export type ChainSelectorWidgetProps = UseChainSelectorScriptOptions &
   Pick<ChainSelectorProps, "isWrongNetwork" | "variant" | "className">;
@@ -26,17 +25,11 @@ export const ChainSelectorSheetId = "ChainSelectorSheetId";
 
 registerSimpleDialog(ChainSelectorDialogId, ChainSelectorWidget, {
   size: "lg",
-  title: () => i18n.t("connector.switchNetwork"),
   variant: "wide",
   isWrongNetwork: true,
 });
 
 registerSimpleSheet(ChainSelectorSheetId, ChainSelectorWidget, {
-  title: () => i18n.t("connector.switchNetwork"),
-  classNames: {
-    content: "!oui-bg-base-8",
-    body: "!oui-bg-base-8",
-  },
   variant: "compact",
   isWrongNetwork: true,
 });

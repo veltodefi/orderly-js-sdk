@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useTranslation } from "@veltodefi/i18n";
 import {
   Box,
   Flex,
@@ -7,10 +9,11 @@ import {
   TabPanel,
   cn,
   tv,
+  Tooltip,
+  InfoCircleIcon,
 } from "@veltodefi/ui";
-import { ChainType, TChainItem } from "./type";
 import { UseChainSelectorScriptReturn } from "./chainSelector.script";
-import { useTranslation } from "@veltodefi/i18n";
+import { ChainType, TChainItem } from "./type";
 
 export type ChainSelectorProps = {
   isWrongNetwork?: boolean;
@@ -85,64 +88,129 @@ const chainSelectorVariants = tv({
 export const ChainSelector = (props: ChainSelectorProps) => {
   const { isWrongNetwork, variant = "wide" } = props;
   const { t } = useTranslation();
-  const { list, recentList, mainnetList, testnetList, icon, item, tip } =
-    chainSelectorVariants({ variant });
+  const { list, mainnetList, testnetList, item, tip } = chainSelectorVariants({
+    variant,
+  });
+
+  const mostCommonChainsNames = ["BNB Chain", "Arbitrum", "Ethereum", "Solana"];
+  const [mainnetSubTab, setMainnetSubTab] = useState<
+    "mostCommon" | "allNetworks"
+  >("mostCommon");
+  const mostCommonChains = props.chains.mainnet?.filter((chain) =>
+    mostCommonChainsNames.includes(chain.name),
+  );
+
+  const getMainnetItemClass = (selected: boolean) =>
+    cn(
+      item({ selected }),
+      selected
+        ? "oui-bg-mainButton oui-text-mainButton-contrast"
+        : "hover:oui-bg-mainButton-hover",
+      "hover:oui-bg-mainButton-hover",
+    );
 
   return (
     <Box className={cn("oui-font-semibold", props.className)}>
       <Tabs
         value={props.selectedTab}
         variant="contained"
-        size={variant === "wide" ? "md" : "lg"}
+        size="lg"
+        classNames={{
+          tabsListContainer: "oui-mb-[16px]",
+        }}
         onValueChange={(e) => props.onTabChange(e as ChainType)}
+        tabsListChildren={
+          <Tooltip
+            content={
+              <Box className="oui-flex oui-flex-col oui-gap-y-2">
+                <Box className="oui-flex oui-flex-col oui-mb-2">
+                  <Text size="xs" weight="bold">
+                    {t("connector.mainnet")}
+                  </Text>
+                  <Text size="2xs">
+                    {t("connector.mainnetDescriptionTooltip")}
+                  </Text>
+                </Box>
+                <Box className="oui-flex oui-flex-col oui-mb-2">
+                  <Text size="xs" weight="bold">
+                    {t("connector.testnet")}
+                  </Text>
+                  <Text size="2xs">
+                    {t("connector.testnetDescriptionTooltip")}
+                  </Text>
+                </Box>
+              </Box>
+            }
+          >
+            <InfoCircleIcon className="cursor-pointer" />
+          </Tooltip>
+        }
       >
         <TabPanel value={ChainType.Mainnet} title={t("connector.mainnet")}>
-          {!!props.recentChains?.length && (
-            <Flex gap={2} className={recentList()}>
-              {props.recentChains?.map((item) => {
-                return (
-                  <RecentChainItem
-                    key={item.id}
-                    item={item}
-                    onClick={() => props.onChainClick(item)}
-                    iconClassName={icon()}
-                  />
-                );
-              })}
-            </Flex>
-          )}
-
-          <Box r="2xl" className={cn(list(), mainnetList())}>
-            {props.chains.mainnet?.map((chain) => {
-              const selected = props.selectChainId === chain.id;
-              return (
-                <ChainItem
-                  key={chain.id}
-                  selected={selected}
-                  item={chain}
-                  onClick={() => props.onChainClick(chain)}
-                  className={item({ selected })}
+          <Tabs
+            value={mainnetSubTab}
+            variant="inverted"
+            size="sm"
+            onValueChange={(e) =>
+              setMainnetSubTab(e as "mostCommon" | "allNetworks")
+            }
+          >
+            <Title />
+            <TabPanel value="mostCommon" title={t("connector.mostCommon")}>
+              <Box
+                r="2xl"
+                className={cn(
+                  list(),
+                  mainnetList(),
+                  "oui-bg-[#161616] oui-p-2 oui-rounded-[12px]",
+                )}
+              >
+                <ChainList
+                  chains={mostCommonChains}
+                  selectedChainId={props.selectChainId}
+                  onChainClick={props.onChainClick}
+                  itemClassName={getMainnetItemClass}
                 />
-              );
-            })}
-          </Box>
+              </Box>
+            </TabPanel>
+
+            <TabPanel value="allNetworks" title={t("connector.allNetworks")}>
+              <Box
+                r="2xl"
+                className={cn(
+                  list(),
+                  mainnetList(),
+                  "oui-bg-[#161616] oui-p-2 oui-rounded-[12px]",
+                )}
+              >
+                <ChainList
+                  chains={props.chains.mainnet}
+                  selectedChainId={props.selectChainId}
+                  onChainClick={props.onChainClick}
+                  itemClassName={getMainnetItemClass}
+                />
+              </Box>
+            </TabPanel>
+          </Tabs>
         </TabPanel>
 
         {props.showTestnet && (
           <TabPanel value={ChainType.Testnet} title={t("connector.testnet")}>
-            <Box r="2xl" className={cn(list(), testnetList())}>
-              {props.chains.testnet?.map((chain) => {
-                const selected = props.selectChainId === chain.id;
-                return (
-                  <ChainItem
-                    key={chain.id}
-                    selected={selected}
-                    item={chain}
-                    onClick={() => props.onChainClick(chain)}
-                    className={item({ selected })}
-                  />
-                );
-              })}
+            <Title />
+            <Box
+              r="2xl"
+              className={cn(
+                list(),
+                testnetList(),
+                "oui-bg-[#161616] oui-p-2 oui-rounded-[12px]",
+              )}
+            >
+              <ChainList
+                chains={props.chains.testnet}
+                selectedChainId={props.selectChainId}
+                onChainClick={props.onChainClick}
+                itemClassName={getMainnetItemClass}
+              />
             </Box>
           </TabPanel>
         )}
@@ -160,6 +228,49 @@ export const ChainSelector = (props: ChainSelectorProps) => {
 };
 // ------------------ ChainSelector end ------------------
 
+const Title = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Box className="oui-mb-[16px]">
+      <Text className="oui-text-[#FFF] oui-font-bold oui-text-xl">
+        {t("connector.switchNetwork")}
+      </Text>
+    </Box>
+  );
+};
+
+// ------------------ ChainList start ------------------
+
+const ChainList = ({
+  chains,
+  selectedChainId,
+  onChainClick,
+  itemClassName,
+}: {
+  chains?: TChainItem[];
+  selectedChainId?: number | string;
+  onChainClick: (chain: TChainItem) => void;
+  itemClassName?: (selected: boolean) => any;
+}) => (
+  <>
+    {chains?.map((chain) => {
+      const selected = selectedChainId === chain.id;
+      return (
+        <ChainItem
+          key={chain.id}
+          selected={selected}
+          item={chain}
+          onClick={() => onChainClick(chain)}
+          className={itemClassName ? itemClassName(selected) : undefined}
+        />
+      );
+    })}
+  </>
+);
+
+// ------------------ ChainList end ------------------
+
 // ------------------ ChainItem start ------------------
 export const ChainItem = (props: {
   selected: boolean;
@@ -175,9 +286,6 @@ export const ChainItem = (props: {
           <ChainIcon chainId={item.id} size="xs" />
           <Text size="2xs">{item.name}</Text>
         </Flex>
-        {props.selected && (
-          <Box gradient="brand" r="full" width={4} height={4} />
-        )}
       </Flex>
     </button>
   );

@@ -1092,5 +1092,7 @@
   "notification.delistingTitle": "Повідомлення про делістинг токена",
   "notification.generalTitle": "Загальне оновлення",
   "notification.maintenanceTitle": "Обслуговування системи",
-  "notification.empty": "Немає оголошень"
+  "notification.empty": "Немає оголошень",
+  "connector.mainnetDescriptionTooltip": "Торгівля в реальному часі на реальні кошти",
+  "connector.testnetDescriptionTooltip": "Тренуйтеся з віртуальними коштами"
 }

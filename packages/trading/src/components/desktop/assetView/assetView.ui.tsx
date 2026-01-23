@@ -7,7 +7,6 @@ import {
   Flex,
   Text,
   Box,
-  Button,
   MainButton,
   ArrowDownShortIcon,
   EyeIcon,

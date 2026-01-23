@@ -1092,5 +1092,7 @@
   "notification.delistingTitle": "Token Delist Bildirimi",
   "notification.generalTitle": "Genel güncelleme",
   "notification.maintenanceTitle": "Sistem bakımı",
-  "notification.empty": "Duyuru yok"
+  "notification.empty": "Duyuru yok",
+  "connector.mainnetDescriptionTooltip": "Gerçek parayla canlı ticaret",
+  "connector.testnetDescriptionTooltip": "Sanal parayla ticaret pratiği yapın"
 }

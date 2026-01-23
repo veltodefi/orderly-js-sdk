@@ -1092,5 +1092,7 @@
   "notification.delistingTitle": "Avis de retrait de token",
   "notification.generalTitle": "Mise à jour générale",
   "notification.maintenanceTitle": "Maintenance système",
-  "notification.empty": "Aucune annonce"
+  "notification.empty": "Aucune annonce",
+  "connector.mainnetDescriptionTooltip": "Trading en direct avec des fonds réels",
+  "connector.testnetDescriptionTooltip": "Entraînez-vous avec des fonds fictifs"
 }

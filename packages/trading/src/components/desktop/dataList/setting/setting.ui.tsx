@@ -1,7 +1,6 @@
 import { FC, useMemo, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
-  MainButton,
   Checkbox,
   Divider,
   DropdownMenuContent,
@@ -111,19 +110,18 @@ export const Setting: FC<SettingState> = (props) => {
   ]);
 
   const triggerButton = (
-    <MainButton
-      size="xs"
+    <button
       type="button"
-      variant="primary"
-      className="oui-bg-transparent hover:oui-bg-transparent"
+      className="
+        oui-text-base-contrast-54
+        oui-px-2
+      "
     >
       <SettingFillIcon
         size={16}
-        color="white"
-        opacity={1}
         className="oui-text-white/[.36] hover:oui-text-white/80"
       />
-    </MainButton>
+    </button>
   );
 
   return (

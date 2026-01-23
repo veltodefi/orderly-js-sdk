@@ -1092,5 +1092,7 @@
   "notification.delistingTitle": "Token-Delisting-Benachrichtigung",
   "notification.generalTitle": "Allgemeines Update",
   "notification.maintenanceTitle": "Systemwartung",
-  "notification.empty": "Keine Ankündigungen"
+  "notification.empty": "Keine Ankündigungen",
+  "connector.mainnetDescriptionTooltip": "Live-Handel mit echtem Geld",
+  "connector.testnetDescriptionTooltip": "Üben Sie den Handel mit Spielgeld"
 }

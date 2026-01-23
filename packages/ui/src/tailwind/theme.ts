@@ -57,6 +57,8 @@ export const themePlugin = () =>
         "--oui-color-trading-profit": "41 233 169",
         "--oui-color-trading-profit-contrast": "255 255 255",
 
+        "--oui-surface-background-medium-dark": "31 31 31",
+
         /* main button colors */
         "--oui-color-main-button": "154 236 219",
         "--oui-color-main-button-contrast": "3 3 3",
@@ -73,18 +75,18 @@ export const themePlugin = () =>
         "--oui-color-main-button-loading-contrast": "154 236 219",
         "--oui-color-main-button-loading-spinner-ring": "59 59 59",
         "--oui-color-main-button-loading-spinner-fill": "143 143 143",
-        "--oui-color-main-button-inverted": "31 31 31",
+        "--oui-color-main-button-inverted": "45 45 45",
         "--oui-color-main-button-inverted-contrast": "115 115 115",
-        "--oui-color-main-button-inverted-hover": "45 45 45",
+        "--oui-color-main-button-inverted-hover": "59 59 59",
         "--oui-color-main-button-inverted-hover-contrast": "115 115 115",
-        "--oui-color-main-button-inverted-pressed": "45 45 45",
+        "--oui-color-main-button-inverted-pressed": "59 59 59",
         "--oui-color-main-button-inverted-pressed-contrast": "154 236 219",
-        "--oui-color-main-button-inverted-focus": "59 59 59",
+        "--oui-color-main-button-inverted-focus": "87 87 87",
         "--oui-color-main-button-inverted-focus-contrast": "115 115 115",
         "--oui-color-main-button-inverted-disabled": "45 45 45",
         "--oui-color-main-button-inverted-disabled-contrast": "87 87 87",
-        "--oui-color-main-button-inverted-loading": "31 31 31",
-        "--oui-color-main-button-inverted-loading-contrast": "115 115 115",
+        "--oui-color-main-button-inverted-loading": "45 45 45",
+        "--oui-color-main-button-inverted-loading- contrast": "115 115 115",
         "--oui-color-main-button-inverted-loading-spinner-ring": "22 22 22",
         "--oui-color-main-button-inverted-loading-spinner-fill": "154 236 219",
 

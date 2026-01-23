@@ -1092,5 +1092,7 @@
   "notification.delistingTitle": "トークン上場廃止のお知らせ",
   "notification.generalTitle": "一般アップデート",
   "notification.maintenanceTitle": "システムメンテナンス",
-  "notification.empty": "お知らせはありません"
+  "notification.empty": "お知らせはありません",
+  "connector.mainnetDescriptionTooltip": "本物の資金でライブ取引",
+  "connector.testnetDescriptionTooltip": "テスト資金で取引を練習"
 }
