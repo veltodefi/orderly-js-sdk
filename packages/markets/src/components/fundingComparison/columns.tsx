@@ -5,6 +5,7 @@ import type { Column } from "@veltodefi/ui";
 import { Text } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { OrderlyIcon } from "../../icons";
+import { SymbolDisplay } from "../symbolDisplay";
 import { useEXchanges } from "./useEXchanges";
 
 const CDN_PREFIX = "https://oss.orderly.network/static/exchange_logo";
@@ -36,14 +37,9 @@ export const useFundingColumns = () => {
               symbol={value}
               className={isMobile ? "oui-size-[18px]" : "oui-size-5"}
             />
-            <Text.formatted
-              rule="symbol"
-              formatString="base-type"
-              size="xs"
-              weight="semibold"
-            >
+            <SymbolDisplay formatString="base" size="xs">
               {value}
-            </Text.formatted>
+            </SymbolDisplay>
           </Flex>
         ),
       },

@@ -1,5 +1,25 @@
 # tsconfig
 
+## 0.11.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+
+## 0.11.11-alpha.1
+
+### Patch Changes
+
+- publish
+
+## 0.11.11-alpha.0
+
+### Patch Changes
+
+- publish
+
 ## 0.11.10
 
 ### Patch Changes
@@ -1016,11 +1036,7 @@
 - a1ea426b: export ChainDialog component;
 - 22ad6134: fix bug
 
-<<<<<<< HEAD
-
 ## 0.0.88
-
-=======
 
 ## 0.0.87-alpha.35
 
@@ -1060,17 +1076,11 @@
 
 ## 0.0.87-alpha.29
 
-> > > > > > > alpha
-
 ### Patch Changes
 
 - fix bugs
 
-<<<<<<< HEAD
-
 ## 0.0.87
-
-=======
 
 ## 0.0.87-alpha.28
 
@@ -1245,8 +1255,6 @@
 - update version
 
 ## 0.0.87-alpha.0
-
-> > > > > > > alpha
 
 ### Patch Changes
 

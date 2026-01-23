@@ -1,5 +1,25 @@
 # @orderly.network/net
 
+## 2.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+
+## 2.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+
+## 2.8.11-alpha.0
+
+### Patch Changes
+
+- publish
+
 ## 2.8.10
 
 ### Patch Changes
@@ -1037,11 +1057,7 @@
 - a1ea426b: export ChainDialog component;
 - 22ad6134: fix bug
 
-<<<<<<< HEAD
-
 ## 1.0.115
-
-=======
 
 ## 1.0.114-alpha.35
 
@@ -1081,13 +1097,9 @@
 
 ## 1.0.114-alpha.29
 
-> > > > > > > alpha
-
 ### Patch Changes
 
 - fix bugs
-
-<<<<<<< HEAD
 
 ## 1.0.114
 
@@ -1270,8 +1282,6 @@
 ## 1.0.114-alpha.0
 
 ### Patch Changes
-
-> > > > > > > alpha
 
 - fix bugs
 

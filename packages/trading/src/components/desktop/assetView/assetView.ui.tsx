@@ -59,6 +59,8 @@ interface AssetValueListProps {
   freeCollateral?: number | null;
   marginRatioVal?: number;
   renderMMR?: string | number;
+  maintenanceMargin?: number;
+  currentLeverage?: number;
   isConnected: boolean;
   currentLtv?: string | number;
 }
@@ -271,6 +273,8 @@ const AssetValueList: FC<AssetValueListProps> = (props) => {
     freeCollateral,
     marginRatioVal,
     renderMMR,
+    maintenanceMargin,
+    currentLeverage,
     isConnected,
     currentLtv,
   } = props;
@@ -320,8 +324,8 @@ const AssetValueList: FC<AssetValueListProps> = (props) => {
           "group-hover:oui-will-change-[max-height]",
           open
             ? showLTV
-              ? "oui-max-h-[94px]"
-              : "oui-max-h-[69px]"
+              ? "oui-max-h-[144px]"
+              : "oui-max-h-[119px]"
             : "oui-max-h-0",
         )}
       >
@@ -355,6 +359,22 @@ const AssetValueList: FC<AssetValueListProps> = (props) => {
           showPercentage={true}
           placeholder="--%"
         />
+        <AssetDetail
+          label={t("trading.asset.maintenanceMargin")}
+          description={t("trading.asset.maintenanceMargin.tooltip")}
+          formula={t("trading.asset.maintenanceMargin.formula")}
+          visible={visible}
+          value={maintenanceMargin}
+          unit="USDC"
+        />
+        <AssetDetail
+          label={t("trading.asset.currentLeverage")}
+          description={t("trading.asset.currentLeverage.tooltip")}
+          formula={t("trading.asset.currentLeverage.formula")}
+          visible={visible}
+          value={currentLeverage}
+          unit="x"
+        />
         {showLTV && <LTVDetail visible={visible} value={currentLtv} />}
       </Box>
     </Box>
@@ -377,6 +397,8 @@ export const AssetView: FC<
   freeCollateral,
   marginRatioVal,
   renderMMR,
+  maintenanceMargin,
+  currentLeverage,
   isConnected,
   isMainAccount,
   hasSubAccount,
@@ -501,6 +523,8 @@ export const AssetView: FC<
               freeCollateral={freeCollateral}
               marginRatioVal={marginRatioVal}
               renderMMR={renderMMR}
+              maintenanceMargin={maintenanceMargin}
+              currentLeverage={currentLeverage}
               isConnected={isConnected}
               currentLtv={currentLtv}
             />
