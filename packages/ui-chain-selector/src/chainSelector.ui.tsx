@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Box,
@@ -84,6 +84,9 @@ const chainSelectorVariants = tv({
   },
 });
 
+const LS_TAB_KEY = "orderly.chainSelector.tab";
+const LS_MAINNET_SUBTAB_KEY = "orderly.chainSelector.mainnetSubTab";
+
 //------------------ ChainSelector start ------------------
 export const ChainSelector = (props: ChainSelectorProps) => {
   const { isWrongNetwork, variant = "wide" } = props;
@@ -93,9 +96,28 @@ export const ChainSelector = (props: ChainSelectorProps) => {
   });
 
   const mostCommonChainsNames = ["BNB Chain", "Arbitrum", "Ethereum", "Solana"];
+
+  const [selectedTab, setSelectedTab] = useState<ChainType>(() => {
+    if (typeof window !== "undefined") {
+      const saved = window.localStorage.getItem(LS_TAB_KEY);
+      if (saved === ChainType.Mainnet || saved === ChainType.Testnet)
+        return saved as ChainType;
+    }
+
+    return props.selectedTab;
+  });
+
   const [mainnetSubTab, setMainnetSubTab] = useState<
     "mostCommon" | "allNetworks"
-  >("mostCommon");
+  >(() => {
+    if (typeof window !== "undefined") {
+      const saved = window.localStorage.getItem(LS_MAINNET_SUBTAB_KEY);
+      if (saved === "mostCommon" || saved === "allNetworks") return saved;
+    }
+
+    return "mostCommon";
+  });
+
   const mostCommonChains = props.chains.mainnet?.filter((chain) =>
     mostCommonChainsNames.includes(chain.name),
   );
@@ -112,13 +134,21 @@ export const ChainSelector = (props: ChainSelectorProps) => {
   return (
     <Box className={cn("oui-font-semibold", props.className)}>
       <Tabs
-        value={props.selectedTab}
+        value={selectedTab}
         variant="contained"
         size="lg"
         classNames={{
-          tabsListContainer: "oui-mb-[16px]",
+          tabsListContainer: "oui-mb-[24px]",
         }}
-        onValueChange={(e) => props.onTabChange(e as ChainType)}
+        onValueChange={(e) => {
+          setSelectedTab(e as ChainType);
+
+          if (typeof window !== "undefined") {
+            window.localStorage.setItem(LS_TAB_KEY, e as string);
+          }
+
+          props.onTabChange(e as ChainType);
+        }}
         tabsListChildren={
           <Tooltip
             content={
@@ -142,7 +172,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
               </Box>
             }
           >
-            <InfoCircleIcon className="cursor-pointer" />
+            <InfoCircleIcon className="cursor-pointer oui-size-6" />
           </Tooltip>
         }
       >
@@ -151,12 +181,24 @@ export const ChainSelector = (props: ChainSelectorProps) => {
             value={mainnetSubTab}
             variant="inverted"
             size="sm"
-            onValueChange={(e) =>
-              setMainnetSubTab(e as "mostCommon" | "allNetworks")
-            }
+            onValueChange={(e) => {
+              setMainnetSubTab(e as "mostCommon" | "allNetworks");
+
+              if (typeof window !== "undefined") {
+                window.localStorage.setItem(LS_MAINNET_SUBTAB_KEY, e as string);
+              }
+            }}
           >
             <Title />
-            <TabPanel value="mostCommon" title={t("connector.mostCommon")}>
+
+            <TabPanel
+              value="mostCommon"
+              title={
+                <Text className="oui-text-[14px]">
+                  {t("connector.mostCommon")}
+                </Text>
+              }
+            >
               <Box
                 r="2xl"
                 className={cn(
@@ -174,7 +216,14 @@ export const ChainSelector = (props: ChainSelectorProps) => {
               </Box>
             </TabPanel>
 
-            <TabPanel value="allNetworks" title={t("connector.allNetworks")}>
+            <TabPanel
+              value="allNetworks"
+              title={
+                <Text className="oui-text-[14px]">
+                  {t("connector.allNetworks")}
+                </Text>
+              }
+            >
               <Box
                 r="2xl"
                 className={cn(
@@ -197,6 +246,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
         {props.showTestnet && (
           <TabPanel value={ChainType.Testnet} title={t("connector.testnet")}>
             <Title />
+
             <Box
               r="2xl"
               className={cn(
