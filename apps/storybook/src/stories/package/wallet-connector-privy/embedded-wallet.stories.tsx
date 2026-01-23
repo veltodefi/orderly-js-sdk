@@ -67,7 +67,7 @@ export const Embedded: Story = {
     return (
       <WalletConnectorPrivy usePrivy>
         <div className="oui-flex oui-justify-center oui-bg-[#1F1F1F]">
-          <div className="oui-flex oui-grow oui-max-w-[800px]">
+          <div className="oui-flex oui-grow oui-max-w-[700px]">
             <EmbeddedConnector currentChainId={arg.currentChainId} />
           </div>
         </div>
