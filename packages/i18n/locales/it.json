@@ -58,6 +58,8 @@
   "common.marketPrice": "Mercato",
   "common.market": "Mercato",
   "common.limit": "Limite",
+  "connector.mostCommon": "Più comuni",
+  "connector.allNetworks": "Tutte le reti",
   "common.triggerPrice": "Prezzo di attivazione",
   "common.unrealizedPnl": "P/L non realizzato",
   "common.realizedPnl": "P/L realizzato",

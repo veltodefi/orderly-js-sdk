@@ -58,6 +58,8 @@
   "common.marketPrice": "Rynek",
   "common.market": "Rynek",
   "common.limit": "Limit",
+  "connector.mostCommon": "Najczęstsze",
+  "connector.allNetworks": "Wszystkie sieci",
   "common.triggerPrice": "Cena wyzwalacza",
   "common.unrealizedPnl": "Niezrealizowany PnL",
   "common.realizedPnl": "Zrealizowany PnL",

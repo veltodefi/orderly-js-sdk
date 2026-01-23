@@ -58,6 +58,8 @@
   "common.marketPrice": "시장가",
   "common.market": "시장가",
   "common.limit": "지정가",
+  "connector.mostCommon": "가장 일반적임",
+  "connector.allNetworks": "모든 네트워크",
   "common.triggerPrice": "트리거 가격",
   "common.unrealizedPnl": "미실현 손익",
   "common.realizedPnl": "실현 손익",

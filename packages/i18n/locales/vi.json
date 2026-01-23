@@ -58,6 +58,8 @@
   "common.marketPrice": "Thị trường",
   "common.market": "Thị trường",
   "common.limit": "Giới hạn",
+  "connector.mostCommon": "Phổ biến nhất",
+  "connector.allNetworks": "Tất cả mạng",
   "common.triggerPrice": "Giá kích hoạt",
   "common.unrealizedPnl": "Lãi/lỗ chưa thực hiện",
   "common.realizedPnl": "Lãi/lỗ đã thực hiện",

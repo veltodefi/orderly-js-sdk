@@ -58,6 +58,8 @@
   "common.marketPrice": "Marktprijs",
   "common.market": "Markt",
   "common.limit": "Limiet",
+  "connector.mostCommon": "Meest voorkomend",
+  "connector.allNetworks": "Alle netwerken",
   "common.triggerPrice": "Triggerprijs",
   "common.unrealizedPnl": "Ongerealiseerde W/V",
   "common.realizedPnl": "Gerealiseerde W/V",

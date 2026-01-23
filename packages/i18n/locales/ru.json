@@ -58,6 +58,8 @@
   "common.marketPrice": "Рыночная",
   "common.market": "Рынок",
   "common.limit": "Лимит",
+  "connector.mostCommon": "Самые распространённые",
+  "connector.allNetworks": "Все сети",
   "common.triggerPrice": "Цена срабатывания",
   "common.unrealizedPnl": "Нереализованный PnL",
   "common.realizedPnl": "Реализованный PnL",

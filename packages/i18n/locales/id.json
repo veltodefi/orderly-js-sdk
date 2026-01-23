@@ -58,6 +58,8 @@
   "common.marketPrice": "Pasar",
   "common.market": "Pasar",
   "common.limit": "Limit",
+  "connector.mostCommon": "Paling umum",
+  "connector.allNetworks": "Semua jaringan",
   "common.triggerPrice": "Harga pemicu",
   "common.unrealizedPnl": "PnL Belum Direalisasi",
   "common.realizedPnl": "PnL Direalisasi",

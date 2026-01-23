@@ -58,6 +58,8 @@
   "common.marketPrice": "Piyasa",
   "common.market": "Piyasa",
   "common.limit": "Limit",
+  "connector.mostCommon": "En yaygın",
+  "connector.allNetworks": "Tüm ağlar",
   "common.triggerPrice": "Tetikleme fiyatı",
   "common.unrealizedPnl": "Gerçekleşmemiş K/Z",
   "common.realizedPnl": "Gerçekleşmiş K/Z",

@@ -58,6 +58,8 @@
   "common.marketPrice": "市价",
   "common.market": "市价",
   "common.limit": "限价",
+  "connector.mostCommon": "最常用",
+  "connector.allNetworks": "所有网络",
   "common.triggerPrice": "触发价格",
   "common.unrealizedPnl": "未实现盈亏",
   "common.realizedPnl": "已实现盈亏",

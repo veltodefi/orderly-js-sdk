@@ -58,6 +58,8 @@
   "common.marketPrice": "市場価格",
   "common.market": "成行",
   "common.limit": "指値",
+  "connector.mostCommon": "最も一般的",
+  "connector.allNetworks": "すべてのネットワーク",
   "common.triggerPrice": "トリガー価格",
   "common.unrealizedPnl": "未実現損益",
   "common.realizedPnl": "実現損益",
