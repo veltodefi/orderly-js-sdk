@@ -49,7 +49,7 @@ export function GeneralConnectArea({ currentChainId, connect }: Props) {
 
   // These are Solana's chain IDs (mainnet and devnet) in Orderly's ecosystem
   const isSolana =
-    currentChainId === "900900900" || currentChainId === "901901901";
+    `${currentChainId}` === "900900900" || `${currentChainId}` === "901901901";
 
   return (
     <div>
