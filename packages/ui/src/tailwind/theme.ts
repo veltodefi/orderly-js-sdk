@@ -86,7 +86,7 @@ export const themePlugin = () =>
         "--oui-color-main-button-inverted-disabled": "45 45 45",
         "--oui-color-main-button-inverted-disabled-contrast": "87 87 87",
         "--oui-color-main-button-inverted-loading": "45 45 45",
-        "--oui-color-main-button-inverted-loading- contrast": "115 115 115",
+        "--oui-color-main-button-inverted-loading-contrast": "115 115 115",
         "--oui-color-main-button-inverted-loading-spinner-ring": "22 22 22",
         "--oui-color-main-button-inverted-loading-spinner-fill": "154 236 219",
 
