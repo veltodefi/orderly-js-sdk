@@ -1,5 +1,5 @@
 import React from "react";
-import { WalletAdapter } from "@solana/wallet-adapter-base";
+import { WalletAdapter, WalletReadyState } from "@solana/wallet-adapter-base";
 import { Connector } from "wagmi";
 import { useScreen } from "@veltodefi/ui";
 import { useWalletConnectorPrivy } from "../../provider";
@@ -51,6 +51,12 @@ export function GeneralConnectArea({ currentChainId, connect }: Props) {
   const isSolana =
     `${currentChainId}` === "900900900" || `${currentChainId}` === "901901901";
 
+  const readySolAdapters = solAdapters.filter(
+    (adapters) =>
+      adapters.readyState !== WalletReadyState.NotDetected &&
+      adapters.readyState !== WalletReadyState.Unsupported,
+  );
+
   return (
     <div>
       <div
@@ -71,7 +77,7 @@ export function GeneralConnectArea({ currentChainId, connect }: Props) {
             </div>
           ))}
         {isSolana &&
-          solAdapters.map((item, key) => (
+          readySolAdapters.map((item, key) => (
             <div
               key={`sol-${key}`}
               className="oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5"
