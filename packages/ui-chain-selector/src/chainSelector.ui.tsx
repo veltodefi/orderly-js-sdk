@@ -122,7 +122,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
 
   const mostCommonChains = mostCommonChainsNames
     .map((name) => props.chains.mainnet?.find((chain) => chain.name === name))
-    .filter(Boolean);
+    .filter(Boolean) as TChainItem[];
 
   const getMainnetItemClass = (selected: boolean) =>
     cn(
