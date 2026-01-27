@@ -128,7 +128,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
     cn(
       item({ selected }),
       selected
-        ? "oui-bg-mainButton oui-text-mainButton-contrast"
+        ? "oui-bg-brand-primaryPressed oui-text-mainButton-contrast"
         : "hover:oui-bg-mainButton-hover",
       "hover:oui-bg-mainButton-hover",
     );

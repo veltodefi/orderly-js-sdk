@@ -96,8 +96,8 @@ export const connector = {
   "connector.privy.pwa.step2": "Choose Add to Home Screen in the options.",
   "connector.privy.pwa.findOnPage": "Find on Page",
   "connector.privy.pwa.addToHomeScreen": "Add to Home Screen",
-  "connector.mostCommon": "Most Common",
-  "connector.allNetworks": "All Networks",
+  "connector.mostCommon": "Most common",
+  "connector.allNetworks": "All networks",
   "connector.mainnetDescriptionTooltip": "Live trading with real funds",
   "connector.testnetDescriptionTooltip": "Practice trading with fake funds",
 };

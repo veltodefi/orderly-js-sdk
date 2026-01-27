@@ -90,6 +90,9 @@ export const themePlugin = () =>
         "--oui-color-main-button-inverted-loading-spinner-ring": "22 22 22",
         "--oui-color-main-button-inverted-loading-spinner-fill": "154 236 219",
 
+        /* brand primary pressed */
+        "--oui-color-brand-primary-pressed": "214 255 246",
+
         /* gradients */
         "--oui-gradient-primary-start": "40 0 97",
         "--oui-gradient-primary-end": "189 107 237",

@@ -107,6 +107,12 @@ module.exports = withTV({
               "rgb(var(--oui-surface-background-medium-dark, 31 31 31) / <alpha-value>)",
           },
         },
+        brand: {
+          primaryPressed: {
+            DEFAULT:
+              "rgb(var(--oui-color-brand-primary-pressed) / <alpha-value>)",
+          },
+        },
         primary: {
           DEFAULT: "rgb(var(--oui-color-primary) / <alpha-value>)",
           light: "rgb(var(--oui-color-primary-light) / <alpha-value>)",
