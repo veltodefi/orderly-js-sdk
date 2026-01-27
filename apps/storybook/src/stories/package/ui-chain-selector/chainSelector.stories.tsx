@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { OrderlyAppProvider } from "@veltodefi/react-app";
 import { Box, Button, Flex, modal } from "@veltodefi/ui";
 import {
   ChainSelectorWidget,
@@ -6,12 +7,26 @@ import {
   ChainSelectorSheetId,
 } from "@veltodefi/ui-chain-selector";
 
+const withAppContext = (Story: any) => (
+  <OrderlyAppProvider
+    brokerId="orderly"
+    brokerName="Orderly"
+    networkId="testnet"
+    veltoProps={{
+      mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
+    }}
+  >
+    <Story />
+  </OrderlyAppProvider>
+);
+
 const meta: Meta<typeof ChainSelectorWidget> = {
   title: "Package/ui-chain-selector/ChainSelector",
   component: ChainSelectorWidget,
   parameters: {
     layout: "centered",
   },
+  decorators: [withAppContext],
 };
 
 export default meta;
@@ -29,14 +44,6 @@ export const Default: Story = {
     </Flex>
   ),
 };
-
-// export const OnlyMainnet: Story = {
-//   render: () => (
-//     <Box width={456} intensity={800} r="xl" p={4}>
-//       <ChainSelectorWidget networkId="mainnet" />
-//     </Box>
-//   ),
-// };
 
 export const CommandStyle: Story = {
   render: () => (
@@ -73,24 +80,3 @@ export const CommandStyle: Story = {
     </Flex>
   ),
 };
-
-// export const CommandStyleMainnet: Story = {
-//   render: () => (
-//     <Button
-//       onClick={() => {
-//         modal
-//           .show(ChainSelectorDialogId, {
-//             networkId: "mainnet",
-//           })
-//           .then((result) => {
-//             console.log("result", result);
-//           })
-//           .catch((error) => {
-//             console.log("error", error);
-//           });
-//       }}
-//     >
-//       Switch chain
-//     </Button>
-//   ),
-// };

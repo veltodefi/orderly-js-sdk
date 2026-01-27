@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import {
   Box,
   Flex,
@@ -10,7 +11,7 @@ import {
   cn,
   tv,
   Tooltip,
-  InfoCircleIcon,
+  InfoIcon,
 } from "@veltodefi/ui";
 import { UseChainSelectorScriptReturn } from "./chainSelector.script";
 import { ChainType, TChainItem } from "./type";
@@ -42,7 +43,7 @@ const chainSelectorVariants = tv({
         list: "oui-bg-base-9 oui-rounded-lg oui-p-1",
         mainnetList: "oui-grid-cols-2 oui-mt-4",
         testnetList: "oui-grid-cols-1 oui-mt-4",
-        recentList: "oui-mt-4",
+        recentList: "oui-mt-4 oui-mb-4",
         item: "oui-bg-base-6 hover:oui-bg-base-7",
         tip: "oui-pt-6",
       },
@@ -50,7 +51,7 @@ const chainSelectorVariants = tv({
         icon: "oui-w-[18px] oui-h-[18px]",
         mainnetList: "oui-grid-cols-3 oui-mt-3",
         testnetList: "oui-grid-cols-2 oui-mt-3",
-        recentList: "oui-mt-3",
+        recentList: "oui-mt-4 oui-mb-4",
         item: "oui-bg-base-5 hover:oui-bg-base-6",
         tip: "oui-pt-8",
       },
@@ -91,11 +92,12 @@ const LS_MAINNET_SUBTAB_KEY = "orderly.chainSelector.mainnetSubTab";
 export const ChainSelector = (props: ChainSelectorProps) => {
   const { isWrongNetwork, variant = "wide" } = props;
   const { t } = useTranslation();
-  const { list, mainnetList, testnetList, item, tip } = chainSelectorVariants({
-    variant,
-  });
-
-  const mostCommonChainsNames = ["BNB Chain", "Arbitrum", "Ethereum", "Solana"];
+  const { list, recentList, mainnetList, testnetList, item, icon, tip } =
+    chainSelectorVariants({
+      variant,
+    });
+  const { veltoProps } = useAppContext();
+  const mostCommonChainsNames = veltoProps?.mostCommonChains ?? [];
 
   const [selectedTab, setSelectedTab] = useState<ChainType>(() => {
     if (typeof window !== "undefined") {
@@ -118,9 +120,9 @@ export const ChainSelector = (props: ChainSelectorProps) => {
     return "mostCommon";
   });
 
-  const mostCommonChains = props.chains.mainnet?.filter((chain) =>
-    mostCommonChainsNames.includes(chain.name),
-  );
+  const mostCommonChains = mostCommonChainsNames
+    .map((name) => props.chains.mainnet?.find((chain) => chain.name === name))
+    .filter(Boolean);
 
   const getMainnetItemClass = (selected: boolean) =>
     cn(
@@ -153,7 +155,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
           <Tooltip
             content={
               <Box className="oui-flex oui-flex-col oui-gap-y-2">
-                <Box className="oui-flex oui-flex-col oui-mb-2">
+                <Box className="oui-mb-2 oui-flex oui-flex-col">
                   <Text size="xs" weight="bold">
                     {t("connector.mainnet")}
                   </Text>
@@ -161,7 +163,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
                     {t("connector.mainnetDescriptionTooltip")}
                   </Text>
                 </Box>
-                <Box className="oui-flex oui-flex-col oui-mb-2">
+                <Box className="oui-mb-2 oui-flex oui-flex-col">
                   <Text size="xs" weight="bold">
                     {t("connector.testnet")}
                   </Text>
@@ -172,7 +174,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
               </Box>
             }
           >
-            <InfoCircleIcon className="cursor-pointer oui-size-6" />
+            <InfoIcon className="oui-cursor-pointer oui-text-[#8F8F8F]" />
           </Tooltip>
         }
       >
@@ -191,6 +193,21 @@ export const ChainSelector = (props: ChainSelectorProps) => {
           >
             <Title />
 
+            {!!props.recentChains?.length && (
+              <Flex gap={2} className={recentList()}>
+                {props.recentChains?.map((item) => {
+                  return (
+                    <RecentChainItem
+                      key={item.id}
+                      item={item}
+                      onClick={() => props.onChainClick(item)}
+                      iconClassName={icon()}
+                    />
+                  );
+                })}
+              </Flex>
+            )}
+
             <TabPanel
               value="mostCommon"
               title={
@@ -204,7 +221,8 @@ export const ChainSelector = (props: ChainSelectorProps) => {
                 className={cn(
                   list(),
                   mainnetList(),
-                  "oui-bg-[#161616] oui-p-2 oui-rounded-[12px]",
+                  "oui-rounded-[12px] oui-bg-[#161616] oui-p-2",
+                  "oui-grid-cols-2",
                 )}
               >
                 <ChainList
@@ -229,7 +247,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
                 className={cn(
                   list(),
                   mainnetList(),
-                  "oui-bg-[#161616] oui-p-2 oui-rounded-[12px]",
+                  "oui-rounded-[12px] oui-bg-[#161616] oui-p-2",
                 )}
               >
                 <ChainList
@@ -245,14 +263,14 @@ export const ChainSelector = (props: ChainSelectorProps) => {
 
         {props.showTestnet && (
           <TabPanel value={ChainType.Testnet} title={t("connector.testnet")}>
-            <Title />
+            <Title className="oui-mb-4" />
 
             <Box
               r="2xl"
               className={cn(
                 list(),
                 testnetList(),
-                "oui-bg-[#161616] oui-p-2 oui-rounded-[12px]",
+                "oui-rounded-[12px] oui-bg-[#161616] oui-p-2",
               )}
             >
               <ChainList
@@ -278,12 +296,12 @@ export const ChainSelector = (props: ChainSelectorProps) => {
 };
 // ------------------ ChainSelector end ------------------
 
-const Title = () => {
+const Title = ({ className }: { className?: string }) => {
   const { t } = useTranslation();
 
   return (
-    <Box className="oui-mb-[16px]">
-      <Text className="oui-text-[#FFF] oui-font-bold oui-text-xl">
+    <Box className={className ?? ""}>
+      <Text className="oui-text-xl oui-font-bold oui-text-[#FFF]">
         {t("connector.switchNetwork")}
       </Text>
     </Box>
@@ -349,7 +367,7 @@ export const RecentChainItem = (props: {
 }) => {
   return (
     <button
-      className="oui-border oui-border-line-12 oui-rounded-lg hover:oui-border-primary-light"
+      className="oui-rounded-lg oui-border oui-border-line-12 hover:oui-border-primary-light"
       onClick={props.onClick}
     >
       <Flex itemAlign="center" p={2}>

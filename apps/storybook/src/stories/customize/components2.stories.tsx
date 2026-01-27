@@ -24,6 +24,9 @@ const meta = {
           brokerName="Orderly"
           networkId="testnet"
           onChainChanged={fn()}
+          veltoProps={{
+            mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
+          }}
         >
           <Story />
         </OrderlyAppProvider>

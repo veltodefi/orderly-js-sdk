@@ -18,6 +18,9 @@ const meta = {
           brokerId="orderly"
           brokerName="Orderly"
           networkId="testnet"
+          veltoProps={{
+            mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
+          }}
           onChainChanged={fn()}
           components={{
             [ExtensionPositionEnum.MainMenus]: (props) => {

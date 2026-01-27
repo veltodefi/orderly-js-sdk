@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { OrderlyAppProvider } from "@veltodefi/react-app";
 import {
   AssetViewWidget,
   DataListWidget,
@@ -16,18 +17,25 @@ import { tradingPageConfig } from "../../../orderlyConfig";
 import { getSymbol, updateSymbol } from "../../../utils/storage";
 import { OrderlyIcon } from "./icons";
 
+const withAppContext = (Story: any) => (
+  <OrderlyAppProvider
+    brokerId="orderly"
+    brokerName="Orderly"
+    networkId="testnet"
+    veltoProps={{
+      mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
+    }}
+  >
+    <BaseLayout>
+      <Story />
+    </BaseLayout>
+  </OrderlyAppProvider>
+);
+
 const meta: Meta<typeof TradingPage> = {
   title: "Package/trading/TradingPage",
   component: TradingPage,
-  decorators: [
-    (Story) => {
-      return (
-        <BaseLayout>
-          <Story />
-        </BaseLayout>
-      );
-    },
-  ],
+  decorators: [withAppContext],
   parameters: {
     layout: "fullscreen",
   },
