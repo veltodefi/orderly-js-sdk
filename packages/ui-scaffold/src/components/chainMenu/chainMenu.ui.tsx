@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
   Spinner,
   Text,
+  CloseIcon,
 } from "@veltodefi/ui";
 import {
   ChainSelectorDialogId,
@@ -144,6 +145,19 @@ export const ChainMenu = (props: UseChainMenuScriptReturn) => {
             "oui-font-semibold",
           )}
         >
+          <button
+            type="button"
+            onClick={props.hide}
+            className={cn(
+              "oui-top-4.5 oui-absolute oui-right-4",
+              "oui-rounded oui-border oui-border-mainButton oui-p-1",
+              "oui-bg-transparent hover:oui-opacity-100 disabled:oui-pointer-events-none",
+            )}
+            aria-label="Fechar"
+          >
+            <CloseIcon size={16} opacity={1} className="oui-text-mainButton" />
+          </button>
+
           <ChainSelectorWidget
             close={props.hide}
             onChainChangeBefore={props.onChainChangeBefore}

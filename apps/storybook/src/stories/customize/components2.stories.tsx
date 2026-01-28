@@ -1,6 +1,4 @@
 import type { StoryObj } from "@storybook/react-vite";
-import { fn } from "storybook/test";
-import { OrderlyAppProvider } from "@veltodefi/react-app";
 import {
   Flex,
   Text,
@@ -8,7 +6,6 @@ import {
   installExtension,
 } from "@veltodefi/ui";
 import { Scaffold } from "@veltodefi/ui-scaffold";
-import { WalletConnectorProvider } from "@veltodefi/wallet-connector";
 
 const meta = {
   title: "Customize/Scaffold/extension",
@@ -16,23 +13,6 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  decorators: [
-    (Story: any) => (
-      <WalletConnectorProvider>
-        <OrderlyAppProvider
-          brokerId="orderly"
-          brokerName="Orderly"
-          networkId="testnet"
-          onChainChanged={fn()}
-          veltoProps={{
-            mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
-          }}
-        >
-          <Story />
-        </OrderlyAppProvider>
-      </WalletConnectorProvider>
-    ),
-  ],
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

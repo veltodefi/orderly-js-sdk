@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { OrderlyAppProvider } from "@veltodefi/react-app";
 import { Box, Button, Flex, modal } from "@veltodefi/ui";
 import {
   ChainSelectorWidget,
@@ -7,26 +6,12 @@ import {
   ChainSelectorSheetId,
 } from "@veltodefi/ui-chain-selector";
 
-const withAppContext = (Story: any) => (
-  <OrderlyAppProvider
-    brokerId="orderly"
-    brokerName="Orderly"
-    networkId="testnet"
-    veltoProps={{
-      mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
-    }}
-  >
-    <Story />
-  </OrderlyAppProvider>
-);
-
 const meta: Meta<typeof ChainSelectorWidget> = {
   title: "Package/ui-chain-selector/ChainSelector",
   component: ChainSelectorWidget,
   parameters: {
     layout: "centered",
   },
-  decorators: [withAppContext],
 };
 
 export default meta;

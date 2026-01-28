@@ -85,13 +85,13 @@ const SheetContent = React.forwardRef<
         {closeable && (
           <SheetPrimitive.Close
             className={cnBase(
-              "oui-ring-offset-base-700 focus:oui-ring-ring oui-absolute oui-right-4 oui-top-4 oui-z-10 oui-rounded-sm oui-transition-opacity focus:oui-outline-none focus:oui-ring-2 focus:oui-ring-offset-2 active:oui-outline-none focus:orderly-outline-none disabled:oui-pointer-events-none data-[state=open]:oui-bg-secondary",
+              "oui-dialog-close-btn oui-ring-offset-background oui-absolute oui-right-4 oui-top-4 oui-rounded oui-border oui-border-mainButton oui-p-1 oui-transition-opacity hover:oui-opacity-100 disabled:oui-pointer-events-none",
               props?.closeClassName,
             )}
           >
             <CloseIcon
               size={closeableSize}
-              color="white"
+              className="oui-text-mainButton"
               opacity={closeOpacity}
               onClick={props?.onClose}
             />
