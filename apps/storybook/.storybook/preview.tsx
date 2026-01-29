@@ -1,6 +1,7 @@
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react-vite";
 import { withThemeBuilder } from "storybook-theme-tool/preview";
+import { OrderlyAppProvider } from "@veltodefi/react-app";
 import { OrderlyProvider } from "../src/components/orderlyProvider";
 import { customViewports } from "./screenSizes";
 import "../src/playground/styles/fonts.css";
@@ -8,6 +9,18 @@ import "../src/tailwind.css";
 
 const preview: Preview = {
   decorators: [
+    (Story) => (
+      <OrderlyAppProvider
+        brokerId="orderly"
+        brokerName="Orderly"
+        networkId="testnet"
+        veltoProps={{
+          mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
+        }}
+      >
+        <Story />
+      </OrderlyAppProvider>
+    ),
     (Story) => {
       return (
         <OrderlyProvider>

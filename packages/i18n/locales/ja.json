@@ -58,6 +58,8 @@
   "common.marketPrice": "市場価格",
   "common.market": "成行",
   "common.limit": "指値",
+  "connector.mostCommon": "最も一般的",
+  "connector.allNetworks": "すべてのネットワーク",
   "common.triggerPrice": "トリガー価格",
   "common.unrealizedPnl": "未実現損益",
   "common.realizedPnl": "実現損益",
@@ -1142,5 +1144,7 @@
   "notification.delistingTitle": "トークン上場廃止のお知らせ",
   "notification.generalTitle": "一般アップデート",
   "notification.maintenanceTitle": "システムメンテナンス",
-  "notification.empty": "お知らせはありません"
+  "notification.empty": "お知らせはありません",
+  "connector.mainnetDescriptionTooltip": "本物の資金でライブ取引",
+  "connector.testnetDescriptionTooltip": "テスト資金で取引を練習"
 }

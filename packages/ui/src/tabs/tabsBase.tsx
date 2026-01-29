@@ -3,14 +3,32 @@ import * as TabsPrimitive from "@radix-ui/react-tabs";
 import { VariantProps } from "tailwind-variants";
 import { tv } from "../utils/tv";
 
+const baseTriggerClasses = [
+  "oui-bg-mainButton-inverted",
+  "oui-text-mainButton-invertedContrast",
+  "oui-border-0",
+  "hover:oui-bg-mainButton-invertedHover",
+  "hover:oui-text-mainButton-invertedHoverContrast",
+  "active:oui-bg-mainButton-invertedPressed",
+  "active:oui-text-mainButton-invertedPressedContrast",
+  "focus:oui-bg-mainButton-invertedFocus",
+  "focus:oui-text-mainButton-invertedFocusContrast",
+  "disabled:oui-bg-mainButton-invertedDisabled",
+  "disabled:oui-text-mainButton-invertedDisabledContrast",
+  "disabled:oui-border-0",
+  "data-[loading=true]:oui-bg-mainButton-invertedLoading",
+  "data-[loading=true]:oui-text-mainButton-invertedLoadingContrast",
+  "data-[loading=true]:[&_.oui-spinner]:oui-text-mainButton-invertedLoadingSpinner",
+  "data-[state=active]:oui-bg-mainButton-invertedPressed",
+  "data-[state=active]:oui-text-mainButton-invertedPressedContrast",
+  "first:oui-rounded-l-lg",
+  "last:oui-rounded-r-lg",
+  "-ml-[1px]",
+];
+
 const tabsVariants = tv({
   slots: {
-    list: [
-      "oui-header-list",
-      "oui-flex",
-      "oui-items-center",
-      // "oui-px-1",
-    ],
+    list: ["oui-header-list", "oui-flex", "oui-items-center"],
     content: [
       "oui-ring-offset-background",
       "focus-visible:oui-outline-none",
@@ -24,11 +42,8 @@ const tabsVariants = tv({
       "oui-items-center",
       "oui-justify-center",
       "oui-whitespace-nowrap",
-      //   "oui-px-3",
-
       "oui-box-content",
       "oui-font-medium",
-
       "oui-text-base-contrast-36 hover:oui-text-base-contrast-54",
       "oui-ring-offset-background",
       "oui-transition-all",
@@ -69,15 +84,12 @@ const tabsVariants = tv({
       },
       contained: {
         list: ["oui-space-x-[6px]"],
-        trigger: [
-          "oui-group",
-          "oui-rounded",
-          "oui-px-3",
-          "oui-bg-base-7 hover:oui-bg-base-5",
-          "oui-text-base-contrast-36",
-          "data-[state=active]:oui-bg-base-5",
-          "data-[state=active]:oui-text-base-contrast",
-        ],
+        trigger: ["oui-rounded", "oui-px-3", ...baseTriggerClasses],
+        icon: ["oui-text-inherit"],
+      },
+      inverted: {
+        list: ["oui-w-full", "oui-flex"],
+        trigger: ["oui-w-full", "oui-h-[40px]", ...baseTriggerClasses],
         icon: ["oui-text-inherit"],
       },
     },

@@ -58,6 +58,8 @@
   "common.marketPrice": "市價",
   "common.market": "市價",
   "common.limit": "限價",
+  "connector.mostCommon": "最常用",
+  "connector.allNetworks": "所有網絡",
   "common.triggerPrice": "觸發價格",
   "common.unrealizedPnl": "未實現盈虧",
   "common.realizedPnl": "已實現盈虧",
@@ -1142,5 +1144,7 @@
   "notification.delistingTitle": "代幣下架通知",
   "notification.generalTitle": "一般更新",
   "notification.maintenanceTitle": "系統維護",
-  "notification.empty": "暫無公告"
+  "notification.empty": "暫無公告",
+  "connector.mainnetDescriptionTooltip": "用真實資金進行實盤交易",
+  "connector.testnetDescriptionTooltip": "用虛擬資金練習交易"
 }

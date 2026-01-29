@@ -30,14 +30,6 @@ export const Default: Story = {
   ),
 };
 
-// export const OnlyMainnet: Story = {
-//   render: () => (
-//     <Box width={456} intensity={800} r="xl" p={4}>
-//       <ChainSelectorWidget networkId="mainnet" />
-//     </Box>
-//   ),
-// };
-
 export const CommandStyle: Story = {
   render: () => (
     <Flex gapX={5}>
@@ -73,24 +65,3 @@ export const CommandStyle: Story = {
     </Flex>
   ),
 };
-
-// export const CommandStyleMainnet: Story = {
-//   render: () => (
-//     <Button
-//       onClick={() => {
-//         modal
-//           .show(ChainSelectorDialogId, {
-//             networkId: "mainnet",
-//           })
-//           .then((result) => {
-//             console.log("result", result);
-//           })
-//           .catch((error) => {
-//             console.log("error", error);
-//           });
-//       }}
-//     >
-//       Switch chain
-//     </Button>
-//   ),
-// };

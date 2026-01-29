@@ -58,6 +58,8 @@
   "common.marketPrice": "Ринкова",
   "common.market": "Ринок",
   "common.limit": "Ліміт",
+  "connector.mostCommon": "Найпоширеніші",
+  "connector.allNetworks": "Всі мережі",
   "common.triggerPrice": "Ціна спрацьовування",
   "common.unrealizedPnl": "Нереалізований PnL",
   "common.realizedPnl": "Реалізований PnL",
@@ -1142,5 +1144,7 @@
   "notification.delistingTitle": "Повідомлення про делістинг токена",
   "notification.generalTitle": "Загальне оновлення",
   "notification.maintenanceTitle": "Обслуговування системи",
-  "notification.empty": "Немає оголошень"
+  "notification.empty": "Немає оголошень",
+  "connector.mainnetDescriptionTooltip": "Торгівля в реальному часі на реальні кошти",
+  "connector.testnetDescriptionTooltip": "Тренуйтеся з віртуальними коштами"
 }

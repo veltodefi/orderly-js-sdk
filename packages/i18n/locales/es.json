@@ -58,6 +58,8 @@
   "common.marketPrice": "Mercado",
   "common.market": "Mercado",
   "common.limit": "Límite",
+  "connector.mostCommon": "Más comunes",
+  "connector.allNetworks": "Todas las redes",
   "common.triggerPrice": "Precio de activación",
   "common.unrealizedPnl": "PnL no realizado",
   "common.realizedPnl": "PnL realizado",
@@ -1142,5 +1144,7 @@
   "notification.delistingTitle": "Aviso de delistado de token",
   "notification.generalTitle": "Actualización general",
   "notification.maintenanceTitle": "Mantenimiento del sistema",
-  "notification.empty": "No hay anuncios"
+  "notification.empty": "No hay anuncios",
+  "connector.mainnetDescriptionTooltip": "Operación real con fondos reales",
+  "connector.testnetDescriptionTooltip": "Practica operaciones con fondos ficticios"
 }
