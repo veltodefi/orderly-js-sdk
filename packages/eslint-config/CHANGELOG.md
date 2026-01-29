@@ -1,4 +1,17 @@
-# @orderly.network/eslint-config
+# @veltodefi/eslint-config
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
 
 ## 2.8.11
 

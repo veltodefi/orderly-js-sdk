@@ -1,16 +1,19 @@
 import type { TradingPageProps } from "@veltodefi/trading";
 
 export type TradingPageConfigProps = {
-  tradingViewConfig: Partial<TradingPageProps["tradingViewConfig"]>;
+  tradingViewConfig: TradingPageProps["tradingViewConfig"];
   sharePnLConfig: TradingPageProps["sharePnLConfig"];
   referral?: any;
 };
 
 export const tradingPageConfig: TradingPageConfigProps = {
   tradingViewConfig: {
-    // scriptSRC: "/tradingview/charting_library/charting_library.js",
-    // library_path: "/tradingview/charting_library/",
-    // customCssUrl: "/tradingview/chart.css",
+    scriptSRC: "/tradingview/charting_library/charting_library.js",
+    library_path: "/tradingview/charting_library/",
+    customCssUrl: "/tradingview/chart.css",
+    overrides: {
+      "mainSeriesProperties.statusViewStyle.showExchange": false,
+    },
     // broker config tradingview bg
     // colorConfig: {
     //   downColor: '#BE1630',

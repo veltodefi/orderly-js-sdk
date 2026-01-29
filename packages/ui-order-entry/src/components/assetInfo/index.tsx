@@ -1,5 +1,6 @@
+import { useGetEstLiqPrice } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import { OrderType } from "@veltodefi/types";
+import { OrderSide, OrderType } from "@veltodefi/types";
 import { Flex, Text, Tooltip, useScreen } from "@veltodefi/ui";
 import { FeesWidget } from "../fee";
 import { SlippageUI } from "../slippage/slippage.ui";
@@ -9,6 +10,7 @@ export function AssetInfo(props: {
   canTrade: boolean;
   quote: string;
   estLiqPrice: number | null;
+  estLiqPriceDistance: number | null;
   estLeverage: number | null;
   currentLeverage: number | null;
   slippage: string;
@@ -17,10 +19,17 @@ export function AssetInfo(props: {
   setSlippage: (slippage: string) => void;
   orderType: OrderType;
   disableFeatures?: ("slippageSetting" | "feesInfo")[];
+  side: OrderSide;
 }) {
   const { canTrade, disableFeatures, orderType, symbol } = props;
   const { t } = useTranslation();
   const { isMobile } = useScreen();
+
+  const displayEstLiqPrice = useGetEstLiqPrice({
+    estLiqPrice: props.estLiqPrice,
+    symbol: symbol,
+    side: props.side,
+  });
 
   return (
     <div className={"oui-space-y-[2px] xl:oui-space-y-1"}>
@@ -62,7 +71,7 @@ export function AssetInfo(props: {
           className={"oui-text-base-contrast-80"}
           unitClassName={"oui-ml-1 oui-text-base-contrast-36"}
         >
-          {canTrade ? (props.estLiqPrice ?? "--") : "--"}
+          {canTrade ? (displayEstLiqPrice ?? "--") : "--"}
         </Text.numeral>
       </Flex>
 

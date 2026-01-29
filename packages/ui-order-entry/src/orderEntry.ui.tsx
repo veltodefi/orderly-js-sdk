@@ -466,6 +466,7 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           canTrade={props.canTrade}
           quote={symbolInfo.quote}
           estLiqPrice={props.estLiqPrice}
+          estLiqPriceDistance={props.estLiqPriceDistance}
           estLeverage={props.estLeverage}
           currentLeverage={props.currentLeverage}
           slippage={slippage}
@@ -475,6 +476,7 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           orderType={formattedOrder.order_type!}
           disableFeatures={disableFeatures}
           symbol={props.symbol}
+          side={side}
         />
 
         <Divider className="oui-w-full" />

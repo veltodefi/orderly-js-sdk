@@ -70,7 +70,7 @@ Need to register Dialog and Sheet, Dialog title uses i18n.t("trading.fundingDeta
 
 ```ts
 import { useMemo } from "react";
-import { Decimal } from "@orderly.network/utils";
+import { Decimal } from "@veltodefi/utils";
 
 export interface Use${Pascal}ScriptOptions {
   // Define external inputs, e.g. symbol?: string
@@ -100,7 +100,7 @@ export type ${Pascal}State = ReturnType<typeof use${Pascal}Script>;
 
 ```tsx
 import React, { FC } from "react";
-import { Flex, Text } from "@orderly.network/ui";
+import { Flex, Text } from "@veltodefi/ui";
 import type { ${Pascal}State } from "./${camel}.script";
 
 export type ${Pascal}Props = ${Pascal}State & {
@@ -124,8 +124,8 @@ import React from "react";
 import { ${Pascal}, type ${Pascal}Props } from "./${camel}.ui";
 import { use${Pascal}Script } from "./${camel}.script";
 // If Dialog/Sheet registration is needed, uncomment below:
-// import { registerSimpleDialog, registerSimpleSheet } from "@orderly.network/ui";
-// import { i18n } from "@orderly.network/i18n";
+// import { registerSimpleDialog, registerSimpleSheet } from "@veltodefi/ui";
+// import { i18n } from "@veltodefi/i18n";
 
 export type ${Pascal}WidgetProps = Pick<${Pascal}Props, "className" | "style"> & {
   // Define options passed to script, e.g. symbol?: string
@@ -186,12 +186,12 @@ export { ${Pascal}Widget /*, ${Pascal}DialogId, ${Pascal}SheetId */ } from "./${
 - Text should use i18n for internationalization (only in UI layer, NOT in script)
 - Types should be explicitly declared, avoid deep nesting
 - Add error fallback handling when necessary
-- **Numeric Calculations**: All numeric calculations (multiplication, division, percentage conversion, etc.) must use `Decimal` (from `@orderly.network/utils`) to avoid JavaScript floating-point precision issues
-- **Local Cache Data**: When local cache data is needed, must use `useLocalStorage` hook (from `@orderly.network/hooks`). Use in `script.tsx`, usage: `const [storedValue, setValue] = useLocalStorage<T>(key: string, initialValue: T)`. Do not directly use `localStorage.getItem/setItem`
+- **Numeric Calculations**: All numeric calculations (multiplication, division, percentage conversion, etc.) must use `Decimal` (from `@veltodefi/utils`) to avoid JavaScript floating-point precision issues
+- **Local Cache Data**: When local cache data is needed, must use `useLocalStorage` hook (from `@veltodefi/hooks`). Use in `script.tsx`, usage: `const [storedValue, setValue] = useLocalStorage<T>(key: string, initialValue: T)`. Do not directly use `localStorage.getItem/setItem`
 - **Comment Language**: All code comments must be in English
 - **Prohibit Generating Any Type of Markdown Documentation**: Do not generate README, CHANGELOG, usage instructions, summary documents, or any .md files
 - **i18n Key Processing Workflow** (only applies to UI layer):
-  1. First search in `@orderly.network/i18n` package to see if a matching key already exists
+  1. First search in `@veltodefi/i18n` package to see if a matching key already exists
   2. If it exists, use it directly; if not, create a new key
   3. Determine which file it should be placed in under `packages/i18n/src/locale/module/` based on content nature:
      - Common text (such as Cancel, Confirm, Save, etc.) → `common.ts`
@@ -206,7 +206,7 @@ export { ${Pascal}Widget /*, ${Pascal}DialogId, ${Pascal}SheetId */ } from "./${
 - **Component Reusability**: If the created View or Node components can be reused in other places, they should be extracted as reusable components. Before creating new components, check if similar components already exist in the codebase that can be reused or extended. Extract common UI patterns into separate components for better maintainability and consistency
 - **Dialog/BottomSheet Registration Requirements**: If the created Widget needs to be used as a Dialog or BottomSheet, must:
   1. Define and export `${Pascal}DialogId` and `${Pascal}SheetId` (or `${Pascal}BottomSheetId`) constants in `widget.tsx`
-  2. Register using `registerSimpleDialog` and `registerSimpleSheet` (from `@orderly.network/ui`)
+  2. Register using `registerSimpleDialog` and `registerSimpleSheet` (from `@veltodefi/ui`)
   3. Export these IDs in `index.ts` so external code can call Dialog/Sheet by ID
   4. Reference example: `packages/ui-tpsl/src/editBracketOrder/editBracketOrder.widget.tsx`
 
@@ -227,7 +227,7 @@ When components need to be used in UI (especially component names obtained from 
 
 4. **Use When Generating UI**:
    - Use components according to the API and best practices in the documentation
-   - Use correct import paths (e.g., `import { Button } from "@orderly.network/ui"`)
+   - Use correct import paths (e.g., `import { Button } from "@veltodefi/ui"`)
    - Apply correct props, variants, and style configurations
    - Follow usage examples and notes in the documentation
 

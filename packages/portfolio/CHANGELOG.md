@@ -1,4 +1,52 @@
-# @orderly.network/portfolio
+# @veltodefi/portfolio
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+- Updated dependencies
+- Updated dependencies [117b23a]
+  - @veltodefi/app@2.8.12
+  - @veltodefi/2.8.12
+  - @veltodefi/2.8.12
+  - @veltodefi/.8.12
+  - @veltodefi/.8.12
+  - @veltodefi/2.8.12
+  - @veltodefi/.12
+  - @veltodefi/in-selector@2.8.12
+  - @veltodefi/nector@2.8.12
+  - @veltodefi/erage@2.8.12
+  - @veltodefi/ers@2.8.12
+  - @veltodefi/itions@2.8.12
+  - @veltodefi/ffold@2.8.12
+  - @veltodefi/re@2.8.12
+  - @veltodefi/nsfer@2.8.12
+  - @veltodefi/2.8.12
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/app@2.8.12-alpha.0
+  - @veltodefi/2.8.12-alpha.0
+  - @veltodefi/2.8.12-alpha.0
+  - @veltodefi/.8.12-alpha.0
+  - @veltodefi/.8.12-alpha.0
+  - @veltodefi/2.8.12-alpha.0
+  - @veltodefi/.12-alpha.0
+  - @veltodefi/in-selector@2.8.12-alpha.0
+  - @veltodefi/nector@2.8.12-alpha.0
+  - @veltodefi/erage@2.8.12-alpha.0
+  - @veltodefi/ers@2.8.12-alpha.0
+  - @veltodefi/itions@2.8.12-alpha.0
+  - @veltodefi/ffold@2.8.12-alpha.0
+  - @veltodefi/re@2.8.12-alpha.0
+  - @veltodefi/nsfer@2.8.12-alpha.0
+  - @veltodefi/2.8.12-alpha.0
 
 ## 2.8.11
 
@@ -10,22 +58,22 @@
 - Updated dependencies [1ed7590]
 - Updated dependencies
 - Updated dependencies [e7fb6c1]
-  - @orderly.network/react-app@2.8.11
-  - @orderly.network/chart@2.8.11
-  - @orderly.network/hooks@2.8.11
-  - @orderly.network/i18n@2.8.11
-  - @orderly.network/perp@4.8.11
-  - @orderly.network/types@2.8.11
-  - @orderly.network/ui@2.8.11
-  - @orderly.network/ui-chain-selector@2.8.11
-  - @orderly.network/ui-connector@2.8.11
-  - @orderly.network/ui-leverage@2.8.11
-  - @orderly.network/ui-orders@2.8.11
-  - @orderly.network/ui-positions@2.8.11
-  - @orderly.network/ui-scaffold@2.8.11
-  - @orderly.network/ui-share@2.8.11
-  - @orderly.network/ui-transfer@2.8.11
-  - @orderly.network/utils@2.8.11
+  - @veltodefi/app@2.8.11
+  - @veltodefi/2.8.11
+  - @veltodefi/2.8.11
+  - @veltodefi/.8.11
+  - @veltodefi/.8.11
+  - @veltodefi/2.8.11
+  - @veltodefi/.11
+  - @veltodefi/in-selector@2.8.11
+  - @veltodefi/nector@2.8.11
+  - @veltodefi/erage@2.8.11
+  - @veltodefi/ers@2.8.11
+  - @veltodefi/itions@2.8.11
+  - @veltodefi/ffold@2.8.11
+  - @veltodefi/re@2.8.11
+  - @veltodefi/nsfer@2.8.11
+  - @veltodefi/2.8.11
 
 ## 2.8.11-alpha.1
 
@@ -33,22 +81,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.11-alpha.1
-  - @orderly.network/chart@2.8.11-alpha.1
-  - @orderly.network/hooks@2.8.11-alpha.1
-  - @orderly.network/i18n@2.8.11-alpha.1
-  - @orderly.network/perp@4.8.11-alpha.1
-  - @orderly.network/types@2.8.11-alpha.1
-  - @orderly.network/ui@2.8.11-alpha.1
-  - @orderly.network/ui-chain-selector@2.8.11-alpha.1
-  - @orderly.network/ui-connector@2.8.11-alpha.1
-  - @orderly.network/ui-leverage@2.8.11-alpha.1
-  - @orderly.network/ui-orders@2.8.11-alpha.1
-  - @orderly.network/ui-positions@2.8.11-alpha.1
-  - @orderly.network/ui-scaffold@2.8.11-alpha.1
-  - @orderly.network/ui-share@2.8.11-alpha.1
-  - @orderly.network/ui-transfer@2.8.11-alpha.1
-  - @orderly.network/utils@2.8.11-alpha.1
+  - @veltodefi/app@2.8.11-alpha.1
+  - @veltodefi/2.8.11-alpha.1
+  - @veltodefi/2.8.11-alpha.1
+  - @veltodefi/.8.11-alpha.1
+  - @veltodefi/.8.11-alpha.1
+  - @veltodefi/2.8.11-alpha.1
+  - @veltodefi/.11-alpha.1
+  - @veltodefi/in-selector@2.8.11-alpha.1
+  - @veltodefi/nector@2.8.11-alpha.1
+  - @veltodefi/erage@2.8.11-alpha.1
+  - @veltodefi/ers@2.8.11-alpha.1
+  - @veltodefi/itions@2.8.11-alpha.1
+  - @veltodefi/ffold@2.8.11-alpha.1
+  - @veltodefi/re@2.8.11-alpha.1
+  - @veltodefi/nsfer@2.8.11-alpha.1
+  - @veltodefi/2.8.11-alpha.1
 
 ## 2.8.11-alpha.0
 
@@ -56,22 +104,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.11-alpha.0
-  - @orderly.network/chart@2.8.11-alpha.0
-  - @orderly.network/hooks@2.8.11-alpha.0
-  - @orderly.network/i18n@2.8.11-alpha.0
-  - @orderly.network/perp@4.8.11-alpha.0
-  - @orderly.network/types@2.8.11-alpha.0
-  - @orderly.network/ui@2.8.11-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.11-alpha.0
-  - @orderly.network/ui-connector@2.8.11-alpha.0
-  - @orderly.network/ui-leverage@2.8.11-alpha.0
-  - @orderly.network/ui-orders@2.8.11-alpha.0
-  - @orderly.network/ui-positions@2.8.11-alpha.0
-  - @orderly.network/ui-scaffold@2.8.11-alpha.0
-  - @orderly.network/ui-share@2.8.11-alpha.0
-  - @orderly.network/ui-transfer@2.8.11-alpha.0
-  - @orderly.network/utils@2.8.11-alpha.0
+  - @veltodefi/app@2.8.11-alpha.0
+  - @veltodefi/2.8.11-alpha.0
+  - @veltodefi/2.8.11-alpha.0
+  - @veltodefi/.8.11-alpha.0
+  - @veltodefi/.8.11-alpha.0
+  - @veltodefi/2.8.11-alpha.0
+  - @veltodefi/.11-alpha.0
+  - @veltodefi/in-selector@2.8.11-alpha.0
+  - @veltodefi/nector@2.8.11-alpha.0
+  - @veltodefi/erage@2.8.11-alpha.0
+  - @veltodefi/ers@2.8.11-alpha.0
+  - @veltodefi/itions@2.8.11-alpha.0
+  - @veltodefi/ffold@2.8.11-alpha.0
+  - @veltodefi/re@2.8.11-alpha.0
+  - @veltodefi/nsfer@2.8.11-alpha.0
+  - @veltodefi/2.8.11-alpha.0
 
 ## 2.8.10
 
@@ -81,22 +129,22 @@
 - 0be13b3: publish
 - Updated dependencies
 - Updated dependencies [0be13b3]
-  - @orderly.network/react-app@2.8.10
-  - @orderly.network/chart@2.8.10
-  - @orderly.network/hooks@2.8.10
-  - @orderly.network/i18n@2.8.10
-  - @orderly.network/perp@4.8.10
-  - @orderly.network/types@2.8.10
-  - @orderly.network/ui@2.8.10
-  - @orderly.network/ui-chain-selector@2.8.10
-  - @orderly.network/ui-connector@2.8.10
-  - @orderly.network/ui-leverage@2.8.10
-  - @orderly.network/ui-orders@2.8.10
-  - @orderly.network/ui-positions@2.8.10
-  - @orderly.network/ui-scaffold@2.8.10
-  - @orderly.network/ui-share@2.8.10
-  - @orderly.network/ui-transfer@2.8.10
-  - @orderly.network/utils@2.8.10
+  - @veltodefi/app@2.8.10
+  - @veltodefi/2.8.10
+  - @veltodefi/2.8.10
+  - @veltodefi/.8.10
+  - @veltodefi/.8.10
+  - @veltodefi/2.8.10
+  - @veltodefi/.10
+  - @veltodefi/in-selector@2.8.10
+  - @veltodefi/nector@2.8.10
+  - @veltodefi/erage@2.8.10
+  - @veltodefi/ers@2.8.10
+  - @veltodefi/itions@2.8.10
+  - @veltodefi/ffold@2.8.10
+  - @veltodefi/re@2.8.10
+  - @veltodefi/nsfer@2.8.10
+  - @veltodefi/2.8.10
 
 ## 2.8.10-alpha.0
 
@@ -104,22 +152,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.10-alpha.0
-  - @orderly.network/chart@2.8.10-alpha.0
-  - @orderly.network/hooks@2.8.10-alpha.0
-  - @orderly.network/i18n@2.8.10-alpha.0
-  - @orderly.network/perp@4.8.10-alpha.0
-  - @orderly.network/types@2.8.10-alpha.0
-  - @orderly.network/ui@2.8.10-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.10-alpha.0
-  - @orderly.network/ui-connector@2.8.10-alpha.0
-  - @orderly.network/ui-leverage@2.8.10-alpha.0
-  - @orderly.network/ui-orders@2.8.10-alpha.0
-  - @orderly.network/ui-positions@2.8.10-alpha.0
-  - @orderly.network/ui-scaffold@2.8.10-alpha.0
-  - @orderly.network/ui-share@2.8.10-alpha.0
-  - @orderly.network/ui-transfer@2.8.10-alpha.0
-  - @orderly.network/utils@2.8.10-alpha.0
+  - @veltodefi/app@2.8.10-alpha.0
+  - @veltodefi/2.8.10-alpha.0
+  - @veltodefi/2.8.10-alpha.0
+  - @veltodefi/.8.10-alpha.0
+  - @veltodefi/.8.10-alpha.0
+  - @veltodefi/2.8.10-alpha.0
+  - @veltodefi/.10-alpha.0
+  - @veltodefi/in-selector@2.8.10-alpha.0
+  - @veltodefi/nector@2.8.10-alpha.0
+  - @veltodefi/erage@2.8.10-alpha.0
+  - @veltodefi/ers@2.8.10-alpha.0
+  - @veltodefi/itions@2.8.10-alpha.0
+  - @veltodefi/ffold@2.8.10-alpha.0
+  - @veltodefi/re@2.8.10-alpha.0
+  - @veltodefi/nsfer@2.8.10-alpha.0
+  - @veltodefi/2.8.10-alpha.0
 
 ## 2.8.9
 
@@ -129,22 +177,22 @@
 - 32f2962: publish
 - Updated dependencies
 - Updated dependencies [32f2962]
-  - @orderly.network/react-app@2.8.9
-  - @orderly.network/chart@2.8.9
-  - @orderly.network/hooks@2.8.9
-  - @orderly.network/i18n@2.8.9
-  - @orderly.network/perp@4.8.9
-  - @orderly.network/types@2.8.9
-  - @orderly.network/ui@2.8.9
-  - @orderly.network/ui-chain-selector@2.8.9
-  - @orderly.network/ui-connector@2.8.9
-  - @orderly.network/ui-leverage@2.8.9
-  - @orderly.network/ui-orders@2.8.9
-  - @orderly.network/ui-positions@2.8.9
-  - @orderly.network/ui-scaffold@2.8.9
-  - @orderly.network/ui-share@2.8.9
-  - @orderly.network/ui-transfer@2.8.9
-  - @orderly.network/utils@2.8.9
+  - @veltodefi/app@2.8.9
+  - @veltodefi/2.8.9
+  - @veltodefi/2.8.9
+  - @veltodefi/.8.9
+  - @veltodefi/.8.9
+  - @veltodefi/2.8.9
+  - @veltodefi/.9
+  - @veltodefi/in-selector@2.8.9
+  - @veltodefi/nector@2.8.9
+  - @veltodefi/erage@2.8.9
+  - @veltodefi/ers@2.8.9
+  - @veltodefi/itions@2.8.9
+  - @veltodefi/ffold@2.8.9
+  - @veltodefi/re@2.8.9
+  - @veltodefi/nsfer@2.8.9
+  - @veltodefi/2.8.9
 
 ## 2.8.9-alpha.0
 
@@ -152,22 +200,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.9-alpha.0
-  - @orderly.network/chart@2.8.9-alpha.0
-  - @orderly.network/hooks@2.8.9-alpha.0
-  - @orderly.network/i18n@2.8.9-alpha.0
-  - @orderly.network/perp@4.8.9-alpha.0
-  - @orderly.network/types@2.8.9-alpha.0
-  - @orderly.network/ui@2.8.9-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.9-alpha.0
-  - @orderly.network/ui-connector@2.8.9-alpha.0
-  - @orderly.network/ui-leverage@2.8.9-alpha.0
-  - @orderly.network/ui-orders@2.8.9-alpha.0
-  - @orderly.network/ui-positions@2.8.9-alpha.0
-  - @orderly.network/ui-scaffold@2.8.9-alpha.0
-  - @orderly.network/ui-share@2.8.9-alpha.0
-  - @orderly.network/ui-transfer@2.8.9-alpha.0
-  - @orderly.network/utils@2.8.9-alpha.0
+  - @veltodefi/app@2.8.9-alpha.0
+  - @veltodefi/2.8.9-alpha.0
+  - @veltodefi/2.8.9-alpha.0
+  - @veltodefi/.8.9-alpha.0
+  - @veltodefi/.8.9-alpha.0
+  - @veltodefi/2.8.9-alpha.0
+  - @veltodefi/.9-alpha.0
+  - @veltodefi/in-selector@2.8.9-alpha.0
+  - @veltodefi/nector@2.8.9-alpha.0
+  - @veltodefi/erage@2.8.9-alpha.0
+  - @veltodefi/ers@2.8.9-alpha.0
+  - @veltodefi/itions@2.8.9-alpha.0
+  - @veltodefi/ffold@2.8.9-alpha.0
+  - @veltodefi/re@2.8.9-alpha.0
+  - @veltodefi/nsfer@2.8.9-alpha.0
+  - @veltodefi/2.8.9-alpha.0
 
 ## 2.8.8
 
@@ -177,22 +225,22 @@
 - 9e4118b: publish
 - Updated dependencies
 - Updated dependencies [9e4118b]
-  - @orderly.network/react-app@2.8.8
-  - @orderly.network/chart@2.8.8
-  - @orderly.network/hooks@2.8.8
-  - @orderly.network/i18n@2.8.8
-  - @orderly.network/perp@4.8.8
-  - @orderly.network/types@2.8.8
-  - @orderly.network/ui@2.8.8
-  - @orderly.network/ui-chain-selector@2.8.8
-  - @orderly.network/ui-connector@2.8.8
-  - @orderly.network/ui-leverage@2.8.8
-  - @orderly.network/ui-orders@2.8.8
-  - @orderly.network/ui-positions@2.8.8
-  - @orderly.network/ui-scaffold@2.8.8
-  - @orderly.network/ui-share@2.8.8
-  - @orderly.network/ui-transfer@2.8.8
-  - @orderly.network/utils@2.8.8
+  - @veltodefi/app@2.8.8
+  - @veltodefi/2.8.8
+  - @veltodefi/2.8.8
+  - @veltodefi/.8.8
+  - @veltodefi/.8.8
+  - @veltodefi/2.8.8
+  - @veltodefi/.8
+  - @veltodefi/in-selector@2.8.8
+  - @veltodefi/nector@2.8.8
+  - @veltodefi/erage@2.8.8
+  - @veltodefi/ers@2.8.8
+  - @veltodefi/itions@2.8.8
+  - @veltodefi/ffold@2.8.8
+  - @veltodefi/re@2.8.8
+  - @veltodefi/nsfer@2.8.8
+  - @veltodefi/2.8.8
 
 ## 2.8.8-alpha.0
 
@@ -200,22 +248,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.8-alpha.0
-  - @orderly.network/chart@2.8.8-alpha.0
-  - @orderly.network/hooks@2.8.8-alpha.0
-  - @orderly.network/i18n@2.8.8-alpha.0
-  - @orderly.network/perp@4.8.8-alpha.0
-  - @orderly.network/types@2.8.8-alpha.0
-  - @orderly.network/ui@2.8.8-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.8-alpha.0
-  - @orderly.network/ui-connector@2.8.8-alpha.0
-  - @orderly.network/ui-leverage@2.8.8-alpha.0
-  - @orderly.network/ui-orders@2.8.8-alpha.0
-  - @orderly.network/ui-positions@2.8.8-alpha.0
-  - @orderly.network/ui-scaffold@2.8.8-alpha.0
-  - @orderly.network/ui-share@2.8.8-alpha.0
-  - @orderly.network/ui-transfer@2.8.8-alpha.0
-  - @orderly.network/utils@2.8.8-alpha.0
+  - @veltodefi/app@2.8.8-alpha.0
+  - @veltodefi/2.8.8-alpha.0
+  - @veltodefi/2.8.8-alpha.0
+  - @veltodefi/.8.8-alpha.0
+  - @veltodefi/.8.8-alpha.0
+  - @veltodefi/2.8.8-alpha.0
+  - @veltodefi/.8-alpha.0
+  - @veltodefi/in-selector@2.8.8-alpha.0
+  - @veltodefi/nector@2.8.8-alpha.0
+  - @veltodefi/erage@2.8.8-alpha.0
+  - @veltodefi/ers@2.8.8-alpha.0
+  - @veltodefi/itions@2.8.8-alpha.0
+  - @veltodefi/ffold@2.8.8-alpha.0
+  - @veltodefi/re@2.8.8-alpha.0
+  - @veltodefi/nsfer@2.8.8-alpha.0
+  - @veltodefi/2.8.8-alpha.0
 
 ## 2.8.7
 
@@ -225,22 +273,22 @@
 - publish
 - Updated dependencies [de789db]
 - Updated dependencies
-  - @orderly.network/react-app@2.8.7
-  - @orderly.network/chart@2.8.7
-  - @orderly.network/hooks@2.8.7
-  - @orderly.network/i18n@2.8.7
-  - @orderly.network/perp@4.8.7
-  - @orderly.network/types@2.8.7
-  - @orderly.network/ui@2.8.7
-  - @orderly.network/ui-chain-selector@2.8.7
-  - @orderly.network/ui-connector@2.8.7
-  - @orderly.network/ui-leverage@2.8.7
-  - @orderly.network/ui-orders@2.8.7
-  - @orderly.network/ui-positions@2.8.7
-  - @orderly.network/ui-scaffold@2.8.7
-  - @orderly.network/ui-share@2.8.7
-  - @orderly.network/ui-transfer@2.8.7
-  - @orderly.network/utils@2.8.7
+  - @veltodefi/app@2.8.7
+  - @veltodefi/2.8.7
+  - @veltodefi/2.8.7
+  - @veltodefi/.8.7
+  - @veltodefi/.8.7
+  - @veltodefi/2.8.7
+  - @veltodefi/.7
+  - @veltodefi/in-selector@2.8.7
+  - @veltodefi/nector@2.8.7
+  - @veltodefi/erage@2.8.7
+  - @veltodefi/ers@2.8.7
+  - @veltodefi/itions@2.8.7
+  - @veltodefi/ffold@2.8.7
+  - @veltodefi/re@2.8.7
+  - @veltodefi/nsfer@2.8.7
+  - @veltodefi/2.8.7
 
 ## 2.8.7-alpha.0
 
@@ -248,22 +296,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.7-alpha.0
-  - @orderly.network/chart@2.8.7-alpha.0
-  - @orderly.network/hooks@2.8.7-alpha.0
-  - @orderly.network/i18n@2.8.7-alpha.0
-  - @orderly.network/perp@4.8.7-alpha.0
-  - @orderly.network/types@2.8.7-alpha.0
-  - @orderly.network/ui@2.8.7-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.7-alpha.0
-  - @orderly.network/ui-connector@2.8.7-alpha.0
-  - @orderly.network/ui-leverage@2.8.7-alpha.0
-  - @orderly.network/ui-orders@2.8.7-alpha.0
-  - @orderly.network/ui-positions@2.8.7-alpha.0
-  - @orderly.network/ui-scaffold@2.8.7-alpha.0
-  - @orderly.network/ui-share@2.8.7-alpha.0
-  - @orderly.network/ui-transfer@2.8.7-alpha.0
-  - @orderly.network/utils@2.8.7-alpha.0
+  - @veltodefi/app@2.8.7-alpha.0
+  - @veltodefi/2.8.7-alpha.0
+  - @veltodefi/2.8.7-alpha.0
+  - @veltodefi/.8.7-alpha.0
+  - @veltodefi/.8.7-alpha.0
+  - @veltodefi/2.8.7-alpha.0
+  - @veltodefi/.7-alpha.0
+  - @veltodefi/in-selector@2.8.7-alpha.0
+  - @veltodefi/nector@2.8.7-alpha.0
+  - @veltodefi/erage@2.8.7-alpha.0
+  - @veltodefi/ers@2.8.7-alpha.0
+  - @veltodefi/itions@2.8.7-alpha.0
+  - @veltodefi/ffold@2.8.7-alpha.0
+  - @veltodefi/re@2.8.7-alpha.0
+  - @veltodefi/nsfer@2.8.7-alpha.0
+  - @veltodefi/2.8.7-alpha.0
 
 ## 2.8.6
 
@@ -273,22 +321,22 @@
 - c598cc6: publish
 - Updated dependencies
 - Updated dependencies [c598cc6]
-  - @orderly.network/react-app@2.8.6
-  - @orderly.network/chart@2.8.6
-  - @orderly.network/hooks@2.8.6
-  - @orderly.network/i18n@2.8.6
-  - @orderly.network/perp@4.8.6
-  - @orderly.network/types@2.8.6
-  - @orderly.network/ui@2.8.6
-  - @orderly.network/ui-chain-selector@2.8.6
-  - @orderly.network/ui-connector@2.8.6
-  - @orderly.network/ui-leverage@2.8.6
-  - @orderly.network/ui-orders@2.8.6
-  - @orderly.network/ui-positions@2.8.6
-  - @orderly.network/ui-scaffold@2.8.6
-  - @orderly.network/ui-share@2.8.6
-  - @orderly.network/ui-transfer@2.8.6
-  - @orderly.network/utils@2.8.6
+  - @veltodefi/app@2.8.6
+  - @veltodefi/2.8.6
+  - @veltodefi/2.8.6
+  - @veltodefi/.8.6
+  - @veltodefi/.8.6
+  - @veltodefi/2.8.6
+  - @veltodefi/.6
+  - @veltodefi/in-selector@2.8.6
+  - @veltodefi/nector@2.8.6
+  - @veltodefi/erage@2.8.6
+  - @veltodefi/ers@2.8.6
+  - @veltodefi/itions@2.8.6
+  - @veltodefi/ffold@2.8.6
+  - @veltodefi/re@2.8.6
+  - @veltodefi/nsfer@2.8.6
+  - @veltodefi/2.8.6
 
 ## 2.8.6-alpha.0
 
@@ -296,22 +344,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.6-alpha.0
-  - @orderly.network/chart@2.8.6-alpha.0
-  - @orderly.network/hooks@2.8.6-alpha.0
-  - @orderly.network/i18n@2.8.6-alpha.0
-  - @orderly.network/perp@4.8.6-alpha.0
-  - @orderly.network/types@2.8.6-alpha.0
-  - @orderly.network/ui@2.8.6-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.6-alpha.0
-  - @orderly.network/ui-connector@2.8.6-alpha.0
-  - @orderly.network/ui-leverage@2.8.6-alpha.0
-  - @orderly.network/ui-orders@2.8.6-alpha.0
-  - @orderly.network/ui-positions@2.8.6-alpha.0
-  - @orderly.network/ui-scaffold@2.8.6-alpha.0
-  - @orderly.network/ui-share@2.8.6-alpha.0
-  - @orderly.network/ui-transfer@2.8.6-alpha.0
-  - @orderly.network/utils@2.8.6-alpha.0
+  - @veltodefi/app@2.8.6-alpha.0
+  - @veltodefi/2.8.6-alpha.0
+  - @veltodefi/2.8.6-alpha.0
+  - @veltodefi/.8.6-alpha.0
+  - @veltodefi/.8.6-alpha.0
+  - @veltodefi/2.8.6-alpha.0
+  - @veltodefi/.6-alpha.0
+  - @veltodefi/in-selector@2.8.6-alpha.0
+  - @veltodefi/nector@2.8.6-alpha.0
+  - @veltodefi/erage@2.8.6-alpha.0
+  - @veltodefi/ers@2.8.6-alpha.0
+  - @veltodefi/itions@2.8.6-alpha.0
+  - @veltodefi/ffold@2.8.6-alpha.0
+  - @veltodefi/re@2.8.6-alpha.0
+  - @veltodefi/nsfer@2.8.6-alpha.0
+  - @veltodefi/2.8.6-alpha.0
 
 ## 2.8.5
 
@@ -321,22 +369,22 @@
 - publish
 - Updated dependencies [0180a59]
 - Updated dependencies
-  - @orderly.network/react-app@2.8.5
-  - @orderly.network/chart@2.8.5
-  - @orderly.network/hooks@2.8.5
-  - @orderly.network/i18n@2.8.5
-  - @orderly.network/perp@4.8.5
-  - @orderly.network/types@2.8.5
-  - @orderly.network/ui@2.8.5
-  - @orderly.network/ui-chain-selector@2.8.5
-  - @orderly.network/ui-connector@2.8.5
-  - @orderly.network/ui-leverage@2.8.5
-  - @orderly.network/ui-orders@2.8.5
-  - @orderly.network/ui-positions@2.8.5
-  - @orderly.network/ui-scaffold@2.8.5
-  - @orderly.network/ui-share@2.8.5
-  - @orderly.network/ui-transfer@2.8.5
-  - @orderly.network/utils@2.8.5
+  - @veltodefi/app@2.8.5
+  - @veltodefi/2.8.5
+  - @veltodefi/2.8.5
+  - @veltodefi/.8.5
+  - @veltodefi/.8.5
+  - @veltodefi/2.8.5
+  - @veltodefi/.5
+  - @veltodefi/in-selector@2.8.5
+  - @veltodefi/nector@2.8.5
+  - @veltodefi/erage@2.8.5
+  - @veltodefi/ers@2.8.5
+  - @veltodefi/itions@2.8.5
+  - @veltodefi/ffold@2.8.5
+  - @veltodefi/re@2.8.5
+  - @veltodefi/nsfer@2.8.5
+  - @veltodefi/2.8.5
 
 ## 2.8.5-alpha.0
 
@@ -344,22 +392,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.5-alpha.0
-  - @orderly.network/chart@2.8.5-alpha.0
-  - @orderly.network/hooks@2.8.5-alpha.0
-  - @orderly.network/i18n@2.8.5-alpha.0
-  - @orderly.network/perp@4.8.5-alpha.0
-  - @orderly.network/types@2.8.5-alpha.0
-  - @orderly.network/ui@2.8.5-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.5-alpha.0
-  - @orderly.network/ui-connector@2.8.5-alpha.0
-  - @orderly.network/ui-leverage@2.8.5-alpha.0
-  - @orderly.network/ui-orders@2.8.5-alpha.0
-  - @orderly.network/ui-positions@2.8.5-alpha.0
-  - @orderly.network/ui-scaffold@2.8.5-alpha.0
-  - @orderly.network/ui-share@2.8.5-alpha.0
-  - @orderly.network/ui-transfer@2.8.5-alpha.0
-  - @orderly.network/utils@2.8.5-alpha.0
+  - @veltodefi/app@2.8.5-alpha.0
+  - @veltodefi/2.8.5-alpha.0
+  - @veltodefi/2.8.5-alpha.0
+  - @veltodefi/.8.5-alpha.0
+  - @veltodefi/.8.5-alpha.0
+  - @veltodefi/2.8.5-alpha.0
+  - @veltodefi/.5-alpha.0
+  - @veltodefi/in-selector@2.8.5-alpha.0
+  - @veltodefi/nector@2.8.5-alpha.0
+  - @veltodefi/erage@2.8.5-alpha.0
+  - @veltodefi/ers@2.8.5-alpha.0
+  - @veltodefi/itions@2.8.5-alpha.0
+  - @veltodefi/ffold@2.8.5-alpha.0
+  - @veltodefi/re@2.8.5-alpha.0
+  - @veltodefi/nsfer@2.8.5-alpha.0
+  - @veltodefi/2.8.5-alpha.0
 
 ## 2.8.4
 
@@ -369,22 +417,22 @@
 - 32b6043: publish
 - Updated dependencies
 - Updated dependencies [32b6043]
-  - @orderly.network/react-app@2.8.4
-  - @orderly.network/chart@2.8.4
-  - @orderly.network/hooks@2.8.4
-  - @orderly.network/i18n@2.8.4
-  - @orderly.network/perp@4.8.4
-  - @orderly.network/types@2.8.4
-  - @orderly.network/ui@2.8.4
-  - @orderly.network/ui-chain-selector@2.8.4
-  - @orderly.network/ui-connector@2.8.4
-  - @orderly.network/ui-leverage@2.8.4
-  - @orderly.network/ui-orders@2.8.4
-  - @orderly.network/ui-positions@2.8.4
-  - @orderly.network/ui-scaffold@2.8.4
-  - @orderly.network/ui-share@2.8.4
-  - @orderly.network/ui-transfer@2.8.4
-  - @orderly.network/utils@2.8.4
+  - @veltodefi/app@2.8.4
+  - @veltodefi/2.8.4
+  - @veltodefi/2.8.4
+  - @veltodefi/.8.4
+  - @veltodefi/.8.4
+  - @veltodefi/2.8.4
+  - @veltodefi/.4
+  - @veltodefi/in-selector@2.8.4
+  - @veltodefi/nector@2.8.4
+  - @veltodefi/erage@2.8.4
+  - @veltodefi/ers@2.8.4
+  - @veltodefi/itions@2.8.4
+  - @veltodefi/ffold@2.8.4
+  - @veltodefi/re@2.8.4
+  - @veltodefi/nsfer@2.8.4
+  - @veltodefi/2.8.4
 
 ## 2.8.4-alpha.0
 
@@ -392,22 +440,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.4-alpha.0
-  - @orderly.network/chart@2.8.4-alpha.0
-  - @orderly.network/hooks@2.8.4-alpha.0
-  - @orderly.network/i18n@2.8.4-alpha.0
-  - @orderly.network/perp@4.8.4-alpha.0
-  - @orderly.network/types@2.8.4-alpha.0
-  - @orderly.network/ui@2.8.4-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.4-alpha.0
-  - @orderly.network/ui-connector@2.8.4-alpha.0
-  - @orderly.network/ui-leverage@2.8.4-alpha.0
-  - @orderly.network/ui-orders@2.8.4-alpha.0
-  - @orderly.network/ui-positions@2.8.4-alpha.0
-  - @orderly.network/ui-scaffold@2.8.4-alpha.0
-  - @orderly.network/ui-share@2.8.4-alpha.0
-  - @orderly.network/ui-transfer@2.8.4-alpha.0
-  - @orderly.network/utils@2.8.4-alpha.0
+  - @veltodefi/app@2.8.4-alpha.0
+  - @veltodefi/2.8.4-alpha.0
+  - @veltodefi/2.8.4-alpha.0
+  - @veltodefi/.8.4-alpha.0
+  - @veltodefi/.8.4-alpha.0
+  - @veltodefi/2.8.4-alpha.0
+  - @veltodefi/.4-alpha.0
+  - @veltodefi/in-selector@2.8.4-alpha.0
+  - @veltodefi/nector@2.8.4-alpha.0
+  - @veltodefi/erage@2.8.4-alpha.0
+  - @veltodefi/ers@2.8.4-alpha.0
+  - @veltodefi/itions@2.8.4-alpha.0
+  - @veltodefi/ffold@2.8.4-alpha.0
+  - @veltodefi/re@2.8.4-alpha.0
+  - @veltodefi/nsfer@2.8.4-alpha.0
+  - @veltodefi/2.8.4-alpha.0
 
 ## 2.8.3
 
@@ -417,22 +465,22 @@
 - 2d3313c: publish
 - Updated dependencies
 - Updated dependencies [2d3313c]
-  - @orderly.network/react-app@2.8.3
-  - @orderly.network/chart@2.8.3
-  - @orderly.network/hooks@2.8.3
-  - @orderly.network/i18n@2.8.3
-  - @orderly.network/perp@4.8.3
-  - @orderly.network/types@2.8.3
-  - @orderly.network/ui@2.8.3
-  - @orderly.network/ui-chain-selector@2.8.3
-  - @orderly.network/ui-connector@2.8.3
-  - @orderly.network/ui-leverage@2.8.3
-  - @orderly.network/ui-orders@2.8.3
-  - @orderly.network/ui-positions@2.8.3
-  - @orderly.network/ui-scaffold@2.8.3
-  - @orderly.network/ui-share@2.8.3
-  - @orderly.network/ui-transfer@2.8.3
-  - @orderly.network/utils@2.8.3
+  - @veltodefi/app@2.8.3
+  - @veltodefi/2.8.3
+  - @veltodefi/2.8.3
+  - @veltodefi/.8.3
+  - @veltodefi/.8.3
+  - @veltodefi/2.8.3
+  - @veltodefi/.3
+  - @veltodefi/in-selector@2.8.3
+  - @veltodefi/nector@2.8.3
+  - @veltodefi/erage@2.8.3
+  - @veltodefi/ers@2.8.3
+  - @veltodefi/itions@2.8.3
+  - @veltodefi/ffold@2.8.3
+  - @veltodefi/re@2.8.3
+  - @veltodefi/nsfer@2.8.3
+  - @veltodefi/2.8.3
 
 ## 2.8.3-alpha.0
 
@@ -440,22 +488,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.3-alpha.0
-  - @orderly.network/chart@2.8.3-alpha.0
-  - @orderly.network/hooks@2.8.3-alpha.0
-  - @orderly.network/i18n@2.8.3-alpha.0
-  - @orderly.network/perp@4.8.3-alpha.0
-  - @orderly.network/types@2.8.3-alpha.0
-  - @orderly.network/ui@2.8.3-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.3-alpha.0
-  - @orderly.network/ui-connector@2.8.3-alpha.0
-  - @orderly.network/ui-leverage@2.8.3-alpha.0
-  - @orderly.network/ui-orders@2.8.3-alpha.0
-  - @orderly.network/ui-positions@2.8.3-alpha.0
-  - @orderly.network/ui-scaffold@2.8.3-alpha.0
-  - @orderly.network/ui-share@2.8.3-alpha.0
-  - @orderly.network/ui-transfer@2.8.3-alpha.0
-  - @orderly.network/utils@2.8.3-alpha.0
+  - @veltodefi/app@2.8.3-alpha.0
+  - @veltodefi/2.8.3-alpha.0
+  - @veltodefi/2.8.3-alpha.0
+  - @veltodefi/.8.3-alpha.0
+  - @veltodefi/.8.3-alpha.0
+  - @veltodefi/2.8.3-alpha.0
+  - @veltodefi/.3-alpha.0
+  - @veltodefi/in-selector@2.8.3-alpha.0
+  - @veltodefi/nector@2.8.3-alpha.0
+  - @veltodefi/erage@2.8.3-alpha.0
+  - @veltodefi/ers@2.8.3-alpha.0
+  - @veltodefi/itions@2.8.3-alpha.0
+  - @veltodefi/ffold@2.8.3-alpha.0
+  - @veltodefi/re@2.8.3-alpha.0
+  - @veltodefi/nsfer@2.8.3-alpha.0
+  - @veltodefi/2.8.3-alpha.0
 
 ## 2.8.2
 
@@ -465,22 +513,22 @@
 - 437c752: publish
 - Updated dependencies
 - Updated dependencies [437c752]
-  - @orderly.network/react-app@2.8.2
-  - @orderly.network/chart@2.8.2
-  - @orderly.network/hooks@2.8.2
-  - @orderly.network/i18n@2.8.2
-  - @orderly.network/perp@4.8.2
-  - @orderly.network/types@2.8.2
-  - @orderly.network/ui@2.8.2
-  - @orderly.network/ui-chain-selector@2.8.2
-  - @orderly.network/ui-connector@2.8.2
-  - @orderly.network/ui-leverage@2.8.2
-  - @orderly.network/ui-orders@2.8.2
-  - @orderly.network/ui-positions@2.8.2
-  - @orderly.network/ui-scaffold@2.8.2
-  - @orderly.network/ui-share@2.8.2
-  - @orderly.network/ui-transfer@2.8.2
-  - @orderly.network/utils@2.8.2
+  - @veltodefi/app@2.8.2
+  - @veltodefi/2.8.2
+  - @veltodefi/2.8.2
+  - @veltodefi/.8.2
+  - @veltodefi/.8.2
+  - @veltodefi/2.8.2
+  - @veltodefi/.2
+  - @veltodefi/in-selector@2.8.2
+  - @veltodefi/nector@2.8.2
+  - @veltodefi/erage@2.8.2
+  - @veltodefi/ers@2.8.2
+  - @veltodefi/itions@2.8.2
+  - @veltodefi/ffold@2.8.2
+  - @veltodefi/re@2.8.2
+  - @veltodefi/nsfer@2.8.2
+  - @veltodefi/2.8.2
 
 ## 2.8.2-alpha.0
 
@@ -488,22 +536,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.2-alpha.0
-  - @orderly.network/chart@2.8.2-alpha.0
-  - @orderly.network/hooks@2.8.2-alpha.0
-  - @orderly.network/i18n@2.8.2-alpha.0
-  - @orderly.network/perp@4.8.2-alpha.0
-  - @orderly.network/types@2.8.2-alpha.0
-  - @orderly.network/ui@2.8.2-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.2-alpha.0
-  - @orderly.network/ui-connector@2.8.2-alpha.0
-  - @orderly.network/ui-leverage@2.8.2-alpha.0
-  - @orderly.network/ui-orders@2.8.2-alpha.0
-  - @orderly.network/ui-positions@2.8.2-alpha.0
-  - @orderly.network/ui-scaffold@2.8.2-alpha.0
-  - @orderly.network/ui-share@2.8.2-alpha.0
-  - @orderly.network/ui-transfer@2.8.2-alpha.0
-  - @orderly.network/utils@2.8.2-alpha.0
+  - @veltodefi/app@2.8.2-alpha.0
+  - @veltodefi/2.8.2-alpha.0
+  - @veltodefi/2.8.2-alpha.0
+  - @veltodefi/.8.2-alpha.0
+  - @veltodefi/.8.2-alpha.0
+  - @veltodefi/2.8.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/in-selector@2.8.2-alpha.0
+  - @veltodefi/nector@2.8.2-alpha.0
+  - @veltodefi/erage@2.8.2-alpha.0
+  - @veltodefi/ers@2.8.2-alpha.0
+  - @veltodefi/itions@2.8.2-alpha.0
+  - @veltodefi/ffold@2.8.2-alpha.0
+  - @veltodefi/re@2.8.2-alpha.0
+  - @veltodefi/nsfer@2.8.2-alpha.0
+  - @veltodefi/2.8.2-alpha.0
 
 ## 2.8.1
 
@@ -513,22 +561,22 @@
 - 0474e5f: publish
 - Updated dependencies
 - Updated dependencies [0474e5f]
-  - @orderly.network/react-app@2.8.1
-  - @orderly.network/chart@2.8.1
-  - @orderly.network/hooks@2.8.1
-  - @orderly.network/i18n@2.8.1
-  - @orderly.network/perp@4.8.1
-  - @orderly.network/types@2.8.1
-  - @orderly.network/ui@2.8.1
-  - @orderly.network/ui-chain-selector@2.8.1
-  - @orderly.network/ui-connector@2.8.1
-  - @orderly.network/ui-leverage@2.8.1
-  - @orderly.network/ui-orders@2.8.1
-  - @orderly.network/ui-positions@2.8.1
-  - @orderly.network/ui-scaffold@2.8.1
-  - @orderly.network/ui-share@2.8.1
-  - @orderly.network/ui-transfer@2.8.1
-  - @orderly.network/utils@2.8.1
+  - @veltodefi/app@2.8.1
+  - @veltodefi/2.8.1
+  - @veltodefi/2.8.1
+  - @veltodefi/.8.1
+  - @veltodefi/.8.1
+  - @veltodefi/2.8.1
+  - @veltodefi/.1
+  - @veltodefi/in-selector@2.8.1
+  - @veltodefi/nector@2.8.1
+  - @veltodefi/erage@2.8.1
+  - @veltodefi/ers@2.8.1
+  - @veltodefi/itions@2.8.1
+  - @veltodefi/ffold@2.8.1
+  - @veltodefi/re@2.8.1
+  - @veltodefi/nsfer@2.8.1
+  - @veltodefi/2.8.1
 
 ## 2.8.1-alpha.0
 
@@ -536,22 +584,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.1-alpha.0
-  - @orderly.network/chart@2.8.1-alpha.0
-  - @orderly.network/hooks@2.8.1-alpha.0
-  - @orderly.network/i18n@2.8.1-alpha.0
-  - @orderly.network/perp@4.8.1-alpha.0
-  - @orderly.network/types@2.8.1-alpha.0
-  - @orderly.network/ui@2.8.1-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.1-alpha.0
-  - @orderly.network/ui-connector@2.8.1-alpha.0
-  - @orderly.network/ui-leverage@2.8.1-alpha.0
-  - @orderly.network/ui-orders@2.8.1-alpha.0
-  - @orderly.network/ui-positions@2.8.1-alpha.0
-  - @orderly.network/ui-scaffold@2.8.1-alpha.0
-  - @orderly.network/ui-share@2.8.1-alpha.0
-  - @orderly.network/ui-transfer@2.8.1-alpha.0
-  - @orderly.network/utils@2.8.1-alpha.0
+  - @veltodefi/app@2.8.1-alpha.0
+  - @veltodefi/2.8.1-alpha.0
+  - @veltodefi/2.8.1-alpha.0
+  - @veltodefi/.8.1-alpha.0
+  - @veltodefi/.8.1-alpha.0
+  - @veltodefi/2.8.1-alpha.0
+  - @veltodefi/.1-alpha.0
+  - @veltodefi/in-selector@2.8.1-alpha.0
+  - @veltodefi/nector@2.8.1-alpha.0
+  - @veltodefi/erage@2.8.1-alpha.0
+  - @veltodefi/ers@2.8.1-alpha.0
+  - @veltodefi/itions@2.8.1-alpha.0
+  - @veltodefi/ffold@2.8.1-alpha.0
+  - @veltodefi/re@2.8.1-alpha.0
+  - @veltodefi/nsfer@2.8.1-alpha.0
+  - @veltodefi/2.8.1-alpha.0
 
 ## 2.8.0
 
@@ -564,22 +612,22 @@
 
 - Updated dependencies [b5bd38d]
 - Updated dependencies
-  - @orderly.network/react-app@2.8.0
-  - @orderly.network/chart@2.8.0
-  - @orderly.network/hooks@2.8.0
-  - @orderly.network/i18n@2.8.0
-  - @orderly.network/perp@4.8.0
-  - @orderly.network/types@2.8.0
-  - @orderly.network/ui@2.8.0
-  - @orderly.network/ui-chain-selector@2.8.0
-  - @orderly.network/ui-connector@2.8.0
-  - @orderly.network/ui-leverage@2.8.0
-  - @orderly.network/ui-orders@2.8.0
-  - @orderly.network/ui-positions@2.8.0
-  - @orderly.network/ui-scaffold@2.8.0
-  - @orderly.network/ui-share@2.8.0
-  - @orderly.network/ui-transfer@2.8.0
-  - @orderly.network/utils@2.8.0
+  - @veltodefi/app@2.8.0
+  - @veltodefi/2.8.0
+  - @veltodefi/2.8.0
+  - @veltodefi/.8.0
+  - @veltodefi/.8.0
+  - @veltodefi/2.8.0
+  - @veltodefi/.0
+  - @veltodefi/in-selector@2.8.0
+  - @veltodefi/nector@2.8.0
+  - @veltodefi/erage@2.8.0
+  - @veltodefi/ers@2.8.0
+  - @veltodefi/itions@2.8.0
+  - @veltodefi/ffold@2.8.0
+  - @veltodefi/re@2.8.0
+  - @veltodefi/nsfer@2.8.0
+  - @veltodefi/2.8.0
 
 ## 2.8.0-alpha.0
 
@@ -590,22 +638,22 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.8.0-alpha.0
-  - @orderly.network/chart@2.8.0-alpha.0
-  - @orderly.network/hooks@2.8.0-alpha.0
-  - @orderly.network/i18n@2.8.0-alpha.0
-  - @orderly.network/perp@4.8.0-alpha.0
-  - @orderly.network/types@2.8.0-alpha.0
-  - @orderly.network/ui@2.8.0-alpha.0
-  - @orderly.network/ui-chain-selector@2.8.0-alpha.0
-  - @orderly.network/ui-connector@2.8.0-alpha.0
-  - @orderly.network/ui-leverage@2.8.0-alpha.0
-  - @orderly.network/ui-orders@2.8.0-alpha.0
-  - @orderly.network/ui-positions@2.8.0-alpha.0
-  - @orderly.network/ui-scaffold@2.8.0-alpha.0
-  - @orderly.network/ui-share@2.8.0-alpha.0
-  - @orderly.network/ui-transfer@2.8.0-alpha.0
-  - @orderly.network/utils@2.8.0-alpha.0
+  - @veltodefi/app@2.8.0-alpha.0
+  - @veltodefi/2.8.0-alpha.0
+  - @veltodefi/2.8.0-alpha.0
+  - @veltodefi/.8.0-alpha.0
+  - @veltodefi/.8.0-alpha.0
+  - @veltodefi/2.8.0-alpha.0
+  - @veltodefi/.0-alpha.0
+  - @veltodefi/in-selector@2.8.0-alpha.0
+  - @veltodefi/nector@2.8.0-alpha.0
+  - @veltodefi/erage@2.8.0-alpha.0
+  - @veltodefi/ers@2.8.0-alpha.0
+  - @veltodefi/itions@2.8.0-alpha.0
+  - @veltodefi/ffold@2.8.0-alpha.0
+  - @veltodefi/re@2.8.0-alpha.0
+  - @veltodefi/nsfer@2.8.0-alpha.0
+  - @veltodefi/2.8.0-alpha.0
 
 ## 2.7.4
 
@@ -617,22 +665,22 @@
 - Updated dependencies [a2b2381]
 - Updated dependencies
 - Updated dependencies [a5e6829]
-  - @orderly.network/react-app@2.7.4
-  - @orderly.network/chart@2.7.4
-  - @orderly.network/hooks@2.7.4
-  - @orderly.network/i18n@2.7.4
-  - @orderly.network/perp@4.7.4
-  - @orderly.network/types@2.7.4
-  - @orderly.network/ui@2.7.4
-  - @orderly.network/ui-chain-selector@2.7.4
-  - @orderly.network/ui-connector@2.7.4
-  - @orderly.network/ui-leverage@2.7.4
-  - @orderly.network/ui-orders@2.7.4
-  - @orderly.network/ui-positions@2.7.4
-  - @orderly.network/ui-scaffold@2.7.4
-  - @orderly.network/ui-share@2.7.4
-  - @orderly.network/ui-transfer@2.7.4
-  - @orderly.network/utils@2.7.4
+  - @veltodefi/app@2.7.4
+  - @veltodefi/2.7.4
+  - @veltodefi/2.7.4
+  - @veltodefi/.7.4
+  - @veltodefi/.7.4
+  - @veltodefi/2.7.4
+  - @veltodefi/.4
+  - @veltodefi/in-selector@2.7.4
+  - @veltodefi/nector@2.7.4
+  - @veltodefi/erage@2.7.4
+  - @veltodefi/ers@2.7.4
+  - @veltodefi/itions@2.7.4
+  - @veltodefi/ffold@2.7.4
+  - @veltodefi/re@2.7.4
+  - @veltodefi/nsfer@2.7.4
+  - @veltodefi/2.7.4
 
 ## 2.7.4-alpha.1
 
@@ -640,22 +688,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.7.4-alpha.1
-  - @orderly.network/chart@2.7.4-alpha.1
-  - @orderly.network/hooks@2.7.4-alpha.1
-  - @orderly.network/i18n@2.7.4-alpha.1
-  - @orderly.network/perp@4.7.4-alpha.1
-  - @orderly.network/types@2.7.4-alpha.1
-  - @orderly.network/ui@2.7.4-alpha.1
-  - @orderly.network/ui-chain-selector@2.7.4-alpha.1
-  - @orderly.network/ui-connector@2.7.4-alpha.1
-  - @orderly.network/ui-leverage@2.7.4-alpha.1
-  - @orderly.network/ui-orders@2.7.4-alpha.1
-  - @orderly.network/ui-positions@2.7.4-alpha.1
-  - @orderly.network/ui-scaffold@2.7.4-alpha.1
-  - @orderly.network/ui-share@2.7.4-alpha.1
-  - @orderly.network/ui-transfer@2.7.4-alpha.1
-  - @orderly.network/utils@2.7.4-alpha.1
+  - @veltodefi/app@2.7.4-alpha.1
+  - @veltodefi/2.7.4-alpha.1
+  - @veltodefi/2.7.4-alpha.1
+  - @veltodefi/.7.4-alpha.1
+  - @veltodefi/.7.4-alpha.1
+  - @veltodefi/2.7.4-alpha.1
+  - @veltodefi/.4-alpha.1
+  - @veltodefi/in-selector@2.7.4-alpha.1
+  - @veltodefi/nector@2.7.4-alpha.1
+  - @veltodefi/erage@2.7.4-alpha.1
+  - @veltodefi/ers@2.7.4-alpha.1
+  - @veltodefi/itions@2.7.4-alpha.1
+  - @veltodefi/ffold@2.7.4-alpha.1
+  - @veltodefi/re@2.7.4-alpha.1
+  - @veltodefi/nsfer@2.7.4-alpha.1
+  - @veltodefi/2.7.4-alpha.1
 
 ## 2.7.4-alpha.0
 
@@ -663,22 +711,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.7.4-alpha.0
-  - @orderly.network/chart@2.7.4-alpha.0
-  - @orderly.network/hooks@2.7.4-alpha.0
-  - @orderly.network/i18n@2.7.4-alpha.0
-  - @orderly.network/perp@4.7.4-alpha.0
-  - @orderly.network/types@2.7.4-alpha.0
-  - @orderly.network/ui@2.7.4-alpha.0
-  - @orderly.network/ui-chain-selector@2.7.4-alpha.0
-  - @orderly.network/ui-connector@2.7.4-alpha.0
-  - @orderly.network/ui-leverage@2.7.4-alpha.0
-  - @orderly.network/ui-orders@2.7.4-alpha.0
-  - @orderly.network/ui-positions@2.7.4-alpha.0
-  - @orderly.network/ui-scaffold@2.7.4-alpha.0
-  - @orderly.network/ui-share@2.7.4-alpha.0
-  - @orderly.network/ui-transfer@2.7.4-alpha.0
-  - @orderly.network/utils@2.7.4-alpha.0
+  - @veltodefi/app@2.7.4-alpha.0
+  - @veltodefi/2.7.4-alpha.0
+  - @veltodefi/2.7.4-alpha.0
+  - @veltodefi/.7.4-alpha.0
+  - @veltodefi/.7.4-alpha.0
+  - @veltodefi/2.7.4-alpha.0
+  - @veltodefi/.4-alpha.0
+  - @veltodefi/in-selector@2.7.4-alpha.0
+  - @veltodefi/nector@2.7.4-alpha.0
+  - @veltodefi/erage@2.7.4-alpha.0
+  - @veltodefi/ers@2.7.4-alpha.0
+  - @veltodefi/itions@2.7.4-alpha.0
+  - @veltodefi/ffold@2.7.4-alpha.0
+  - @veltodefi/re@2.7.4-alpha.0
+  - @veltodefi/nsfer@2.7.4-alpha.0
+  - @veltodefi/2.7.4-alpha.0
 
 ## 2.7.3
 
@@ -688,22 +736,22 @@
 - a8254c1: publish
 - Updated dependencies
 - Updated dependencies [a8254c1]
-  - @orderly.network/react-app@2.7.3
-  - @orderly.network/chart@2.7.3
-  - @orderly.network/hooks@2.7.3
-  - @orderly.network/i18n@2.7.3
-  - @orderly.network/perp@4.7.3
-  - @orderly.network/types@2.7.3
-  - @orderly.network/ui@2.7.3
-  - @orderly.network/ui-chain-selector@2.7.3
-  - @orderly.network/ui-connector@2.7.3
-  - @orderly.network/ui-leverage@2.7.3
-  - @orderly.network/ui-orders@2.7.3
-  - @orderly.network/ui-positions@2.7.3
-  - @orderly.network/ui-scaffold@2.7.3
-  - @orderly.network/ui-share@2.7.3
-  - @orderly.network/ui-transfer@2.7.3
-  - @orderly.network/utils@2.7.3
+  - @veltodefi/app@2.7.3
+  - @veltodefi/2.7.3
+  - @veltodefi/2.7.3
+  - @veltodefi/.7.3
+  - @veltodefi/.7.3
+  - @veltodefi/2.7.3
+  - @veltodefi/.3
+  - @veltodefi/in-selector@2.7.3
+  - @veltodefi/nector@2.7.3
+  - @veltodefi/erage@2.7.3
+  - @veltodefi/ers@2.7.3
+  - @veltodefi/itions@2.7.3
+  - @veltodefi/ffold@2.7.3
+  - @veltodefi/re@2.7.3
+  - @veltodefi/nsfer@2.7.3
+  - @veltodefi/2.7.3
 
 ## 2.7.3-alpha.0
 
@@ -711,22 +759,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.7.3-alpha.0
-  - @orderly.network/chart@2.7.3-alpha.0
-  - @orderly.network/hooks@2.7.3-alpha.0
-  - @orderly.network/i18n@2.7.3-alpha.0
-  - @orderly.network/perp@4.7.3-alpha.0
-  - @orderly.network/types@2.7.3-alpha.0
-  - @orderly.network/ui@2.7.3-alpha.0
-  - @orderly.network/ui-chain-selector@2.7.3-alpha.0
-  - @orderly.network/ui-connector@2.7.3-alpha.0
-  - @orderly.network/ui-leverage@2.7.3-alpha.0
-  - @orderly.network/ui-orders@2.7.3-alpha.0
-  - @orderly.network/ui-positions@2.7.3-alpha.0
-  - @orderly.network/ui-scaffold@2.7.3-alpha.0
-  - @orderly.network/ui-share@2.7.3-alpha.0
-  - @orderly.network/ui-transfer@2.7.3-alpha.0
-  - @orderly.network/utils@2.7.3-alpha.0
+  - @veltodefi/app@2.7.3-alpha.0
+  - @veltodefi/2.7.3-alpha.0
+  - @veltodefi/2.7.3-alpha.0
+  - @veltodefi/.7.3-alpha.0
+  - @veltodefi/.7.3-alpha.0
+  - @veltodefi/2.7.3-alpha.0
+  - @veltodefi/.3-alpha.0
+  - @veltodefi/in-selector@2.7.3-alpha.0
+  - @veltodefi/nector@2.7.3-alpha.0
+  - @veltodefi/erage@2.7.3-alpha.0
+  - @veltodefi/ers@2.7.3-alpha.0
+  - @veltodefi/itions@2.7.3-alpha.0
+  - @veltodefi/ffold@2.7.3-alpha.0
+  - @veltodefi/re@2.7.3-alpha.0
+  - @veltodefi/nsfer@2.7.3-alpha.0
+  - @veltodefi/2.7.3-alpha.0
 
 ## 2.7.2
 
@@ -736,22 +784,22 @@
 - publish
 - Updated dependencies [360c563]
 - Updated dependencies
-  - @orderly.network/react-app@2.7.2
-  - @orderly.network/chart@2.7.2
-  - @orderly.network/hooks@2.7.2
-  - @orderly.network/i18n@2.7.2
-  - @orderly.network/perp@4.7.2
-  - @orderly.network/types@2.7.2
-  - @orderly.network/ui@2.7.2
-  - @orderly.network/ui-chain-selector@2.7.2
-  - @orderly.network/ui-connector@2.7.2
-  - @orderly.network/ui-leverage@2.7.2
-  - @orderly.network/ui-orders@2.7.2
-  - @orderly.network/ui-positions@2.7.2
-  - @orderly.network/ui-scaffold@2.7.2
-  - @orderly.network/ui-share@2.7.2
-  - @orderly.network/ui-transfer@2.7.2
-  - @orderly.network/utils@2.7.2
+  - @veltodefi/app@2.7.2
+  - @veltodefi/2.7.2
+  - @veltodefi/2.7.2
+  - @veltodefi/.7.2
+  - @veltodefi/.7.2
+  - @veltodefi/2.7.2
+  - @veltodefi/.2
+  - @veltodefi/in-selector@2.7.2
+  - @veltodefi/nector@2.7.2
+  - @veltodefi/erage@2.7.2
+  - @veltodefi/ers@2.7.2
+  - @veltodefi/itions@2.7.2
+  - @veltodefi/ffold@2.7.2
+  - @veltodefi/re@2.7.2
+  - @veltodefi/nsfer@2.7.2
+  - @veltodefi/2.7.2
 
 ## 2.7.2-alpha.0
 
@@ -759,22 +807,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.7.2-alpha.0
-  - @orderly.network/chart@2.7.2-alpha.0
-  - @orderly.network/hooks@2.7.2-alpha.0
-  - @orderly.network/i18n@2.7.2-alpha.0
-  - @orderly.network/perp@4.7.2-alpha.0
-  - @orderly.network/types@2.7.2-alpha.0
-  - @orderly.network/ui@2.7.2-alpha.0
-  - @orderly.network/ui-chain-selector@2.7.2-alpha.0
-  - @orderly.network/ui-connector@2.7.2-alpha.0
-  - @orderly.network/ui-leverage@2.7.2-alpha.0
-  - @orderly.network/ui-orders@2.7.2-alpha.0
-  - @orderly.network/ui-positions@2.7.2-alpha.0
-  - @orderly.network/ui-scaffold@2.7.2-alpha.0
-  - @orderly.network/ui-share@2.7.2-alpha.0
-  - @orderly.network/ui-transfer@2.7.2-alpha.0
-  - @orderly.network/utils@2.7.2-alpha.0
+  - @veltodefi/app@2.7.2-alpha.0
+  - @veltodefi/2.7.2-alpha.0
+  - @veltodefi/2.7.2-alpha.0
+  - @veltodefi/.7.2-alpha.0
+  - @veltodefi/.7.2-alpha.0
+  - @veltodefi/2.7.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/in-selector@2.7.2-alpha.0
+  - @veltodefi/nector@2.7.2-alpha.0
+  - @veltodefi/erage@2.7.2-alpha.0
+  - @veltodefi/ers@2.7.2-alpha.0
+  - @veltodefi/itions@2.7.2-alpha.0
+  - @veltodefi/ffold@2.7.2-alpha.0
+  - @veltodefi/re@2.7.2-alpha.0
+  - @veltodefi/nsfer@2.7.2-alpha.0
+  - @veltodefi/2.7.2-alpha.0
 
 ## 2.7.1
 
@@ -784,22 +832,22 @@
 - bb587ea: publish
 - Updated dependencies
 - Updated dependencies [bb587ea]
-  - @orderly.network/react-app@2.7.1
-  - @orderly.network/chart@2.7.1
-  - @orderly.network/hooks@2.7.1
-  - @orderly.network/i18n@2.7.1
-  - @orderly.network/perp@4.7.1
-  - @orderly.network/types@2.7.1
-  - @orderly.network/ui@2.7.1
-  - @orderly.network/ui-chain-selector@2.7.1
-  - @orderly.network/ui-connector@2.7.1
-  - @orderly.network/ui-leverage@2.7.1
-  - @orderly.network/ui-orders@2.7.1
-  - @orderly.network/ui-positions@2.7.1
-  - @orderly.network/ui-scaffold@2.7.1
-  - @orderly.network/ui-share@2.7.1
-  - @orderly.network/ui-transfer@2.7.1
-  - @orderly.network/utils@2.7.1
+  - @veltodefi/app@2.7.1
+  - @veltodefi/2.7.1
+  - @veltodefi/2.7.1
+  - @veltodefi/.7.1
+  - @veltodefi/.7.1
+  - @veltodefi/2.7.1
+  - @veltodefi/.1
+  - @veltodefi/in-selector@2.7.1
+  - @veltodefi/nector@2.7.1
+  - @veltodefi/erage@2.7.1
+  - @veltodefi/ers@2.7.1
+  - @veltodefi/itions@2.7.1
+  - @veltodefi/ffold@2.7.1
+  - @veltodefi/re@2.7.1
+  - @veltodefi/nsfer@2.7.1
+  - @veltodefi/2.7.1
 
 ## 2.7.1-alpha.0
 
@@ -807,22 +855,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.7.1-alpha.0
-  - @orderly.network/chart@2.7.1-alpha.0
-  - @orderly.network/hooks@2.7.1-alpha.0
-  - @orderly.network/i18n@2.7.1-alpha.0
-  - @orderly.network/perp@4.7.1-alpha.0
-  - @orderly.network/types@2.7.1-alpha.0
-  - @orderly.network/ui@2.7.1-alpha.0
-  - @orderly.network/ui-chain-selector@2.7.1-alpha.0
-  - @orderly.network/ui-connector@2.7.1-alpha.0
-  - @orderly.network/ui-leverage@2.7.1-alpha.0
-  - @orderly.network/ui-orders@2.7.1-alpha.0
-  - @orderly.network/ui-positions@2.7.1-alpha.0
-  - @orderly.network/ui-scaffold@2.7.1-alpha.0
-  - @orderly.network/ui-share@2.7.1-alpha.0
-  - @orderly.network/ui-transfer@2.7.1-alpha.0
-  - @orderly.network/utils@2.7.1-alpha.0
+  - @veltodefi/app@2.7.1-alpha.0
+  - @veltodefi/2.7.1-alpha.0
+  - @veltodefi/2.7.1-alpha.0
+  - @veltodefi/.7.1-alpha.0
+  - @veltodefi/.7.1-alpha.0
+  - @veltodefi/2.7.1-alpha.0
+  - @veltodefi/.1-alpha.0
+  - @veltodefi/in-selector@2.7.1-alpha.0
+  - @veltodefi/nector@2.7.1-alpha.0
+  - @veltodefi/erage@2.7.1-alpha.0
+  - @veltodefi/ers@2.7.1-alpha.0
+  - @veltodefi/itions@2.7.1-alpha.0
+  - @veltodefi/ffold@2.7.1-alpha.0
+  - @veltodefi/re@2.7.1-alpha.0
+  - @veltodefi/nsfer@2.7.1-alpha.0
+  - @veltodefi/2.7.1-alpha.0
 
 ## 2.7.0
 
@@ -835,22 +883,22 @@
 
 - Updated dependencies
 - Updated dependencies [9b0dc27]
-  - @orderly.network/react-app@2.7.0
-  - @orderly.network/chart@2.7.0
-  - @orderly.network/hooks@2.7.0
-  - @orderly.network/i18n@2.7.0
-  - @orderly.network/perp@4.7.0
-  - @orderly.network/types@2.7.0
-  - @orderly.network/ui@2.7.0
-  - @orderly.network/ui-chain-selector@2.7.0
-  - @orderly.network/ui-connector@2.7.0
-  - @orderly.network/ui-leverage@2.7.0
-  - @orderly.network/ui-orders@2.7.0
-  - @orderly.network/ui-positions@2.7.0
-  - @orderly.network/ui-scaffold@2.7.0
-  - @orderly.network/ui-share@2.7.0
-  - @orderly.network/ui-transfer@2.7.0
-  - @orderly.network/utils@2.7.0
+  - @veltodefi/app@2.7.0
+  - @veltodefi/2.7.0
+  - @veltodefi/2.7.0
+  - @veltodefi/.7.0
+  - @veltodefi/.7.0
+  - @veltodefi/2.7.0
+  - @veltodefi/.0
+  - @veltodefi/in-selector@2.7.0
+  - @veltodefi/nector@2.7.0
+  - @veltodefi/erage@2.7.0
+  - @veltodefi/ers@2.7.0
+  - @veltodefi/itions@2.7.0
+  - @veltodefi/ffold@2.7.0
+  - @veltodefi/re@2.7.0
+  - @veltodefi/nsfer@2.7.0
+  - @veltodefi/2.7.0
 
 ## 2.7.0-alpha.0
 
@@ -861,22 +909,22 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.7.0-alpha.0
-  - @orderly.network/chart@2.7.0-alpha.0
-  - @orderly.network/hooks@2.7.0-alpha.0
-  - @orderly.network/i18n@2.7.0-alpha.0
-  - @orderly.network/perp@4.7.0-alpha.0
-  - @orderly.network/types@2.7.0-alpha.0
-  - @orderly.network/ui@2.7.0-alpha.0
-  - @orderly.network/ui-chain-selector@2.7.0-alpha.0
-  - @orderly.network/ui-connector@2.7.0-alpha.0
-  - @orderly.network/ui-leverage@2.7.0-alpha.0
-  - @orderly.network/ui-orders@2.7.0-alpha.0
-  - @orderly.network/ui-positions@2.7.0-alpha.0
-  - @orderly.network/ui-scaffold@2.7.0-alpha.0
-  - @orderly.network/ui-share@2.7.0-alpha.0
-  - @orderly.network/ui-transfer@2.7.0-alpha.0
-  - @orderly.network/utils@2.7.0-alpha.0
+  - @veltodefi/app@2.7.0-alpha.0
+  - @veltodefi/2.7.0-alpha.0
+  - @veltodefi/2.7.0-alpha.0
+  - @veltodefi/.7.0-alpha.0
+  - @veltodefi/.7.0-alpha.0
+  - @veltodefi/2.7.0-alpha.0
+  - @veltodefi/.0-alpha.0
+  - @veltodefi/in-selector@2.7.0-alpha.0
+  - @veltodefi/nector@2.7.0-alpha.0
+  - @veltodefi/erage@2.7.0-alpha.0
+  - @veltodefi/ers@2.7.0-alpha.0
+  - @veltodefi/itions@2.7.0-alpha.0
+  - @veltodefi/ffold@2.7.0-alpha.0
+  - @veltodefi/re@2.7.0-alpha.0
+  - @veltodefi/nsfer@2.7.0-alpha.0
+  - @veltodefi/2.7.0-alpha.0
 
 ## 2.6.3
 
@@ -886,22 +934,22 @@
 - publish
 - Updated dependencies [05c00a2]
 - Updated dependencies
-  - @orderly.network/react-app@2.6.3
-  - @orderly.network/chart@2.6.3
-  - @orderly.network/hooks@2.6.3
-  - @orderly.network/i18n@2.6.3
-  - @orderly.network/perp@4.6.3
-  - @orderly.network/types@2.6.3
-  - @orderly.network/ui@2.6.3
-  - @orderly.network/ui-chain-selector@2.6.3
-  - @orderly.network/ui-connector@2.6.3
-  - @orderly.network/ui-leverage@2.6.3
-  - @orderly.network/ui-orders@2.6.3
-  - @orderly.network/ui-positions@2.6.3
-  - @orderly.network/ui-scaffold@2.6.3
-  - @orderly.network/ui-share@2.6.3
-  - @orderly.network/ui-transfer@2.6.3
-  - @orderly.network/utils@2.6.3
+  - @veltodefi/app@2.6.3
+  - @veltodefi/2.6.3
+  - @veltodefi/2.6.3
+  - @veltodefi/.6.3
+  - @veltodefi/.6.3
+  - @veltodefi/2.6.3
+  - @veltodefi/.3
+  - @veltodefi/in-selector@2.6.3
+  - @veltodefi/nector@2.6.3
+  - @veltodefi/erage@2.6.3
+  - @veltodefi/ers@2.6.3
+  - @veltodefi/itions@2.6.3
+  - @veltodefi/ffold@2.6.3
+  - @veltodefi/re@2.6.3
+  - @veltodefi/nsfer@2.6.3
+  - @veltodefi/2.6.3
 
 ## 2.6.3-alpha.0
 
@@ -909,22 +957,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.6.3-alpha.0
-  - @orderly.network/chart@2.6.3-alpha.0
-  - @orderly.network/hooks@2.6.3-alpha.0
-  - @orderly.network/i18n@2.6.3-alpha.0
-  - @orderly.network/perp@4.6.3-alpha.0
-  - @orderly.network/types@2.6.3-alpha.0
-  - @orderly.network/ui@2.6.3-alpha.0
-  - @orderly.network/ui-chain-selector@2.6.3-alpha.0
-  - @orderly.network/ui-connector@2.6.3-alpha.0
-  - @orderly.network/ui-leverage@2.6.3-alpha.0
-  - @orderly.network/ui-orders@2.6.3-alpha.0
-  - @orderly.network/ui-positions@2.6.3-alpha.0
-  - @orderly.network/ui-scaffold@2.6.3-alpha.0
-  - @orderly.network/ui-share@2.6.3-alpha.0
-  - @orderly.network/ui-transfer@2.6.3-alpha.0
-  - @orderly.network/utils@2.6.3-alpha.0
+  - @veltodefi/app@2.6.3-alpha.0
+  - @veltodefi/2.6.3-alpha.0
+  - @veltodefi/2.6.3-alpha.0
+  - @veltodefi/.6.3-alpha.0
+  - @veltodefi/.6.3-alpha.0
+  - @veltodefi/2.6.3-alpha.0
+  - @veltodefi/.3-alpha.0
+  - @veltodefi/in-selector@2.6.3-alpha.0
+  - @veltodefi/nector@2.6.3-alpha.0
+  - @veltodefi/erage@2.6.3-alpha.0
+  - @veltodefi/ers@2.6.3-alpha.0
+  - @veltodefi/itions@2.6.3-alpha.0
+  - @veltodefi/ffold@2.6.3-alpha.0
+  - @veltodefi/re@2.6.3-alpha.0
+  - @veltodefi/nsfer@2.6.3-alpha.0
+  - @veltodefi/2.6.3-alpha.0
 
 ## 2.6.2
 
@@ -946,22 +994,22 @@
 - Updated dependencies [45b6806]
 - Updated dependencies [2f90f1d]
 - Updated dependencies [12d3b9f]
-  - @orderly.network/react-app@2.6.2
-  - @orderly.network/chart@2.6.2
-  - @orderly.network/hooks@2.6.2
-  - @orderly.network/i18n@2.6.2
-  - @orderly.network/perp@4.6.2
-  - @orderly.network/types@2.6.2
-  - @orderly.network/ui@2.6.2
-  - @orderly.network/ui-chain-selector@2.6.2
-  - @orderly.network/ui-connector@2.6.2
-  - @orderly.network/ui-leverage@2.6.2
-  - @orderly.network/ui-orders@2.6.2
-  - @orderly.network/ui-positions@2.6.2
-  - @orderly.network/ui-scaffold@2.6.2
-  - @orderly.network/ui-share@2.6.2
-  - @orderly.network/ui-transfer@2.6.2
-  - @orderly.network/utils@2.6.2
+  - @veltodefi/app@2.6.2
+  - @veltodefi/2.6.2
+  - @veltodefi/2.6.2
+  - @veltodefi/.6.2
+  - @veltodefi/.6.2
+  - @veltodefi/2.6.2
+  - @veltodefi/.2
+  - @veltodefi/in-selector@2.6.2
+  - @veltodefi/nector@2.6.2
+  - @veltodefi/erage@2.6.2
+  - @veltodefi/ers@2.6.2
+  - @veltodefi/itions@2.6.2
+  - @veltodefi/ffold@2.6.2
+  - @veltodefi/re@2.6.2
+  - @veltodefi/nsfer@2.6.2
+  - @veltodefi/2.6.2
 
 ## 2.6.2-alpha.0
 
@@ -969,22 +1017,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.6.2-alpha.0
-  - @orderly.network/chart@2.6.2-alpha.0
-  - @orderly.network/hooks@2.6.2-alpha.0
-  - @orderly.network/i18n@2.6.2-alpha.0
-  - @orderly.network/perp@4.6.2-alpha.0
-  - @orderly.network/types@2.6.2-alpha.0
-  - @orderly.network/ui@2.6.2-alpha.0
-  - @orderly.network/ui-chain-selector@2.6.2-alpha.0
-  - @orderly.network/ui-connector@2.6.2-alpha.0
-  - @orderly.network/ui-leverage@2.6.2-alpha.0
-  - @orderly.network/ui-orders@2.6.2-alpha.0
-  - @orderly.network/ui-positions@2.6.2-alpha.0
-  - @orderly.network/ui-scaffold@2.6.2-alpha.0
-  - @orderly.network/ui-share@2.6.2-alpha.0
-  - @orderly.network/ui-transfer@2.6.2-alpha.0
-  - @orderly.network/utils@2.6.2-alpha.0
+  - @veltodefi/app@2.6.2-alpha.0
+  - @veltodefi/2.6.2-alpha.0
+  - @veltodefi/2.6.2-alpha.0
+  - @veltodefi/.6.2-alpha.0
+  - @veltodefi/.6.2-alpha.0
+  - @veltodefi/2.6.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/in-selector@2.6.2-alpha.0
+  - @veltodefi/nector@2.6.2-alpha.0
+  - @veltodefi/erage@2.6.2-alpha.0
+  - @veltodefi/ers@2.6.2-alpha.0
+  - @veltodefi/itions@2.6.2-alpha.0
+  - @veltodefi/ffold@2.6.2-alpha.0
+  - @veltodefi/re@2.6.2-alpha.0
+  - @veltodefi/nsfer@2.6.2-alpha.0
+  - @veltodefi/2.6.2-alpha.0
 
 ## 2.6.1
 
@@ -994,22 +1042,22 @@
 - publish
 - Updated dependencies [033ccf8]
 - Updated dependencies
-  - @orderly.network/react-app@2.6.1
-  - @orderly.network/chart@2.6.1
-  - @orderly.network/hooks@2.6.1
-  - @orderly.network/i18n@2.6.1
-  - @orderly.network/perp@4.6.1
-  - @orderly.network/types@2.6.1
-  - @orderly.network/ui@2.6.1
-  - @orderly.network/ui-chain-selector@2.6.1
-  - @orderly.network/ui-connector@2.6.1
-  - @orderly.network/ui-leverage@2.6.1
-  - @orderly.network/ui-orders@2.6.1
-  - @orderly.network/ui-positions@2.6.1
-  - @orderly.network/ui-scaffold@2.6.1
-  - @orderly.network/ui-share@2.6.1
-  - @orderly.network/ui-transfer@2.6.1
-  - @orderly.network/utils@2.6.1
+  - @veltodefi/app@2.6.1
+  - @veltodefi/2.6.1
+  - @veltodefi/2.6.1
+  - @veltodefi/.6.1
+  - @veltodefi/.6.1
+  - @veltodefi/2.6.1
+  - @veltodefi/.1
+  - @veltodefi/in-selector@2.6.1
+  - @veltodefi/nector@2.6.1
+  - @veltodefi/erage@2.6.1
+  - @veltodefi/ers@2.6.1
+  - @veltodefi/itions@2.6.1
+  - @veltodefi/ffold@2.6.1
+  - @veltodefi/re@2.6.1
+  - @veltodefi/nsfer@2.6.1
+  - @veltodefi/2.6.1
 
 ## 2.6.1-alpha.0
 
@@ -1017,22 +1065,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.6.1-alpha.0
-  - @orderly.network/chart@2.6.1-alpha.0
-  - @orderly.network/hooks@2.6.1-alpha.0
-  - @orderly.network/i18n@2.6.1-alpha.0
-  - @orderly.network/perp@4.6.1-alpha.0
-  - @orderly.network/types@2.6.1-alpha.0
-  - @orderly.network/ui@2.6.1-alpha.0
-  - @orderly.network/ui-chain-selector@2.6.1-alpha.0
-  - @orderly.network/ui-connector@2.6.1-alpha.0
-  - @orderly.network/ui-leverage@2.6.1-alpha.0
-  - @orderly.network/ui-orders@2.6.1-alpha.0
-  - @orderly.network/ui-positions@2.6.1-alpha.0
-  - @orderly.network/ui-scaffold@2.6.1-alpha.0
-  - @orderly.network/ui-share@2.6.1-alpha.0
-  - @orderly.network/ui-transfer@2.6.1-alpha.0
-  - @orderly.network/utils@2.6.1-alpha.0
+  - @veltodefi/app@2.6.1-alpha.0
+  - @veltodefi/2.6.1-alpha.0
+  - @veltodefi/2.6.1-alpha.0
+  - @veltodefi/.6.1-alpha.0
+  - @veltodefi/.6.1-alpha.0
+  - @veltodefi/2.6.1-alpha.0
+  - @veltodefi/.1-alpha.0
+  - @veltodefi/in-selector@2.6.1-alpha.0
+  - @veltodefi/nector@2.6.1-alpha.0
+  - @veltodefi/erage@2.6.1-alpha.0
+  - @veltodefi/ers@2.6.1-alpha.0
+  - @veltodefi/itions@2.6.1-alpha.0
+  - @veltodefi/ffold@2.6.1-alpha.0
+  - @veltodefi/re@2.6.1-alpha.0
+  - @veltodefi/nsfer@2.6.1-alpha.0
+  - @veltodefi/2.6.1-alpha.0
 
 ## 2.6.0
 
@@ -1045,22 +1093,22 @@
 
 - Updated dependencies
 - Updated dependencies [c4b5fbc]
-  - @orderly.network/react-app@2.6.0
-  - @orderly.network/chart@2.6.0
-  - @orderly.network/hooks@2.6.0
-  - @orderly.network/i18n@2.6.0
-  - @orderly.network/perp@4.6.0
-  - @orderly.network/types@2.6.0
-  - @orderly.network/ui@2.6.0
-  - @orderly.network/ui-chain-selector@2.6.0
-  - @orderly.network/ui-connector@2.6.0
-  - @orderly.network/ui-leverage@2.6.0
-  - @orderly.network/ui-orders@2.6.0
-  - @orderly.network/ui-positions@2.6.0
-  - @orderly.network/ui-scaffold@2.6.0
-  - @orderly.network/ui-share@2.6.0
-  - @orderly.network/ui-transfer@2.6.0
-  - @orderly.network/utils@2.6.0
+  - @veltodefi/app@2.6.0
+  - @veltodefi/2.6.0
+  - @veltodefi/2.6.0
+  - @veltodefi/.6.0
+  - @veltodefi/.6.0
+  - @veltodefi/2.6.0
+  - @veltodefi/.0
+  - @veltodefi/in-selector@2.6.0
+  - @veltodefi/nector@2.6.0
+  - @veltodefi/erage@2.6.0
+  - @veltodefi/ers@2.6.0
+  - @veltodefi/itions@2.6.0
+  - @veltodefi/ffold@2.6.0
+  - @veltodefi/re@2.6.0
+  - @veltodefi/nsfer@2.6.0
+  - @veltodefi/2.6.0
 
 ## 2.6.0-alpha.0
 
@@ -1071,22 +1119,22 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.6.0-alpha.0
-  - @orderly.network/chart@2.6.0-alpha.0
-  - @orderly.network/hooks@2.6.0-alpha.0
-  - @orderly.network/i18n@2.6.0-alpha.0
-  - @orderly.network/perp@4.6.0-alpha.0
-  - @orderly.network/types@2.6.0-alpha.0
-  - @orderly.network/ui@2.6.0-alpha.0
-  - @orderly.network/ui-chain-selector@2.6.0-alpha.0
-  - @orderly.network/ui-connector@2.6.0-alpha.0
-  - @orderly.network/ui-leverage@2.6.0-alpha.0
-  - @orderly.network/ui-orders@2.6.0-alpha.0
-  - @orderly.network/ui-positions@2.6.0-alpha.0
-  - @orderly.network/ui-scaffold@2.6.0-alpha.0
-  - @orderly.network/ui-share@2.6.0-alpha.0
-  - @orderly.network/ui-transfer@2.6.0-alpha.0
-  - @orderly.network/utils@2.6.0-alpha.0
+  - @veltodefi/app@2.6.0-alpha.0
+  - @veltodefi/2.6.0-alpha.0
+  - @veltodefi/2.6.0-alpha.0
+  - @veltodefi/.6.0-alpha.0
+  - @veltodefi/.6.0-alpha.0
+  - @veltodefi/2.6.0-alpha.0
+  - @veltodefi/.0-alpha.0
+  - @veltodefi/in-selector@2.6.0-alpha.0
+  - @veltodefi/nector@2.6.0-alpha.0
+  - @veltodefi/erage@2.6.0-alpha.0
+  - @veltodefi/ers@2.6.0-alpha.0
+  - @veltodefi/itions@2.6.0-alpha.0
+  - @veltodefi/ffold@2.6.0-alpha.0
+  - @veltodefi/re@2.6.0-alpha.0
+  - @veltodefi/nsfer@2.6.0-alpha.0
+  - @veltodefi/2.6.0-alpha.0
 
 ## 2.5.3
 
@@ -1098,22 +1146,22 @@
 - Updated dependencies [798c4eb]
 - Updated dependencies [64c5b75]
 - Updated dependencies
-  - @orderly.network/react-app@2.5.3
-  - @orderly.network/chart@2.5.3
-  - @orderly.network/hooks@2.5.3
-  - @orderly.network/i18n@2.5.3
-  - @orderly.network/perp@4.5.3
-  - @orderly.network/types@2.5.3
-  - @orderly.network/ui@2.5.3
-  - @orderly.network/ui-chain-selector@2.5.3
-  - @orderly.network/ui-connector@2.5.3
-  - @orderly.network/ui-leverage@2.5.3
-  - @orderly.network/ui-orders@2.5.3
-  - @orderly.network/ui-positions@2.5.3
-  - @orderly.network/ui-scaffold@2.5.3
-  - @orderly.network/ui-share@2.5.3
-  - @orderly.network/ui-transfer@2.5.3
-  - @orderly.network/utils@2.5.3
+  - @veltodefi/app@2.5.3
+  - @veltodefi/2.5.3
+  - @veltodefi/2.5.3
+  - @veltodefi/.5.3
+  - @veltodefi/.5.3
+  - @veltodefi/2.5.3
+  - @veltodefi/.3
+  - @veltodefi/in-selector@2.5.3
+  - @veltodefi/nector@2.5.3
+  - @veltodefi/erage@2.5.3
+  - @veltodefi/ers@2.5.3
+  - @veltodefi/itions@2.5.3
+  - @veltodefi/ffold@2.5.3
+  - @veltodefi/re@2.5.3
+  - @veltodefi/nsfer@2.5.3
+  - @veltodefi/2.5.3
 
 ## 2.5.3-alpha.1
 
@@ -1121,22 +1169,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.5.3-alpha.1
-  - @orderly.network/chart@2.5.3-alpha.1
-  - @orderly.network/hooks@2.5.3-alpha.1
-  - @orderly.network/i18n@2.5.3-alpha.1
-  - @orderly.network/perp@4.5.3-alpha.1
-  - @orderly.network/types@2.5.3-alpha.1
-  - @orderly.network/ui@2.5.3-alpha.1
-  - @orderly.network/ui-chain-selector@2.5.3-alpha.1
-  - @orderly.network/ui-connector@2.5.3-alpha.1
-  - @orderly.network/ui-leverage@2.5.3-alpha.1
-  - @orderly.network/ui-orders@2.5.3-alpha.1
-  - @orderly.network/ui-positions@2.5.3-alpha.1
-  - @orderly.network/ui-scaffold@2.5.3-alpha.1
-  - @orderly.network/ui-share@2.5.3-alpha.1
-  - @orderly.network/ui-transfer@2.5.3-alpha.1
-  - @orderly.network/utils@2.5.3-alpha.1
+  - @veltodefi/app@2.5.3-alpha.1
+  - @veltodefi/2.5.3-alpha.1
+  - @veltodefi/2.5.3-alpha.1
+  - @veltodefi/.5.3-alpha.1
+  - @veltodefi/.5.3-alpha.1
+  - @veltodefi/2.5.3-alpha.1
+  - @veltodefi/.3-alpha.1
+  - @veltodefi/in-selector@2.5.3-alpha.1
+  - @veltodefi/nector@2.5.3-alpha.1
+  - @veltodefi/erage@2.5.3-alpha.1
+  - @veltodefi/ers@2.5.3-alpha.1
+  - @veltodefi/itions@2.5.3-alpha.1
+  - @veltodefi/ffold@2.5.3-alpha.1
+  - @veltodefi/re@2.5.3-alpha.1
+  - @veltodefi/nsfer@2.5.3-alpha.1
+  - @veltodefi/2.5.3-alpha.1
 
 ## 2.5.3-alpha.0
 
@@ -1144,22 +1192,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.5.3-alpha.0
-  - @orderly.network/chart@2.5.3-alpha.0
-  - @orderly.network/hooks@2.5.3-alpha.0
-  - @orderly.network/i18n@2.5.3-alpha.0
-  - @orderly.network/perp@4.5.3-alpha.0
-  - @orderly.network/types@2.5.3-alpha.0
-  - @orderly.network/ui@2.5.3-alpha.0
-  - @orderly.network/ui-chain-selector@2.5.3-alpha.0
-  - @orderly.network/ui-connector@2.5.3-alpha.0
-  - @orderly.network/ui-leverage@2.5.3-alpha.0
-  - @orderly.network/ui-orders@2.5.3-alpha.0
-  - @orderly.network/ui-positions@2.5.3-alpha.0
-  - @orderly.network/ui-scaffold@2.5.3-alpha.0
-  - @orderly.network/ui-share@2.5.3-alpha.0
-  - @orderly.network/ui-transfer@2.5.3-alpha.0
-  - @orderly.network/utils@2.5.3-alpha.0
+  - @veltodefi/app@2.5.3-alpha.0
+  - @veltodefi/2.5.3-alpha.0
+  - @veltodefi/2.5.3-alpha.0
+  - @veltodefi/.5.3-alpha.0
+  - @veltodefi/.5.3-alpha.0
+  - @veltodefi/2.5.3-alpha.0
+  - @veltodefi/.3-alpha.0
+  - @veltodefi/in-selector@2.5.3-alpha.0
+  - @veltodefi/nector@2.5.3-alpha.0
+  - @veltodefi/erage@2.5.3-alpha.0
+  - @veltodefi/ers@2.5.3-alpha.0
+  - @veltodefi/itions@2.5.3-alpha.0
+  - @veltodefi/ffold@2.5.3-alpha.0
+  - @veltodefi/re@2.5.3-alpha.0
+  - @veltodefi/nsfer@2.5.3-alpha.0
+  - @veltodefi/2.5.3-alpha.0
 
 ## 2.5.2
 
@@ -1169,22 +1217,22 @@
 - publish
 - Updated dependencies [13daa3f]
 - Updated dependencies
-  - @orderly.network/react-app@2.5.2
-  - @orderly.network/chart@2.5.2
-  - @orderly.network/hooks@2.5.2
-  - @orderly.network/i18n@2.5.2
-  - @orderly.network/perp@4.5.2
-  - @orderly.network/types@2.5.2
-  - @orderly.network/ui@2.5.2
-  - @orderly.network/ui-chain-selector@2.5.2
-  - @orderly.network/ui-connector@2.5.2
-  - @orderly.network/ui-leverage@2.5.2
-  - @orderly.network/ui-orders@2.5.2
-  - @orderly.network/ui-positions@2.5.2
-  - @orderly.network/ui-scaffold@2.5.2
-  - @orderly.network/ui-share@2.5.2
-  - @orderly.network/ui-transfer@2.5.2
-  - @orderly.network/utils@2.5.2
+  - @veltodefi/app@2.5.2
+  - @veltodefi/2.5.2
+  - @veltodefi/2.5.2
+  - @veltodefi/.5.2
+  - @veltodefi/.5.2
+  - @veltodefi/2.5.2
+  - @veltodefi/.2
+  - @veltodefi/in-selector@2.5.2
+  - @veltodefi/nector@2.5.2
+  - @veltodefi/erage@2.5.2
+  - @veltodefi/ers@2.5.2
+  - @veltodefi/itions@2.5.2
+  - @veltodefi/ffold@2.5.2
+  - @veltodefi/re@2.5.2
+  - @veltodefi/nsfer@2.5.2
+  - @veltodefi/2.5.2
 
 ## 2.5.2-alpha.0
 
@@ -1192,22 +1240,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.5.2-alpha.0
-  - @orderly.network/chart@2.5.2-alpha.0
-  - @orderly.network/hooks@2.5.2-alpha.0
-  - @orderly.network/i18n@2.5.2-alpha.0
-  - @orderly.network/perp@4.5.2-alpha.0
-  - @orderly.network/types@2.5.2-alpha.0
-  - @orderly.network/ui@2.5.2-alpha.0
-  - @orderly.network/ui-chain-selector@2.5.2-alpha.0
-  - @orderly.network/ui-connector@2.5.2-alpha.0
-  - @orderly.network/ui-leverage@2.5.2-alpha.0
-  - @orderly.network/ui-orders@2.5.2-alpha.0
-  - @orderly.network/ui-positions@2.5.2-alpha.0
-  - @orderly.network/ui-scaffold@2.5.2-alpha.0
-  - @orderly.network/ui-share@2.5.2-alpha.0
-  - @orderly.network/ui-transfer@2.5.2-alpha.0
-  - @orderly.network/utils@2.5.2-alpha.0
+  - @veltodefi/app@2.5.2-alpha.0
+  - @veltodefi/2.5.2-alpha.0
+  - @veltodefi/2.5.2-alpha.0
+  - @veltodefi/.5.2-alpha.0
+  - @veltodefi/.5.2-alpha.0
+  - @veltodefi/2.5.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/in-selector@2.5.2-alpha.0
+  - @veltodefi/nector@2.5.2-alpha.0
+  - @veltodefi/erage@2.5.2-alpha.0
+  - @veltodefi/ers@2.5.2-alpha.0
+  - @veltodefi/itions@2.5.2-alpha.0
+  - @veltodefi/ffold@2.5.2-alpha.0
+  - @veltodefi/re@2.5.2-alpha.0
+  - @veltodefi/nsfer@2.5.2-alpha.0
+  - @veltodefi/2.5.2-alpha.0
 
 ## 2.5.1
 
@@ -1217,22 +1265,22 @@
 - 5ad8a1b: publish
 - Updated dependencies
 - Updated dependencies [5ad8a1b]
-  - @orderly.network/react-app@2.5.1
-  - @orderly.network/chart@2.5.1
-  - @orderly.network/hooks@2.5.1
-  - @orderly.network/i18n@2.5.1
-  - @orderly.network/perp@4.5.1
-  - @orderly.network/types@2.5.1
-  - @orderly.network/ui@2.5.1
-  - @orderly.network/ui-chain-selector@2.5.1
-  - @orderly.network/ui-connector@2.5.1
-  - @orderly.network/ui-leverage@2.5.1
-  - @orderly.network/ui-orders@2.5.1
-  - @orderly.network/ui-positions@2.5.1
-  - @orderly.network/ui-scaffold@2.5.1
-  - @orderly.network/ui-share@2.5.1
-  - @orderly.network/ui-transfer@2.5.1
-  - @orderly.network/utils@2.5.1
+  - @veltodefi/app@2.5.1
+  - @veltodefi/2.5.1
+  - @veltodefi/2.5.1
+  - @veltodefi/.5.1
+  - @veltodefi/.5.1
+  - @veltodefi/2.5.1
+  - @veltodefi/.1
+  - @veltodefi/in-selector@2.5.1
+  - @veltodefi/nector@2.5.1
+  - @veltodefi/erage@2.5.1
+  - @veltodefi/ers@2.5.1
+  - @veltodefi/itions@2.5.1
+  - @veltodefi/ffold@2.5.1
+  - @veltodefi/re@2.5.1
+  - @veltodefi/nsfer@2.5.1
+  - @veltodefi/2.5.1
 
 ## 2.5.1-alpha.0
 
@@ -1240,22 +1288,22 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.5.1-alpha.0
-  - @orderly.network/chart@2.5.1-alpha.0
-  - @orderly.network/hooks@2.5.1-alpha.0
-  - @orderly.network/i18n@2.5.1-alpha.0
-  - @orderly.network/perp@4.5.1-alpha.0
-  - @orderly.network/types@2.5.1-alpha.0
-  - @orderly.network/ui@2.5.1-alpha.0
-  - @orderly.network/ui-chain-selector@2.5.1-alpha.0
-  - @orderly.network/ui-connector@2.5.1-alpha.0
-  - @orderly.network/ui-leverage@2.5.1-alpha.0
-  - @orderly.network/ui-orders@2.5.1-alpha.0
-  - @orderly.network/ui-positions@2.5.1-alpha.0
-  - @orderly.network/ui-scaffold@2.5.1-alpha.0
-  - @orderly.network/ui-share@2.5.1-alpha.0
-  - @orderly.network/ui-transfer@2.5.1-alpha.0
-  - @orderly.network/utils@2.5.1-alpha.0
+  - @veltodefi/app@2.5.1-alpha.0
+  - @veltodefi/2.5.1-alpha.0
+  - @veltodefi/2.5.1-alpha.0
+  - @veltodefi/.5.1-alpha.0
+  - @veltodefi/.5.1-alpha.0
+  - @veltodefi/2.5.1-alpha.0
+  - @veltodefi/.1-alpha.0
+  - @veltodefi/in-selector@2.5.1-alpha.0
+  - @veltodefi/nector@2.5.1-alpha.0
+  - @veltodefi/erage@2.5.1-alpha.0
+  - @veltodefi/ers@2.5.1-alpha.0
+  - @veltodefi/itions@2.5.1-alpha.0
+  - @veltodefi/ffold@2.5.1-alpha.0
+  - @veltodefi/re@2.5.1-alpha.0
+  - @veltodefi/nsfer@2.5.1-alpha.0
+  - @veltodefi/2.5.1-alpha.0
 
 ## 2.5.0
 
@@ -1272,22 +1320,22 @@
 - Updated dependencies [86eeea2]
 - Updated dependencies [728895d]
 - Updated dependencies
-  - @orderly.network/react-app@2.5.0
-  - @orderly.network/chart@2.5.0
-  - @orderly.network/hooks@2.5.0
-  - @orderly.network/i18n@2.5.0
-  - @orderly.network/perp@4.5.0
-  - @orderly.network/types@2.5.0
-  - @orderly.network/ui@2.5.0
-  - @orderly.network/ui-chain-selector@2.5.0
-  - @orderly.network/ui-connector@2.5.0
-  - @orderly.network/ui-leverage@2.5.0
-  - @orderly.network/ui-orders@2.5.0
-  - @orderly.network/ui-positions@2.5.0
-  - @orderly.network/ui-scaffold@2.5.0
-  - @orderly.network/ui-share@2.5.0
-  - @orderly.network/ui-transfer@2.5.0
-  - @orderly.network/utils@2.5.0
+  - @veltodefi/app@2.5.0
+  - @veltodefi/2.5.0
+  - @veltodefi/2.5.0
+  - @veltodefi/.5.0
+  - @veltodefi/.5.0
+  - @veltodefi/2.5.0
+  - @veltodefi/.0
+  - @veltodefi/in-selector@2.5.0
+  - @veltodefi/nector@2.5.0
+  - @veltodefi/erage@2.5.0
+  - @veltodefi/ers@2.5.0
+  - @veltodefi/itions@2.5.0
+  - @veltodefi/ffold@2.5.0
+  - @veltodefi/re@2.5.0
+  - @veltodefi/nsfer@2.5.0
+  - @veltodefi/2.5.0
 
 ## 2.5.0-alpha.2
 
@@ -1298,22 +1346,22 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.5.0-alpha.2
-  - @orderly.network/chart@2.5.0-alpha.2
-  - @orderly.network/hooks@2.5.0-alpha.2
-  - @orderly.network/i18n@2.5.0-alpha.2
-  - @orderly.network/perp@4.5.0-alpha.2
-  - @orderly.network/types@2.5.0-alpha.2
-  - @orderly.network/ui@2.5.0-alpha.2
-  - @orderly.network/ui-chain-selector@2.5.0-alpha.2
-  - @orderly.network/ui-connector@2.5.0-alpha.2
-  - @orderly.network/ui-leverage@2.5.0-alpha.2
-  - @orderly.network/ui-orders@2.5.0-alpha.2
-  - @orderly.network/ui-positions@2.5.0-alpha.2
-  - @orderly.network/ui-scaffold@2.5.0-alpha.2
-  - @orderly.network/ui-share@2.5.0-alpha.2
-  - @orderly.network/ui-transfer@2.5.0-alpha.2
-  - @orderly.network/utils@2.5.0-alpha.2
+  - @veltodefi/app@2.5.0-alpha.2
+  - @veltodefi/2.5.0-alpha.2
+  - @veltodefi/2.5.0-alpha.2
+  - @veltodefi/.5.0-alpha.2
+  - @veltodefi/.5.0-alpha.2
+  - @veltodefi/2.5.0-alpha.2
+  - @veltodefi/.0-alpha.2
+  - @veltodefi/in-selector@2.5.0-alpha.2
+  - @veltodefi/nector@2.5.0-alpha.2
+  - @veltodefi/erage@2.5.0-alpha.2
+  - @veltodefi/ers@2.5.0-alpha.2
+  - @veltodefi/itions@2.5.0-alpha.2
+  - @veltodefi/ffold@2.5.0-alpha.2
+  - @veltodefi/re@2.5.0-alpha.2
+  - @veltodefi/nsfer@2.5.0-alpha.2
+  - @veltodefi/2.5.0-alpha.2
 
 ## 2.5.0-alpha.1
 
@@ -1324,22 +1372,22 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.5.0-alpha.1
-  - @orderly.network/chart@2.5.0-alpha.1
-  - @orderly.network/hooks@2.5.0-alpha.1
-  - @orderly.network/i18n@2.5.0-alpha.1
-  - @orderly.network/perp@4.5.0-alpha.1
-  - @orderly.network/types@2.5.0-alpha.1
-  - @orderly.network/ui@2.5.0-alpha.1
-  - @orderly.network/ui-chain-selector@2.5.0-alpha.1
-  - @orderly.network/ui-connector@2.5.0-alpha.1
-  - @orderly.network/ui-leverage@2.5.0-alpha.1
-  - @orderly.network/ui-orders@2.5.0-alpha.1
-  - @orderly.network/ui-positions@2.5.0-alpha.1
-  - @orderly.network/ui-scaffold@2.5.0-alpha.1
-  - @orderly.network/ui-share@2.5.0-alpha.1
-  - @orderly.network/ui-transfer@2.5.0-alpha.1
-  - @orderly.network/utils@2.5.0-alpha.1
+  - @veltodefi/app@2.5.0-alpha.1
+  - @veltodefi/2.5.0-alpha.1
+  - @veltodefi/2.5.0-alpha.1
+  - @veltodefi/.5.0-alpha.1
+  - @veltodefi/.5.0-alpha.1
+  - @veltodefi/2.5.0-alpha.1
+  - @veltodefi/.0-alpha.1
+  - @veltodefi/in-selector@2.5.0-alpha.1
+  - @veltodefi/nector@2.5.0-alpha.1
+  - @veltodefi/erage@2.5.0-alpha.1
+  - @veltodefi/ers@2.5.0-alpha.1
+  - @veltodefi/itions@2.5.0-alpha.1
+  - @veltodefi/ffold@2.5.0-alpha.1
+  - @veltodefi/re@2.5.0-alpha.1
+  - @veltodefi/nsfer@2.5.0-alpha.1
+  - @veltodefi/2.5.0-alpha.1
 
 ## 2.4.2-alpha.0
 
@@ -1347,21 +1395,21 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.4.2-alpha.0
-  - @orderly.network/chart@2.4.2-alpha.0
-  - @orderly.network/hooks@2.4.2-alpha.0
-  - @orderly.network/i18n@2.4.2-alpha.0
-  - @orderly.network/types@2.4.2-alpha.0
-  - @orderly.network/ui@2.4.2-alpha.0
-  - @orderly.network/ui-chain-selector@2.4.2-alpha.0
-  - @orderly.network/ui-connector@2.4.2-alpha.0
-  - @orderly.network/ui-leverage@2.4.2-alpha.0
-  - @orderly.network/ui-orders@2.4.2-alpha.0
-  - @orderly.network/ui-positions@2.4.2-alpha.0
-  - @orderly.network/ui-scaffold@2.4.2-alpha.0
-  - @orderly.network/ui-share@2.4.2-alpha.0
-  - @orderly.network/ui-transfer@2.4.2-alpha.0
-  - @orderly.network/utils@2.4.2-alpha.0
+  - @veltodefi/app@2.4.2-alpha.0
+  - @veltodefi/2.4.2-alpha.0
+  - @veltodefi/2.4.2-alpha.0
+  - @veltodefi/.4.2-alpha.0
+  - @veltodefi/2.4.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/in-selector@2.4.2-alpha.0
+  - @veltodefi/nector@2.4.2-alpha.0
+  - @veltodefi/erage@2.4.2-alpha.0
+  - @veltodefi/ers@2.4.2-alpha.0
+  - @veltodefi/itions@2.4.2-alpha.0
+  - @veltodefi/ffold@2.4.2-alpha.0
+  - @veltodefi/re@2.4.2-alpha.0
+  - @veltodefi/nsfer@2.4.2-alpha.0
+  - @veltodefi/2.4.2-alpha.0
 
 ## 2.4.1
 
@@ -1371,21 +1419,21 @@
 - 5a220e0: publish
 - Updated dependencies
 - Updated dependencies [5a220e0]
-  - @orderly.network/react-app@2.4.1
-  - @orderly.network/chart@2.4.1
-  - @orderly.network/hooks@2.4.1
-  - @orderly.network/i18n@2.4.1
-  - @orderly.network/types@2.4.1
-  - @orderly.network/ui@2.4.1
-  - @orderly.network/ui-chain-selector@2.4.1
-  - @orderly.network/ui-connector@2.4.1
-  - @orderly.network/ui-leverage@2.4.1
-  - @orderly.network/ui-orders@2.4.1
-  - @orderly.network/ui-positions@2.4.1
-  - @orderly.network/ui-scaffold@2.4.1
-  - @orderly.network/ui-share@2.4.1
-  - @orderly.network/ui-transfer@2.4.1
-  - @orderly.network/utils@2.4.1
+  - @veltodefi/app@2.4.1
+  - @veltodefi/2.4.1
+  - @veltodefi/2.4.1
+  - @veltodefi/.4.1
+  - @veltodefi/2.4.1
+  - @veltodefi/.1
+  - @veltodefi/in-selector@2.4.1
+  - @veltodefi/nector@2.4.1
+  - @veltodefi/erage@2.4.1
+  - @veltodefi/ers@2.4.1
+  - @veltodefi/itions@2.4.1
+  - @veltodefi/ffold@2.4.1
+  - @veltodefi/re@2.4.1
+  - @veltodefi/nsfer@2.4.1
+  - @veltodefi/2.4.1
 
 ## 2.4.1-alpha.0
 
@@ -1393,21 +1441,21 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.4.1-alpha.0
-  - @orderly.network/chart@2.4.1-alpha.0
-  - @orderly.network/hooks@2.4.1-alpha.0
-  - @orderly.network/i18n@2.4.1-alpha.0
-  - @orderly.network/types@2.4.1-alpha.0
-  - @orderly.network/ui@2.4.1-alpha.0
-  - @orderly.network/ui-chain-selector@2.4.1-alpha.0
-  - @orderly.network/ui-connector@2.4.1-alpha.0
-  - @orderly.network/ui-leverage@2.4.1-alpha.0
-  - @orderly.network/ui-orders@2.4.1-alpha.0
-  - @orderly.network/ui-positions@2.4.1-alpha.0
-  - @orderly.network/ui-scaffold@2.4.1-alpha.0
-  - @orderly.network/ui-share@2.4.1-alpha.0
-  - @orderly.network/ui-transfer@2.4.1-alpha.0
-  - @orderly.network/utils@2.4.1-alpha.0
+  - @veltodefi/app@2.4.1-alpha.0
+  - @veltodefi/2.4.1-alpha.0
+  - @veltodefi/2.4.1-alpha.0
+  - @veltodefi/.4.1-alpha.0
+  - @veltodefi/2.4.1-alpha.0
+  - @veltodefi/.1-alpha.0
+  - @veltodefi/in-selector@2.4.1-alpha.0
+  - @veltodefi/nector@2.4.1-alpha.0
+  - @veltodefi/erage@2.4.1-alpha.0
+  - @veltodefi/ers@2.4.1-alpha.0
+  - @veltodefi/itions@2.4.1-alpha.0
+  - @veltodefi/ffold@2.4.1-alpha.0
+  - @veltodefi/re@2.4.1-alpha.0
+  - @veltodefi/nsfer@2.4.1-alpha.0
+  - @veltodefi/2.4.1-alpha.0
 
 ## 2.4.0
 
@@ -1420,21 +1468,21 @@
 
 - Updated dependencies [decb695]
 - Updated dependencies
-  - @orderly.network/react-app@2.4.0
-  - @orderly.network/chart@2.4.0
-  - @orderly.network/hooks@2.4.0
-  - @orderly.network/i18n@2.4.0
-  - @orderly.network/types@2.4.0
-  - @orderly.network/ui@2.4.0
-  - @orderly.network/ui-chain-selector@2.4.0
-  - @orderly.network/ui-connector@2.4.0
-  - @orderly.network/ui-leverage@2.4.0
-  - @orderly.network/ui-orders@2.4.0
-  - @orderly.network/ui-positions@2.4.0
-  - @orderly.network/ui-scaffold@2.4.0
-  - @orderly.network/ui-share@2.4.0
-  - @orderly.network/ui-transfer@2.4.0
-  - @orderly.network/utils@2.4.0
+  - @veltodefi/app@2.4.0
+  - @veltodefi/2.4.0
+  - @veltodefi/2.4.0
+  - @veltodefi/.4.0
+  - @veltodefi/2.4.0
+  - @veltodefi/.0
+  - @veltodefi/in-selector@2.4.0
+  - @veltodefi/nector@2.4.0
+  - @veltodefi/erage@2.4.0
+  - @veltodefi/ers@2.4.0
+  - @veltodefi/itions@2.4.0
+  - @veltodefi/ffold@2.4.0
+  - @veltodefi/re@2.4.0
+  - @veltodefi/nsfer@2.4.0
+  - @veltodefi/2.4.0
 
 ## 2.4.0-alpha.0
 
@@ -1445,21 +1493,21 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.4.0-alpha.0
-  - @orderly.network/chart@2.4.0-alpha.0
-  - @orderly.network/hooks@2.4.0-alpha.0
-  - @orderly.network/i18n@2.4.0-alpha.0
-  - @orderly.network/types@2.4.0-alpha.0
-  - @orderly.network/ui@2.4.0-alpha.0
-  - @orderly.network/ui-chain-selector@2.4.0-alpha.0
-  - @orderly.network/ui-connector@2.4.0-alpha.0
-  - @orderly.network/ui-leverage@2.4.0-alpha.0
-  - @orderly.network/ui-orders@2.4.0-alpha.0
-  - @orderly.network/ui-positions@2.4.0-alpha.0
-  - @orderly.network/ui-scaffold@2.4.0-alpha.0
-  - @orderly.network/ui-share@2.4.0-alpha.0
-  - @orderly.network/ui-transfer@2.4.0-alpha.0
-  - @orderly.network/utils@2.4.0-alpha.0
+  - @veltodefi/app@2.4.0-alpha.0
+  - @veltodefi/2.4.0-alpha.0
+  - @veltodefi/2.4.0-alpha.0
+  - @veltodefi/.4.0-alpha.0
+  - @veltodefi/2.4.0-alpha.0
+  - @veltodefi/.0-alpha.0
+  - @veltodefi/in-selector@2.4.0-alpha.0
+  - @veltodefi/nector@2.4.0-alpha.0
+  - @veltodefi/erage@2.4.0-alpha.0
+  - @veltodefi/ers@2.4.0-alpha.0
+  - @veltodefi/itions@2.4.0-alpha.0
+  - @veltodefi/ffold@2.4.0-alpha.0
+  - @veltodefi/re@2.4.0-alpha.0
+  - @veltodefi/nsfer@2.4.0-alpha.0
+  - @veltodefi/2.4.0-alpha.0
 
 ## 2.3.2
 
@@ -1469,21 +1517,21 @@
 - publish
 - Updated dependencies [311e2a7]
 - Updated dependencies
-  - @orderly.network/react-app@2.3.2
-  - @orderly.network/chart@2.3.2
-  - @orderly.network/hooks@2.3.2
-  - @orderly.network/i18n@2.3.2
-  - @orderly.network/types@2.3.2
-  - @orderly.network/ui@2.3.2
-  - @orderly.network/ui-chain-selector@2.3.2
-  - @orderly.network/ui-connector@2.3.2
-  - @orderly.network/ui-leverage@2.3.2
-  - @orderly.network/ui-orders@2.3.2
-  - @orderly.network/ui-positions@2.3.2
-  - @orderly.network/ui-scaffold@2.3.2
-  - @orderly.network/ui-share@2.3.2
-  - @orderly.network/ui-transfer@2.3.2
-  - @orderly.network/utils@2.3.2
+  - @veltodefi/app@2.3.2
+  - @veltodefi/2.3.2
+  - @veltodefi/2.3.2
+  - @veltodefi/.3.2
+  - @veltodefi/2.3.2
+  - @veltodefi/.2
+  - @veltodefi/in-selector@2.3.2
+  - @veltodefi/nector@2.3.2
+  - @veltodefi/erage@2.3.2
+  - @veltodefi/ers@2.3.2
+  - @veltodefi/itions@2.3.2
+  - @veltodefi/ffold@2.3.2
+  - @veltodefi/re@2.3.2
+  - @veltodefi/nsfer@2.3.2
+  - @veltodefi/2.3.2
 
 ## 2.3.2-alpha.0
 
@@ -1491,21 +1539,21 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.3.2-alpha.0
-  - @orderly.network/chart@2.3.2-alpha.0
-  - @orderly.network/hooks@2.3.2-alpha.0
-  - @orderly.network/i18n@2.3.2-alpha.0
-  - @orderly.network/types@2.3.2-alpha.0
-  - @orderly.network/ui@2.3.2-alpha.0
-  - @orderly.network/ui-chain-selector@2.3.2-alpha.0
-  - @orderly.network/ui-connector@2.3.2-alpha.0
-  - @orderly.network/ui-leverage@2.3.2-alpha.0
-  - @orderly.network/ui-orders@2.3.2-alpha.0
-  - @orderly.network/ui-positions@2.3.2-alpha.0
-  - @orderly.network/ui-scaffold@2.3.2-alpha.0
-  - @orderly.network/ui-share@2.3.2-alpha.0
-  - @orderly.network/ui-transfer@2.3.2-alpha.0
-  - @orderly.network/utils@2.3.2-alpha.0
+  - @veltodefi/app@2.3.2-alpha.0
+  - @veltodefi/2.3.2-alpha.0
+  - @veltodefi/2.3.2-alpha.0
+  - @veltodefi/.3.2-alpha.0
+  - @veltodefi/2.3.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/in-selector@2.3.2-alpha.0
+  - @veltodefi/nector@2.3.2-alpha.0
+  - @veltodefi/erage@2.3.2-alpha.0
+  - @veltodefi/ers@2.3.2-alpha.0
+  - @veltodefi/itions@2.3.2-alpha.0
+  - @veltodefi/ffold@2.3.2-alpha.0
+  - @veltodefi/re@2.3.2-alpha.0
+  - @veltodefi/nsfer@2.3.2-alpha.0
+  - @veltodefi/2.3.2-alpha.0
 
 ## 2.3.1
 
@@ -1515,21 +1563,21 @@
 - publish
 - Updated dependencies [b2ca83a]
 - Updated dependencies
-  - @orderly.network/react-app@2.3.1
-  - @orderly.network/chart@2.3.1
-  - @orderly.network/hooks@2.3.1
-  - @orderly.network/i18n@2.3.1
-  - @orderly.network/types@2.3.1
-  - @orderly.network/ui@2.3.1
-  - @orderly.network/ui-chain-selector@2.3.1
-  - @orderly.network/ui-connector@2.3.1
-  - @orderly.network/ui-leverage@2.3.1
-  - @orderly.network/ui-orders@2.3.1
-  - @orderly.network/ui-positions@2.3.1
-  - @orderly.network/ui-scaffold@2.3.1
-  - @orderly.network/ui-share@2.3.1
-  - @orderly.network/ui-transfer@2.3.1
-  - @orderly.network/utils@2.3.1
+  - @veltodefi/app@2.3.1
+  - @veltodefi/2.3.1
+  - @veltodefi/2.3.1
+  - @veltodefi/.3.1
+  - @veltodefi/2.3.1
+  - @veltodefi/.1
+  - @veltodefi/in-selector@2.3.1
+  - @veltodefi/nector@2.3.1
+  - @veltodefi/erage@2.3.1
+  - @veltodefi/ers@2.3.1
+  - @veltodefi/itions@2.3.1
+  - @veltodefi/ffold@2.3.1
+  - @veltodefi/re@2.3.1
+  - @veltodefi/nsfer@2.3.1
+  - @veltodefi/2.3.1
 
 ## 2.3.1-alpha.0
 
@@ -1537,21 +1585,21 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.3.1-alpha.0
-  - @orderly.network/chart@2.3.1-alpha.0
-  - @orderly.network/hooks@2.3.1-alpha.0
-  - @orderly.network/i18n@2.3.1-alpha.0
-  - @orderly.network/types@2.3.1-alpha.0
-  - @orderly.network/ui@2.3.1-alpha.0
-  - @orderly.network/ui-chain-selector@2.3.1-alpha.0
-  - @orderly.network/ui-connector@2.3.1-alpha.0
-  - @orderly.network/ui-leverage@2.3.1-alpha.0
-  - @orderly.network/ui-orders@2.3.1-alpha.0
-  - @orderly.network/ui-positions@2.3.1-alpha.0
-  - @orderly.network/ui-scaffold@2.3.1-alpha.0
-  - @orderly.network/ui-share@2.3.1-alpha.0
-  - @orderly.network/ui-transfer@2.3.1-alpha.0
-  - @orderly.network/utils@2.3.1-alpha.0
+  - @veltodefi/app@2.3.1-alpha.0
+  - @veltodefi/2.3.1-alpha.0
+  - @veltodefi/2.3.1-alpha.0
+  - @veltodefi/.3.1-alpha.0
+  - @veltodefi/2.3.1-alpha.0
+  - @veltodefi/.1-alpha.0
+  - @veltodefi/in-selector@2.3.1-alpha.0
+  - @veltodefi/nector@2.3.1-alpha.0
+  - @veltodefi/erage@2.3.1-alpha.0
+  - @veltodefi/ers@2.3.1-alpha.0
+  - @veltodefi/itions@2.3.1-alpha.0
+  - @veltodefi/ffold@2.3.1-alpha.0
+  - @veltodefi/re@2.3.1-alpha.0
+  - @veltodefi/nsfer@2.3.1-alpha.0
+  - @veltodefi/2.3.1-alpha.0
 
 ## 2.3.0
 
@@ -1564,21 +1612,21 @@
 
 - Updated dependencies
 - Updated dependencies [4e5f109]
-  - @orderly.network/react-app@2.3.0
-  - @orderly.network/chart@2.3.0
-  - @orderly.network/hooks@2.3.0
-  - @orderly.network/i18n@2.3.0
-  - @orderly.network/types@2.3.0
-  - @orderly.network/ui@2.3.0
-  - @orderly.network/ui-chain-selector@2.3.0
-  - @orderly.network/ui-connector@2.3.0
-  - @orderly.network/ui-leverage@2.3.0
-  - @orderly.network/ui-orders@2.3.0
-  - @orderly.network/ui-positions@2.3.0
-  - @orderly.network/ui-scaffold@2.3.0
-  - @orderly.network/ui-share@2.3.0
-  - @orderly.network/ui-transfer@2.3.0
-  - @orderly.network/utils@2.3.0
+  - @veltodefi/app@2.3.0
+  - @veltodefi/2.3.0
+  - @veltodefi/2.3.0
+  - @veltodefi/.3.0
+  - @veltodefi/2.3.0
+  - @veltodefi/.0
+  - @veltodefi/in-selector@2.3.0
+  - @veltodefi/nector@2.3.0
+  - @veltodefi/erage@2.3.0
+  - @veltodefi/ers@2.3.0
+  - @veltodefi/itions@2.3.0
+  - @veltodefi/ffold@2.3.0
+  - @veltodefi/re@2.3.0
+  - @veltodefi/nsfer@2.3.0
+  - @veltodefi/2.3.0
 
 ## 2.3.0-alpha.0
 
@@ -1589,21 +1637,21 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.3.0-alpha.0
-  - @orderly.network/chart@2.3.0-alpha.0
-  - @orderly.network/hooks@2.3.0-alpha.0
-  - @orderly.network/i18n@2.3.0-alpha.0
-  - @orderly.network/types@2.3.0-alpha.0
-  - @orderly.network/ui@2.3.0-alpha.0
-  - @orderly.network/ui-chain-selector@2.3.0-alpha.0
-  - @orderly.network/ui-connector@2.3.0-alpha.0
-  - @orderly.network/ui-leverage@2.3.0-alpha.0
-  - @orderly.network/ui-orders@2.3.0-alpha.0
-  - @orderly.network/ui-positions@2.3.0-alpha.0
-  - @orderly.network/ui-scaffold@2.3.0-alpha.0
-  - @orderly.network/ui-share@2.3.0-alpha.0
-  - @orderly.network/ui-transfer@2.3.0-alpha.0
-  - @orderly.network/utils@2.3.0-alpha.0
+  - @veltodefi/app@2.3.0-alpha.0
+  - @veltodefi/2.3.0-alpha.0
+  - @veltodefi/2.3.0-alpha.0
+  - @veltodefi/.3.0-alpha.0
+  - @veltodefi/2.3.0-alpha.0
+  - @veltodefi/.0-alpha.0
+  - @veltodefi/in-selector@2.3.0-alpha.0
+  - @veltodefi/nector@2.3.0-alpha.0
+  - @veltodefi/erage@2.3.0-alpha.0
+  - @veltodefi/ers@2.3.0-alpha.0
+  - @veltodefi/itions@2.3.0-alpha.0
+  - @veltodefi/ffold@2.3.0-alpha.0
+  - @veltodefi/re@2.3.0-alpha.0
+  - @veltodefi/nsfer@2.3.0-alpha.0
+  - @veltodefi/2.3.0-alpha.0
 
 ## 2.2.0
 
@@ -1616,21 +1664,21 @@
 
 - Updated dependencies [e1badae]
 - Updated dependencies
-  - @orderly.network/react-app@2.2.0
-  - @orderly.network/chart@2.2.0
-  - @orderly.network/hooks@2.2.0
-  - @orderly.network/i18n@2.2.0
-  - @orderly.network/types@2.2.0
-  - @orderly.network/ui@2.2.0
-  - @orderly.network/ui-chain-selector@2.2.0
-  - @orderly.network/ui-connector@2.2.0
-  - @orderly.network/ui-leverage@2.2.0
-  - @orderly.network/ui-orders@2.2.0
-  - @orderly.network/ui-positions@2.2.0
-  - @orderly.network/ui-scaffold@2.2.0
-  - @orderly.network/ui-share@2.2.0
-  - @orderly.network/ui-transfer@2.2.0
-  - @orderly.network/utils@2.2.0
+  - @veltodefi/app@2.2.0
+  - @veltodefi/2.2.0
+  - @veltodefi/2.2.0
+  - @veltodefi/.2.0
+  - @veltodefi/2.2.0
+  - @veltodefi/.0
+  - @veltodefi/in-selector@2.2.0
+  - @veltodefi/nector@2.2.0
+  - @veltodefi/erage@2.2.0
+  - @veltodefi/ers@2.2.0
+  - @veltodefi/itions@2.2.0
+  - @veltodefi/ffold@2.2.0
+  - @veltodefi/re@2.2.0
+  - @veltodefi/nsfer@2.2.0
+  - @veltodefi/2.2.0
 
 ## 2.2.0-alpha.0
 
@@ -1641,21 +1689,21 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/react-app@2.2.0-alpha.0
-  - @orderly.network/chart@2.2.0-alpha.0
-  - @orderly.network/hooks@2.2.0-alpha.0
-  - @orderly.network/i18n@2.2.0-alpha.0
-  - @orderly.network/types@2.2.0-alpha.0
-  - @orderly.network/ui@2.2.0-alpha.0
-  - @orderly.network/ui-chain-selector@2.2.0-alpha.0
-  - @orderly.network/ui-connector@2.2.0-alpha.0
-  - @orderly.network/ui-leverage@2.2.0-alpha.0
-  - @orderly.network/ui-orders@2.2.0-alpha.0
-  - @orderly.network/ui-positions@2.2.0-alpha.0
-  - @orderly.network/ui-scaffold@2.2.0-alpha.0
-  - @orderly.network/ui-share@2.2.0-alpha.0
-  - @orderly.network/ui-transfer@2.2.0-alpha.0
-  - @orderly.network/utils@2.2.0-alpha.0
+  - @veltodefi/app@2.2.0-alpha.0
+  - @veltodefi/2.2.0-alpha.0
+  - @veltodefi/2.2.0-alpha.0
+  - @veltodefi/.2.0-alpha.0
+  - @veltodefi/2.2.0-alpha.0
+  - @veltodefi/.0-alpha.0
+  - @veltodefi/in-selector@2.2.0-alpha.0
+  - @veltodefi/nector@2.2.0-alpha.0
+  - @veltodefi/erage@2.2.0-alpha.0
+  - @veltodefi/ers@2.2.0-alpha.0
+  - @veltodefi/itions@2.2.0-alpha.0
+  - @veltodefi/ffold@2.2.0-alpha.0
+  - @veltodefi/re@2.2.0-alpha.0
+  - @veltodefi/nsfer@2.2.0-alpha.0
+  - @veltodefi/2.2.0-alpha.0
 
 ## 2.1.3
 
@@ -1665,20 +1713,20 @@
 - 5ba2a31a8: publish
 - Updated dependencies
 - Updated dependencies [5ba2a31a8]
-  - @orderly.network/react-app@2.1.3
-  - @orderly.network/chart@2.1.3
-  - @orderly.network/hooks@2.1.3
-  - @orderly.network/i18n@2.1.3
-  - @orderly.network/types@2.1.3
-  - @orderly.network/ui@2.1.3
-  - @orderly.network/ui-connector@2.1.3
-  - @orderly.network/ui-leverage@2.1.3
-  - @orderly.network/ui-orders@2.1.3
-  - @orderly.network/ui-positions@2.1.3
-  - @orderly.network/ui-scaffold@2.1.3
-  - @orderly.network/ui-share@2.1.3
-  - @orderly.network/ui-transfer@2.1.3
-  - @orderly.network/utils@2.1.3
+  - @veltodefi/app@2.1.3
+  - @veltodefi/2.1.3
+  - @veltodefi/2.1.3
+  - @veltodefi/.1.3
+  - @veltodefi/2.1.3
+  - @veltodefi/.3
+  - @veltodefi/nector@2.1.3
+  - @veltodefi/erage@2.1.3
+  - @veltodefi/ers@2.1.3
+  - @veltodefi/itions@2.1.3
+  - @veltodefi/ffold@2.1.3
+  - @veltodefi/re@2.1.3
+  - @veltodefi/nsfer@2.1.3
+  - @veltodefi/2.1.3
 
 ## 2.1.3-alpha.0
 
@@ -1686,20 +1734,20 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.1.3-alpha.0
-  - @orderly.network/chart@2.1.3-alpha.0
-  - @orderly.network/hooks@2.1.3-alpha.0
-  - @orderly.network/i18n@2.1.3-alpha.0
-  - @orderly.network/types@2.1.3-alpha.0
-  - @orderly.network/ui@2.1.3-alpha.0
-  - @orderly.network/ui-connector@2.1.3-alpha.0
-  - @orderly.network/ui-leverage@2.1.3-alpha.0
-  - @orderly.network/ui-orders@2.1.3-alpha.0
-  - @orderly.network/ui-positions@2.1.3-alpha.0
-  - @orderly.network/ui-scaffold@2.1.3-alpha.0
-  - @orderly.network/ui-share@2.1.3-alpha.0
-  - @orderly.network/ui-transfer@2.1.3-alpha.0
-  - @orderly.network/utils@2.1.3-alpha.0
+  - @veltodefi/app@2.1.3-alpha.0
+  - @veltodefi/2.1.3-alpha.0
+  - @veltodefi/2.1.3-alpha.0
+  - @veltodefi/.1.3-alpha.0
+  - @veltodefi/2.1.3-alpha.0
+  - @veltodefi/.3-alpha.0
+  - @veltodefi/nector@2.1.3-alpha.0
+  - @veltodefi/erage@2.1.3-alpha.0
+  - @veltodefi/ers@2.1.3-alpha.0
+  - @veltodefi/itions@2.1.3-alpha.0
+  - @veltodefi/ffold@2.1.3-alpha.0
+  - @veltodefi/re@2.1.3-alpha.0
+  - @veltodefi/nsfer@2.1.3-alpha.0
+  - @veltodefi/2.1.3-alpha.0
 
 ## 2.1.2
 
@@ -1709,20 +1757,20 @@
 - 7874fa6dd: publish
 - Updated dependencies
 - Updated dependencies [7874fa6dd]
-  - @orderly.network/react-app@2.1.2
-  - @orderly.network/chart@2.1.2
-  - @orderly.network/hooks@2.1.2
-  - @orderly.network/i18n@2.1.2
-  - @orderly.network/types@2.1.2
-  - @orderly.network/ui@2.1.2
-  - @orderly.network/ui-connector@2.1.2
-  - @orderly.network/ui-leverage@2.1.2
-  - @orderly.network/ui-orders@2.1.2
-  - @orderly.network/ui-positions@2.1.2
-  - @orderly.network/ui-scaffold@2.1.2
-  - @orderly.network/ui-share@2.1.2
-  - @orderly.network/ui-transfer@2.1.2
-  - @orderly.network/utils@2.1.2
+  - @veltodefi/app@2.1.2
+  - @veltodefi/2.1.2
+  - @veltodefi/2.1.2
+  - @veltodefi/.1.2
+  - @veltodefi/2.1.2
+  - @veltodefi/.2
+  - @veltodefi/nector@2.1.2
+  - @veltodefi/erage@2.1.2
+  - @veltodefi/ers@2.1.2
+  - @veltodefi/itions@2.1.2
+  - @veltodefi/ffold@2.1.2
+  - @veltodefi/re@2.1.2
+  - @veltodefi/nsfer@2.1.2
+  - @veltodefi/2.1.2
 
 ## 2.1.2-alpha.0
 
@@ -1730,20 +1778,20 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.1.2-alpha.0
-  - @orderly.network/chart@2.1.2-alpha.0
-  - @orderly.network/hooks@2.1.2-alpha.0
-  - @orderly.network/i18n@2.1.2-alpha.0
-  - @orderly.network/types@2.1.2-alpha.0
-  - @orderly.network/ui@2.1.2-alpha.0
-  - @orderly.network/ui-connector@2.1.2-alpha.0
-  - @orderly.network/ui-leverage@2.1.2-alpha.0
-  - @orderly.network/ui-orders@2.1.2-alpha.0
-  - @orderly.network/ui-positions@2.1.2-alpha.0
-  - @orderly.network/ui-scaffold@2.1.2-alpha.0
-  - @orderly.network/ui-share@2.1.2-alpha.0
-  - @orderly.network/ui-transfer@2.1.2-alpha.0
-  - @orderly.network/utils@2.1.2-alpha.0
+  - @veltodefi/app@2.1.2-alpha.0
+  - @veltodefi/2.1.2-alpha.0
+  - @veltodefi/2.1.2-alpha.0
+  - @veltodefi/.1.2-alpha.0
+  - @veltodefi/2.1.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/nector@2.1.2-alpha.0
+  - @veltodefi/erage@2.1.2-alpha.0
+  - @veltodefi/ers@2.1.2-alpha.0
+  - @veltodefi/itions@2.1.2-alpha.0
+  - @veltodefi/ffold@2.1.2-alpha.0
+  - @veltodefi/re@2.1.2-alpha.0
+  - @veltodefi/nsfer@2.1.2-alpha.0
+  - @veltodefi/2.1.2-alpha.0
 
 ## 2.1.1
 
@@ -1753,20 +1801,20 @@
 - 0b52044b6: publish
 - Updated dependencies
 - Updated dependencies [0b52044b6]
-  - @orderly.network/react-app@2.1.1
-  - @orderly.network/chart@2.1.1
-  - @orderly.network/hooks@2.1.1
-  - @orderly.network/i18n@2.1.1
-  - @orderly.network/types@2.1.1
-  - @orderly.network/ui@2.1.1
-  - @orderly.network/ui-connector@2.1.1
-  - @orderly.network/ui-leverage@2.1.1
-  - @orderly.network/ui-orders@2.1.1
-  - @orderly.network/ui-positions@2.1.1
-  - @orderly.network/ui-scaffold@2.1.1
-  - @orderly.network/ui-share@2.1.1
-  - @orderly.network/ui-transfer@2.1.1
-  - @orderly.network/utils@2.1.1
+  - @veltodefi/app@2.1.1
+  - @veltodefi/2.1.1
+  - @veltodefi/2.1.1
+  - @veltodefi/.1.1
+  - @veltodefi/2.1.1
+  - @veltodefi/.1
+  - @veltodefi/nector@2.1.1
+  - @veltodefi/erage@2.1.1
+  - @veltodefi/ers@2.1.1
+  - @veltodefi/itions@2.1.1
+  - @veltodefi/ffold@2.1.1
+  - @veltodefi/re@2.1.1
+  - @veltodefi/nsfer@2.1.1
+  - @veltodefi/2.1.1
 
 ## 2.1.1-alpha.0
 
@@ -1774,20 +1822,20 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.1.1-alpha.0
-  - @orderly.network/chart@2.1.1-alpha.0
-  - @orderly.network/hooks@2.1.1-alpha.0
-  - @orderly.network/i18n@2.1.1-alpha.0
-  - @orderly.network/types@2.1.1-alpha.0
-  - @orderly.network/ui@2.1.1-alpha.0
-  - @orderly.network/ui-connector@2.1.1-alpha.0
-  - @orderly.network/ui-leverage@2.1.1-alpha.0
-  - @orderly.network/ui-orders@2.1.1-alpha.0
-  - @orderly.network/ui-positions@2.1.1-alpha.0
-  - @orderly.network/ui-scaffold@2.1.1-alpha.0
-  - @orderly.network/ui-share@2.1.1-alpha.0
-  - @orderly.network/ui-transfer@2.1.1-alpha.0
-  - @orderly.network/utils@2.1.1-alpha.0
+  - @veltodefi/app@2.1.1-alpha.0
+  - @veltodefi/2.1.1-alpha.0
+  - @veltodefi/2.1.1-alpha.0
+  - @veltodefi/.1.1-alpha.0
+  - @veltodefi/2.1.1-alpha.0
+  - @veltodefi/.1-alpha.0
+  - @veltodefi/nector@2.1.1-alpha.0
+  - @veltodefi/erage@2.1.1-alpha.0
+  - @veltodefi/ers@2.1.1-alpha.0
+  - @veltodefi/itions@2.1.1-alpha.0
+  - @veltodefi/ffold@2.1.1-alpha.0
+  - @veltodefi/re@2.1.1-alpha.0
+  - @veltodefi/nsfer@2.1.1-alpha.0
+  - @veltodefi/2.1.1-alpha.0
 
 ## 2.1.0
 
@@ -1800,20 +1848,20 @@
 - ba163f4ce: publish
 - Updated dependencies [ba163f4ce]
 - Updated dependencies
-  - @orderly.network/react-app@2.1.0
-  - @orderly.network/chart@2.1.0
-  - @orderly.network/hooks@2.1.0
-  - @orderly.network/i18n@2.1.0
-  - @orderly.network/types@2.1.0
-  - @orderly.network/ui@2.1.0
-  - @orderly.network/ui-connector@2.1.0
-  - @orderly.network/ui-leverage@2.1.0
-  - @orderly.network/ui-orders@2.1.0
-  - @orderly.network/ui-positions@2.1.0
-  - @orderly.network/ui-scaffold@2.1.0
-  - @orderly.network/ui-share@2.1.0
-  - @orderly.network/ui-transfer@2.1.0
-  - @orderly.network/utils@2.1.0
+  - @veltodefi/app@2.1.0
+  - @veltodefi/2.1.0
+  - @veltodefi/2.1.0
+  - @veltodefi/.1.0
+  - @veltodefi/2.1.0
+  - @veltodefi/.0
+  - @veltodefi/nector@2.1.0
+  - @veltodefi/erage@2.1.0
+  - @veltodefi/ers@2.1.0
+  - @veltodefi/itions@2.1.0
+  - @veltodefi/ffold@2.1.0
+  - @veltodefi/re@2.1.0
+  - @veltodefi/nsfer@2.1.0
+  - @veltodefi/2.1.0
 
 ## 2.0.8-alpha.0
 
@@ -1821,20 +1869,20 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.0.8-alpha.0
-  - @orderly.network/chart@2.0.8-alpha.0
-  - @orderly.network/hooks@2.0.8-alpha.0
-  - @orderly.network/i18n@2.0.8-alpha.0
-  - @orderly.network/types@2.0.8-alpha.0
-  - @orderly.network/ui@2.0.8-alpha.0
-  - @orderly.network/ui-connector@2.0.8-alpha.0
-  - @orderly.network/ui-leverage@2.0.8-alpha.0
-  - @orderly.network/ui-orders@2.0.8-alpha.0
-  - @orderly.network/ui-positions@2.0.8-alpha.0
-  - @orderly.network/ui-scaffold@2.0.8-alpha.0
-  - @orderly.network/ui-share@2.0.8-alpha.0
-  - @orderly.network/ui-transfer@2.0.8-alpha.0
-  - @orderly.network/utils@2.0.8-alpha.0
+  - @veltodefi/app@2.0.8-alpha.0
+  - @veltodefi/2.0.8-alpha.0
+  - @veltodefi/2.0.8-alpha.0
+  - @veltodefi/.0.8-alpha.0
+  - @veltodefi/2.0.8-alpha.0
+  - @veltodefi/.8-alpha.0
+  - @veltodefi/nector@2.0.8-alpha.0
+  - @veltodefi/erage@2.0.8-alpha.0
+  - @veltodefi/ers@2.0.8-alpha.0
+  - @veltodefi/itions@2.0.8-alpha.0
+  - @veltodefi/ffold@2.0.8-alpha.0
+  - @veltodefi/re@2.0.8-alpha.0
+  - @veltodefi/nsfer@2.0.8-alpha.0
+  - @veltodefi/2.0.8-alpha.0
 
 ## 2.0.7
 
@@ -1842,19 +1890,19 @@
 
 - 423ab1d38: update
 - Updated dependencies [423ab1d38]
-  - @orderly.network/ui-connector@2.0.7
-  - @orderly.network/ui-positions@2.0.7
-  - @orderly.network/ui-leverage@2.0.7
-  - @orderly.network/ui-scaffold@2.0.7
-  - @orderly.network/ui-transfer@2.0.7
-  - @orderly.network/ui-orders@2.0.7
-  - @orderly.network/ui-share@2.0.7
-  - @orderly.network/chart@2.0.7
-  - @orderly.network/hooks@2.0.7
-  - @orderly.network/types@2.0.7
-  - @orderly.network/utils@2.0.7
-  - @orderly.network/react-app@2.0.7
-  - @orderly.network/ui@2.0.7
+  - @veltodefi/nector@2.0.7
+  - @veltodefi/itions@2.0.7
+  - @veltodefi/erage@2.0.7
+  - @veltodefi/ffold@2.0.7
+  - @veltodefi/nsfer@2.0.7
+  - @veltodefi/ers@2.0.7
+  - @veltodefi/re@2.0.7
+  - @veltodefi/2.0.7
+  - @veltodefi/2.0.7
+  - @veltodefi/2.0.7
+  - @veltodefi/2.0.7
+  - @veltodefi/app@2.0.7
+  - @veltodefi/.7
 
 ## 2.0.7-alpha.0
 
@@ -1862,19 +1910,19 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.7-alpha.0
-  - @orderly.network/ui-positions@2.0.7-alpha.0
-  - @orderly.network/ui-leverage@2.0.7-alpha.0
-  - @orderly.network/ui-scaffold@2.0.7-alpha.0
-  - @orderly.network/ui-transfer@2.0.7-alpha.0
-  - @orderly.network/ui-orders@2.0.7-alpha.0
-  - @orderly.network/ui-share@2.0.7-alpha.0
-  - @orderly.network/chart@2.0.7-alpha.0
-  - @orderly.network/hooks@2.0.7-alpha.0
-  - @orderly.network/types@2.0.7-alpha.0
-  - @orderly.network/utils@2.0.7-alpha.0
-  - @orderly.network/react-app@2.0.7-alpha.0
-  - @orderly.network/ui@2.0.7-alpha.0
+  - @veltodefi/nector@2.0.7-alpha.0
+  - @veltodefi/itions@2.0.7-alpha.0
+  - @veltodefi/erage@2.0.7-alpha.0
+  - @veltodefi/ffold@2.0.7-alpha.0
+  - @veltodefi/nsfer@2.0.7-alpha.0
+  - @veltodefi/ers@2.0.7-alpha.0
+  - @veltodefi/re@2.0.7-alpha.0
+  - @veltodefi/2.0.7-alpha.0
+  - @veltodefi/2.0.7-alpha.0
+  - @veltodefi/2.0.7-alpha.0
+  - @veltodefi/2.0.7-alpha.0
+  - @veltodefi/app@2.0.7-alpha.0
+  - @veltodefi/.7-alpha.0
 
 ## 2.0.6
 
@@ -1882,19 +1930,19 @@
 
 - 74c2c433e: fix bugs
 - Updated dependencies [74c2c433e]
-  - @orderly.network/hooks@2.0.6
-  - @orderly.network/react-app@2.0.6
-  - @orderly.network/chart@2.0.6
-  - @orderly.network/types@2.0.6
-  - @orderly.network/ui@2.0.6
-  - @orderly.network/ui-connector@2.0.6
-  - @orderly.network/ui-leverage@2.0.6
-  - @orderly.network/ui-orders@2.0.6
-  - @orderly.network/ui-positions@2.0.6
-  - @orderly.network/ui-scaffold@2.0.6
-  - @orderly.network/ui-share@2.0.6
-  - @orderly.network/ui-transfer@2.0.6
-  - @orderly.network/utils@2.0.6
+  - @veltodefi/2.0.6
+  - @veltodefi/app@2.0.6
+  - @veltodefi/2.0.6
+  - @veltodefi/2.0.6
+  - @veltodefi/.6
+  - @veltodefi/nector@2.0.6
+  - @veltodefi/erage@2.0.6
+  - @veltodefi/ers@2.0.6
+  - @veltodefi/itions@2.0.6
+  - @veltodefi/ffold@2.0.6
+  - @veltodefi/re@2.0.6
+  - @veltodefi/nsfer@2.0.6
+  - @veltodefi/2.0.6
 
 ## 2.0.6-alpha.0
 
@@ -1902,19 +1950,19 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/hooks@2.0.6-alpha.0
-  - @orderly.network/react-app@2.0.6-alpha.0
-  - @orderly.network/chart@2.0.6-alpha.0
-  - @orderly.network/types@2.0.6-alpha.0
-  - @orderly.network/ui@2.0.6-alpha.0
-  - @orderly.network/ui-connector@2.0.6-alpha.0
-  - @orderly.network/ui-leverage@2.0.6-alpha.0
-  - @orderly.network/ui-orders@2.0.6-alpha.0
-  - @orderly.network/ui-positions@2.0.6-alpha.0
-  - @orderly.network/ui-scaffold@2.0.6-alpha.0
-  - @orderly.network/ui-share@2.0.6-alpha.0
-  - @orderly.network/ui-transfer@2.0.6-alpha.0
-  - @orderly.network/utils@2.0.6-alpha.0
+  - @veltodefi/2.0.6-alpha.0
+  - @veltodefi/app@2.0.6-alpha.0
+  - @veltodefi/2.0.6-alpha.0
+  - @veltodefi/2.0.6-alpha.0
+  - @veltodefi/.6-alpha.0
+  - @veltodefi/nector@2.0.6-alpha.0
+  - @veltodefi/erage@2.0.6-alpha.0
+  - @veltodefi/ers@2.0.6-alpha.0
+  - @veltodefi/itions@2.0.6-alpha.0
+  - @veltodefi/ffold@2.0.6-alpha.0
+  - @veltodefi/re@2.0.6-alpha.0
+  - @veltodefi/nsfer@2.0.6-alpha.0
+  - @veltodefi/2.0.6-alpha.0
 
 ## 2.0.5
 
@@ -1922,19 +1970,19 @@
 
 - 7f737173b: update
 - Updated dependencies [7f737173b]
-  - @orderly.network/ui-connector@2.0.5
-  - @orderly.network/ui-positions@2.0.5
-  - @orderly.network/ui-leverage@2.0.5
-  - @orderly.network/ui-scaffold@2.0.5
-  - @orderly.network/ui-transfer@2.0.5
-  - @orderly.network/ui-orders@2.0.5
-  - @orderly.network/ui-share@2.0.5
-  - @orderly.network/chart@2.0.5
-  - @orderly.network/hooks@2.0.5
-  - @orderly.network/types@2.0.5
-  - @orderly.network/utils@2.0.5
-  - @orderly.network/react-app@2.0.5
-  - @orderly.network/ui@2.0.5
+  - @veltodefi/nector@2.0.5
+  - @veltodefi/itions@2.0.5
+  - @veltodefi/erage@2.0.5
+  - @veltodefi/ffold@2.0.5
+  - @veltodefi/nsfer@2.0.5
+  - @veltodefi/ers@2.0.5
+  - @veltodefi/re@2.0.5
+  - @veltodefi/2.0.5
+  - @veltodefi/2.0.5
+  - @veltodefi/2.0.5
+  - @veltodefi/2.0.5
+  - @veltodefi/app@2.0.5
+  - @veltodefi/.5
 
 ## 2.0.5-alpha.0
 
@@ -1942,19 +1990,19 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.5-alpha.0
-  - @orderly.network/ui-positions@2.0.5-alpha.0
-  - @orderly.network/ui-leverage@2.0.5-alpha.0
-  - @orderly.network/ui-scaffold@2.0.5-alpha.0
-  - @orderly.network/ui-transfer@2.0.5-alpha.0
-  - @orderly.network/ui-orders@2.0.5-alpha.0
-  - @orderly.network/ui-share@2.0.5-alpha.0
-  - @orderly.network/chart@2.0.5-alpha.0
-  - @orderly.network/hooks@2.0.5-alpha.0
-  - @orderly.network/types@2.0.5-alpha.0
-  - @orderly.network/utils@2.0.5-alpha.0
-  - @orderly.network/react-app@2.0.5-alpha.0
-  - @orderly.network/ui@2.0.5-alpha.0
+  - @veltodefi/nector@2.0.5-alpha.0
+  - @veltodefi/itions@2.0.5-alpha.0
+  - @veltodefi/erage@2.0.5-alpha.0
+  - @veltodefi/ffold@2.0.5-alpha.0
+  - @veltodefi/nsfer@2.0.5-alpha.0
+  - @veltodefi/ers@2.0.5-alpha.0
+  - @veltodefi/re@2.0.5-alpha.0
+  - @veltodefi/2.0.5-alpha.0
+  - @veltodefi/2.0.5-alpha.0
+  - @veltodefi/2.0.5-alpha.0
+  - @veltodefi/2.0.5-alpha.0
+  - @veltodefi/app@2.0.5-alpha.0
+  - @veltodefi/.5-alpha.0
 
 ## 2.0.3
 
@@ -1962,19 +2010,19 @@
 
 - cca30140b: fix ledger issues
 - Updated dependencies [cca30140b]
-  - @orderly.network/ui-connector@2.0.3
-  - @orderly.network/ui-positions@2.0.3
-  - @orderly.network/ui-leverage@2.0.3
-  - @orderly.network/ui-scaffold@2.0.3
-  - @orderly.network/ui-transfer@2.0.3
-  - @orderly.network/ui-orders@2.0.3
-  - @orderly.network/ui-share@2.0.3
-  - @orderly.network/chart@2.0.3
-  - @orderly.network/hooks@2.0.3
-  - @orderly.network/types@2.0.3
-  - @orderly.network/utils@2.0.3
-  - @orderly.network/react-app@2.0.3
-  - @orderly.network/ui@2.0.3
+  - @veltodefi/nector@2.0.3
+  - @veltodefi/itions@2.0.3
+  - @veltodefi/erage@2.0.3
+  - @veltodefi/ffold@2.0.3
+  - @veltodefi/nsfer@2.0.3
+  - @veltodefi/ers@2.0.3
+  - @veltodefi/re@2.0.3
+  - @veltodefi/2.0.3
+  - @veltodefi/2.0.3
+  - @veltodefi/2.0.3
+  - @veltodefi/2.0.3
+  - @veltodefi/app@2.0.3
+  - @veltodefi/.3
 
 ## 2.0.3-alpha.0
 
@@ -1982,19 +2030,19 @@
 
 - fix ledger issues
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.3-alpha.0
-  - @orderly.network/ui-positions@2.0.3-alpha.0
-  - @orderly.network/ui-leverage@2.0.3-alpha.0
-  - @orderly.network/ui-scaffold@2.0.3-alpha.0
-  - @orderly.network/ui-transfer@2.0.3-alpha.0
-  - @orderly.network/ui-orders@2.0.3-alpha.0
-  - @orderly.network/ui-share@2.0.3-alpha.0
-  - @orderly.network/chart@2.0.3-alpha.0
-  - @orderly.network/hooks@2.0.3-alpha.0
-  - @orderly.network/types@2.0.3-alpha.0
-  - @orderly.network/utils@2.0.3-alpha.0
-  - @orderly.network/react-app@2.0.3-alpha.0
-  - @orderly.network/ui@2.0.3-alpha.0
+  - @veltodefi/nector@2.0.3-alpha.0
+  - @veltodefi/itions@2.0.3-alpha.0
+  - @veltodefi/erage@2.0.3-alpha.0
+  - @veltodefi/ffold@2.0.3-alpha.0
+  - @veltodefi/nsfer@2.0.3-alpha.0
+  - @veltodefi/ers@2.0.3-alpha.0
+  - @veltodefi/re@2.0.3-alpha.0
+  - @veltodefi/2.0.3-alpha.0
+  - @veltodefi/2.0.3-alpha.0
+  - @veltodefi/2.0.3-alpha.0
+  - @veltodefi/2.0.3-alpha.0
+  - @veltodefi/app@2.0.3-alpha.0
+  - @veltodefi/.3-alpha.0
 
 ## 2.0.2
 
@@ -2002,19 +2050,19 @@
 
 - a3becba1a: update
 - Updated dependencies [a3becba1a]
-  - @orderly.network/ui-connector@2.0.2
-  - @orderly.network/ui-positions@2.0.2
-  - @orderly.network/ui-scaffold@2.0.2
-  - @orderly.network/ui-transfer@2.0.2
-  - @orderly.network/ui-orders@2.0.2
-  - @orderly.network/hooks@2.0.2
-  - @orderly.network/types@2.0.2
-  - @orderly.network/react-app@2.0.2
-  - @orderly.network/ui@2.0.2
-  - @orderly.network/chart@2.0.2
-  - @orderly.network/ui-leverage@2.0.2
-  - @orderly.network/ui-share@2.0.2
-  - @orderly.network/utils@2.0.2
+  - @veltodefi/nector@2.0.2
+  - @veltodefi/itions@2.0.2
+  - @veltodefi/ffold@2.0.2
+  - @veltodefi/nsfer@2.0.2
+  - @veltodefi/ers@2.0.2
+  - @veltodefi/2.0.2
+  - @veltodefi/2.0.2
+  - @veltodefi/app@2.0.2
+  - @veltodefi/.2
+  - @veltodefi/2.0.2
+  - @veltodefi/erage@2.0.2
+  - @veltodefi/re@2.0.2
+  - @veltodefi/2.0.2
 
 ## 2.0.2-alpha.0
 
@@ -2022,19 +2070,19 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.2-alpha.0
-  - @orderly.network/ui-positions@2.0.2-alpha.0
-  - @orderly.network/ui-scaffold@2.0.2-alpha.0
-  - @orderly.network/ui-transfer@2.0.2-alpha.0
-  - @orderly.network/ui-orders@2.0.2-alpha.0
-  - @orderly.network/hooks@2.0.2-alpha.0
-  - @orderly.network/types@2.0.2-alpha.0
-  - @orderly.network/react-app@2.0.2-alpha.0
-  - @orderly.network/ui@2.0.2-alpha.0
-  - @orderly.network/chart@2.0.2-alpha.0
-  - @orderly.network/ui-leverage@2.0.2-alpha.0
-  - @orderly.network/ui-share@2.0.2-alpha.0
-  - @orderly.network/utils@2.0.2-alpha.0
+  - @veltodefi/nector@2.0.2-alpha.0
+  - @veltodefi/itions@2.0.2-alpha.0
+  - @veltodefi/ffold@2.0.2-alpha.0
+  - @veltodefi/nsfer@2.0.2-alpha.0
+  - @veltodefi/ers@2.0.2-alpha.0
+  - @veltodefi/2.0.2-alpha.0
+  - @veltodefi/2.0.2-alpha.0
+  - @veltodefi/app@2.0.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/2.0.2-alpha.0
+  - @veltodefi/erage@2.0.2-alpha.0
+  - @veltodefi/re@2.0.2-alpha.0
+  - @veltodefi/2.0.2-alpha.0
 
 ## 2.0.1
 
@@ -2042,19 +2090,19 @@
 
 - 0fd2e6038: add some features
 - Updated dependencies [0fd2e6038]
-  - @orderly.network/ui-connector@2.0.1
-  - @orderly.network/ui-positions@2.0.1
-  - @orderly.network/ui-leverage@2.0.1
-  - @orderly.network/ui-scaffold@2.0.1
-  - @orderly.network/ui-transfer@2.0.1
-  - @orderly.network/ui-orders@2.0.1
-  - @orderly.network/ui-share@2.0.1
-  - @orderly.network/chart@2.0.1
-  - @orderly.network/hooks@2.0.1
-  - @orderly.network/types@2.0.1
-  - @orderly.network/utils@2.0.1
-  - @orderly.network/react-app@2.0.1
-  - @orderly.network/ui@2.0.1
+  - @veltodefi/nector@2.0.1
+  - @veltodefi/itions@2.0.1
+  - @veltodefi/erage@2.0.1
+  - @veltodefi/ffold@2.0.1
+  - @veltodefi/nsfer@2.0.1
+  - @veltodefi/ers@2.0.1
+  - @veltodefi/re@2.0.1
+  - @veltodefi/2.0.1
+  - @veltodefi/2.0.1
+  - @veltodefi/2.0.1
+  - @veltodefi/2.0.1
+  - @veltodefi/app@2.0.1
+  - @veltodefi/.1
 
 ## 2.0.1-alpha.8
 
@@ -2062,19 +2110,19 @@
 
 - add some features
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.1-alpha.8
-  - @orderly.network/ui-positions@2.0.1-alpha.8
-  - @orderly.network/ui-leverage@2.0.1-alpha.8
-  - @orderly.network/ui-scaffold@2.0.1-alpha.8
-  - @orderly.network/ui-transfer@2.0.1-alpha.8
-  - @orderly.network/ui-orders@2.0.1-alpha.8
-  - @orderly.network/ui-share@2.0.1-alpha.8
-  - @orderly.network/chart@2.0.1-alpha.8
-  - @orderly.network/hooks@2.0.1-alpha.8
-  - @orderly.network/types@2.0.1-alpha.8
-  - @orderly.network/utils@2.0.1-alpha.8
-  - @orderly.network/react-app@2.0.1-alpha.8
-  - @orderly.network/ui@2.0.1-alpha.8
+  - @veltodefi/nector@2.0.1-alpha.8
+  - @veltodefi/itions@2.0.1-alpha.8
+  - @veltodefi/erage@2.0.1-alpha.8
+  - @veltodefi/ffold@2.0.1-alpha.8
+  - @veltodefi/nsfer@2.0.1-alpha.8
+  - @veltodefi/ers@2.0.1-alpha.8
+  - @veltodefi/re@2.0.1-alpha.8
+  - @veltodefi/2.0.1-alpha.8
+  - @veltodefi/2.0.1-alpha.8
+  - @veltodefi/2.0.1-alpha.8
+  - @veltodefi/2.0.1-alpha.8
+  - @veltodefi/app@2.0.1-alpha.8
+  - @veltodefi/.1-alpha.8
 
 ## 2.0.0
 
@@ -2089,17 +2137,17 @@
 - Updated dependencies [113773f]
 - Updated dependencies [b033ce0]
 - Updated dependencies [b15becb]
-  - @orderly.network/ui-connector@2.0.0
-  - @orderly.network/ui-positions@2.0.0
-  - @orderly.network/ui-leverage@2.0.0
-  - @orderly.network/ui-scaffold@2.0.0
-  - @orderly.network/ui-transfer@2.0.0
-  - @orderly.network/chart@2.0.0
-  - @orderly.network/hooks@2.0.0
-  - @orderly.network/types@2.0.0
-  - @orderly.network/utils@2.0.0
-  - @orderly.network/react-app@2.0.0
-  - @orderly.network/ui@2.0.0
+  - @veltodefi/nector@2.0.0
+  - @veltodefi/itions@2.0.0
+  - @veltodefi/erage@2.0.0
+  - @veltodefi/ffold@2.0.0
+  - @veltodefi/nsfer@2.0.0
+  - @veltodefi/2.0.0
+  - @veltodefi/2.0.0
+  - @veltodefi/2.0.0
+  - @veltodefi/2.0.0
+  - @veltodefi/app@2.0.0
+  - @veltodefi/.0
 
 ## 2.0.0-alpha.2
 
@@ -2107,17 +2155,17 @@
 
 - test
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.0-alpha.2
-  - @orderly.network/ui-positions@2.0.0-alpha.2
-  - @orderly.network/ui-leverage@2.0.0-alpha.2
-  - @orderly.network/ui-scaffold@2.0.0-alpha.2
-  - @orderly.network/ui-transfer@2.0.0-alpha.2
-  - @orderly.network/chart@2.0.0-alpha.2
-  - @orderly.network/hooks@2.0.0-alpha.2
-  - @orderly.network/types@2.0.0-alpha.2
-  - @orderly.network/utils@2.0.0-alpha.2
-  - @orderly.network/react-app@2.0.0-alpha.2
-  - @orderly.network/ui@2.0.0-alpha.2
+  - @veltodefi/nector@2.0.0-alpha.2
+  - @veltodefi/itions@2.0.0-alpha.2
+  - @veltodefi/erage@2.0.0-alpha.2
+  - @veltodefi/ffold@2.0.0-alpha.2
+  - @veltodefi/nsfer@2.0.0-alpha.2
+  - @veltodefi/2.0.0-alpha.2
+  - @veltodefi/2.0.0-alpha.2
+  - @veltodefi/2.0.0-alpha.2
+  - @veltodefi/2.0.0-alpha.2
+  - @veltodefi/app@2.0.0-alpha.2
+  - @veltodefi/.0-alpha.2
 
 ## 2.0.0-alpha.1
 
@@ -2125,17 +2173,17 @@
 
 - test
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.0-alpha.1
-  - @orderly.network/ui-positions@2.0.0-alpha.1
-  - @orderly.network/ui-leverage@2.0.0-alpha.1
-  - @orderly.network/ui-scaffold@2.0.0-alpha.1
-  - @orderly.network/ui-transfer@2.0.0-alpha.1
-  - @orderly.network/chart@2.0.0-alpha.1
-  - @orderly.network/hooks@2.0.0-alpha.1
-  - @orderly.network/types@2.0.0-alpha.1
-  - @orderly.network/utils@2.0.0-alpha.1
-  - @orderly.network/react-app@2.0.0-alpha.1
-  - @orderly.network/ui@2.0.0-alpha.1
+  - @veltodefi/nector@2.0.0-alpha.1
+  - @veltodefi/itions@2.0.0-alpha.1
+  - @veltodefi/erage@2.0.0-alpha.1
+  - @veltodefi/ffold@2.0.0-alpha.1
+  - @veltodefi/nsfer@2.0.0-alpha.1
+  - @veltodefi/2.0.0-alpha.1
+  - @veltodefi/2.0.0-alpha.1
+  - @veltodefi/2.0.0-alpha.1
+  - @veltodefi/2.0.0-alpha.1
+  - @veltodefi/app@2.0.0-alpha.1
+  - @veltodefi/.0-alpha.1
 
 ## 2.0.0-alpha.0
 
@@ -2146,14 +2194,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/ui-connector@2.0.0-alpha.0
-  - @orderly.network/ui-positions@2.0.0-alpha.0
-  - @orderly.network/ui-leverage@2.0.0-alpha.0
-  - @orderly.network/ui-scaffold@2.0.0-alpha.0
-  - @orderly.network/ui-transfer@2.0.0-alpha.0
-  - @orderly.network/chart@2.0.0-alpha.0
-  - @orderly.network/hooks@2.0.0-alpha.0
-  - @orderly.network/types@2.0.0-alpha.0
-  - @orderly.network/utils@2.0.0-alpha.0
-  - @orderly.network/react-app@2.0.0-alpha.0
-  - @orderly.network/ui@2.0.0-alpha.0
+  - @veltodefi/nector@2.0.0-alpha.0
+  - @veltodefi/itions@2.0.0-alpha.0
+  - @veltodefi/erage@2.0.0-alpha.0
+  - @veltodefi/ffold@2.0.0-alpha.0
+  - @veltodefi/nsfer@2.0.0-alpha.0
+  - @veltodefi/2.0.0-alpha.0
+  - @veltodefi/2.0.0-alpha.0
+  - @veltodefi/2.0.0-alpha.0
+  - @veltodefi/2.0.0-alpha.0
+  - @veltodefi/app@2.0.0-alpha.0
+  - @veltodefi/.0-alpha.0

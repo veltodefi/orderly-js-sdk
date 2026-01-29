@@ -1,19 +1,19 @@
+import { useMemo } from "react";
 import { useOrderStream } from "@veltodefi/hooks";
 import { useDataTap } from "@veltodefi/react-app";
 import { AlgoOrderRootType, OrderStatus } from "@veltodefi/types";
-import { TabType } from "@veltodefi/ui-orders";
 import { useTradingLocalStorage } from "./useTradingLocalStorage";
 
 export const usePendingOrderCount = (symbol?: string) => {
   const { showAllSymbol } = useTradingLocalStorage();
 
-  const pendingOrdersPageSizeKey = `orderly_${TabType.pending}_pageSize`;
-  const tpslOrdersPageSizeKey = `orderly_${TabType.tp_sl}_pageSize`;
-  //
+  // const pendingOrdersPageSizeKey = `orderly_${TabType.pending}_pageSize`;
+  // const tpslOrdersPageSizeKey = `orderly_${TabType.tp_sl}_pageSize`;
+
   // const [pendingOrderPageSize] = useLocalStorage(pendingOrdersPageSizeKey, 500);
   // const [tpslOrderPageSize] = useLocalStorage(tpslOrdersPageSizeKey, 500);
 
-  const [pendingOrders, { total: pendingCount }] = useOrderStream(
+  const [pendingOrders] = useOrderStream(
     {
       symbol: showAllSymbol ? undefined : symbol,
       status: OrderStatus.INCOMPLETE,
@@ -27,7 +27,7 @@ export const usePendingOrderCount = (symbol?: string) => {
     },
   );
 
-  const [tpslOrders, { total: tpslCount }] = useOrderStream(
+  const [tpslOrders] = useOrderStream(
     {
       symbol: showAllSymbol ? undefined : symbol,
       status: OrderStatus.INCOMPLETE,
@@ -40,6 +40,20 @@ export const usePendingOrderCount = (symbol?: string) => {
       keeplive: true,
     },
   );
+
+  const pendingCount = useMemo(() => {
+    if (showAllSymbol) {
+      return pendingOrders?.length ?? 0;
+    }
+    return pendingOrders?.filter((item) => item.symbol === symbol)?.length ?? 0;
+  }, [pendingOrders, showAllSymbol, symbol]);
+
+  const tpslCount = useMemo(() => {
+    if (showAllSymbol) {
+      return tpslOrders?.length ?? 0;
+    }
+    return tpslOrders?.filter((item) => item.symbol === symbol)?.length ?? 0;
+  }, [tpslOrders, showAllSymbol, symbol]);
 
   const pendingOrderCount = useDataTap(pendingCount) ?? 0;
   const tpSlOrderCount = useDataTap(tpslCount) ?? 0;

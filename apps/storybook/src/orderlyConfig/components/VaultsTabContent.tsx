@@ -1,20 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
 import { generatePath, i18n } from "@veltodefi/i18n";
 import { SortingIcon, SortingAscIcon, SortingDescIcon } from "@veltodefi/ui";
 import { VaultsIcon } from "../../components/icons";
+import { useRouteContext } from "../../components/orderlyProvider/rounteProvider";
 import { PathEnum } from "../../playground/constant";
 import { useVaultInfo } from "../hooks/useVaultInfo";
 import { HeaderItem, SortConfig, SubMenuTabContent } from "./SubMenuTabContent";
 
 export const VaultRowItem = (props: { item: any; index: number }) => {
   const { item, index } = props;
-  const navigate = useNavigate();
+  const { onRouteChange } = useRouteContext();
   return (
     <div
       className="oui-flex oui-items-center oui-justify-between oui-px-1 oui-py-1.5 oui-cursor-pointer hover:oui-bg-base-7 oui-rounded-sm"
       onClick={() => {
-        navigate(generatePath({ path: PathEnum.Vaults }));
+        onRouteChange({
+          href: PathEnum.Vaults,
+          name: "vaults",
+        });
       }}
     >
       <div className="oui-flex oui-items-center oui-gap-2">
@@ -42,7 +45,7 @@ export const VaultsTabContent = (props: {
   isOpen: boolean;
 }) => {
   const { className, isOpen } = props;
-  const navigate = useNavigate();
+  const { onRouteChange } = useRouteContext();
   const [sortConfig, setSortConfig] = useState<SortConfig | null>(null);
 
   const { data } = useVaultInfo(isOpen, sortConfig as any);
@@ -107,7 +110,12 @@ export const VaultsTabContent = (props: {
       renderFooter={() => (
         <div
           className="oui-p-2 oui-flex oui-justify-center oui-items-center oui-cursor-pointer oui-text-xs oui-font-bold oui-text-primary-light hover:oui-opacity-80"
-          onClick={() => navigate(generatePath({ path: PathEnum.Vaults }))}
+          onClick={() =>
+            onRouteChange({
+              href: generatePath({ path: PathEnum.Vaults }),
+              name: "vaults",
+            })
+          }
         >
           {i18n.t("extend.viewAll")} <span className="oui-ml-1">→</span>
         </div>
