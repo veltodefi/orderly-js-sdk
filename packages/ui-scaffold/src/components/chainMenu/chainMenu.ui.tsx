@@ -150,7 +150,7 @@ export const ChainMenu = (props: UseChainMenuScriptReturn) => {
             onClick={props.hide}
             className={cn(
               "oui-top-4.5 oui-absolute oui-right-4",
-              "oui-rounded oui-border oui-border-mainButton oui-p-1",
+              "oui-rounded-lg oui-border oui-border-mainButton oui-p-1",
               "oui-bg-transparent hover:oui-opacity-100 disabled:oui-pointer-events-none",
             )}
             aria-label="Fechar"

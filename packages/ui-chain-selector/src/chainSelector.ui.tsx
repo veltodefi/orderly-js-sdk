@@ -191,7 +191,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
               }
             }}
           >
-            <Title />
+            <Title className={!props.recentChains?.length ? "oui-mb-4" : ""} />
 
             {!!props.recentChains?.length && (
               <Flex gap={2} className={recentList()}>

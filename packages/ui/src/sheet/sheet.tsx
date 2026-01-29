@@ -85,7 +85,7 @@ const SheetContent = React.forwardRef<
         {closeable && (
           <SheetPrimitive.Close
             className={cnBase(
-              "oui-dialog-close-btn oui-ring-offset-background oui-absolute oui-right-4 oui-top-4 oui-rounded oui-border oui-border-mainButton oui-p-1 oui-transition-opacity hover:oui-opacity-100 disabled:oui-pointer-events-none",
+              "oui-dialog-close-btn oui-ring-offset-background oui-absolute oui-right-4 oui-top-4 oui-rounded-lg oui-border oui-border-mainButton oui-p-1 oui-transition-opacity hover:oui-opacity-100 disabled:oui-pointer-events-none",
               props?.closeClassName,
             )}
           >

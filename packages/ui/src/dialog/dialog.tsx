@@ -61,7 +61,7 @@ const dialogVariants = tv({
       "oui-border",
       "oui-border-mainButton",
       "oui-p-1",
-      "oui-rounded",
+      "oui-rounded-lg",
     ],
     header: [
       "oui-dialog-header",
