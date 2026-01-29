@@ -17,7 +17,9 @@ export function AbstractConnectArea({ connect }: { connect: () => void }) {
           alt="abstract wallet"
         />
       </div>
-      <div className="oui-text-sm oui-text-base-contrast">Abstract</div>
+      <div className="oui-text-sm oui-text-base-contrast">
+        Authenticate with Privy
+      </div>
     </div>
   );
 }
