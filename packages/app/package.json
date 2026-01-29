@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/react-app",
-  "version": "2.8.10-velto-dev.17",
+  "version": "2.8.10-velto-main.18",
   "description": "Create React App with Orderly Network components",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
