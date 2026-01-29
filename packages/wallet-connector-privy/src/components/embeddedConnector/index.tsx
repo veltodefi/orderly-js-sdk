@@ -6,6 +6,7 @@ import { useWallet } from "../../hooks/useWallet";
 import { useWalletConnectorPrivy } from "../../provider";
 import { WalletConnectType } from "../../types";
 import { ConnectProps } from "../../types";
+import { AbstractConnectArea } from "./abstractConnector";
 import { GeneralConnectArea } from "./generalConnector";
 import { PrivyConnectArea } from "./privyConnector";
 
@@ -53,24 +54,23 @@ export function ConnectWallet(props: Props) {
               }}
             />
             <div className="oui-my-4 md:oui-my-6 oui-h-px oui-w-full oui-bg-base-6" />
+            <PrivyConnectArea
+              connect={(type) =>
+                handleConnect({
+                  walletType: WalletConnectType.PRIVY,
+                  extraType: type,
+                })
+              }
+            />
           </>
         )}
-
-        <PrivyConnectArea
-          connect={(type) =>
-            handleConnect(
-              isAbstract
-                ? {
-                    walletType: WalletConnectType.ABSTRACT,
-                    extraType: type,
-                  }
-                : {
-                    walletType: WalletConnectType.PRIVY,
-                    extraType: type,
-                  },
-            )
-          }
-        />
+        {isAbstract && (
+          <AbstractConnectArea
+            connect={() =>
+              handleConnect({ walletType: WalletConnectType.ABSTRACT })
+            }
+          />
+        )}
       </div>
     </ScrollArea>
   );
