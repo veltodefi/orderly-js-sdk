@@ -58,6 +58,8 @@
   "common.marketPrice": "시장가",
   "common.market": "시장가",
   "common.limit": "지정가",
+  "connector.mostCommon": "가장 일반적임",
+  "connector.allNetworks": "모든 네트워크",
   "common.triggerPrice": "트리거 가격",
   "common.unrealizedPnl": "미실현 손익",
   "common.realizedPnl": "실현 손익",
@@ -1092,5 +1094,7 @@
   "notification.delistingTitle": "토큰 상장 폐지 공지",
   "notification.generalTitle": "일반 업데이트",
   "notification.maintenanceTitle": "시스템 점검",
-  "notification.empty": "공지사항이 없습니다"
+  "notification.empty": "공지사항이 없습니다",
+  "connector.mainnetDescriptionTooltip": "실제 자금으로 실거래",
+  "connector.testnetDescriptionTooltip": "가상 자금으로 거래 연습"
 }

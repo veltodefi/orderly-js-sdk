@@ -129,6 +129,9 @@ export const CustomChainsMenu: Story = {
         brokerId="orderly"
         brokerName="Orderly"
         networkId="testnet"
+        veltoProps={{
+          mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
+        }}
         customChains={{
           mainnet: [
             {

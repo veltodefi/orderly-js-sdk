@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
   Spinner,
   Text,
+  CloseIcon,
 } from "@veltodefi/ui";
 import {
   ChainSelectorDialogId,
@@ -82,7 +83,7 @@ export const ChainMenu = (props: UseChainMenuScriptReturn) => {
 
   const renderIcon = () => {
     if (props.loading) {
-      return <Spinner className="oui-w-[18px] oui-h-[18px]" />;
+      return <Spinner className="oui-size-[18px]" />;
     }
 
     if (props.currentChainId) {
@@ -96,7 +97,7 @@ export const ChainMenu = (props: UseChainMenuScriptReturn) => {
       justify="center"
       className={cn(
         "oui-relative oui-cursor-pointer",
-        "oui-w-11 oui-h-8",
+        "oui-h-8 oui-w-11",
         "oui-rounded-t-[6px] oui-rounded-bl-[6px] oui-rounded-br-[3px]",
       )}
     >
@@ -106,7 +107,7 @@ export const ChainMenu = (props: UseChainMenuScriptReturn) => {
         height="10"
         viewBox="0 0 10 10"
         xmlns="http://www.w3.org/2000/svg"
-        className="oui-absolute oui-right-0 oui-bottom-0"
+        className="oui-absolute oui-bottom-0 oui-right-0"
       >
         <defs>
           <linearGradient
@@ -139,11 +140,24 @@ export const ChainMenu = (props: UseChainMenuScriptReturn) => {
           sideOffset={4}
           collisionPadding={{ right: 16 }}
           className={cn(
-            "oui-bg-base-8 oui-w-[456px] oui-p-4 oui-rounded-xl",
+            "oui-w-[456px] oui-rounded-xl oui-bg-base-8 oui-p-4",
             "oui-border oui-border-line-6",
             "oui-font-semibold",
           )}
         >
+          <button
+            type="button"
+            onClick={props.hide}
+            className={cn(
+              "oui-top-4.5 oui-absolute oui-right-4",
+              "oui-rounded-lg oui-border oui-border-mainButton oui-p-1",
+              "oui-bg-transparent hover:oui-opacity-100 disabled:oui-pointer-events-none",
+            )}
+            aria-label="Fechar"
+          >
+            <CloseIcon size={16} opacity={1} className="oui-text-mainButton" />
+          </button>
+
           <ChainSelectorWidget
             close={props.hide}
             onChainChangeBefore={props.onChainChangeBefore}

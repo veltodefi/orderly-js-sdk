@@ -32,6 +32,8 @@ const dialogVariants = tv({
       "oui-text-base-contrast-54",
       "oui-px-4 lg:oui-px-5",
 
+      "!oui-bg-surface-background-medium-dark",
+
       "oui-shadow-lg",
       "oui-duration-200",
       "data-[state=open]:oui-animate-in",
@@ -52,14 +54,14 @@ const dialogVariants = tv({
       "oui-absolute",
       "oui-right-4",
       "oui-top-4",
-      // "oui-opacity-70",
       "oui-ring-offset-background",
       "oui-transition-opacity",
       "hover:oui-opacity-100",
-
       "disabled:oui-pointer-events-none",
-      // "data-[state=open]:oui-bg-accent",
-      // "data-[state=open]:oui-text-muted-foreground",
+      "oui-border",
+      "oui-border-mainButton",
+      "oui-p-1",
+      "oui-rounded-lg",
     ],
     header: [
       "oui-dialog-header",
@@ -215,7 +217,11 @@ const DialogContent = React.forwardRef<
               className={close()}
               data-testid="oui-testid-dialog-content-close-btn"
             >
-              <CloseIcon size={16} color="white" opacity={0.98} />
+              <CloseIcon
+                size={16}
+                className="oui-text-mainButton"
+                opacity={1}
+              />
               <span className="oui-sr-only">Close</span>
             </DialogPrimitive.Close>
           )}

@@ -58,6 +58,8 @@
   "common.marketPrice": "市价",
   "common.market": "市价",
   "common.limit": "限价",
+  "connector.mostCommon": "最常用",
+  "connector.allNetworks": "所有网络",
   "common.triggerPrice": "触发价格",
   "common.unrealizedPnl": "未实现盈亏",
   "common.realizedPnl": "已实现盈亏",
@@ -1092,5 +1094,7 @@
   "notification.delistingTitle": "代币下架通知",
   "notification.generalTitle": "常规更新",
   "notification.maintenanceTitle": "系统维护",
-  "notification.empty": "暂无公告"
+  "notification.empty": "暂无公告",
+  "connector.mainnetDescriptionTooltip": "用真实资金进行实盘交易",
+  "connector.testnetDescriptionTooltip": "用虚拟资金练习交易"
 }
