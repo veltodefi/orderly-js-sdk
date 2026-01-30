@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/utils",
-  "version": "2.8.10-velto-main.18",
+  "version": "2.8.10-velto-dev.20",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
