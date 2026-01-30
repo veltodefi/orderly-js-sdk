@@ -314,7 +314,6 @@ module.exports = withTV({
     positionPlugin(),
     componentsPlugin(),
     scrollBarPlugin(),
-    require("@tailwindcss/container-queries"),
     require("tailwindcss-animate"),
   ],
 });
