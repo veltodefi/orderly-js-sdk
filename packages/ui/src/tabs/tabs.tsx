@@ -56,6 +56,7 @@ type TabsProps<T = string> = {
   };
   contentVisible?: boolean;
   showScrollIndicator?: boolean;
+  tabsListChildren?: ReactNode;
 } & TabsPrimitive.TabsProps &
   VariantProps<typeof tabsVariants>;
 
@@ -67,6 +68,7 @@ const Tabs: FC<TabsProps> = (props) => {
     variant,
     showScrollIndicator,
     value,
+    tabsListChildren,
     ...rest
   } = props;
 
@@ -118,6 +120,8 @@ const Tabs: FC<TabsProps> = (props) => {
             </TabsTrigger>
           );
         })}
+
+        {tabsListChildren}
       </TabsList>
     );
 
@@ -141,7 +145,9 @@ const Tabs: FC<TabsProps> = (props) => {
           itemAlign="center"
           width="100%"
           className={cnBase(
-            tabsVariant !== "contained" && "oui-border-b oui-border-b-line-6",
+            tabsVariant !== "contained" &&
+              tabsVariant !== "inverted" &&
+              "oui-border-b oui-border-b-line-6",
             classNames?.tabsListContainer,
           )}
         >

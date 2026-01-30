@@ -58,6 +58,8 @@
   "common.marketPrice": "Pasar",
   "common.market": "Pasar",
   "common.limit": "Limit",
+  "connector.mostCommon": "Paling umum",
+  "connector.allNetworks": "Semua jaringan",
   "common.triggerPrice": "Harga pemicu",
   "common.unrealizedPnl": "PnL Belum Direalisasi",
   "common.realizedPnl": "PnL Direalisasi",
@@ -1092,5 +1094,7 @@
   "notification.delistingTitle": "Pemberitahuan delisting token",
   "notification.generalTitle": "Pembaruan umum",
   "notification.maintenanceTitle": "Pemeliharaan sistem",
-  "notification.empty": "Tidak ada pengumuman"
+  "notification.empty": "Tidak ada pengumuman",
+  "connector.mainnetDescriptionTooltip": "Perdagangan nyata dengan dana sungguhan",
+  "connector.testnetDescriptionTooltip": "Latihan perdagangan dengan dana virtual"
 }

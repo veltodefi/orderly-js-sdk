@@ -11,7 +11,6 @@ import {
   BottomNavBarWidget,
 } from "@veltodefi/trading";
 import { Box, Flex } from "@veltodefi/ui";
-import { BaseLayout } from "../../../components/layout";
 import { tradingPageConfig } from "../../../orderlyConfig";
 import { getSymbol, updateSymbol } from "../../../utils/storage";
 import { OrderlyIcon } from "./icons";
@@ -19,15 +18,6 @@ import { OrderlyIcon } from "./icons";
 const meta: Meta<typeof TradingPage> = {
   title: "Package/trading/TradingPage",
   component: TradingPage,
-  decorators: [
-    (Story) => {
-      return (
-        <BaseLayout>
-          <Story />
-        </BaseLayout>
-      );
-    },
-  ],
   parameters: {
     layout: "fullscreen",
   },

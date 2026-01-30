@@ -28,6 +28,7 @@ export type WidgetConfigs = {
 
 export type VeltoProps = {
   onConnectWallet?: (defaultConnectWallet?: () => Promise<void>) => void;
+  mostCommonChains?: string[];
 };
 
 export type AppContextState = {

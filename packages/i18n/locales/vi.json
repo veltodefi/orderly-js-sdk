@@ -58,6 +58,8 @@
   "common.marketPrice": "Thị trường",
   "common.market": "Thị trường",
   "common.limit": "Giới hạn",
+  "connector.mostCommon": "Phổ biến nhất",
+  "connector.allNetworks": "Tất cả mạng",
   "common.triggerPrice": "Giá kích hoạt",
   "common.unrealizedPnl": "Lãi/lỗ chưa thực hiện",
   "common.realizedPnl": "Lãi/lỗ đã thực hiện",
@@ -1092,5 +1094,7 @@
   "notification.delistingTitle": "Thông báo gỡ niêm yết token",
   "notification.generalTitle": "Cập nhật chung",
   "notification.maintenanceTitle": "Bảo trì hệ thống",
-  "notification.empty": "Không có thông báo"
+  "notification.empty": "Không có thông báo",
+  "connector.mainnetDescriptionTooltip": "Giao dịch thực với tiền thật",
+  "connector.testnetDescriptionTooltip": "Thực hành giao dịch với tiền ảo"
 }

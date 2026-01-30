@@ -58,6 +58,8 @@
   "common.marketPrice": "Markt",
   "common.market": "Markt",
   "common.limit": "Limit",
+  "connector.mostCommon": "Am häufigsten",
+  "connector.allNetworks": "Alle Netzwerke",
   "common.triggerPrice": "Auslösepreis",
   "common.unrealizedPnl": "Nicht realisierter Gewinn/Verlust",
   "common.realizedPnl": "Realisierter Gewinn/Verlust",
@@ -1092,5 +1094,7 @@
   "notification.delistingTitle": "Token-Delisting-Benachrichtigung",
   "notification.generalTitle": "Allgemeines Update",
   "notification.maintenanceTitle": "Systemwartung",
-  "notification.empty": "Keine Ankündigungen"
+  "notification.empty": "Keine Ankündigungen",
+  "connector.mainnetDescriptionTooltip": "Live-Handel mit echtem Geld",
+  "connector.testnetDescriptionTooltip": "Üben Sie den Handel mit Spielgeld"
 }

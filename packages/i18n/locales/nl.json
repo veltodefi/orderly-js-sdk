@@ -58,6 +58,8 @@
   "common.marketPrice": "Marktprijs",
   "common.market": "Markt",
   "common.limit": "Limiet",
+  "connector.mostCommon": "Meest voorkomend",
+  "connector.allNetworks": "Alle netwerken",
   "common.triggerPrice": "Triggerprijs",
   "common.unrealizedPnl": "Ongerealiseerde W/V",
   "common.realizedPnl": "Gerealiseerde W/V",
@@ -1092,5 +1094,7 @@
   "notification.delistingTitle": "Token Delisting Kennisgeving",
   "notification.generalTitle": "Algemene update",
   "notification.maintenanceTitle": "Systeemonderhoud",
-  "notification.empty": "Geen aankondigingen"
+  "notification.empty": "Geen aankondigingen",
+  "connector.mainnetDescriptionTooltip": "Live handelen met echt geld",
+  "connector.testnetDescriptionTooltip": "Oefen handelen met fictief geld"
 }
