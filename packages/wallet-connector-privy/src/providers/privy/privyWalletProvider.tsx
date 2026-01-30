@@ -7,6 +7,7 @@ import React, {
   useState,
 } from "react";
 import {
+  useLoginWithOAuth,
   usePrivy,
   useSolanaWallets,
   useWallets,
@@ -26,7 +27,7 @@ interface WalletStatePrivy extends WalletState {
 }
 
 interface PrivyWalletContextValue {
-  connect: () => void;
+  connect: (params?: { provider?: "google" | "twitter" }) => void;
   walletEVM: WalletStatePrivy | null;
   walletSOL: WalletStatePrivy | null;
   isConnected: boolean;
@@ -60,6 +61,8 @@ export const PrivyWalletProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const { network, solanaInfo, setSolanaInfo, connectorWalletType } =
     useWalletConnectorPrivy();
+  const { state, loading, initOAuth } = useLoginWithOAuth();
+
   const {
     login,
     logout,
@@ -123,8 +126,12 @@ export const PrivyWalletProvider: React.FC<{ children: React.ReactNode }> = ({
     return Promise.reject("no wallet");
   };
 
-  const connect = () => {
-    login();
+  const connect = (params?: { provider?: "google" | "twitter" }) => {
+    if (params?.provider && ["google", "twitter"].includes(params.provider)) {
+      return initOAuth({ provider: params.provider });
+    }
+
+    return login();
   };
 
   const disconnect = () => {

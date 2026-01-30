@@ -47,7 +47,7 @@ function restoreNpmrc() {
   }
 }
 
-async function addPrereleaseTag() {
+async function addPrereleaseTag(versionNumber) {
   const { packages } = await getPackages(process.cwd());
 
   for (const pkg of packages) {
@@ -61,7 +61,13 @@ async function addPrereleaseTag() {
     const matchMain = currentVersion.match(prereleasePatternMain);
     const matchDev = currentVersion.match(prereleasePatternDev);
 
-    if (matchMain) {
+    if (versionNumber !== undefined) {
+      // Use provided version number
+      const baseVersion = currentVersion
+        .replace(prereleasePatternMain, "")
+        .replace(prereleasePatternDev, "");
+      pkgJson.version = `${baseVersion}-velto-dev.${versionNumber}`;
+    } else if (matchMain) {
       // Increment existing prerelease number
       const currentNum = parseInt(matchMain[1], 10);
       const newNum = currentNum + 1;
@@ -89,6 +95,16 @@ async function addPrereleaseTag() {
 
 async function main() {
   try {
+    // Get version number from command line argument
+    const versionNumber = process.argv[2];
+
+    if (versionNumber !== undefined && !/^\d+$/.test(versionNumber)) {
+      console.error("❌ Error: Version number must be a positive integer");
+      console.error("Usage: pnpm release:velto:dev [N]");
+      console.error("Example: pnpm release:velto:dev 5");
+      process.exit(1);
+    }
+
     console.log("🚀 Starting prerelease version and publish...\n");
 
     // Check environment variables
@@ -96,7 +112,7 @@ async function main() {
 
     // Update versions
     console.log("📝 Updating package versions...");
-    await addPrereleaseTag();
+    await addPrereleaseTag(versionNumber);
     console.log("\n✓ Package versions updated\n");
 
     // Update version files

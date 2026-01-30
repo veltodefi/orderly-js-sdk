@@ -2,6 +2,7 @@ import { useTranslation } from "@veltodefi/i18n";
 import { TokenIcon, Flex, Text, cn, Tooltip, Badge } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { useMarketsContext } from "../marketsProvider";
+import { SymbolDisplay } from "../symbolDisplay";
 
 export type CollapseMarketsProps = {
   dataSource: any[];
@@ -22,14 +23,9 @@ export const CollapseMarkets: React.FC<CollapseMarketsProps> = (props) => {
               <Flex direction="column" itemAlign="start" gapY={1}>
                 <Flex gapX={1}>
                   <TokenIcon symbol={item.symbol} className="oui-size-[18px]" />
-                  <Text.formatted
-                    rule="symbol"
-                    formatString="base"
-                    size="2xs"
-                    weight="semibold"
-                  >
+                  <SymbolDisplay formatString="base" size="2xs">
                     {item.symbol}
-                  </Text.formatted>
+                  </SymbolDisplay>
                 </Flex>
                 <Text size="2xs" intensity={36}>
                   {t("markets.column.last")}

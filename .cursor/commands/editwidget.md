@@ -76,16 +76,16 @@ Command instructions for editing/creating standard Widgets (script/ui/widget/ind
 - Naming: files use `camelCase`, components/types use `PascalCase`.
 - **Dialog/BottomSheet Registration Requirements**: If the created Widget needs to be used as a Dialog or BottomSheet, you must:
   1. Define and export `${Pascal}DialogId` and `${Pascal}SheetId` (or `${Pascal}BottomSheetId`) constants in `widget.tsx`
-  2. Register using `registerSimpleDialog` and `registerSimpleSheet` (from `@orderly.network/ui`)
+  2. Register using `registerSimpleDialog` and `registerSimpleSheet` (from `@veltodefi/ui`)
   3. Export these IDs in `index.ts`
   4. Reference example: `packages/ui-tpsl/src/editBracketOrder/editBracketOrder.widget.tsx`
 - Text should use i18n (only in UI layer, NOT in script); add error fallbacks and `useMemo` optimization when necessary.
-- **Numeric Calculations**: All numeric calculations (multiplication, division, percentage conversion, etc.) must use `Decimal` (from `@orderly.network/utils`) to avoid floating-point precision issues.
-- **Local Cache Data**: When local cache data is needed, must use `useLocalStorage` hook (from `@orderly.network/hooks`). Use in `script.tsx`, usage: `const [storedValue, setValue] = useLocalStorage<T>(key: string, initialValue: T)`. Do not directly use `localStorage.getItem/setItem`.
+- **Numeric Calculations**: All numeric calculations (multiplication, division, percentage conversion, etc.) must use `Decimal` (from `@veltodefi/utils`) to avoid floating-point precision issues.
+- **Local Cache Data**: When local cache data is needed, must use `useLocalStorage` hook (from `@veltodefi/hooks`). Use in `script.tsx`, usage: `const [storedValue, setValue] = useLocalStorage<T>(key: string, initialValue: T)`. Do not directly use `localStorage.getItem/setItem`.
 - **Comment Language**: All code comments must be in English.
 - **Prohibit Generating Any Type of Markdown Documentation**: Do not generate README, CHANGELOG, usage instructions, summary documents, or any .md files.
 - **i18n Key Processing Workflow** (only applies to UI layer):
-  1. First search in `@orderly.network/i18n` package to see if a matching key already exists
+  1. First search in `@veltodefi/i18n` package to see if a matching key already exists
   2. If it exists, use it directly; if not, create a new key
   3. Determine which file it should be placed in under `packages/i18n/src/locale/module/` based on content nature:
      - Common text (such as Cancel, Confirm, Save, etc.) → `common.ts`
@@ -116,7 +116,7 @@ When components need to be used in UI (especially component names obtained from 
 
 4. **Use When Generating UI**:
    - Use components according to the API and best practices in the documentation
-   - Use correct import paths (e.g., `import { Button } from "@orderly.network/ui"`)
+   - Use correct import paths (e.g., `import { Button } from "@veltodefi/ui"`)
    - Apply correct props, variants, and style configurations
    - Follow usage examples and notes in the documentation
 

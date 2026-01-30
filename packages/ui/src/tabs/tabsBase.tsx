@@ -67,6 +67,7 @@ const tabsVariants = tv({
           "oui-px-1",
         ],
         trigger: [
+          "oui-group",
           "oui-pb-2",
           "oui-relative",
           "data-[state=active]:oui-text-base-contrast",

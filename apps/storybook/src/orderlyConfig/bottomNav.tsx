@@ -5,8 +5,6 @@ import {
   TradingInactiveIcon,
   PortfolioActiveIcon,
   PortfolioInactiveIcon,
-  LeaderboardActiveIcon,
-  LeaderboardInactiveIcon,
   MarketsActiveIcon,
   MarketsInactiveIcon,
   EarnActiveIcon,

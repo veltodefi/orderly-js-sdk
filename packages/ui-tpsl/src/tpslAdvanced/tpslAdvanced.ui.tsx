@@ -1,5 +1,5 @@
 import { useEffect, useState, SVGProps } from "react";
-import { ERROR_MSG_CODES } from "@veltodefi/hooks";
+import { ERROR_MSG_CODES, useGetEstLiqPrice } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useOrderEntryFormErrorMsg } from "@veltodefi/react-app";
 import {
@@ -39,6 +39,12 @@ export const TPSLAdvancedUI = (props: Props) => {
   const isSlPriceError =
     props.slPriceError?.sl_trigger_price?.type ===
     ERROR_MSG_CODES.SL_PRICE_ERROR;
+
+  const displayEstLiqPrice = useGetEstLiqPrice({
+    estLiqPrice: props.estLiqPrice,
+    symbol: props.symbolInfo.symbol,
+    side: props.formattedOrder.side as OrderSide,
+  });
 
   const {
     formattedOrder,
@@ -137,7 +143,7 @@ export const TPSLAdvancedUI = (props: Props) => {
             order={formattedOrder as OrderlyOrder}
             baseDP={symbolInfo.base_dp}
             quoteDP={symbolInfo.quote_dp}
-            estLiqPrice={props.estLiqPrice ?? undefined}
+            estLiqPrice={displayEstLiqPrice ?? undefined}
             symbolLeverage={props.symbolLeverage}
           />
         </div>

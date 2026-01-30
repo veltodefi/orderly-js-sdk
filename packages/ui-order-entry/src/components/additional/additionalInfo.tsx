@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderlyOrder, OrderType } from "@veltodefi/types";
-import { Checkbox, cn, Divider, Flex, Switch } from "@veltodefi/ui";
+import { Checkbox, cn, Divider, Flex, Switch, Tooltip } from "@veltodefi/ui";
 
 export type AdditionalInfoProps = {
   pinned: boolean;
@@ -54,15 +54,20 @@ export const AdditionalInfo: FC<AdditionalInfoProps> = (props) => {
             checked={orderTypeExtra === OrderType.POST_ONLY}
             onCheckedChange={onTypeToggle(OrderType.POST_ONLY)}
           />
-          <label
-            htmlFor={"toggle_order_post_only"}
-            className={cn(
-              "oui-ml-1 oui-text-2xs peer-data-[disabled]:oui-text-base-contrast-20",
-              "oui-whitespace-nowrap oui-break-normal",
-            )}
+          <Tooltip
+            content={t("orderEntry.orderType.postOnly.tooltip")}
+            className="oui-max-w-[280px] oui-text-2xs oui-text-base-contrast-80"
           >
-            {t("orderEntry.orderType.postOnly")}
-          </label>
+            <label
+              htmlFor={"toggle_order_post_only"}
+              className={cn(
+                "oui-ml-1 oui-text-2xs peer-data-[disabled]:oui-text-base-contrast-20",
+                "oui-cursor-pointer oui-whitespace-nowrap oui-break-normal oui-border-b oui-border-dashed oui-border-line-12",
+              )}
+            >
+              {t("orderEntry.orderType.postOnly")}
+            </label>
+          </Tooltip>
         </Flex>
         <Flex itemAlign={"center"}>
           <Checkbox
@@ -75,15 +80,20 @@ export const AdditionalInfo: FC<AdditionalInfoProps> = (props) => {
             onCheckedChange={onTypeToggle(OrderType.IOC)}
             disabled={!props.showExtra}
           />
-          <label
-            htmlFor={"toggle_order_iov"}
-            className={cn(
-              "oui-ml-1 oui-text-2xs peer-data-[disabled]:oui-text-base-contrast-20",
-              "oui-whitespace-nowrap oui-break-normal",
-            )}
+          <Tooltip
+            content={t("orderEntry.orderType.ioc.tooltip")}
+            className="oui-max-w-[280px] oui-text-2xs oui-text-base-contrast-80"
           >
-            {t("orderEntry.orderType.ioc")}
-          </label>
+            <label
+              htmlFor={"toggle_order_iov"}
+              className={cn(
+                "oui-ml-1 oui-text-2xs peer-data-[disabled]:oui-text-base-contrast-20",
+                "oui-cursor-pointer oui-whitespace-nowrap oui-break-normal oui-border-b oui-border-dashed oui-border-line-12",
+              )}
+            >
+              {t("orderEntry.orderType.ioc")}
+            </label>
+          </Tooltip>
         </Flex>
         <Flex itemAlign={"center"}>
           <Checkbox
@@ -96,15 +106,20 @@ export const AdditionalInfo: FC<AdditionalInfoProps> = (props) => {
             onCheckedChange={onTypeToggle(OrderType.FOK)}
             disabled={!props.showExtra}
           />
-          <label
-            htmlFor={"toggle_order_fok"}
-            className={cn(
-              "oui-ml-1 oui-text-2xs peer-data-[disabled]:oui-text-base-contrast-20",
-              "oui-whitespace-nowrap oui-break-normal",
-            )}
+          <Tooltip
+            content={t("orderEntry.orderType.fok.tooltip")}
+            className="oui-max-w-[280px] oui-text-2xs oui-text-base-contrast-80"
           >
-            {t("orderEntry.orderType.fok")}
-          </label>
+            <label
+              htmlFor={"toggle_order_fok"}
+              className={cn(
+                "oui-ml-1 oui-text-2xs peer-data-[disabled]:oui-text-base-contrast-20",
+                "oui-cursor-pointer oui-whitespace-nowrap oui-break-normal oui-border-b oui-border-dashed oui-border-line-12",
+              )}
+            >
+              {t("orderEntry.orderType.fok")}
+            </label>
+          </Tooltip>
         </Flex>
       </Flex>
 
@@ -136,12 +151,19 @@ export const AdditionalInfo: FC<AdditionalInfoProps> = (props) => {
               props.setHidden(checked);
             }}
           />
-          <label
-            htmlFor={"toggle_order_hidden"}
-            className={"oui-ml-1 oui-text-2xs"}
+          <Tooltip
+            content={t("orderEntry.hidden.tooltip")}
+            className="oui-max-w-[280px] oui-text-2xs oui-text-base-contrast-80"
           >
-            {t("orderEntry.hidden")}
-          </label>
+            <label
+              htmlFor={"toggle_order_hidden"}
+              className={
+                "oui-ml-1 oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12 oui-text-2xs"
+              }
+            >
+              {t("orderEntry.hidden")}
+            </label>
+          </Tooltip>
         </Flex>
       </Flex>
       {!pinned && (

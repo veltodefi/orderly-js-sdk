@@ -14,13 +14,7 @@ import {
   positions as positionsPerp,
 } from "@veltodefi/perp";
 import { OrderSide } from "@veltodefi/types";
-import {
-  modal,
-  SliderMarks,
-  toast,
-  useScreen,
-  Text,
-} from "@veltodefi/ui";
+import { modal, SliderMarks, toast, useScreen, Text } from "@veltodefi/ui";
 import { zero } from "@veltodefi/utils";
 
 type UseLeverageScriptOptions = {
@@ -102,11 +96,20 @@ export const useSymbolLeverageScript = (
   const onInputChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>(
     (e) => {
       const parsed = Number.parseInt(e.target.value);
-      if (!Number.isNaN(parsed)) {
-        setLeverage(parsed);
-      }
+      const value = Number.isNaN(parsed) ? "" : parsed;
+      setLeverage(value as number);
     },
     [],
+  );
+
+  const onInputBlur = useCallback<React.FocusEventHandler<HTMLInputElement>>(
+    (e) => {
+      const inputValue = e.target.value.trim();
+      if (inputValue === "") {
+        setLeverage(curLeverage);
+      }
+    },
+    [curLeverage],
   );
 
   const onConfirmSave = async () => {
@@ -163,6 +166,7 @@ export const useSymbolLeverageScript = (
     onLeverageIncrease,
     onLeverageReduce,
     onInputChange,
+    onInputBlur,
     isReduceDisabled,
     isIncreaseDisabled,
     disabled,

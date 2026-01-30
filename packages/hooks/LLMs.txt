@@ -1,4 +1,4 @@
-# Orderly Network Hooks Library (@orderly.network/hooks)
+# Orderly Network Hooks Library (@veltodefi/hooks)
 
 > AI-optimized documentation for the Orderly Network React hooks library
 > Version: 2.8.0
@@ -29,14 +29,14 @@ This is the core React hooks library for Orderly Network, providing a comprehens
 - **use-debounce**: ^9.0.4 for debounced values
 
 ### Orderly Network Dependencies
-- **@orderly.network/core**: Core SDK functionality
-- **@orderly.network/net**: Network and WebSocket utilities
-- **@orderly.network/perp**: Perpetual futures calculations
-- **@orderly.network/types**: TypeScript type definitions
-- **@orderly.network/utils**: Shared utilities
-- **@orderly.network/default-evm-adapter**: EVM chain adapter
-- **@orderly.network/default-solana-adapter**: Solana adapter
-- **@orderly.network/web3-provider-ethers**: Ethers.js provider
+- **@veltodefi/core**: Core SDK functionality
+- **@veltodefi/net**: Network and WebSocket utilities
+- **@veltodefi/perp**: Perpetual futures calculations
+- **@veltodefi/types**: TypeScript type definitions
+- **@veltodefi/utils**: Shared utilities
+- **@veltodefi/default-evm-adapter**: EVM chain adapter
+- **@veltodefi/default-solana-adapter**: Solana adapter
+- **@veltodefi/web3-provider-ethers**: Ethers.js provider
 
 ### Analytics & Tracking
 - **@amplitude/analytics-browser**: 2.11.13 for event tracking
@@ -268,10 +268,10 @@ packages/hooks/
 
 ```typescript
 // Install the package
-pnpm add @orderly.network/hooks
+pnpm add @veltodefi/hooks
 
 // Wrap your app with providers
-import { OrderlyConfigProvider } from '@orderly.network/hooks';
+import { OrderlyConfigProvider } from '@veltodefi/hooks';
 
 function App() {
   return (
@@ -288,7 +288,7 @@ function App() {
 ### Account Management
 
 ```typescript
-import { useAccount } from '@orderly.network/hooks';
+import { useAccount } from '@veltodefi/hooks';
 
 function AccountComponent() {
   const { account, state } = useAccount();
@@ -307,7 +307,7 @@ function AccountComponent() {
 ### Market Data
 
 ```typescript
-import { useMarkets, useSymbolsInfo } from '@orderly.network/hooks';
+import { useMarkets, useSymbolsInfo } from '@veltodefi/hooks';
 
 function MarketList() {
   const { data: markets, isLoading } = useMarkets();
@@ -330,7 +330,7 @@ function MarketList() {
 ### Real-Time Order Book
 
 ```typescript
-import { useOrderbookStream } from '@orderly.network/hooks';
+import { useOrderbookStream } from '@veltodefi/hooks';
 
 function OrderBook({ symbol }: { symbol: string }) {
   const [data] = useOrderbookStream(symbol, undefined, {
@@ -349,7 +349,7 @@ function OrderBook({ symbol }: { symbol: string }) {
 ### Position Monitoring
 
 ```typescript
-import { usePositionStream } from '@orderly.network/hooks';
+import { usePositionStream } from '@veltodefi/hooks';
 
 function Positions() {
   const [positions, info] = usePositionStream({
@@ -373,7 +373,7 @@ function Positions() {
 ### Deposits & Withdrawals
 
 ```typescript
-import { useDeposit, useWithdraw } from '@orderly.network/hooks';
+import { useDeposit, useWithdraw } from '@veltodefi/hooks';
 
 function AssetManagement() {
   const { deposit } = useDeposit();
@@ -421,7 +421,7 @@ import {
   useMaxQty, 
   useCollateral, 
   useMarginRatio 
-} from '@orderly.network/hooks';
+} from '@veltodefi/hooks';
 
 function TradingCalculations({ symbol }: { symbol: string }) {
   const { maxQty } = useMaxQty(symbol, 'LONG');
@@ -441,7 +441,7 @@ function TradingCalculations({ symbol }: { symbol: string }) {
 ### Leverage Management
 
 ```typescript
-import { useLeverage, useMaxLeverage } from '@orderly.network/hooks';
+import { useLeverage, useMaxLeverage } from '@veltodefi/hooks';
 
 function LeverageControl({ symbol }: { symbol: string }) {
   const [leverage, { update }] = useLeverage();
@@ -475,7 +475,7 @@ function LeverageControl({ symbol }: { symbol: string }) {
 ### Chain Management
 
 ```typescript
-import { useChains, useChain } from '@orderly.network/hooks';
+import { useChains, useChain } from '@veltodefi/hooks';
 
 function ChainSelector() {
   const { data: chains } = useChains({
@@ -501,7 +501,7 @@ function ChainSelector() {
 ### WebSocket Status
 
 ```typescript
-import { useWsStatus, WsNetworkStatus } from '@orderly.network/hooks';
+import { useWsStatus, WsNetworkStatus } from '@veltodefi/hooks';
 
 function ConnectionStatus() {
   const { status } = useWsStatus();
@@ -517,7 +517,7 @@ function ConnectionStatus() {
 ### Event Tracking
 
 ```typescript
-import { useTrack } from '@orderly.network/hooks';
+import { useTrack } from '@veltodefi/hooks';
 
 function TrackableButton() {
   const { track } = useTrack();
@@ -536,7 +536,7 @@ function TrackableButton() {
 ### Local Storage Persistence
 
 ```typescript
-import { useLocalStorage } from '@orderly.network/hooks';
+import { useLocalStorage } from '@veltodefi/hooks';
 
 function ThemeSelector() {
   const [theme, setTheme] = useLocalStorage('app-theme', 'dark');
@@ -619,13 +619,13 @@ import type {
   
   // Core SDK types
   WalletAdapter,
-} from '@orderly.network/hooks';
+} from '@veltodefi/hooks';
 ```
 
 ### Hook Return Type Examples
 
 ```typescript
-import { useAccount, useMarkets, usePositionStream } from '@orderly.network/hooks';
+import { useAccount, useMarkets, usePositionStream } from '@veltodefi/hooks';
 
 // Account hook returns
 const { 
@@ -659,7 +659,7 @@ const [positions, info, meta] = usePositionStream();
 Wrap your application with `OrderlyConfigProvider`:
 
 ```typescript
-import { OrderlyConfigProvider } from '@orderly.network/hooks';
+import { OrderlyConfigProvider } from '@veltodefi/hooks';
 
 <OrderlyConfigProvider
   networkId="mainnet"
@@ -728,7 +728,7 @@ try {
 Utilize provided memoization hooks for stable references:
 
 ```typescript
-import { useMemoizedFn } from '@orderly.network/hooks';
+import { useMemoizedFn } from '@veltodefi/hooks';
 
 const handleClick = useMemoizedFn(() => {
   // Function body
@@ -742,7 +742,7 @@ const handleClick = useMemoizedFn(() => {
 Use debouncing for user input to reduce API calls:
 
 ```typescript
-import { useDebounce } from '@orderly.network/hooks';
+import { useDebounce } from '@veltodefi/hooks';
 
 const [searchTerm, setSearchTerm] = useState('');
 const debouncedSearch = useDebounce(searchTerm, 500);
@@ -930,7 +930,7 @@ const handleClose = async (symbol: string) => {
 The hooks library extends SWR with Orderly-specific configuration:
 
 ```typescript
-import { useSWRConfig } from '@orderly.network/hooks';
+import { useSWRConfig } from '@veltodefi/hooks';
 
 function CustomSWRComponent() {
   const { mutate, cache } = useSWRConfig();
@@ -945,7 +945,7 @@ function CustomSWRComponent() {
 ### Custom SWR Middleware
 
 ```typescript
-import { signatureMiddleware } from '@orderly.network/hooks';
+import { signatureMiddleware } from '@veltodefi/hooks';
 
 // Applied automatically to private queries
 ```
@@ -962,7 +962,7 @@ import {
   parseJSON,
   fetcher,
   utils
-} from '@orderly.network/hooks';
+} from '@veltodefi/hooks';
 
 // Check if order meets minimum notional
 const isValid = checkNotional(price, quantity, minNotional);
@@ -986,16 +986,16 @@ export {
   unstable_serialize,
   type SWRConfiguration,
   type SWRResponse 
-} from '@orderly.network/hooks';
+} from '@veltodefi/hooks';
 
 // use-debounce
-export { useDebounce, useDebouncedCallback } from '@orderly.network/hooks';
+export { useDebounce, useDebouncedCallback } from '@veltodefi/hooks';
 
 // use-constant
-export { useConstant } from '@orderly.network/hooks';
+export { useConstant } from '@veltodefi/hooks';
 
 // All SWR utilities
-import { swr } from '@orderly.network/hooks';
+import { swr } from '@veltodefi/hooks';
 ```
 
 ## Performance Considerations
@@ -1025,31 +1025,31 @@ Check CHANGELOG.md for detailed breaking changes. Key changes may include:
 
 This hooks library is used by several other Orderly Network packages:
 
-- `@orderly.network/trading`: Trading interface
-- `@orderly.network/markets`: Market data UI
-- `@orderly.network/portfolio`: Portfolio management
-- `@orderly.network/ui-orders`: Order management UI
-- `@orderly.network/ui-positions`: Position management UI
-- `@orderly.network/ui-order-entry`: Order entry forms
-- `@orderly.network/ui-connector`: Wallet connection
+- `@veltodefi/trading`: Trading interface
+- `@veltodefi/markets`: Market data UI
+- `@veltodefi/portfolio`: Portfolio management
+- `@veltodefi/ui-orders`: Order management UI
+- `@veltodefi/ui-positions`: Position management UI
+- `@veltodefi/ui-order-entry`: Order entry forms
+- `@veltodefi/ui-connector`: Wallet connection
 - And many more...
 
 ## Dependencies Chain
 
 ```
-@orderly.network/hooks depends on:
-├── @orderly.network/core (SDK core)
-├── @orderly.network/net (Network layer)
-├── @orderly.network/types (Type definitions)
-├── @orderly.network/utils (Utilities)
-├── @orderly.network/perp (Perpetual calculations)
-├── @orderly.network/default-evm-adapter
-└── @orderly.network/default-solana-adapter
+@veltodefi/hooks depends on:
+├── @veltodefi/core (SDK core)
+├── @veltodefi/net (Network layer)
+├── @veltodefi/types (Type definitions)
+├── @veltodefi/utils (Utilities)
+├── @veltodefi/perp (Perpetual calculations)
+├── @veltodefi/default-evm-adapter
+└── @veltodefi/default-solana-adapter
 ```
 
 ## Support & Resources
 
-- Package: `@orderly.network/hooks`
+- Package: `@veltodefi/hooks`
 - Version: 2.8.0
 - Author: orderly.network
 - License: Check package.json
@@ -1100,7 +1100,7 @@ This hooks library is used by several other Orderly Network packages:
 
 ```typescript
 import { renderHook, waitFor } from '@testing-library/react';
-import { useMarkets } from '@orderly.network/hooks';
+import { useMarkets } from '@veltodefi/hooks';
 import assert from 'node:assert';
 
 describe('useMarkets', () => {
