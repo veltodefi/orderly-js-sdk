@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui",
-  "version": "2.8.12-velto-dev.2",
+  "version": "2.8.10-velto-main.21",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -13,9 +13,7 @@
   "keywords": [],
   "author": "orderly.network",
   "files": [
-    "dist",
-    "tailwind.config.js",
-    "src/tailwind"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
@@ -49,7 +47,6 @@
     "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "^22.15.21",
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
@@ -59,7 +56,7 @@
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.6",
     "tsconfig": "workspace:*",
-    "tsup": "^8.5.1",
+    "tsup": "^7.1.0",
     "typescript": "^5.1.6"
   },
   "peerDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/wallet-connector-privy",
-  "version": "2.8.12-velto-dev.2",
+  "version": "2.8.10-velto-main.21",
   "description": "",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
@@ -43,7 +43,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsconfig": "workspace:*",
-    "tsup": "^8.5.1"
+    "tsup": "^7.1.0"
   },
   "peerDependencies": {
     "react": ">=18"
