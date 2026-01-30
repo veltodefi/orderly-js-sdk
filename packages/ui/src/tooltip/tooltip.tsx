@@ -22,7 +22,7 @@ const tooltipVariants = tv({
     "oui-z-50",
     "oui-overflow-hidden",
     "oui-rounded-md",
-    "oui-bg-base-8",
+    "oui-bg-[#3B3B3B]",
     "oui-px-2",
     "oui-py-1",
     "oui-text-xs",

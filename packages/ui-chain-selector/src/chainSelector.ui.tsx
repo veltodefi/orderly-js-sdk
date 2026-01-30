@@ -174,7 +174,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
               </Box>
             }
           >
-            <InfoIcon className="oui-cursor-pointer oui-text-[#8F8F8F]" />
+            <InfoIcon className="oui-cursor-pointer oui-p-[2px] oui-text-[#8F8F8F]" />
           </Tooltip>
         }
       >
