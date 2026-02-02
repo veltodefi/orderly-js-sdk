@@ -4,6 +4,7 @@ import { VariantProps } from "tailwind-variants";
 import { tv } from "../utils/tv";
 
 const baseTriggerClasses = [
+  "oui-group",
   "oui-bg-mainButton-inverted",
   "oui-text-mainButton-invertedContrast",
   "oui-border-0",
