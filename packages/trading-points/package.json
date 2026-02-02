@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/trading-points",
-  "version": "1.0.1-velto-dev.3",
+  "version": "1.0.1-velto-main.4",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
