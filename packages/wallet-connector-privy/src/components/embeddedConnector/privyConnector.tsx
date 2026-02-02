@@ -18,7 +18,7 @@ const LoginMethods = ({
     arr.push(
       <div
         className={
-          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5 oui-col-span-2 @lg:oui-col-span-1 oui-w-full"
+          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5 oui-col-span-2 @lg:oui-col-span-1 oui-w-full hover:oui-bg-[#575757] active:oui-bg-base-6"
         }
         onClick={() => connect("email")}
       >
@@ -39,7 +39,7 @@ const LoginMethods = ({
     arr.push(
       <div
         className={
-          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5"
+          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5 hover:oui-bg-[#575757] active:oui-bg-base-6"
         }
         onClick={() => connect("google")}
       >
@@ -57,7 +57,7 @@ const LoginMethods = ({
     arr.push(
       <div
         className={
-          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5"
+          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5 hover:oui-bg-[#575757] active:oui-bg-base-6"
         }
         onClick={() => connect("twitter")}
       >
@@ -76,7 +76,7 @@ const LoginMethods = ({
     arr.push(
       <div
         className={
-          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5"
+          "oui-flex oui-items-center oui-justify-center oui-cursor-pointer oui-gap-3 oui-rounded-[6px] oui-p-3 oui-bg-base-5 hover:oui-bg-[#575757] active:oui-bg-base-6"
         }
         onClick={() => connect("telegram")}
       >

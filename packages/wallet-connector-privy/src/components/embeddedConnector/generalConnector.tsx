@@ -1,7 +1,7 @@
 import React from "react";
 import { WalletAdapter, WalletReadyState } from "@solana/wallet-adapter-base";
 import { Connector } from "wagmi";
-import { useScreen } from "@veltodefi/ui";
+import { useScreen, cn } from "@veltodefi/ui";
 import { useWalletConnectorPrivy } from "../../provider";
 import { useSolanaWallet } from "../../providers/solana/solanaWalletProvider";
 import { useWagmiWallet } from "../../providers/wagmi/wagmiWalletProvider";
@@ -61,35 +61,50 @@ export function GeneralConnectArea({ currentChainId, connect }: Props) {
     <div>
       <div
         key={isSolana ? "solana-list" : "evm-list"}
-        className={`oui-grid oui-gap-1 oui-animate-in oui-slide-in-from-right`}
+        className={`oui-grid oui-gap-1 oui-animate-in oui-slide-in-from-top`}
       >
         {!isSolana &&
           evmConnectors.map((item, key) => (
-            <div
+            <Item
               key={`evm-${key}`}
-              className="oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5"
-              onClick={() => onConnect(item)}
-            >
-              <RenderWalletIcon connector={item} />
-              <div className="oui-text-sm oui-text-base-contrast">
-                {item.name}
-              </div>
-            </div>
+              onClick={() => connect(item)}
+              name={item.name}
+              connector={item}
+            />
           ))}
         {isSolana &&
           readySolAdapters.map((item, key) => (
-            <div
+            <Item
               key={`sol-${key}`}
-              className="oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5"
               onClick={() => connect(item.adapter)}
-            >
-              <RenderWalletIcon connector={item.adapter} />
-              <div className="oui-text-sm oui-text-base-contrast">
-                {item.adapter?.name}
-              </div>
-            </div>
+              name={item.adapter?.name}
+              connector={item.adapter}
+            />
           ))}
       </div>
     </div>
   );
 }
+
+const Item = ({
+  onClick,
+  connector,
+  name,
+}: {
+  onClick: () => void;
+  connector: Connector | WalletAdapter;
+  name: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        "oui-flex oui-flex-1 oui-cursor-pointer oui-items-center oui-justify-start oui-gap-3 oui-rounded-lg oui-p-3 oui-bg-base-5",
+        "hover:oui-bg-[#575757] active:oui-bg-base-6",
+      )}
+      onClick={onClick}
+    >
+      <RenderWalletIcon connector={connector} />
+      <div className="oui-text-sm oui-text-base-contrast">{name}</div>
+    </div>
+  );
+};

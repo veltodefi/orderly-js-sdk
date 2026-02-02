@@ -1,7 +1,6 @@
 import React from "react";
 import type { WalletAdapter } from "@solana/wallet-adapter-base";
 import { Connector } from "wagmi";
-import { ScrollArea } from "@veltodefi/ui";
 import { useWallet } from "../../hooks/useWallet";
 import { useWalletConnectorPrivy } from "../../provider";
 import { WalletConnectType } from "../../types";
@@ -31,8 +30,11 @@ export function ConnectWallet(props: Props) {
     `${props.currentChainId}` === "11124";
 
   return (
-    <ScrollArea className="oui-flex oui-custom-scrollbar">
-      <div className={"oui-flex oui-flex-col"}>
+    <div>
+      <div
+        key={isAbstract ? "abstract-list" : "evm-and-sol-list"}
+        className={"oui-flex oui-flex-col oui-animate-in oui-slide-in-from-top"}
+      >
         {!isAbstract && (
           <>
             <GeneralConnectArea
@@ -72,6 +74,6 @@ export function ConnectWallet(props: Props) {
           />
         )}
       </div>
-    </ScrollArea>
+    </div>
   );
 }
