@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { AlgoOrderRootType, API, PositionType } from "@veltodefi/types";
-import { Box, MainButton, modal } from "@veltodefi/ui";
-import type { MainButtonProps } from "@veltodefi/ui";
+import { Box, Button, modal } from "@veltodefi/ui";
+import { ButtonProps } from "@veltodefi/ui";
 import { TPSLDialogId } from "./positionTPSL";
 
 export const PositionTPSLPopover = (props: {
@@ -13,7 +13,7 @@ export const PositionTPSLPopover = (props: {
   /**
    * Button props
    */
-  buttonProps?: MainButtonProps;
+  buttonProps?: ButtonProps;
   isEditing?: boolean;
   children?: ReactNode;
 }) => {
@@ -38,9 +38,17 @@ export const PositionTPSLPopover = (props: {
   return (
     <Box onClick={onEdit} className="oui-cursor-pointer">
       {props.children || (
-        <MainButton variant="secondary" size="sm" {...buttonProps}>
+        <Button
+          variant="outlined"
+          size="sm"
+          color="secondary"
+          {...buttonProps}
+          // onClick={() => {
+          //   setOpen(true);
+          // }}
+        >
           {props.label}
-        </MainButton>
+        </Button>
       )}
     </Box>
   );

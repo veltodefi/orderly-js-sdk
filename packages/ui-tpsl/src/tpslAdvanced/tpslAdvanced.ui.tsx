@@ -10,7 +10,6 @@ import {
 } from "@veltodefi/types";
 import {
   Button,
-  MainButton,
   cn,
   Divider,
   DotStatus,
@@ -150,12 +149,11 @@ export const TPSLAdvancedUI = (props: Props) => {
         <Divider className="oui-my-3" />
         <div className="oui-px-3">
           <Flex className="oui-gap-[6px]">
-            <MainButton
+            <Button
               onClick={() => {
                 setOrderValue("side", OrderSide.BUY);
               }}
               size={"sm"}
-              variant="primary"
               fullWidth
               data-type={OrderSide.BUY}
               // color={side === OrderSide.BUY ? "buy" : "secondary"}
@@ -167,14 +165,13 @@ export const TPSLAdvancedUI = (props: Props) => {
               data-testid="oui-testid-orderEntry-side-buy-button"
             >
               {t("common.buy")}
-            </MainButton>
-            <MainButton
+            </Button>
+            <Button
               onClick={() => {
                 setOrderValue("side", OrderSide.SELL);
               }}
               data-type={OrderSide.SELL}
               fullWidth
-              variant="primary"
               size={"sm"}
               // color={side === OrderSide.SELL ? "sell" : "secondary"}
               className={cn(
@@ -185,7 +182,7 @@ export const TPSLAdvancedUI = (props: Props) => {
               data-testid="oui-testid-orderEntry-side-sell-button"
             >
               {t("common.sell")}
-            </MainButton>
+            </Button>
           </Flex>
           <div className="oui-py-3">
             <TPSLPositionTypeWidget
@@ -282,19 +279,20 @@ export const TPSLAdvancedUI = (props: Props) => {
         </div>
       </ScrollArea>
       <Flex className="oui-mt-6 oui-px-3" gap={2}>
-        <MainButton
+        <Button
           size="md"
           fullWidth
-          variant="secondary"
+          color="gray"
+          variant="outlined"
           className="oui-text-base-contrast-36"
           onClick={props.onClose}
         >
           {t("common.cancel")}
-        </MainButton>
-        <MainButton
+        </Button>
+        <Button
           size="md"
           fullWidth
-          variant="primary"
+          color="success"
           className={cn(
             formattedOrder.side === OrderSide.SELL
               ? "oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"
@@ -304,7 +302,7 @@ export const TPSLAdvancedUI = (props: Props) => {
           disabled={!tpslEnable}
         >
           {t("tpsl.advanced.submit")}
-        </MainButton>
+        </Button>
       </Flex>
     </div>
   );

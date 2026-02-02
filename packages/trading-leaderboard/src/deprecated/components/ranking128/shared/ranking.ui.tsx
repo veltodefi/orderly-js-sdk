@@ -152,9 +152,9 @@ export const Ranking: FC<RankingProps> = (props) => {
       bordered
       dataSource={props.dataSource}
       generatedRowKey={(record: RankingData) => record.key || record.address}
-      // manualPagination
+      manualPagination
       manualSorting
-      // pagination={props.pagination}
+      pagination={props.pagination}
       classNames={{
         root: cn(
           "oui-trading-leaderboard-ranking-table",

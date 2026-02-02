@@ -11,7 +11,7 @@ import {
   Tooltip,
   toast,
 } from "@veltodefi/ui";
-// import { AuthGuard } from "@veltodefi/nector";
+// import { AuthGuard } from "@veltodefi/ui-connector";
 import { usePoints } from "../../hooks/usePointsData";
 import { RouteOption } from "./page";
 

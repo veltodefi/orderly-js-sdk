@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button, DatePicker } from "@veltodefi/ui";
 
 const meta = {
