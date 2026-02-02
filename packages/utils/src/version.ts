@@ -7,7 +7,7 @@ declare global {
 }
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
-  window.__ORDERLY_VERSION__["@veltodefi/utils"] = "2.8.10-velto-main.21";
+  window.__ORDERLY_VERSION__["@veltodefi/utils"] = "2.8.13-velto-dev.1";
 }
 
-export default "2.8.10-velto-main.21";
+export default "2.8.13-velto-dev.1";

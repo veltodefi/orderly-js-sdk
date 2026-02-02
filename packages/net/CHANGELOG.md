@@ -1,4 +1,135 @@
-# @orderly.network/net
+# @veltodefi/net
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+
+## 2.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+
+## 2.8.11-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.10
+
+### Patch Changes
+
+- publish
+- 0be13b3: publish
+
+## 2.8.10-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.9
+
+### Patch Changes
+
+- publish
+- 32f2962: publish
+
+## 2.8.9-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.8
+
+### Patch Changes
+
+- publish
+- 9e4118b: publish
+
+## 2.8.8-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.7
+
+### Patch Changes
+
+- de789db: publish
+- publish
+
+## 2.8.7-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.13
+
+### Patch Changes
+
+- 2f7399d: publish
+- publish
+
+## 2.8.13-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 2.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+
+## 2.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+
+## 2.8.11-alpha.0
+
+### Patch Changes
+
+- publish
 
 ## 2.8.10
 
@@ -1037,11 +1168,7 @@
 - a1ea426b: export ChainDialog component;
 - 22ad6134: fix bug
 
-<<<<<<< HEAD
-
 ## 1.0.115
-
-=======
 
 ## 1.0.114-alpha.35
 
@@ -1081,13 +1208,9 @@
 
 ## 1.0.114-alpha.29
 
-> > > > > > > alpha
-
 ### Patch Changes
 
 - fix bugs
-
-<<<<<<< HEAD
 
 ## 1.0.114
 
@@ -1270,8 +1393,6 @@
 ## 1.0.114-alpha.0
 
 ### Patch Changes
-
-> > > > > > > alpha
 
 - fix bugs
 

@@ -44,8 +44,7 @@ const sheetVariants = tv({
 });
 
 export interface SheetContentProps
-  extends
-    React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
+  extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {
   // if true, show close button
   closeable?: boolean;

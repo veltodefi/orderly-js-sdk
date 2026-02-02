@@ -1,10 +1,9 @@
 {
   "name": "tsconfig",
-  "version": "0.11.10-velto-main.21",
+  "version": "0.11.13-velto-dev.1",
   "private": true,
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   }
 }

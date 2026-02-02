@@ -1,4 +1,75 @@
-# @orderly.network/ui-notification
+# @veltodefi/ui-notification
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+- Updated dependencies
+- Updated dependencies [117b23a]
+  - @veltodefi/app@2.8.12
+  - @veltodefi/2.8.12
+  - @veltodefi/.8.12
+  - @veltodefi/2.8.12
+  - @veltodefi/.12
+  - @veltodefi/2.8.12
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/app@2.8.12-alpha.0
+  - @veltodefi/2.8.12-alpha.0
+  - @veltodefi/.8.12-alpha.0
+  - @veltodefi/2.8.12-alpha.0
+  - @veltodefi/.12-alpha.0
+  - @veltodefi/2.8.12-alpha.0
+
+## 2.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+- Updated dependencies [1ed7590]
+- Updated dependencies
+- Updated dependencies [e7fb6c1]
+  - @veltodefi/app@2.8.11
+  - @veltodefi/2.8.11
+  - @veltodefi/.8.11
+  - @veltodefi/2.8.11
+  - @veltodefi/.11
+  - @veltodefi/2.8.11
+
+## 2.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/app@2.8.11-alpha.1
+  - @veltodefi/2.8.11-alpha.1
+  - @veltodefi/.8.11-alpha.1
+  - @veltodefi/2.8.11-alpha.1
+  - @veltodefi/.11-alpha.1
+  - @veltodefi/2.8.11-alpha.1
+
+## 2.8.11-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/app@2.8.11-alpha.0
+  - @veltodefi/2.8.11-alpha.0
+  - @veltodefi/.8.11-alpha.0
+  - @veltodefi/2.8.11-alpha.0
+  - @veltodefi/.11-alpha.0
+  - @veltodefi/2.8.11-alpha.0
 
 ## 2.8.10
 
@@ -8,12 +79,12 @@
 - 0be13b3: publish
 - Updated dependencies
 - Updated dependencies [0be13b3]
-  - @orderly.network/react-app@2.8.10
-  - @orderly.network/hooks@2.8.10
-  - @orderly.network/i18n@2.8.10
-  - @orderly.network/types@2.8.10
-  - @orderly.network/ui@2.8.10
-  - @orderly.network/utils@2.8.10
+  - @veltodefi/app@2.8.10
+  - @veltodefi/2.8.10
+  - @veltodefi/.8.10
+  - @veltodefi/2.8.10
+  - @veltodefi/.10
+  - @veltodefi/2.8.10
 
 ## 2.8.10-alpha.0
 
@@ -21,12 +92,12 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.10-alpha.0
-  - @orderly.network/hooks@2.8.10-alpha.0
-  - @orderly.network/i18n@2.8.10-alpha.0
-  - @orderly.network/types@2.8.10-alpha.0
-  - @orderly.network/ui@2.8.10-alpha.0
-  - @orderly.network/utils@2.8.10-alpha.0
+  - @veltodefi/app@2.8.10-alpha.0
+  - @veltodefi/2.8.10-alpha.0
+  - @veltodefi/.8.10-alpha.0
+  - @veltodefi/2.8.10-alpha.0
+  - @veltodefi/.10-alpha.0
+  - @veltodefi/2.8.10-alpha.0
 
 ## 2.8.9
 
@@ -36,12 +107,12 @@
 - 32f2962: publish
 - Updated dependencies
 - Updated dependencies [32f2962]
-  - @orderly.network/react-app@2.8.9
-  - @orderly.network/hooks@2.8.9
-  - @orderly.network/i18n@2.8.9
-  - @orderly.network/types@2.8.9
-  - @orderly.network/ui@2.8.9
-  - @orderly.network/utils@2.8.9
+  - @veltodefi/app@2.8.9
+  - @veltodefi/2.8.9
+  - @veltodefi/.8.9
+  - @veltodefi/2.8.9
+  - @veltodefi/.9
+  - @veltodefi/2.8.9
 
 ## 2.8.9-alpha.0
 
@@ -49,12 +120,12 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.9-alpha.0
-  - @orderly.network/hooks@2.8.9-alpha.0
-  - @orderly.network/i18n@2.8.9-alpha.0
-  - @orderly.network/types@2.8.9-alpha.0
-  - @orderly.network/ui@2.8.9-alpha.0
-  - @orderly.network/utils@2.8.9-alpha.0
+  - @veltodefi/app@2.8.9-alpha.0
+  - @veltodefi/2.8.9-alpha.0
+  - @veltodefi/.8.9-alpha.0
+  - @veltodefi/2.8.9-alpha.0
+  - @veltodefi/.9-alpha.0
+  - @veltodefi/2.8.9-alpha.0
 
 ## 2.8.8
 
@@ -64,12 +135,12 @@
 - 9e4118b: publish
 - Updated dependencies
 - Updated dependencies [9e4118b]
-  - @orderly.network/react-app@2.8.8
-  - @orderly.network/hooks@2.8.8
-  - @orderly.network/i18n@2.8.8
-  - @orderly.network/types@2.8.8
-  - @orderly.network/ui@2.8.8
-  - @orderly.network/utils@2.8.8
+  - @veltodefi/app@2.8.8
+  - @veltodefi/2.8.8
+  - @veltodefi/.8.8
+  - @veltodefi/2.8.8
+  - @veltodefi/.8
+  - @veltodefi/2.8.8
 
 ## 2.8.8-alpha.0
 
@@ -77,12 +148,12 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.8-alpha.0
-  - @orderly.network/hooks@2.8.8-alpha.0
-  - @orderly.network/i18n@2.8.8-alpha.0
-  - @orderly.network/types@2.8.8-alpha.0
-  - @orderly.network/ui@2.8.8-alpha.0
-  - @orderly.network/utils@2.8.8-alpha.0
+  - @veltodefi/app@2.8.8-alpha.0
+  - @veltodefi/2.8.8-alpha.0
+  - @veltodefi/.8.8-alpha.0
+  - @veltodefi/2.8.8-alpha.0
+  - @veltodefi/.8-alpha.0
+  - @veltodefi/2.8.8-alpha.0
 
 ## 2.8.7
 
@@ -92,12 +163,12 @@
 - publish
 - Updated dependencies [de789db]
 - Updated dependencies
-  - @orderly.network/react-app@2.8.7
-  - @orderly.network/hooks@2.8.7
-  - @orderly.network/i18n@2.8.7
-  - @orderly.network/types@2.8.7
-  - @orderly.network/ui@2.8.7
-  - @orderly.network/utils@2.8.7
+  - @veltodefi/app@2.8.7
+  - @veltodefi/2.8.7
+  - @veltodefi/.8.7
+  - @veltodefi/2.8.7
+  - @veltodefi/.7
+  - @veltodefi/2.8.7
 
 ## 2.8.7-alpha.0
 
@@ -105,12 +176,223 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.7-alpha.0
-  - @orderly.network/hooks@2.8.7-alpha.0
-  - @orderly.network/i18n@2.8.7-alpha.0
-  - @orderly.network/types@2.8.7-alpha.0
-  - @orderly.network/ui@2.8.7-alpha.0
-  - @orderly.network/utils@2.8.7-alpha.0
+  - @veltodefi/app@2.8.7-alpha.0
+  - @veltodefi/2.8.7-alpha.0
+  - @veltodefi/.8.7-alpha.0
+  - @veltodefi/2.8.7-alpha.0
+  - @veltodefi/.7-alpha.0
+  - @veltodefi/2.8.7-alpha.0
+
+## 2.8.13
+
+### Patch Changes
+
+- 2f7399d: publish
+- publish
+- Updated dependencies [2f7399d]
+- Updated dependencies
+  - @veltodefi/react-app@2.8.13
+  - @veltodefi/hooks@2.8.13
+  - @veltodefi/i18n@2.8.13
+  - @veltodefi/types@2.8.13
+  - @veltodefi/ui@2.8.13
+  - @veltodefi/utils@2.8.13
+
+## 2.8.13-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.13-alpha.0
+  - @veltodefi/hooks@2.8.13-alpha.0
+  - @veltodefi/i18n@2.8.13-alpha.0
+  - @veltodefi/types@2.8.13-alpha.0
+  - @veltodefi/ui@2.8.13-alpha.0
+  - @veltodefi/utils@2.8.13-alpha.0
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+- Updated dependencies
+- Updated dependencies [117b23a]
+  - @veltodefi/react-app@2.8.12
+  - @veltodefi/hooks@2.8.12
+  - @veltodefi/i18n@2.8.12
+  - @veltodefi/types@2.8.12
+  - @veltodefi/ui@2.8.12
+  - @veltodefi/utils@2.8.12
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.12-alpha.0
+  - @veltodefi/hooks@2.8.12-alpha.0
+  - @veltodefi/i18n@2.8.12-alpha.0
+  - @veltodefi/types@2.8.12-alpha.0
+  - @veltodefi/ui@2.8.12-alpha.0
+  - @veltodefi/utils@2.8.12-alpha.0
+
+## 2.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+- Updated dependencies [1ed7590]
+- Updated dependencies
+- Updated dependencies [e7fb6c1]
+  - @veltodefi/react-app@2.8.11
+  - @veltodefi/hooks@2.8.11
+  - @veltodefi/i18n@2.8.11
+  - @veltodefi/types@2.8.11
+  - @veltodefi/ui@2.8.11
+  - @veltodefi/utils@2.8.11
+
+## 2.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.11-alpha.1
+  - @veltodefi/hooks@2.8.11-alpha.1
+  - @veltodefi/i18n@2.8.11-alpha.1
+  - @veltodefi/types@2.8.11-alpha.1
+  - @veltodefi/ui@2.8.11-alpha.1
+  - @veltodefi/utils@2.8.11-alpha.1
+
+## 2.8.11-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.11-alpha.0
+  - @veltodefi/hooks@2.8.11-alpha.0
+  - @veltodefi/i18n@2.8.11-alpha.0
+  - @veltodefi/types@2.8.11-alpha.0
+  - @veltodefi/ui@2.8.11-alpha.0
+  - @veltodefi/utils@2.8.11-alpha.0
+
+## 2.8.10
+
+### Patch Changes
+
+- publish
+- 0be13b3: publish
+- Updated dependencies
+- Updated dependencies [0be13b3]
+  - @veltodefi/react-app@2.8.10
+  - @veltodefi/hooks@2.8.10
+  - @veltodefi/i18n@2.8.10
+  - @veltodefi/types@2.8.10
+  - @veltodefi/ui@2.8.10
+  - @veltodefi/utils@2.8.10
+
+## 2.8.10-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.10-alpha.0
+  - @veltodefi/hooks@2.8.10-alpha.0
+  - @veltodefi/i18n@2.8.10-alpha.0
+  - @veltodefi/types@2.8.10-alpha.0
+  - @veltodefi/ui@2.8.10-alpha.0
+  - @veltodefi/utils@2.8.10-alpha.0
+
+## 2.8.9
+
+### Patch Changes
+
+- publish
+- 32f2962: publish
+- Updated dependencies
+- Updated dependencies [32f2962]
+  - @veltodefi/react-app@2.8.9
+  - @veltodefi/hooks@2.8.9
+  - @veltodefi/i18n@2.8.9
+  - @veltodefi/types@2.8.9
+  - @veltodefi/ui@2.8.9
+  - @veltodefi/utils@2.8.9
+
+## 2.8.9-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.9-alpha.0
+  - @veltodefi/hooks@2.8.9-alpha.0
+  - @veltodefi/i18n@2.8.9-alpha.0
+  - @veltodefi/types@2.8.9-alpha.0
+  - @veltodefi/ui@2.8.9-alpha.0
+  - @veltodefi/utils@2.8.9-alpha.0
+
+## 2.8.8
+
+### Patch Changes
+
+- publish
+- 9e4118b: publish
+- Updated dependencies
+- Updated dependencies [9e4118b]
+  - @veltodefi/react-app@2.8.8
+  - @veltodefi/hooks@2.8.8
+  - @veltodefi/i18n@2.8.8
+  - @veltodefi/types@2.8.8
+  - @veltodefi/ui@2.8.8
+  - @veltodefi/utils@2.8.8
+
+## 2.8.8-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.8-alpha.0
+  - @veltodefi/hooks@2.8.8-alpha.0
+  - @veltodefi/i18n@2.8.8-alpha.0
+  - @veltodefi/types@2.8.8-alpha.0
+  - @veltodefi/ui@2.8.8-alpha.0
+  - @veltodefi/utils@2.8.8-alpha.0
+
+## 2.8.7
+
+### Patch Changes
+
+- de789db: publish
+- publish
+- Updated dependencies [de789db]
+- Updated dependencies
+  - @veltodefi/react-app@2.8.7
+  - @veltodefi/hooks@2.8.7
+  - @veltodefi/i18n@2.8.7
+  - @veltodefi/types@2.8.7
+  - @veltodefi/ui@2.8.7
+  - @veltodefi/utils@2.8.7
+
+## 2.8.7-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.8.7-alpha.0
+  - @veltodefi/hooks@2.8.7-alpha.0
+  - @veltodefi/i18n@2.8.7-alpha.0
+  - @veltodefi/types@2.8.7-alpha.0
+  - @veltodefi/ui@2.8.7-alpha.0
+  - @veltodefi/utils@2.8.7-alpha.0
 
 ## 2.8.6
 
@@ -120,12 +402,12 @@
 - c598cc6: publish
 - Updated dependencies
 - Updated dependencies [c598cc6]
-  - @orderly.network/react-app@2.8.6
-  - @orderly.network/hooks@2.8.6
-  - @orderly.network/i18n@2.8.6
-  - @orderly.network/types@2.8.6
-  - @orderly.network/ui@2.8.6
-  - @orderly.network/utils@2.8.6
+  - @veltodefi/app@2.8.6
+  - @veltodefi/2.8.6
+  - @veltodefi/.8.6
+  - @veltodefi/2.8.6
+  - @veltodefi/.6
+  - @veltodefi/2.8.6
 
 ## 2.8.6-alpha.0
 
@@ -133,12 +415,12 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.6-alpha.0
-  - @orderly.network/hooks@2.8.6-alpha.0
-  - @orderly.network/i18n@2.8.6-alpha.0
-  - @orderly.network/types@2.8.6-alpha.0
-  - @orderly.network/ui@2.8.6-alpha.0
-  - @orderly.network/utils@2.8.6-alpha.0
+  - @veltodefi/app@2.8.6-alpha.0
+  - @veltodefi/2.8.6-alpha.0
+  - @veltodefi/.8.6-alpha.0
+  - @veltodefi/2.8.6-alpha.0
+  - @veltodefi/.6-alpha.0
+  - @veltodefi/2.8.6-alpha.0
 
 ## 2.8.5
 
@@ -148,12 +430,12 @@
 - publish
 - Updated dependencies [0180a59]
 - Updated dependencies
-  - @orderly.network/react-app@2.8.5
-  - @orderly.network/hooks@2.8.5
-  - @orderly.network/i18n@2.8.5
-  - @orderly.network/types@2.8.5
-  - @orderly.network/ui@2.8.5
-  - @orderly.network/utils@2.8.5
+  - @veltodefi/app@2.8.5
+  - @veltodefi/2.8.5
+  - @veltodefi/.8.5
+  - @veltodefi/2.8.5
+  - @veltodefi/.5
+  - @veltodefi/2.8.5
 
 ## 2.8.5-alpha.0
 
@@ -161,12 +443,12 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.5-alpha.0
-  - @orderly.network/hooks@2.8.5-alpha.0
-  - @orderly.network/i18n@2.8.5-alpha.0
-  - @orderly.network/types@2.8.5-alpha.0
-  - @orderly.network/ui@2.8.5-alpha.0
-  - @orderly.network/utils@2.8.5-alpha.0
+  - @veltodefi/app@2.8.5-alpha.0
+  - @veltodefi/2.8.5-alpha.0
+  - @veltodefi/.8.5-alpha.0
+  - @veltodefi/2.8.5-alpha.0
+  - @veltodefi/.5-alpha.0
+  - @veltodefi/2.8.5-alpha.0
 
 ## 2.8.4
 
@@ -176,12 +458,12 @@
 - 32b6043: publish
 - Updated dependencies
 - Updated dependencies [32b6043]
-  - @orderly.network/react-app@2.8.4
-  - @orderly.network/hooks@2.8.4
-  - @orderly.network/i18n@2.8.4
-  - @orderly.network/types@2.8.4
-  - @orderly.network/ui@2.8.4
-  - @orderly.network/utils@2.8.4
+  - @veltodefi/app@2.8.4
+  - @veltodefi/2.8.4
+  - @veltodefi/.8.4
+  - @veltodefi/2.8.4
+  - @veltodefi/.4
+  - @veltodefi/2.8.4
 
 ## 2.8.4-alpha.0
 
@@ -189,12 +471,12 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.4-alpha.0
-  - @orderly.network/hooks@2.8.4-alpha.0
-  - @orderly.network/i18n@2.8.4-alpha.0
-  - @orderly.network/types@2.8.4-alpha.0
-  - @orderly.network/ui@2.8.4-alpha.0
-  - @orderly.network/utils@2.8.4-alpha.0
+  - @veltodefi/app@2.8.4-alpha.0
+  - @veltodefi/2.8.4-alpha.0
+  - @veltodefi/.8.4-alpha.0
+  - @veltodefi/2.8.4-alpha.0
+  - @veltodefi/.4-alpha.0
+  - @veltodefi/2.8.4-alpha.0
 
 ## 2.8.3
 
@@ -204,12 +486,12 @@
 - 2d3313c: publish
 - Updated dependencies
 - Updated dependencies [2d3313c]
-  - @orderly.network/react-app@2.8.3
-  - @orderly.network/hooks@2.8.3
-  - @orderly.network/i18n@2.8.3
-  - @orderly.network/types@2.8.3
-  - @orderly.network/ui@2.8.3
-  - @orderly.network/utils@2.8.3
+  - @veltodefi/app@2.8.3
+  - @veltodefi/2.8.3
+  - @veltodefi/.8.3
+  - @veltodefi/2.8.3
+  - @veltodefi/.3
+  - @veltodefi/2.8.3
 
 ## 2.8.3-alpha.0
 
@@ -217,12 +499,12 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.3-alpha.0
-  - @orderly.network/hooks@2.8.3-alpha.0
-  - @orderly.network/i18n@2.8.3-alpha.0
-  - @orderly.network/types@2.8.3-alpha.0
-  - @orderly.network/ui@2.8.3-alpha.0
-  - @orderly.network/utils@2.8.3-alpha.0
+  - @veltodefi/app@2.8.3-alpha.0
+  - @veltodefi/2.8.3-alpha.0
+  - @veltodefi/.8.3-alpha.0
+  - @veltodefi/2.8.3-alpha.0
+  - @veltodefi/.3-alpha.0
+  - @veltodefi/2.8.3-alpha.0
 
 ## 2.8.2
 
@@ -232,12 +514,12 @@
 - 437c752: publish
 - Updated dependencies
 - Updated dependencies [437c752]
-  - @orderly.network/react-app@2.8.2
-  - @orderly.network/hooks@2.8.2
-  - @orderly.network/i18n@2.8.2
-  - @orderly.network/types@2.8.2
-  - @orderly.network/ui@2.8.2
-  - @orderly.network/utils@2.8.2
+  - @veltodefi/app@2.8.2
+  - @veltodefi/2.8.2
+  - @veltodefi/.8.2
+  - @veltodefi/2.8.2
+  - @veltodefi/.2
+  - @veltodefi/2.8.2
 
 ## 2.8.2-alpha.0
 
@@ -245,9 +527,9 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/react-app@2.8.2-alpha.0
-  - @orderly.network/hooks@2.8.2-alpha.0
-  - @orderly.network/i18n@2.8.2-alpha.0
-  - @orderly.network/types@2.8.2-alpha.0
-  - @orderly.network/ui@2.8.2-alpha.0
-  - @orderly.network/utils@2.8.2-alpha.0
+  - @veltodefi/app@2.8.2-alpha.0
+  - @veltodefi/2.8.2-alpha.0
+  - @veltodefi/.8.2-alpha.0
+  - @veltodefi/2.8.2-alpha.0
+  - @veltodefi/.2-alpha.0
+  - @veltodefi/2.8.2-alpha.0

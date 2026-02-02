@@ -1,4 +1,85 @@
-# @orderly.network/hooks
+# @veltodefi/hooks
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+- Updated dependencies
+- Updated dependencies [117b23a]
+  - @veltodefi/core@2.8.12
+  - @veltodefi/default-evm-adapter@2.8.12
+  - @veltodefi/default-solana-adapter@2.8.12
+  - @veltodefi/net@2.8.12
+  - @veltodefi/perp@4.8.12
+  - @veltodefi/types@2.8.12
+  - @veltodefi/utils@2.8.12
+  - @veltodefi/web3-provider-ethers@2.8.12
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.12-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.12-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.12-alpha.0
+  - @veltodefi/net@2.8.12-alpha.0
+  - @veltodefi/perp@4.8.12-alpha.0
+  - @veltodefi/types@2.8.12-alpha.0
+  - @veltodefi/utils@2.8.12-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.12-alpha.0
+
+## 2.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+- Updated dependencies [1ed7590]
+- Updated dependencies
+- Updated dependencies [e7fb6c1]
+  - @veltodefi/core@2.8.11
+  - @veltodefi/default-evm-adapter@2.8.11
+  - @veltodefi/default-solana-adapter@2.8.11
+  - @veltodefi/net@2.8.11
+  - @veltodefi/perp@4.8.11
+  - @veltodefi/types@2.8.11
+  - @veltodefi/utils@2.8.11
+  - @veltodefi/web3-provider-ethers@2.8.11
+
+## 2.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.11-alpha.1
+  - @veltodefi/default-evm-adapter@2.8.11-alpha.1
+  - @veltodefi/default-solana-adapter@2.8.11-alpha.1
+  - @veltodefi/net@2.8.11-alpha.1
+  - @veltodefi/perp@4.8.11-alpha.1
+  - @veltodefi/types@2.8.11-alpha.1
+  - @veltodefi/utils@2.8.11-alpha.1
+  - @veltodefi/web3-provider-ethers@2.8.11-alpha.1
+
+## 2.8.11-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.11-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.11-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.11-alpha.0
+  - @veltodefi/net@2.8.11-alpha.0
+  - @veltodefi/perp@4.8.11-alpha.0
+  - @veltodefi/types@2.8.11-alpha.0
+  - @veltodefi/utils@2.8.11-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.11-alpha.0
 
 ## 2.8.10
 
@@ -8,14 +89,14 @@
 - 0be13b3: publish
 - Updated dependencies
 - Updated dependencies [0be13b3]
-  - @orderly.network/core@2.8.10
-  - @orderly.network/default-evm-adapter@2.8.10
-  - @orderly.network/default-solana-adapter@2.8.10
-  - @orderly.network/net@2.8.10
-  - @orderly.network/perp@4.8.10
-  - @orderly.network/types@2.8.10
-  - @orderly.network/utils@2.8.10
-  - @orderly.network/web3-provider-ethers@2.8.10
+  - @veltodefi/core@2.8.10
+  - @veltodefi/default-evm-adapter@2.8.10
+  - @veltodefi/default-solana-adapter@2.8.10
+  - @veltodefi/net@2.8.10
+  - @veltodefi/perp@4.8.10
+  - @veltodefi/types@2.8.10
+  - @veltodefi/utils@2.8.10
+  - @veltodefi/web3-provider-ethers@2.8.10
 
 ## 2.8.10-alpha.0
 
@@ -23,14 +104,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.10-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.10-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.10-alpha.0
-  - @orderly.network/net@2.8.10-alpha.0
-  - @orderly.network/perp@4.8.10-alpha.0
-  - @orderly.network/types@2.8.10-alpha.0
-  - @orderly.network/utils@2.8.10-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.10-alpha.0
+  - @veltodefi/core@2.8.10-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.10-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.10-alpha.0
+  - @veltodefi/net@2.8.10-alpha.0
+  - @veltodefi/perp@4.8.10-alpha.0
+  - @veltodefi/types@2.8.10-alpha.0
+  - @veltodefi/utils@2.8.10-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.10-alpha.0
 
 ## 2.8.9
 
@@ -40,14 +121,14 @@
 - 32f2962: publish
 - Updated dependencies
 - Updated dependencies [32f2962]
-  - @orderly.network/core@2.8.9
-  - @orderly.network/default-evm-adapter@2.8.9
-  - @orderly.network/default-solana-adapter@2.8.9
-  - @orderly.network/net@2.8.9
-  - @orderly.network/perp@4.8.9
-  - @orderly.network/types@2.8.9
-  - @orderly.network/utils@2.8.9
-  - @orderly.network/web3-provider-ethers@2.8.9
+  - @veltodefi/core@2.8.9
+  - @veltodefi/default-evm-adapter@2.8.9
+  - @veltodefi/default-solana-adapter@2.8.9
+  - @veltodefi/net@2.8.9
+  - @veltodefi/perp@4.8.9
+  - @veltodefi/types@2.8.9
+  - @veltodefi/utils@2.8.9
+  - @veltodefi/web3-provider-ethers@2.8.9
 
 ## 2.8.9-alpha.0
 
@@ -55,14 +136,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.9-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.9-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.9-alpha.0
-  - @orderly.network/net@2.8.9-alpha.0
-  - @orderly.network/perp@4.8.9-alpha.0
-  - @orderly.network/types@2.8.9-alpha.0
-  - @orderly.network/utils@2.8.9-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.9-alpha.0
+  - @veltodefi/core@2.8.9-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.9-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.9-alpha.0
+  - @veltodefi/net@2.8.9-alpha.0
+  - @veltodefi/perp@4.8.9-alpha.0
+  - @veltodefi/types@2.8.9-alpha.0
+  - @veltodefi/utils@2.8.9-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.9-alpha.0
 
 ## 2.8.8
 
@@ -72,14 +153,14 @@
 - 9e4118b: publish
 - Updated dependencies
 - Updated dependencies [9e4118b]
-  - @orderly.network/core@2.8.8
-  - @orderly.network/default-evm-adapter@2.8.8
-  - @orderly.network/default-solana-adapter@2.8.8
-  - @orderly.network/net@2.8.8
-  - @orderly.network/perp@4.8.8
-  - @orderly.network/types@2.8.8
-  - @orderly.network/utils@2.8.8
-  - @orderly.network/web3-provider-ethers@2.8.8
+  - @veltodefi/core@2.8.8
+  - @veltodefi/default-evm-adapter@2.8.8
+  - @veltodefi/default-solana-adapter@2.8.8
+  - @veltodefi/net@2.8.8
+  - @veltodefi/perp@4.8.8
+  - @veltodefi/types@2.8.8
+  - @veltodefi/utils@2.8.8
+  - @veltodefi/web3-provider-ethers@2.8.8
 
 ## 2.8.8-alpha.0
 
@@ -87,14 +168,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.8-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.8-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.8-alpha.0
-  - @orderly.network/net@2.8.8-alpha.0
-  - @orderly.network/perp@4.8.8-alpha.0
-  - @orderly.network/types@2.8.8-alpha.0
-  - @orderly.network/utils@2.8.8-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.8-alpha.0
+  - @veltodefi/core@2.8.8-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.8-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.8-alpha.0
+  - @veltodefi/net@2.8.8-alpha.0
+  - @veltodefi/perp@4.8.8-alpha.0
+  - @veltodefi/types@2.8.8-alpha.0
+  - @veltodefi/utils@2.8.8-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.8-alpha.0
 
 ## 2.8.7
 
@@ -104,14 +185,14 @@
 - publish
 - Updated dependencies [de789db]
 - Updated dependencies
-  - @orderly.network/core@2.8.7
-  - @orderly.network/default-evm-adapter@2.8.7
-  - @orderly.network/default-solana-adapter@2.8.7
-  - @orderly.network/net@2.8.7
-  - @orderly.network/perp@4.8.7
-  - @orderly.network/types@2.8.7
-  - @orderly.network/utils@2.8.7
-  - @orderly.network/web3-provider-ethers@2.8.7
+  - @veltodefi/core@2.8.7
+  - @veltodefi/default-evm-adapter@2.8.7
+  - @veltodefi/default-solana-adapter@2.8.7
+  - @veltodefi/net@2.8.7
+  - @veltodefi/perp@4.8.7
+  - @veltodefi/types@2.8.7
+  - @veltodefi/utils@2.8.7
+  - @veltodefi/web3-provider-ethers@2.8.7
 
 ## 2.8.7-alpha.0
 
@@ -119,14 +200,255 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.7-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.7-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.7-alpha.0
-  - @orderly.network/net@2.8.7-alpha.0
-  - @orderly.network/perp@4.8.7-alpha.0
-  - @orderly.network/types@2.8.7-alpha.0
-  - @orderly.network/utils@2.8.7-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.7-alpha.0
+  - @veltodefi/core@2.8.7-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.7-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.7-alpha.0
+  - @veltodefi/net@2.8.7-alpha.0
+  - @veltodefi/perp@4.8.7-alpha.0
+  - @veltodefi/types@2.8.7-alpha.0
+  - @veltodefi/utils@2.8.7-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.7-alpha.0
+
+## 2.8.13
+
+### Patch Changes
+
+- 2f7399d: publish
+- publish
+- Updated dependencies [2f7399d]
+- Updated dependencies
+  - @veltodefi/core@2.8.13
+  - @veltodefi/default-evm-adapter@2.8.13
+  - @veltodefi/default-solana-adapter@2.8.13
+  - @veltodefi/net@2.8.13
+  - @veltodefi/perp@4.8.13
+  - @veltodefi/types@2.8.13
+  - @veltodefi/utils@2.8.13
+  - @veltodefi/web3-provider-ethers@2.8.13
+
+## 2.8.13-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.13-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.13-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.13-alpha.0
+  - @veltodefi/net@2.8.13-alpha.0
+  - @veltodefi/perp@4.8.13-alpha.0
+  - @veltodefi/types@2.8.13-alpha.0
+  - @veltodefi/utils@2.8.13-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.13-alpha.0
+
+## 2.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+- Updated dependencies
+- Updated dependencies [117b23a]
+  - @veltodefi/core@2.8.12
+  - @veltodefi/default-evm-adapter@2.8.12
+  - @veltodefi/default-solana-adapter@2.8.12
+  - @veltodefi/net@2.8.12
+  - @veltodefi/perp@4.8.12
+  - @veltodefi/types@2.8.12
+  - @veltodefi/utils@2.8.12
+  - @veltodefi/web3-provider-ethers@2.8.12
+
+## 2.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.12-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.12-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.12-alpha.0
+  - @veltodefi/net@2.8.12-alpha.0
+  - @veltodefi/perp@4.8.12-alpha.0
+  - @veltodefi/types@2.8.12-alpha.0
+  - @veltodefi/utils@2.8.12-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.12-alpha.0
+
+## 2.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+- Updated dependencies [1ed7590]
+- Updated dependencies
+- Updated dependencies [e7fb6c1]
+  - @veltodefi/core@2.8.11
+  - @veltodefi/default-evm-adapter@2.8.11
+  - @veltodefi/default-solana-adapter@2.8.11
+  - @veltodefi/net@2.8.11
+  - @veltodefi/perp@4.8.11
+  - @veltodefi/types@2.8.11
+  - @veltodefi/utils@2.8.11
+  - @veltodefi/web3-provider-ethers@2.8.11
+
+## 2.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.11-alpha.1
+  - @veltodefi/default-evm-adapter@2.8.11-alpha.1
+  - @veltodefi/default-solana-adapter@2.8.11-alpha.1
+  - @veltodefi/net@2.8.11-alpha.1
+  - @veltodefi/perp@4.8.11-alpha.1
+  - @veltodefi/types@2.8.11-alpha.1
+  - @veltodefi/utils@2.8.11-alpha.1
+  - @veltodefi/web3-provider-ethers@2.8.11-alpha.1
+
+## 2.8.11-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.11-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.11-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.11-alpha.0
+  - @veltodefi/net@2.8.11-alpha.0
+  - @veltodefi/perp@4.8.11-alpha.0
+  - @veltodefi/types@2.8.11-alpha.0
+  - @veltodefi/utils@2.8.11-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.11-alpha.0
+
+## 2.8.10
+
+### Patch Changes
+
+- publish
+- 0be13b3: publish
+- Updated dependencies
+- Updated dependencies [0be13b3]
+  - @veltodefi/core@2.8.10
+  - @veltodefi/default-evm-adapter@2.8.10
+  - @veltodefi/default-solana-adapter@2.8.10
+  - @veltodefi/net@2.8.10
+  - @veltodefi/perp@4.8.10
+  - @veltodefi/types@2.8.10
+  - @veltodefi/utils@2.8.10
+  - @veltodefi/web3-provider-ethers@2.8.10
+
+## 2.8.10-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.10-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.10-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.10-alpha.0
+  - @veltodefi/net@2.8.10-alpha.0
+  - @veltodefi/perp@4.8.10-alpha.0
+  - @veltodefi/types@2.8.10-alpha.0
+  - @veltodefi/utils@2.8.10-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.10-alpha.0
+
+## 2.8.9
+
+### Patch Changes
+
+- publish
+- 32f2962: publish
+- Updated dependencies
+- Updated dependencies [32f2962]
+  - @veltodefi/core@2.8.9
+  - @veltodefi/default-evm-adapter@2.8.9
+  - @veltodefi/default-solana-adapter@2.8.9
+  - @veltodefi/net@2.8.9
+  - @veltodefi/perp@4.8.9
+  - @veltodefi/types@2.8.9
+  - @veltodefi/utils@2.8.9
+  - @veltodefi/web3-provider-ethers@2.8.9
+
+## 2.8.9-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.9-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.9-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.9-alpha.0
+  - @veltodefi/net@2.8.9-alpha.0
+  - @veltodefi/perp@4.8.9-alpha.0
+  - @veltodefi/types@2.8.9-alpha.0
+  - @veltodefi/utils@2.8.9-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.9-alpha.0
+
+## 2.8.8
+
+### Patch Changes
+
+- publish
+- 9e4118b: publish
+- Updated dependencies
+- Updated dependencies [9e4118b]
+  - @veltodefi/core@2.8.8
+  - @veltodefi/default-evm-adapter@2.8.8
+  - @veltodefi/default-solana-adapter@2.8.8
+  - @veltodefi/net@2.8.8
+  - @veltodefi/perp@4.8.8
+  - @veltodefi/types@2.8.8
+  - @veltodefi/utils@2.8.8
+  - @veltodefi/web3-provider-ethers@2.8.8
+
+## 2.8.8-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.8-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.8-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.8-alpha.0
+  - @veltodefi/net@2.8.8-alpha.0
+  - @veltodefi/perp@4.8.8-alpha.0
+  - @veltodefi/types@2.8.8-alpha.0
+  - @veltodefi/utils@2.8.8-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.8-alpha.0
+
+## 2.8.7
+
+### Patch Changes
+
+- de789db: publish
+- publish
+- Updated dependencies [de789db]
+- Updated dependencies
+  - @veltodefi/core@2.8.7
+  - @veltodefi/default-evm-adapter@2.8.7
+  - @veltodefi/default-solana-adapter@2.8.7
+  - @veltodefi/net@2.8.7
+  - @veltodefi/perp@4.8.7
+  - @veltodefi/types@2.8.7
+  - @veltodefi/utils@2.8.7
+  - @veltodefi/web3-provider-ethers@2.8.7
+
+## 2.8.7-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/core@2.8.7-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.7-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.7-alpha.0
+  - @veltodefi/net@2.8.7-alpha.0
+  - @veltodefi/perp@4.8.7-alpha.0
+  - @veltodefi/types@2.8.7-alpha.0
+  - @veltodefi/utils@2.8.7-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.7-alpha.0
 
 ## 2.8.6
 
@@ -136,14 +458,14 @@
 - c598cc6: publish
 - Updated dependencies
 - Updated dependencies [c598cc6]
-  - @orderly.network/core@2.8.6
-  - @orderly.network/default-evm-adapter@2.8.6
-  - @orderly.network/default-solana-adapter@2.8.6
-  - @orderly.network/net@2.8.6
-  - @orderly.network/perp@4.8.6
-  - @orderly.network/types@2.8.6
-  - @orderly.network/utils@2.8.6
-  - @orderly.network/web3-provider-ethers@2.8.6
+  - @veltodefi/core@2.8.6
+  - @veltodefi/default-evm-adapter@2.8.6
+  - @veltodefi/default-solana-adapter@2.8.6
+  - @veltodefi/net@2.8.6
+  - @veltodefi/perp@4.8.6
+  - @veltodefi/types@2.8.6
+  - @veltodefi/utils@2.8.6
+  - @veltodefi/web3-provider-ethers@2.8.6
 
 ## 2.8.6-alpha.0
 
@@ -151,14 +473,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.6-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.6-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.6-alpha.0
-  - @orderly.network/net@2.8.6-alpha.0
-  - @orderly.network/perp@4.8.6-alpha.0
-  - @orderly.network/types@2.8.6-alpha.0
-  - @orderly.network/utils@2.8.6-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.6-alpha.0
+  - @veltodefi/core@2.8.6-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.6-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.6-alpha.0
+  - @veltodefi/net@2.8.6-alpha.0
+  - @veltodefi/perp@4.8.6-alpha.0
+  - @veltodefi/types@2.8.6-alpha.0
+  - @veltodefi/utils@2.8.6-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.6-alpha.0
 
 ## 2.8.5
 
@@ -168,14 +490,14 @@
 - publish
 - Updated dependencies [0180a59]
 - Updated dependencies
-  - @orderly.network/core@2.8.5
-  - @orderly.network/default-evm-adapter@2.8.5
-  - @orderly.network/default-solana-adapter@2.8.5
-  - @orderly.network/net@2.8.5
-  - @orderly.network/perp@4.8.5
-  - @orderly.network/types@2.8.5
-  - @orderly.network/utils@2.8.5
-  - @orderly.network/web3-provider-ethers@2.8.5
+  - @veltodefi/core@2.8.5
+  - @veltodefi/default-evm-adapter@2.8.5
+  - @veltodefi/default-solana-adapter@2.8.5
+  - @veltodefi/net@2.8.5
+  - @veltodefi/perp@4.8.5
+  - @veltodefi/types@2.8.5
+  - @veltodefi/utils@2.8.5
+  - @veltodefi/web3-provider-ethers@2.8.5
 
 ## 2.8.5-alpha.0
 
@@ -183,14 +505,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.5-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.5-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.5-alpha.0
-  - @orderly.network/net@2.8.5-alpha.0
-  - @orderly.network/perp@4.8.5-alpha.0
-  - @orderly.network/types@2.8.5-alpha.0
-  - @orderly.network/utils@2.8.5-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.5-alpha.0
+  - @veltodefi/core@2.8.5-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.5-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.5-alpha.0
+  - @veltodefi/net@2.8.5-alpha.0
+  - @veltodefi/perp@4.8.5-alpha.0
+  - @veltodefi/types@2.8.5-alpha.0
+  - @veltodefi/utils@2.8.5-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.5-alpha.0
 
 ## 2.8.4
 
@@ -200,14 +522,14 @@
 - 32b6043: publish
 - Updated dependencies
 - Updated dependencies [32b6043]
-  - @orderly.network/core@2.8.4
-  - @orderly.network/default-evm-adapter@2.8.4
-  - @orderly.network/default-solana-adapter@2.8.4
-  - @orderly.network/net@2.8.4
-  - @orderly.network/perp@4.8.4
-  - @orderly.network/types@2.8.4
-  - @orderly.network/utils@2.8.4
-  - @orderly.network/web3-provider-ethers@2.8.4
+  - @veltodefi/core@2.8.4
+  - @veltodefi/default-evm-adapter@2.8.4
+  - @veltodefi/default-solana-adapter@2.8.4
+  - @veltodefi/net@2.8.4
+  - @veltodefi/perp@4.8.4
+  - @veltodefi/types@2.8.4
+  - @veltodefi/utils@2.8.4
+  - @veltodefi/web3-provider-ethers@2.8.4
 
 ## 2.8.4-alpha.0
 
@@ -215,14 +537,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.4-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.4-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.4-alpha.0
-  - @orderly.network/net@2.8.4-alpha.0
-  - @orderly.network/perp@4.8.4-alpha.0
-  - @orderly.network/types@2.8.4-alpha.0
-  - @orderly.network/utils@2.8.4-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.4-alpha.0
+  - @veltodefi/core@2.8.4-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.4-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.4-alpha.0
+  - @veltodefi/net@2.8.4-alpha.0
+  - @veltodefi/perp@4.8.4-alpha.0
+  - @veltodefi/types@2.8.4-alpha.0
+  - @veltodefi/utils@2.8.4-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.4-alpha.0
 
 ## 2.8.3
 
@@ -232,14 +554,14 @@
 - 2d3313c: publish
 - Updated dependencies
 - Updated dependencies [2d3313c]
-  - @orderly.network/core@2.8.3
-  - @orderly.network/default-evm-adapter@2.8.3
-  - @orderly.network/default-solana-adapter@2.8.3
-  - @orderly.network/net@2.8.3
-  - @orderly.network/perp@4.8.3
-  - @orderly.network/types@2.8.3
-  - @orderly.network/utils@2.8.3
-  - @orderly.network/web3-provider-ethers@2.8.3
+  - @veltodefi/core@2.8.3
+  - @veltodefi/default-evm-adapter@2.8.3
+  - @veltodefi/default-solana-adapter@2.8.3
+  - @veltodefi/net@2.8.3
+  - @veltodefi/perp@4.8.3
+  - @veltodefi/types@2.8.3
+  - @veltodefi/utils@2.8.3
+  - @veltodefi/web3-provider-ethers@2.8.3
 
 ## 2.8.3-alpha.0
 
@@ -247,14 +569,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.3-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.3-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.3-alpha.0
-  - @orderly.network/net@2.8.3-alpha.0
-  - @orderly.network/perp@4.8.3-alpha.0
-  - @orderly.network/types@2.8.3-alpha.0
-  - @orderly.network/utils@2.8.3-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.3-alpha.0
+  - @veltodefi/core@2.8.3-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.3-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.3-alpha.0
+  - @veltodefi/net@2.8.3-alpha.0
+  - @veltodefi/perp@4.8.3-alpha.0
+  - @veltodefi/types@2.8.3-alpha.0
+  - @veltodefi/utils@2.8.3-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.3-alpha.0
 
 ## 2.8.2
 
@@ -264,14 +586,14 @@
 - 437c752: publish
 - Updated dependencies
 - Updated dependencies [437c752]
-  - @orderly.network/core@2.8.2
-  - @orderly.network/default-evm-adapter@2.8.2
-  - @orderly.network/default-solana-adapter@2.8.2
-  - @orderly.network/net@2.8.2
-  - @orderly.network/perp@4.8.2
-  - @orderly.network/types@2.8.2
-  - @orderly.network/utils@2.8.2
-  - @orderly.network/web3-provider-ethers@2.8.2
+  - @veltodefi/core@2.8.2
+  - @veltodefi/default-evm-adapter@2.8.2
+  - @veltodefi/default-solana-adapter@2.8.2
+  - @veltodefi/net@2.8.2
+  - @veltodefi/perp@4.8.2
+  - @veltodefi/types@2.8.2
+  - @veltodefi/utils@2.8.2
+  - @veltodefi/web3-provider-ethers@2.8.2
 
 ## 2.8.2-alpha.0
 
@@ -279,14 +601,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.2-alpha.0
-  - @orderly.network/net@2.8.2-alpha.0
-  - @orderly.network/perp@4.8.2-alpha.0
-  - @orderly.network/types@2.8.2-alpha.0
-  - @orderly.network/utils@2.8.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.2-alpha.0
+  - @veltodefi/core@2.8.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.2-alpha.0
+  - @veltodefi/net@2.8.2-alpha.0
+  - @veltodefi/perp@4.8.2-alpha.0
+  - @veltodefi/types@2.8.2-alpha.0
+  - @veltodefi/utils@2.8.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.2-alpha.0
 
 ## 2.8.1
 
@@ -296,14 +618,14 @@
 - 0474e5f: publish
 - Updated dependencies
 - Updated dependencies [0474e5f]
-  - @orderly.network/core@2.8.1
-  - @orderly.network/default-evm-adapter@2.8.1
-  - @orderly.network/default-solana-adapter@2.8.1
-  - @orderly.network/net@2.8.1
-  - @orderly.network/perp@4.8.1
-  - @orderly.network/types@2.8.1
-  - @orderly.network/utils@2.8.1
-  - @orderly.network/web3-provider-ethers@2.8.1
+  - @veltodefi/core@2.8.1
+  - @veltodefi/default-evm-adapter@2.8.1
+  - @veltodefi/default-solana-adapter@2.8.1
+  - @veltodefi/net@2.8.1
+  - @veltodefi/perp@4.8.1
+  - @veltodefi/types@2.8.1
+  - @veltodefi/utils@2.8.1
+  - @veltodefi/web3-provider-ethers@2.8.1
 
 ## 2.8.1-alpha.0
 
@@ -311,14 +633,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.8.1-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.1-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.1-alpha.0
-  - @orderly.network/net@2.8.1-alpha.0
-  - @orderly.network/perp@4.8.1-alpha.0
-  - @orderly.network/types@2.8.1-alpha.0
-  - @orderly.network/utils@2.8.1-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.1-alpha.0
+  - @veltodefi/core@2.8.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.1-alpha.0
+  - @veltodefi/net@2.8.1-alpha.0
+  - @veltodefi/perp@4.8.1-alpha.0
+  - @veltodefi/types@2.8.1-alpha.0
+  - @veltodefi/utils@2.8.1-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.1-alpha.0
 
 ## 2.8.0
 
@@ -331,14 +653,14 @@
 
 - Updated dependencies [b5bd38d]
 - Updated dependencies
-  - @orderly.network/core@2.8.0
-  - @orderly.network/default-evm-adapter@2.8.0
-  - @orderly.network/default-solana-adapter@2.8.0
-  - @orderly.network/net@2.8.0
-  - @orderly.network/perp@4.8.0
-  - @orderly.network/types@2.8.0
-  - @orderly.network/utils@2.8.0
-  - @orderly.network/web3-provider-ethers@2.8.0
+  - @veltodefi/core@2.8.0
+  - @veltodefi/default-evm-adapter@2.8.0
+  - @veltodefi/default-solana-adapter@2.8.0
+  - @veltodefi/net@2.8.0
+  - @veltodefi/perp@4.8.0
+  - @veltodefi/types@2.8.0
+  - @veltodefi/utils@2.8.0
+  - @veltodefi/web3-provider-ethers@2.8.0
 
 ## 2.8.0-alpha.0
 
@@ -349,14 +671,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.8.0-alpha.0
-  - @orderly.network/default-evm-adapter@2.8.0-alpha.0
-  - @orderly.network/default-solana-adapter@2.8.0-alpha.0
-  - @orderly.network/net@2.8.0-alpha.0
-  - @orderly.network/perp@4.8.0-alpha.0
-  - @orderly.network/types@2.8.0-alpha.0
-  - @orderly.network/utils@2.8.0-alpha.0
-  - @orderly.network/web3-provider-ethers@2.8.0-alpha.0
+  - @veltodefi/core@2.8.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.0-alpha.0
+  - @veltodefi/net@2.8.0-alpha.0
+  - @veltodefi/perp@4.8.0-alpha.0
+  - @veltodefi/types@2.8.0-alpha.0
+  - @veltodefi/utils@2.8.0-alpha.0
+  - @veltodefi/web3-provider-ethers@2.8.0-alpha.0
 
 ## 2.7.4
 
@@ -368,14 +690,14 @@
 - Updated dependencies [a2b2381]
 - Updated dependencies
 - Updated dependencies [a5e6829]
-  - @orderly.network/core@2.7.4
-  - @orderly.network/default-evm-adapter@2.7.4
-  - @orderly.network/default-solana-adapter@2.7.4
-  - @orderly.network/net@2.7.4
-  - @orderly.network/perp@4.7.4
-  - @orderly.network/types@2.7.4
-  - @orderly.network/utils@2.7.4
-  - @orderly.network/web3-provider-ethers@2.7.4
+  - @veltodefi/core@2.7.4
+  - @veltodefi/default-evm-adapter@2.7.4
+  - @veltodefi/default-solana-adapter@2.7.4
+  - @veltodefi/net@2.7.4
+  - @veltodefi/perp@4.7.4
+  - @veltodefi/types@2.7.4
+  - @veltodefi/utils@2.7.4
+  - @veltodefi/web3-provider-ethers@2.7.4
 
 ## 2.7.4-alpha.1
 
@@ -383,14 +705,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.7.4-alpha.1
-  - @orderly.network/default-evm-adapter@2.7.4-alpha.1
-  - @orderly.network/default-solana-adapter@2.7.4-alpha.1
-  - @orderly.network/net@2.7.4-alpha.1
-  - @orderly.network/perp@4.7.4-alpha.1
-  - @orderly.network/types@2.7.4-alpha.1
-  - @orderly.network/utils@2.7.4-alpha.1
-  - @orderly.network/web3-provider-ethers@2.7.4-alpha.1
+  - @veltodefi/core@2.7.4-alpha.1
+  - @veltodefi/default-evm-adapter@2.7.4-alpha.1
+  - @veltodefi/default-solana-adapter@2.7.4-alpha.1
+  - @veltodefi/net@2.7.4-alpha.1
+  - @veltodefi/perp@4.7.4-alpha.1
+  - @veltodefi/types@2.7.4-alpha.1
+  - @veltodefi/utils@2.7.4-alpha.1
+  - @veltodefi/web3-provider-ethers@2.7.4-alpha.1
 
 ## 2.7.4-alpha.0
 
@@ -398,14 +720,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.7.4-alpha.0
-  - @orderly.network/default-evm-adapter@2.7.4-alpha.0
-  - @orderly.network/default-solana-adapter@2.7.4-alpha.0
-  - @orderly.network/net@2.7.4-alpha.0
-  - @orderly.network/perp@4.7.4-alpha.0
-  - @orderly.network/types@2.7.4-alpha.0
-  - @orderly.network/utils@2.7.4-alpha.0
-  - @orderly.network/web3-provider-ethers@2.7.4-alpha.0
+  - @veltodefi/core@2.7.4-alpha.0
+  - @veltodefi/default-evm-adapter@2.7.4-alpha.0
+  - @veltodefi/default-solana-adapter@2.7.4-alpha.0
+  - @veltodefi/net@2.7.4-alpha.0
+  - @veltodefi/perp@4.7.4-alpha.0
+  - @veltodefi/types@2.7.4-alpha.0
+  - @veltodefi/utils@2.7.4-alpha.0
+  - @veltodefi/web3-provider-ethers@2.7.4-alpha.0
 
 ## 2.7.3
 
@@ -415,14 +737,14 @@
 - a8254c1: publish
 - Updated dependencies
 - Updated dependencies [a8254c1]
-  - @orderly.network/core@2.7.3
-  - @orderly.network/default-evm-adapter@2.7.3
-  - @orderly.network/default-solana-adapter@2.7.3
-  - @orderly.network/net@2.7.3
-  - @orderly.network/perp@4.7.3
-  - @orderly.network/types@2.7.3
-  - @orderly.network/utils@2.7.3
-  - @orderly.network/web3-provider-ethers@2.7.3
+  - @veltodefi/core@2.7.3
+  - @veltodefi/default-evm-adapter@2.7.3
+  - @veltodefi/default-solana-adapter@2.7.3
+  - @veltodefi/net@2.7.3
+  - @veltodefi/perp@4.7.3
+  - @veltodefi/types@2.7.3
+  - @veltodefi/utils@2.7.3
+  - @veltodefi/web3-provider-ethers@2.7.3
 
 ## 2.7.3-alpha.0
 
@@ -430,14 +752,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.7.3-alpha.0
-  - @orderly.network/default-evm-adapter@2.7.3-alpha.0
-  - @orderly.network/default-solana-adapter@2.7.3-alpha.0
-  - @orderly.network/net@2.7.3-alpha.0
-  - @orderly.network/perp@4.7.3-alpha.0
-  - @orderly.network/types@2.7.3-alpha.0
-  - @orderly.network/utils@2.7.3-alpha.0
-  - @orderly.network/web3-provider-ethers@2.7.3-alpha.0
+  - @veltodefi/core@2.7.3-alpha.0
+  - @veltodefi/default-evm-adapter@2.7.3-alpha.0
+  - @veltodefi/default-solana-adapter@2.7.3-alpha.0
+  - @veltodefi/net@2.7.3-alpha.0
+  - @veltodefi/perp@4.7.3-alpha.0
+  - @veltodefi/types@2.7.3-alpha.0
+  - @veltodefi/utils@2.7.3-alpha.0
+  - @veltodefi/web3-provider-ethers@2.7.3-alpha.0
 
 ## 2.7.2
 
@@ -447,14 +769,14 @@
 - publish
 - Updated dependencies [360c563]
 - Updated dependencies
-  - @orderly.network/core@2.7.2
-  - @orderly.network/default-evm-adapter@2.7.2
-  - @orderly.network/default-solana-adapter@2.7.2
-  - @orderly.network/net@2.7.2
-  - @orderly.network/perp@4.7.2
-  - @orderly.network/types@2.7.2
-  - @orderly.network/utils@2.7.2
-  - @orderly.network/web3-provider-ethers@2.7.2
+  - @veltodefi/core@2.7.2
+  - @veltodefi/default-evm-adapter@2.7.2
+  - @veltodefi/default-solana-adapter@2.7.2
+  - @veltodefi/net@2.7.2
+  - @veltodefi/perp@4.7.2
+  - @veltodefi/types@2.7.2
+  - @veltodefi/utils@2.7.2
+  - @veltodefi/web3-provider-ethers@2.7.2
 
 ## 2.7.2-alpha.0
 
@@ -462,14 +784,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.7.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.7.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.7.2-alpha.0
-  - @orderly.network/net@2.7.2-alpha.0
-  - @orderly.network/perp@4.7.2-alpha.0
-  - @orderly.network/types@2.7.2-alpha.0
-  - @orderly.network/utils@2.7.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.7.2-alpha.0
+  - @veltodefi/core@2.7.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.7.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.7.2-alpha.0
+  - @veltodefi/net@2.7.2-alpha.0
+  - @veltodefi/perp@4.7.2-alpha.0
+  - @veltodefi/types@2.7.2-alpha.0
+  - @veltodefi/utils@2.7.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.7.2-alpha.0
 
 ## 2.7.1
 
@@ -479,14 +801,14 @@
 - bb587ea: publish
 - Updated dependencies
 - Updated dependencies [bb587ea]
-  - @orderly.network/core@2.7.1
-  - @orderly.network/default-evm-adapter@2.7.1
-  - @orderly.network/default-solana-adapter@2.7.1
-  - @orderly.network/net@2.7.1
-  - @orderly.network/perp@4.7.1
-  - @orderly.network/types@2.7.1
-  - @orderly.network/utils@2.7.1
-  - @orderly.network/web3-provider-ethers@2.7.1
+  - @veltodefi/core@2.7.1
+  - @veltodefi/default-evm-adapter@2.7.1
+  - @veltodefi/default-solana-adapter@2.7.1
+  - @veltodefi/net@2.7.1
+  - @veltodefi/perp@4.7.1
+  - @veltodefi/types@2.7.1
+  - @veltodefi/utils@2.7.1
+  - @veltodefi/web3-provider-ethers@2.7.1
 
 ## 2.7.1-alpha.0
 
@@ -494,14 +816,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.7.1-alpha.0
-  - @orderly.network/default-evm-adapter@2.7.1-alpha.0
-  - @orderly.network/default-solana-adapter@2.7.1-alpha.0
-  - @orderly.network/net@2.7.1-alpha.0
-  - @orderly.network/perp@4.7.1-alpha.0
-  - @orderly.network/types@2.7.1-alpha.0
-  - @orderly.network/utils@2.7.1-alpha.0
-  - @orderly.network/web3-provider-ethers@2.7.1-alpha.0
+  - @veltodefi/core@2.7.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.7.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.7.1-alpha.0
+  - @veltodefi/net@2.7.1-alpha.0
+  - @veltodefi/perp@4.7.1-alpha.0
+  - @veltodefi/types@2.7.1-alpha.0
+  - @veltodefi/utils@2.7.1-alpha.0
+  - @veltodefi/web3-provider-ethers@2.7.1-alpha.0
 
 ## 2.7.0
 
@@ -514,14 +836,14 @@
 
 - Updated dependencies
 - Updated dependencies [9b0dc27]
-  - @orderly.network/core@2.7.0
-  - @orderly.network/default-evm-adapter@2.7.0
-  - @orderly.network/default-solana-adapter@2.7.0
-  - @orderly.network/net@2.7.0
-  - @orderly.network/perp@4.7.0
-  - @orderly.network/types@2.7.0
-  - @orderly.network/utils@2.7.0
-  - @orderly.network/web3-provider-ethers@2.7.0
+  - @veltodefi/core@2.7.0
+  - @veltodefi/default-evm-adapter@2.7.0
+  - @veltodefi/default-solana-adapter@2.7.0
+  - @veltodefi/net@2.7.0
+  - @veltodefi/perp@4.7.0
+  - @veltodefi/types@2.7.0
+  - @veltodefi/utils@2.7.0
+  - @veltodefi/web3-provider-ethers@2.7.0
 
 ## 2.7.0-alpha.0
 
@@ -532,14 +854,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.7.0-alpha.0
-  - @orderly.network/default-evm-adapter@2.7.0-alpha.0
-  - @orderly.network/default-solana-adapter@2.7.0-alpha.0
-  - @orderly.network/net@2.7.0-alpha.0
-  - @orderly.network/perp@4.7.0-alpha.0
-  - @orderly.network/types@2.7.0-alpha.0
-  - @orderly.network/utils@2.7.0-alpha.0
-  - @orderly.network/web3-provider-ethers@2.7.0-alpha.0
+  - @veltodefi/core@2.7.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.7.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.7.0-alpha.0
+  - @veltodefi/net@2.7.0-alpha.0
+  - @veltodefi/perp@4.7.0-alpha.0
+  - @veltodefi/types@2.7.0-alpha.0
+  - @veltodefi/utils@2.7.0-alpha.0
+  - @veltodefi/web3-provider-ethers@2.7.0-alpha.0
 
 ## 2.6.3
 
@@ -549,14 +871,14 @@
 - publish
 - Updated dependencies [05c00a2]
 - Updated dependencies
-  - @orderly.network/core@2.6.3
-  - @orderly.network/default-evm-adapter@2.6.3
-  - @orderly.network/default-solana-adapter@2.6.3
-  - @orderly.network/net@2.6.3
-  - @orderly.network/perp@4.6.3
-  - @orderly.network/types@2.6.3
-  - @orderly.network/utils@2.6.3
-  - @orderly.network/web3-provider-ethers@2.6.3
+  - @veltodefi/core@2.6.3
+  - @veltodefi/default-evm-adapter@2.6.3
+  - @veltodefi/default-solana-adapter@2.6.3
+  - @veltodefi/net@2.6.3
+  - @veltodefi/perp@4.6.3
+  - @veltodefi/types@2.6.3
+  - @veltodefi/utils@2.6.3
+  - @veltodefi/web3-provider-ethers@2.6.3
 
 ## 2.6.3-alpha.0
 
@@ -564,14 +886,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.6.3-alpha.0
-  - @orderly.network/default-evm-adapter@2.6.3-alpha.0
-  - @orderly.network/default-solana-adapter@2.6.3-alpha.0
-  - @orderly.network/net@2.6.3-alpha.0
-  - @orderly.network/perp@4.6.3-alpha.0
-  - @orderly.network/types@2.6.3-alpha.0
-  - @orderly.network/utils@2.6.3-alpha.0
-  - @orderly.network/web3-provider-ethers@2.6.3-alpha.0
+  - @veltodefi/core@2.6.3-alpha.0
+  - @veltodefi/default-evm-adapter@2.6.3-alpha.0
+  - @veltodefi/default-solana-adapter@2.6.3-alpha.0
+  - @veltodefi/net@2.6.3-alpha.0
+  - @veltodefi/perp@4.6.3-alpha.0
+  - @veltodefi/types@2.6.3-alpha.0
+  - @veltodefi/utils@2.6.3-alpha.0
+  - @veltodefi/web3-provider-ethers@2.6.3-alpha.0
 
 ## 2.6.2
 
@@ -593,14 +915,14 @@
 - Updated dependencies [45b6806]
 - Updated dependencies [2f90f1d]
 - Updated dependencies [12d3b9f]
-  - @orderly.network/core@2.6.2
-  - @orderly.network/default-evm-adapter@2.6.2
-  - @orderly.network/default-solana-adapter@2.6.2
-  - @orderly.network/net@2.6.2
-  - @orderly.network/perp@4.6.2
-  - @orderly.network/types@2.6.2
-  - @orderly.network/utils@2.6.2
-  - @orderly.network/web3-provider-ethers@2.6.2
+  - @veltodefi/core@2.6.2
+  - @veltodefi/default-evm-adapter@2.6.2
+  - @veltodefi/default-solana-adapter@2.6.2
+  - @veltodefi/net@2.6.2
+  - @veltodefi/perp@4.6.2
+  - @veltodefi/types@2.6.2
+  - @veltodefi/utils@2.6.2
+  - @veltodefi/web3-provider-ethers@2.6.2
 
 ## 2.6.2-alpha.0
 
@@ -608,14 +930,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.6.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.6.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.6.2-alpha.0
-  - @orderly.network/net@2.6.2-alpha.0
-  - @orderly.network/perp@4.6.2-alpha.0
-  - @orderly.network/types@2.6.2-alpha.0
-  - @orderly.network/utils@2.6.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.6.2-alpha.0
+  - @veltodefi/core@2.6.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.6.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.6.2-alpha.0
+  - @veltodefi/net@2.6.2-alpha.0
+  - @veltodefi/perp@4.6.2-alpha.0
+  - @veltodefi/types@2.6.2-alpha.0
+  - @veltodefi/utils@2.6.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.6.2-alpha.0
 
 ## 2.6.1
 
@@ -625,14 +947,14 @@
 - publish
 - Updated dependencies [033ccf8]
 - Updated dependencies
-  - @orderly.network/core@2.6.1
-  - @orderly.network/default-evm-adapter@2.6.1
-  - @orderly.network/default-solana-adapter@2.6.1
-  - @orderly.network/net@2.6.1
-  - @orderly.network/perp@4.6.1
-  - @orderly.network/types@2.6.1
-  - @orderly.network/utils@2.6.1
-  - @orderly.network/web3-provider-ethers@2.6.1
+  - @veltodefi/core@2.6.1
+  - @veltodefi/default-evm-adapter@2.6.1
+  - @veltodefi/default-solana-adapter@2.6.1
+  - @veltodefi/net@2.6.1
+  - @veltodefi/perp@4.6.1
+  - @veltodefi/types@2.6.1
+  - @veltodefi/utils@2.6.1
+  - @veltodefi/web3-provider-ethers@2.6.1
 
 ## 2.6.1-alpha.0
 
@@ -640,14 +962,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.6.1-alpha.0
-  - @orderly.network/default-evm-adapter@2.6.1-alpha.0
-  - @orderly.network/default-solana-adapter@2.6.1-alpha.0
-  - @orderly.network/net@2.6.1-alpha.0
-  - @orderly.network/perp@4.6.1-alpha.0
-  - @orderly.network/types@2.6.1-alpha.0
-  - @orderly.network/utils@2.6.1-alpha.0
-  - @orderly.network/web3-provider-ethers@2.6.1-alpha.0
+  - @veltodefi/core@2.6.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.6.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.6.1-alpha.0
+  - @veltodefi/net@2.6.1-alpha.0
+  - @veltodefi/perp@4.6.1-alpha.0
+  - @veltodefi/types@2.6.1-alpha.0
+  - @veltodefi/utils@2.6.1-alpha.0
+  - @veltodefi/web3-provider-ethers@2.6.1-alpha.0
 
 ## 2.6.0
 
@@ -660,14 +982,14 @@
 
 - Updated dependencies
 - Updated dependencies [c4b5fbc]
-  - @orderly.network/core@2.6.0
-  - @orderly.network/default-evm-adapter@2.6.0
-  - @orderly.network/default-solana-adapter@2.6.0
-  - @orderly.network/net@2.6.0
-  - @orderly.network/perp@4.6.0
-  - @orderly.network/types@2.6.0
-  - @orderly.network/utils@2.6.0
-  - @orderly.network/web3-provider-ethers@2.6.0
+  - @veltodefi/core@2.6.0
+  - @veltodefi/default-evm-adapter@2.6.0
+  - @veltodefi/default-solana-adapter@2.6.0
+  - @veltodefi/net@2.6.0
+  - @veltodefi/perp@4.6.0
+  - @veltodefi/types@2.6.0
+  - @veltodefi/utils@2.6.0
+  - @veltodefi/web3-provider-ethers@2.6.0
 
 ## 2.6.0-alpha.0
 
@@ -678,14 +1000,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.6.0-alpha.0
-  - @orderly.network/default-evm-adapter@2.6.0-alpha.0
-  - @orderly.network/default-solana-adapter@2.6.0-alpha.0
-  - @orderly.network/net@2.6.0-alpha.0
-  - @orderly.network/perp@4.6.0-alpha.0
-  - @orderly.network/types@2.6.0-alpha.0
-  - @orderly.network/utils@2.6.0-alpha.0
-  - @orderly.network/web3-provider-ethers@2.6.0-alpha.0
+  - @veltodefi/core@2.6.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.6.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.6.0-alpha.0
+  - @veltodefi/net@2.6.0-alpha.0
+  - @veltodefi/perp@4.6.0-alpha.0
+  - @veltodefi/types@2.6.0-alpha.0
+  - @veltodefi/utils@2.6.0-alpha.0
+  - @veltodefi/web3-provider-ethers@2.6.0-alpha.0
 
 ## 2.5.3
 
@@ -697,14 +1019,14 @@
 - Updated dependencies [798c4eb]
 - Updated dependencies [64c5b75]
 - Updated dependencies
-  - @orderly.network/core@2.5.3
-  - @orderly.network/default-evm-adapter@2.5.3
-  - @orderly.network/default-solana-adapter@2.5.3
-  - @orderly.network/net@2.5.3
-  - @orderly.network/perp@4.5.3
-  - @orderly.network/types@2.5.3
-  - @orderly.network/utils@2.5.3
-  - @orderly.network/web3-provider-ethers@2.5.3
+  - @veltodefi/core@2.5.3
+  - @veltodefi/default-evm-adapter@2.5.3
+  - @veltodefi/default-solana-adapter@2.5.3
+  - @veltodefi/net@2.5.3
+  - @veltodefi/perp@4.5.3
+  - @veltodefi/types@2.5.3
+  - @veltodefi/utils@2.5.3
+  - @veltodefi/web3-provider-ethers@2.5.3
 
 ## 2.5.3-alpha.1
 
@@ -712,14 +1034,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.5.3-alpha.1
-  - @orderly.network/default-evm-adapter@2.5.3-alpha.1
-  - @orderly.network/default-solana-adapter@2.5.3-alpha.1
-  - @orderly.network/net@2.5.3-alpha.1
-  - @orderly.network/perp@4.5.3-alpha.1
-  - @orderly.network/types@2.5.3-alpha.1
-  - @orderly.network/utils@2.5.3-alpha.1
-  - @orderly.network/web3-provider-ethers@2.5.3-alpha.1
+  - @veltodefi/core@2.5.3-alpha.1
+  - @veltodefi/default-evm-adapter@2.5.3-alpha.1
+  - @veltodefi/default-solana-adapter@2.5.3-alpha.1
+  - @veltodefi/net@2.5.3-alpha.1
+  - @veltodefi/perp@4.5.3-alpha.1
+  - @veltodefi/types@2.5.3-alpha.1
+  - @veltodefi/utils@2.5.3-alpha.1
+  - @veltodefi/web3-provider-ethers@2.5.3-alpha.1
 
 ## 2.5.3-alpha.0
 
@@ -727,14 +1049,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.5.3-alpha.0
-  - @orderly.network/default-evm-adapter@2.5.3-alpha.0
-  - @orderly.network/default-solana-adapter@2.5.3-alpha.0
-  - @orderly.network/net@2.5.3-alpha.0
-  - @orderly.network/perp@4.5.3-alpha.0
-  - @orderly.network/types@2.5.3-alpha.0
-  - @orderly.network/utils@2.5.3-alpha.0
-  - @orderly.network/web3-provider-ethers@2.5.3-alpha.0
+  - @veltodefi/core@2.5.3-alpha.0
+  - @veltodefi/default-evm-adapter@2.5.3-alpha.0
+  - @veltodefi/default-solana-adapter@2.5.3-alpha.0
+  - @veltodefi/net@2.5.3-alpha.0
+  - @veltodefi/perp@4.5.3-alpha.0
+  - @veltodefi/types@2.5.3-alpha.0
+  - @veltodefi/utils@2.5.3-alpha.0
+  - @veltodefi/web3-provider-ethers@2.5.3-alpha.0
 
 ## 2.5.2
 
@@ -744,14 +1066,14 @@
 - publish
 - Updated dependencies [13daa3f]
 - Updated dependencies
-  - @orderly.network/core@2.5.2
-  - @orderly.network/default-evm-adapter@2.5.2
-  - @orderly.network/default-solana-adapter@2.5.2
-  - @orderly.network/net@2.5.2
-  - @orderly.network/perp@4.5.2
-  - @orderly.network/types@2.5.2
-  - @orderly.network/utils@2.5.2
-  - @orderly.network/web3-provider-ethers@2.5.2
+  - @veltodefi/core@2.5.2
+  - @veltodefi/default-evm-adapter@2.5.2
+  - @veltodefi/default-solana-adapter@2.5.2
+  - @veltodefi/net@2.5.2
+  - @veltodefi/perp@4.5.2
+  - @veltodefi/types@2.5.2
+  - @veltodefi/utils@2.5.2
+  - @veltodefi/web3-provider-ethers@2.5.2
 
 ## 2.5.2-alpha.0
 
@@ -759,14 +1081,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.5.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.5.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.5.2-alpha.0
-  - @orderly.network/net@2.5.2-alpha.0
-  - @orderly.network/perp@4.5.2-alpha.0
-  - @orderly.network/types@2.5.2-alpha.0
-  - @orderly.network/utils@2.5.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.5.2-alpha.0
+  - @veltodefi/core@2.5.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.5.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.5.2-alpha.0
+  - @veltodefi/net@2.5.2-alpha.0
+  - @veltodefi/perp@4.5.2-alpha.0
+  - @veltodefi/types@2.5.2-alpha.0
+  - @veltodefi/utils@2.5.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.5.2-alpha.0
 
 ## 2.5.1
 
@@ -776,14 +1098,14 @@
 - 5ad8a1b: publish
 - Updated dependencies
 - Updated dependencies [5ad8a1b]
-  - @orderly.network/core@2.5.1
-  - @orderly.network/default-evm-adapter@2.5.1
-  - @orderly.network/default-solana-adapter@2.5.1
-  - @orderly.network/net@2.5.1
-  - @orderly.network/perp@4.5.1
-  - @orderly.network/types@2.5.1
-  - @orderly.network/utils@2.5.1
-  - @orderly.network/web3-provider-ethers@2.5.1
+  - @veltodefi/core@2.5.1
+  - @veltodefi/default-evm-adapter@2.5.1
+  - @veltodefi/default-solana-adapter@2.5.1
+  - @veltodefi/net@2.5.1
+  - @veltodefi/perp@4.5.1
+  - @veltodefi/types@2.5.1
+  - @veltodefi/utils@2.5.1
+  - @veltodefi/web3-provider-ethers@2.5.1
 
 ## 2.5.1-alpha.0
 
@@ -791,14 +1113,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.5.1-alpha.0
-  - @orderly.network/default-evm-adapter@2.5.1-alpha.0
-  - @orderly.network/default-solana-adapter@2.5.1-alpha.0
-  - @orderly.network/net@2.5.1-alpha.0
-  - @orderly.network/perp@4.5.1-alpha.0
-  - @orderly.network/types@2.5.1-alpha.0
-  - @orderly.network/utils@2.5.1-alpha.0
-  - @orderly.network/web3-provider-ethers@2.5.1-alpha.0
+  - @veltodefi/core@2.5.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.5.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.5.1-alpha.0
+  - @veltodefi/net@2.5.1-alpha.0
+  - @veltodefi/perp@4.5.1-alpha.0
+  - @veltodefi/types@2.5.1-alpha.0
+  - @veltodefi/utils@2.5.1-alpha.0
+  - @veltodefi/web3-provider-ethers@2.5.1-alpha.0
 
 ## 2.5.0
 
@@ -815,14 +1137,14 @@
 - Updated dependencies [86eeea2]
 - Updated dependencies [728895d]
 - Updated dependencies
-  - @orderly.network/core@2.5.0
-  - @orderly.network/default-evm-adapter@2.5.0
-  - @orderly.network/default-solana-adapter@2.5.0
-  - @orderly.network/net@2.5.0
-  - @orderly.network/perp@4.5.0
-  - @orderly.network/types@2.5.0
-  - @orderly.network/utils@2.5.0
-  - @orderly.network/web3-provider-ethers@2.5.0
+  - @veltodefi/core@2.5.0
+  - @veltodefi/default-evm-adapter@2.5.0
+  - @veltodefi/default-solana-adapter@2.5.0
+  - @veltodefi/net@2.5.0
+  - @veltodefi/perp@4.5.0
+  - @veltodefi/types@2.5.0
+  - @veltodefi/utils@2.5.0
+  - @veltodefi/web3-provider-ethers@2.5.0
 
 ## 2.5.0-alpha.2
 
@@ -833,14 +1155,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.5.0-alpha.2
-  - @orderly.network/default-evm-adapter@2.5.0-alpha.2
-  - @orderly.network/default-solana-adapter@2.5.0-alpha.2
-  - @orderly.network/net@2.5.0-alpha.2
-  - @orderly.network/perp@4.5.0-alpha.2
-  - @orderly.network/types@2.5.0-alpha.2
-  - @orderly.network/utils@2.5.0-alpha.2
-  - @orderly.network/web3-provider-ethers@2.5.0-alpha.2
+  - @veltodefi/core@2.5.0-alpha.2
+  - @veltodefi/default-evm-adapter@2.5.0-alpha.2
+  - @veltodefi/default-solana-adapter@2.5.0-alpha.2
+  - @veltodefi/net@2.5.0-alpha.2
+  - @veltodefi/perp@4.5.0-alpha.2
+  - @veltodefi/types@2.5.0-alpha.2
+  - @veltodefi/utils@2.5.0-alpha.2
+  - @veltodefi/web3-provider-ethers@2.5.0-alpha.2
 
 ## 2.5.0-alpha.1
 
@@ -851,14 +1173,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.5.0-alpha.1
-  - @orderly.network/default-evm-adapter@2.5.0-alpha.1
-  - @orderly.network/default-solana-adapter@2.5.0-alpha.1
-  - @orderly.network/net@2.5.0-alpha.1
-  - @orderly.network/perp@4.5.0-alpha.1
-  - @orderly.network/types@2.5.0-alpha.1
-  - @orderly.network/utils@2.5.0-alpha.1
-  - @orderly.network/web3-provider-ethers@2.5.0-alpha.1
+  - @veltodefi/core@2.5.0-alpha.1
+  - @veltodefi/default-evm-adapter@2.5.0-alpha.1
+  - @veltodefi/default-solana-adapter@2.5.0-alpha.1
+  - @veltodefi/net@2.5.0-alpha.1
+  - @veltodefi/perp@4.5.0-alpha.1
+  - @veltodefi/types@2.5.0-alpha.1
+  - @veltodefi/utils@2.5.0-alpha.1
+  - @veltodefi/web3-provider-ethers@2.5.0-alpha.1
 
 ## 2.4.2-alpha.0
 
@@ -866,14 +1188,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.4.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.4.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.4.2-alpha.0
-  - @orderly.network/net@2.4.2-alpha.0
-  - @orderly.network/perp@4.4.2-alpha.0
-  - @orderly.network/types@2.4.2-alpha.0
-  - @orderly.network/utils@2.4.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.4.2-alpha.0
+  - @veltodefi/core@2.4.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.4.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.4.2-alpha.0
+  - @veltodefi/net@2.4.2-alpha.0
+  - @veltodefi/perp@4.4.2-alpha.0
+  - @veltodefi/types@2.4.2-alpha.0
+  - @veltodefi/utils@2.4.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.4.2-alpha.0
 
 ## 2.4.1
 
@@ -883,14 +1205,14 @@
 - 5a220e0: publish
 - Updated dependencies
 - Updated dependencies [5a220e0]
-  - @orderly.network/core@2.4.1
-  - @orderly.network/default-evm-adapter@2.4.1
-  - @orderly.network/default-solana-adapter@2.4.1
-  - @orderly.network/net@2.4.1
-  - @orderly.network/perp@4.4.1
-  - @orderly.network/types@2.4.1
-  - @orderly.network/utils@2.4.1
-  - @orderly.network/web3-provider-ethers@2.4.1
+  - @veltodefi/core@2.4.1
+  - @veltodefi/default-evm-adapter@2.4.1
+  - @veltodefi/default-solana-adapter@2.4.1
+  - @veltodefi/net@2.4.1
+  - @veltodefi/perp@4.4.1
+  - @veltodefi/types@2.4.1
+  - @veltodefi/utils@2.4.1
+  - @veltodefi/web3-provider-ethers@2.4.1
 
 ## 2.4.1-alpha.0
 
@@ -898,14 +1220,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.4.1-alpha.0
-  - @orderly.network/default-evm-adapter@2.4.1-alpha.0
-  - @orderly.network/default-solana-adapter@2.4.1-alpha.0
-  - @orderly.network/net@2.4.1-alpha.0
-  - @orderly.network/perp@4.4.1-alpha.0
-  - @orderly.network/types@2.4.1-alpha.0
-  - @orderly.network/utils@2.4.1-alpha.0
-  - @orderly.network/web3-provider-ethers@2.4.1-alpha.0
+  - @veltodefi/core@2.4.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.4.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.4.1-alpha.0
+  - @veltodefi/net@2.4.1-alpha.0
+  - @veltodefi/perp@4.4.1-alpha.0
+  - @veltodefi/types@2.4.1-alpha.0
+  - @veltodefi/utils@2.4.1-alpha.0
+  - @veltodefi/web3-provider-ethers@2.4.1-alpha.0
 
 ## 2.4.0
 
@@ -918,14 +1240,14 @@
 
 - Updated dependencies [decb695]
 - Updated dependencies
-  - @orderly.network/core@2.4.0
-  - @orderly.network/default-evm-adapter@2.4.0
-  - @orderly.network/default-solana-adapter@2.4.0
-  - @orderly.network/net@2.4.0
-  - @orderly.network/perp@4.4.0
-  - @orderly.network/types@2.4.0
-  - @orderly.network/utils@2.4.0
-  - @orderly.network/web3-provider-ethers@2.4.0
+  - @veltodefi/core@2.4.0
+  - @veltodefi/default-evm-adapter@2.4.0
+  - @veltodefi/default-solana-adapter@2.4.0
+  - @veltodefi/net@2.4.0
+  - @veltodefi/perp@4.4.0
+  - @veltodefi/types@2.4.0
+  - @veltodefi/utils@2.4.0
+  - @veltodefi/web3-provider-ethers@2.4.0
 
 ## 2.4.0-alpha.0
 
@@ -936,14 +1258,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.4.0-alpha.0
-  - @orderly.network/default-evm-adapter@2.4.0-alpha.0
-  - @orderly.network/default-solana-adapter@2.4.0-alpha.0
-  - @orderly.network/net@2.4.0-alpha.0
-  - @orderly.network/perp@4.4.0-alpha.0
-  - @orderly.network/types@2.4.0-alpha.0
-  - @orderly.network/utils@2.4.0-alpha.0
-  - @orderly.network/web3-provider-ethers@2.4.0-alpha.0
+  - @veltodefi/core@2.4.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.4.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.4.0-alpha.0
+  - @veltodefi/net@2.4.0-alpha.0
+  - @veltodefi/perp@4.4.0-alpha.0
+  - @veltodefi/types@2.4.0-alpha.0
+  - @veltodefi/utils@2.4.0-alpha.0
+  - @veltodefi/web3-provider-ethers@2.4.0-alpha.0
 
 ## 2.3.2
 
@@ -953,14 +1275,14 @@
 - publish
 - Updated dependencies [311e2a7]
 - Updated dependencies
-  - @orderly.network/core@2.3.2
-  - @orderly.network/default-evm-adapter@2.3.2
-  - @orderly.network/default-solana-adapter@2.3.2
-  - @orderly.network/net@2.3.2
-  - @orderly.network/perp@4.3.2
-  - @orderly.network/types@2.3.2
-  - @orderly.network/utils@2.3.2
-  - @orderly.network/web3-provider-ethers@2.3.2
+  - @veltodefi/core@2.3.2
+  - @veltodefi/default-evm-adapter@2.3.2
+  - @veltodefi/default-solana-adapter@2.3.2
+  - @veltodefi/net@2.3.2
+  - @veltodefi/perp@4.3.2
+  - @veltodefi/types@2.3.2
+  - @veltodefi/utils@2.3.2
+  - @veltodefi/web3-provider-ethers@2.3.2
 
 ## 2.3.2-alpha.0
 
@@ -968,14 +1290,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.3.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.3.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.3.2-alpha.0
-  - @orderly.network/net@2.3.2-alpha.0
-  - @orderly.network/perp@4.3.2-alpha.0
-  - @orderly.network/types@2.3.2-alpha.0
-  - @orderly.network/utils@2.3.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.3.2-alpha.0
+  - @veltodefi/core@2.3.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.3.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.3.2-alpha.0
+  - @veltodefi/net@2.3.2-alpha.0
+  - @veltodefi/perp@4.3.2-alpha.0
+  - @veltodefi/types@2.3.2-alpha.0
+  - @veltodefi/utils@2.3.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.3.2-alpha.0
 
 ## 2.3.1
 
@@ -985,14 +1307,14 @@
 - publish
 - Updated dependencies [b2ca83a]
 - Updated dependencies
-  - @orderly.network/core@2.3.1
-  - @orderly.network/default-evm-adapter@2.3.1
-  - @orderly.network/default-solana-adapter@2.3.1
-  - @orderly.network/net@2.3.1
-  - @orderly.network/perp@4.3.1
-  - @orderly.network/types@2.3.1
-  - @orderly.network/utils@2.3.1
-  - @orderly.network/web3-provider-ethers@2.3.1
+  - @veltodefi/core@2.3.1
+  - @veltodefi/default-evm-adapter@2.3.1
+  - @veltodefi/default-solana-adapter@2.3.1
+  - @veltodefi/net@2.3.1
+  - @veltodefi/perp@4.3.1
+  - @veltodefi/types@2.3.1
+  - @veltodefi/utils@2.3.1
+  - @veltodefi/web3-provider-ethers@2.3.1
 
 ## 2.3.1-alpha.0
 
@@ -1000,14 +1322,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.3.1-alpha.0
-  - @orderly.network/default-evm-adapter@2.3.1-alpha.0
-  - @orderly.network/default-solana-adapter@2.3.1-alpha.0
-  - @orderly.network/net@2.3.1-alpha.0
-  - @orderly.network/perp@4.3.1-alpha.0
-  - @orderly.network/types@2.3.1-alpha.0
-  - @orderly.network/utils@2.3.1-alpha.0
-  - @orderly.network/web3-provider-ethers@2.3.1-alpha.0
+  - @veltodefi/core@2.3.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.3.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.3.1-alpha.0
+  - @veltodefi/net@2.3.1-alpha.0
+  - @veltodefi/perp@4.3.1-alpha.0
+  - @veltodefi/types@2.3.1-alpha.0
+  - @veltodefi/utils@2.3.1-alpha.0
+  - @veltodefi/web3-provider-ethers@2.3.1-alpha.0
 
 ## 2.3.0
 
@@ -1020,14 +1342,14 @@
 
 - Updated dependencies
 - Updated dependencies [4e5f109]
-  - @orderly.network/core@2.3.0
-  - @orderly.network/default-evm-adapter@2.3.0
-  - @orderly.network/default-solana-adapter@2.3.0
-  - @orderly.network/net@2.3.0
-  - @orderly.network/perp@4.3.0
-  - @orderly.network/types@2.3.0
-  - @orderly.network/utils@2.3.0
-  - @orderly.network/web3-provider-ethers@2.3.0
+  - @veltodefi/core@2.3.0
+  - @veltodefi/default-evm-adapter@2.3.0
+  - @veltodefi/default-solana-adapter@2.3.0
+  - @veltodefi/net@2.3.0
+  - @veltodefi/perp@4.3.0
+  - @veltodefi/types@2.3.0
+  - @veltodefi/utils@2.3.0
+  - @veltodefi/web3-provider-ethers@2.3.0
 
 ## 2.3.0-alpha.0
 
@@ -1038,14 +1360,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.3.0-alpha.0
-  - @orderly.network/default-evm-adapter@2.3.0-alpha.0
-  - @orderly.network/default-solana-adapter@2.3.0-alpha.0
-  - @orderly.network/net@2.3.0-alpha.0
-  - @orderly.network/perp@4.3.0-alpha.0
-  - @orderly.network/types@2.3.0-alpha.0
-  - @orderly.network/utils@2.3.0-alpha.0
-  - @orderly.network/web3-provider-ethers@2.3.0-alpha.0
+  - @veltodefi/core@2.3.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.3.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.3.0-alpha.0
+  - @veltodefi/net@2.3.0-alpha.0
+  - @veltodefi/perp@4.3.0-alpha.0
+  - @veltodefi/types@2.3.0-alpha.0
+  - @veltodefi/utils@2.3.0-alpha.0
+  - @veltodefi/web3-provider-ethers@2.3.0-alpha.0
 
 ## 2.2.0
 
@@ -1058,14 +1380,14 @@
 
 - Updated dependencies [e1badae]
 - Updated dependencies
-  - @orderly.network/core@2.2.0
-  - @orderly.network/default-evm-adapter@2.2.0
-  - @orderly.network/default-solana-adapter@2.2.0
-  - @orderly.network/net@2.2.0
-  - @orderly.network/perp@4.2.0
-  - @orderly.network/types@2.2.0
-  - @orderly.network/utils@2.2.0
-  - @orderly.network/web3-provider-ethers@2.2.0
+  - @veltodefi/core@2.2.0
+  - @veltodefi/default-evm-adapter@2.2.0
+  - @veltodefi/default-solana-adapter@2.2.0
+  - @veltodefi/net@2.2.0
+  - @veltodefi/perp@4.2.0
+  - @veltodefi/types@2.2.0
+  - @veltodefi/utils@2.2.0
+  - @veltodefi/web3-provider-ethers@2.2.0
 
 ## 2.2.0-alpha.0
 
@@ -1076,14 +1398,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@2.2.0-alpha.0
-  - @orderly.network/default-evm-adapter@2.2.0-alpha.0
-  - @orderly.network/default-solana-adapter@2.2.0-alpha.0
-  - @orderly.network/net@2.2.0-alpha.0
-  - @orderly.network/perp@4.2.0-alpha.0
-  - @orderly.network/types@2.2.0-alpha.0
-  - @orderly.network/utils@2.2.0-alpha.0
-  - @orderly.network/web3-provider-ethers@2.2.0-alpha.0
+  - @veltodefi/core@2.2.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.2.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.2.0-alpha.0
+  - @veltodefi/net@2.2.0-alpha.0
+  - @veltodefi/perp@4.2.0-alpha.0
+  - @veltodefi/types@2.2.0-alpha.0
+  - @veltodefi/utils@2.2.0-alpha.0
+  - @veltodefi/web3-provider-ethers@2.2.0-alpha.0
 
 ## 2.1.3
 
@@ -1093,14 +1415,14 @@
 - 5ba2a31a8: publish
 - Updated dependencies
 - Updated dependencies [5ba2a31a8]
-  - @orderly.network/core@2.1.3
-  - @orderly.network/default-evm-adapter@2.1.3
-  - @orderly.network/default-solana-adapter@2.1.3
-  - @orderly.network/net@2.1.3
-  - @orderly.network/perp@4.1.3
-  - @orderly.network/types@2.1.3
-  - @orderly.network/utils@2.1.3
-  - @orderly.network/web3-provider-ethers@2.1.3
+  - @veltodefi/core@2.1.3
+  - @veltodefi/default-evm-adapter@2.1.3
+  - @veltodefi/default-solana-adapter@2.1.3
+  - @veltodefi/net@2.1.3
+  - @veltodefi/perp@4.1.3
+  - @veltodefi/types@2.1.3
+  - @veltodefi/utils@2.1.3
+  - @veltodefi/web3-provider-ethers@2.1.3
 
 ## 2.1.3-alpha.0
 
@@ -1108,14 +1430,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.1.3-alpha.0
-  - @orderly.network/default-evm-adapter@2.1.3-alpha.0
-  - @orderly.network/default-solana-adapter@2.1.3-alpha.0
-  - @orderly.network/net@2.1.3-alpha.0
-  - @orderly.network/perp@4.1.3-alpha.0
-  - @orderly.network/types@2.1.3-alpha.0
-  - @orderly.network/utils@2.1.3-alpha.0
-  - @orderly.network/web3-provider-ethers@2.1.3-alpha.0
+  - @veltodefi/core@2.1.3-alpha.0
+  - @veltodefi/default-evm-adapter@2.1.3-alpha.0
+  - @veltodefi/default-solana-adapter@2.1.3-alpha.0
+  - @veltodefi/net@2.1.3-alpha.0
+  - @veltodefi/perp@4.1.3-alpha.0
+  - @veltodefi/types@2.1.3-alpha.0
+  - @veltodefi/utils@2.1.3-alpha.0
+  - @veltodefi/web3-provider-ethers@2.1.3-alpha.0
 
 ## 2.1.2
 
@@ -1125,14 +1447,14 @@
 - 7874fa6dd: publish
 - Updated dependencies
 - Updated dependencies [7874fa6dd]
-  - @orderly.network/core@2.1.2
-  - @orderly.network/default-evm-adapter@2.1.2
-  - @orderly.network/default-solana-adapter@2.1.2
-  - @orderly.network/net@2.1.2
-  - @orderly.network/perp@4.1.2
-  - @orderly.network/types@2.1.2
-  - @orderly.network/utils@2.1.2
-  - @orderly.network/web3-provider-ethers@2.1.2
+  - @veltodefi/core@2.1.2
+  - @veltodefi/default-evm-adapter@2.1.2
+  - @veltodefi/default-solana-adapter@2.1.2
+  - @veltodefi/net@2.1.2
+  - @veltodefi/perp@4.1.2
+  - @veltodefi/types@2.1.2
+  - @veltodefi/utils@2.1.2
+  - @veltodefi/web3-provider-ethers@2.1.2
 
 ## 2.1.2-alpha.0
 
@@ -1140,14 +1462,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.1.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.1.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.1.2-alpha.0
-  - @orderly.network/net@2.1.2-alpha.0
-  - @orderly.network/perp@4.1.2-alpha.0
-  - @orderly.network/types@2.1.2-alpha.0
-  - @orderly.network/utils@2.1.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.1.2-alpha.0
+  - @veltodefi/core@2.1.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.1.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.1.2-alpha.0
+  - @veltodefi/net@2.1.2-alpha.0
+  - @veltodefi/perp@4.1.2-alpha.0
+  - @veltodefi/types@2.1.2-alpha.0
+  - @veltodefi/utils@2.1.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.1.2-alpha.0
 
 ## 2.1.1
 
@@ -1157,14 +1479,14 @@
 - 0b52044b6: publish
 - Updated dependencies
 - Updated dependencies [0b52044b6]
-  - @orderly.network/core@2.1.1
-  - @orderly.network/default-evm-adapter@2.1.1
-  - @orderly.network/default-solana-adapter@2.1.1
-  - @orderly.network/net@2.1.1
-  - @orderly.network/perp@4.1.1
-  - @orderly.network/types@2.1.1
-  - @orderly.network/utils@2.1.1
-  - @orderly.network/web3-provider-ethers@2.1.1
+  - @veltodefi/core@2.1.1
+  - @veltodefi/default-evm-adapter@2.1.1
+  - @veltodefi/default-solana-adapter@2.1.1
+  - @veltodefi/net@2.1.1
+  - @veltodefi/perp@4.1.1
+  - @veltodefi/types@2.1.1
+  - @veltodefi/utils@2.1.1
+  - @veltodefi/web3-provider-ethers@2.1.1
 
 ## 2.1.1-alpha.0
 
@@ -1172,14 +1494,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.1.1-alpha.0
-  - @orderly.network/default-evm-adapter@2.1.1-alpha.0
-  - @orderly.network/default-solana-adapter@2.1.1-alpha.0
-  - @orderly.network/net@2.1.1-alpha.0
-  - @orderly.network/perp@4.1.1-alpha.0
-  - @orderly.network/types@2.1.1-alpha.0
-  - @orderly.network/utils@2.1.1-alpha.0
-  - @orderly.network/web3-provider-ethers@2.1.1-alpha.0
+  - @veltodefi/core@2.1.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.1.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.1.1-alpha.0
+  - @veltodefi/net@2.1.1-alpha.0
+  - @veltodefi/perp@4.1.1-alpha.0
+  - @veltodefi/types@2.1.1-alpha.0
+  - @veltodefi/utils@2.1.1-alpha.0
+  - @veltodefi/web3-provider-ethers@2.1.1-alpha.0
 
 ## 2.1.0
 
@@ -1192,14 +1514,14 @@
 - ba163f4ce: publish
 - Updated dependencies [ba163f4ce]
 - Updated dependencies
-  - @orderly.network/core@2.1.0
-  - @orderly.network/default-evm-adapter@2.1.0
-  - @orderly.network/default-solana-adapter@2.1.0
-  - @orderly.network/net@2.1.0
-  - @orderly.network/perp@4.1.0
-  - @orderly.network/types@2.1.0
-  - @orderly.network/utils@2.1.0
-  - @orderly.network/web3-provider-ethers@2.1.0
+  - @veltodefi/core@2.1.0
+  - @veltodefi/default-evm-adapter@2.1.0
+  - @veltodefi/default-solana-adapter@2.1.0
+  - @veltodefi/net@2.1.0
+  - @veltodefi/perp@4.1.0
+  - @veltodefi/types@2.1.0
+  - @veltodefi/utils@2.1.0
+  - @veltodefi/web3-provider-ethers@2.1.0
 
 ## 2.0.8-alpha.0
 
@@ -1207,14 +1529,14 @@
 
 - publish
 - Updated dependencies
-  - @orderly.network/core@2.0.8-alpha.0
-  - @orderly.network/default-evm-adapter@2.0.8-alpha.0
-  - @orderly.network/default-solana-adapter@2.0.8-alpha.0
-  - @orderly.network/net@2.0.8-alpha.0
-  - @orderly.network/perp@4.0.7-alpha.0
-  - @orderly.network/types@2.0.8-alpha.0
-  - @orderly.network/utils@2.0.8-alpha.0
-  - @orderly.network/web3-provider-ethers@2.0.8-alpha.0
+  - @veltodefi/core@2.0.8-alpha.0
+  - @veltodefi/default-evm-adapter@2.0.8-alpha.0
+  - @veltodefi/default-solana-adapter@2.0.8-alpha.0
+  - @veltodefi/net@2.0.8-alpha.0
+  - @veltodefi/perp@4.0.7-alpha.0
+  - @veltodefi/types@2.0.8-alpha.0
+  - @veltodefi/utils@2.0.8-alpha.0
+  - @veltodefi/web3-provider-ethers@2.0.8-alpha.0
 
 ## 2.0.7
 
@@ -1222,14 +1544,14 @@
 
 - 423ab1d38: update
 - Updated dependencies [423ab1d38]
-  - @orderly.network/default-solana-adapter@2.0.7
-  - @orderly.network/web3-provider-ethers@2.0.7
-  - @orderly.network/default-evm-adapter@2.0.7
-  - @orderly.network/types@2.0.7
-  - @orderly.network/utils@2.0.7
-  - @orderly.network/core@2.0.7
-  - @orderly.network/perp@4.0.6
-  - @orderly.network/net@2.0.7
+  - @veltodefi/default-solana-adapter@2.0.7
+  - @veltodefi/web3-provider-ethers@2.0.7
+  - @veltodefi/default-evm-adapter@2.0.7
+  - @veltodefi/types@2.0.7
+  - @veltodefi/utils@2.0.7
+  - @veltodefi/core@2.0.7
+  - @veltodefi/perp@4.0.6
+  - @veltodefi/net@2.0.7
 
 ## 2.0.7-alpha.0
 
@@ -1237,14 +1559,14 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.7-alpha.0
-  - @orderly.network/web3-provider-ethers@2.0.7-alpha.0
-  - @orderly.network/default-evm-adapter@2.0.7-alpha.0
-  - @orderly.network/types@2.0.7-alpha.0
-  - @orderly.network/utils@2.0.7-alpha.0
-  - @orderly.network/core@2.0.7-alpha.0
-  - @orderly.network/perp@4.0.6-alpha.0
-  - @orderly.network/net@2.0.7-alpha.0
+  - @veltodefi/default-solana-adapter@2.0.7-alpha.0
+  - @veltodefi/web3-provider-ethers@2.0.7-alpha.0
+  - @veltodefi/default-evm-adapter@2.0.7-alpha.0
+  - @veltodefi/types@2.0.7-alpha.0
+  - @veltodefi/utils@2.0.7-alpha.0
+  - @veltodefi/core@2.0.7-alpha.0
+  - @veltodefi/perp@4.0.6-alpha.0
+  - @veltodefi/net@2.0.7-alpha.0
 
 ## 2.0.6
 
@@ -1252,14 +1574,14 @@
 
 - 74c2c433e: fix bugs
 - Updated dependencies [74c2c433e]
-  - @orderly.network/default-solana-adapter@2.0.6
-  - @orderly.network/core@2.0.6
-  - @orderly.network/default-evm-adapter@2.0.6
-  - @orderly.network/net@2.0.6
-  - @orderly.network/perp@4.0.5
-  - @orderly.network/types@2.0.6
-  - @orderly.network/utils@2.0.6
-  - @orderly.network/web3-provider-ethers@2.0.6
+  - @veltodefi/default-solana-adapter@2.0.6
+  - @veltodefi/core@2.0.6
+  - @veltodefi/default-evm-adapter@2.0.6
+  - @veltodefi/net@2.0.6
+  - @veltodefi/perp@4.0.5
+  - @veltodefi/types@2.0.6
+  - @veltodefi/utils@2.0.6
+  - @veltodefi/web3-provider-ethers@2.0.6
 
 ## 2.0.6-alpha.0
 
@@ -1267,14 +1589,14 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.6-alpha.0
-  - @orderly.network/core@2.0.6-alpha.0
-  - @orderly.network/default-evm-adapter@2.0.6-alpha.0
-  - @orderly.network/net@2.0.6-alpha.0
-  - @orderly.network/perp@4.0.5-alpha.0
-  - @orderly.network/types@2.0.6-alpha.0
-  - @orderly.network/utils@2.0.6-alpha.0
-  - @orderly.network/web3-provider-ethers@2.0.6-alpha.0
+  - @veltodefi/default-solana-adapter@2.0.6-alpha.0
+  - @veltodefi/core@2.0.6-alpha.0
+  - @veltodefi/default-evm-adapter@2.0.6-alpha.0
+  - @veltodefi/net@2.0.6-alpha.0
+  - @veltodefi/perp@4.0.5-alpha.0
+  - @veltodefi/types@2.0.6-alpha.0
+  - @veltodefi/utils@2.0.6-alpha.0
+  - @veltodefi/web3-provider-ethers@2.0.6-alpha.0
 
 ## 2.0.5
 
@@ -1282,14 +1604,14 @@
 
 - 7f737173b: update
 - Updated dependencies [7f737173b]
-  - @orderly.network/default-solana-adapter@2.0.5
-  - @orderly.network/web3-provider-ethers@2.0.5
-  - @orderly.network/default-evm-adapter@2.0.5
-  - @orderly.network/types@2.0.5
-  - @orderly.network/utils@2.0.5
-  - @orderly.network/core@2.0.5
-  - @orderly.network/perp@4.0.4
-  - @orderly.network/net@2.0.5
+  - @veltodefi/default-solana-adapter@2.0.5
+  - @veltodefi/web3-provider-ethers@2.0.5
+  - @veltodefi/default-evm-adapter@2.0.5
+  - @veltodefi/types@2.0.5
+  - @veltodefi/utils@2.0.5
+  - @veltodefi/core@2.0.5
+  - @veltodefi/perp@4.0.4
+  - @veltodefi/net@2.0.5
 
 ## 2.0.5-alpha.0
 
@@ -1297,14 +1619,14 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.5-alpha.0
-  - @orderly.network/web3-provider-ethers@2.0.5-alpha.0
-  - @orderly.network/default-evm-adapter@2.0.5-alpha.0
-  - @orderly.network/types@2.0.5-alpha.0
-  - @orderly.network/utils@2.0.5-alpha.0
-  - @orderly.network/core@2.0.5-alpha.0
-  - @orderly.network/perp@4.0.4-alpha.0
-  - @orderly.network/net@2.0.5-alpha.0
+  - @veltodefi/default-solana-adapter@2.0.5-alpha.0
+  - @veltodefi/web3-provider-ethers@2.0.5-alpha.0
+  - @veltodefi/default-evm-adapter@2.0.5-alpha.0
+  - @veltodefi/types@2.0.5-alpha.0
+  - @veltodefi/utils@2.0.5-alpha.0
+  - @veltodefi/core@2.0.5-alpha.0
+  - @veltodefi/perp@4.0.4-alpha.0
+  - @veltodefi/net@2.0.5-alpha.0
 
 ## 2.0.3
 
@@ -1312,14 +1634,14 @@
 
 - cca30140b: fix ledger issues
 - Updated dependencies [cca30140b]
-  - @orderly.network/default-solana-adapter@2.0.3
-  - @orderly.network/web3-provider-ethers@2.0.3
-  - @orderly.network/default-evm-adapter@2.0.3
-  - @orderly.network/types@2.0.3
-  - @orderly.network/utils@2.0.3
-  - @orderly.network/core@2.0.3
-  - @orderly.network/perp@4.0.3
-  - @orderly.network/net@2.0.3
+  - @veltodefi/default-solana-adapter@2.0.3
+  - @veltodefi/web3-provider-ethers@2.0.3
+  - @veltodefi/default-evm-adapter@2.0.3
+  - @veltodefi/types@2.0.3
+  - @veltodefi/utils@2.0.3
+  - @veltodefi/core@2.0.3
+  - @veltodefi/perp@4.0.3
+  - @veltodefi/net@2.0.3
 
 ## 2.0.3-alpha.0
 
@@ -1327,14 +1649,14 @@
 
 - fix ledger issues
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.3-alpha.0
-  - @orderly.network/web3-provider-ethers@2.0.3-alpha.0
-  - @orderly.network/default-evm-adapter@2.0.3-alpha.0
-  - @orderly.network/types@2.0.3-alpha.0
-  - @orderly.network/utils@2.0.3-alpha.0
-  - @orderly.network/core@2.0.3-alpha.0
-  - @orderly.network/perp@4.0.3-alpha.0
-  - @orderly.network/net@2.0.3-alpha.0
+  - @veltodefi/default-solana-adapter@2.0.3-alpha.0
+  - @veltodefi/web3-provider-ethers@2.0.3-alpha.0
+  - @veltodefi/default-evm-adapter@2.0.3-alpha.0
+  - @veltodefi/types@2.0.3-alpha.0
+  - @veltodefi/utils@2.0.3-alpha.0
+  - @veltodefi/core@2.0.3-alpha.0
+  - @veltodefi/perp@4.0.3-alpha.0
+  - @veltodefi/net@2.0.3-alpha.0
 
 ## 2.0.2
 
@@ -1342,14 +1664,14 @@
 
 - a3becba1a: update
 - Updated dependencies [a3becba1a]
-  - @orderly.network/types@2.0.2
-  - @orderly.network/core@2.0.2
-  - @orderly.network/default-evm-adapter@2.0.2
-  - @orderly.network/default-solana-adapter@2.0.2
-  - @orderly.network/net@2.0.2
-  - @orderly.network/perp@4.0.2
-  - @orderly.network/utils@2.0.2
-  - @orderly.network/web3-provider-ethers@2.0.2
+  - @veltodefi/types@2.0.2
+  - @veltodefi/core@2.0.2
+  - @veltodefi/default-evm-adapter@2.0.2
+  - @veltodefi/default-solana-adapter@2.0.2
+  - @veltodefi/net@2.0.2
+  - @veltodefi/perp@4.0.2
+  - @veltodefi/utils@2.0.2
+  - @veltodefi/web3-provider-ethers@2.0.2
 
 ## 2.0.2-alpha.0
 
@@ -1357,14 +1679,14 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@2.0.2-alpha.0
-  - @orderly.network/core@2.0.2-alpha.0
-  - @orderly.network/default-evm-adapter@2.0.2-alpha.0
-  - @orderly.network/default-solana-adapter@2.0.2-alpha.0
-  - @orderly.network/net@2.0.2-alpha.0
-  - @orderly.network/perp@4.0.2-alpha.0
-  - @orderly.network/utils@2.0.2-alpha.0
-  - @orderly.network/web3-provider-ethers@2.0.2-alpha.0
+  - @veltodefi/types@2.0.2-alpha.0
+  - @veltodefi/core@2.0.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.0.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.0.2-alpha.0
+  - @veltodefi/net@2.0.2-alpha.0
+  - @veltodefi/perp@4.0.2-alpha.0
+  - @veltodefi/utils@2.0.2-alpha.0
+  - @veltodefi/web3-provider-ethers@2.0.2-alpha.0
 
 ## 2.0.1
 
@@ -1372,14 +1694,14 @@
 
 - 0fd2e6038: add some features
 - Updated dependencies [0fd2e6038]
-  - @orderly.network/default-solana-adapter@2.0.1
-  - @orderly.network/web3-provider-ethers@2.0.1
-  - @orderly.network/default-evm-adapter@2.0.1
-  - @orderly.network/types@2.0.1
-  - @orderly.network/utils@2.0.1
-  - @orderly.network/core@2.0.1
-  - @orderly.network/perp@4.0.1
-  - @orderly.network/net@2.0.1
+  - @veltodefi/default-solana-adapter@2.0.1
+  - @veltodefi/web3-provider-ethers@2.0.1
+  - @veltodefi/default-evm-adapter@2.0.1
+  - @veltodefi/types@2.0.1
+  - @veltodefi/utils@2.0.1
+  - @veltodefi/core@2.0.1
+  - @veltodefi/perp@4.0.1
+  - @veltodefi/net@2.0.1
 
 ## 2.0.1-alpha.8
 
@@ -1387,14 +1709,14 @@
 
 - add some features
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.1-alpha.8
-  - @orderly.network/web3-provider-ethers@2.0.1-alpha.8
-  - @orderly.network/default-evm-adapter@2.0.1-alpha.8
-  - @orderly.network/types@2.0.1-alpha.8
-  - @orderly.network/utils@2.0.1-alpha.8
-  - @orderly.network/core@2.0.1-alpha.8
-  - @orderly.network/perp@4.0.1-alpha.0
-  - @orderly.network/net@2.0.1-alpha.8
+  - @veltodefi/default-solana-adapter@2.0.1-alpha.8
+  - @veltodefi/web3-provider-ethers@2.0.1-alpha.8
+  - @veltodefi/default-evm-adapter@2.0.1-alpha.8
+  - @veltodefi/types@2.0.1-alpha.8
+  - @veltodefi/utils@2.0.1-alpha.8
+  - @veltodefi/core@2.0.1-alpha.8
+  - @veltodefi/perp@4.0.1-alpha.0
+  - @veltodefi/net@2.0.1-alpha.8
 
 ## 2.0.0
 
@@ -1409,14 +1731,14 @@
 - Updated dependencies [113773f]
 - Updated dependencies [b033ce0]
 - Updated dependencies [b15becb]
-  - @orderly.network/default-solana-adapter@2.0.0
-  - @orderly.network/web3-provider-ethers@2.0.0
-  - @orderly.network/default-evm-adapter@2.0.0
-  - @orderly.network/types@2.0.0
-  - @orderly.network/utils@2.0.0
-  - @orderly.network/core@2.0.0
-  - @orderly.network/perp@4.0.0
-  - @orderly.network/net@2.0.0
+  - @veltodefi/default-solana-adapter@2.0.0
+  - @veltodefi/web3-provider-ethers@2.0.0
+  - @veltodefi/default-evm-adapter@2.0.0
+  - @veltodefi/types@2.0.0
+  - @veltodefi/utils@2.0.0
+  - @veltodefi/core@2.0.0
+  - @veltodefi/perp@4.0.0
+  - @veltodefi/net@2.0.0
 
 ## 2.0.0-alpha.2
 
@@ -1424,14 +1746,14 @@
 
 - test
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.0-alpha.2
-  - @orderly.network/web3-provider-ethers@2.0.0-alpha.2
-  - @orderly.network/default-evm-adapter@2.0.0-alpha.2
-  - @orderly.network/types@2.0.0-alpha.2
-  - @orderly.network/utils@2.0.0-alpha.2
-  - @orderly.network/core@2.0.0-alpha.2
-  - @orderly.network/perp@4.0.0-alpha.2
-  - @orderly.network/net@2.0.0-alpha.2
+  - @veltodefi/default-solana-adapter@2.0.0-alpha.2
+  - @veltodefi/web3-provider-ethers@2.0.0-alpha.2
+  - @veltodefi/default-evm-adapter@2.0.0-alpha.2
+  - @veltodefi/types@2.0.0-alpha.2
+  - @veltodefi/utils@2.0.0-alpha.2
+  - @veltodefi/core@2.0.0-alpha.2
+  - @veltodefi/perp@4.0.0-alpha.2
+  - @veltodefi/net@2.0.0-alpha.2
 
 ## 2.0.0-alpha.1
 
@@ -1439,14 +1761,14 @@
 
 - test
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.0-alpha.1
-  - @orderly.network/web3-provider-ethers@2.0.0-alpha.1
-  - @orderly.network/default-evm-adapter@2.0.0-alpha.1
-  - @orderly.network/types@2.0.0-alpha.1
-  - @orderly.network/utils@2.0.0-alpha.1
-  - @orderly.network/core@2.0.0-alpha.1
-  - @orderly.network/perp@4.0.0-alpha.1
-  - @orderly.network/net@2.0.0-alpha.1
+  - @veltodefi/default-solana-adapter@2.0.0-alpha.1
+  - @veltodefi/web3-provider-ethers@2.0.0-alpha.1
+  - @veltodefi/default-evm-adapter@2.0.0-alpha.1
+  - @veltodefi/types@2.0.0-alpha.1
+  - @veltodefi/utils@2.0.0-alpha.1
+  - @veltodefi/core@2.0.0-alpha.1
+  - @veltodefi/perp@4.0.0-alpha.1
+  - @veltodefi/net@2.0.0-alpha.1
 
 ## 2.0.0-alpha.0
 
@@ -1457,14 +1779,14 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/default-solana-adapter@2.0.0-alpha.0
-  - @orderly.network/web3-provider-ethers@2.0.0-alpha.0
-  - @orderly.network/default-evm-adapter@2.0.0-alpha.0
-  - @orderly.network/types@2.0.0-alpha.0
-  - @orderly.network/utils@2.0.0-alpha.0
-  - @orderly.network/core@2.0.0-alpha.0
-  - @orderly.network/perp@4.0.0-alpha.0
-  - @orderly.network/net@2.0.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.0.0-alpha.0
+  - @veltodefi/web3-provider-ethers@2.0.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.0.0-alpha.0
+  - @veltodefi/types@2.0.0-alpha.0
+  - @veltodefi/utils@2.0.0-alpha.0
+  - @veltodefi/core@2.0.0-alpha.0
+  - @veltodefi/perp@4.0.0-alpha.0
+  - @veltodefi/net@2.0.0-alpha.0
 
 ## 1.5.12
 
@@ -1472,11 +1794,11 @@
 
 - 11399d1f3: add element id;
 - Updated dependencies [11399d1f3]
-  - @orderly.network/core@1.5.12
-  - @orderly.network/net@1.5.12
-  - @orderly.network/perp@3.3.12
-  - @orderly.network/types@1.5.12
-  - @orderly.network/utils@1.5.12
+  - @veltodefi/core@1.5.12
+  - @veltodefi/net@1.5.12
+  - @veltodefi/perp@3.3.12
+  - @veltodefi/types@1.5.12
+  - @veltodefi/utils@1.5.12
 
 ## 1.5.12-alpha.0
 
@@ -1484,11 +1806,11 @@
 
 - add element id;
 - Updated dependencies
-  - @orderly.network/core@1.5.12-alpha.0
-  - @orderly.network/net@1.5.12-alpha.0
-  - @orderly.network/perp@3.3.12-alpha.0
-  - @orderly.network/types@1.5.12-alpha.0
-  - @orderly.network/utils@1.5.12-alpha.0
+  - @veltodefi/core@1.5.12-alpha.0
+  - @veltodefi/net@1.5.12-alpha.0
+  - @veltodefi/perp@3.3.12-alpha.0
+  - @veltodefi/types@1.5.12-alpha.0
+  - @veltodefi/utils@1.5.12-alpha.0
 
 ## 1.5.11
 
@@ -1496,11 +1818,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/core@1.5.11
-  - @orderly.network/net@1.5.11
-  - @orderly.network/perp@3.3.11
-  - @orderly.network/types@1.5.11
-  - @orderly.network/utils@1.5.11
+  - @veltodefi/core@1.5.11
+  - @veltodefi/net@1.5.11
+  - @veltodefi/perp@3.3.11
+  - @veltodefi/types@1.5.11
+  - @veltodefi/utils@1.5.11
 
 ## 1.5.10
 
@@ -1508,11 +1830,11 @@
 
 - e5a88d5f3: add system maintenance component;
 - Updated dependencies [e5a88d5f3]
-  - @orderly.network/types@1.5.10
-  - @orderly.network/core@1.5.10
-  - @orderly.network/net@1.5.10
-  - @orderly.network/perp@3.3.10
-  - @orderly.network/utils@1.5.10
+  - @veltodefi/types@1.5.10
+  - @veltodefi/core@1.5.10
+  - @veltodefi/net@1.5.10
+  - @veltodefi/perp@3.3.10
+  - @veltodefi/utils@1.5.10
 
 ## 1.5.10-alpha.0
 
@@ -1520,11 +1842,11 @@
 
 - add system maintenance component;
 - Updated dependencies
-  - @orderly.network/types@1.5.10-alpha.0
-  - @orderly.network/core@1.5.10-alpha.0
-  - @orderly.network/net@1.5.10-alpha.0
-  - @orderly.network/perp@3.3.10-alpha.0
-  - @orderly.network/utils@1.5.10-alpha.0
+  - @veltodefi/types@1.5.10-alpha.0
+  - @veltodefi/core@1.5.10-alpha.0
+  - @veltodefi/net@1.5.10-alpha.0
+  - @veltodefi/perp@3.3.10-alpha.0
+  - @veltodefi/utils@1.5.10-alpha.0
 
 ## 1.5.9
 
@@ -1532,11 +1854,11 @@
 
 - 187dd07b: fix bugs;
 - Updated dependencies [187dd07b]
-  - @orderly.network/core@1.5.9
-  - @orderly.network/net@1.5.9
-  - @orderly.network/perp@3.3.9
-  - @orderly.network/types@1.5.9
-  - @orderly.network/utils@1.5.9
+  - @veltodefi/core@1.5.9
+  - @veltodefi/net@1.5.9
+  - @veltodefi/perp@3.3.9
+  - @veltodefi/types@1.5.9
+  - @veltodefi/utils@1.5.9
 
 ## 1.5.9-alpha.0
 
@@ -1544,11 +1866,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/core@1.5.9-alpha.0
-  - @orderly.network/net@1.5.9-alpha.0
-  - @orderly.network/perp@3.3.9-alpha.0
-  - @orderly.network/types@1.5.9-alpha.0
-  - @orderly.network/utils@1.5.9-alpha.0
+  - @veltodefi/core@1.5.9-alpha.0
+  - @veltodefi/net@1.5.9-alpha.0
+  - @veltodefi/perp@3.3.9-alpha.0
+  - @veltodefi/types@1.5.9-alpha.0
+  - @veltodefi/utils@1.5.9-alpha.0
 
 ## 1.5.8
 
@@ -1556,11 +1878,11 @@
 
 - 48517528: fix bugs;
 - Updated dependencies [48517528]
-  - @orderly.network/core@1.5.8
-  - @orderly.network/net@1.5.8
-  - @orderly.network/perp@3.3.8
-  - @orderly.network/types@1.5.8
-  - @orderly.network/utils@1.5.8
+  - @veltodefi/core@1.5.8
+  - @veltodefi/net@1.5.8
+  - @veltodefi/perp@3.3.8
+  - @veltodefi/types@1.5.8
+  - @veltodefi/utils@1.5.8
 
 ## 1.5.8-alpha.0
 
@@ -1568,11 +1890,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/core@1.5.8-alpha.0
-  - @orderly.network/net@1.5.8-alpha.0
-  - @orderly.network/perp@3.3.8-alpha.0
-  - @orderly.network/types@1.5.8-alpha.0
-  - @orderly.network/utils@1.5.8-alpha.0
+  - @veltodefi/core@1.5.8-alpha.0
+  - @veltodefi/net@1.5.8-alpha.0
+  - @veltodefi/perp@3.3.8-alpha.0
+  - @veltodefi/types@1.5.8-alpha.0
+  - @veltodefi/utils@1.5.8-alpha.0
 
 ## 1.5.7
 
@@ -1580,11 +1902,11 @@
 
 - 14b58ba3: fix bugs;
 - Updated dependencies [14b58ba3]
-  - @orderly.network/types@1.5.7
-  - @orderly.network/core@1.5.7
-  - @orderly.network/net@1.5.7
-  - @orderly.network/perp@3.3.7
-  - @orderly.network/utils@1.5.7
+  - @veltodefi/types@1.5.7
+  - @veltodefi/core@1.5.7
+  - @veltodefi/net@1.5.7
+  - @veltodefi/perp@3.3.7
+  - @veltodefi/utils@1.5.7
 
 ## 1.5.7-alpha.0
 
@@ -1592,11 +1914,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@1.5.7-alpha.0
-  - @orderly.network/core@1.5.7-alpha.0
-  - @orderly.network/net@1.5.7-alpha.0
-  - @orderly.network/perp@3.3.7-alpha.0
-  - @orderly.network/utils@1.5.7-alpha.0
+  - @veltodefi/types@1.5.7-alpha.0
+  - @veltodefi/core@1.5.7-alpha.0
+  - @veltodefi/net@1.5.7-alpha.0
+  - @veltodefi/perp@3.3.7-alpha.0
+  - @veltodefi/utils@1.5.7-alpha.0
 
 ## 1.5.6
 
@@ -1604,11 +1926,11 @@
 
 - 8a8f3bff: fix bug;
 - Updated dependencies [8a8f3bff]
-  - @orderly.network/core@1.5.6
-  - @orderly.network/net@1.5.6
-  - @orderly.network/perp@3.3.6
-  - @orderly.network/types@1.5.6
-  - @orderly.network/utils@1.5.6
+  - @veltodefi/core@1.5.6
+  - @veltodefi/net@1.5.6
+  - @veltodefi/perp@3.3.6
+  - @veltodefi/types@1.5.6
+  - @veltodefi/utils@1.5.6
 
 ## 1.5.6-alpha.0
 
@@ -1616,11 +1938,11 @@
 
 - fix bug;
 - Updated dependencies
-  - @orderly.network/core@1.5.6-alpha.0
-  - @orderly.network/net@1.5.6-alpha.0
-  - @orderly.network/perp@3.3.6-alpha.0
-  - @orderly.network/types@1.5.6-alpha.0
-  - @orderly.network/utils@1.5.6-alpha.0
+  - @veltodefi/core@1.5.6-alpha.0
+  - @veltodefi/net@1.5.6-alpha.0
+  - @veltodefi/perp@3.3.6-alpha.0
+  - @veltodefi/types@1.5.6-alpha.0
+  - @veltodefi/utils@1.5.6-alpha.0
 
 ## 1.5.5
 
@@ -1628,11 +1950,11 @@
 
 - 68236fb3: fix bugs;
 - Updated dependencies [68236fb3]
-  - @orderly.network/types@1.5.5
-  - @orderly.network/core@1.5.5
-  - @orderly.network/net@1.5.5
-  - @orderly.network/perp@3.3.5
-  - @orderly.network/utils@1.5.5
+  - @veltodefi/types@1.5.5
+  - @veltodefi/core@1.5.5
+  - @veltodefi/net@1.5.5
+  - @veltodefi/perp@3.3.5
+  - @veltodefi/utils@1.5.5
 
 ## 1.5.5-alpha.0
 
@@ -1640,11 +1962,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@1.5.5-alpha.0
-  - @orderly.network/core@1.5.5-alpha.0
-  - @orderly.network/net@1.5.5-alpha.0
-  - @orderly.network/perp@3.3.5-alpha.0
-  - @orderly.network/utils@1.5.5-alpha.0
+  - @veltodefi/types@1.5.5-alpha.0
+  - @veltodefi/core@1.5.5-alpha.0
+  - @veltodefi/net@1.5.5-alpha.0
+  - @veltodefi/perp@3.3.5-alpha.0
+  - @veltodefi/utils@1.5.5-alpha.0
 
 ## 1.5.4
 
@@ -1652,11 +1974,11 @@
 
 - e8bc10c4: add IDs;
 - Updated dependencies [e8bc10c4]
-  - @orderly.network/core@1.5.4
-  - @orderly.network/net@1.5.4
-  - @orderly.network/perp@3.3.4
-  - @orderly.network/types@1.5.4
-  - @orderly.network/utils@1.5.4
+  - @veltodefi/core@1.5.4
+  - @veltodefi/net@1.5.4
+  - @veltodefi/perp@3.3.4
+  - @veltodefi/types@1.5.4
+  - @veltodefi/utils@1.5.4
 
 ## 1.5.4-alpha.0
 
@@ -1664,11 +1986,11 @@
 
 - add IDs;
 - Updated dependencies
-  - @orderly.network/core@1.5.4-alpha.0
-  - @orderly.network/net@1.5.4-alpha.0
-  - @orderly.network/perp@3.3.4-alpha.0
-  - @orderly.network/types@1.5.4-alpha.0
-  - @orderly.network/utils@1.5.4-alpha.0
+  - @veltodefi/core@1.5.4-alpha.0
+  - @veltodefi/net@1.5.4-alpha.0
+  - @veltodefi/perp@3.3.4-alpha.0
+  - @veltodefi/types@1.5.4-alpha.0
+  - @veltodefi/utils@1.5.4-alpha.0
 
 ## 1.5.3
 
@@ -1676,11 +1998,11 @@
 
 - 77c9c09b: fix bug;
 - Updated dependencies [77c9c09b]
-  - @orderly.network/utils@1.5.3
-  - @orderly.network/core@1.5.3
-  - @orderly.network/net@1.5.3
-  - @orderly.network/perp@3.3.3
-  - @orderly.network/types@1.5.3
+  - @veltodefi/utils@1.5.3
+  - @veltodefi/core@1.5.3
+  - @veltodefi/net@1.5.3
+  - @veltodefi/perp@3.3.3
+  - @veltodefi/types@1.5.3
 
 ## 1.5.3-alpha.0
 
@@ -1688,11 +2010,11 @@
 
 - fix bug;
 - Updated dependencies
-  - @orderly.network/utils@1.5.3-alpha.0
-  - @orderly.network/core@1.5.3-alpha.0
-  - @orderly.network/net@1.5.3-alpha.0
-  - @orderly.network/perp@3.3.3-alpha.0
-  - @orderly.network/types@1.5.3-alpha.0
+  - @veltodefi/utils@1.5.3-alpha.0
+  - @veltodefi/core@1.5.3-alpha.0
+  - @veltodefi/net@1.5.3-alpha.0
+  - @veltodefi/perp@3.3.3-alpha.0
+  - @veltodefi/types@1.5.3-alpha.0
 
 ## 1.5.2
 
@@ -1700,11 +2022,11 @@
 
 - f7bfae80: fix bug;
 - Updated dependencies [f7bfae80]
-  - @orderly.network/core@1.5.2
-  - @orderly.network/net@1.5.2
-  - @orderly.network/perp@3.3.2
-  - @orderly.network/types@1.5.2
-  - @orderly.network/utils@1.5.2
+  - @veltodefi/core@1.5.2
+  - @veltodefi/net@1.5.2
+  - @veltodefi/perp@3.3.2
+  - @veltodefi/types@1.5.2
+  - @veltodefi/utils@1.5.2
 
 ## 1.5.2-alpha.0
 
@@ -1712,11 +2034,11 @@
 
 - fix bug;
 - Updated dependencies
-  - @orderly.network/core@1.5.2-alpha.0
-  - @orderly.network/net@1.5.2-alpha.0
-  - @orderly.network/perp@3.3.2-alpha.0
-  - @orderly.network/types@1.5.2-alpha.0
-  - @orderly.network/utils@1.5.2-alpha.0
+  - @veltodefi/core@1.5.2-alpha.0
+  - @veltodefi/net@1.5.2-alpha.0
+  - @veltodefi/perp@3.3.2-alpha.0
+  - @veltodefi/types@1.5.2-alpha.0
+  - @veltodefi/utils@1.5.2-alpha.0
 
 ## 1.5.1
 
@@ -1724,11 +2046,11 @@
 
 - 34efc6c0: update
 - Updated dependencies [34efc6c0]
-  - @orderly.network/core@1.5.1
-  - @orderly.network/perp@3.3.1
-  - @orderly.network/net@1.5.1
-  - @orderly.network/types@1.5.1
-  - @orderly.network/utils@1.5.1
+  - @veltodefi/core@1.5.1
+  - @veltodefi/perp@3.3.1
+  - @veltodefi/net@1.5.1
+  - @veltodefi/types@1.5.1
+  - @veltodefi/utils@1.5.1
 
 ## 1.5.1-alpha.0
 
@@ -1736,11 +2058,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@1.5.1-alpha.0
-  - @orderly.network/perp@3.3.1-alpha.0
-  - @orderly.network/net@1.5.1-alpha.0
-  - @orderly.network/types@1.5.1-alpha.0
-  - @orderly.network/utils@1.5.1-alpha.0
+  - @veltodefi/core@1.5.1-alpha.0
+  - @veltodefi/perp@3.3.1-alpha.0
+  - @veltodefi/net@1.5.1-alpha.0
+  - @veltodefi/types@1.5.1-alpha.0
+  - @veltodefi/utils@1.5.1-alpha.0
 
 ## 1.5.0
 
@@ -1753,11 +2075,11 @@
 - 6cb9c466: fix bug;
 - Updated dependencies [dd94bfa9]
 - Updated dependencies [6cb9c466]
-  - @orderly.network/core@1.5.0
-  - @orderly.network/net@1.5.0
-  - @orderly.network/perp@3.3.0
-  - @orderly.network/types@1.5.0
-  - @orderly.network/utils@1.5.0
+  - @veltodefi/core@1.5.0
+  - @veltodefi/net@1.5.0
+  - @veltodefi/perp@3.3.0
+  - @veltodefi/types@1.5.0
+  - @veltodefi/utils@1.5.0
 
 ## 1.5.0-alpha.1
 
@@ -1765,11 +2087,11 @@
 
 - fix bug;
 - Updated dependencies
-  - @orderly.network/types@1.5.0-alpha.1
-  - @orderly.network/utils@1.5.0-alpha.1
-  - @orderly.network/core@1.5.0-alpha.1
-  - @orderly.network/perp@3.3.0-alpha.1
-  - @orderly.network/net@1.5.0-alpha.1
+  - @veltodefi/types@1.5.0-alpha.1
+  - @veltodefi/utils@1.5.0-alpha.1
+  - @veltodefi/core@1.5.0-alpha.1
+  - @veltodefi/perp@3.3.0-alpha.1
+  - @veltodefi/net@1.5.0-alpha.1
 
 ## 1.5.0-alpha.0
 
@@ -1780,11 +2102,11 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/core@1.5.0-alpha.0
-  - @orderly.network/net@1.5.0-alpha.0
-  - @orderly.network/perp@3.3.0-alpha.0
-  - @orderly.network/types@1.5.0-alpha.0
-  - @orderly.network/utils@1.5.0-alpha.0
+  - @veltodefi/core@1.5.0-alpha.0
+  - @veltodefi/net@1.5.0-alpha.0
+  - @veltodefi/perp@3.3.0-alpha.0
+  - @veltodefi/types@1.5.0-alpha.0
+  - @veltodefi/utils@1.5.0-alpha.0
 
 ## 1.4.3
 
@@ -1792,11 +2114,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@1.4.3
-  - @orderly.network/utils@1.4.3
-  - @orderly.network/core@1.4.3
-  - @orderly.network/perp@3.2.3
-  - @orderly.network/net@1.4.3
+  - @veltodefi/types@1.4.3
+  - @veltodefi/utils@1.4.3
+  - @veltodefi/core@1.4.3
+  - @veltodefi/perp@3.2.3
+  - @veltodefi/net@1.4.3
 
 ## 1.4.2
 
@@ -1804,11 +2126,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@1.4.2
-  - @orderly.network/utils@1.4.2
-  - @orderly.network/core@1.4.2
-  - @orderly.network/perp@3.2.2
-  - @orderly.network/net@1.4.2
+  - @veltodefi/types@1.4.2
+  - @veltodefi/utils@1.4.2
+  - @veltodefi/core@1.4.2
+  - @veltodefi/perp@3.2.2
+  - @veltodefi/net@1.4.2
 
 ## 1.4.1
 
@@ -1816,11 +2138,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/core@1.4.1
-  - @orderly.network/net@1.4.1
-  - @orderly.network/perp@3.2.1
-  - @orderly.network/types@1.4.1
-  - @orderly.network/utils@1.4.1
+  - @veltodefi/core@1.4.1
+  - @veltodefi/net@1.4.1
+  - @veltodefi/perp@3.2.1
+  - @veltodefi/types@1.4.1
+  - @veltodefi/utils@1.4.1
 
 ## 1.4.0
 
@@ -1833,11 +2155,11 @@
 - 59f5fa99: fix bugs;
 - Updated dependencies [764eb2da]
 - Updated dependencies [59f5fa99]
-  - @orderly.network/types@1.4.0
-  - @orderly.network/utils@1.4.0
-  - @orderly.network/core@1.4.0
-  - @orderly.network/perp@3.2.0
-  - @orderly.network/net@1.4.0
+  - @veltodefi/types@1.4.0
+  - @veltodefi/utils@1.4.0
+  - @veltodefi/core@1.4.0
+  - @veltodefi/perp@3.2.0
+  - @veltodefi/net@1.4.0
 
 ## 1.4.0-alpha.1
 
@@ -1845,11 +2167,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@1.4.0-alpha.1
-  - @orderly.network/utils@1.4.0-alpha.1
-  - @orderly.network/core@1.4.0-alpha.1
-  - @orderly.network/perp@3.2.0-alpha.1
-  - @orderly.network/net@1.4.0-alpha.1
+  - @veltodefi/types@1.4.0-alpha.1
+  - @veltodefi/utils@1.4.0-alpha.1
+  - @veltodefi/core@1.4.0-alpha.1
+  - @veltodefi/perp@3.2.0-alpha.1
+  - @veltodefi/net@1.4.0-alpha.1
 
 ## 1.4.0-alpha.0
 
@@ -1860,11 +2182,11 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/types@1.4.0-alpha.0
-  - @orderly.network/utils@1.4.0-alpha.0
-  - @orderly.network/core@1.4.0-alpha.0
-  - @orderly.network/perp@3.2.0-alpha.0
-  - @orderly.network/net@1.4.0-alpha.0
+  - @veltodefi/types@1.4.0-alpha.0
+  - @veltodefi/utils@1.4.0-alpha.0
+  - @veltodefi/core@1.4.0-alpha.0
+  - @veltodefi/perp@3.2.0-alpha.0
+  - @veltodefi/net@1.4.0-alpha.0
 
 ## 1.3.2
 
@@ -1872,11 +2194,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@1.3.2
-  - @orderly.network/utils@1.3.2
-  - @orderly.network/core@1.3.2
-  - @orderly.network/perp@3.1.2
-  - @orderly.network/net@1.3.2
+  - @veltodefi/types@1.3.2
+  - @veltodefi/utils@1.3.2
+  - @veltodefi/core@1.3.2
+  - @veltodefi/perp@3.1.2
+  - @veltodefi/net@1.3.2
 
 ## 1.3.1
 
@@ -1884,11 +2206,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@1.3.1
-  - @orderly.network/utils@1.3.1
-  - @orderly.network/core@1.3.1
-  - @orderly.network/perp@3.1.1
-  - @orderly.network/net@1.3.1
+  - @veltodefi/types@1.3.1
+  - @veltodefi/utils@1.3.1
+  - @veltodefi/core@1.3.1
+  - @veltodefi/perp@3.1.1
+  - @veltodefi/net@1.3.1
 
 ## 1.3.0
 
@@ -1903,11 +2225,11 @@
 - Updated dependencies [e4edd4c7]
 - Updated dependencies
 - Updated dependencies [fd452911]
-  - @orderly.network/types@1.3.0
-  - @orderly.network/utils@1.3.0
-  - @orderly.network/core@1.3.0
-  - @orderly.network/perp@3.1.0
-  - @orderly.network/net@1.3.0
+  - @veltodefi/types@1.3.0
+  - @veltodefi/utils@1.3.0
+  - @veltodefi/core@1.3.0
+  - @veltodefi/perp@3.1.0
+  - @veltodefi/net@1.3.0
 
 ## 1.3.0-alpha.0
 
@@ -1918,11 +2240,11 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/types@1.3.0-alpha.0
-  - @orderly.network/utils@1.3.0-alpha.0
-  - @orderly.network/core@1.3.0-alpha.0
-  - @orderly.network/perp@3.1.0-alpha.0
-  - @orderly.network/net@1.3.0-alpha.0
+  - @veltodefi/types@1.3.0-alpha.0
+  - @veltodefi/utils@1.3.0-alpha.0
+  - @veltodefi/core@1.3.0-alpha.0
+  - @veltodefi/perp@3.1.0-alpha.0
+  - @veltodefi/net@1.3.0-alpha.0
 
 ## 1.2.0
 
@@ -1933,11 +2255,11 @@
 ### Patch Changes
 
 - Updated dependencies [52bebed3]
-  - @orderly.network/types@1.2.0
-  - @orderly.network/utils@1.2.0
-  - @orderly.network/core@1.2.0
-  - @orderly.network/net@1.2.0
-  - @orderly.network/perp@3.0.0
+  - @veltodefi/types@1.2.0
+  - @veltodefi/utils@1.2.0
+  - @veltodefi/core@1.2.0
+  - @veltodefi/net@1.2.0
+  - @veltodefi/perp@3.0.0
 
 ## 1.2.0-alpha.0
 
@@ -1948,11 +2270,11 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/types@1.2.0-alpha.0
-  - @orderly.network/utils@1.2.0-alpha.0
-  - @orderly.network/core@1.2.0-alpha.0
-  - @orderly.network/net@1.2.0-alpha.0
-  - @orderly.network/perp@3.0.0-alpha.0
+  - @veltodefi/types@1.2.0-alpha.0
+  - @veltodefi/utils@1.2.0-alpha.0
+  - @veltodefi/core@1.2.0-alpha.0
+  - @veltodefi/net@1.2.0-alpha.0
+  - @veltodefi/perp@3.0.0-alpha.0
 
 ## 1.1.9
 
@@ -1960,11 +2282,11 @@
 
 - fix bug: app crashes when symbolInfo is null;
 - Updated dependencies
-  - @orderly.network/core@0.2.8
-  - @orderly.network/net@1.1.8
-  - @orderly.network/perp@2.0.8
-  - @orderly.network/types@0.2.8
-  - @orderly.network/utils@0.1.8
+  - @veltodefi/core@0.2.8
+  - @veltodefi/net@1.1.8
+  - @veltodefi/perp@2.0.8
+  - @veltodefi/types@0.2.8
+  - @veltodefi/utils@0.1.8
 
 ## 1.1.8
 
@@ -1972,11 +2294,11 @@
 
 - fix bug: window not defined;
 - Updated dependencies
-  - @orderly.network/core@0.2.7
-  - @orderly.network/net@1.1.7
-  - @orderly.network/perp@2.0.7
-  - @orderly.network/types@0.2.7
-  - @orderly.network/utils@0.1.7
+  - @veltodefi/core@0.2.7
+  - @veltodefi/net@1.1.7
+  - @veltodefi/perp@2.0.7
+  - @veltodefi/types@0.2.7
+  - @veltodefi/utils@0.1.7
 
 ## 1.1.7
 
@@ -1990,11 +2312,11 @@
 
 - 93a5ce6a: fix bugs;
 - Updated dependencies [93a5ce6a]
-  - @orderly.network/types@0.2.6
-  - @orderly.network/utils@0.1.6
-  - @orderly.network/core@0.2.6
-  - @orderly.network/perp@2.0.6
-  - @orderly.network/net@1.1.6
+  - @veltodefi/types@0.2.6
+  - @veltodefi/utils@0.1.6
+  - @veltodefi/core@0.2.6
+  - @veltodefi/perp@2.0.6
+  - @veltodefi/net@1.1.6
 
 ## 1.1.6-alpha.0
 
@@ -2002,11 +2324,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.2.6-alpha.0
-  - @orderly.network/utils@0.1.6-alpha.0
-  - @orderly.network/core@0.2.6-alpha.0
-  - @orderly.network/perp@2.0.6-alpha.0
-  - @orderly.network/net@1.1.6-alpha.0
+  - @veltodefi/types@0.2.6-alpha.0
+  - @veltodefi/utils@0.1.6-alpha.0
+  - @veltodefi/core@0.2.6-alpha.0
+  - @veltodefi/perp@2.0.6-alpha.0
+  - @veltodefi/net@1.1.6-alpha.0
 
 ## 1.1.5
 
@@ -2034,11 +2356,11 @@
 - Updated dependencies [165a7cd7]
 - Updated dependencies [32be91ac]
 - Updated dependencies [2e482e37]
-  - @orderly.network/types@0.2.5
-  - @orderly.network/utils@0.1.5
-  - @orderly.network/core@0.2.5
-  - @orderly.network/perp@2.0.5
-  - @orderly.network/net@1.1.5
+  - @veltodefi/types@0.2.5
+  - @veltodefi/utils@0.1.5
+  - @veltodefi/core@0.2.5
+  - @veltodefi/perp@2.0.5
+  - @veltodefi/net@1.1.5
 
 ## 1.1.5-internal.10
 
@@ -2046,11 +2368,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.10
-  - @orderly.network/utils@0.1.5-internal.10
-  - @orderly.network/core@0.2.5-internal.10
-  - @orderly.network/perp@2.0.5-internal.10
-  - @orderly.network/net@1.1.5-internal.10
+  - @veltodefi/types@0.2.5-internal.10
+  - @veltodefi/utils@0.1.5-internal.10
+  - @veltodefi/core@0.2.5-internal.10
+  - @veltodefi/perp@2.0.5-internal.10
+  - @veltodefi/net@1.1.5-internal.10
 
 ## 1.1.5-internal.9
 
@@ -2058,11 +2380,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.9
-  - @orderly.network/utils@0.1.5-internal.9
-  - @orderly.network/core@0.2.5-internal.9
-  - @orderly.network/perp@2.0.5-internal.9
-  - @orderly.network/net@1.1.5-internal.9
+  - @veltodefi/types@0.2.5-internal.9
+  - @veltodefi/utils@0.1.5-internal.9
+  - @veltodefi/core@0.2.5-internal.9
+  - @veltodefi/perp@2.0.5-internal.9
+  - @veltodefi/net@1.1.5-internal.9
 
 ## 1.1.5-internal.8
 
@@ -2070,11 +2392,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.8
-  - @orderly.network/utils@0.1.5-internal.8
-  - @orderly.network/core@0.2.5-internal.8
-  - @orderly.network/perp@2.0.5-internal.8
-  - @orderly.network/net@1.1.5-internal.8
+  - @veltodefi/types@0.2.5-internal.8
+  - @veltodefi/utils@0.1.5-internal.8
+  - @veltodefi/core@0.2.5-internal.8
+  - @veltodefi/perp@2.0.5-internal.8
+  - @veltodefi/net@1.1.5-internal.8
 
 ## 1.1.5-internal.7
 
@@ -2082,11 +2404,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.7
-  - @orderly.network/utils@0.1.5-internal.7
-  - @orderly.network/core@0.2.5-internal.7
-  - @orderly.network/perp@2.0.5-internal.7
-  - @orderly.network/net@1.1.5-internal.7
+  - @veltodefi/types@0.2.5-internal.7
+  - @veltodefi/utils@0.1.5-internal.7
+  - @veltodefi/core@0.2.5-internal.7
+  - @veltodefi/perp@2.0.5-internal.7
+  - @veltodefi/net@1.1.5-internal.7
 
 ## 1.1.5-internal.6
 
@@ -2094,11 +2416,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.6
-  - @orderly.network/utils@0.1.5-internal.6
-  - @orderly.network/core@0.2.5-internal.6
-  - @orderly.network/perp@2.0.5-internal.6
-  - @orderly.network/net@1.1.5-internal.6
+  - @veltodefi/types@0.2.5-internal.6
+  - @veltodefi/utils@0.1.5-internal.6
+  - @veltodefi/core@0.2.5-internal.6
+  - @veltodefi/perp@2.0.5-internal.6
+  - @veltodefi/net@1.1.5-internal.6
 
 ## 1.1.5-internal.5
 
@@ -2106,11 +2428,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.5
-  - @orderly.network/utils@0.1.5-internal.5
-  - @orderly.network/core@0.2.5-internal.5
-  - @orderly.network/perp@2.0.5-internal.5
-  - @orderly.network/net@1.1.5-internal.5
+  - @veltodefi/types@0.2.5-internal.5
+  - @veltodefi/utils@0.1.5-internal.5
+  - @veltodefi/core@0.2.5-internal.5
+  - @veltodefi/perp@2.0.5-internal.5
+  - @veltodefi/net@1.1.5-internal.5
 
 ## 1.1.5-internal.4
 
@@ -2118,11 +2440,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.4
-  - @orderly.network/utils@0.1.5-internal.4
-  - @orderly.network/core@0.2.5-internal.4
-  - @orderly.network/perp@2.0.5-internal.4
-  - @orderly.network/net@1.1.5-internal.4
+  - @veltodefi/types@0.2.5-internal.4
+  - @veltodefi/utils@0.1.5-internal.4
+  - @veltodefi/core@0.2.5-internal.4
+  - @veltodefi/perp@2.0.5-internal.4
+  - @veltodefi/net@1.1.5-internal.4
 
 ## 1.1.5-internal.3
 
@@ -2130,11 +2452,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.3
-  - @orderly.network/utils@0.1.5-internal.3
-  - @orderly.network/core@0.2.5-internal.3
-  - @orderly.network/perp@2.0.5-internal.3
-  - @orderly.network/net@1.1.5-internal.3
+  - @veltodefi/types@0.2.5-internal.3
+  - @veltodefi/utils@0.1.5-internal.3
+  - @veltodefi/core@0.2.5-internal.3
+  - @veltodefi/perp@2.0.5-internal.3
+  - @veltodefi/net@1.1.5-internal.3
 
 ## 1.1.5-internal.2
 
@@ -2142,11 +2464,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.2
-  - @orderly.network/utils@0.1.5-internal.2
-  - @orderly.network/core@0.2.5-internal.2
-  - @orderly.network/perp@2.0.5-internal.2
-  - @orderly.network/net@1.1.5-internal.2
+  - @veltodefi/types@0.2.5-internal.2
+  - @veltodefi/utils@0.1.5-internal.2
+  - @veltodefi/core@0.2.5-internal.2
+  - @veltodefi/perp@2.0.5-internal.2
+  - @veltodefi/net@1.1.5-internal.2
 
 ## 1.1.5-internal.1
 
@@ -2154,11 +2476,11 @@
 
 - hide share PnL entry
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.1
-  - @orderly.network/utils@0.1.5-internal.1
-  - @orderly.network/core@0.2.5-internal.1
-  - @orderly.network/perp@2.0.5-internal.1
-  - @orderly.network/net@1.1.5-internal.1
+  - @veltodefi/types@0.2.5-internal.1
+  - @veltodefi/utils@0.1.5-internal.1
+  - @veltodefi/core@0.2.5-internal.1
+  - @veltodefi/perp@2.0.5-internal.1
+  - @veltodefi/net@1.1.5-internal.1
 
 ## 1.1.5-internal.0
 
@@ -2166,11 +2488,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.2.5-internal.0
-  - @orderly.network/utils@0.1.5-internal.0
-  - @orderly.network/core@0.2.5-internal.0
-  - @orderly.network/perp@2.0.5-internal.0
-  - @orderly.network/net@1.1.5-internal.0
+  - @veltodefi/types@0.2.5-internal.0
+  - @veltodefi/utils@0.1.5-internal.0
+  - @veltodefi/core@0.2.5-internal.0
+  - @veltodefi/perp@2.0.5-internal.0
+  - @veltodefi/net@1.1.5-internal.0
 
 ## 1.1.4
 
@@ -2186,11 +2508,11 @@
 - Updated dependencies [410fe957]
 - Updated dependencies
 - Updated dependencies [410fe957]
-  - @orderly.network/types@0.2.4
-  - @orderly.network/utils@0.1.4
-  - @orderly.network/core@0.2.4
-  - @orderly.network/perp@2.0.4
-  - @orderly.network/net@1.1.4
+  - @veltodefi/types@0.2.4
+  - @veltodefi/utils@0.1.4
+  - @veltodefi/core@0.2.4
+  - @veltodefi/perp@2.0.4
+  - @veltodefi/net@1.1.4
 
 ## 1.1.4-experimental.3
 
@@ -2198,11 +2520,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.2.4-experimental.3
-  - @orderly.network/utils@0.1.4-experimental.3
-  - @orderly.network/core@0.2.4-experimental.3
-  - @orderly.network/perp@2.0.4-experimental.3
-  - @orderly.network/net@1.1.4-experimental.3
+  - @veltodefi/types@0.2.4-experimental.3
+  - @veltodefi/utils@0.1.4-experimental.3
+  - @veltodefi/core@0.2.4-experimental.3
+  - @veltodefi/perp@2.0.4-experimental.3
+  - @veltodefi/net@1.1.4-experimental.3
 
 ## 1.1.4-experimental.2
 
@@ -2210,11 +2532,11 @@
 
 - refactor hook;
 - Updated dependencies
-  - @orderly.network/types@0.2.4-experimental.2
-  - @orderly.network/utils@0.1.4-experimental.2
-  - @orderly.network/core@0.2.4-experimental.2
-  - @orderly.network/perp@2.0.4-experimental.2
-  - @orderly.network/net@1.1.4-experimental.2
+  - @veltodefi/types@0.2.4-experimental.2
+  - @veltodefi/utils@0.1.4-experimental.2
+  - @veltodefi/core@0.2.4-experimental.2
+  - @veltodefi/perp@2.0.4-experimental.2
+  - @veltodefi/net@1.1.4-experimental.2
 
 ## 1.1.4-experimental.1
 
@@ -2222,11 +2544,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.2.4-experimental.1
-  - @orderly.network/utils@0.1.4-experimental.1
-  - @orderly.network/core@0.2.4-experimental.1
-  - @orderly.network/perp@2.0.4-experimental.1
-  - @orderly.network/net@1.1.4-experimental.1
+  - @veltodefi/types@0.2.4-experimental.1
+  - @veltodefi/utils@0.1.4-experimental.1
+  - @veltodefi/core@0.2.4-experimental.1
+  - @veltodefi/perp@2.0.4-experimental.1
+  - @veltodefi/net@1.1.4-experimental.1
 
 ## 1.1.4-experimental.0
 
@@ -2234,11 +2556,11 @@
 
 - split cross-swap code;
 - Updated dependencies
-  - @orderly.network/types@0.2.4-experimental.0
-  - @orderly.network/utils@0.1.4-experimental.0
-  - @orderly.network/core@0.2.4-experimental.0
-  - @orderly.network/perp@2.0.4-experimental.0
-  - @orderly.network/net@1.1.4-experimental.0
+  - @veltodefi/types@0.2.4-experimental.0
+  - @veltodefi/utils@0.1.4-experimental.0
+  - @veltodefi/core@0.2.4-experimental.0
+  - @veltodefi/perp@2.0.4-experimental.0
+  - @veltodefi/net@1.1.4-experimental.0
 
 ## 1.1.3
 
@@ -2246,11 +2568,11 @@
 
 - fix bug: liqPrice calculation error
 - Updated dependencies
-  - @orderly.network/types@0.2.3
-  - @orderly.network/utils@0.1.3
-  - @orderly.network/core@0.2.3
-  - @orderly.network/perp@2.0.3
-  - @orderly.network/net@1.1.3
+  - @veltodefi/types@0.2.3
+  - @veltodefi/utils@0.1.3
+  - @veltodefi/core@0.2.3
+  - @veltodefi/perp@2.0.3
+  - @veltodefi/net@1.1.3
 
 ## 1.1.2
 
@@ -2258,11 +2580,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.2.2
-  - @orderly.network/utils@0.1.2
-  - @orderly.network/core@0.2.2
-  - @orderly.network/perp@2.0.2
-  - @orderly.network/net@1.1.2
+  - @veltodefi/types@0.2.2
+  - @veltodefi/utils@0.1.2
+  - @veltodefi/core@0.2.2
+  - @veltodefi/perp@2.0.2
+  - @veltodefi/net@1.1.2
 
 ## 1.1.1
 
@@ -2270,11 +2592,11 @@
 
 - update orderStream hook;
 - Updated dependencies
-  - @orderly.network/types@0.2.1
-  - @orderly.network/utils@0.1.1
-  - @orderly.network/core@0.2.1
-  - @orderly.network/perp@2.0.1
-  - @orderly.network/net@1.1.1
+  - @veltodefi/types@0.2.1
+  - @veltodefi/utils@0.1.1
+  - @veltodefi/core@0.2.1
+  - @veltodefi/perp@2.0.1
+  - @veltodefi/net@1.1.1
 
 ## 1.1.0
 
@@ -2377,17 +2699,13 @@
 - Updated dependencies [be705c14]
 - Updated dependencies [a1ea426b]
 - Updated dependencies [22ad6134]
-  - @orderly.network/types@0.2.0
-  - @orderly.network/utils@0.1.0
-  - @orderly.network/core@0.2.0
-  - @orderly.network/perp@2.0.0
-  - @orderly.network/net@1.1.0
-
-<<<<<<< HEAD
+  - @veltodefi/types@0.2.0
+  - @veltodefi/utils@0.1.0
+  - @veltodefi/core@0.2.0
+  - @veltodefi/perp@2.0.0
+  - @veltodefi/net@1.1.0
 
 ## 1.0.29
-
-=======
 
 ## 1.0.28-alpha.35
 
@@ -2395,11 +2713,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.35
-  - @orderly.network/utils@0.0.79-alpha.35
-  - @orderly.network/core@0.1.27-alpha.35
-  - @orderly.network/perp@1.0.27-alpha.35
-  - @orderly.network/net@1.0.114-alpha.35
+  - @veltodefi/types@0.1.27-alpha.35
+  - @veltodefi/utils@0.0.79-alpha.35
+  - @veltodefi/core@0.1.27-alpha.35
+  - @veltodefi/perp@1.0.27-alpha.35
+  - @veltodefi/net@1.0.114-alpha.35
 
 ## 1.0.28-alpha.34
 
@@ -2407,11 +2725,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.34
-  - @orderly.network/utils@0.0.79-alpha.34
-  - @orderly.network/core@0.1.27-alpha.34
-  - @orderly.network/perp@1.0.27-alpha.34
-  - @orderly.network/net@1.0.114-alpha.34
+  - @veltodefi/types@0.1.27-alpha.34
+  - @veltodefi/utils@0.0.79-alpha.34
+  - @veltodefi/core@0.1.27-alpha.34
+  - @veltodefi/perp@1.0.27-alpha.34
+  - @veltodefi/net@1.0.114-alpha.34
 
 ## 1.0.28-alpha.33
 
@@ -2419,11 +2737,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.33
-  - @orderly.network/utils@0.0.79-alpha.33
-  - @orderly.network/core@0.1.27-alpha.33
-  - @orderly.network/perp@1.0.27-alpha.33
-  - @orderly.network/net@1.0.114-alpha.33
+  - @veltodefi/types@0.1.27-alpha.33
+  - @veltodefi/utils@0.0.79-alpha.33
+  - @veltodefi/core@0.1.27-alpha.33
+  - @veltodefi/perp@1.0.27-alpha.33
+  - @veltodefi/net@1.0.114-alpha.33
 
 ## 1.0.28-alpha.32
 
@@ -2431,11 +2749,11 @@
 
 - update kline chart;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.32
-  - @orderly.network/utils@0.0.79-alpha.32
-  - @orderly.network/core@0.1.27-alpha.32
-  - @orderly.network/perp@1.0.27-alpha.32
-  - @orderly.network/net@1.0.114-alpha.32
+  - @veltodefi/types@0.1.27-alpha.32
+  - @veltodefi/utils@0.0.79-alpha.32
+  - @veltodefi/core@0.1.27-alpha.32
+  - @veltodefi/perp@1.0.27-alpha.32
+  - @veltodefi/net@1.0.114-alpha.32
 
 ## 1.0.28-alpha.31
 
@@ -2443,11 +2761,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.31
-  - @orderly.network/utils@0.0.79-alpha.31
-  - @orderly.network/core@0.1.27-alpha.31
-  - @orderly.network/perp@1.0.27-alpha.31
-  - @orderly.network/net@1.0.114-alpha.31
+  - @veltodefi/types@0.1.27-alpha.31
+  - @veltodefi/utils@0.0.79-alpha.31
+  - @veltodefi/core@0.1.27-alpha.31
+  - @veltodefi/perp@1.0.27-alpha.31
+  - @veltodefi/net@1.0.114-alpha.31
 
 ## 1.0.28-alpha.30
 
@@ -2455,11 +2773,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.30
-  - @orderly.network/utils@0.0.79-alpha.30
-  - @orderly.network/core@0.1.27-alpha.30
-  - @orderly.network/perp@1.0.27-alpha.30
-  - @orderly.network/net@1.0.114-alpha.30
+  - @veltodefi/types@0.1.27-alpha.30
+  - @veltodefi/utils@0.0.79-alpha.30
+  - @veltodefi/core@0.1.27-alpha.30
+  - @veltodefi/perp@1.0.27-alpha.30
+  - @veltodefi/net@1.0.114-alpha.30
 
 ## 1.0.28-alpha.29
 
@@ -2470,11 +2788,11 @@
 - fix bugs
 - Updated dependencies
   <<<<<<< HEAD
-  - @orderly.network/types@0.1.28
-  - @orderly.network/utils@0.0.80
-  - @orderly.network/core@0.1.28
-  - @orderly.network/perp@1.0.28
-  - @orderly.network/net@1.0.115
+  - @veltodefi/types@0.1.28
+  - @veltodefi/utils@0.0.80
+  - @veltodefi/core@0.1.28
+  - @veltodefi/perp@1.0.28
+  - @veltodefi/net@1.0.115
 
 ## 1.0.28
 
@@ -2484,16 +2802,16 @@
 - fix bugs
 - Updated dependencies [268abc5]
 - Updated dependencies
-  - @orderly.network/types@0.1.27
-  - @orderly.network/utils@0.0.79
-  - @orderly.network/core@0.1.27
-  - @orderly.network/perp@1.0.27
-  - # @orderly.network/net@1.0.114
-  - @orderly.network/types@0.1.27-alpha.29
-  - @orderly.network/utils@0.0.79-alpha.29
-  - @orderly.network/core@0.1.27-alpha.29
-  - @orderly.network/perp@1.0.27-alpha.29
-  - @orderly.network/net@1.0.114-alpha.29
+  - @veltodefi/types@0.1.27
+  - @veltodefi/utils@0.0.79
+  - @veltodefi/core@0.1.27
+  - @veltodefi/perp@1.0.27
+  - # @veltodefi/net@1.0.114
+  - @veltodefi/types@0.1.27-alpha.29
+  - @veltodefi/utils@0.0.79-alpha.29
+  - @veltodefi/core@0.1.27-alpha.29
+  - @veltodefi/perp@1.0.27-alpha.29
+  - @veltodefi/net@1.0.114-alpha.29
 
 ## 1.0.28-alpha.28
 
@@ -2501,11 +2819,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.28
-  - @orderly.network/utils@0.0.79-alpha.28
-  - @orderly.network/core@0.1.27-alpha.28
-  - @orderly.network/perp@1.0.27-alpha.28
-  - @orderly.network/net@1.0.114-alpha.28
+  - @veltodefi/types@0.1.27-alpha.28
+  - @veltodefi/utils@0.0.79-alpha.28
+  - @veltodefi/core@0.1.27-alpha.28
+  - @veltodefi/perp@1.0.27-alpha.28
+  - @veltodefi/net@1.0.114-alpha.28
 
 ## 1.0.28-alpha.27
 
@@ -2513,11 +2831,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.27
-  - @orderly.network/utils@0.0.79-alpha.27
-  - @orderly.network/core@0.1.27-alpha.27
-  - @orderly.network/perp@1.0.27-alpha.27
-  - @orderly.network/net@1.0.114-alpha.27
+  - @veltodefi/types@0.1.27-alpha.27
+  - @veltodefi/utils@0.0.79-alpha.27
+  - @veltodefi/core@0.1.27-alpha.27
+  - @veltodefi/perp@1.0.27-alpha.27
+  - @veltodefi/net@1.0.114-alpha.27
 
 ## 1.0.28-alpha.26
 
@@ -2527,11 +2845,11 @@
 - 85dd1d19: fix bugs;
 - Updated dependencies
 - Updated dependencies [85dd1d19]
-  - @orderly.network/types@0.1.27-alpha.26
-  - @orderly.network/utils@0.0.79-alpha.26
-  - @orderly.network/core@0.1.27-alpha.26
-  - @orderly.network/perp@1.0.27-alpha.26
-  - @orderly.network/net@1.0.114-alpha.26
+  - @veltodefi/types@0.1.27-alpha.26
+  - @veltodefi/utils@0.0.79-alpha.26
+  - @veltodefi/core@0.1.27-alpha.26
+  - @veltodefi/perp@1.0.27-alpha.26
+  - @veltodefi/net@1.0.114-alpha.26
 
 ## 1.0.28-alpha.25
 
@@ -2539,11 +2857,11 @@
 
 - fix orderEntry bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.25
-  - @orderly.network/utils@0.0.79-alpha.25
-  - @orderly.network/core@0.1.27-alpha.25
-  - @orderly.network/perp@1.0.27-alpha.25
-  - @orderly.network/net@1.0.114-alpha.25
+  - @veltodefi/types@0.1.27-alpha.25
+  - @veltodefi/utils@0.0.79-alpha.25
+  - @veltodefi/core@0.1.27-alpha.25
+  - @veltodefi/perp@1.0.27-alpha.25
+  - @veltodefi/net@1.0.114-alpha.25
 
 ## 1.0.28-alpha.24
 
@@ -2551,11 +2869,11 @@
 
 - update useOrderEntry hook and OrderEntry component;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.24
-  - @orderly.network/utils@0.0.79-alpha.24
-  - @orderly.network/core@0.1.27-alpha.24
-  - @orderly.network/perp@1.0.27-alpha.24
-  - @orderly.network/net@1.0.114-alpha.24
+  - @veltodefi/types@0.1.27-alpha.24
+  - @veltodefi/utils@0.0.79-alpha.24
+  - @veltodefi/core@0.1.27-alpha.24
+  - @veltodefi/perp@1.0.27-alpha.24
+  - @veltodefi/net@1.0.114-alpha.24
 
 ## 1.0.28-alpha.23
 
@@ -2563,11 +2881,11 @@
 
 - export ChainDialog component;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.23
-  - @orderly.network/utils@0.0.79-alpha.23
-  - @orderly.network/core@0.1.27-alpha.23
-  - @orderly.network/perp@1.0.27-alpha.23
-  - @orderly.network/net@1.0.114-alpha.23
+  - @veltodefi/types@0.1.27-alpha.23
+  - @veltodefi/utils@0.0.79-alpha.23
+  - @veltodefi/core@0.1.27-alpha.23
+  - @veltodefi/perp@1.0.27-alpha.23
+  - @veltodefi/net@1.0.114-alpha.23
 
 ## 1.0.28-alpha.22
 
@@ -2575,11 +2893,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.22
-  - @orderly.network/utils@0.0.79-alpha.22
-  - @orderly.network/core@0.1.27-alpha.22
-  - @orderly.network/perp@1.0.27-alpha.22
-  - @orderly.network/net@1.0.114-alpha.22
+  - @veltodefi/types@0.1.27-alpha.22
+  - @veltodefi/utils@0.0.79-alpha.22
+  - @veltodefi/core@0.1.27-alpha.22
+  - @veltodefi/perp@1.0.27-alpha.22
+  - @veltodefi/net@1.0.114-alpha.22
 
 ## 1.0.28-alpha.21
 
@@ -2587,11 +2905,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.21
-  - @orderly.network/utils@0.0.79-alpha.21
-  - @orderly.network/core@0.1.27-alpha.21
-  - @orderly.network/perp@1.0.27-alpha.21
-  - @orderly.network/net@1.0.114-alpha.21
+  - @veltodefi/types@0.1.27-alpha.21
+  - @veltodefi/utils@0.0.79-alpha.21
+  - @veltodefi/core@0.1.27-alpha.21
+  - @veltodefi/perp@1.0.27-alpha.21
+  - @veltodefi/net@1.0.114-alpha.21
 
 ## 1.0.28-alpha.20
 
@@ -2599,11 +2917,11 @@
 
 - add account MMR and more;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.20
-  - @orderly.network/utils@0.0.79-alpha.20
-  - @orderly.network/core@0.1.27-alpha.20
-  - @orderly.network/perp@1.0.27-alpha.20
-  - @orderly.network/net@1.0.114-alpha.20
+  - @veltodefi/types@0.1.27-alpha.20
+  - @veltodefi/utils@0.0.79-alpha.20
+  - @veltodefi/core@0.1.27-alpha.20
+  - @veltodefi/perp@1.0.27-alpha.20
+  - @veltodefi/net@1.0.114-alpha.20
 
 ## 1.0.28-alpha.19
 
@@ -2611,11 +2929,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.19
-  - @orderly.network/utils@0.0.79-alpha.19
-  - @orderly.network/core@0.1.27-alpha.19
-  - @orderly.network/perp@1.0.27-alpha.19
-  - @orderly.network/net@1.0.114-alpha.19
+  - @veltodefi/types@0.1.27-alpha.19
+  - @veltodefi/utils@0.0.79-alpha.19
+  - @veltodefi/core@0.1.27-alpha.19
+  - @veltodefi/perp@1.0.27-alpha.19
+  - @veltodefi/net@1.0.114-alpha.19
 
 ## 1.0.28-alpha.18
 
@@ -2623,11 +2941,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.18
-  - @orderly.network/utils@0.0.79-alpha.18
-  - @orderly.network/core@0.1.27-alpha.18
-  - @orderly.network/perp@1.0.27-alpha.18
-  - @orderly.network/net@1.0.114-alpha.18
+  - @veltodefi/types@0.1.27-alpha.18
+  - @veltodefi/utils@0.0.79-alpha.18
+  - @veltodefi/core@0.1.27-alpha.18
+  - @veltodefi/perp@1.0.27-alpha.18
+  - @veltodefi/net@1.0.114-alpha.18
 
 ## 1.0.28-alpha.17
 
@@ -2635,11 +2953,11 @@
 
 - fix bugs / update table component
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.17
-  - @orderly.network/utils@0.0.79-alpha.17
-  - @orderly.network/core@0.1.27-alpha.17
-  - @orderly.network/perp@1.0.27-alpha.17
-  - @orderly.network/net@1.0.114-alpha.17
+  - @veltodefi/types@0.1.27-alpha.17
+  - @veltodefi/utils@0.0.79-alpha.17
+  - @veltodefi/core@0.1.27-alpha.17
+  - @veltodefi/perp@1.0.27-alpha.17
+  - @veltodefi/net@1.0.114-alpha.17
 
 ## 1.0.28-alpha.16
 
@@ -2647,11 +2965,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.16
-  - @orderly.network/utils@0.0.79-alpha.16
-  - @orderly.network/core@0.1.27-alpha.16
-  - @orderly.network/perp@1.0.27-alpha.16
-  - @orderly.network/net@1.0.114-alpha.16
+  - @veltodefi/types@0.1.27-alpha.16
+  - @veltodefi/utils@0.0.79-alpha.16
+  - @veltodefi/core@0.1.27-alpha.16
+  - @veltodefi/perp@1.0.27-alpha.16
+  - @veltodefi/net@1.0.114-alpha.16
 
 ## 1.0.28-alpha.15
 
@@ -2659,11 +2977,11 @@
 
 - fix bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.15
-  - @orderly.network/utils@0.0.79-alpha.15
-  - @orderly.network/core@0.1.27-alpha.15
-  - @orderly.network/perp@1.0.27-alpha.15
-  - @orderly.network/net@1.0.114-alpha.15
+  - @veltodefi/types@0.1.27-alpha.15
+  - @veltodefi/utils@0.0.79-alpha.15
+  - @veltodefi/core@0.1.27-alpha.15
+  - @veltodefi/perp@1.0.27-alpha.15
+  - @veltodefi/net@1.0.114-alpha.15
 
 ## 1.0.28-alpha.14
 
@@ -2671,11 +2989,11 @@
 
 - switch goerli to sepolia
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.14
-  - @orderly.network/utils@0.0.79-alpha.14
-  - @orderly.network/core@0.1.27-alpha.14
-  - @orderly.network/perp@1.0.27-alpha.14
-  - @orderly.network/net@1.0.114-alpha.14
+  - @veltodefi/types@0.1.27-alpha.14
+  - @veltodefi/utils@0.0.79-alpha.14
+  - @veltodefi/core@0.1.27-alpha.14
+  - @veltodefi/perp@1.0.27-alpha.14
+  - @veltodefi/net@1.0.114-alpha.14
 
 ## 1.0.28-alpha.13
 
@@ -2683,11 +3001,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.13
-  - @orderly.network/utils@0.0.79-alpha.13
-  - @orderly.network/core@0.1.27-alpha.13
-  - @orderly.network/perp@1.0.27-alpha.13
-  - @orderly.network/net@1.0.114-alpha.13
+  - @veltodefi/types@0.1.27-alpha.13
+  - @veltodefi/utils@0.0.79-alpha.13
+  - @veltodefi/core@0.1.27-alpha.13
+  - @veltodefi/perp@1.0.27-alpha.13
+  - @veltodefi/net@1.0.114-alpha.13
 
 ## 1.0.28-alpha.12
 
@@ -2695,11 +3013,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.12
-  - @orderly.network/utils@0.0.79-alpha.12
-  - @orderly.network/core@0.1.27-alpha.12
-  - @orderly.network/perp@1.0.27-alpha.12
-  - @orderly.network/net@1.0.114-alpha.12
+  - @veltodefi/types@0.1.27-alpha.12
+  - @veltodefi/utils@0.0.79-alpha.12
+  - @veltodefi/core@0.1.27-alpha.12
+  - @veltodefi/perp@1.0.27-alpha.12
+  - @veltodefi/net@1.0.114-alpha.12
 
 ## 1.0.28-alpha.11
 
@@ -2707,11 +3025,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.11
-  - @orderly.network/utils@0.0.79-alpha.11
-  - @orderly.network/core@0.1.27-alpha.11
-  - @orderly.network/perp@1.0.27-alpha.11
-  - @orderly.network/net@1.0.114-alpha.11
+  - @veltodefi/types@0.1.27-alpha.11
+  - @veltodefi/utils@0.0.79-alpha.11
+  - @veltodefi/core@0.1.27-alpha.11
+  - @veltodefi/perp@1.0.27-alpha.11
+  - @veltodefi/net@1.0.114-alpha.11
 
 ## 1.0.28-alpha.10
 
@@ -2719,11 +3037,11 @@
 
 - fix style bug
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.10
-  - @orderly.network/utils@0.0.79-alpha.10
-  - @orderly.network/core@0.1.27-alpha.10
-  - @orderly.network/perp@1.0.27-alpha.10
-  - @orderly.network/net@1.0.114-alpha.10
+  - @veltodefi/types@0.1.27-alpha.10
+  - @veltodefi/utils@0.0.79-alpha.10
+  - @veltodefi/core@0.1.27-alpha.10
+  - @veltodefi/perp@1.0.27-alpha.10
+  - @veltodefi/net@1.0.114-alpha.10
 
 ## 1.0.28-alpha.9
 
@@ -2731,11 +3049,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.9
-  - @orderly.network/utils@0.0.79-alpha.9
-  - @orderly.network/core@0.1.27-alpha.9
-  - @orderly.network/perp@1.0.27-alpha.9
-  - @orderly.network/net@1.0.114-alpha.9
+  - @veltodefi/types@0.1.27-alpha.9
+  - @veltodefi/utils@0.0.79-alpha.9
+  - @veltodefi/core@0.1.27-alpha.9
+  - @veltodefi/perp@1.0.27-alpha.9
+  - @veltodefi/net@1.0.114-alpha.9
 
 ## 1.0.28-alpha.8
 
@@ -2743,11 +3061,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.8
-  - @orderly.network/utils@0.0.79-alpha.8
-  - @orderly.network/core@0.1.27-alpha.8
-  - @orderly.network/perp@1.0.27-alpha.8
-  - @orderly.network/net@1.0.114-alpha.8
+  - @veltodefi/types@0.1.27-alpha.8
+  - @veltodefi/utils@0.0.79-alpha.8
+  - @veltodefi/core@0.1.27-alpha.8
+  - @veltodefi/perp@1.0.27-alpha.8
+  - @veltodefi/net@1.0.114-alpha.8
 
 ## 1.0.28-alpha.7
 
@@ -2755,11 +3073,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.7
-  - @orderly.network/utils@0.0.79-alpha.7
-  - @orderly.network/core@0.1.27-alpha.7
-  - @orderly.network/perp@1.0.27-alpha.7
-  - @orderly.network/net@1.0.114-alpha.7
+  - @veltodefi/types@0.1.27-alpha.7
+  - @veltodefi/utils@0.0.79-alpha.7
+  - @veltodefi/core@0.1.27-alpha.7
+  - @veltodefi/perp@1.0.27-alpha.7
+  - @veltodefi/net@1.0.114-alpha.7
 
 ## 1.0.28-alpha.6
 
@@ -2767,11 +3085,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.6
-  - @orderly.network/utils@0.0.79-alpha.6
-  - @orderly.network/core@0.1.27-alpha.6
-  - @orderly.network/perp@1.0.27-alpha.6
-  - @orderly.network/net@1.0.114-alpha.6
+  - @veltodefi/types@0.1.27-alpha.6
+  - @veltodefi/utils@0.0.79-alpha.6
+  - @veltodefi/core@0.1.27-alpha.6
+  - @veltodefi/perp@1.0.27-alpha.6
+  - @veltodefi/net@1.0.114-alpha.6
 
 ## 1.0.28-alpha.5
 
@@ -2783,11 +3101,11 @@
 - Updated dependencies
 - Updated dependencies
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.5
-  - @orderly.network/utils@0.0.79-alpha.5
-  - @orderly.network/core@0.1.27-alpha.5
-  - @orderly.network/perp@1.0.27-alpha.5
-  - @orderly.network/net@1.0.114-alpha.5
+  - @veltodefi/types@0.1.27-alpha.5
+  - @veltodefi/utils@0.0.79-alpha.5
+  - @veltodefi/core@0.1.27-alpha.5
+  - @veltodefi/perp@1.0.27-alpha.5
+  - @veltodefi/net@1.0.114-alpha.5
 
 ## 1.0.28-alpha.4
 
@@ -2797,11 +3115,11 @@
 - fix bugs
 - Updated dependencies
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.4
-  - @orderly.network/utils@0.0.79-alpha.4
-  - @orderly.network/core@0.1.27-alpha.4
-  - @orderly.network/perp@1.0.27-alpha.4
-  - @orderly.network/net@1.0.114-alpha.4
+  - @veltodefi/types@0.1.27-alpha.4
+  - @veltodefi/utils@0.0.79-alpha.4
+  - @veltodefi/core@0.1.27-alpha.4
+  - @veltodefi/perp@1.0.27-alpha.4
+  - @veltodefi/net@1.0.114-alpha.4
 
 ## 1.0.28-alpha.3
 
@@ -2809,11 +3127,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.3
-  - @orderly.network/utils@0.0.79-alpha.3
-  - @orderly.network/core@0.1.27-alpha.3
-  - @orderly.network/perp@1.0.27-alpha.3
-  - @orderly.network/net@1.0.114-alpha.3
+  - @veltodefi/types@0.1.27-alpha.3
+  - @veltodefi/utils@0.0.79-alpha.3
+  - @veltodefi/core@0.1.27-alpha.3
+  - @veltodefi/perp@1.0.27-alpha.3
+  - @veltodefi/net@1.0.114-alpha.3
 
 ## 1.0.28-alpha.2
 
@@ -2821,11 +3139,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.2
-  - @orderly.network/utils@0.0.79-alpha.2
-  - @orderly.network/core@0.1.27-alpha.2
-  - @orderly.network/perp@1.0.27-alpha.2
-  - @orderly.network/net@1.0.114-alpha.2
+  - @veltodefi/types@0.1.27-alpha.2
+  - @veltodefi/utils@0.0.79-alpha.2
+  - @veltodefi/core@0.1.27-alpha.2
+  - @veltodefi/perp@1.0.27-alpha.2
+  - @veltodefi/net@1.0.114-alpha.2
 
 ## 1.0.28-alpha.1
 
@@ -2833,11 +3151,11 @@
 
 - update version
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.1
-  - @orderly.network/utils@0.0.79-alpha.1
-  - @orderly.network/core@0.1.27-alpha.1
-  - @orderly.network/perp@1.0.27-alpha.1
-  - @orderly.network/net@1.0.114-alpha.1
+  - @veltodefi/types@0.1.27-alpha.1
+  - @veltodefi/utils@0.0.79-alpha.1
+  - @veltodefi/core@0.1.27-alpha.1
+  - @veltodefi/perp@1.0.27-alpha.1
+  - @veltodefi/net@1.0.114-alpha.1
 
 ## 1.0.28-alpha.0
 
@@ -2845,11 +3163,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.1.27-alpha.0
-  - @orderly.network/utils@0.0.79-alpha.0
-  - @orderly.network/core@0.1.27-alpha.0
-  - @orderly.network/perp@1.0.27-alpha.0
-  - @orderly.network/net@1.0.114-alpha.0
+  - @veltodefi/types@0.1.27-alpha.0
+  - @veltodefi/utils@0.0.79-alpha.0
+  - @veltodefi/core@0.1.27-alpha.0
+  - @veltodefi/perp@1.0.27-alpha.0
+  - @veltodefi/net@1.0.114-alpha.0
     > > > > > > > alpha
 
 ## 1.0.27
@@ -2864,11 +3182,11 @@
 - Updated dependencies
 - Updated dependencies
 - Updated dependencies
-  - @orderly.network/types@0.1.26
-  - @orderly.network/utils@0.0.78
-  - @orderly.network/core@0.1.26
-  - @orderly.network/perp@1.0.26
-  - @orderly.network/net@1.0.113
+  - @veltodefi/types@0.1.26
+  - @veltodefi/utils@0.0.78
+  - @veltodefi/core@0.1.26
+  - @veltodefi/perp@1.0.26
+  - @veltodefi/net@1.0.113
 
 ## 1.0.27-alpha.1
 
@@ -2876,11 +3194,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.26-alpha.1
-  - @orderly.network/utils@0.0.78-alpha.1
-  - @orderly.network/core@0.1.26-alpha.1
-  - @orderly.network/perp@1.0.26-alpha.1
-  - @orderly.network/net@1.0.113-alpha.1
+  - @veltodefi/types@0.1.26-alpha.1
+  - @veltodefi/utils@0.0.78-alpha.1
+  - @veltodefi/core@0.1.26-alpha.1
+  - @veltodefi/perp@1.0.26-alpha.1
+  - @veltodefi/net@1.0.113-alpha.1
 
 ## 1.0.27-alpha.0
 
@@ -2888,11 +3206,11 @@
 
 - fix bugs
 - Updated dependencies
-  - @orderly.network/types@0.1.26-alpha.0
-  - @orderly.network/utils@0.0.78-alpha.0
-  - @orderly.network/core@0.1.26-alpha.0
-  - @orderly.network/perp@1.0.26-alpha.0
-  - @orderly.network/net@1.0.113-alpha.0
+  - @veltodefi/types@0.1.26-alpha.0
+  - @veltodefi/utils@0.0.78-alpha.0
+  - @veltodefi/core@0.1.26-alpha.0
+  - @veltodefi/perp@1.0.26-alpha.0
+  - @veltodefi/net@1.0.113-alpha.0
 
 ## 1.0.26
 
@@ -2906,11 +3224,11 @@
 - Updated dependencies
 - Updated dependencies
 - Updated dependencies
-  - @orderly.network/types@0.1.25
-  - @orderly.network/utils@0.0.77
-  - @orderly.network/core@0.1.25
-  - @orderly.network/perp@1.0.25
-  - @orderly.network/net@1.0.112
+  - @veltodefi/types@0.1.25
+  - @veltodefi/utils@0.0.77
+  - @veltodefi/core@0.1.25
+  - @veltodefi/perp@1.0.25
+  - @veltodefi/net@1.0.112
 
 ## 1.0.26-alpha.2
 
@@ -2918,11 +3236,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.25-alpha.2
-  - @orderly.network/utils@0.0.77-alpha.2
-  - @orderly.network/core@0.1.25-alpha.2
-  - @orderly.network/perp@1.0.25-alpha.2
-  - @orderly.network/net@1.0.112-alpha.2
+  - @veltodefi/types@0.1.25-alpha.2
+  - @veltodefi/utils@0.0.77-alpha.2
+  - @veltodefi/core@0.1.25-alpha.2
+  - @veltodefi/perp@1.0.25-alpha.2
+  - @veltodefi/net@1.0.112-alpha.2
 
 ## 1.0.26-alpha.1
 
@@ -2930,11 +3248,11 @@
 
 - fix style issues
 - Updated dependencies
-  - @orderly.network/types@0.1.25-alpha.1
-  - @orderly.network/utils@0.0.77-alpha.1
-  - @orderly.network/core@0.1.25-alpha.1
-  - @orderly.network/perp@1.0.25-alpha.1
-  - @orderly.network/net@1.0.112-alpha.1
+  - @veltodefi/types@0.1.25-alpha.1
+  - @veltodefi/utils@0.0.77-alpha.1
+  - @veltodefi/core@0.1.25-alpha.1
+  - @veltodefi/perp@1.0.25-alpha.1
+  - @veltodefi/net@1.0.112-alpha.1
 
 ## 1.0.26-alpha.0
 
@@ -2942,11 +3260,11 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.25-alpha.0
-  - @orderly.network/utils@0.0.77-alpha.0
-  - @orderly.network/core@0.1.25-alpha.0
-  - @orderly.network/perp@1.0.25-alpha.0
-  - @orderly.network/net@1.0.112-alpha.0
+  - @veltodefi/types@0.1.25-alpha.0
+  - @veltodefi/utils@0.0.77-alpha.0
+  - @veltodefi/core@0.1.25-alpha.0
+  - @veltodefi/perp@1.0.25-alpha.0
+  - @veltodefi/net@1.0.112-alpha.0
 
 ## 1.0.25
 
@@ -2974,11 +3292,11 @@
 - Updated dependencies [3c6a6fe]
 - Updated dependencies [25525af]
 - Updated dependencies
-  - @orderly.network/types@0.1.24
-  - @orderly.network/core@0.1.24
-  - @orderly.network/perp@1.0.24
-  - @orderly.network/net@1.0.111
-  - @orderly.network/utils@0.0.76
+  - @veltodefi/types@0.1.24
+  - @veltodefi/core@0.1.24
+  - @veltodefi/perp@1.0.24
+  - @veltodefi/net@1.0.111
+  - @veltodefi/utils@0.0.76
 
 ## 1.0.25-alpha.9
 
@@ -2986,10 +3304,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.9
-  - @orderly.network/core@0.1.24-alpha.9
-  - @orderly.network/perp@1.0.24-alpha.9
-  - @orderly.network/net@1.0.111-alpha.9
+  - @veltodefi/types@0.1.24-alpha.9
+  - @veltodefi/core@0.1.24-alpha.9
+  - @veltodefi/perp@1.0.24-alpha.9
+  - @veltodefi/net@1.0.111-alpha.9
 
 ## 1.0.25-alpha.8
 
@@ -2997,10 +3315,10 @@
 
 - update create-orderly-app template
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.8
-  - @orderly.network/core@0.1.24-alpha.8
-  - @orderly.network/perp@1.0.24-alpha.8
-  - @orderly.network/net@1.0.111-alpha.8
+  - @veltodefi/types@0.1.24-alpha.8
+  - @veltodefi/core@0.1.24-alpha.8
+  - @veltodefi/perp@1.0.24-alpha.8
+  - @veltodefi/net@1.0.111-alpha.8
 
 ## 1.0.25-alpha.7
 
@@ -3008,10 +3326,10 @@
 
 - update docs
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.7
-  - @orderly.network/core@0.1.24-alpha.7
-  - @orderly.network/perp@1.0.24-alpha.7
-  - @orderly.network/net@1.0.111-alpha.7
+  - @veltodefi/types@0.1.24-alpha.7
+  - @veltodefi/core@0.1.24-alpha.7
+  - @veltodefi/perp@1.0.24-alpha.7
+  - @veltodefi/net@1.0.111-alpha.7
 
 ## 1.0.25-alpha.6
 
@@ -3019,10 +3337,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.6
-  - @orderly.network/core@0.1.24-alpha.6
-  - @orderly.network/perp@1.0.24-alpha.6
-  - @orderly.network/net@1.0.111-alpha.6
+  - @veltodefi/types@0.1.24-alpha.6
+  - @veltodefi/core@0.1.24-alpha.6
+  - @veltodefi/perp@1.0.24-alpha.6
+  - @veltodefi/net@1.0.111-alpha.6
 
 ## 1.0.25-alpha.5
 
@@ -3030,10 +3348,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.5
-  - @orderly.network/core@0.1.24-alpha.5
-  - @orderly.network/perp@1.0.24-alpha.5
-  - @orderly.network/net@1.0.111-alpha.5
+  - @veltodefi/types@0.1.24-alpha.5
+  - @veltodefi/core@0.1.24-alpha.5
+  - @veltodefi/perp@1.0.24-alpha.5
+  - @veltodefi/net@1.0.111-alpha.5
 
 ## 1.0.25-alpha.4
 
@@ -3041,10 +3359,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.4
-  - @orderly.network/core@0.1.24-alpha.4
-  - @orderly.network/perp@1.0.24-alpha.4
-  - @orderly.network/net@1.0.111-alpha.4
+  - @veltodefi/types@0.1.24-alpha.4
+  - @veltodefi/core@0.1.24-alpha.4
+  - @veltodefi/perp@1.0.24-alpha.4
+  - @veltodefi/net@1.0.111-alpha.4
 
 ## 1.0.25-alpha.3
 
@@ -3052,10 +3370,10 @@
 
 - fix some bugs
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.3
-  - @orderly.network/core@0.1.24-alpha.3
-  - @orderly.network/perp@1.0.24-alpha.3
-  - @orderly.network/net@1.0.111-alpha.3
+  - @veltodefi/types@0.1.24-alpha.3
+  - @veltodefi/core@0.1.24-alpha.3
+  - @veltodefi/perp@1.0.24-alpha.3
+  - @veltodefi/net@1.0.111-alpha.3
 
 ## 1.0.25-alpha.2
 
@@ -3063,10 +3381,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.2
-  - @orderly.network/core@0.1.24-alpha.2
-  - @orderly.network/perp@1.0.24-alpha.2
-  - @orderly.network/net@1.0.111-alpha.2
+  - @veltodefi/types@0.1.24-alpha.2
+  - @veltodefi/core@0.1.24-alpha.2
+  - @veltodefi/perp@1.0.24-alpha.2
+  - @veltodefi/net@1.0.111-alpha.2
 
 ## 1.0.25-alpha.1
 
@@ -3074,10 +3392,10 @@
 
 - update create-orderly-app
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.1
-  - @orderly.network/core@0.1.24-alpha.1
-  - @orderly.network/perp@1.0.24-alpha.1
-  - @orderly.network/net@1.0.111-alpha.1
+  - @veltodefi/types@0.1.24-alpha.1
+  - @veltodefi/core@0.1.24-alpha.1
+  - @veltodefi/perp@1.0.24-alpha.1
+  - @veltodefi/net@1.0.111-alpha.1
 
 ## 1.0.25-alpha.0
 
@@ -3085,10 +3403,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.24-alpha.0
-  - @orderly.network/core@0.1.24-alpha.0
-  - @orderly.network/perp@1.0.24-alpha.0
-  - @orderly.network/net@1.0.111-alpha.0
+  - @veltodefi/types@0.1.24-alpha.0
+  - @veltodefi/core@0.1.24-alpha.0
+  - @veltodefi/perp@1.0.24-alpha.0
+  - @veltodefi/net@1.0.111-alpha.0
 
 ## 1.0.24
 
@@ -3096,10 +3414,10 @@
 
 - export PATH="$PATH:`pwd`/flutter/bin"
 - Updated dependencies
-  - @orderly.network/types@0.1.23
-  - @orderly.network/core@0.1.23
-  - @orderly.network/perp@1.0.23
-  - @orderly.network/net@1.0.110
+  - @veltodefi/types@0.1.23
+  - @veltodefi/core@0.1.23
+  - @veltodefi/perp@1.0.23
+  - @veltodefi/net@1.0.110
 
 ## 1.0.23
 
@@ -3107,10 +3425,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.22
-  - @orderly.network/core@0.1.22
-  - @orderly.network/perp@1.0.22
-  - @orderly.network/net@1.0.109
+  - @veltodefi/types@0.1.22
+  - @veltodefi/core@0.1.22
+  - @veltodefi/perp@1.0.22
+  - @veltodefi/net@1.0.109
 
 ## 1.0.22
 
@@ -3118,10 +3436,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.21
-  - @orderly.network/core@0.1.21
-  - @orderly.network/perp@1.0.21
-  - @orderly.network/net@1.0.108
+  - @veltodefi/types@0.1.21
+  - @veltodefi/core@0.1.21
+  - @veltodefi/perp@1.0.21
+  - @veltodefi/net@1.0.108
 
 ## 1.0.21
 
@@ -3129,10 +3447,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.20
-  - @orderly.network/core@0.1.20
-  - @orderly.network/perp@1.0.20
-  - @orderly.network/net@1.0.107
+  - @veltodefi/types@0.1.20
+  - @veltodefi/core@0.1.20
+  - @veltodefi/perp@1.0.20
+  - @veltodefi/net@1.0.107
 
 ## 1.0.20
 
@@ -3140,10 +3458,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.19
-  - @orderly.network/core@0.1.19
-  - @orderly.network/perp@1.0.19
-  - @orderly.network/net@1.0.106
+  - @veltodefi/types@0.1.19
+  - @veltodefi/core@0.1.19
+  - @veltodefi/perp@1.0.19
+  - @veltodefi/net@1.0.106
 
 ## 1.0.19
 
@@ -3151,10 +3469,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.18
-  - @orderly.network/core@0.1.18
-  - @orderly.network/perp@1.0.18
-  - @orderly.network/net@1.0.105
+  - @veltodefi/types@0.1.18
+  - @veltodefi/core@0.1.18
+  - @veltodefi/perp@1.0.18
+  - @veltodefi/net@1.0.105
 
 ## 1.0.18
 
@@ -3162,10 +3480,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.17
-  - @orderly.network/core@0.1.17
-  - @orderly.network/perp@1.0.17
-  - @orderly.network/net@1.0.104
+  - @veltodefi/types@0.1.17
+  - @veltodefi/core@0.1.17
+  - @veltodefi/perp@1.0.17
+  - @veltodefi/net@1.0.104
 
 ## 1.0.17
 
@@ -3173,10 +3491,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.16
-  - @orderly.network/core@0.1.16
-  - @orderly.network/perp@1.0.16
-  - @orderly.network/net@1.0.103
+  - @veltodefi/types@0.1.16
+  - @veltodefi/core@0.1.16
+  - @veltodefi/perp@1.0.16
+  - @veltodefi/net@1.0.103
 
 ## 1.0.16
 
@@ -3184,10 +3502,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.15
-  - @orderly.network/core@0.1.15
-  - @orderly.network/perp@1.0.15
-  - @orderly.network/net@1.0.102
+  - @veltodefi/types@0.1.15
+  - @veltodefi/core@0.1.15
+  - @veltodefi/perp@1.0.15
+  - @veltodefi/net@1.0.102
 
 ## 1.0.15
 
@@ -3195,10 +3513,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.14
-  - @orderly.network/core@0.1.14
-  - @orderly.network/perp@1.0.14
-  - @orderly.network/net@1.0.101
+  - @veltodefi/types@0.1.14
+  - @veltodefi/core@0.1.14
+  - @veltodefi/perp@1.0.14
+  - @veltodefi/net@1.0.101
 
 ## 1.0.14
 
@@ -3206,10 +3524,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.13
-  - @orderly.network/core@0.1.13
-  - @orderly.network/perp@1.0.13
-  - @orderly.network/net@1.0.100
+  - @veltodefi/types@0.1.13
+  - @veltodefi/core@0.1.13
+  - @veltodefi/perp@1.0.13
+  - @veltodefi/net@1.0.100
 
 ## 1.0.13
 
@@ -3217,10 +3535,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.12
-  - @orderly.network/core@0.1.12
-  - @orderly.network/perp@1.0.12
-  - @orderly.network/net@1.0.99
+  - @veltodefi/types@0.1.12
+  - @veltodefi/core@0.1.12
+  - @veltodefi/perp@1.0.12
+  - @veltodefi/net@1.0.99
 
 ## 1.0.12
 
@@ -3228,10 +3546,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.11
-  - @orderly.network/core@0.1.11
-  - @orderly.network/perp@1.0.11
-  - @orderly.network/net@1.0.98
+  - @veltodefi/types@0.1.11
+  - @veltodefi/core@0.1.11
+  - @veltodefi/perp@1.0.11
+  - @veltodefi/net@1.0.98
 
 ## 1.0.11
 
@@ -3239,10 +3557,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.10
-  - @orderly.network/core@0.1.10
-  - @orderly.network/perp@1.0.10
-  - @orderly.network/net@1.0.97
+  - @veltodefi/types@0.1.10
+  - @veltodefi/core@0.1.10
+  - @veltodefi/perp@1.0.10
+  - @veltodefi/net@1.0.97
 
 ## 1.0.10
 
@@ -3250,10 +3568,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.9
-  - @orderly.network/core@0.1.9
-  - @orderly.network/perp@1.0.9
-  - @orderly.network/net@1.0.96
+  - @veltodefi/types@0.1.9
+  - @veltodefi/core@0.1.9
+  - @veltodefi/perp@1.0.9
+  - @veltodefi/net@1.0.96
 
 ## 1.0.9
 
@@ -3261,10 +3579,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.8
-  - @orderly.network/core@0.1.8
-  - @orderly.network/perp@1.0.8
-  - @orderly.network/net@1.0.95
+  - @veltodefi/types@0.1.8
+  - @veltodefi/core@0.1.8
+  - @veltodefi/perp@1.0.8
+  - @veltodefi/net@1.0.95
 
 ## 1.0.8
 
@@ -3272,10 +3590,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.7
-  - @orderly.network/core@0.1.7
-  - @orderly.network/perp@1.0.7
-  - @orderly.network/net@1.0.94
+  - @veltodefi/types@0.1.7
+  - @veltodefi/core@0.1.7
+  - @veltodefi/perp@1.0.7
+  - @veltodefi/net@1.0.94
 
 ## 1.0.7
 
@@ -3283,10 +3601,10 @@
 
 - fix bug
 - Updated dependencies
-  - @orderly.network/types@0.1.6
-  - @orderly.network/core@0.1.6
-  - @orderly.network/perp@1.0.6
-  - @orderly.network/net@1.0.93
+  - @veltodefi/types@0.1.6
+  - @veltodefi/core@0.1.6
+  - @veltodefi/perp@1.0.6
+  - @veltodefi/net@1.0.93
 
 ## 1.0.6
 
@@ -3294,10 +3612,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.5
-  - @orderly.network/core@0.1.5
-  - @orderly.network/perp@1.0.5
-  - @orderly.network/net@1.0.92
+  - @veltodefi/types@0.1.5
+  - @veltodefi/core@0.1.5
+  - @veltodefi/perp@1.0.5
+  - @veltodefi/net@1.0.92
 
 ## 1.0.5
 
@@ -3305,10 +3623,10 @@
 
 - fix style bugs;
 - Updated dependencies
-  - @orderly.network/types@0.1.4
-  - @orderly.network/core@0.1.4
-  - @orderly.network/perp@1.0.4
-  - @orderly.network/net@1.0.91
+  - @veltodefi/types@0.1.4
+  - @veltodefi/core@0.1.4
+  - @veltodefi/perp@1.0.4
+  - @veltodefi/net@1.0.91
 
 ## 1.0.4
 
@@ -3316,10 +3634,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.3
-  - @orderly.network/core@0.1.3
-  - @orderly.network/perp@1.0.3
-  - @orderly.network/net@1.0.90
+  - @veltodefi/types@0.1.3
+  - @veltodefi/core@0.1.3
+  - @veltodefi/perp@1.0.3
+  - @veltodefi/net@1.0.90
 
 ## 1.0.3
 
@@ -3327,10 +3645,10 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.1.2
-  - @orderly.network/core@0.1.2
-  - @orderly.network/perp@1.0.2
-  - @orderly.network/net@1.0.89
+  - @veltodefi/types@0.1.2
+  - @veltodefi/core@0.1.2
+  - @veltodefi/perp@1.0.2
+  - @veltodefi/net@1.0.89
 
 ## 1.0.2
 
@@ -3338,10 +3656,10 @@
 
 - export usePrivateInfiniteQuery
 - Updated dependencies
-  - @orderly.network/types@0.1.1
-  - @orderly.network/core@0.1.1
-  - @orderly.network/perp@1.0.1
-  - @orderly.network/net@1.0.88
+  - @veltodefi/types@0.1.1
+  - @veltodefi/core@0.1.1
+  - @veltodefi/perp@1.0.1
+  - @veltodefi/net@1.0.88
 
 ## 1.0.1
 
@@ -3358,9 +3676,9 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/types@0.1.0
-  - @orderly.network/core@0.1.0
-  - @orderly.network/perp@1.0.0
+  - @veltodefi/types@0.1.0
+  - @veltodefi/core@0.1.0
+  - @veltodefi/perp@1.0.0
 
 ## 0.0.95
 
@@ -3368,11 +3686,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.87
-  - @orderly.network/futures@0.0.89
-  - @orderly.network/net@1.0.87
-  - @orderly.network/types@0.0.87
-  - @orderly.network/utils@0.0.75
+  - @veltodefi/core@0.0.87
+  - @veltodefi/futures@0.0.89
+  - @veltodefi/net@1.0.87
+  - @veltodefi/types@0.0.87
+  - @veltodefi/utils@0.0.75
 
 ## 0.0.94
 
@@ -3380,11 +3698,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.86
-  - @orderly.network/futures@0.0.88
-  - @orderly.network/net@1.0.86
-  - @orderly.network/types@0.0.86
-  - @orderly.network/utils@0.0.74
+  - @veltodefi/core@0.0.86
+  - @veltodefi/futures@0.0.88
+  - @veltodefi/net@1.0.86
+  - @veltodefi/types@0.0.86
+  - @veltodefi/utils@0.0.74
 
 ## 0.0.93
 
@@ -3392,11 +3710,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/net@1.0.85
-  - @orderly.network/core@0.0.85
-  - @orderly.network/futures@0.0.87
-  - @orderly.network/types@0.0.85
-  - @orderly.network/utils@0.0.73
+  - @veltodefi/net@1.0.85
+  - @veltodefi/core@0.0.85
+  - @veltodefi/futures@0.0.87
+  - @veltodefi/types@0.0.85
+  - @veltodefi/utils@0.0.73
 
 ## 0.0.92
 
@@ -3404,18 +3722,18 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.84
-  - @orderly.network/futures@0.0.86
-  - @orderly.network/net@1.0.84
-  - @orderly.network/types@0.0.84
-  - @orderly.network/utils@0.0.72
+  - @veltodefi/core@0.0.84
+  - @veltodefi/futures@0.0.86
+  - @veltodefi/net@1.0.84
+  - @veltodefi/types@0.0.84
+  - @veltodefi/utils@0.0.72
 
 ## 0.0.91
 
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/futures@0.0.85
+  - @veltodefi/futures@0.0.85
 
 ## 0.0.90
 
@@ -3423,11 +3741,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.84
-  - @orderly.network/types@0.0.83
-  - @orderly.network/utils@0.0.71
-  - @orderly.network/core@0.0.83
-  - @orderly.network/net@1.0.83
+  - @veltodefi/futures@0.0.84
+  - @veltodefi/types@0.0.83
+  - @veltodefi/utils@0.0.71
+  - @veltodefi/core@0.0.83
+  - @veltodefi/net@1.0.83
 
 ## 0.0.89
 
@@ -3435,11 +3753,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.82
-  - @orderly.network/futures@0.0.83
-  - @orderly.network/net@1.0.82
-  - @orderly.network/types@0.0.82
-  - @orderly.network/utils@0.0.70
+  - @veltodefi/core@0.0.82
+  - @veltodefi/futures@0.0.83
+  - @veltodefi/net@1.0.82
+  - @veltodefi/types@0.0.82
+  - @veltodefi/utils@0.0.70
 
 ## 0.0.88
 
@@ -3447,11 +3765,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.81
-  - @orderly.network/futures@0.0.82
-  - @orderly.network/net@1.0.81
-  - @orderly.network/types@0.0.81
-  - @orderly.network/utils@0.0.69
+  - @veltodefi/core@0.0.81
+  - @veltodefi/futures@0.0.82
+  - @veltodefi/net@1.0.81
+  - @veltodefi/types@0.0.81
+  - @veltodefi/utils@0.0.69
 
 ## 0.0.87
 
@@ -3459,11 +3777,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.80
-  - @orderly.network/futures@0.0.81
-  - @orderly.network/net@1.0.80
-  - @orderly.network/types@0.0.80
-  - @orderly.network/utils@0.0.68
+  - @veltodefi/core@0.0.80
+  - @veltodefi/futures@0.0.81
+  - @veltodefi/net@1.0.80
+  - @veltodefi/types@0.0.80
+  - @veltodefi/utils@0.0.68
 
 ## 0.0.86
 
@@ -3471,11 +3789,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.79
-  - @orderly.network/futures@0.0.80
-  - @orderly.network/net@1.0.79
-  - @orderly.network/types@0.0.79
-  - @orderly.network/utils@0.0.67
+  - @veltodefi/core@0.0.79
+  - @veltodefi/futures@0.0.80
+  - @veltodefi/net@1.0.79
+  - @veltodefi/types@0.0.79
+  - @veltodefi/utils@0.0.67
 
 ## 0.0.85
 
@@ -3483,11 +3801,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.78
-  - @orderly.network/futures@0.0.79
-  - @orderly.network/net@1.0.78
-  - @orderly.network/types@0.0.78
-  - @orderly.network/utils@0.0.66
+  - @veltodefi/core@0.0.78
+  - @veltodefi/futures@0.0.79
+  - @veltodefi/net@1.0.78
+  - @veltodefi/types@0.0.78
+  - @veltodefi/utils@0.0.66
 
 ## 0.0.84
 
@@ -3495,11 +3813,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.77
-  - @orderly.network/futures@0.0.78
-  - @orderly.network/net@1.0.77
-  - @orderly.network/types@0.0.77
-  - @orderly.network/utils@0.0.65
+  - @veltodefi/core@0.0.77
+  - @veltodefi/futures@0.0.78
+  - @veltodefi/net@1.0.77
+  - @veltodefi/types@0.0.77
+  - @veltodefi/utils@0.0.65
 
 ## 0.0.83
 
@@ -3507,11 +3825,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.77
-  - @orderly.network/types@0.0.76
-  - @orderly.network/utils@0.0.64
-  - @orderly.network/core@0.0.76
-  - @orderly.network/net@1.0.76
+  - @veltodefi/futures@0.0.77
+  - @veltodefi/types@0.0.76
+  - @veltodefi/utils@0.0.64
+  - @veltodefi/core@0.0.76
+  - @veltodefi/net@1.0.76
 
 ## 0.0.82
 
@@ -3519,11 +3837,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.75
-  - @orderly.network/futures@0.0.76
-  - @orderly.network/net@1.0.75
-  - @orderly.network/types@0.0.75
-  - @orderly.network/utils@0.0.63
+  - @veltodefi/core@0.0.75
+  - @veltodefi/futures@0.0.76
+  - @veltodefi/net@1.0.75
+  - @veltodefi/types@0.0.75
+  - @veltodefi/utils@0.0.63
 
 ## 0.0.81
 
@@ -3531,7 +3849,7 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/net@1.0.74
+  - @veltodefi/net@1.0.74
 
 ## 0.0.80
 
@@ -3539,7 +3857,7 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/net@1.0.73
+  - @veltodefi/net@1.0.73
 
 ## 0.0.79
 
@@ -3548,7 +3866,7 @@
 - update
 - update
 - Updated dependencies
-  - @orderly.network/net@1.0.72
+  - @veltodefi/net@1.0.72
 
 ## 0.0.78
 
@@ -3556,11 +3874,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.74
-  - @orderly.network/futures@0.0.75
-  - @orderly.network/net@1.0.71
-  - @orderly.network/types@0.0.74
-  - @orderly.network/utils@0.0.62
+  - @veltodefi/core@0.0.74
+  - @veltodefi/futures@0.0.75
+  - @veltodefi/net@1.0.71
+  - @veltodefi/types@0.0.74
+  - @veltodefi/utils@0.0.62
 
 ## 0.0.77
 
@@ -3568,11 +3886,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.73
-  - @orderly.network/futures@0.0.74
-  - @orderly.network/net@1.0.70
-  - @orderly.network/types@0.0.73
-  - @orderly.network/utils@0.0.61
+  - @veltodefi/core@0.0.73
+  - @veltodefi/futures@0.0.74
+  - @veltodefi/net@1.0.70
+  - @veltodefi/types@0.0.73
+  - @veltodefi/utils@0.0.61
 
 ## 0.0.76
 
@@ -3580,11 +3898,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.72
-  - @orderly.network/futures@0.0.73
-  - @orderly.network/net@1.0.69
-  - @orderly.network/types@0.0.72
-  - @orderly.network/utils@0.0.60
+  - @veltodefi/core@0.0.72
+  - @veltodefi/futures@0.0.73
+  - @veltodefi/net@1.0.69
+  - @veltodefi/types@0.0.72
+  - @veltodefi/utils@0.0.60
 
 ## 0.0.75
 
@@ -3592,11 +3910,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.71
-  - @orderly.network/futures@0.0.72
-  - @orderly.network/net@1.0.68
-  - @orderly.network/types@0.0.71
-  - @orderly.network/utils@0.0.59
+  - @veltodefi/core@0.0.71
+  - @veltodefi/futures@0.0.72
+  - @veltodefi/net@1.0.68
+  - @veltodefi/types@0.0.71
+  - @veltodefi/utils@0.0.59
 
 ## 0.0.74
 
@@ -3616,11 +3934,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.70
-  - @orderly.network/futures@0.0.71
-  - @orderly.network/net@1.0.67
-  - @orderly.network/types@0.0.70
-  - @orderly.network/utils@0.0.58
+  - @veltodefi/core@0.0.70
+  - @veltodefi/futures@0.0.71
+  - @veltodefi/net@1.0.67
+  - @veltodefi/types@0.0.70
+  - @veltodefi/utils@0.0.58
 
 ## 0.0.71
 
@@ -3628,11 +3946,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.69
-  - @orderly.network/futures@0.0.70
-  - @orderly.network/net@1.0.66
-  - @orderly.network/types@0.0.69
-  - @orderly.network/utils@0.0.57
+  - @veltodefi/core@0.0.69
+  - @veltodefi/futures@0.0.70
+  - @veltodefi/net@1.0.66
+  - @veltodefi/types@0.0.69
+  - @veltodefi/utils@0.0.57
 
 ## 0.0.70
 
@@ -3640,11 +3958,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.68
-  - @orderly.network/futures@0.0.69
-  - @orderly.network/net@1.0.65
-  - @orderly.network/types@0.0.68
-  - @orderly.network/utils@0.0.56
+  - @veltodefi/core@0.0.68
+  - @veltodefi/futures@0.0.69
+  - @veltodefi/net@1.0.65
+  - @veltodefi/types@0.0.68
+  - @veltodefi/utils@0.0.56
 
 ## 0.0.69
 
@@ -3652,11 +3970,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.68
-  - @orderly.network/types@0.0.67
-  - @orderly.network/utils@0.0.55
-  - @orderly.network/core@0.0.67
-  - @orderly.network/net@1.0.64
+  - @veltodefi/futures@0.0.68
+  - @veltodefi/types@0.0.67
+  - @veltodefi/utils@0.0.55
+  - @veltodefi/core@0.0.67
+  - @veltodefi/net@1.0.64
 
 ## 0.0.68
 
@@ -3664,11 +3982,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.67
-  - @orderly.network/types@0.0.66
-  - @orderly.network/utils@0.0.54
-  - @orderly.network/core@0.0.66
-  - @orderly.network/net@1.0.63
+  - @veltodefi/futures@0.0.67
+  - @veltodefi/types@0.0.66
+  - @veltodefi/utils@0.0.54
+  - @veltodefi/core@0.0.66
+  - @veltodefi/net@1.0.63
 
 ## 0.0.67
 
@@ -3676,11 +3994,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.65
-  - @orderly.network/futures@0.0.66
-  - @orderly.network/net@1.0.62
-  - @orderly.network/types@0.0.65
-  - @orderly.network/utils@0.0.53
+  - @veltodefi/core@0.0.65
+  - @veltodefi/futures@0.0.66
+  - @veltodefi/net@1.0.62
+  - @veltodefi/types@0.0.65
+  - @veltodefi/utils@0.0.53
 
 ## 0.0.66
 
@@ -3690,11 +4008,11 @@
 - update
 - Updated dependencies
 - Updated dependencies
-  - @orderly.network/futures@0.0.65
-  - @orderly.network/types@0.0.64
-  - @orderly.network/utils@0.0.52
-  - @orderly.network/core@0.0.64
-  - @orderly.network/net@1.0.61
+  - @veltodefi/futures@0.0.65
+  - @veltodefi/types@0.0.64
+  - @veltodefi/utils@0.0.52
+  - @veltodefi/core@0.0.64
+  - @veltodefi/net@1.0.61
 
 ## 0.0.65
 
@@ -3702,11 +4020,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.64
-  - @orderly.network/types@0.0.63
-  - @orderly.network/utils@0.0.51
-  - @orderly.network/core@0.0.63
-  - @orderly.network/net@1.0.60
+  - @veltodefi/futures@0.0.64
+  - @veltodefi/types@0.0.63
+  - @veltodefi/utils@0.0.51
+  - @veltodefi/core@0.0.63
+  - @veltodefi/net@1.0.60
 
 ## 0.0.64
 
@@ -3714,11 +4032,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.62
-  - @orderly.network/futures@0.0.63
-  - @orderly.network/net@1.0.59
-  - @orderly.network/types@0.0.62
-  - @orderly.network/utils@0.0.50
+  - @veltodefi/core@0.0.62
+  - @veltodefi/futures@0.0.63
+  - @veltodefi/net@1.0.59
+  - @veltodefi/types@0.0.62
+  - @veltodefi/utils@0.0.50
 
 ## 0.0.63
 
@@ -3726,11 +4044,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.61
-  - @orderly.network/futures@0.0.62
-  - @orderly.network/net@1.0.58
-  - @orderly.network/types@0.0.61
-  - @orderly.network/utils@0.0.49
+  - @veltodefi/core@0.0.61
+  - @veltodefi/futures@0.0.62
+  - @veltodefi/net@1.0.58
+  - @veltodefi/types@0.0.61
+  - @veltodefi/utils@0.0.49
 
 ## 0.0.62
 
@@ -3738,11 +4056,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.60
-  - @orderly.network/futures@0.0.61
-  - @orderly.network/net@1.0.57
-  - @orderly.network/types@0.0.60
-  - @orderly.network/utils@0.0.48
+  - @veltodefi/core@0.0.60
+  - @veltodefi/futures@0.0.61
+  - @veltodefi/net@1.0.57
+  - @veltodefi/types@0.0.60
+  - @veltodefi/utils@0.0.48
 
 ## 0.0.61
 
@@ -3750,9 +4068,9 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/types@0.0.59
-  - @orderly.network/core@0.0.59
-  - @orderly.network/futures@0.0.60
+  - @veltodefi/types@0.0.59
+  - @veltodefi/core@0.0.59
+  - @veltodefi/futures@0.0.60
 
 ## 0.0.60
 
@@ -3766,11 +4084,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.59
-  - @orderly.network/types@0.0.58
-  - @orderly.network/core@0.0.58
-  - @orderly.network/net@1.0.56
-  - @orderly.network/utils@0.0.47
+  - @veltodefi/futures@0.0.59
+  - @veltodefi/types@0.0.58
+  - @veltodefi/core@0.0.58
+  - @veltodefi/net@1.0.56
+  - @veltodefi/utils@0.0.47
 
 ## 0.0.58
 
@@ -3778,11 +4096,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.58
-  - @orderly.network/types@0.0.57
-  - @orderly.network/core@0.0.57
-  - @orderly.network/net@1.0.55
-  - @orderly.network/utils@0.0.47
+  - @veltodefi/futures@0.0.58
+  - @veltodefi/types@0.0.57
+  - @veltodefi/core@0.0.57
+  - @veltodefi/net@1.0.55
+  - @veltodefi/utils@0.0.47
 
 ## 0.0.57
 
@@ -3790,11 +4108,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.57
-  - @orderly.network/types@0.0.56
-  - @orderly.network/core@0.0.56
-  - @orderly.network/net@1.0.54
-  - @orderly.network/utils@0.0.47
+  - @veltodefi/futures@0.0.57
+  - @veltodefi/types@0.0.56
+  - @veltodefi/core@0.0.56
+  - @veltodefi/net@1.0.54
+  - @veltodefi/utils@0.0.47
 
 ## 0.0.56
 
@@ -3802,11 +4120,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.56
-  - @orderly.network/types@0.0.55
-  - @orderly.network/core@0.0.55
-  - @orderly.network/net@1.0.53
-  - @orderly.network/utils@0.0.47
+  - @veltodefi/futures@0.0.56
+  - @veltodefi/types@0.0.55
+  - @veltodefi/core@0.0.55
+  - @veltodefi/net@1.0.53
+  - @veltodefi/utils@0.0.47
 
 ## 0.0.55
 
@@ -3814,11 +4132,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.55
-  - @orderly.network/types@0.0.54
-  - @orderly.network/core@0.0.54
-  - @orderly.network/net@1.0.52
-  - @orderly.network/utils@0.0.47
+  - @veltodefi/futures@0.0.55
+  - @veltodefi/types@0.0.54
+  - @veltodefi/core@0.0.54
+  - @veltodefi/net@1.0.52
+  - @veltodefi/utils@0.0.47
 
 ## 0.0.54
 
@@ -3826,11 +4144,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.54
-  - @orderly.network/types@0.0.53
-  - @orderly.network/utils@0.0.47
-  - @orderly.network/core@0.0.53
-  - @orderly.network/net@1.0.51
+  - @veltodefi/futures@0.0.54
+  - @veltodefi/types@0.0.53
+  - @veltodefi/utils@0.0.47
+  - @veltodefi/core@0.0.53
+  - @veltodefi/net@1.0.51
 
 ## 0.0.53
 
@@ -3838,11 +4156,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/core@0.0.52
-  - @orderly.network/futures@0.0.53
-  - @orderly.network/net@1.0.50
-  - @orderly.network/types@0.0.52
-  - @orderly.network/utils@0.0.46
+  - @veltodefi/core@0.0.52
+  - @veltodefi/futures@0.0.53
+  - @veltodefi/net@1.0.50
+  - @veltodefi/types@0.0.52
+  - @veltodefi/utils@0.0.46
 
 ## 0.0.52
 
@@ -3850,11 +4168,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.52
-  - @orderly.network/types@0.0.51
-  - @orderly.network/utils@0.0.45
-  - @orderly.network/core@0.0.51
-  - @orderly.network/net@1.0.49
+  - @veltodefi/futures@0.0.52
+  - @veltodefi/types@0.0.51
+  - @veltodefi/utils@0.0.45
+  - @veltodefi/core@0.0.51
+  - @veltodefi/net@1.0.49
 
 ## 0.0.51
 
@@ -3862,11 +4180,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.51
-  - @orderly.network/types@0.0.50
-  - @orderly.network/utils@0.0.44
-  - @orderly.network/core@0.0.50
-  - @orderly.network/net@1.0.48
+  - @veltodefi/futures@0.0.51
+  - @veltodefi/types@0.0.50
+  - @veltodefi/utils@0.0.44
+  - @veltodefi/core@0.0.50
+  - @veltodefi/net@1.0.48
 
 ## 0.0.50
 
@@ -3874,11 +4192,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.50
-  - @orderly.network/types@0.0.49
-  - @orderly.network/utils@0.0.43
-  - @orderly.network/core@0.0.49
-  - @orderly.network/net@1.0.47
+  - @veltodefi/futures@0.0.50
+  - @veltodefi/types@0.0.49
+  - @veltodefi/utils@0.0.43
+  - @veltodefi/core@0.0.49
+  - @veltodefi/net@1.0.47
 
 ## 0.0.49
 
@@ -3886,11 +4204,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.49
-  - @orderly.network/types@0.0.48
-  - @orderly.network/utils@0.0.42
-  - @orderly.network/core@0.0.48
-  - @orderly.network/net@1.0.46
+  - @veltodefi/futures@0.0.49
+  - @veltodefi/types@0.0.48
+  - @veltodefi/utils@0.0.42
+  - @veltodefi/core@0.0.48
+  - @veltodefi/net@1.0.46
 
 ## 0.0.48
 
@@ -3898,11 +4216,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.48
-  - @orderly.network/types@0.0.47
-  - @orderly.network/utils@0.0.41
-  - @orderly.network/core@0.0.47
-  - @orderly.network/net@1.0.45
+  - @veltodefi/futures@0.0.48
+  - @veltodefi/types@0.0.47
+  - @veltodefi/utils@0.0.41
+  - @veltodefi/core@0.0.47
+  - @veltodefi/net@1.0.45
 
 ## 0.0.47
 
@@ -3912,11 +4230,11 @@
 - e49f864: update
 - Updated dependencies
 - Updated dependencies [e49f864]
-  - @orderly.network/futures@0.0.47
-  - @orderly.network/types@0.0.46
-  - @orderly.network/utils@0.0.40
-  - @orderly.network/core@0.0.46
-  - @orderly.network/net@1.0.44
+  - @veltodefi/futures@0.0.47
+  - @veltodefi/types@0.0.46
+  - @veltodefi/utils@0.0.40
+  - @veltodefi/core@0.0.46
+  - @veltodefi/net@1.0.44
 
 ## 0.0.46
 
@@ -3924,11 +4242,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.46
-  - @orderly.network/types@0.0.45
-  - @orderly.network/utils@0.0.39
-  - @orderly.network/core@0.0.45
-  - @orderly.network/net@1.0.43
+  - @veltodefi/futures@0.0.46
+  - @veltodefi/types@0.0.45
+  - @veltodefi/utils@0.0.39
+  - @veltodefi/core@0.0.45
+  - @veltodefi/net@1.0.43
 
 ## 0.0.45
 
@@ -3936,11 +4254,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.45
-  - @orderly.network/types@0.0.44
-  - @orderly.network/utils@0.0.38
-  - @orderly.network/core@0.0.44
-  - @orderly.network/net@1.0.42
+  - @veltodefi/futures@0.0.45
+  - @veltodefi/types@0.0.44
+  - @veltodefi/utils@0.0.38
+  - @veltodefi/core@0.0.44
+  - @veltodefi/net@1.0.42
 
 ## 0.0.44
 
@@ -3948,11 +4266,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.44
-  - @orderly.network/types@0.0.43
-  - @orderly.network/utils@0.0.37
-  - @orderly.network/core@0.0.43
-  - @orderly.network/net@1.0.41
+  - @veltodefi/futures@0.0.44
+  - @veltodefi/types@0.0.43
+  - @veltodefi/utils@0.0.37
+  - @veltodefi/core@0.0.43
+  - @veltodefi/net@1.0.41
 
 ## 0.0.43
 
@@ -3960,11 +4278,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.43
-  - @orderly.network/types@0.0.42
-  - @orderly.network/utils@0.0.36
-  - @orderly.network/core@0.0.42
-  - @orderly.network/net@1.0.40
+  - @veltodefi/futures@0.0.43
+  - @veltodefi/types@0.0.42
+  - @veltodefi/utils@0.0.36
+  - @veltodefi/core@0.0.42
+  - @veltodefi/net@1.0.40
 
 ## 0.0.42
 
@@ -3972,11 +4290,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.42
-  - @orderly.network/types@0.0.41
-  - @orderly.network/utils@0.0.35
-  - @orderly.network/core@0.0.41
-  - @orderly.network/net@1.0.39
+  - @veltodefi/futures@0.0.42
+  - @veltodefi/types@0.0.41
+  - @veltodefi/utils@0.0.35
+  - @veltodefi/core@0.0.41
+  - @veltodefi/net@1.0.39
 
 ## 0.0.41
 
@@ -3984,11 +4302,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.41
-  - @orderly.network/types@0.0.40
-  - @orderly.network/utils@0.0.34
-  - @orderly.network/core@0.0.40
-  - @orderly.network/net@1.0.38
+  - @veltodefi/futures@0.0.41
+  - @veltodefi/types@0.0.40
+  - @veltodefi/utils@0.0.34
+  - @veltodefi/core@0.0.40
+  - @veltodefi/net@1.0.38
 
 ## 0.0.40
 
@@ -3996,11 +4314,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.40
-  - @orderly.network/types@0.0.39
-  - @orderly.network/utils@0.0.33
-  - @orderly.network/core@0.0.39
-  - @orderly.network/net@1.0.37
+  - @veltodefi/futures@0.0.40
+  - @veltodefi/types@0.0.39
+  - @veltodefi/utils@0.0.33
+  - @veltodefi/core@0.0.39
+  - @veltodefi/net@1.0.37
 
 ## 0.0.39
 
@@ -4008,11 +4326,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.39
-  - @orderly.network/types@0.0.38
-  - @orderly.network/utils@0.0.32
-  - @orderly.network/core@0.0.38
-  - @orderly.network/net@1.0.36
+  - @veltodefi/futures@0.0.39
+  - @veltodefi/types@0.0.38
+  - @veltodefi/utils@0.0.32
+  - @veltodefi/core@0.0.38
+  - @veltodefi/net@1.0.36
 
 ## 0.0.38
 
@@ -4020,11 +4338,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.38
-  - @orderly.network/types@0.0.37
-  - @orderly.network/utils@0.0.31
-  - @orderly.network/core@0.0.37
-  - @orderly.network/net@1.0.35
+  - @veltodefi/futures@0.0.38
+  - @veltodefi/types@0.0.37
+  - @veltodefi/utils@0.0.31
+  - @veltodefi/core@0.0.37
+  - @veltodefi/net@1.0.35
 
 ## 0.0.37
 
@@ -4032,11 +4350,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.37
-  - @orderly.network/types@0.0.36
-  - @orderly.network/utils@0.0.30
-  - @orderly.network/core@0.0.36
-  - @orderly.network/net@1.0.34
+  - @veltodefi/futures@0.0.37
+  - @veltodefi/types@0.0.36
+  - @veltodefi/utils@0.0.30
+  - @veltodefi/core@0.0.36
+  - @veltodefi/net@1.0.34
 
 ## 0.0.36
 
@@ -4044,11 +4362,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.36
-  - @orderly.network/types@0.0.35
-  - @orderly.network/utils@0.0.29
-  - @orderly.network/core@0.0.35
-  - @orderly.network/net@1.0.33
+  - @veltodefi/futures@0.0.36
+  - @veltodefi/types@0.0.35
+  - @veltodefi/utils@0.0.29
+  - @veltodefi/core@0.0.35
+  - @veltodefi/net@1.0.33
 
 ## 0.0.35
 
@@ -4056,11 +4374,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.35
-  - @orderly.network/types@0.0.34
-  - @orderly.network/utils@0.0.28
-  - @orderly.network/core@0.0.34
-  - @orderly.network/net@1.0.32
+  - @veltodefi/futures@0.0.35
+  - @veltodefi/types@0.0.34
+  - @veltodefi/utils@0.0.28
+  - @veltodefi/core@0.0.34
+  - @veltodefi/net@1.0.32
 
 ## 0.0.34
 
@@ -4068,11 +4386,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.34
-  - @orderly.network/types@0.0.33
-  - @orderly.network/utils@0.0.27
-  - @orderly.network/core@0.0.33
-  - @orderly.network/net@1.0.31
+  - @veltodefi/futures@0.0.34
+  - @veltodefi/types@0.0.33
+  - @veltodefi/utils@0.0.27
+  - @veltodefi/core@0.0.33
+  - @veltodefi/net@1.0.31
 
 ## 0.0.33
 
@@ -4080,11 +4398,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.33
-  - @orderly.network/types@0.0.32
-  - @orderly.network/utils@0.0.26
-  - @orderly.network/core@0.0.32
-  - @orderly.network/net@1.0.30
+  - @veltodefi/futures@0.0.33
+  - @veltodefi/types@0.0.32
+  - @veltodefi/utils@0.0.26
+  - @veltodefi/core@0.0.32
+  - @veltodefi/net@1.0.30
 
 ## 0.0.32
 
@@ -4092,11 +4410,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.32
-  - @orderly.network/types@0.0.31
-  - @orderly.network/utils@0.0.25
-  - @orderly.network/core@0.0.31
-  - @orderly.network/net@1.0.29
+  - @veltodefi/futures@0.0.32
+  - @veltodefi/types@0.0.31
+  - @veltodefi/utils@0.0.25
+  - @veltodefi/core@0.0.31
+  - @veltodefi/net@1.0.29
 
 ## 0.0.31
 
@@ -4104,11 +4422,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.31
-  - @orderly.network/types@0.0.30
-  - @orderly.network/utils@0.0.24
-  - @orderly.network/core@0.0.30
-  - @orderly.network/net@1.0.28
+  - @veltodefi/futures@0.0.31
+  - @veltodefi/types@0.0.30
+  - @veltodefi/utils@0.0.24
+  - @veltodefi/core@0.0.30
+  - @veltodefi/net@1.0.28
 
 ## 0.0.30
 
@@ -4116,11 +4434,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.30
-  - @orderly.network/types@0.0.29
-  - @orderly.network/utils@0.0.23
-  - @orderly.network/core@0.0.29
-  - @orderly.network/net@1.0.27
+  - @veltodefi/futures@0.0.30
+  - @veltodefi/types@0.0.29
+  - @veltodefi/utils@0.0.23
+  - @veltodefi/core@0.0.29
+  - @veltodefi/net@1.0.27
 
 ## 0.0.29
 
@@ -4128,11 +4446,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.29
-  - @orderly.network/types@0.0.28
-  - @orderly.network/utils@0.0.22
-  - @orderly.network/core@0.0.28
-  - @orderly.network/net@1.0.26
+  - @veltodefi/futures@0.0.29
+  - @veltodefi/types@0.0.28
+  - @veltodefi/utils@0.0.22
+  - @veltodefi/core@0.0.28
+  - @veltodefi/net@1.0.26
 
 ## 0.0.28
 
@@ -4140,11 +4458,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.28
-  - @orderly.network/types@0.0.27
-  - @orderly.network/utils@0.0.21
-  - @orderly.network/core@0.0.27
-  - @orderly.network/net@1.0.25
+  - @veltodefi/futures@0.0.28
+  - @veltodefi/types@0.0.27
+  - @veltodefi/utils@0.0.21
+  - @veltodefi/core@0.0.27
+  - @veltodefi/net@1.0.25
 
 ## 0.0.27
 
@@ -4152,11 +4470,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.27
-  - @orderly.network/types@0.0.26
-  - @orderly.network/utils@0.0.20
-  - @orderly.network/core@0.0.26
-  - @orderly.network/net@1.0.24
+  - @veltodefi/futures@0.0.27
+  - @veltodefi/types@0.0.26
+  - @veltodefi/utils@0.0.20
+  - @veltodefi/core@0.0.26
+  - @veltodefi/net@1.0.24
 
 ## 0.0.26
 
@@ -4164,11 +4482,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.26
-  - @orderly.network/types@0.0.25
-  - @orderly.network/utils@0.0.19
-  - @orderly.network/core@0.0.25
-  - @orderly.network/net@1.0.23
+  - @veltodefi/futures@0.0.26
+  - @veltodefi/types@0.0.25
+  - @veltodefi/utils@0.0.19
+  - @veltodefi/core@0.0.25
+  - @veltodefi/net@1.0.23
 
 ## 0.0.25
 
@@ -4176,11 +4494,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.25
-  - @orderly.network/types@0.0.24
-  - @orderly.network/utils@0.0.18
-  - @orderly.network/core@0.0.24
-  - @orderly.network/net@1.0.22
+  - @veltodefi/futures@0.0.25
+  - @veltodefi/types@0.0.24
+  - @veltodefi/utils@0.0.18
+  - @veltodefi/core@0.0.24
+  - @veltodefi/net@1.0.22
 
 ## 0.0.24
 
@@ -4188,11 +4506,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.24
-  - @orderly.network/types@0.0.23
-  - @orderly.network/utils@0.0.17
-  - @orderly.network/core@0.0.23
-  - @orderly.network/net@1.0.21
+  - @veltodefi/futures@0.0.24
+  - @veltodefi/types@0.0.23
+  - @veltodefi/utils@0.0.17
+  - @veltodefi/core@0.0.23
+  - @veltodefi/net@1.0.21
 
 ## 0.0.23
 
@@ -4200,11 +4518,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.23
-  - @orderly.network/types@0.0.22
-  - @orderly.network/utils@0.0.16
-  - @orderly.network/core@0.0.22
-  - @orderly.network/net@1.0.20
+  - @veltodefi/futures@0.0.23
+  - @veltodefi/types@0.0.22
+  - @veltodefi/utils@0.0.16
+  - @veltodefi/core@0.0.22
+  - @veltodefi/net@1.0.20
 
 ## 0.0.22
 
@@ -4212,11 +4530,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.22
-  - @orderly.network/types@0.0.21
-  - @orderly.network/utils@0.0.15
-  - @orderly.network/core@0.0.21
-  - @orderly.network/net@1.0.19
+  - @veltodefi/futures@0.0.22
+  - @veltodefi/types@0.0.21
+  - @veltodefi/utils@0.0.15
+  - @veltodefi/core@0.0.21
+  - @veltodefi/net@1.0.19
 
 ## 0.0.21
 
@@ -4224,11 +4542,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.21
-  - @orderly.network/types@0.0.20
-  - @orderly.network/utils@0.0.14
-  - @orderly.network/core@0.0.20
-  - @orderly.network/net@1.0.18
+  - @veltodefi/futures@0.0.21
+  - @veltodefi/types@0.0.20
+  - @veltodefi/utils@0.0.14
+  - @veltodefi/core@0.0.20
+  - @veltodefi/net@1.0.18
 
 ## 0.0.20
 
@@ -4236,11 +4554,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.20
-  - @orderly.network/types@0.0.19
-  - @orderly.network/utils@0.0.13
-  - @orderly.network/core@0.0.19
-  - @orderly.network/net@1.0.17
+  - @veltodefi/futures@0.0.20
+  - @veltodefi/types@0.0.19
+  - @veltodefi/utils@0.0.13
+  - @veltodefi/core@0.0.19
+  - @veltodefi/net@1.0.17
 
 ## 0.0.19
 
@@ -4248,11 +4566,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.19
-  - @orderly.network/types@0.0.18
-  - @orderly.network/utils@0.0.12
-  - @orderly.network/core@0.0.18
-  - @orderly.network/net@1.0.16
+  - @veltodefi/futures@0.0.19
+  - @veltodefi/types@0.0.18
+  - @veltodefi/utils@0.0.12
+  - @veltodefi/core@0.0.18
+  - @veltodefi/net@1.0.16
 
 ## 0.0.18
 
@@ -4260,11 +4578,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.18
-  - @orderly.network/types@0.0.17
-  - @orderly.network/utils@0.0.11
-  - @orderly.network/core@0.0.17
-  - @orderly.network/net@1.0.15
+  - @veltodefi/futures@0.0.18
+  - @veltodefi/types@0.0.17
+  - @veltodefi/utils@0.0.11
+  - @veltodefi/core@0.0.17
+  - @veltodefi/net@1.0.15
 
 ## 0.0.17
 
@@ -4272,11 +4590,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.17
-  - @orderly.network/types@0.0.16
-  - @orderly.network/utils@0.0.10
-  - @orderly.network/core@0.0.16
-  - @orderly.network/net@1.0.14
+  - @veltodefi/futures@0.0.17
+  - @veltodefi/types@0.0.16
+  - @veltodefi/utils@0.0.10
+  - @veltodefi/core@0.0.16
+  - @veltodefi/net@1.0.14
 
 ## 0.0.16
 
@@ -4284,11 +4602,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.16
-  - @orderly.network/types@0.0.15
-  - @orderly.network/utils@0.0.9
-  - @orderly.network/core@0.0.15
-  - @orderly.network/net@1.0.13
+  - @veltodefi/futures@0.0.16
+  - @veltodefi/types@0.0.15
+  - @veltodefi/utils@0.0.9
+  - @veltodefi/core@0.0.15
+  - @veltodefi/net@1.0.13
 
 ## 0.0.15
 
@@ -4296,11 +4614,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.15
-  - @orderly.network/types@0.0.14
-  - @orderly.network/utils@0.0.8
-  - @orderly.network/core@0.0.14
-  - @orderly.network/net@1.0.12
+  - @veltodefi/futures@0.0.15
+  - @veltodefi/types@0.0.14
+  - @veltodefi/utils@0.0.8
+  - @veltodefi/core@0.0.14
+  - @veltodefi/net@1.0.12
 
 ## 0.0.14
 
@@ -4308,11 +4626,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.14
-  - @orderly.network/types@0.0.13
-  - @orderly.network/utils@0.0.7
-  - @orderly.network/core@0.0.13
-  - @orderly.network/net@1.0.11
+  - @veltodefi/futures@0.0.14
+  - @veltodefi/types@0.0.13
+  - @veltodefi/utils@0.0.7
+  - @veltodefi/core@0.0.13
+  - @veltodefi/net@1.0.11
 
 ## 0.0.13
 
@@ -4320,11 +4638,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.13
-  - @orderly.network/types@0.0.12
-  - @orderly.network/utils@0.0.6
-  - @orderly.network/core@0.0.12
-  - @orderly.network/net@1.0.10
+  - @veltodefi/futures@0.0.13
+  - @veltodefi/types@0.0.12
+  - @veltodefi/utils@0.0.6
+  - @veltodefi/core@0.0.12
+  - @veltodefi/net@1.0.10
 
 ## 0.0.12
 
@@ -4332,11 +4650,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.12
-  - @orderly.network/types@0.0.11
-  - @orderly.network/utils@0.0.5
-  - @orderly.network/core@0.0.11
-  - @orderly.network/net@1.0.9
+  - @veltodefi/futures@0.0.12
+  - @veltodefi/types@0.0.11
+  - @veltodefi/utils@0.0.5
+  - @veltodefi/core@0.0.11
+  - @veltodefi/net@1.0.9
 
 ## 0.0.11
 
@@ -4344,11 +4662,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.11
-  - @orderly.network/types@0.0.10
-  - @orderly.network/utils@0.0.4
-  - @orderly.network/core@0.0.10
-  - @orderly.network/net@1.0.8
+  - @veltodefi/futures@0.0.11
+  - @veltodefi/types@0.0.10
+  - @veltodefi/utils@0.0.4
+  - @veltodefi/core@0.0.10
+  - @veltodefi/net@1.0.8
 
 ## 0.0.10
 
@@ -4356,11 +4674,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.10
-  - @orderly.network/types@0.0.9
-  - @orderly.network/utils@0.0.3
-  - @orderly.network/core@0.0.9
-  - @orderly.network/net@1.0.7
+  - @veltodefi/futures@0.0.10
+  - @veltodefi/types@0.0.9
+  - @veltodefi/utils@0.0.3
+  - @veltodefi/core@0.0.9
+  - @veltodefi/net@1.0.7
 
 ## 0.0.9
 
@@ -4368,11 +4686,11 @@
 
 - update
 - Updated dependencies
-  - @orderly.network/futures@0.0.9
-  - @orderly.network/types@0.0.8
-  - @orderly.network/core@0.0.8
-  - @orderly.network/net@1.0.6
-  - @orderly.network/utils@0.0.2
+  - @veltodefi/futures@0.0.9
+  - @veltodefi/types@0.0.8
+  - @veltodefi/core@0.0.8
+  - @veltodefi/net@1.0.6
+  - @veltodefi/utils@0.0.2
 
 ## 0.0.8
 
@@ -4380,11 +4698,11 @@
 
 - fix bug & update
 - Updated dependencies
-  - @orderly.network/futures@0.0.8
-  - @orderly.network/types@0.0.7
-  - @orderly.network/core@0.0.7
-  - @orderly.network/net@1.0.5
-  - @orderly.network/utils@0.0.2
+  - @veltodefi/futures@0.0.8
+  - @veltodefi/types@0.0.7
+  - @veltodefi/core@0.0.7
+  - @veltodefi/net@1.0.5
+  - @veltodefi/utils@0.0.2
 
 ## 0.0.7
 
@@ -4392,11 +4710,11 @@
 
 - fix bug & update
 - Updated dependencies
-  - @orderly.network/futures@0.0.7
-  - @orderly.network/types@0.0.6
-  - @orderly.network/core@0.0.6
-  - @orderly.network/net@1.0.4
-  - @orderly.network/utils@0.0.2
+  - @veltodefi/futures@0.0.7
+  - @veltodefi/types@0.0.6
+  - @veltodefi/core@0.0.6
+  - @veltodefi/net@1.0.4
+  - @veltodefi/utils@0.0.2
 
 ## 0.0.6
 
@@ -4404,11 +4722,11 @@
 
 - fix & update
 - Updated dependencies
-  - @orderly.network/futures@0.0.6
-  - @orderly.network/types@0.0.5
-  - @orderly.network/core@0.0.5
-  - @orderly.network/net@1.0.3
-  - @orderly.network/utils@0.0.2
+  - @veltodefi/futures@0.0.6
+  - @veltodefi/types@0.0.5
+  - @veltodefi/core@0.0.5
+  - @veltodefi/net@1.0.3
+  - @veltodefi/utils@0.0.2
 
 ## 0.0.5
 
@@ -4416,11 +4734,11 @@
 
 - fix & update
 - Updated dependencies
-  - @orderly.network/futures@0.0.5
-  - @orderly.network/types@0.0.4
-  - @orderly.network/core@0.0.4
-  - @orderly.network/net@1.0.2
-  - @orderly.network/utils@0.0.2
+  - @veltodefi/futures@0.0.5
+  - @veltodefi/types@0.0.4
+  - @veltodefi/core@0.0.4
+  - @veltodefi/net@1.0.2
+  - @veltodefi/utils@0.0.2
 
 ## 0.0.4
 
@@ -4428,18 +4746,18 @@
 
 - update components
 - Updated dependencies
-  - @orderly.network/futures@0.0.4
-  - @orderly.network/types@0.0.3
-  - @orderly.network/core@0.0.3
-  - @orderly.network/net@1.0.1
-  - @orderly.network/utils@0.0.2
+  - @veltodefi/futures@0.0.4
+  - @veltodefi/types@0.0.3
+  - @veltodefi/core@0.0.3
+  - @veltodefi/net@1.0.1
+  - @veltodefi/utils@0.0.2
 
 ## 0.0.3
 
 ### Patch Changes
 
 - Updated dependencies
-  - @orderly.network/futures@0.0.3
+  - @veltodefi/futures@0.0.3
 
 ## 0.0.2
 
@@ -4447,8 +4765,8 @@
 
 - first publish
 - Updated dependencies
-  - @orderly.network/futures@0.0.2
-  - @orderly.network/types@0.0.2
-  - @orderly.network/utils@0.0.2
-  - @orderly.network/core@0.0.2
-  - @orderly.network/net@1.0.1
+  - @veltodefi/futures@0.0.2
+  - @veltodefi/types@0.0.2
+  - @veltodefi/utils@0.0.2
+  - @veltodefi/core@0.0.2
+  - @veltodefi/net@1.0.1
