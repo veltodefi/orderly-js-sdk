@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-positions",
-  "version": "2.8.13-velto-dev.1",
+  "version": "2.8.13-velto-main.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
