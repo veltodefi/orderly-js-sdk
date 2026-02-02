@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/wallet-connector-privy",
-  "version": "2.8.12-velto-main.3",
+  "version": "2.8.13-velto-main.2",
   "description": "",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
@@ -17,6 +17,13 @@
   "dependencies": {
     "@abstract-foundation/agw-client": "^1.6.2",
     "@abstract-foundation/agw-react": "^1.6.4",
+    "@veltodefi/core": "workspace:*",
+    "@veltodefi/hooks": "workspace:*",
+    "@veltodefi/i18n": "workspace:*",
+    "@veltodefi/types": "workspace:*",
+    "@veltodefi/ui": "workspace:*",
+    "@veltodefi/ui-connector": "workspace:*",
+    "@veltodefi/utils": "workspace:*",
     "@privy-io/react-auth": "^2.4.5",
     "@solana-mobile/wallet-adapter-mobile": "^2.1.4",
     "@solana/wallet-adapter-base": "^0.9.23",
@@ -25,13 +32,6 @@
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.95.3",
     "@tanstack/react-query": "^5.62.8",
-    "@veltodefi/core": "workspace:*",
-    "@veltodefi/hooks": "workspace:*",
-    "@veltodefi/i18n": "workspace:*",
-    "@veltodefi/types": "workspace:*",
-    "@veltodefi/ui": "workspace:*",
-    "@veltodefi/ui-connector": "workspace:*",
-    "@veltodefi/utils": "workspace:*",
     "@wagmi/connectors": "^5.7.3",
     "viem": "^2.29.2",
     "wagmi": "^2.14.11",
@@ -43,7 +43,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsconfig": "workspace:*",
-    "tsup": "^7.1.0"
+    "tsup": "^8.5.1"
   },
   "peerDependencies": {
     "react": ">=18"
