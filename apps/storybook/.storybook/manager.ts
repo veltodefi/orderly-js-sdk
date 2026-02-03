@@ -1,8 +1,8 @@
-import { addons, State } from "storybook/manager-api";
-import orderlyTheme from "./orderlyTheme";
+import { addons } from "storybook/manager-api";
+import veltoTheme from "./veltoTheme";
 
 addons.setConfig({
-  theme: orderlyTheme,
+  theme: veltoTheme,
   // https://storybook.js.org/docs/configure/user-interface/features-and-behavior#customize-the-ui
   // layoutCustomisations: {
   //   // Always hide the toolbar on docs pages, and respect user preferences elsewhere.
