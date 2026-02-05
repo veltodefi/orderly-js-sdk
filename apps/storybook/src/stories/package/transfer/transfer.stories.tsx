@@ -1,6 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { useAccount } from "@veltodefi/hooks";
-import { Box, Flex, Button, modal, toast } from "@veltodefi/ui";
+import { OrderlyAppProvider } from "@veltodefi/react-app";
+import {
+  Box,
+  Flex,
+  Button,
+  modal,
+  toast,
+  ExtensionPositionEnum,
+} from "@veltodefi/ui";
+import { Scaffold } from "@veltodefi/ui-scaffold";
 import {
   DepositFormWidget,
   WithdrawFormWidget,
@@ -10,6 +20,7 @@ import {
   TransferDialogId,
   TransferSheetId,
 } from "@veltodefi/ui-transfer";
+import { WalletConnectorProvider } from "@veltodefi/wallet-connector";
 
 const meta: Meta<typeof DepositFormWidget> = {
   title: "Package/ui-transfer",
@@ -20,11 +31,41 @@ const meta: Meta<typeof DepositFormWidget> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const DepositFormBoth: Story = {
+  decorators: [
+    () => (
+      <Scaffold>
+        <Flex justify="center" itemAlign={"start"} gap={6}>
+          <Box width={420} r="lg">
+            <DepositFormWidget layout="onboarding" />
+          </Box>
+
+          <Box width={420} p={2} r="lg" className="oui-bg-base-8">
+            <DepositFormWidget />
+          </Box>
+        </Flex>
+      </Scaffold>
+    ),
+  ],
+};
+
+export const DepositFormOnboarding: Story = {
+  decorators: [
+    (Story) => (
+      <Flex justify="center" mt={10}>
+        <Box width={420} p={5} r="lg">
+          <Story />
+        </Box>
+      </Flex>
+    ),
+  ],
+};
+
 export const DepositForm: Story = {
   decorators: [
     (Story) => (
       <Flex justify="center" mt={10}>
-        <Box width={420} intensity={800} p={5} r="lg">
+        <Box width={420} p={2} r="lg" className="oui-bg-base-8">
           <Story />
         </Box>
       </Flex>

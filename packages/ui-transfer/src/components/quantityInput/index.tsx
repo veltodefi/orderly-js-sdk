@@ -122,7 +122,7 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
   const prefix = (
     <Box>
       <Box className="oui-absolute oui-top-0">
-        <Text size="2xs" intensity={36}>
+        <Text size="2xs" intensity={36} weight="regular">
           {label || t("common.quantity")}
         </Text>
       </Box>
@@ -175,20 +175,12 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
   );
 
   const message = (
-    <Flex mt={1} gapX={1} px={1} justify="between" itemAlign="center">
+    <Flex mt={1} gapX={1} px={3} justify="between" itemAlign="center">
       <Flex gapX={1} itemAlign="center">
-        <Box
-          width={4}
-          height={4}
-          r="full"
-          className={cn(
-            status === "error" && "oui-bg-danger-light",
-            status === "warning" && "oui-bg-warning-light",
-          )}
-        ></Box>
         <Text
           size="2xs"
           className={cn(
+            "oui-font-normal",
             status === "error" && "oui-text-danger-light",
             status === "warning" && "oui-text-warning-light",
           )}
@@ -205,7 +197,7 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
   const _placeholder = placeholder ?? (loading ? "" : "0");
 
   return (
-    <>
+    <div>
       <Input
         ref={inputRef}
         autoComplete="off"
@@ -242,6 +234,6 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         }}
       />
       {hintMessage && message}
-    </>
+    </div>
   );
 };

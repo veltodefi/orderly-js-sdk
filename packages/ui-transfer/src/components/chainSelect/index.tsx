@@ -73,7 +73,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
     <Flex
       intensity={500}
       className={cn(
-        "oui-rounded-t-xl oui-rounded-b-sm oui-border oui-border-line",
+        "oui-rounded-2xl",
         disabled
           ? "oui-cursor-not-allowed"
           : selectable
@@ -87,7 +87,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
     >
       <div>
         <Flex>
-          <Text size="2xs" intensity={54}>
+          <Text size="2xs" intensity={54} weight="regular">
             {t("transfer.network")}
           </Text>
         </Flex>

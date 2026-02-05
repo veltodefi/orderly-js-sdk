@@ -9,7 +9,6 @@ export type AvailableQuantityProps = {
   token?: Partial<API.TokenInfo>;
   amount?: number | string;
   maxQuantity?: number | string;
-  onClick?: () => void;
   loading?: boolean;
   tooltipContent?: React.ReactNode;
 };
@@ -35,7 +34,7 @@ const AvailableTooltipMessage: FC<AvailableTooltipMessageProps> = ({
   }, [maxAmount]);
 
   return (
-    <Text size="2xs" intensity={80}>
+    <Text size="sm" intensity={80}>
       {t("transfer.withdraw.available.tooltip", { amount: amountText })}
     </Text>
   );
@@ -61,8 +60,8 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
   }, [amount, token?.symbol]);
 
   return (
-    <Flex px={2}>
-      <Text size="2xs" intensity={36}>
+    <Flex px={2} className="oui-text-[#C7C7C7]">
+      <Text weight="regular" size="sm">
         $
         <Text.numeral dp={2} padding={false} rm={Decimal.ROUND_DOWN}>
           {notional}
@@ -101,8 +100,8 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
                 }}
               >
                 <Text
-                  size="2xs"
-                  intensity={36}
+                  weight="regular"
+                  size="sm"
                   className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12"
                 >
                   {`${t("common.available")}: `}
@@ -114,8 +113,8 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
                 className="oui-max-w-[274px]"
               >
                 <Text
-                  size="2xs"
-                  intensity={36}
+                  weight="regular"
+                  size="sm"
                   className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12"
                 >
                   {`${t("common.available")}: `}
@@ -123,7 +122,7 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
               </Tooltip>
             )
           ) : (
-            <Text size="2xs" intensity={36}>
+            <Text weight="regular" size="sm">
               {`${t("common.available")}: `}
             </Text>
           )}
@@ -132,8 +131,8 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
             <Spinner size="sm" />
           ) : (
             <Text.numeral
-              size="2xs"
-              intensity={36}
+              weight="regular"
+              size="sm"
               rm={Decimal.ROUND_DOWN}
               dp={dp}
               padding={false}
@@ -143,19 +142,8 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
             </Text.numeral>
           )}
 
-          <Text size="2xs" intensity={36}>
-            {` ${name}`}
-          </Text>
+          <Text size="sm">{` ${name}`}</Text>
         </Flex>
-
-        <Text
-          size="2xs"
-          color="primary"
-          className="oui-cursor-pointer oui-select-none"
-          onClick={props.onClick}
-        >
-          {t("common.max")}
-        </Text>
       </Flex>
     </Flex>
   );

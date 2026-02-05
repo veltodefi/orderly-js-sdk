@@ -14,6 +14,28 @@ const preview: Preview = {
         brokerId="orderly"
         brokerName="Orderly"
         networkId="testnet"
+        appIcons={{
+          main: {
+            component: (
+              <img
+                src={"/logo.webp?v=1"}
+                alt="logo"
+                fetchPriority="high"
+                loading="eager"
+                // 1. Provide original dimensions to define aspect ratio
+                width="327"
+                height="120"
+                style={{
+                  height: "42px",
+                  width: "auto", // 2. Ensures width scales proportionally to height
+                }}
+              />
+            ),
+          },
+          secondary: {
+            img: "/logo-secondary.webp?v=1",
+          },
+        }}
         veltoProps={{
           mostCommonChains: ["BNB Chain", "Arbitrum", "Ethereum", "Solana"],
         }}

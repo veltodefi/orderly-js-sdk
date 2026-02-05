@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Box, Flex, modal, Text } from "@veltodefi/ui";
+import { Flex, InfoIcon, Text, Tooltip } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { type UseDepositFeeReturn } from "../depositForm/depositForm.script";
 
@@ -8,75 +8,69 @@ type FeeProps = Partial<UseDepositFeeReturn> & {
   nativeSymbol?: string;
 };
 
+const TooltipContent = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Flex
+      direction={"column"}
+      itemAlign={"start"}
+      className="oui-w-72 oui-max-w-72 oui-text-primary-contrast"
+    >
+      <Text size="sm" weight="semibold">
+        {t("transfer.deposit.estGasFee")}
+      </Text>
+      <Text size="2xs" weight="regular">
+        {t("transfer.deposit.destinationGasFee.description")}
+      </Text>
+    </Flex>
+  );
+};
+
 export const Fee: FC<FeeProps> = (props) => {
   const { dstGasFee, feeQty, feeAmount, dp, nativeSymbol } = props;
   const { t } = useTranslation();
-
-  const onShowFee = () => {
-    const content = (
-      <div className="oui-text-2xs">
-        <Flex gapX={1}>
-          <Text size="sm" intensity={54}>
-            {`${t("transfer.deposit.destinationGasFee")}: `}
-          </Text>
-          <Text.numeral
-            intensity={80}
-            size="sm"
-            dp={dp}
-            rm={Decimal.ROUND_UP}
-            padding={false}
-          >
-            {feeQty!}
-          </Text.numeral>
-          <Text intensity={54}>{nativeSymbol}</Text>
-        </Flex>
-        <Box mt={2}>
-          <Text size="sm" intensity={36}>
-            {t("transfer.deposit.destinationGasFee.description")}
-          </Text>
-        </Box>
-      </div>
-    );
-
-    modal.alert({
-      title: t("common.fee"),
-      message: content,
-    });
-  };
 
   const showFeeQty = !!dstGasFee && dstGasFee !== "0";
 
   return (
     <Text
       size="sm"
-      intensity={36}
-      className="oui-border-dashed oui-border-b oui-border-line-12 oui-cursor-pointer"
-      onClick={onShowFee}
+      weight="regular"
+      className="oui-flex oui-w-full oui-justify-between"
     >
-      {`${t("transfer.deposit.estGasFee")} ≈ `}
-      <Text size="sm" intensity={80}>
+      <Flex>
+        {t("transfer.deposit.estGasFee")}
+        <Tooltip className="oui-p-2" content={<TooltipContent />}>
+          <InfoIcon
+            size={13}
+            className="oui-ml-1 oui-cursor-pointer oui-text-primary"
+          />
+        </Tooltip>
+      </Flex>
+      <Text size="sm">
         $
         <Text.numeral size="sm" dp={2} padding={false} rm={Decimal.ROUND_UP}>
           {feeAmount!}
         </Text.numeral>{" "}
+        {showFeeQty && (
+          <span>
+            (
+            <Text>
+              <Text.numeral
+                size="sm"
+                dp={dp}
+                padding={false}
+                rm={Decimal.ROUND_UP}
+              >
+                {feeQty!}
+              </Text.numeral>
+              {nativeSymbol}
+            </Text>
+            )
+          </span>
+        )}
       </Text>
-      {showFeeQty && (
-        <span>
-          (
-          <Text intensity={54}>
-            <Text.numeral
-              size="sm"
-              dp={dp}
-              padding={false}
-              rm={Decimal.ROUND_UP}
-            >
-              {feeQty!}
-            </Text.numeral>
-            {nativeSymbol}
-          </Text>
-          )
-        </span>
-      )}
     </Text>
   );
 };

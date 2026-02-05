@@ -144,11 +144,11 @@ export const Slippage: FC<SlippageProps> = (props) => {
         className="oui-cursor-pointer oui-select-none"
         onClick={showSlippage}
       >
-        <Text intensity={36} size="2xs">
+        <Text size="sm" weight="regular">
           {t("transfer.slippage")}
         </Text>
         <Flex gapX={1}>
-          <Text size="2xs" color="primaryLight">
+          <Text size="sm" color="primaryLight">
             {props.value}%
           </Text>
           <EditIcon className="oui-size-3 oui-text-primary-light" />
