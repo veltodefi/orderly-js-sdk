@@ -1,15 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { fn } from "storybook/test";
 import { useAccount } from "@veltodefi/hooks";
-import { OrderlyAppProvider } from "@veltodefi/react-app";
-import {
-  Box,
-  Flex,
-  Button,
-  modal,
-  toast,
-  ExtensionPositionEnum,
-} from "@veltodefi/ui";
+import { Box, Flex, Button, modal, toast } from "@veltodefi/ui";
 import { Scaffold } from "@veltodefi/ui-scaffold";
 import {
   DepositFormWidget,
@@ -20,7 +11,6 @@ import {
   TransferDialogId,
   TransferSheetId,
 } from "@veltodefi/ui-transfer";
-import { WalletConnectorProvider } from "@veltodefi/wallet-connector";
 
 const meta: Meta<typeof DepositFormWidget> = {
   title: "Package/ui-transfer",

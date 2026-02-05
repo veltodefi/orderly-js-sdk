@@ -14,8 +14,8 @@ import {
   Spinner,
   Text,
   cn,
+  ChevronDownVeltoIcon,
 } from "@veltodefi/ui";
-import { ExchangeIcon } from "../../icons";
 import { CurrentChain } from "../depositForm/hooks";
 
 type ChainSelectProps = {
@@ -65,7 +65,13 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
       return <Spinner size="sm" />;
     }
     if (selectable) {
-      return <ExchangeIcon className="oui-text-base-contrast-54" />;
+      return (
+        <ChevronDownVeltoIcon
+          size={12}
+          opacity={1}
+          className="oui-text-primary"
+        />
+      );
     }
   };
 

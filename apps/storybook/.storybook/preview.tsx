@@ -11,8 +11,8 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <OrderlyAppProvider
-        brokerId="orderly"
-        brokerName="Orderly"
+        brokerId="velto"
+        brokerName="Velto"
         networkId="testnet"
         appIcons={{
           main: {

@@ -1,15 +1,14 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { API } from "@veltodefi/types";
 import {
   Box,
   Flex,
-  InfoCircleIcon,
   InfoIcon,
   textVariants,
   Text,
   TokenIcon,
-  CaretDownIcon,
+  ChevronDownVeltoIcon,
   Tooltip,
   modal,
   useScreen,
@@ -94,11 +93,14 @@ export const DepositForm: FC<Props> = (props) => {
 
   const { t } = useTranslation();
   const [selectedPercentage, setSelectedPercentage] = useState<Percentages>();
+  const { isMobile } = useScreen();
 
   const showRegularTokenRenderer =
     sourceToken?.user_max_qty !== undefined && sourceToken?.user_max_qty === -1;
 
-  const { isMobile } = useScreen();
+  useEffect(() => {
+    setSelectedPercentage(undefined);
+  }, [targetToken?.symbol]);
 
   const renderDepositCapTooltipContent = (tokenLabel: string) => (
     <Flex direction="column" itemAlign="start">
@@ -123,18 +125,18 @@ export const DepositForm: FC<Props> = (props) => {
     <Flex direction="column" itemAlign="end" gapY={1}>
       <Flex gapX={1} itemAlign="center">
         <TokenIcon name={value} className="oui-size-[16px]" />
-        <Text weight="semibold" intensity={54}>
+        <Text weight="regular" className="oui-text-secondary">
           {value}
         </Text>
-        <CaretDownIcon
+        <ChevronDownVeltoIcon
           size={12}
-          className="oui-text-base-contrast-54"
+          className="oui-text-secondary oui-ml-0.5"
           opacity={1}
         />
       </Flex>
       <Flex itemAlign="center" className="oui-gap-[2px]">
         <Text size="2xs" weight="regular" className="oui-leading-[10px]">
-          {t("transfer.depositCap", "Deposit cap")}{" "}
+          {t("transfer.depositCap", "Deposit cap")}:{" "}
           <Text.numeral
             as="span"
             size="2xs"
@@ -164,7 +166,7 @@ export const DepositForm: FC<Props> = (props) => {
               event.stopPropagation();
             }}
           >
-            <InfoCircleIcon
+            <InfoIcon
               className="oui-size-3 oui-shrink-0 oui-cursor-pointer"
               opacity={0.36}
             />
@@ -184,7 +186,7 @@ export const DepositForm: FC<Props> = (props) => {
               </Box>
             }
           >
-            <InfoIcon className="oui-size-3 oui-shrink-0 oui-cursor-pointer oui-text-primary oui-opacity-100 oui-filter-none" />
+            <InfoIcon className="oui-ml-0.5 oui-size-3 oui-shrink-0 oui-cursor-pointer oui-text-primary oui-opacity-100 oui-filter-none" />
           </Tooltip>
         )}
       </Flex>
@@ -192,6 +194,23 @@ export const DepositForm: FC<Props> = (props) => {
   );
 
   const renderContent = (token?: string) => {
+    // const mainLoading =
+    //   targetQuantityLoading || loading || settingChain || balanceRevalidating;
+    //   console.log('LOADING', mainLoading, balanceRevalidating)
+
+    if (token === "USDC") {
+      return (
+        <Flex
+          direction="column"
+          className="oui-text-[#C7C7C7]"
+          itemAlign="start"
+          gap={2}
+        >
+          <Fee {...fee} nativeSymbol={props.nativeSymbol} />
+        </Flex>
+      );
+    }
+
     if (needSwap || needCrossSwap) {
       return (
         <Flex
@@ -218,19 +237,6 @@ export const DepositForm: FC<Props> = (props) => {
             precision={SWAP_USDC_PRECISION}
           />
           <SwapFee {...swapFee} />
-        </Flex>
-      );
-    }
-
-    if (token === "USDC") {
-      return (
-        <Flex
-          direction="column"
-          className="oui-text-[#C7C7C7]"
-          itemAlign="start"
-          gap={2}
-        >
-          <Fee {...fee} nativeSymbol={props.nativeSymbol} />
         </Flex>
       );
     }
@@ -307,6 +313,7 @@ export const DepositForm: FC<Props> = (props) => {
 
             <AmountSelector
               maxAmount={maxDepositAmount}
+              disabled={!maxDepositAmount || maxDepositAmount === "0"}
               selectedPercentage={selectedPercentage}
               onClick={({ selectedPercentage, selectedValue }) => {
                 setSelectedPercentage(selectedPercentage);
@@ -404,9 +411,7 @@ const TradingBalance = ({
         <Spinner size="sm" className="oui-h-[26px]" />
       ) : (
         <Text size={"lg"} weight="bold" className="oui-text-primary-contrast">
-          {targetQuantity && targetToken
-            ? `${targetQuantity} ${targetToken.symbol}`
-            : "0"}
+          {targetToken ? `${targetQuantity || 0} ${targetToken.symbol}` : "0"}
         </Text>
       )}
     </Flex>

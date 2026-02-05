@@ -25,7 +25,7 @@ export const BrokerWallet: FC = () => {
 
   return (
     <Flex justify="between">
-      <Text size="sm" intensity={98}>
+      <Text size="base" weight="bold">
         {t("transfer.brokerAccount", { brokerName })}
       </Text>
       {icon}

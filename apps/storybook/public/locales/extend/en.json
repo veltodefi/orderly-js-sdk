@@ -27,7 +27,7 @@
   "extend.viewAll": "View all",
   "portfolio.overview.column.collateralRatio.explain": "The ratio of your collateral to open positions. A lower ratio increases liquidation risk.",
   "transfer.deposit.collateralContribution.explain": "This asset’s portion of your total collateral.",
-  "transfer.LTV": "LTV (Loan-to-Value)",
+  "transfer.LTV": "Loan-to-Value",
   "transfer.LTV.description": "The percentage of borrowed value relative to your collateral.",
   "transfer.deposit.destinationGasFee.description": "An estimated network fee for processing your deposit. Final cost may vary.",
   "extend.transfer.tradingBalance": "Trading balance"
