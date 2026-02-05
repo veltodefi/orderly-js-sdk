@@ -9,6 +9,7 @@ export type AvailableQuantityProps = {
   token?: Partial<API.TokenInfo>;
   amount?: number | string;
   maxQuantity?: number | string;
+  onClick?: () => void;
   loading?: boolean;
   tooltipContent?: React.ReactNode;
 };
@@ -144,6 +145,17 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
 
           <Text size="sm">{` ${name}`}</Text>
         </Flex>
+
+        {props.onClick && (
+          <Text
+            size="2xs"
+            color="primary"
+            className="oui-cursor-pointer oui-select-none"
+            onClick={props.onClick}
+          >
+            {t("common.max")}
+          </Text>
+        )}
       </Flex>
     </Flex>
   );
