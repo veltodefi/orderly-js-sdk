@@ -127,12 +127,12 @@ export const MainNav: FC<PropsWithChildren<MainNavScriptReturn>> = (props) => {
       width="100%"
       as="header"
       itemAlign={"center"}
-      height={"48px"}
+      height={"72px"}
       justify={"between"}
       px={3}
       gapX={3}
       className={cn(
-        "oui-main-nav oui-font-semibold oui-border-0 lg:oui-border-b-white/[0.12] lg:oui-border-b",
+        "oui-main-nav oui-border-0 oui-font-semibold lg:oui-border-b lg:oui-border-b-white/[0.12]",
         className,
         classNames?.root,
       )}
