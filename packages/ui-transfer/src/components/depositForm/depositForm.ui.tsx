@@ -270,7 +270,11 @@ export const DepositForm: FC<Props> = (props) => {
       className={cn(textVariants({ weight: "semibold" }))}
     >
       <Box className="oui-mb-6 lg:oui-mb-8">
-        <Box className="oui-bg-base-8" p={4} r="2xl">
+        <Box
+          className="oui-bg-base-8"
+          p={layout === "onboarding" ? 4 : 0}
+          r="2xl"
+        >
           <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
             <Web3Wallet />
 
@@ -340,7 +344,11 @@ export const DepositForm: FC<Props> = (props) => {
           <ExchangeDivider layout={layout} />
         </Box>
 
-        <Box className="oui-bg-base-8" p={4} r="2xl">
+        <Box
+          className="oui-bg-base-8"
+          p={layout === "onboarding" ? 4 : 0}
+          r="2xl"
+        >
           <Flex direction={"column"} itemAlign={"stretch"} gap={4}>
             <BrokerWallet />
 
@@ -371,11 +379,7 @@ export const DepositForm: FC<Props> = (props) => {
         networkId={networkId}
       />
 
-      <Box
-        width="100%"
-        px={layout === "onboarding" ? 0 : 4}
-        pb={layout === "onboarding" ? 0 : 4}
-      >
+      <Box width="100%">
         <ActionButton
           actionType={actionType}
           symbol={sourceToken?.symbol}

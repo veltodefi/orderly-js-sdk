@@ -33,7 +33,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
       size="lg"
       classNames={{
         tabsList: "oui-px-0",
-        tabsContent: "oui-pt-5",
+        tabsContent: "oui-pt-5 oui-text-white",
       }}
     >
       <TabPanel
