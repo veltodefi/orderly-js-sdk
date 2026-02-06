@@ -79,7 +79,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
     <Flex
       intensity={500}
       className={cn(
-        "oui-rounded-2xl",
+        "oui-rounded-2xl oui-h-[58px]",
         disabled
           ? "oui-cursor-not-allowed"
           : selectable
@@ -87,19 +87,19 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
             : "oui-cursor-auto",
       )}
       height={54}
-      px={3}
+      px={4}
       justify="between"
       itemAlign="center"
     >
       <div>
         <Flex>
-          <Text size="2xs" intensity={54} weight="regular">
+          <Text size="2xs" weight="regular" className="oui-text-[#c7c7c7]">
             {t("transfer.network")}
           </Text>
         </Flex>
-        <Flex gapX={1} itemAlign="center">
+        <Flex gapX={1} itemAlign="center" className="oui-mt-0.5">
           {chainIcon}
-          <Text size="sm" intensity={80}>
+          <Text size="sm" weight="regular" className="oui-text-[#c7c7c7]">
             {chainName}
           </Text>
           {!isCurrentChainSupported && (

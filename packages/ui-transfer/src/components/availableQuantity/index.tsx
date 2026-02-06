@@ -143,7 +143,7 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
             </Text.numeral>
           )}
 
-          <Text size="sm">{` ${name}`}</Text>
+          <Text size="sm" weight="regular">{` ${name}`}</Text>
         </Flex>
 
         {props.onClick && (

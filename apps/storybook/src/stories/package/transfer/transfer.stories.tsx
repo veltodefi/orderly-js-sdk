@@ -21,6 +21,22 @@ const meta: Meta<typeof DepositFormWidget> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const DepositAndWithdrawal: Story = {
+  decorators: [
+    () => (
+      <Flex justify="center" itemAlign={"start"} gap={6}>
+        <Box width={420} p={2} r="lg" className="oui-bg-base-8">
+          <WithdrawFormWidget />
+        </Box>
+
+        <Box width={420} p={2} r="lg" className="oui-bg-base-8">
+          <DepositFormWidget />
+        </Box>
+      </Flex>
+    ),
+  ],
+};
+
 export const DepositFormBoth: Story = {
   decorators: [
     () => (
@@ -67,7 +83,7 @@ export const WithdrawForm: Story = {
   render: () => {
     return (
       <Flex justify="center" mt={10}>
-        <Box width={420} intensity={800} p={5} r="lg">
+        <Box width={420} intensity={800} p={2} r="lg">
           <WithdrawFormWidget />
         </Box>
       </Flex>

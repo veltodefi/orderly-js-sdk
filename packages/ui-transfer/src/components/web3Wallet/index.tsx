@@ -23,7 +23,7 @@ export const Web3Wallet: FC = () => {
 
   return (
     <Flex justify="between">
-      <Text size="sm" className="oui-text-primary-contrast">
+      <Text size="base" className="oui-text-primary-contrast">
         {t("transfer.web3Wallet.your")}
       </Text>
 

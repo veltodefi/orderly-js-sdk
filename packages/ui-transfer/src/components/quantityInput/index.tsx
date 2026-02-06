@@ -12,6 +12,7 @@ import {
   inputFormatter,
   Spinner,
   InputFormatter,
+  AvatarSizeType,
 } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { InputStatus } from "../../types";
@@ -36,6 +37,7 @@ export type QuantityInputProps = {
   tokenValueFormatter?: (value: string) => ReactNode;
   tokenShowCaret?: boolean;
   highlightOnHover?: boolean;
+  iconSize?: AvatarSizeType;
 } & Omit<InputProps, "onClear" | "suffix" | "onValueChange">;
 
 export const QuantityInput: FC<QuantityInputProps> = (props) => {
@@ -121,8 +123,8 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
 
   const prefix = (
     <Box>
-      <Box className="oui-absolute oui-top-0">
-        <Text size="2xs" intensity={36} weight="regular">
+      <Box className="oui-absolute oui-top-0.5">
+        <Text size="2xs" weight="regular" className="oui-text-[#c7c7c7]">
           {label || t("common.quantity")}
         </Text>
       </Box>
@@ -146,13 +148,18 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         tokens={tokenOptions}
         value={token?.display_name || token?.symbol}
         size={rest.size}
+        iconSize={rest.iconSize}
         onValueChange={_onTokenChange}
         showIcon
         valueFormatter={tokenValueFormatter}
         showCaret={tokenShowCaret}
         optionRenderer={optionRenderer}
         classNames={{
-          trigger: "oui-bg-transparent",
+          trigger: cn(
+            "oui-bg-transparent",
+            tokenValueFormatter && "oui-px-0 oui-mr-1",
+            tokenShowCaret && "oui-px-0",
+          ),
         }}
         contentProps={{
           onCloseAutoFocus: (event) => {
@@ -219,8 +226,9 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         classNames={{
           ...classNames,
           root: cn(
-            "oui-relative oui-h-[54px] oui-px-3",
+            "oui-relative oui-h-[58px] oui-px-4",
             "oui-rounded-lg oui-border oui-border-line",
+            "placeholder:oui-font-normal",
             status === "error" &&
               "oui-outline-danger-light focus-within:oui-outline-danger-light",
             status === "warning" &&

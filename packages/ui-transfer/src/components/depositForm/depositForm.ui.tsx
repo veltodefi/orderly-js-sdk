@@ -194,10 +194,6 @@ export const DepositForm: FC<Props> = (props) => {
   );
 
   const renderContent = (token?: string) => {
-    // const mainLoading =
-    //   targetQuantityLoading || loading || settingChain || balanceRevalidating;
-    //   console.log('LOADING', mainLoading, balanceRevalidating)
-
     if (token === "USDC") {
       return (
         <Flex
@@ -280,7 +276,7 @@ export const DepositForm: FC<Props> = (props) => {
 
             {layout === "onboarding" && (
               <Text size="sm" weight="regular" className="oui-text-[#5B8FFF]">
-                80% of our traders transfer 10–25% of their balance.
+                {t("transfer.ourTraders")}
               </Text>
             )}
 
@@ -297,6 +293,7 @@ export const DepositForm: FC<Props> = (props) => {
               classNames={{
                 root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
               }}
+              iconSize="md"
               value={quantity}
               onValueChange={onQuantityChange}
               token={sourceToken}
@@ -340,9 +337,7 @@ export const DepositForm: FC<Props> = (props) => {
           </Flex>
         </Box>
 
-        <Box px={layout === "onboarding" ? 0 : 4}>
-          <ExchangeDivider layout={layout} />
-        </Box>
+        <ExchangeDivider layout={layout} />
 
         <Box
           className="oui-bg-base-8"
@@ -414,7 +409,10 @@ const TradingBalance = ({
       {targetQuantityLoading ? (
         <Spinner size="sm" className="oui-h-[26px]" />
       ) : (
-        <Text size={"lg"} weight="bold" className="oui-text-primary-contrast">
+        <Text
+          size={"lg"}
+          className="oui-text-primary-contrast oui-font-semibold"
+        >
           {targetToken ? `${targetQuantity || 0} ${targetToken.symbol}` : "0"}
         </Text>
       )}

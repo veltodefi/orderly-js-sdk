@@ -49,13 +49,12 @@ export const Fee: FC<FeeProps> = (props) => {
         </Tooltip>
       </Flex>
       <Text size="sm">
-        $
+        ≈ $
         <Text.numeral size="sm" dp={2} padding={false} rm={Decimal.ROUND_UP}>
           {feeAmount!}
         </Text.numeral>{" "}
         {showFeeQty && (
           <span>
-            (
             <Text>
               <Text.numeral
                 size="sm"
@@ -67,7 +66,6 @@ export const Fee: FC<FeeProps> = (props) => {
               </Text.numeral>
               {nativeSymbol}
             </Text>
-            )
           </span>
         )}
       </Text>

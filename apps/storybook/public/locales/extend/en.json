@@ -30,5 +30,8 @@
   "transfer.LTV": "Loan-to-Value",
   "transfer.LTV.description": "The percentage of borrowed value relative to your collateral.",
   "transfer.deposit.destinationGasFee.description": "An estimated network fee for processing your deposit. Final cost may vary.",
-  "extend.transfer.tradingBalance": "Trading balance"
+  "extend.transfer.tradingBalance": "Trading balance",
+  "extend.transfer.walletBalance": "Wallet balance",
+  "transfer.brokerAccount": "Your {{brokerName}} Account",
+  "transfer.ourTraders": "80% of our traders transfer 10–25% of their balance."
 }
