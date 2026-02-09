@@ -276,6 +276,7 @@ export const DepositForm: FC<Props> = (props) => {
 
             {layout === "onboarding" && (
               <Text size="sm" weight="regular" className="oui-text-[#5B8FFF]">
+                {/* @ts-ignore */}
                 {t("transfer.ourTraders")}
               </Text>
             )}
