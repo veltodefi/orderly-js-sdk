@@ -194,9 +194,13 @@ export const DepositForm: FC<Props> = (props) => {
   );
 
   const renderContent = (token?: string) => {
+    // Common animation classes for reusability
+    const animationClasses =
+      "oui-animate-in oui-fade-in oui-slide-in-from-bottom-2 oui-duration-500 oui-ease-in-out";
+
     if (balanceRevalidating) {
       return (
-        <Flex justify={"center"}>
+        <Flex key="spinner" justify={"center"}>
           <Spinner size="md" />
         </Flex>
       );
@@ -205,8 +209,9 @@ export const DepositForm: FC<Props> = (props) => {
     if (token === "USDC") {
       return (
         <Flex
+          key="usdc-content"
           direction="column"
-          className="oui-text-[#C7C7C7]"
+          className={cn("oui-text-[#C7C7C7]", animationClasses)}
           itemAlign="start"
           gap={2}
         >
@@ -218,8 +223,9 @@ export const DepositForm: FC<Props> = (props) => {
     if (needSwap || needCrossSwap) {
       return (
         <Flex
+          key="swap-content"
           direction="column"
-          className="oui-text-[#C7C7C7]"
+          className={cn("oui-text-[#C7C7C7]", animationClasses)}
           itemAlign="start"
           gap={2}
         >
@@ -247,8 +253,9 @@ export const DepositForm: FC<Props> = (props) => {
 
     return (
       <Flex
+        key="default-content"
         direction="column"
-        className="oui-text-[#C7C7C7]"
+        className={cn("oui-text-[#C7C7C7]", animationClasses)}
         itemAlign="start"
         gap={2}
       >
@@ -271,119 +278,122 @@ export const DepositForm: FC<Props> = (props) => {
   return (
     <Box
       id="oui-deposit-form"
-      className={cn(textVariants({ weight: "semibold" }))}
+      className={cn(
+        textVariants({ weight: "semibold" }),
+        "oui-h-full oui-flex oui-flex-col oui-justify-between",
+      )}
     >
-      <Box className="oui-mb-6 lg:oui-mb-8">
-        <Box
-          className="oui-bg-base-8"
-          p={layout === "onboarding" ? 4 : 0}
-          r="2xl"
-        >
-          <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
-            <Web3Wallet />
+      <div>
+        <Box className="oui-mb-6 lg:oui-mb-8">
+          <Box
+            className="oui-bg-base-8"
+            p={layout === "onboarding" ? 4 : 0}
+            r="2xl"
+          >
+            <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
+              <Web3Wallet />
 
-            {layout === "onboarding" && (
-              <Text size="sm" weight="regular" className="oui-text-[#5B8FFF]">
-                {/* @ts-ignore */}
-                {t("transfer.ourTraders")}
-              </Text>
-            )}
+              {layout === "onboarding" && (
+                <Text size="sm" weight="regular" className="oui-text-[#5B8FFF]">
+                  {/* @ts-ignore */}
+                  {t("transfer.ourTraders")}
+                </Text>
+              )}
 
-            <ChainSelect
-              chains={chains}
-              value={currentChain!}
-              onValueChange={onChainChange}
-              wrongNetwork={wrongNetwork}
-              loading={settingChain}
-              disabled={!props.isLoggedIn}
-            />
+              <ChainSelect
+                chains={chains}
+                value={currentChain!}
+                onValueChange={onChainChange}
+                wrongNetwork={wrongNetwork}
+                loading={settingChain}
+                disabled={!props.isLoggedIn}
+              />
 
-            <QuantityInput
-              classNames={{
-                root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
-              }}
-              iconSize="md"
-              value={quantity}
-              onValueChange={onQuantityChange}
-              token={sourceToken}
-              tokens={sourceTokens}
-              onTokenChange={onSourceTokenChange}
-              status={inputStatus}
-              hintMessage={hintMessage}
-              highlightOnHover={!!sourceTokens.length}
-              fetchBalance={fetchBalance}
-              tokenBalances={props.tokenBalances}
-              tokenShowCaret={showRegularTokenRenderer}
-              tokenValueFormatter={
-                showRegularTokenRenderer ? undefined : tokenValueFormatter
-              }
-              data-testId="oui-testid-deposit-dialog-quantity-input"
-              disabled={!props.isLoggedIn}
-            />
+              <QuantityInput
+                classNames={{
+                  root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
+                }}
+                iconSize="md"
+                value={quantity}
+                onValueChange={onQuantityChange}
+                token={sourceToken}
+                tokens={sourceTokens}
+                onTokenChange={onSourceTokenChange}
+                status={inputStatus}
+                hintMessage={hintMessage}
+                highlightOnHover={!!sourceTokens.length}
+                fetchBalance={fetchBalance}
+                tokenBalances={props.tokenBalances}
+                tokenShowCaret={showRegularTokenRenderer}
+                tokenValueFormatter={
+                  showRegularTokenRenderer ? undefined : tokenValueFormatter
+                }
+                data-testId="oui-testid-deposit-dialog-quantity-input"
+                disabled={!props.isLoggedIn}
+              />
 
-            <AmountSelector
-              maxAmount={maxDepositAmount}
-              disabled={!maxDepositAmount || maxDepositAmount === "0"}
-              selectedPercentage={selectedPercentage}
-              onClick={({ selectedPercentage, selectedValue }) => {
-                setSelectedPercentage(selectedPercentage);
-                onQuantityChange(selectedValue);
-              }}
-            />
+              <AmountSelector
+                maxAmount={maxDepositAmount}
+                disabled={!maxDepositAmount || maxDepositAmount === "0"}
+                selectedPercentage={selectedPercentage}
+                onClick={({ selectedPercentage, selectedValue }) => {
+                  setSelectedPercentage(selectedPercentage);
+                  onQuantityChange(selectedValue);
+                }}
+              />
 
-            <AvailableQuantity
-              token={sourceToken}
-              amount={amount}
-              maxQuantity={maxQuantity}
-              loading={balanceRevalidating}
-            />
+              <AvailableQuantity
+                token={sourceToken}
+                amount={amount}
+                maxQuantity={maxQuantity}
+                loading={balanceRevalidating}
+              />
 
-            {/* Yield-bearing collateral reminder */}
-            <YieldBearingReminder
-              symbol={targetToken?.symbol}
-              className="oui-mt-3"
-            />
-          </Flex>
+              {/* Yield-bearing collateral reminder */}
+              <YieldBearingReminder
+                symbol={targetToken?.symbol}
+                className="oui-mt-3"
+              />
+            </Flex>
+          </Box>
+
+          <ExchangeDivider layout={layout} />
+
+          <Box
+            className="oui-bg-base-8"
+            p={layout === "onboarding" ? 4 : 0}
+            r="2xl"
+          >
+            <Flex direction={"column"} itemAlign={"stretch"} gap={4}>
+              <BrokerWallet />
+
+              <TradingBalance
+                targetQuantity={targetQuantity}
+                targetToken={targetToken}
+                targetQuantityLoading={targetQuantityLoading}
+              />
+
+              <Divider className="oui-bg-base-6" />
+
+              {renderContent(targetToken?.symbol)}
+            </Flex>
+          </Box>
         </Box>
 
-        <ExchangeDivider layout={layout} />
-
-        <Box
-          className="oui-bg-base-8"
-          p={layout === "onboarding" ? 4 : 0}
-          r="2xl"
-        >
-          <Flex direction={"column"} itemAlign={"stretch"} gap={4}>
-            <BrokerWallet />
-
-            <TradingBalance
-              targetQuantity={targetQuantity}
-              targetToken={targetToken}
-              targetQuantityLoading={targetQuantityLoading}
-            />
-
-            <Divider className="oui-bg-base-6" />
-
-            {renderContent(targetToken?.symbol)}
-          </Flex>
-        </Box>
-      </Box>
-
-      <SwapIndicator
-        sourceToken={sourceToken?.symbol}
-        targetToken={targetToken?.symbol}
-        className="oui-mb-3"
-      />
-
-      <Notice
-        message={warningMessage}
-        needSwap={needSwap}
-        needCrossSwap={needCrossSwap}
-        wrongNetwork={wrongNetwork}
-        networkId={networkId}
-      />
-
-      <Box width="100%">
+        <SwapIndicator
+          sourceToken={sourceToken?.symbol}
+          targetToken={targetToken?.symbol}
+          className="oui-mb-3"
+        />
+      </div>
+      <Box>
+        <Notice
+          message={warningMessage}
+          needSwap={needSwap}
+          needCrossSwap={needCrossSwap}
+          wrongNetwork={wrongNetwork}
+          networkId={networkId}
+        />
         <ActionButton
           actionType={actionType}
           symbol={sourceToken?.symbol}
