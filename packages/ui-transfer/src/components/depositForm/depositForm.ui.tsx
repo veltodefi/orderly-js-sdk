@@ -194,6 +194,14 @@ export const DepositForm: FC<Props> = (props) => {
   );
 
   const renderContent = (token?: string) => {
+    if (balanceRevalidating) {
+      return (
+        <Flex justify={"center"}>
+          <Spinner size="md" />
+        </Flex>
+      );
+    }
+
     if (token === "USDC") {
       return (
         <Flex

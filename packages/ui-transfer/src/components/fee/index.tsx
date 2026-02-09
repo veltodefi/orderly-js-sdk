@@ -55,6 +55,7 @@ export const Fee: FC<FeeProps> = (props) => {
         </Text.numeral>{" "}
         {showFeeQty && (
           <span>
+            (
             <Text>
               <Text.numeral
                 size="sm"
@@ -64,8 +65,9 @@ export const Fee: FC<FeeProps> = (props) => {
               >
                 {feeQty!}
               </Text.numeral>
-              {nativeSymbol}
+              {` ${nativeSymbol}`}
             </Text>
+            )
           </span>
         )}
       </Text>
