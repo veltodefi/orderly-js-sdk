@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/perp",
-  "version": "4.8.13-velto-dev.12",
+  "version": "4.8.13-velto-dev.13",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
