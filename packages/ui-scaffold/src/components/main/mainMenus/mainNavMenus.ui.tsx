@@ -23,7 +23,7 @@ export const MainNavMenus: FC<MainNavItemsProps> = (props) => {
   }
 
   return (
-    <Flex className={cn("oui-gap-1", classNames?.root)}>
+    <Flex className={cn("oui-gap-4", classNames?.root)}>
       {items?.map((item, index) => (
         <NavItem
           key={index}
