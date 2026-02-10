@@ -100,6 +100,28 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
           {t("transfer.withdraw.accountIdOrAddress.hint")}
         </Text>
       </Box>
+
+      <WalletBalance
+        sourceToken={sourceToken}
+        sourceQuantity={props.showQty}
+        className={"oui-mt-4"}
+      />
+      <Divider className="oui-bg-base-6 oui-my-4" />
+
+      <Flex
+        direction="column"
+        className="oui-text-[#C7C7C7]"
+        itemAlign="start"
+        gap={2}
+        mt={2}
+      >
+        <LtvWidget
+          showDiff={typeof quantity !== "undefined" && Number(quantity) > 0}
+          currentLtv={props.currentLTV}
+          nextLTV={props.nextLTV}
+        />
+        <Fee fee={fee} withdrawTo={withdrawTo} />
+      </Flex>
     </TabPanel>
   );
 
@@ -192,7 +214,10 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
             size="xl"
             classNames={{
               tabsList: "oui-px-0",
-              tabsContent: "oui-pt-4",
+              tabsContent:
+                "oui-pt-4 oui-animate-in oui-fade-in oui-slide-in-from-bottom-2 oui-duration-500 oui-ease-in-out",
+              trigger:
+                "data-[state=active]:ui-bg-mainButton-inverted data-[state=active]:oui-text-white",
             }}
           >
             <TabPanel
@@ -231,26 +256,28 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
                 sourceQuantity={props.showQty}
                 className={"oui-mt-4"}
               />
+
+              <Divider className="oui-bg-base-6 oui-my-4" />
+
+              <Flex
+                direction="column"
+                className="oui-text-[#C7C7C7]"
+                itemAlign="start"
+                gap={2}
+                mt={2}
+              >
+                <LtvWidget
+                  showDiff={
+                    typeof quantity !== "undefined" && Number(quantity) > 0
+                  }
+                  currentLtv={props.currentLTV}
+                  nextLTV={props.nextLTV}
+                />
+                <Fee fee={fee} withdrawTo={withdrawTo} />
+              </Flex>
             </TabPanel>
             {internalWithdrawPanel}
           </Tabs>
-
-          <Divider className="oui-bg-base-6 oui-my-4" />
-
-          <Flex
-            direction="column"
-            className="oui-text-[#C7C7C7]"
-            itemAlign="start"
-            gap={2}
-            mt={2}
-          >
-            <LtvWidget
-              showDiff={typeof quantity !== "undefined" && Number(quantity) > 0}
-              currentLtv={props.currentLTV}
-              nextLTV={props.nextLTV}
-            />
-            <Fee fee={fee} withdrawTo={withdrawTo} />
-          </Flex>
         </Box>
       </div>
       <div>

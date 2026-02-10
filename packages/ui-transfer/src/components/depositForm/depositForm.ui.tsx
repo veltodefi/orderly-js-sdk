@@ -280,7 +280,8 @@ export const DepositForm: FC<Props> = (props) => {
       id="oui-deposit-form"
       className={cn(
         textVariants({ weight: "semibold" }),
-        "oui-h-full oui-flex oui-flex-col oui-justify-between",
+        "oui-h-full oui-flex oui-flex-col",
+        layout !== "onboarding" && "oui-justify-between",
       )}
     >
       <div>

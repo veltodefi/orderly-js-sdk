@@ -157,8 +157,8 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         classNames={{
           trigger: cn(
             "oui-bg-transparent",
-            tokenValueFormatter && "oui-px-0 oui-mr-1",
-            tokenShowCaret && "oui-px-0",
+            tokenValueFormatter && "oui-px-0 oui-mr-1 oui-ml-3",
+            tokenShowCaret && "oui-px-0 oui-mr-1 oui-ml-3 oui-pr-4",
           ),
         }}
         contentProps={{
