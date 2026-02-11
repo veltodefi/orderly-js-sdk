@@ -11,20 +11,20 @@ export const MinimumReceived: React.FC<
   return (
     <Flex width="100%" itemAlign="center" justify="between">
       <Flex itemAlign="center" justify="start">
-        <Text size="2xs" intensity={36}>
+        <Text size="sm" weight="regular">
           {t("transfer.swapDeposit.minimumReceived")}
         </Text>
       </Flex>
       <Flex itemAlign="center" justify="end" gap={1}>
         <Text.numeral
           dp={precision}
-          size="2xs"
+          size="sm"
           className="oui-select-none"
           intensity={80}
         >
           {value}
         </Text.numeral>
-        <Text size="2xs" className="oui-select-none" intensity={36}>
+        <Text size="sm" className="oui-select-none">
           {symbol}
         </Text>
       </Flex>

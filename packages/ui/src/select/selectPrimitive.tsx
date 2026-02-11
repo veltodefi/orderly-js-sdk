@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { type VariantProps } from "tailwind-variants";
-import { CaretDownIcon, CaretUpIcon } from "../icon";
+import { ChevronUpVeltoIcon, ChevronDownVeltoIcon } from "../icon";
 import { tv } from "../utils/tv";
 
 const selectVariants = tv(
@@ -218,11 +218,7 @@ const SelectTrigger = React.forwardRef<
               asChild
               className="oui-transition-transform group-data-[state=open]:oui-rotate-180 group-data-[state=closed]:oui-rotate-0"
             >
-              <CaretDownIcon
-                size={12}
-                className="oui-text-inherit"
-                opacity={1}
-              />
+              <ChevronDownVeltoIcon size={12} color={"white"} opacity={1} />
             </SelectPrimitive.Icon>
           )}
         </>
@@ -243,7 +239,7 @@ const SelectScrollUpButton = React.forwardRef<
       className={scrollUpButton({ className })}
       {...props}
     >
-      <CaretUpIcon size={16} color={"white"} />
+      <ChevronUpVeltoIcon size={16} color={"white"} />
     </SelectPrimitive.ScrollUpButton>
   );
 });
@@ -260,7 +256,7 @@ const SelectScrollDownButton = React.forwardRef<
       className={scrollDownButton({ className })}
       {...props}
     >
-      <CaretDownIcon size={16} color={"white"} />
+      <ChevronDownVeltoIcon size={16} color={"white"} />
     </SelectPrimitive.ScrollDownButton>
   );
 });

@@ -47,6 +47,7 @@ const dialogVariants = tv({
       "data-[state=open]:oui-slide-in-from-left-1/2",
       "data-[state=open]:oui-slide-in-from-top-[48%]",
       "sm:oui-rounded-xl",
+      "oui-overflow-hidden",
     ],
     body: ["oui-dialog-body", "oui-py-4 lg:oui-py-5", "oui-text-xs"],
     close: [

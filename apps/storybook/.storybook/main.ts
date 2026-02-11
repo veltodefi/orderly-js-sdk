@@ -123,7 +123,6 @@ const config: StorybookConfig = {
   // },
   viteFinal: async (config) => {
     // console.log("config", config);
-
     // merge custom config to storybook vite config
     return mergeConfig<UserConfig, UserConfig>(config, {
       server: {

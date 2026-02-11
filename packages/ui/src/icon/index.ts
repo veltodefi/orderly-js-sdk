@@ -7,6 +7,8 @@ export type { BaseIconProps } from "./baseIcon";
 export { CloseIcon } from "./close";
 export { CheckIcon } from "./check";
 export { ChevronDownIcon } from "./chevronDown";
+export { ChevronDownVeltoIcon } from "./velto/chevronDownVelto";
+export { ChevronUpVeltoIcon } from "./velto/chevronUpVelto";
 export { ChevronUpIcon } from "./chevronUp";
 export { CaretUpIcon } from "./caretUp";
 export { CaretDownIcon } from "./caretDown";

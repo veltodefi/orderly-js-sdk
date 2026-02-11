@@ -5,9 +5,11 @@ import {
 } from "./depositForm.script";
 import { DepositForm } from "./depositForm.ui";
 
-export type DepositFormWidgetProps = DepositFormScriptOptions;
+export type DepositFormWidgetProps = DepositFormScriptOptions & {
+  layout?: "onboarding";
+};
 
 export const DepositFormWidget: FC<DepositFormWidgetProps> = (props) => {
   const state = useDepositFormScript(props);
-  return <DepositForm {...state} />;
+  return <DepositForm {...state} layout={props.layout} />;
 };

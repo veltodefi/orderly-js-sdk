@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { cn, Flex, Tooltip, Text, Box } from "@veltodefi/ui";
-import { TooltipIcon } from "../icons/tooltipIcon";
+import { cn, Flex, Tooltip, Text, Box, InfoIcon } from "@veltodefi/ui";
 import type { LtvScriptReturns } from "./ltv.script";
 
 const calculateTextColor = (val: number): string => {
@@ -35,23 +34,20 @@ const TooltipContent: React.FC<{
   const { isLoading, ltv_threshold } = props;
   const { t } = useTranslation();
   return (
-    <Box className="oui-w-72 oui-max-w-72">
-      <Text size="2xs" intensity={80}>
+    <Flex
+      direction={"column"}
+      itemAlign={"start"}
+      className="oui-w-72 oui-max-w-72 oui-text-primary-contrast"
+    >
+      <Text size="sm" weight="semibold">
+        {t("transfer.LTV")}
+      </Text>
+      <Text size="2xs" weight="regular">
         {t("transfer.LTV.description", {
           threshold: isLoading ? "-" : ltv_threshold,
         })}
-      </Text>{" "}
-      <a
-        href="https://orderly.network/docs/introduction/trade-on-orderly/multi-collateral"
-        target="_blank"
-        rel="noreferrer"
-        className={
-          "oui-border-b oui-border-dashed oui-border-line-12 oui-text-2xs oui-text-primary"
-        }
-      >
-        {t("tradingLeaderboard.learnMore")}
-      </a>
-    </Box>
+      </Text>
+    </Flex>
   );
 };
 
@@ -69,7 +65,7 @@ export const LtvUI: React.FC<
   return (
     <Flex width="100%" itemAlign="center" justify="between">
       <Flex justify="start" itemAlign="center">
-        <Text size="sm" intensity={36}>
+        <Text size="sm" weight="regular">
           {t("transfer.LTV")}
         </Text>
         <Tooltip
@@ -81,7 +77,10 @@ export const LtvUI: React.FC<
             />
           }
         >
-          <TooltipIcon className="oui-ml-[2px] oui-cursor-pointer oui-text-base-contrast-36" />
+          <InfoIcon
+            size={13}
+            className="oui-ml-1 oui-cursor-pointer oui-text-primary"
+          />
         </Tooltip>
       </Flex>
       {showDiff ? (

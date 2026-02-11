@@ -52,7 +52,7 @@ export const TokenSelect: React.FC<TokenSelectProps> = (props) => {
           className={iconSize ? undefined : icon({ size: props.size })}
           size={iconSize}
         />
-        <Text weight="semibold" intensity={54}>
+        <Text weight="regular" className="oui-text-secondary oui-ml-0.5">
           {value}
         </Text>
       </Flex>

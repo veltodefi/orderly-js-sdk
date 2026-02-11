@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useAccount } from "@veltodefi/hooks";
 import { Box, Flex, Button, modal, toast } from "@veltodefi/ui";
+import { Scaffold } from "@veltodefi/ui-scaffold";
 import {
   DepositFormWidget,
   WithdrawFormWidget,
@@ -20,11 +21,57 @@ const meta: Meta<typeof DepositFormWidget> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const DepositAndWithdrawal: Story = {
+  decorators: [
+    () => (
+      <Flex justify="center" itemAlign={"start"} gap={6}>
+        <Box width={420} p={2} r="lg" className="oui-bg-base-8">
+          <WithdrawFormWidget />
+        </Box>
+
+        <Box width={420} p={2} r="lg" className="oui-bg-base-8">
+          <DepositFormWidget />
+        </Box>
+      </Flex>
+    ),
+  ],
+};
+
+export const DepositFormBoth: Story = {
+  decorators: [
+    () => (
+      <Scaffold>
+        <Flex justify="center" itemAlign={"start"} gap={6}>
+          <Box width={420} r="lg">
+            <DepositFormWidget layout="onboarding" />
+          </Box>
+
+          <Box width={420} p={2} r="lg" className="oui-bg-base-8">
+            <DepositFormWidget />
+          </Box>
+        </Flex>
+      </Scaffold>
+    ),
+  ],
+};
+
+export const DepositFormOnboarding: Story = {
+  decorators: [
+    (Story) => (
+      <Flex justify="center" mt={10}>
+        <Box width={420} p={5} r="lg">
+          <Story />
+        </Box>
+      </Flex>
+    ),
+  ],
+};
+
 export const DepositForm: Story = {
   decorators: [
     (Story) => (
       <Flex justify="center" mt={10}>
-        <Box width={420} intensity={800} p={5} r="lg">
+        <Box width={420} p={2} r="lg" className="oui-bg-base-8">
           <Story />
         </Box>
       </Flex>
@@ -36,7 +83,7 @@ export const WithdrawForm: Story = {
   render: () => {
     return (
       <Flex justify="center" mt={10}>
-        <Box width={420} intensity={800} p={5} r="lg">
+        <Box width={420} intensity={800} p={2} r="lg">
           <WithdrawFormWidget />
         </Box>
       </Flex>
