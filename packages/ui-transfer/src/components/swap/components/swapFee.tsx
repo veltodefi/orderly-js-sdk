@@ -58,7 +58,7 @@ export const SwapFee: FC<SwapFeeProps> = (props) => {
 
     const list = feeQtys.map((item, index) => {
       return (
-        <Text intensity={54} key={index}>
+        <Text key={index} weight="regular">
           <Text.numeral dp={item.dp} padding={false} rm={Decimal.ROUND_UP}>
             {item.value}
           </Text.numeral>
@@ -82,13 +82,15 @@ export const SwapFee: FC<SwapFeeProps> = (props) => {
 
   return (
     <Text
-      size="xs"
-      intensity={36}
-      className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12"
+      size="sm"
+      weight="regular"
+      className="oui-flex oui-w-full oui-justify-between"
       onClick={onShowFee}
     >
-      {`${t("common.fee")} ≈ `}
-      <Text size="xs" intensity={80}>
+      <Text className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12">
+        {t("common.fee")}
+      </Text>
+      <Text>
         $
         <Text.numeral dp={2} padding={false} rm={Decimal.ROUND_UP}>
           {feeAmount}

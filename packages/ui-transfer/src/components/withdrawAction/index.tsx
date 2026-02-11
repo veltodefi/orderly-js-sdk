@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { AccountStatusEnum, NetworkId } from "@veltodefi/types";
-import { Box, Button, modal, MainButton } from "@veltodefi/ui";
+import { Box, modal, MainButton, cn } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { Decimal } from "@veltodefi/utils";
 import { WithdrawTo } from "../../types";
@@ -21,6 +21,7 @@ interface IProps {
   checkIsBridgeless: boolean;
   withdrawTo: WithdrawTo;
   onTransfer: () => void;
+  className?: string;
 }
 
 export const WithdrawAction = (props: IProps) => {
@@ -36,6 +37,7 @@ export const WithdrawAction = (props: IProps) => {
     fee,
     checkIsBridgeless,
     onTransfer,
+    className,
   } = props;
   const { t } = useTranslation();
 
@@ -109,7 +111,9 @@ export const WithdrawAction = (props: IProps) => {
   };
 
   return (
-    <Box className="oui-w-full lg:oui-w-auto lg:oui-min-w-[184px]">
+    <Box
+      className={cn("oui-w-full lg:oui-w-auto lg:oui-min-w-[184px]", className)}
+    >
       <AuthGuard
         status={AccountStatusEnum.EnableTrading}
         networkId={networkId}
