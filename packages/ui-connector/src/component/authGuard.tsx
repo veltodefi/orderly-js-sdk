@@ -343,12 +343,19 @@ const EmptyView = ({
   const { t } = useTranslation();
 
   return (
-    <Flex direction="column" itemAlign="center" gap={4}>
+    <Flex
+      direction="column"
+      itemAlign="center"
+      gap={4}
+      className="oui-mt-[68px]"
+    >
       <Flex direction="column" itemAlign="center">
         <Flex mb={2}>
           <img
             src="https://oss.orderly.network/static/velto/chart.png"
             alt={t("connector.connectWallet")}
+            width={196}
+            height={"auto"}
           />
         </Flex>
 
