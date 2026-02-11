@@ -344,12 +344,7 @@ const EmptyView = ({
   const { t } = useTranslation();
 
   return (
-    <Flex
-      direction="column"
-      itemAlign="center"
-      gap={4}
-      className="oui-mt-[68px]"
-    >
+    <Flex direction="column" itemAlign="center" gap={4}>
       <Flex direction="column" itemAlign="center">
         <Flex mb={2}>
           <img
