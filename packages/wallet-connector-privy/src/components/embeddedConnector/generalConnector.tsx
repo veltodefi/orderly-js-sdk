@@ -1,8 +1,7 @@
 import React from "react";
 import { WalletAdapter, WalletReadyState } from "@solana/wallet-adapter-base";
 import { Connector } from "wagmi";
-import { useScreen, cn } from "@veltodefi/ui";
-import { useWalletConnectorPrivy } from "../../provider";
+import { cn } from "@veltodefi/ui";
 import { useSolanaWallet } from "../../providers/solana/solanaWalletProvider";
 import { useWagmiWallet } from "../../providers/wagmi/wagmiWalletProvider";
 import { getWalletIcon } from "../../util";
@@ -35,17 +34,6 @@ interface Props {
 export function GeneralConnectArea({ currentChainId, connect }: Props) {
   const { connectors: evmConnectors } = useWagmiWallet();
   const { wallets: solAdapters } = useSolanaWallet();
-  const { setOpenConnectDrawer } = useWalletConnectorPrivy();
-  const { isMobile } = useScreen();
-
-  const onConnect = (item: Connector) => {
-    if (isMobile) {
-      if (item.id === "walletConnect") {
-        setOpenConnectDrawer(false);
-      }
-    }
-    connect(item);
-  };
 
   // These are Solana's chain IDs (mainnet and devnet) in Orderly's ecosystem
   const isSolana =

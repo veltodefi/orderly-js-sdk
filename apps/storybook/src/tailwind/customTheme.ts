@@ -18,7 +18,7 @@ export const customThemePlugin = () =>
         "--oui-color-tertiary": "218 218 218",
         "--oui-color-quaternary": "218 218 218",
         "--oui-color-danger": "245 97 139",
-        "--oui-color-danger-light": "250 167 188",
+        "--oui-color-danger-light": "247 133 133",
         "--oui-color-danger-darken": "237 72 122",
         "--oui-color-danger-contrast": "255 255 255",
         "--oui-color-success": "41 233 169",

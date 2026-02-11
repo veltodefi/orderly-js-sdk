@@ -187,7 +187,7 @@
   "portfolio.overview.column.indexPrice": "Index price",
   "portfolio.overview.column.assetValue": "Asset value",
   "portfolio.overview.column.collateralRatio": "Collateral ratio",
-  "portfolio.overview.column.collateralRatio.explain": "Collateral ratio shows how much of an asset’s value can be used as margin",
+  "portfolio.overview.column.collateralRatio.explain": "The ratio of your collateral to open positions. A lower ratio increases liquidation risk.",
   "portfolio.overview.column.assetContribution": "Asset contribution",
   "portfolio.overview.column.form": "Form",
   "portfolio.overview.column.to": "To",

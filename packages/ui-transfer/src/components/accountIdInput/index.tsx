@@ -75,8 +75,8 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
   }, [value, selectedAccount?.address]);
 
   const prefix = (
-    <div className="oui-absolute oui-left-3 oui-top-0.5 oui-z-[1]">
-      <Text size="2xs" intensity={36}>
+    <div className="oui-absolute oui-left-4 oui-top-0.5 oui-z-[1]">
+      <Text size="2xs" weight="regular" className="oui-text-[#C7C7C7]">
         {label}
       </Text>
     </div>
@@ -110,7 +110,7 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
       {prefix}
       <div
         className={cn(
-          "oui-relative oui-w-full oui-rounded-lg oui-border oui-border-line oui-mb-1",
+          "oui-w-full oui-rounded-lg oui-border oui-border-line oui-mb-1",
           "oui-bg-base-5 oui-text-sm oui-text-base-contrast",
           "focus-within:oui-border-primary-light",
           displayStatus === "error" &&
@@ -126,12 +126,12 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
           className={cn(
             // hide resize height control and scrollbar
             "oui-resize-none oui-overflow-y-hidden",
-            "oui-block oui-w-full oui-bg-transparent",
-            "oui-px-3 oui-pt-5",
+            "oui-block oui-w-full oui-bg-base-8",
+            "oui-px-4 oui-pt-6",
             selectedAccount?.address ? "oui-pb-0" : "oui-pb-2",
             "oui-text-sm oui-text-base-contrast",
             "oui-rounded-lg oui-outline-none",
-            "placeholder:oui-text-base-contrast-20",
+            "placeholder:oui-text-base-contrast-20 placeholder:oui-font-normal",
             props.className,
           )}
           rows={1}

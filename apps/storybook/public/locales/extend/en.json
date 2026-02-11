@@ -24,5 +24,14 @@
   "extend.vaults.description": "Earn passive yield with automated strategies",
   "connector.privy.email": "Connect with email",
   "extend.swap.warning": "Spot swaps are executed using your connected Web3 wallet assets. Perp account funds are separate and will not be affected.",
-  "extend.viewAll": "View all"
+  "extend.viewAll": "View all",
+  "portfolio.overview.column.collateralRatio.explain": "The ratio of your collateral to open positions. A lower ratio increases liquidation risk.",
+  "transfer.deposit.collateralContribution.explain": "This asset’s portion of your total collateral.",
+  "transfer.LTV": "Loan-to-Value",
+  "transfer.LTV.description": "The percentage of borrowed value relative to your collateral.",
+  "transfer.deposit.destinationGasFee.description": "An estimated network fee for processing your deposit. Final cost may vary.",
+  "extend.transfer.tradingBalance": "Trading balance",
+  "extend.transfer.walletBalance": "Wallet balance",
+  "transfer.brokerAccount": "Your {{brokerName}} Account",
+  "transfer.ourTraders": "80% of our traders transfer 10–25% of their balance."
 }

@@ -12,6 +12,7 @@ import {
   inputFormatter,
   Spinner,
   InputFormatter,
+  AvatarSizeType,
 } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { InputStatus } from "../../types";
@@ -36,6 +37,7 @@ export type QuantityInputProps = {
   tokenValueFormatter?: (value: string) => ReactNode;
   tokenShowCaret?: boolean;
   highlightOnHover?: boolean;
+  iconSize?: AvatarSizeType;
 } & Omit<InputProps, "onClear" | "suffix" | "onValueChange">;
 
 export const QuantityInput: FC<QuantityInputProps> = (props) => {
@@ -121,8 +123,8 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
 
   const prefix = (
     <Box>
-      <Box className="oui-absolute oui-top-0">
-        <Text size="2xs" intensity={36}>
+      <Box className="oui-absolute oui-top-1">
+        <Text size="2xs" weight="regular" className="oui-text-[#c7c7c7]">
           {label || t("common.quantity")}
         </Text>
       </Box>
@@ -146,13 +148,18 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         tokens={tokenOptions}
         value={token?.display_name || token?.symbol}
         size={rest.size}
+        iconSize={rest.iconSize}
         onValueChange={_onTokenChange}
         showIcon
         valueFormatter={tokenValueFormatter}
         showCaret={tokenShowCaret}
         optionRenderer={optionRenderer}
         classNames={{
-          trigger: "oui-bg-transparent",
+          trigger: cn(
+            "oui-bg-transparent",
+            tokenValueFormatter && "oui-px-0 oui-mr-1 oui-ml-3",
+            tokenShowCaret && "oui-px-0 oui-mr-1 oui-ml-3 oui-pr-4",
+          ),
         }}
         contentProps={{
           onCloseAutoFocus: (event) => {
@@ -175,20 +182,12 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
   );
 
   const message = (
-    <Flex mt={1} gapX={1} px={1} justify="between" itemAlign="center">
+    <Flex mt={1} gapX={1} px={3} justify="between" itemAlign="center">
       <Flex gapX={1} itemAlign="center">
-        <Box
-          width={4}
-          height={4}
-          r="full"
-          className={cn(
-            status === "error" && "oui-bg-danger-light",
-            status === "warning" && "oui-bg-warning-light",
-          )}
-        ></Box>
         <Text
           size="2xs"
           className={cn(
+            "oui-font-normal",
             status === "error" && "oui-text-danger-light",
             status === "warning" && "oui-text-warning-light",
           )}
@@ -205,7 +204,7 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
   const _placeholder = placeholder ?? (loading ? "" : "0");
 
   return (
-    <>
+    <div>
       <Input
         ref={inputRef}
         autoComplete="off"
@@ -227,8 +226,9 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         classNames={{
           ...classNames,
           root: cn(
-            "oui-relative oui-h-[54px] oui-px-3",
+            "oui-relative oui-h-[58px] oui-px-4",
             "oui-rounded-lg oui-border oui-border-line",
+            "placeholder:oui-font-normal",
             status === "error" &&
               "oui-outline-danger-light focus-within:oui-outline-danger-light",
             status === "warning" &&
@@ -238,10 +238,10 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
               : "oui-bg-base-5",
             classNames?.root,
           ),
-          input: cn("oui-absolute oui-bottom-0", classNames?.input),
+          input: cn("oui-absolute oui-bottom-[-1px]", classNames?.input),
         }}
       />
       {hintMessage && message}
-    </>
+    </div>
   );
 };

@@ -50,6 +50,7 @@ export type {
 export type { SpinnerProps } from "./spinner";
 export type { ChainSelectProps, SelectProps } from "./select";
 export type { SizeType } from "./helpers/sizeType";
+export type { AvatarSizeType } from "./avatar/avatar";
 
 export {
   OrderlyThemeProvider,

@@ -15,21 +15,14 @@ export const SwapCoin: FC<SwapCoinProps> = (props) => {
     <Flex
       itemAlign="center"
       gap={1}
-      className={cn(props.className, "oui-text-2xs")}
+      className={cn(props.className, "oui-text-sm")}
     >
-      <Text size="2xs" intensity={80}>
-        1
-      </Text>
-      <Text size="2xs" intensity={36}>
-        {sourceSymbol}
-      </Text>
-      =
-      <Text.numeral size="2xs" intensity={80} dp={precision} padding={false}>
+      <Text size="sm">1</Text>
+      <Text size="sm">{sourceSymbol}</Text>=
+      <Text.numeral size="sm" dp={precision} padding={false}>
         {indexPrice}
       </Text.numeral>
-      <Text size="2xs" intensity={36}>
-        {targetSymbol}
-      </Text>
+      <Text size="sm">{targetSymbol}</Text>
     </Flex>
   );
 };
