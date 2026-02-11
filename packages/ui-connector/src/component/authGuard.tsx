@@ -18,7 +18,6 @@ import {
   ChainSelectorDialogId,
   ChainSelectorSheetId,
 } from "@veltodefi/ui-chain-selector";
-import Chart from "./chart.png";
 import {
   WalletConnectorModalId,
   WalletConnectorSheetId,
