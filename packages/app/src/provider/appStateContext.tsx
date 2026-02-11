@@ -27,7 +27,10 @@ export type WidgetConfigs = {
 };
 
 export type VeltoProps = {
-  onConnectWallet?: (defaultConnectWallet?: () => Promise<void>) => void;
+  onConnectWallet?: (
+    defaultConnectWallet?: () => Promise<void>,
+    sendToOnboarding?: boolean,
+  ) => void;
   mostCommonChains?: string[];
 };
 

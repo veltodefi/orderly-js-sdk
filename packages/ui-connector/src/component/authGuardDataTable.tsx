@@ -65,6 +65,7 @@ export const AuthGuardDataTable = <RecordType,>(
           labels={labels}
           className={props.classNames?.authGuardDescription}
           visible={!state.validating}
+          isEmptyView
         />
       }
       manualPagination
@@ -81,6 +82,7 @@ type GuardViewProps = {
   labels?: alertMessages;
   className?: string;
   visible?: boolean;
+  isEmptyView?: boolean;
 };
 
 const GuardView: React.FC<GuardViewProps> = (props) => {
@@ -102,6 +104,7 @@ const GuardView: React.FC<GuardViewProps> = (props) => {
       <AuthGuard
         status={props.status}
         labels={props.labels}
+        isEmptyView={props.isEmptyView}
         descriptions={descriptions}
         buttonProps={{
           size: "md",

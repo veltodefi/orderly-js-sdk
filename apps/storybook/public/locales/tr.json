@@ -38,6 +38,8 @@
   "common.total": "Toplam",
   "common.symbol": "Sembol",
   "common.token": "Token",
+  "connector.getStarted": "Başla",
+  "connector.beginYourSetupToUnlock": "Ticaret erişimini açmak için kurulumunuza başlayın.",
   "common.amount": "Tutar",
   "common.side": "Yön",
   "common.side.all": "Tüm yönler",
