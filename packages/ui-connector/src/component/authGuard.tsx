@@ -18,6 +18,7 @@ import {
   ChainSelectorDialogId,
   ChainSelectorSheetId,
 } from "@veltodefi/ui-chain-selector";
+import Chart from "./chart.png";
 import {
   WalletConnectorModalId,
   WalletConnectorSheetId,
@@ -352,10 +353,10 @@ const EmptyView = ({
       <Flex direction="column" itemAlign="center">
         <Flex mb={2}>
           <img
-            src="https://oss.orderly.network/static/velto/chart.png"
+            src="/velto/chart.png"
             alt={t("connector.connectWallet")}
-            width={196}
-            height={"auto"}
+            width={116}
+            height={92}
           />
         </Flex>
 
