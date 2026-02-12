@@ -103,7 +103,10 @@ export const TransferHistoryUI: React.FC<
         loading={isLoading}
         // isValidating={isValidating}
         className="oui-font-semibold"
-        classNames={{ root: "oui-h-[calc(100%_-_49px)]" }}
+        classNames={{
+          root: "oui-h-[calc(100%_-_49px)]",
+          scroll: "oui-min-h-[442px]",
+        }}
         pagination={props.pagination}
         generatedRowKey={(row) => row.id}
       />

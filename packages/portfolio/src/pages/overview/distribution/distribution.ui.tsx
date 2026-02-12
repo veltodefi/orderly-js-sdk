@@ -64,6 +64,7 @@ export const DistributionHistoryDesktop: FC<FundingHistoryProps> = (props) => {
         className="oui-font-semibold"
         classNames={{
           root: "oui-h-[calc(100%_-_49px)]",
+          scroll: "oui-min-h-[442px]",
         }}
         pagination={props.pagination}
       />

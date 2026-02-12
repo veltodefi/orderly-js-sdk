@@ -238,7 +238,7 @@ export const AssetsDataTable: React.FC<
       <AuthGuardDataTable
         classNames={{
           root: "oui-rounded-xl oui-font-semibold",
-          scroll: "oui-h-full",
+          scroll: "oui-h-full oui-min-h-[442px]",
         }}
         loading={props.canTrade}
         columns={[]}
