@@ -11,6 +11,7 @@ import {
   toast,
   useScreen,
   type MainButtonProps,
+  NotConnectedView,
 } from "@veltodefi/ui";
 import { Flex } from "@veltodefi/ui";
 import { Box } from "@veltodefi/ui";
@@ -264,7 +265,14 @@ const DefaultFallback: React.FC<{
 
   if (props.status <= AccountStatusEnum.NotConnected || props.disabledConnect) {
     if (isEmptyView) {
-      return <EmptyView onClick={onConnectWallet} />;
+      return (
+        <NotConnectedView
+          title={t("connector.getStarted")}
+          description={t("connector.beginYourSetupToUnlock")}
+          buttonLabel={t("connector.connectWallet")}
+          onClick={onConnectWallet}
+        />
+      );
     }
 
     return (
@@ -331,43 +339,6 @@ const StatusInfo: React.FC<MainButtonProps & { description?: string }> = (
           </Text>
         </Box>
       )}
-    </Flex>
-  );
-};
-
-const EmptyView = ({
-  onClick,
-}: {
-  onClick: (sendToOnboarding: boolean) => void;
-}) => {
-  const { t } = useTranslation();
-
-  return (
-    <Flex direction="column" itemAlign="center" gap={4}>
-      <Flex direction="column" itemAlign="center">
-        <Flex mb={2}>
-          <img
-            src="/velto/chart.png"
-            alt={t("connector.connectWallet")}
-            width={116}
-            height={92}
-          />
-        </Flex>
-
-        <Text className="oui-text-neutral-extra-light oui-text-center oui-text-base oui-font-bold">
-          {t("connector.getStarted")}
-        </Text>
-
-        <Text className="oui-font-regular oui-text-center oui-text-[12px] oui-text-[#737373]">
-          {t("connector.beginYourSetupToUnlock")}
-        </Text>
-      </Flex>
-
-      <Flex justify="center" mt={4}>
-        <MainButton variant="primary" size="md" onClick={() => onClick(true)}>
-          {t("connector.connectWallet")}
-        </MainButton>
-      </Flex>
     </Flex>
   );
 };

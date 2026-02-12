@@ -2,7 +2,8 @@
 import React, { useMemo } from "react";
 import { useWalletConnector } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import { ChainNamespace } from "@veltodefi/types";
+import { useAppContext } from "@veltodefi/react-app";
+import { AccountStatusEnum, ChainNamespace } from "@veltodefi/types";
 import {
   MainButton,
   cn,
@@ -13,6 +14,7 @@ import {
   modal,
   Flex,
   EmptyDataState,
+  NotConnectedView,
 } from "@veltodefi/ui";
 import { SelectOption } from "@veltodefi/ui/src/select/withOptions";
 import type { useAssetsScriptReturn } from "./assets.script";
@@ -217,6 +219,7 @@ const AssetMobileItem: React.FC<AssetMobileItemProps> = (props) => {
 
 export const AssetsTableMobile: React.FC<useAssetsScriptReturn> = (props) => {
   const { t } = useTranslation();
+  const { veltoProps } = useAppContext();
 
   const {
     assetsOptions,
@@ -265,6 +268,19 @@ export const AssetsTableMobile: React.FC<useAssetsScriptReturn> = (props) => {
   }, [assetsOptions]);
 
   if (!props.canTrade) {
+    if (state.status <= AccountStatusEnum.NotConnected) {
+      return (
+        <NotConnectedView
+          title={t("connector.getStarted")}
+          description={t("connector.beginYourSetupToUnlock")}
+          buttonLabel={t("connector.connectWallet")}
+          onClick={(sendToOnboarding) =>
+            veltoProps?.onConnectWallet?.(undefined, sendToOnboarding)
+          }
+        />
+      );
+    }
+
     return (
       <Flex
         direction={"column"}

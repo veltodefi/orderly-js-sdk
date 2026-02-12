@@ -1,12 +1,15 @@
 import { FC, useState } from "react";
+import { useAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import { API } from "@veltodefi/types";
+import { useAppContext } from "@veltodefi/react-app";
+import { AccountStatusEnum, API } from "@veltodefi/types";
 import {
   cn,
   DataFilter,
   Flex,
   Grid,
   ListView,
+  NotConnectedView,
   Text,
   Tooltip,
 } from "@veltodefi/ui";
@@ -177,6 +180,12 @@ export const MobileLiquidation: FC<
     };
   }
 > = (props) => {
+  const { t } = useTranslation();
+  const { veltoProps } = useAppContext();
+  const { state } = useAccount();
+
+  const isNotConnected = state.status <= AccountStatusEnum.NotConnected;
+
   return (
     <Grid
       cols={1}
@@ -195,11 +204,25 @@ export const MobileLiquidation: FC<
       </Flex>
       <ListView
         className={cn(
-          "oui-hide-scrollbar oui-w-full oui-space-y-0 oui-overflow-y-hidden",
+          isNotConnected
+            ? ""
+            : "oui-hide-scrollbar oui-w-full oui-space-y-0 oui-overflow-y-hidden",
           props.classNames?.root,
         )}
         contentClassName={cn("!oui-space-y-1", props.classNames?.content)}
-        dataSource={props.dataSource}
+        dataSource={props.dataSource || []}
+        emptyView={
+          isNotConnected ? (
+            <NotConnectedView
+              title={t("connector.getStarted")}
+              description={t("connector.beginYourSetupToUnlock")}
+              buttonLabel={t("connector.connectWallet")}
+              onClick={(sendToOnboarding) =>
+                veltoProps?.onConnectWallet?.(undefined, sendToOnboarding)
+              }
+            />
+          ) : undefined
+        }
         loadMore={props.loadMore}
         renderItem={(item, index) => (
           <LiquidationCellWidget
