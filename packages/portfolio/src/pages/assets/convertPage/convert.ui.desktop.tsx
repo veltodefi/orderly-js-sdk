@@ -162,7 +162,7 @@ export const ConvertDesktopUI: React.FC<ConvertDesktopUIProps> = ({
         className="oui-mt-4 oui-w-full"
         classNames={{
           root: "oui-h-[calc(100%_-_49px)]",
-          scroll: "oui-min-h-[442px]",
+          scroll: "oui-min-h-[325px]",
         }}
         onRow={() => ({
           className: "oui-h-[48px] oui-cursor-pointer",
