@@ -30,6 +30,7 @@ export type VeltoProps = {
   onConnectWallet?: (
     defaultConnectWallet?: () => Promise<void>,
     sendToOnboarding?: boolean,
+    params?: Record<string, any>,
   ) => void;
   mostCommonChains?: string[];
 };

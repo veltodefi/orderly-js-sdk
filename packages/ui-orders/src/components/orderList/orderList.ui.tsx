@@ -65,6 +65,7 @@ export const DesktopOrderList: FC<
           dataSource={props.dataSource}
           bordered
           ignoreLoadingCheck={true}
+          currentView={`orders_${props.type}`}
           testIds={{
             body: props.testIds?.tableBody,
           }}
@@ -197,7 +198,10 @@ export const MobileOrderList: FC<
                 description={t("connector.beginYourSetupToUnlock")}
                 buttonLabel={t("connector.connectWallet")}
                 onClick={(sendToOnboarding) =>
-                  veltoProps?.onConnectWallet?.(undefined, sendToOnboarding)
+                  veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+                    from: "orders",
+                    state: "wallet_not_connected",
+                  })
                 }
               />
             ) : undefined

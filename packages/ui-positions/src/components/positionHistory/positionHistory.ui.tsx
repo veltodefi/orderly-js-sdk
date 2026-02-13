@@ -101,6 +101,7 @@ export const PositionHistory: FC<PositionHistoryProps> = (props) => {
         )}
         manualPagination={false}
         pagination={pagination}
+        currentView="position_history"
         manualSorting={true}
         onSort={props.onSort}
         initialSort={
@@ -166,7 +167,10 @@ export const MobilePositionHistory: FC<
               description={t("connector.beginYourSetupToUnlock")}
               buttonLabel={t("connector.connectWallet")}
               onClick={(sendToOnboarding) =>
-                veltoProps?.onConnectWallet?.(undefined, sendToOnboarding)
+                veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+                  from: "position_history",
+                  state: "wallet_not_connected",
+                })
               }
             />
           ) : undefined

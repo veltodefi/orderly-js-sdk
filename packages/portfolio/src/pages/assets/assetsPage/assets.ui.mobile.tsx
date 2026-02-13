@@ -275,7 +275,10 @@ export const AssetsTableMobile: React.FC<useAssetsScriptReturn> = (props) => {
           description={t("connector.beginYourSetupToUnlock")}
           buttonLabel={t("connector.connectWallet")}
           onClick={(sendToOnboarding) =>
-            veltoProps?.onConnectWallet?.(undefined, sendToOnboarding)
+            veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+              from: "assets",
+              state: "wallet_not_connected",
+            })
           }
         />
       );

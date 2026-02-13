@@ -69,6 +69,7 @@ export const Liquidation: FC<LiquidationState> = (props) => {
         id="oui-desktop-liquidation-content"
         columns={column}
         bordered
+        currentView="liquidation"
         dataSource={props.dataSource}
         generatedRowKey={(record: API.Liquidation) =>
           `${record.liquidation_id}`
@@ -218,7 +219,10 @@ export const MobileLiquidation: FC<
               description={t("connector.beginYourSetupToUnlock")}
               buttonLabel={t("connector.connectWallet")}
               onClick={(sendToOnboarding) =>
-                veltoProps?.onConnectWallet?.(undefined, sendToOnboarding)
+                veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+                  from: "liquidation",
+                  state: "wallet_not_connected",
+                })
               }
             />
           ) : undefined

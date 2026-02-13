@@ -44,6 +44,7 @@ export type AuthGuardProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   status?: AccountStatusEnum;
 
   bridgeLessOnly?: boolean;
+  currentView?: string;
 
   buttonProps?: MainButtonProps;
 
@@ -128,6 +129,7 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
         wrongNetwork={wrongNetwork}
         networkId={props.networkId}
         labels={labels}
+        currentView={props.currentView}
         descriptions={descriptions}
         disabledConnect={disabledConnect}
       />
@@ -168,6 +170,7 @@ const DefaultFallback: React.FC<{
   labels: alertMessages;
   bridgeLessOnly?: boolean;
   descriptions?: alertMessages;
+  currentView?: string;
   disabledConnect?: boolean;
   isEmptyView?: boolean;
 }> = (props) => {
@@ -265,12 +268,18 @@ const DefaultFallback: React.FC<{
 
   if (props.status <= AccountStatusEnum.NotConnected || props.disabledConnect) {
     if (isEmptyView) {
+      console.log(">>>props.currentView", props.currentView);
       return (
         <NotConnectedView
           title={t("connector.getStarted")}
           description={t("connector.beginYourSetupToUnlock")}
           buttonLabel={t("connector.connectWallet")}
-          onClick={onConnectWallet}
+          onClick={() =>
+            veltoProps?.onConnectWallet?.(undefined, true, {
+              currentView: props.currentView,
+              state: "wallet_not_connected",
+            })
+          }
         />
       );
     }

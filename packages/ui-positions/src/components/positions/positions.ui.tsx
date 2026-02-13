@@ -42,6 +42,7 @@ export const Positions: React.FC<Readonly<PositionsState>> = (props) => {
       id="oui-desktop-positions-content"
       columns={columns}
       bordered
+      currentView="positions"
       dataSource={dataSource}
       generatedRowKey={(record: any) => record.symbol}
       renderRowContainer={(record: any, index: number, children: any) => {
@@ -105,7 +106,10 @@ export const MobilePositions: React.FC<
             description={t("connector.beginYourSetupToUnlock")}
             buttonLabel={t("connector.connectWallet")}
             onClick={(sendToOnboarding) =>
-              veltoProps?.onConnectWallet?.(undefined, sendToOnboarding)
+              veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+                from: "positions",
+                state: "wallet_not_connected",
+              })
             }
           />
         ) : undefined
@@ -156,6 +160,7 @@ export const CombinePositions: React.FC<Readonly<CombinePositionsState>> = (
       id="oui-desktop-positions-content"
       columns={columns}
       dataSource={dataSource}
+      currentView="combine_positions"
       expanded
       getSubRows={(row) => row.children}
       generatedRowKey={(record) => `${record.account_id}${record.symbol || ""}`}

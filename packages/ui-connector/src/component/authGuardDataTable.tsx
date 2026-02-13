@@ -14,8 +14,10 @@ import { alertMessages, AuthGuard } from "./authGuard";
 
 export const AuthGuardDataTable = <RecordType,>(
   props: PropsWithChildren<
-    DataTableProps<RecordType> &
-      Omit<GuardViewProps, "status"> & {
+    DataTableProps<RecordType> & { currentView?: string } & Omit<
+        GuardViewProps,
+        "status"
+      > & {
         status?: AccountStatusEnum;
         classNames?: DataTableProps<RecordType>["classNames"] & {
           authGuardDescription?: string;
@@ -30,6 +32,7 @@ export const AuthGuardDataTable = <RecordType,>(
     description,
     dataSource,
     children,
+    currentView,
     ...rest
   } = props;
   const { state } = useAccount();
@@ -63,6 +66,7 @@ export const AuthGuardDataTable = <RecordType,>(
           status={_status}
           description={description}
           labels={labels}
+          currentView={currentView}
           className={props.classNames?.authGuardDescription}
           visible={!state.validating}
           isEmptyView
@@ -83,6 +87,7 @@ type GuardViewProps = {
   className?: string;
   visible?: boolean;
   isEmptyView?: boolean;
+  currentView?: string;
 };
 
 const GuardView: React.FC<GuardViewProps> = (props) => {
@@ -106,6 +111,7 @@ const GuardView: React.FC<GuardViewProps> = (props) => {
         labels={props.labels}
         isEmptyView={props.isEmptyView}
         descriptions={descriptions}
+        currentView={props.currentView}
         buttonProps={{
           size: "md",
         }}

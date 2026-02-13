@@ -101,6 +101,7 @@ export const TransferHistoryUI: React.FC<
         columns={columns}
         dataSource={dataSource}
         loading={isLoading}
+        currentView="transfer_history"
         // isValidating={isValidating}
         className="oui-font-semibold"
         classNames={{

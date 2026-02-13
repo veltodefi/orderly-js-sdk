@@ -53,6 +53,7 @@ export const AssetHistory: FC<AssetHistoryProps> = (props) => {
 
       <AuthGuardDataTable
         bordered
+        currentView={`${props.isDeposit ? "deposit" : "withdrawal"}_history`}
         loading={isLoading}
         classNames={{
           root: "oui-h-[calc(100%_-_49px)]",

@@ -60,6 +60,7 @@ export const DistributionHistoryDesktop: FC<FundingHistoryProps> = (props) => {
         columns={columns}
         dataSource={dataSource}
         loading={isLoading}
+        currentView="distribution_history"
         // isValidating={isValidating}
         className="oui-font-semibold"
         classNames={{
