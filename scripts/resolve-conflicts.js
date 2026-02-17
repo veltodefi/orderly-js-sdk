@@ -559,11 +559,24 @@ const filesToUpdate = findFilesWithPattern(
 
 console.log(`Found ${filesToUpdate.length} non-conflicted files to update\n`);
 
+// Packages to keep as @orderly.network (not renamed)
+const keepOriginalPackages = ["eslint-config", "prettier-config"];
+
+function replacePackageNames(content) {
+  // Replace @orderly.network/X with @veltodefi/X, except for keepOriginalPackages
+  return content.replace(/@orderly\.network\/([\w-]+)/g, (match, pkgName) => {
+    if (keepOriginalPackages.includes(pkgName)) {
+      return match; // Keep original
+    }
+    return `@veltodefi/${pkgName}`;
+  });
+}
+
 let updatedCount = 0;
 for (const { path: filePath, relativePath } of filesToUpdate) {
   try {
     const content = fs.readFileSync(filePath, "utf-8");
-    const updated = content.replace(/@orderly\.network\//g, "@veltodefi/");
+    const updated = replacePackageNames(content);
     if (content !== updated) {
       fs.writeFileSync(filePath, updated);
       console.log(`  ✓ ${relativePath}`);
@@ -575,4 +588,51 @@ for (const { path: filePath, relativePath } of filesToUpdate) {
 }
 
 console.log(`\nUpdated ${updatedCount} files.`);
+
+// Step 8: Replace lodash with lodash.merge
+console.log("\n" + "=".repeat(60));
+console.log("Replacing lodash with lodash.merge...\n");
+
+// Get remaining conflicted files (refresh)
+const remainingConflictsForLodash = new Set(
+  runSafe("git diff --name-only --diff-filter=U")
+    ?.split("\n")
+    .filter(Boolean) || [],
+);
+
+const lodashFiles = findFilesWithPattern(
+  process.cwd(),
+  /["']lodash["']|["']@types\/lodash["']/,
+);
+
+console.log(`Found ${lodashFiles.length} files with lodash references\n`);
+
+let lodashUpdatedCount = 0;
+for (const { path: filePath, relativePath } of lodashFiles) {
+  if (remainingConflictsForLodash.has(relativePath)) continue;
+
+  try {
+    const content = fs.readFileSync(filePath, "utf-8");
+    let updated = content;
+
+    // Replace "lodash" with "lodash.merge" (but not "lodash.merge" or "lodash.something")
+    updated = updated.replace(/(["'])lodash\1/g, "$1lodash.merge$1");
+
+    // Replace "@types/lodash" with "@types/lodash.merge"
+    updated = updated.replace(
+      /(["'])@types\/lodash\1/g,
+      "$1@types/lodash.merge$1",
+    );
+
+    if (content !== updated) {
+      fs.writeFileSync(filePath, updated);
+      console.log(`  \u2713 ${relativePath}`);
+      lodashUpdatedCount++;
+    }
+  } catch (err) {
+    console.error(`  \u2717 ${relativePath}: ${err.message}`);
+  }
+}
+
+console.log(`\nUpdated ${lodashUpdatedCount} files.`);
 console.log("\nAll done!");

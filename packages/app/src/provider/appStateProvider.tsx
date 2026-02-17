@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useState, useMemo } from "react";
+import { FC, PropsWithChildren, useState, useMemo, useEffect } from "react";
 import {
   RestrictedInfoOptions,
   useRestrictedInfo,
@@ -30,6 +30,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
   props,
 ) => {
   const [showAnnouncement, setShowAnnouncement] = useState(false);
+  const [initialized, setInitialized] = useState(false);
   const [currentChainId, setCurrentChainId] = useCurrentChainId(
     props.defaultChain,
   );
@@ -50,6 +51,10 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
 
   const disabledConnect = restrictedInfo.restrictedOpen;
 
+  useEffect(() => {
+    setInitialized(true);
+  }, []);
+
   const memoizedValue = useMemo<AppContextState>(
     () => ({
       connectWallet,
@@ -64,6 +69,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
       onRouteChange: props.onRouteChange,
       widgetConfigs: props.widgetConfigs,
       veltoProps: props.veltoProps,
+      initialized,
     }),
     [
       connectWallet,
@@ -76,6 +82,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
       wrongNetwork,
       props.onRouteChange,
       props.widgetConfigs,
+      initialized,
     ],
   );
 

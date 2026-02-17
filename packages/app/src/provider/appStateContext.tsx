@@ -3,7 +3,7 @@ import { RestrictedInfoReturns } from "@veltodefi/hooks";
 import { useWalletStateHandle } from "../hooks/useWalletStateHandle";
 
 export type RouteOption = {
-  href: "/portfolio" | "/portfolio/history";
+  href: "/portfolio" | "/portfolio/history" | "/perp";
   name: string;
 };
 
@@ -51,6 +51,7 @@ export type AppContextState = {
   onRouteChange?: (option: RouteOption) => void;
   widgetConfigs?: WidgetConfigs;
   veltoProps?: VeltoProps;
+  initialized: boolean;
 };
 
 export const AppStateContext = createContext<AppContextState>({

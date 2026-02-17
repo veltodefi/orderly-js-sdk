@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/wallet-connector-privy",
-  "version": "2.8.13-velto-main.15",
+  "version": "2.9.0",
   "description": "",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
@@ -32,7 +32,9 @@
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.95.3",
     "@tanstack/react-query": "^5.62.8",
+    "@types/lodash.merge": "^4.6.9",
     "@wagmi/connectors": "^5.7.3",
+    "lodash.merge": "^4.6.2",
     "viem": "^2.29.2",
     "wagmi": "^2.14.11",
     "zustand": "^4.5.5"
