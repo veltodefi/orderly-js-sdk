@@ -49,8 +49,12 @@ function deepMerge(target, source) {
 
 /**
  * Check if package.json only differs in name/version fields
+ * Uses TWO checks:
+ * 1. Compare staged versions (ours/theirs) after removing name/version
+ * 2. Check if working copy conflicts only contain name/version lines
  */
-function packageJsonOnlyNameVersionDiff(ours, theirs) {
+function packageJsonOnlyNameVersionDiff(file, ours, theirs) {
+  // Method 1: Check staged versions
   try {
     const oursPkg = JSON.parse(ours);
     const theirsPkg = JSON.parse(theirs);
@@ -64,24 +68,52 @@ function packageJsonOnlyNameVersionDiff(ours, theirs) {
     delete theirsWithout.version;
 
     // Compare the rest (normalized)
-    return (
+    if (
       normalize(JSON.stringify(oursWithout)) ===
       normalize(JSON.stringify(theirsWithout))
-    );
+    ) {
+      return true;
+    }
+  } catch {
+    // Fall through to method 2
+  }
+
+  // Method 2: Check actual working copy conflict markers
+  // This catches cases where git auto-merged most of the file
+  // and only name/version have actual conflict markers
+  try {
+    const workingCopy = fs.readFileSync(file, "utf-8");
+    const conflictPattern =
+      /^<<<<<<<[^\n]*\n([\s\S]*?)^=======\n([\s\S]*?)^>>>>>>>[^\n]*/gm;
+
+    let allConflictsAreNameVersion = true;
+    let hasConflicts = false;
+
+    workingCopy.replace(conflictPattern, (match, oursBlock, theirsBlock) => {
+      hasConflicts = true;
+      // Check if conflict only contains "name" and/or "version" lines
+      const nameVersionPattern = /^\s*"(name|version)"\s*:/;
+      const oursLines = oursBlock
+        .trim()
+        .split("\n")
+        .filter((l) => l.trim());
+      const theirsLines = theirsBlock
+        .trim()
+        .split("\n")
+        .filter((l) => l.trim());
+
+      for (const line of [...oursLines, ...theirsLines]) {
+        if (!nameVersionPattern.test(line)) {
+          allConflictsAreNameVersion = false;
+        }
+      }
+      return match;
+    });
+
+    return hasConflicts && allConflictsAreNameVersion;
   } catch {
     return false;
   }
-}
-
-/**
- * Check if version.ts only differs in the version export
- */
-function versionTsOnlyVersionDiff(ours, theirs) {
-  // Remove version string (e.g., export const version = "1.2.3";)
-  const versionPattern = /export\s+const\s+version\s*=\s*["'][^"']*["'];?/g;
-  const oursNorm = normalize(ours.replace(versionPattern, ""));
-  const theirsNorm = normalize(theirs.replace(versionPattern, ""));
-  return oursNorm === theirsNorm;
 }
 
 // Get list of conflicted files
@@ -104,22 +136,22 @@ for (const file of conflictedFiles) {
     continue;
   }
 
+  // Always accept incoming for version.ts files (find-and-replace will fix package names)
+  if (file.endsWith("version.ts")) {
+    versionOnlyConflicts.push(file);
+    continue;
+  }
+
   // Check for whitespace-only differences (with package name normalization)
   if (normalize(ours) === normalize(theirs)) {
     whitespaceOnlyConflicts.push(file);
     continue;
   }
 
-  // Check for version.ts files with only version changes
-  if (file.endsWith("version.ts") && versionTsOnlyVersionDiff(ours, theirs)) {
-    versionOnlyConflicts.push(file);
-    continue;
-  }
-
   // Check for package.json files with only name/version changes
   if (
     file.endsWith("package.json") &&
-    packageJsonOnlyNameVersionDiff(ours, theirs)
+    packageJsonOnlyNameVersionDiff(file, ours, theirs)
   ) {
     versionOnlyConflicts.push(file);
     continue;
@@ -472,7 +504,7 @@ const skipPatterns = [
   /-lock\./,
   /lock\.yaml$/,
   /lock\.json$/,
-  /resolve-whitespace-conflicts\.js$/,
+  /resolve-conflicts\.js$/,
 ];
 
 function shouldSkip(filePath) {
