@@ -1,39 +1,83 @@
 # Velto and Orderly Merge
 
+The instructions below will guide you through setting up multiple remote repos (`origin` and `upstream`, these names are convention) and interacting with them. This is necessary to facilitate the merge process across two different GitHub organizations. See the diagram below.
+
+```mermaid
+graph LR
+    subgraph Local ["Developer's Machine"]
+        LR["Local Repository"]
+    end
+
+    subgraph Velto ["Velto Organization (GitHub)"]
+        OR["origin (Fork)"]
+    end
+
+    subgraph Orderly ["Orderly Organization (GitHub)"]
+        UR["upstream (Source)"]
+    end
+
+    %% Fork Relationship
+    OR -.->|forked from| UR
+
+    %% Remote Connections
+    LR --->|push/pull during daily development| OR
+    LR -.->|used only to fetch updates from Orderly| UR
+```
+
 ```bash
 # Clone this repo
+# This automatically creates your primary remote repo, "origin"
 git clone git@github.com:veltodefi/orderly-js-sdk.git
-git checkout velto-main # velto's default branch
 
-# 1. Add the Orderly repo as a remote (one-time setup)
+# Switch to Velto's default branch
+git checkout velto-main
+
+# Create a sync branch with the correct version number
+git checkout -b sync-with-orderly/0.0.0
+
+# Add the Orderly repo as a secondary remote repo, "upstream"
 git remote add upstream https://github.com/OrderlyNetwork/orderly-js-sdk.git
 
-# 2. Fetch tags from upstream
+# ⚠️ Now your local repo will be linked to two remote repos: origin (the Velto GitHub repo) and upstream (the Orderly GitHub repo)
+
+# Fetch tags from Orderly
 git fetch upstream --tags
 
-# 3. Merge latest tag to velto-main
-git merge v2.8.6  # or whatever the latest tag is
+# Merge latest tag to velto-main
+# You can find the latest tag here: https://github.com/OrderlyNetwork/js-sdk/tags
+git merge v0.0.0
 
-# IMPORTANT: Generate a classic GitHub Personal Access Token with repo, write:packages and read:packages permissions.
-https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+# ⚠️ This merge generally results in a headache-inducing number of conflicts, though most of them are easily solved. Run the conflict auto-resolution script to handle most of them.
+node scripts/resolve-conflicts.js
 
-# 4. Set environment variables
-export GIT_TOKEN="your_github_pat"
+# ⚠️ Handle the rest of the conflicts manually!
+
+# Make sure these commands execute without issue
+pnpm install
+pnpm build
+
+# ⚠️ IMPORTANT: Generate a classic GitHub Personal Access Token with repo, write:packages and read:packages permissions. See doc:
+# https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
+# Set environment variables in your current terminal session
 export GIT_USERNAME="git-username"
 export GIT_NAME="Your Name"
 export GIT_EMAIL="your@email.com"
-export NPM_TOKEN="your_github_pat"
+export GIT_TOKEN="your_github_pat" # SAME VALUE
+export NPM_TOKEN="your_github_pat" # SAME VALUE
 export NPM_REGISTRY="https://npm.pkg.github.com"  # GitHub Packages
 
-# 5. Run release:velto command (handles versioning, building, and publishing)
+# Run release:velto command (handles versioning, building, and publishing)
 pnpm release:velto
 
-# 6. Commit changes
+# Commit version-bump changes
 git add .
-git commit -m "Release velto-main version"
+git commit -m "chore: bump version to v0.0.0-velto-main.0"
 
-# 7. Push to remote
-git push origin velto-main
+# Push to origin
+git push
+
+# Now go through the process of opening PRs in the webapp and SDK repos.
 ```
 
 # Orderly SDKs
