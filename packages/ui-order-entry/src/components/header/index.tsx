@@ -34,6 +34,7 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           size={"md"}
           fullWidth
           data-type={OrderSide.BUY}
+          data-active={side === OrderSide.BUY && canTrade}
           className={cn(
             side === OrderSide.BUY && canTrade
               ? ""
@@ -49,11 +50,12 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
             props.setOrderValue("side", OrderSide.SELL);
             e.currentTarget.blur();
           }}
-          data-type={OrderSide.SELL}
           fullWidth
           size={"md"}
+          data-type={OrderSide.SELL}
+          data-active={side === OrderSide.SELL && canTrade}
           className={cn(
-            side === OrderSide.SELL && props.canTrade
+            side === OrderSide.SELL && canTrade
               ? ""
               : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
           )}

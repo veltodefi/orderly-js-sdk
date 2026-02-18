@@ -437,8 +437,8 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
         <ThrottledButton
           fullWidth
           id={"order-entry-submit-button"}
-          // color={side === OrderSide.BUY ? "buy" : "sell"}
-          data-type={OrderSide.BUY}
+          data-type={side}
+          data-active
           variant="primary"
           className={cn(
             isMobile && freeCollateral <= 0
