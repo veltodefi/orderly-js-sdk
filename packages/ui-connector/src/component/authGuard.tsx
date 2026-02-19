@@ -268,7 +268,6 @@ const DefaultFallback: React.FC<{
 
   if (props.status <= AccountStatusEnum.NotConnected || props.disabledConnect) {
     if (isEmptyView) {
-      console.log(">>>props.currentView", props.currentView);
       return (
         <NotConnectedView
           title={t("connector.getStarted")}
