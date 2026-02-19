@@ -34,11 +34,14 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           size={"md"}
           fullWidth
           data-type={OrderSide.BUY}
+          disabled={!canTrade}
           data-active={side === OrderSide.BUY && canTrade}
           className={cn(
             side === OrderSide.BUY && canTrade
               ? ""
-              : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
+              : `oui-bg-base-7 oui-text-base-contrast-36 
+                hover:oui-bg-base-6 active:oui-bg-base-6 
+                disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36`,
           )}
           data-testid="oui-testid-orderEntry-side-buy-button"
         >
@@ -53,11 +56,15 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           fullWidth
           size={"md"}
           data-type={OrderSide.SELL}
+          disabled={!canTrade}
           data-active={side === OrderSide.SELL && canTrade}
           className={cn(
             side === OrderSide.SELL && canTrade
               ? ""
-              : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
+              : `oui-bg-base-7 oui-text-base-contrast-36 
+                hover:oui-bg-base-6 active:oui-bg-base-6
+                disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36 
+              `,
           )}
           data-testid="oui-testid-orderEntry-side-sell-button"
         >

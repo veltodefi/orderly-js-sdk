@@ -438,7 +438,7 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           fullWidth
           id={"order-entry-submit-button"}
           data-type={side}
-          data-active
+          data-active={props.canTrade}
           variant="primary"
           className={cn(
             isMobile && freeCollateral <= 0
@@ -446,6 +446,8 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
               : side === OrderSide.BUY
                 ? "orderly-order-entry-submit-button-buy"
                 : "orderly-order-entry-submit-button-sell",
+            !props.canTrade &&
+              "disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36",
           )}
           onClick={() => {
             if (isMobile && freeCollateral <= 0) {
