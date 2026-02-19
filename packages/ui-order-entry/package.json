@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-order-entry",
-  "version": "2.8.13-velto-dev.16",
+  "version": "2.8.13-velto-dev.21",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
