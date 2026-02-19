@@ -106,7 +106,9 @@ export const TransferHistoryUI: React.FC<
         className="oui-font-semibold"
         classNames={{
           root: "oui-h-[calc(100%_-_49px)]",
-          scroll: "oui-min-h-[325px]",
+          scroll: !dataSource?.length
+            ? "oui-min-h-[325px] oui-hide-scrollbar oui-overflow-hidden"
+            : "oui-min-h-[325px]",
         }}
         pagination={props.pagination}
         generatedRowKey={(row) => row.id}

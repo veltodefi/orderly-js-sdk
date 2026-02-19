@@ -81,6 +81,9 @@ export const Liquidation: FC<LiquidationState> = (props) => {
         }}
         classNames={{
           root: "!oui-h-[calc(100%_-_49px)]",
+          scroll: !props.dataSource?.length
+            ? "oui-hide-scrollbar oui-overflow-hidden"
+            : "",
         }}
         // onRow={(record, index, row) => {
         //   return {

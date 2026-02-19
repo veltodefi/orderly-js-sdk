@@ -44,6 +44,11 @@ export const Positions: React.FC<Readonly<PositionsState>> = (props) => {
       bordered
       currentView="positions"
       dataSource={dataSource}
+      classNames={{
+        scroll: !dataSource?.length
+          ? "oui-hide-scrollbar oui-overflow-hidden"
+          : "",
+      }}
       generatedRowKey={(record: any) => record.symbol}
       renderRowContainer={(record: any, index: number, children: any) => {
         return (

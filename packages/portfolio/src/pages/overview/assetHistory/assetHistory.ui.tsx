@@ -57,7 +57,9 @@ export const AssetHistory: FC<AssetHistoryProps> = (props) => {
         loading={isLoading}
         classNames={{
           root: "oui-h-[calc(100%_-_49px)]",
-          scroll: "oui-min-h-[400px]",
+          scroll: !dataSource?.length
+            ? "oui-hide-scrollbar oui-overflow-hidden oui-min-h-[400px]"
+            : "oui-min-h-[400px]",
         }}
         columns={columns}
         dataSource={dataSource}

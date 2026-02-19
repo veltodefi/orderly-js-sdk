@@ -25,7 +25,7 @@ export const OrdersTable = (props: {
         header: "!oui-bg-base-8",
         scroll: cn(
           !orders || orders.length === 0
-            ? "!oui-min-h-[170px]"
+            ? "oui-hide-scrollbar !oui-min-h-[170px] oui-overflow-hidden"
             : "!oui-min-h-[100px]",
         ),
       }}

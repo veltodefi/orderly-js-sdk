@@ -117,6 +117,9 @@ export const PositionHistory: FC<PositionHistoryProps> = (props) => {
         }}
         classNames={{
           root: "!oui-h-[calc(100%_-_49px)]",
+          scroll: !props.dataSource?.length
+            ? "oui-hide-scrollbar oui-overflow-hidden"
+            : "",
         }}
       />
     </Flex>

@@ -72,6 +72,9 @@ export const DesktopOrderList: FC<
           classNames={{
             header: "oui-h-[38px]",
             root: "oui-items-start !oui-h-[calc(100%_-_49px)]",
+            scroll: !props.dataSource?.length
+              ? "oui-hide-scrollbar oui-overflow-hidden"
+              : "",
           }}
           onRow={(record, index) => {
             return {
