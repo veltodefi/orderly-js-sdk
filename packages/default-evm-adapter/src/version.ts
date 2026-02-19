@@ -8,7 +8,7 @@ declare global {
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
   window.__ORDERLY_VERSION__["@veltodefi/default-evm-adapter"] =
-    "2.8.13-velto-dev.20";
+    "2.8.13-velto-main.21";
 }
 
-export default "2.8.13-velto-dev.20";
+export default "2.8.13-velto-main.21";
