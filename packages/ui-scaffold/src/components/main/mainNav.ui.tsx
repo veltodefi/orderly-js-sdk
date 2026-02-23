@@ -86,7 +86,7 @@ export const MainNav: FC<PropsWithChildren<MainNavScriptReturn>> = (props) => {
         <Flex
           itemAlign={"center"}
           className={cn(
-            "oui-gap-3",
+            "oui-gap-7",
             // let the left and right views show spacing when overlapping
             "oui-overflow-hidden",
           )}
