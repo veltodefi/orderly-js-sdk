@@ -60,10 +60,12 @@ export const DistributionHistoryDesktop: FC<FundingHistoryProps> = (props) => {
         columns={columns}
         dataSource={dataSource}
         loading={isLoading}
+        currentView="distribution_history"
         // isValidating={isValidating}
         className="oui-font-semibold"
         classNames={{
           root: "oui-h-[calc(100%_-_49px)]",
+          scroll: "oui-min-h-[325px]",
         }}
         pagination={props.pagination}
       />

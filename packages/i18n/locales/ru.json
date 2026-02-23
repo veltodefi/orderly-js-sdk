@@ -38,6 +38,8 @@
   "common.total": "Всего",
   "common.symbol": "Символ",
   "common.token": "Токен",
+  "connector.getStarted": "Начать",
+  "connector.beginYourSetupToUnlock": "Начните настройку, чтобы получить доступ к торговле.",
   "common.amount": "Сумма",
   "common.side": "Сторона",
   "common.side.all": "Все стороны",

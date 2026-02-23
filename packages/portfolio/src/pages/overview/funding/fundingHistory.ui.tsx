@@ -62,10 +62,14 @@ export const FundingHistoryDesktop: FC<FundingHistoryProps> = (props) => {
       <AuthGuardDataTable
         bordered
         columns={columns}
+        currentView="funding_history"
         dataSource={dataSource}
         loading={isLoading}
         generatedRowKey={(record) => `${record.updated_time}`}
-        classNames={{ root: "oui-h-[calc(100%_-_49px)]" }}
+        classNames={{
+          root: "oui-h-[calc(100%_-_49px)]",
+          scroll: "oui-min-h-[325px]",
+        }}
         pagination={props.pagination}
       />
     </>

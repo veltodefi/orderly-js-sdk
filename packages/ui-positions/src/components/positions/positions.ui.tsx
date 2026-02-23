@@ -1,6 +1,14 @@
 import React from "react";
-import type { API } from "@veltodefi/types";
-import { Badge, formatAddress, ListView } from "@veltodefi/ui";
+import { useAccount } from "@veltodefi/hooks";
+import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
+import { AccountStatusEnum, type API } from "@veltodefi/types";
+import {
+  Badge,
+  formatAddress,
+  ListView,
+  NotConnectedView,
+} from "@veltodefi/ui";
 import { AuthGuardDataTable } from "@veltodefi/ui-connector";
 import { SymbolProvider } from "../../provider/symbolProvider";
 import type { PositionsProps } from "../../types/types";
@@ -34,7 +42,13 @@ export const Positions: React.FC<Readonly<PositionsState>> = (props) => {
       id="oui-desktop-positions-content"
       columns={columns}
       bordered
+      currentView="positions"
       dataSource={dataSource}
+      classNames={{
+        scroll: !dataSource?.length
+          ? "oui-hide-scrollbar oui-overflow-hidden"
+          : "",
+      }}
       generatedRowKey={(record: any) => record.symbol}
       renderRowContainer={(record: any, index: number, children: any) => {
         return (
@@ -74,11 +88,37 @@ export const MobilePositions: React.FC<
     onSymbolChange,
     positionReverse,
   } = props;
+
+  const { t } = useTranslation();
+  const { veltoProps } = useAppContext();
+  const { state } = useAccount();
+
+  const isNotConnected = state.status <= AccountStatusEnum.NotConnected;
+
   return (
     <ListView
-      className="oui-hide-scrollbar oui-w-full oui-space-y-0 oui-overflow-y-hidden"
+      className={
+        isNotConnected
+          ? "oui-w-full"
+          : "oui-hide-scrollbar oui-w-full oui-space-y-0 oui-overflow-y-hidden"
+      }
       contentClassName="!oui-space-y-1"
-      dataSource={dataSource}
+      dataSource={dataSource || []}
+      emptyView={
+        isNotConnected ? (
+          <NotConnectedView
+            title={t("connector.getStarted")}
+            description={t("connector.beginYourSetupToUnlock")}
+            buttonLabel={t("connector.connectWallet")}
+            onClick={(sendToOnboarding) =>
+              veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+                from: "positions",
+                state: "wallet_not_connected",
+              })
+            }
+          />
+        ) : undefined
+      }
       renderItem={(item, index) => (
         <SymbolProvider symbol={item.symbol}>
           <PositionsRowProvider position={item}>
@@ -125,6 +165,7 @@ export const CombinePositions: React.FC<Readonly<CombinePositionsState>> = (
       id="oui-desktop-positions-content"
       columns={columns}
       dataSource={dataSource}
+      currentView="combine_positions"
       expanded
       getSubRows={(row) => row.children}
       generatedRowKey={(record) => `${record.account_id}${record.symbol || ""}`}

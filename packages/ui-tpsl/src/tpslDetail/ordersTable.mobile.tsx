@@ -1,7 +1,14 @@
 import { useMemo, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { API } from "@veltodefi/types";
-import { Flex, Button, cn, ThrottledButton, MainButton, toast } from "@veltodefi/ui";
+import {
+  Flex,
+  Button,
+  cn,
+  ThrottledButton,
+  MainButton,
+  toast,
+} from "@veltodefi/ui";
 import { AuthGuardDataTable } from "@veltodefi/ui-connector";
 import { useColumn } from "./useColum";
 
@@ -27,6 +34,7 @@ export const OrdersTableMobile = (props: {
       columns={columns}
       dataSource={orders}
       expanded={orderIds}
+      currentView="tpsl_orders"
       bordered
       getRowCanExpand={() => true}
       expandRowRender={(row) => {
@@ -51,7 +59,7 @@ export const OrdersTableMobile = (props: {
       classNames={{
         scroll: cn(
           !orders || orders.length === 0
-            ? "!oui-min-h-[170px]"
+            ? "oui-hide-scrollbar !oui-min-h-[170px] oui-overflow-hidden"
             : "!oui-min-h-[100px]",
         ),
       }}

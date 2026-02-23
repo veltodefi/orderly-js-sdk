@@ -1,11 +1,15 @@
 import { FC, useMemo } from "react";
+import { useAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
+import { AccountStatusEnum } from "@veltodefi/types";
 import {
   cn,
   DataFilter,
   Flex,
   Grid,
   ListView,
+  NotConnectedView,
   Text,
 } from "@veltodefi/ui";
 import { AuthGuardDataTable } from "@veltodefi/ui-connector";
@@ -97,6 +101,7 @@ export const PositionHistory: FC<PositionHistoryProps> = (props) => {
         )}
         manualPagination={false}
         pagination={pagination}
+        currentView="position_history"
         manualSorting={true}
         onSort={props.onSort}
         initialSort={
@@ -112,6 +117,9 @@ export const PositionHistory: FC<PositionHistoryProps> = (props) => {
         }}
         classNames={{
           root: "!oui-h-[calc(100%_-_49px)]",
+          scroll: !props.dataSource?.length
+            ? "oui-hide-scrollbar oui-overflow-hidden"
+            : "",
         }}
       />
     </Flex>
@@ -124,6 +132,12 @@ export const MobilePositionHistory: FC<
     sharePnLConfig?: SharePnLConfig;
   }
 > = (props) => {
+  const { t } = useTranslation();
+  const { veltoProps } = useAppContext();
+  const { state } = useAccount();
+
+  const isNotConnected = state.status <= AccountStatusEnum.NotConnected;
+
   return (
     <Grid
       cols={1}
@@ -142,11 +156,28 @@ export const MobilePositionHistory: FC<
       </Flex>
       <ListView
         className={cn(
-          "oui-hide-scrollbar oui-w-full oui-space-y-0 oui-overflow-y-hidden",
+          isNotConnected
+            ? ""
+            : "oui-hide-scrollbar oui-w-full oui-space-y-0 oui-overflow-y-hidden",
           props.classNames?.root,
         )}
         contentClassName={cn("!oui-space-y-1", props.classNames?.content)}
-        dataSource={props.dataSource}
+        dataSource={props.dataSource || []}
+        emptyView={
+          isNotConnected ? (
+            <NotConnectedView
+              title={t("connector.getStarted")}
+              description={t("connector.beginYourSetupToUnlock")}
+              buttonLabel={t("connector.connectWallet")}
+              onClick={(sendToOnboarding) =>
+                veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+                  from: "position_history",
+                  state: "wallet_not_connected",
+                })
+              }
+            />
+          ) : undefined
+        }
         renderItem={(item, index) => (
           <SymbolProvider symbol={item.symbol}>
             <PositionHistoryCellWidget

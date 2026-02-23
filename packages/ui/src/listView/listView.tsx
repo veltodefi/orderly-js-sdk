@@ -74,7 +74,7 @@ const ListViewInner = <T, D>(props: ListViewProps<T, D>, ref: ListViewRef) => {
     }
 
     return (
-      <div className="oui-flex oui-py-2 oui-justify-center oui-items-center">
+      <div className="oui-flex oui-items-center oui-justify-center oui-py-2">
         <Spinner />
       </div>
     );
@@ -97,17 +97,16 @@ const ListViewInner = <T, D>(props: ListViewProps<T, D>, ref: ListViewRef) => {
       style={props.style}
       ref={containerRef}
       className={cn(
-        "oui-custom-scrollbar oui-relative oui-min-h-[180px] oui-overflow-auto",
-        props.className,
+        `oui-custom-scrollbar oui-relative oui-min-h-[180px] ${props.emptyView ? "" : "oui-overflow-auto"}`,
+        props.emptyView ? "oui-w-full" : props.className,
       )({
         twMerge: true,
       })}
     >
       <div
         className={cn(
-          "oui-space-y-3 oui-h-full oui-w-full",
-          emptyDataSouce &&
-            "oui-absolute oui-left-0 oui-right-0 oui-top-0 oui-bottom-0",
+          "oui-size-full oui-space-y-3",
+          emptyDataSouce && "oui-absolute oui-inset-0",
           props.contentClassName,
         )({ twMerge: true })}
       >
@@ -115,7 +114,7 @@ const ListViewInner = <T, D>(props: ListViewProps<T, D>, ref: ListViewRef) => {
       </div>
       <div
         ref={sentinelRef}
-        className="oui-relative oui-invisible oui-h-[1px] oui-top-[-300px]"
+        className="oui-invisible oui-relative oui-top-[-300px] oui-h-px"
       />
       {loadingViewElement}
     </div>

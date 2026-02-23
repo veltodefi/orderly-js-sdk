@@ -238,9 +238,10 @@ export const AssetsDataTable: React.FC<
       <AuthGuardDataTable
         classNames={{
           root: "oui-rounded-xl oui-font-semibold",
-          scroll: "oui-h-[252px]",
+          scroll: "oui-h-full oui-min-h-[325px]",
         }}
         loading={props.canTrade}
+        currentView="assets"
         columns={[]}
         dataSource={[]}
       />
@@ -282,6 +283,7 @@ export const AssetsDataTable: React.FC<
             </Text>
             <AuthGuardDataTable
               bordered
+              currentView="assets"
               className="oui-font-semibold"
               classNames={{
                 // root: "oui-bg-transparent",
