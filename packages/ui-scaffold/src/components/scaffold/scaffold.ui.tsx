@@ -66,7 +66,7 @@ export const DesktopScaffold: React.FC<DesktopScaffoldProps> = (props) => {
           classNames?.container,
         )}
       >
-        <Box px={2} ref={announcementRef}>
+        {/* <Box px={2} ref={announcementRef}>
           <RestrictedInfoWidget
             className={cn(
               "oui-scaffold-restricted-info",
@@ -76,11 +76,11 @@ export const DesktopScaffold: React.FC<DesktopScaffoldProps> = (props) => {
               "oui-min-w-[994px]",
             )}
           />
-          {/* <AnnouncementWidget
+          <AnnouncementWidget
             className={"oui-mx-auto oui-mt-2"}
             hideTips={restrictedInfo?.restrictedOpen}
-          />  */}
-        </Box>
+          /> 
+        </Box> */}
         {/*--------- body start ------ */}
         {!hasLeftSidebar ? (
           // ----------No leftSidebar layout start ---------
