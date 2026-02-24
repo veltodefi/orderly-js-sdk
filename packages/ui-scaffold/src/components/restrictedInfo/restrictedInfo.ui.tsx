@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Checkbox, cn, Flex, SimpleDialog } from "@veltodefi/ui";
-import { InfoIcon } from "../icons";
+import { Checkbox, cn, Flex, SimpleDialog, Box } from "@veltodefi/ui";
+import { WarningIcon } from "./icons";
 import type { UseRestrictedInfoScriptReturn } from "./restrictedInfo.script";
 
 export type RestrictedInfoProps = UseRestrictedInfoScriptReturn & {
@@ -9,15 +9,9 @@ export type RestrictedInfoProps = UseRestrictedInfoScriptReturn & {
 };
 
 export const RestrictedInfo: FC<RestrictedInfoProps> = (props) => {
-  const { brokerName, agree, setAgree } = props;
-  const {
-    ip,
-    content,
-    restrictedOpen,
-    canUnblock,
-    accessRestricted,
-    setAccessRestricted,
-  } = props.restrictedInfo || {};
+  const { agree, setAgree } = props;
+  const { restrictedOpen, canUnblock, accessRestricted, setAccessRestricted } =
+    props.restrictedInfo || {};
   const { t } = useTranslation();
 
   // if user region is in the canUnblock regions and accessRestricted is not set, show the dialog
@@ -69,44 +63,23 @@ export const RestrictedInfo: FC<RestrictedInfoProps> = (props) => {
     return;
   }
 
-  const renderContent = () => {
-    if (typeof content === "function") {
-      return <span>{content({ ip: ip!, brokerName })}</span>;
-    }
-    return (
-      content || (
-        <span>
-          {t("restrictedInfo.description.default", {
-            brokerName,
-            ip,
-          })}
-        </span>
-      )
-    );
-  };
-
   return (
-    <Flex
-      ref={props.container}
-      justify="center"
-      className={cn(
-        "oui-restricted-info",
-        "oui-rounded-xl oui-p-[7px]",
-        "oui-text-warning-darken",
-        props.className,
-      )}
-    >
+    <Box className="p-1 md:pt-2 md:px-3 md:pb-0 xl:px-2">
       <Flex
+        ref={props.container}
+        justify={"center"}
+        gap={2}
         className={cn(
-          "oui-min-h-[20px] oui-gap-1",
-          "oui-text-2xs oui-leading-4 md:oui-text-sm",
-          "oui-items-start lg:oui-justify-center",
-          props.mutiLine ? "lg:oui-items-start" : "lg:oui-items-center",
+          "rounded-xl bg-[#0A1A3D] py-4 md:py-2 px-4 md:px-10 items-start md:items-center",
+          props.className,
         )}
       >
-        <InfoIcon size={20} className="oui-size-4 oui-shrink-0 lg:oui-size-5" />
-        {renderContent()}
+        <WarningIcon className="shrink-0 mt-1 md:mt-0" />
+        <p className="font-normal text-sm leading-5 tracking-[0.1px]">
+          We are not available in your current location. Access to this
+          interface is restricted in certain regions for compliance purposes.
+        </p>
       </Flex>
-    </Flex>
+    </Box>
   );
 };
