@@ -166,6 +166,7 @@ export const MobilePositionHistory: FC<
         emptyView={
           isNotConnected ? (
             <NotConnectedView
+              disabled={veltoProps?.isRestrictedRegion}
               title={t("connector.getStarted")}
               description={t("connector.beginYourSetupToUnlock")}
               buttonLabel={t("connector.connectWallet")}

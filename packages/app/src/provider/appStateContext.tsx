@@ -33,6 +33,7 @@ export type VeltoProps = {
     params?: Record<string, any>,
   ) => void;
   mostCommonChains?: string[];
+  isRestrictedRegion?: boolean;
 };
 
 export type AppContextState = {

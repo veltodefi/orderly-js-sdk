@@ -18,6 +18,7 @@
     "@abstract-foundation/agw-client": "^1.6.2",
     "@abstract-foundation/agw-react": "^1.6.4",
     "@veltodefi/core": "workspace:*",
+    "@veltodefi/react-app": "workspace:*",
     "@veltodefi/hooks": "workspace:*",
     "@veltodefi/i18n": "workspace:*",
     "@veltodefi/types": "workspace:*",
