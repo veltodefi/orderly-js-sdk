@@ -75,7 +75,7 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
   } = props;
   const { t } = useTranslation();
   const { state } = useAccount();
-  const { wrongNetwork, disabledConnect } = useAppContext();
+  const { wrongNetwork, disabledConnect, veltoProps } = useAppContext();
 
   const _status = useMemo(() => {
     if (status === undefined) {
@@ -270,6 +270,7 @@ const DefaultFallback: React.FC<{
     if (isEmptyView) {
       return (
         <NotConnectedView
+          disabled={veltoProps?.isRestrictedRegion}
           title={t("connector.getStarted")}
           description={t("connector.beginYourSetupToUnlock")}
           buttonLabel={t("connector.connectWallet")}
@@ -292,7 +293,7 @@ const DefaultFallback: React.FC<{
         }}
         angle={45}
         description={descriptions?.connectWallet}
-        disabled={props.disabledConnect}
+        disabled={props.disabledConnect || veltoProps?.isRestrictedRegion}
         {...buttonProps}
       >
         {labels.connectWallet}

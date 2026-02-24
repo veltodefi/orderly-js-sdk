@@ -5,7 +5,9 @@ export const NotConnectedView = ({
   description,
   buttonLabel,
   onClick,
+  disabled,
 }: {
+  disabled?: boolean;
   title: string;
   description: string;
   buttonLabel: string;
@@ -36,7 +38,12 @@ export const NotConnectedView = ({
       </Flex>
 
       <Flex justify="center" mt={4}>
-        <MainButton variant="primary" size="md" onClick={() => onClick(true)}>
+        <MainButton
+          disabled={disabled}
+          variant="primary"
+          size="md"
+          onClick={() => onClick(true)}
+        >
           {buttonLabel}
         </MainButton>
       </Flex>

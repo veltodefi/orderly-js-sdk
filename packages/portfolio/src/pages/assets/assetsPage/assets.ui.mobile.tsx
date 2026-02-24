@@ -271,6 +271,7 @@ export const AssetsTableMobile: React.FC<useAssetsScriptReturn> = (props) => {
     if (state.status <= AccountStatusEnum.NotConnected) {
       return (
         <NotConnectedView
+          disabled={veltoProps?.isRestrictedRegion}
           title={t("connector.getStarted")}
           description={t("connector.beginYourSetupToUnlock")}
           buttonLabel={t("connector.connectWallet")}

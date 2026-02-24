@@ -2,6 +2,9 @@
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
     "paths": {
+      "@veltodefi/react-app": [
+        "../app/src"
+      ],
       "@veltodefi/core": [
         "../core/src"
       ],
