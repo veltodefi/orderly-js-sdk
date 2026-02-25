@@ -1,15 +1,8 @@
 import { FC } from "react";
-import {
-  CopyIcon,
-  Divider,
-  Flex,
-  modal,
-  Text,
-  Tooltip,
-} from "@veltodefi/ui";
-import { ReferralLinkReturns } from "./referralLink.script";
-import { AutoHideText } from "../../../components/autoHideText";
 import { Trans, useTranslation } from "@veltodefi/i18n";
+import { CopyIcon, Divider, Flex, modal, Text, Tooltip } from "@veltodefi/ui";
+import { AutoHideText } from "../../../components/autoHideText";
+import { ReferralLinkReturns } from "./referralLink.script";
 
 export const ReferralLink: FC<ReferralLinkReturns> = (props) => {
   const { t } = useTranslation();
@@ -71,7 +64,7 @@ const Subtitle: FC<ReferralLinkReturns> = (props) => {
     value: string,
     gradient: boolean,
     className?: string,
-    tooltip?: any
+    tooltip?: any,
   ) => {
     const valueClsName =
       "oui-text-lg md:oui-text-xl lg:oui-text-2xl xl:oui-text-3xl";
@@ -104,7 +97,7 @@ const Subtitle: FC<ReferralLinkReturns> = (props) => {
           {t("affiliate.referralLink.earn.tooltip", {
             brokerName: props.brokerName,
           })}
-        </span>
+        </span>,
         // @ts-ignore
         // <Trans
         //   i18nKey="affiliate.referralLink.earn.tooltip"
@@ -127,8 +120,8 @@ const Subtitle: FC<ReferralLinkReturns> = (props) => {
             value: props.share || "-",
             brokerName: props.brokerName,
           }}
-          components={[<Text.gradient color="brand" />]}
-        />
+          components={[<Text.gradient color="brand" key="0" />]}
+        />,
       )}
     </Flex>
   );

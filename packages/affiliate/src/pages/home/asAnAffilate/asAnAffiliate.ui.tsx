@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { cn, Flex, MainButton, Text } from "@veltodefi/ui";
+import { Button, cn, Flex, Text } from "@veltodefi/ui";
 import { commifyOptional } from "@veltodefi/utils";
-import { ArrowRightIcon } from "../../../components/arrowRightIcon";
-import { USDCIcon } from "../../../components/usdcIcon";
+import { ArrowRightIcon } from "../../../icons/arrowRightIcon";
+import { USDCIcon } from "../../../icons/usdcIcon";
 import { AsAnAffiliateReturns } from "./asAnAffiliate.script";
 
 export const AsAnAffiliate: FC<AsAnAffiliateReturns> = (props) => {
@@ -127,12 +127,13 @@ const Bottom: FC<AsAnAffiliateReturns> = (props) => {
 
     return (
       <>
-        <MainButton
-          variant="primary"
+        <Button
+          variant="contained"
+          color="light"
           onClick={props.becomeAnAffiliate}
         >
           {t("affiliate.asAffiliate.button")}
-        </MainButton>
+        </Button>
         <Flex
           direction={"column"}
           justify={"between"}

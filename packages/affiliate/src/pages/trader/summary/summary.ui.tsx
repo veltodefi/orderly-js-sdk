@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { MainButton, Flex, Select, Text } from "@veltodefi/ui";
-import { SummaryReturns } from "./summary.script";
-import { USDCIcon } from "../../../components/usdcIcon";
-import { commifyOptional } from "@veltodefi/utils";
 import { useTranslation } from "@veltodefi/i18n";
+import { Button, Flex, Select, Text } from "@veltodefi/ui";
+import { commifyOptional } from "@veltodefi/utils";
+import { USDCIcon } from "../../../icons/usdcIcon";
+import { SummaryReturns } from "./summary.script";
 
 export const Summary: FC<SummaryReturns> = (props) => {
   const { t } = useTranslation();
@@ -39,13 +39,13 @@ const Title: FC<SummaryReturns> = (props) => {
         <Text className="oui-text-lg">
           {t("affiliate.trader.yourReferrer")}
         </Text>
-        <MainButton
-          variant="secondary"
+        <Button
+          color="secondary"
           size="sm"
           className="oui-text-primary-light oui-text-2xs md:oui-text-xs 2xl:oui-text-sm oui-bg-base-6"
         >
           {props.code}
-        </MainButton>
+        </Button>
       </Flex>
       <Rebate
         className="oui-hidden md:oui-flex md:oui-flex-shrink md:oui-w-fit"

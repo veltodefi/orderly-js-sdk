@@ -2,7 +2,6 @@ import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Button,
-  MainButton,
   cn,
   Flex,
   TabsBase,
@@ -11,8 +10,8 @@ import {
   TabsTrigger,
   Text,
 } from "@veltodefi/ui";
-import { AffiliateIcon } from "../../../components/affiliateIcon";
-import { TraderIcon } from "../../../components/traderIcon";
+import { AffiliateIcon } from "../../../icons/affiliateIcon";
+import { TraderIcon } from "../../../icons/traderIcon";
 import { TabTypes } from "../../../provider";
 import { AffiliatePage } from "../../affiliate";
 import { HomePage } from "../../home";
@@ -32,8 +31,9 @@ export const Tab: FC<
   const extendNode = () => {
     if (props.isAffiliate && !props.isTrader) {
       return (
-        <MainButton
-          variant="primary"
+        <Button
+          variant="contained"
+          color="success"
           size="sm"
           className="oui-px-2 oui-flex oui-gap-1"
           style={{
@@ -48,13 +48,14 @@ export const Tab: FC<
         >
           <TraderIcon />
           <Text>{t("affiliate.asTrader.title")}</Text>
-        </MainButton>
+        </Button>
       );
     }
     if (!props.isAffiliate && props.isTrader) {
       return (
-        <MainButton
-          variant="primary"
+        <Button
+          variant="contained"
+          color="primary"
           size="sm"
           className="oui-px-2 oui-flex oui-gap-1"
           style={{
@@ -69,7 +70,7 @@ export const Tab: FC<
         >
           <AffiliateIcon />
           <Text>{t("affiliate.asAffiliate.title")}</Text>
-        </MainButton>
+        </Button>
       );
     }
 

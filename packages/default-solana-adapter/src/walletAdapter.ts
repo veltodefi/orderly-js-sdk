@@ -8,8 +8,6 @@ import {
   Transaction,
   TransactionInstruction,
 } from "@solana/web3.js";
-import { encode as bs58encode, decode as bs58Decode } from "bs58";
-import { bytesToHex } from "ethereum-cryptography/utils";
 import {
   AddOrderlyKeyInputs,
   BaseWalletAdapter,
@@ -25,6 +23,8 @@ import {
   InternalTransferInputs,
 } from "@veltodefi/core";
 import { API, MaxUint256, ChainNamespace } from "@veltodefi/types";
+import { encode as bs58encode, decode as bs58Decode } from "bs58";
+import { bytesToHex } from "ethereum-cryptography/utils";
 import {
   addOrderlyKeyMessage,
   checkIsLedgerWallet,
@@ -330,7 +330,7 @@ class DefaultSolanaWalletAdapter extends BaseWalletAdapter<SolanaAdapterOption> 
       chainId: this.chainId,
     });
 
-    // 使用 signMessage 方法签名，而不是 signTypedData
+    // Use signMessage for signing, not signTypedData
     const signature = await this.signMessage(toSignatureMessage as Uint8Array);
 
     return {

@@ -126,7 +126,8 @@ const mainButtonVariants = tv(
 );
 
 interface MainButtonProps
-  extends Omit<BaseButtonProps, "size">,
+  extends
+    Omit<BaseButtonProps, "size">,
     VariantProps<typeof mainButtonVariants> {
   angle?: number;
   "data-testid"?: string;

@@ -1,5 +1,5 @@
 import { defineConfig } from "eslint/config";
-import customEslintConfig from "@veltodefi/eslint-config";
+import customEslintConfig from "@orderly.network/eslint-config";
 
 // this config is used to auto fix eslint rules when commit
 export default defineConfig([
@@ -15,6 +15,11 @@ export default defineConfig([
       "tailwindcss/enforces-negative-arbitrary-values": "off",
       "tailwindcss/no-arbitrary-value": "off",
       "tailwindcss/no-unnecessary-arbitrary-value": "off",
+    },
+    settings: {
+      tailwindcss: {
+        config: "./packages/ui/tailwind.config.js",
+      },
     },
   },
 ]);

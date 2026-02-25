@@ -3,7 +3,6 @@ import { useTranslation } from "@veltodefi/i18n";
 import { AccountStatusEnum } from "@veltodefi/types";
 import {
   Button,
-  MainButton,
   cn,
   Dialog,
   DialogBody,
@@ -19,8 +18,8 @@ import {
 } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { commifyOptional } from "@veltodefi/utils";
-import { ArrowRightIcon } from "../../../components/arrowRightIcon";
-import { USDCIcon } from "../../../components/usdcIcon";
+import { ArrowRightIcon } from "../../../icons/arrowRightIcon";
+import { USDCIcon } from "../../../icons/usdcIcon";
 import { AsTraderReturns } from "./asTrader.script";
 
 export const AsTrader: FC<AsTraderReturns> = (props) => {
@@ -163,9 +162,9 @@ const EntryCode: FC<AsTraderReturns> = (props) => {
   return (
     <Dialog open={props.open} onOpenChange={props.setOpen}>
       <DialogTrigger>
-        <MainButton variant="primary">
+        <Button variant="contained" color="light">
           {t("affiliate.asTrader.button")}
-        </MainButton>
+        </Button>
       </DialogTrigger>
       <DialogContent className="oui-w-[320px] oui-font-semibold">
         <DialogHeader>
@@ -223,8 +222,9 @@ const EntryCode: FC<AsTraderReturns> = (props) => {
               </Text>
             )}
             <AuthGuard buttonProps={{ size: "md", fullWidth: true }}>
-              <MainButton
-                variant="primary"
+              <Button
+                variant="contained"
+                color="primary"
                 size="md"
                 className="oui-px-[40px]"
                 fullWidth
@@ -235,7 +235,7 @@ const EntryCode: FC<AsTraderReturns> = (props) => {
                 }}
               >
                 {t("common.confirm")}
-              </MainButton>
+              </Button>
             </AuthGuard>
           </Flex>
         </DialogBody>

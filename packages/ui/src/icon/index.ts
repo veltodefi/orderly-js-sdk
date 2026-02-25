@@ -107,6 +107,7 @@ export { ReferralSolidIcon } from "./referralSolidIcon";
 export { AddCircleIcon } from "./addCircle";
 export { RwaIcon } from "./rwa";
 export { InfoIcon } from "./info";
+export { WarningIcon } from "./warning";
 
 type IconType = typeof BaseIcon & {
   combine: typeof CombineIcon;

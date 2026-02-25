@@ -86,6 +86,7 @@ export * from "embla-carousel";
 export * as OUITailwind from "./tailwind";
 export * from "./hooks";
 
+export * from "./tips";
 export * from "./locale";
 export * from "./scrollIndicator";
 export * from "./status";

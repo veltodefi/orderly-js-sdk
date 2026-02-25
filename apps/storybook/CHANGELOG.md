@@ -1,5 +1,215 @@
 # storybook
 
+## 1.9.0
+
+### Minor Changes
+
+- b875f72: publish
+- publish
+- 84dd4e0: publish
+
+### Patch Changes
+
+- Updated dependencies [b875f72]
+- Updated dependencies
+- Updated dependencies [84dd4e0]
+  - @veltodefi/affiliate@2.9.0
+  - @veltodefi/react-app@2.9.0
+  - @veltodefi/chart@2.9.0
+  - @veltodefi/core@2.9.0
+  - @veltodefi/default-evm-adapter@2.9.0
+  - @veltodefi/default-solana-adapter@2.9.0
+  - @veltodefi/hooks@2.9.0
+  - @veltodefi/i18n@2.9.0
+  - @veltodefi/markets@2.9.0
+  - @veltodefi/portfolio@2.9.0
+  - @veltodefi/trading@2.9.0
+  - @veltodefi/trading-leaderboard@2.9.0
+  - @veltodefi/trading-points@1.1.0
+  - @veltodefi/trading-rewards@2.9.0
+  - @veltodefi/types@2.9.0
+  - @veltodefi/ui@2.9.0
+  - @veltodefi/ui-chain-selector@2.9.0
+  - @veltodefi/ui-connector@2.9.0
+  - @veltodefi/ui-leverage@2.9.0
+  - @veltodefi/ui-notification@2.9.0
+  - @veltodefi/ui-order-entry@2.9.0
+  - @veltodefi/ui-orders@2.9.0
+  - @veltodefi/ui-positions@2.9.0
+  - @veltodefi/ui-scaffold@2.9.0
+  - @veltodefi/ui-share@2.9.0
+  - @veltodefi/ui-tpsl@2.9.0
+  - @veltodefi/ui-tradingview@2.9.0
+  - @veltodefi/ui-transfer@2.9.0
+  - @veltodefi/utils@2.9.0
+  - @veltodefi/vaults@2.9.0
+  - @veltodefi/wallet-connector@2.9.0
+  - @veltodefi/wallet-connector-privy@2.9.0
+
+## 1.9.0-alpha.1
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/affiliate@2.9.0-alpha.1
+  - @veltodefi/react-app@2.9.0-alpha.1
+  - @veltodefi/chart@2.9.0-alpha.1
+  - @veltodefi/core@2.9.0-alpha.1
+  - @veltodefi/default-evm-adapter@2.9.0-alpha.1
+  - @veltodefi/default-solana-adapter@2.9.0-alpha.1
+  - @veltodefi/hooks@2.9.0-alpha.1
+  - @veltodefi/i18n@2.9.0-alpha.1
+  - @veltodefi/markets@2.9.0-alpha.1
+  - @veltodefi/portfolio@2.9.0-alpha.1
+  - @veltodefi/trading@2.9.0-alpha.1
+  - @veltodefi/trading-leaderboard@2.9.0-alpha.1
+  - @veltodefi/trading-points@1.1.0-alpha.1
+  - @veltodefi/trading-rewards@2.9.0-alpha.1
+  - @veltodefi/types@2.9.0-alpha.1
+  - @veltodefi/ui@2.9.0-alpha.1
+  - @veltodefi/ui-chain-selector@2.9.0-alpha.1
+  - @veltodefi/ui-connector@2.9.0-alpha.1
+  - @veltodefi/ui-leverage@2.9.0-alpha.1
+  - @veltodefi/ui-notification@2.9.0-alpha.1
+  - @veltodefi/ui-order-entry@2.9.0-alpha.1
+  - @veltodefi/ui-orders@2.9.0-alpha.1
+  - @veltodefi/ui-positions@2.9.0-alpha.1
+  - @veltodefi/ui-scaffold@2.9.0-alpha.1
+  - @veltodefi/ui-share@2.9.0-alpha.1
+  - @veltodefi/ui-tpsl@2.9.0-alpha.1
+  - @veltodefi/ui-tradingview@2.9.0-alpha.1
+  - @veltodefi/ui-transfer@2.9.0-alpha.1
+  - @veltodefi/utils@2.9.0-alpha.1
+  - @veltodefi/vaults@2.9.0-alpha.1
+  - @veltodefi/wallet-connector@2.9.0-alpha.1
+  - @veltodefi/wallet-connector-privy@2.9.0-alpha.1
+
+## 1.9.0-alpha.0
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/affiliate@2.9.0-alpha.0
+  - @veltodefi/react-app@2.9.0-alpha.0
+  - @veltodefi/chart@2.9.0-alpha.0
+  - @veltodefi/core@2.9.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.9.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.9.0-alpha.0
+  - @veltodefi/hooks@2.9.0-alpha.0
+  - @veltodefi/i18n@2.9.0-alpha.0
+  - @veltodefi/markets@2.9.0-alpha.0
+  - @veltodefi/portfolio@2.9.0-alpha.0
+  - @veltodefi/trading@2.9.0-alpha.0
+  - @veltodefi/trading-leaderboard@2.9.0-alpha.0
+  - @veltodefi/trading-points@1.1.0-alpha.0
+  - @veltodefi/trading-rewards@2.9.0-alpha.0
+  - @veltodefi/types@2.9.0-alpha.0
+  - @veltodefi/ui@2.9.0-alpha.0
+  - @veltodefi/ui-chain-selector@2.9.0-alpha.0
+  - @veltodefi/ui-connector@2.9.0-alpha.0
+  - @veltodefi/ui-leverage@2.9.0-alpha.0
+  - @veltodefi/ui-notification@2.9.0-alpha.0
+  - @veltodefi/ui-order-entry@2.9.0-alpha.0
+  - @veltodefi/ui-orders@2.9.0-alpha.0
+  - @veltodefi/ui-positions@2.9.0-alpha.0
+  - @veltodefi/ui-scaffold@2.9.0-alpha.0
+  - @veltodefi/ui-share@2.9.0-alpha.0
+  - @veltodefi/ui-tpsl@2.9.0-alpha.0
+  - @veltodefi/ui-tradingview@2.9.0-alpha.0
+  - @veltodefi/ui-transfer@2.9.0-alpha.0
+  - @veltodefi/utils@2.9.0-alpha.0
+  - @veltodefi/vaults@2.9.0-alpha.0
+  - @veltodefi/wallet-connector@2.9.0-alpha.0
+  - @veltodefi/wallet-connector-privy@2.9.0-alpha.0
+
+## 1.8.14
+
+### Patch Changes
+
+- publish
+- 6355a39: publish
+- Updated dependencies
+- Updated dependencies [6355a39]
+  - @veltodefi/affiliate@2.8.14
+  - @veltodefi/react-app@2.8.14
+  - @veltodefi/chart@2.8.14
+  - @veltodefi/core@2.8.14
+  - @veltodefi/default-evm-adapter@2.8.14
+  - @veltodefi/default-solana-adapter@2.8.14
+  - @veltodefi/hooks@2.8.14
+  - @veltodefi/i18n@2.8.14
+  - @veltodefi/markets@2.8.14
+  - @veltodefi/portfolio@2.8.14
+  - @veltodefi/trading@2.8.14
+  - @veltodefi/trading-leaderboard@2.8.14
+  - @veltodefi/trading-points@1.0.2
+  - @veltodefi/trading-rewards@2.8.14
+  - @veltodefi/types@2.8.14
+  - @veltodefi/ui@2.8.14
+  - @veltodefi/ui-chain-selector@2.8.14
+  - @veltodefi/ui-connector@2.8.14
+  - @veltodefi/ui-leverage@2.8.14
+  - @veltodefi/ui-notification@2.8.14
+  - @veltodefi/ui-order-entry@2.8.14
+  - @veltodefi/ui-orders@2.8.14
+  - @veltodefi/ui-positions@2.8.14
+  - @veltodefi/ui-scaffold@2.8.14
+  - @veltodefi/ui-share@2.8.14
+  - @veltodefi/ui-tpsl@2.8.14
+  - @veltodefi/ui-tradingview@2.8.14
+  - @veltodefi/ui-transfer@2.8.14
+  - @veltodefi/utils@2.8.14
+  - @veltodefi/vaults@2.8.14
+  - @veltodefi/wallet-connector@2.8.14
+  - @veltodefi/wallet-connector-privy@2.8.14
+
+## 1.8.14-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/affiliate@2.8.14-alpha.0
+  - @veltodefi/react-app@2.8.14-alpha.0
+  - @veltodefi/chart@2.8.14-alpha.0
+  - @veltodefi/core@2.8.14-alpha.0
+  - @veltodefi/default-evm-adapter@2.8.14-alpha.0
+  - @veltodefi/default-solana-adapter@2.8.14-alpha.0
+  - @veltodefi/hooks@2.8.14-alpha.0
+  - @veltodefi/i18n@2.8.14-alpha.0
+  - @veltodefi/markets@2.8.14-alpha.0
+  - @veltodefi/portfolio@2.8.14-alpha.0
+  - @veltodefi/trading@2.8.14-alpha.0
+  - @veltodefi/trading-leaderboard@2.8.14-alpha.0
+  - @veltodefi/trading-points@1.0.2-alpha.0
+  - @veltodefi/trading-rewards@2.8.14-alpha.0
+  - @veltodefi/types@2.8.14-alpha.0
+  - @veltodefi/ui@2.8.14-alpha.0
+  - @veltodefi/ui-chain-selector@2.8.14-alpha.0
+  - @veltodefi/ui-connector@2.8.14-alpha.0
+  - @veltodefi/ui-leverage@2.8.14-alpha.0
+  - @veltodefi/ui-notification@2.8.14-alpha.0
+  - @veltodefi/ui-order-entry@2.8.14-alpha.0
+  - @veltodefi/ui-orders@2.8.14-alpha.0
+  - @veltodefi/ui-positions@2.8.14-alpha.0
+  - @veltodefi/ui-scaffold@2.8.14-alpha.0
+  - @veltodefi/ui-share@2.8.14-alpha.0
+  - @veltodefi/ui-tpsl@2.8.14-alpha.0
+  - @veltodefi/ui-tradingview@2.8.14-alpha.0
+  - @veltodefi/ui-transfer@2.8.14-alpha.0
+  - @veltodefi/utils@2.8.14-alpha.0
+  - @veltodefi/vaults@2.8.14-alpha.0
+  - @veltodefi/wallet-connector@2.8.14-alpha.0
+  - @veltodefi/wallet-connector-privy@2.8.14-alpha.0
+
 ## 1.8.13
 
 ### Patch Changes

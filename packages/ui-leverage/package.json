@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-leverage",
-  "version": "2.8.13-velto-main.27",
+  "version": "2.9.0-velto-main.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
