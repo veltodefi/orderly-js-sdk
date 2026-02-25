@@ -83,14 +83,18 @@ const sliderVariants = tv({
         tips: "oui-bg-primary-light after:oui-border-t-primary-light",
       },
       buy: {
-        thumb: ["oui-border-success", "oui-bg-base-5"],
-        range: "oui-bg-success",
-        tips: ["oui-bg-success after:oui-border-t-success"],
+        thumb: ["oui-border-trade-profit", "oui-bg-base-5"],
+        range: "oui-bg-trade-profit",
+        tips: [
+          "oui-bg-trade-profit oui-text-trade-profit-contrast after:oui-border-t-trade-profit",
+        ],
       },
       sell: {
-        thumb: ["oui-border-danger", "oui-bg-base-5"],
-        range: "oui-bg-danger",
-        tips: ["oui-bg-danger after:oui-border-t-danger"],
+        thumb: ["oui-border-trade-loss", "oui-bg-base-5"],
+        range: "oui-bg-trade-loss",
+        tips: [
+          "oui-bg-trade-loss oui-text-trade-loss-contrast after:oui-border-t-trade-loss",
+        ],
       },
     },
   },

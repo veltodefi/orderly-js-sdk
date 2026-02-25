@@ -38,6 +38,8 @@
   "common.total": "Total",
   "common.symbol": "Symbole",
   "common.token": "Token",
+  "connector.getStarted": "Commencer",
+  "connector.beginYourSetupToUnlock": "Commencez votre configuration pour débloquer l'accès au trading.",
   "common.amount": "Montant",
   "common.side": "Côté",
   "common.side.all": "Tous les côtés",

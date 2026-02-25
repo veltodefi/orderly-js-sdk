@@ -94,6 +94,16 @@ const mainButtonVariants = tv(
           "data-[loading=true]:[&_.oui-spinner]:oui-text-mainButton-invertedLoadingSpinner",
         ],
       },
+      "data-type": {
+        BUY: [
+          "data-[active=true]:oui-bg-trade-profit data-[active=true]:oui-text-trade-profit-contrast",
+          "data-[active=true]:hover:oui-bg-trade-profit/80 data-[active=true]:active:oui-bg-trade-profit/70",
+        ],
+        SELL: [
+          "data-[active=true]:oui-bg-trade-loss data-[active=true]:oui-text-trade-loss-contrast",
+          "data-[active=true]:hover:oui-bg-trade-loss/80 data-[active=true]:active:oui-bg-trade-loss/70",
+        ],
+      },
       size: {
         xs: ["oui-px-2", "oui-rounded", "oui-h-6", "oui-text-2xs"], //24px
         sm: ["oui-px-3", "oui-rounded", "oui-h-7", "oui-text-2xs"], //28px
@@ -177,6 +187,7 @@ const MainButton = React.forwardRef<
           size,
           className,
           fullWidth,
+          "data-type": props["data-type"],
         })}
         size={size as SizeType}
         ref={ref}

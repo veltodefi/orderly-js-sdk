@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import pick from "ramda/es/pick";
 import { SubAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
@@ -21,6 +20,7 @@ import {
 } from "@veltodefi/ui";
 import { AuthGuard, AuthGuardDataTable } from "@veltodefi/ui-connector";
 import type { SelectOption } from "@veltodefi/ui/src/select/withOptions";
+import pick from "ramda/es/pick";
 import type { useAssetsScriptReturn } from "./assets.script";
 import type {
   AssetsDataTableWidgetProps,
@@ -238,9 +238,10 @@ export const AssetsDataTable: React.FC<
       <AuthGuardDataTable
         classNames={{
           root: "oui-rounded-xl oui-font-semibold",
-          scroll: "oui-h-[252px]",
+          scroll: "oui-h-full oui-min-h-[325px]",
         }}
         loading={props.canTrade}
+        currentView="assets"
         columns={[]}
         dataSource={[]}
       />
@@ -282,6 +283,7 @@ export const AssetsDataTable: React.FC<
             </Text>
             <AuthGuardDataTable
               bordered
+              currentView="assets"
               className="oui-font-semibold"
               classNames={{
                 // root: "oui-bg-transparent",

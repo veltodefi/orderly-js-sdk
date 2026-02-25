@@ -79,7 +79,7 @@ export const DesktopScaffold: React.FC<DesktopScaffoldProps> = (props) => {
           {/* <AnnouncementWidget
             className={"oui-mx-auto oui-mt-2"}
             hideTips={restrictedInfo?.restrictedOpen}
-          /> */}
+          />  */}
         </Box>
         {/*--------- body start ------ */}
         {!hasLeftSidebar ? (

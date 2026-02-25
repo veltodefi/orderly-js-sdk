@@ -1,5 +1,8 @@
 import { FC } from "react";
+import { useAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
+import { AccountStatusEnum } from "@veltodefi/types";
 import {
   Flex,
   ListView,
@@ -9,6 +12,7 @@ import {
   MainButton,
   cn,
   TableFeatures,
+  NotConnectedView,
 } from "@veltodefi/ui";
 import { AuthGuardDataTable } from "@veltodefi/ui-connector";
 import { formatSymbol } from "@veltodefi/utils";
@@ -61,12 +65,16 @@ export const DesktopOrderList: FC<
           dataSource={props.dataSource}
           bordered
           ignoreLoadingCheck={true}
+          currentView={`orders_${props.type}`}
           testIds={{
             body: props.testIds?.tableBody,
           }}
           classNames={{
             header: "oui-h-[38px]",
             root: "oui-items-start !oui-h-[calc(100%_-_49px)]",
+            scroll: !props.dataSource?.length
+              ? "oui-hide-scrollbar oui-overflow-hidden"
+              : "",
           }}
           onRow={(record, index) => {
             return {
@@ -118,6 +126,10 @@ export const MobileOrderList: FC<
   }
 > = (props) => {
   const { t } = useTranslation();
+  const { veltoProps } = useAppContext();
+  const { state } = useAccount();
+
+  const isNotConnected = state.status <= AccountStatusEnum.NotConnected;
 
   return (
     <OrderListProvider
@@ -129,8 +141,10 @@ export const MobileOrderList: FC<
     >
       <Grid
         cols={1}
-        rows={2}
-        className="oui-w-full oui-grid-rows-[auto,1fr]"
+        rows={isNotConnected ? 1 : 2}
+        className={
+          isNotConnected ? "oui-w-full " : "oui-w-full oui-grid-rows-[auto,1fr]"
+        }
         gap={2}
       >
         {/* <Filter
@@ -177,9 +191,25 @@ export const MobileOrderList: FC<
         <ListView
           className={props.classNames?.root}
           contentClassName={props.classNames?.content}
-          dataSource={props.dataSource}
+          dataSource={props.dataSource || []}
           loadMore={props.loadMore}
           isLoading={props.isLoading}
+          emptyView={
+            isNotConnected ? (
+              <NotConnectedView
+                disabled={veltoProps?.isRestrictedRegion}
+                title={t("connector.getStarted")}
+                description={t("connector.beginYourSetupToUnlock")}
+                buttonLabel={t("connector.connectWallet")}
+                onClick={(sendToOnboarding) =>
+                  veltoProps?.onConnectWallet?.(undefined, sendToOnboarding, {
+                    from: "orders",
+                    state: "wallet_not_connected",
+                  })
+                }
+              />
+            ) : undefined
+          }
           renderItem={(item, index) => {
             let children = (
               <OrderCellWidget

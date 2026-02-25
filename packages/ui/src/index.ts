@@ -34,6 +34,7 @@ export * from "./dropdown";
 
 export * from "./icon";
 export * from "./modal";
+export * from "./notConnnectedView";
 export { EVMAvatar, Avatar } from "./avatar";
 
 export type { ButtonProps, MainButtonProps } from "./button";

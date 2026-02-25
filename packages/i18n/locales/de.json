@@ -38,6 +38,8 @@
   "common.total": "Gesamt",
   "common.symbol": "Symbol",
   "common.token": "Token",
+  "connector.getStarted": "Loslegen",
+  "connector.beginYourSetupToUnlock": "Beginnen Sie mit der Einrichtung, um den Handelszugang freizuschalten.",
   "common.amount": "Betrag",
   "common.side": "Seite",
   "common.side.all": "Alle Seiten",

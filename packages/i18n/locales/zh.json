@@ -38,6 +38,8 @@
   "common.total": "总计",
   "common.symbol": "符号",
   "common.token": "代币",
+  "connector.getStarted": "开始",
+  "connector.beginYourSetupToUnlock": "开始设置以解锁交易访问权限。",
   "common.amount": "金额",
   "common.side": "方向",
   "common.side.all": "所有方向",

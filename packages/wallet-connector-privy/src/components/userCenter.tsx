@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useAccount, useWalletConnector } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import { ABSTRACT_CHAIN_ID_MAP, AccountStatusEnum } from "@veltodefi/types";
 import {
   MainButton,
@@ -38,8 +39,10 @@ const RenderUserCenter = (props: any) => {
   const { linkedAccount } = usePrivyWallet();
   const { state: accountState, account } = useAccount();
   const { connectedChain } = useWalletConnector();
+  const { veltoProps } = useAppContext();
 
-  const disabled = state.validating || props.disabledConnect;
+  const disabled =
+    state.validating || props.disabledConnect || veltoProps?.isRestrictedRegion;
 
   const userAddress = useMemo(() => {
     if (

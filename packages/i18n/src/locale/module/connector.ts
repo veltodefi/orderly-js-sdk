@@ -100,6 +100,9 @@ export const connector = {
   "connector.allNetworks": "All networks",
   "connector.mainnetDescriptionTooltip": "Live trading with real funds",
   "connector.testnetDescriptionTooltip": "Practice trading with fake funds",
+  "connector.getStarted": "Get Started",
+  "connector.beginYourSetupToUnlock":
+    "Begin your setup to unlock trading access.",
 };
 
 export type Connector = typeof connector;

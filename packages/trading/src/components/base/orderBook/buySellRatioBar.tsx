@@ -52,7 +52,7 @@ export const BuySellRatioBar: FC<BuySellRatioBarProps> = (props) => {
     <Flex className={cn("oui-w-full", className)} gap={1}>
       <Flex itemAlign="center" gap={1}>
         <Text intensity={80}>B</Text>
-        <Text color="success">{buyPercentage.toFixed(1)}%</Text>
+        <Text color="profit">{buyPercentage.toFixed(1)}%</Text>
       </Flex>
       <div
         style={{

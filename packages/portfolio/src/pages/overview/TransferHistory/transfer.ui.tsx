@@ -1,11 +1,11 @@
 import React, { useMemo } from "react";
-import { produce } from "immer";
 import { useAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import type { API } from "@veltodefi/types";
 import { DataFilter, formatAddress } from "@veltodefi/ui";
 import { AuthGuardDataTable } from "@veltodefi/ui-connector";
 import type { SelectOption } from "@veltodefi/ui/src/select/withOptions";
+import { produce } from "immer";
 import { useColumns } from "./column";
 import type { useTransferHistoryHookReturn } from "./useDataSource.script";
 
@@ -101,9 +101,15 @@ export const TransferHistoryUI: React.FC<
         columns={columns}
         dataSource={dataSource}
         loading={isLoading}
+        currentView="transfer_history"
         // isValidating={isValidating}
         className="oui-font-semibold"
-        classNames={{ root: "oui-h-[calc(100%_-_49px)]" }}
+        classNames={{
+          root: "oui-h-[calc(100%_-_49px)]",
+          scroll: !dataSource?.length
+            ? "oui-min-h-[325px] oui-hide-scrollbar oui-overflow-hidden"
+            : "oui-min-h-[325px]",
+        }}
         pagination={props.pagination}
         generatedRowKey={(row) => row.id}
       />

@@ -38,6 +38,8 @@
   "common.total": "合計",
   "common.symbol": "シンボル",
   "common.token": "トークン",
+  "connector.getStarted": "始める",
+  "connector.beginYourSetupToUnlock": "取引アクセスを解除するためにセットアップを開始してください。",
   "common.amount": "金額",
   "common.side": "サイド",
   "common.side.all": "すべてのサイド",

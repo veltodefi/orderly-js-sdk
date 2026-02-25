@@ -42,8 +42,9 @@ export const AccountMenu = (props: AccountMenuProps) => {
     isMobile,
     // onConnectWallet,
   } = props;
-  const disabled = state.validating || props.disabledConnect;
   const { veltoProps } = useAppContext();
+  const disabled =
+    state.validating || props.disabledConnect || veltoProps?.isRestrictedRegion;
 
   if (!disabled && wrongNetwork) {
     return (

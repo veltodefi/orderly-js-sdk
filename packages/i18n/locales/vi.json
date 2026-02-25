@@ -38,6 +38,8 @@
   "common.total": "Tổng",
   "common.symbol": "Mã",
   "common.token": "Token",
+  "connector.getStarted": "Bắt đầu",
+  "connector.beginYourSetupToUnlock": "Bắt đầu thiết lập để mở khóa quyền truy cập giao dịch.",
   "common.amount": "Số tiền",
   "common.side": "Bên",
   "common.side.all": "Tất cả các bên",
