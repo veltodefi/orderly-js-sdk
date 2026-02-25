@@ -2562,6 +2562,9 @@ importers:
       '@veltodefi/i18n':
         specifier: workspace:*
         version: link:../i18n
+      '@veltodefi/react-app':
+        specifier: workspace:*
+        version: link:../app
       '@veltodefi/types':
         specifier: workspace:*
         version: link:../types

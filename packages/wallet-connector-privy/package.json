@@ -22,6 +22,7 @@
     "@veltodefi/i18n": "workspace:*",
     "@veltodefi/types": "workspace:*",
     "@veltodefi/ui": "workspace:*",
+    "@veltodefi/react-app": "workspace:*",
     "@veltodefi/ui-connector": "workspace:*",
     "@veltodefi/utils": "workspace:*",
     "@privy-io/react-auth": "^2.4.5",
