@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/i18n",
-  "version": "2.9.0-velto-main.12",
+  "version": "2.9.0-velto-main.13",
   "description": "Internationalization for orderly sdk",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
