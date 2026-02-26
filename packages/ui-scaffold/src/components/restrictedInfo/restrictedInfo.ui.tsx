@@ -14,54 +14,54 @@ export const RestrictedInfo: FC<RestrictedInfoProps> = (props) => {
     props.restrictedInfo || {};
   const { t } = useTranslation();
 
-  // if user region is in the canUnblock regions and accessRestricted is not set, show the dialog
-  if (restrictedOpen && canUnblock && accessRestricted === undefined) {
-    return (
-      <SimpleDialog
-        open={canUnblock}
-        title={t("restrictedInfo.accessRestricted")}
-        size="sm"
-        closable={false}
-        actions={{
-          secondary: {
-            label: t("common.cancel"),
-            onClick: () => {
-              setAccessRestricted(true);
-            },
-            size: "md",
-          },
-          primary: {
-            label: t("common.confirm"),
-            onClick: async () => {
-              setAccessRestricted(false);
-            },
-            size: "md",
-            disabled: !agree,
-          },
-        }}
-      >
-        {t("restrictedInfo.accessRestricted.description")}
+  // // if user region is in the canUnblock regions and accessRestricted is not set, show the dialog
+  // if (restrictedOpen && canUnblock && accessRestricted === undefined) {
+  //   return (
+  //     <SimpleDialog
+  //       open={canUnblock}
+  //       title={t("restrictedInfo.accessRestricted")}
+  //       size="sm"
+  //       closable={false}
+  //       actions={{
+  //         secondary: {
+  //           label: t("common.cancel"),
+  //           onClick: () => {
+  //             setAccessRestricted(true);
+  //           },
+  //           size: "md",
+  //         },
+  //         primary: {
+  //           label: t("common.confirm"),
+  //           onClick: async () => {
+  //             setAccessRestricted(false);
+  //           },
+  //           size: "md",
+  //           disabled: !agree,
+  //         },
+  //       }}
+  //     >
+  //       {t("restrictedInfo.accessRestricted.description")}
 
-        <Flex gapX={1} pt={2}>
-          <Checkbox
-            id="orderConfirm"
-            color={"white"}
-            checked={agree}
-            onCheckedChange={(checked) => {
-              setAgree(!!checked);
-            }}
-          />
-          <label htmlFor="orderConfirm" className="oui-cursor-pointer">
-            {t("restrictedInfo.accessRestricted.agree")}
-          </label>
-        </Flex>
-      </SimpleDialog>
-    );
-  }
+  //       <Flex gapX={1} pt={2}>
+  //         <Checkbox
+  //           id="orderConfirm"
+  //           color={"white"}
+  //           checked={agree}
+  //           onCheckedChange={(checked) => {
+  //             setAgree(!!checked);
+  //           }}
+  //         />
+  //         <label htmlFor="orderConfirm" className="oui-cursor-pointer">
+  //           {t("restrictedInfo.accessRestricted.agree")}
+  //         </label>
+  //       </Flex>
+  //     </SimpleDialog>
+  //   );
+  // }
 
-  if (!restrictedOpen) {
-    return;
-  }
+  // if (!restrictedOpen) {
+  //   return;
+  // }
 
   return (
     <Flex
@@ -73,7 +73,7 @@ export const RestrictedInfo: FC<RestrictedInfoProps> = (props) => {
         props.className,
       )}
     >
-      <WarningIcon className="shrink-0 mt-1" />
+      <WarningIcon className="shrink-0 mt-1 oui-min-w-4" />
       <p className="font-normal text-sm leading-5 tracking-[0.1px] oui-max-w-7xl">
         You are accessing velto from a restricted jurisdiction. Under the Terms
         of Use, velto&apos;s services are not available in certain locations,
