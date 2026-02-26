@@ -5,11 +5,11 @@ import { NotificationWidget } from "../notification/notification.widget";
 import type { ScaffoldScriptReturn } from "./scaffold.script";
 import type { ScaffoldProps } from "./scaffold.widget";
 
-// const LazyRestrictedInfoWidget = React.lazy(() =>
-//   import("../restrictedInfo").then((mod) => {
-//     return { default: mod.RestrictedInfoWidget };
-//   }),
-// );
+const LazyRestrictedInfoWidget = React.lazy(() =>
+  import("../restrictedInfo").then((mod) => {
+    return { default: mod.RestrictedInfoWidget };
+  }),
+);
 
 const LazyBottomNav = React.lazy(() =>
   import("../bottomNav").then((mod) => {
@@ -64,9 +64,9 @@ export const MobileScaffold: React.FC<
           classNames?.container,
         )}
       >
-        {/* <React.Suspense fallback={null}>
+        <React.Suspense fallback={null}>
           <LazyRestrictedInfoWidget className="oui-mx-1 oui-mb-1 oui-bg-base-6" />
-        </React.Suspense> */}
+        </React.Suspense>
 
         <Box
           height="100%"
