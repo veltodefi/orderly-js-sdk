@@ -1,6 +1,5 @@
-import max from "ramda/es/max";
-import min from "ramda/es/min";
 import { getTimestamp } from "@veltodefi/utils";
+import { max, min } from "ramda";
 import { usePrivateQuery } from "../usePrivateQuery";
 import { RefferalAPI } from "./api";
 import { formatDate } from "./format";
@@ -29,7 +28,7 @@ export const useDaily = (options?: {
   const { data: dailyVolume, mutate } = usePrivateQuery<
     RefferalAPI.DayliVolume[]
   >(url, {
-    revalidateOnFocus: true,
+    revalidateOnFocus: false,
   });
 
   return {

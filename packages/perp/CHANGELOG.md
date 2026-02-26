@@ -282,6 +282,217 @@
   - @veltodefi/types@2.8.7-alpha.0
   - @veltodefi/utils@2.8.7-alpha.0
 
+## 4.9.0
+
+### Minor Changes
+
+- b875f72: publish
+- publish
+- 84dd4e0: publish
+
+### Patch Changes
+
+- Updated dependencies [b875f72]
+- Updated dependencies
+- Updated dependencies [84dd4e0]
+  - @veltodefi/types@2.9.0
+  - @veltodefi/utils@2.9.0
+
+## 4.9.0-alpha.1
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/types@2.9.0-alpha.1
+  - @veltodefi/utils@2.9.0-alpha.1
+
+## 4.9.0-alpha.0
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/types@2.9.0-alpha.0
+  - @veltodefi/utils@2.9.0-alpha.0
+
+## 4.8.14
+
+### Patch Changes
+
+- publish
+- 6355a39: publish
+- Updated dependencies
+- Updated dependencies [6355a39]
+  - @veltodefi/types@2.8.14
+  - @veltodefi/utils@2.8.14
+
+## 4.8.14-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.14-alpha.0
+  - @veltodefi/utils@2.8.14-alpha.0
+
+## 4.8.13
+
+### Patch Changes
+
+- 2f7399d: publish
+- publish
+- Updated dependencies [2f7399d]
+- Updated dependencies
+  - @veltodefi/types@2.8.13
+  - @veltodefi/utils@2.8.13
+
+## 4.8.13-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.13-alpha.0
+  - @veltodefi/utils@2.8.13-alpha.0
+
+## 4.8.12
+
+### Patch Changes
+
+- publish
+- 117b23a: publish
+- Updated dependencies
+- Updated dependencies [117b23a]
+  - @veltodefi/types@2.8.12
+  - @veltodefi/utils@2.8.12
+
+## 4.8.12-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.12-alpha.0
+  - @veltodefi/utils@2.8.12-alpha.0
+
+## 4.8.11
+
+### Patch Changes
+
+- 1ed7590: publish
+- publish
+- e7fb6c1: publish
+- Updated dependencies [1ed7590]
+- Updated dependencies
+- Updated dependencies [e7fb6c1]
+  - @veltodefi/types@2.8.11
+  - @veltodefi/utils@2.8.11
+
+## 4.8.11-alpha.1
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.11-alpha.1
+  - @veltodefi/utils@2.8.11-alpha.1
+
+## 4.8.11-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.11-alpha.0
+  - @veltodefi/utils@2.8.11-alpha.0
+
+## 4.8.10
+
+### Patch Changes
+
+- publish
+- 0be13b3: publish
+- Updated dependencies
+- Updated dependencies [0be13b3]
+  - @veltodefi/types@2.8.10
+  - @veltodefi/utils@2.8.10
+
+## 4.8.10-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.10-alpha.0
+  - @veltodefi/utils@2.8.10-alpha.0
+
+## 4.8.9
+
+### Patch Changes
+
+- publish
+- 32f2962: publish
+- Updated dependencies
+- Updated dependencies [32f2962]
+  - @veltodefi/types@2.8.9
+  - @veltodefi/utils@2.8.9
+
+## 4.8.9-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.9-alpha.0
+  - @veltodefi/utils@2.8.9-alpha.0
+
+## 4.8.8
+
+### Patch Changes
+
+- publish
+- 9e4118b: publish
+- Updated dependencies
+- Updated dependencies [9e4118b]
+  - @veltodefi/types@2.8.8
+  - @veltodefi/utils@2.8.8
+
+## 4.8.8-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.8-alpha.0
+  - @veltodefi/utils@2.8.8-alpha.0
+
+## 4.8.7
+
+### Patch Changes
+
+- de789db: publish
+- publish
+- Updated dependencies [de789db]
+- Updated dependencies
+  - @veltodefi/types@2.8.7
+  - @veltodefi/utils@2.8.7
+
+## 4.8.7-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/types@2.8.7-alpha.0
+  - @veltodefi/utils@2.8.7-alpha.0
+
 ## 4.8.6
 
 ### Patch Changes

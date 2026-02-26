@@ -15,8 +15,8 @@ import {
 } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { EditCode } from "../../../components/editCodeBtn";
-import { EditIcon } from "../../../components/editIcon";
 import { PinBtn } from "../../../components/pinButton";
+import { EditIcon } from "../../../icons/editIcon";
 import { ReferralCodesReturns, ReferralCodeType } from "./referralCodes.script";
 
 export const ReferralCodes: FC<ReferralCodesReturns> = (props) => {

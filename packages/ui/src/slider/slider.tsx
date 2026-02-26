@@ -120,6 +120,7 @@ type SliderProps = React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> &
       thumb?: string;
       track?: string;
       range?: string;
+      trackInner?: string;
     };
   };
 
@@ -203,7 +204,7 @@ const BaseSlider = React.forwardRef<
       <SliderPrimitive.Track
         className={track({ className: classNames?.track })}
       >
-        <div className={trackInner()} />
+        <div className={trackInner({ className: classNames?.trackInner })} />
         <SliderPrimitive.Range
           className={range({ className: classNames?.range })}
         />

@@ -1,5 +1,60 @@
 # storybook-theme-tool
 
+## 2.9.0
+
+### Minor Changes
+
+- b875f72: publish
+- publish
+- 84dd4e0: publish
+
+### Patch Changes
+
+- Updated dependencies [b875f72]
+- Updated dependencies
+- Updated dependencies [84dd4e0]
+  - @veltodefi/ui@2.9.0
+
+## 2.9.0-alpha.1
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/ui@2.9.0-alpha.1
+
+## 2.9.0-alpha.0
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/ui@2.9.0-alpha.0
+
+## 2.8.13
+
+### Patch Changes
+
+- publish
+- 6355a39: publish
+- Updated dependencies
+- Updated dependencies [6355a39]
+  - @veltodefi/ui@2.8.14
+
+## 2.8.13-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/ui@2.8.14-alpha.0
+
 ## 2.8.12
 
 ### Patch Changes
