@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Checkbox, cn, Flex, SimpleDialog, Box } from "@veltodefi/ui";
+import { Checkbox, cn, Flex, SimpleDialog } from "@veltodefi/ui";
 import { WarningIcon } from "./icons";
 import type { UseRestrictedInfoScriptReturn } from "./restrictedInfo.script";
 
@@ -64,22 +64,31 @@ export const RestrictedInfo: FC<RestrictedInfoProps> = (props) => {
   }
 
   return (
-    <Box className="p-1 md:pt-2 md:px-3 md:pb-0 xl:px-2">
-      <Flex
-        ref={props.container}
-        justify={"center"}
-        gap={2}
-        className={cn(
-          "rounded-xl bg-[#0A1A3D] py-4 md:py-2 px-4 md:px-10 items-start md:items-center",
-          props.className,
-        )}
-      >
-        <WarningIcon className="shrink-0 mt-1 md:mt-0" />
-        <p className="font-normal text-sm leading-5 tracking-[0.1px]">
-          We are not available in your current location. Access to this
-          interface is restricted in certain regions for compliance purposes.
-        </p>
-      </Flex>
-    </Box>
+    <Flex
+      ref={props.container}
+      justify={"center"}
+      gap={2}
+      className={cn(
+        "rounded-xl bg-[#0A1A3D] py-4 md:py-2 px-4 md:px-10 items-start",
+        props.className,
+      )}
+    >
+      <WarningIcon className="shrink-0 mt-1 oui-min-w-4" />
+      <p className="font-normal text-sm leading-5 tracking-[0.1px] oui-max-w-7xl">
+        You are accessing velto from a restricted jurisdiction. Under the Terms
+        of Use, velto&apos;s services are not available in certain locations,
+        including sanctioned and other restricted jurisdictions. For more
+        information, please review our{" "}
+        <a
+          href="https://www.velto.com/policies/terms-of-use"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="oui-text-primary oui-underline"
+        >
+          Terms of Use
+        </a>
+        .
+      </p>
+    </Flex>
   );
 };
