@@ -19,6 +19,7 @@ const getDisabledFeatures = (mode: ChartMode) => {
     "chart_crosshair_menu",
     "header_fullscreen_button",
     "header_widget",
+    "symbol_info",
   ];
 
   if (mode === ChartMode.MOBILE) {

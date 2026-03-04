@@ -158,7 +158,11 @@ export class SymbolsStorage {
         return Promise.reject("invalid symbol");
       }
 
-      return Promise.resolve(symbolInfo);
+      return Promise.resolve({
+        ...symbolInfo,
+        exchange: "Velto", // Shown in the legend and dialogs
+        listed_exchange: "Velto", // The "official" exchange name
+      });
     });
   }
 
