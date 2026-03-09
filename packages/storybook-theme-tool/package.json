@@ -1,6 +1,6 @@
 {
   "name": "storybook-theme-tool",
-  "version": "2.9.0-velto-main.13",
+  "version": "2.9.0-velto-dev.20",
   "description": "Theme builder for Storybook",
   "private": true,
   "exports": {
