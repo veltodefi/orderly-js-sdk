@@ -62,6 +62,9 @@ export const widget = {
   "restrictedInfo.accessRestricted.description":
     "Due to laws and regulations, we currently do not operate in the United States. By continuing to use our platform, you represent and warrant at all times that you are not a resident of the United States throughout the period of such use.",
   "restrictedInfo.accessRestricted.agree": "I understand and agree",
+  "restrictedInfo.withdrawOnly.title": "Withdraw Only Mode",
+  "restrictedInfo.withdrawOnly.description":
+    "Your account is in withdraw-only mode due to regional restrictions. You may withdraw your funds, but trading, deposits, and other actions are unavailable.",
 
   "subAccount.modal.title": "Switch account",
   "subAccount.modal.switch.success.description": "Account switched",

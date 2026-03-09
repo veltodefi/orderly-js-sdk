@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Доступ обмежено",
   "restrictedInfo.accessRestricted.description": "Відповідно до законів та нормативних актів, ми наразі не працюємо в Сполучених Штатах. Продовжуючи користуватися нашою платформою, ви заявляєте та гарантуєте, що не є резидентом Сполучених Штатів протягом усього періоду використання.",
   "restrictedInfo.accessRestricted.agree": "Я розумію та погоджуюся",
+  "restrictedInfo.withdrawOnly.title": "Режим Лише Виведення",
+  "restrictedInfo.withdrawOnly.description": "Ваш обліковий запис перебуває в режимі лише виведення коштів через регіональні обмеження. Ви можете вивести свої кошти, але торгівля, депозити та інші дії недоступні.",
   "subAccount.modal.title": "Змінити акаунт",
   "subAccount.modal.switch.success.description": "Обліковий запис змінено",
   "subAccount.modal.mainAccount.title": "Головний рахунок",

@@ -56,8 +56,13 @@ export const useTradingScript = () => {
   const props = useTradingPageContext();
   const { state } = useAccount();
   const { t } = useTranslation();
-  const { wrongNetwork, disabledConnect, restrictedInfo, onRouteChange } =
-    useAppContext();
+  const {
+    wrongNetwork,
+    disabledConnect,
+    withdrawOnlyMode,
+    restrictedInfo,
+    onRouteChange,
+  } = useAppContext();
   const { hideAssets, setHideAssets } = useTradingLocalStorage();
 
   const isFirstTimeDeposit = useFirstTimeDeposit();
@@ -91,10 +96,11 @@ export const useTradingScript = () => {
     return (
       !wrongNetwork &&
       !disabledConnect &&
+      !withdrawOnlyMode &&
       (state.status >= AccountStatusEnum.EnableTrading ||
         state.status === AccountStatusEnum.EnableTradingWithoutConnected)
     );
-  }, [state.status, wrongNetwork, disabledConnect]);
+  }, [state.status, wrongNetwork, disabledConnect, withdrawOnlyMode]);
 
   const onShowPortfolioSheet = () => {
     if (canTrade) {

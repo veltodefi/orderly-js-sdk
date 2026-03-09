@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Dostęp ograniczony",
   "restrictedInfo.accessRestricted.description": "Ze względu na przepisy prawa i regulacje, obecnie nie prowadzimy działalności w Stanach Zjednoczonych. Kontynuując korzystanie z naszej platformy, oświadczasz i gwarantujesz, że nie jesteś rezydentem Stanów Zjednoczonych przez cały okres korzystania.",
   "restrictedInfo.accessRestricted.agree": "Rozumiem i zgadzam się",
+  "restrictedInfo.withdrawOnly.title": "Tryb Tylko Wypłata",
+  "restrictedInfo.withdrawOnly.description": "Twoje konto jest w trybie tylko wypłata z powodu ograniczeń regionalnych. Możesz wypłacić swoje środki, ale handel, depozyty i inne działania są niedostępne.",
   "subAccount.modal.title": "Zmień konto",
   "subAccount.modal.switch.success.description": "Konto przełączone",
   "subAccount.modal.mainAccount.title": "Konto główne",

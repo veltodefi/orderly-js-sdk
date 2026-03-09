@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Hạn chế Truy cập",
   "restrictedInfo.accessRestricted.description": "Do luật pháp và quy định, hiện tại chúng tôi không hoạt động tại Hoa Kỳ. Bằng việc tiếp tục sử dụng nền tảng của chúng tôi, bạn cam đoan và đảm bảo rằng bạn không phải là cư dân Hoa Kỳ trong suốt thời gian sử dụng.",
   "restrictedInfo.accessRestricted.agree": "Tôi hiểu và đồng ý",
+  "restrictedInfo.withdrawOnly.title": "Chế Độ Chỉ Rút Tiền",
+  "restrictedInfo.withdrawOnly.description": "Tài khoản của bạn đang ở chế độ chỉ rút tiền do các hạn chế khu vực. Bạn có thể rút tiền, nhưng giao dịch, nạp tiền và các hành động khác không khả dụng.",
   "subAccount.modal.title": "Chuyển tài khoản",
   "subAccount.modal.switch.success.description": "Đã chuyển tài khoản",
   "subAccount.modal.mainAccount.title": "Tài khoản chính",

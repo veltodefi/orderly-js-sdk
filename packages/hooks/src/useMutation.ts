@@ -1,13 +1,11 @@
-import useSWRMutation, { type SWRMutationConfiguration } from "swr/mutation";
-import {
-  type MessageFactor,
-  type SignedMessagePayload,
-} from "@veltodefi/core";
+import { type MessageFactor, type SignedMessagePayload } from "@veltodefi/core";
 import { mutate } from "@veltodefi/net";
 import { getTimestamp } from "@veltodefi/utils";
+import useSWRMutation, { type SWRMutationConfiguration } from "swr/mutation";
 import { useMemoizedFn } from ".";
 import { useAccountInstance } from "./useAccountInstance";
 import { useConfig } from "./useConfig";
+import { useWithdrawOnlyMode } from "./withdrawOnlyModeContext";
 
 type HTTP_METHOD = "POST" | "PUT" | "DELETE" | "GET";
 
@@ -72,6 +70,7 @@ export const useMutation = <T, E>(
     fullUrl = `${apiBaseUrl}${url}`;
   }
 
+  const withdrawOnlyMode = useWithdrawOnlyMode();
   const account = useAccountInstance();
 
   const { trigger, data, error, reset, isMutating } = useSWRMutation(
@@ -92,6 +91,20 @@ export const useMutation = <T, E>(
     params?: Record<string, any>,
     options?: SWRMutationConfiguration<T, E>,
   ): Promise<any> => {
+    if (withdrawOnlyMode) {
+      // In withdraw-only mode, allow: DELETE (order cancels) and reduce_only orders (position closes).
+      // Block all other mutations.
+      const isAllowed = method === "DELETE" || data?.reduce_only === true;
+      if (!isAllowed) {
+        throw Object.assign(
+          new Error("This action is not available in your region"),
+          {
+            code: "RESTRICTED_REGION_WITHDRAW_ONLY",
+          },
+        );
+      }
+    }
+
     let newUrl = url;
 
     if (typeof params === "object" && Object.keys(params).length) {

@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "접근 제한",
   "restrictedInfo.accessRestricted.description": "법률 및 규정에 따라 현재 미국에서는 서비스를 제공하지 않습니다. 우리 플랫폼을 계속 사용함으로써, 귀하는 사용 기간 동안 미국 거주자가 아님을 진술하고 보증합니다.",
   "restrictedInfo.accessRestricted.agree": "이해하고 동의합니다",
+  "restrictedInfo.withdrawOnly.title": "출금 전용 모드",
+  "restrictedInfo.withdrawOnly.description": "지역 제한으로 인해 계정이 출금 전용 모드입니다. 자금을 출금할 수 있지만, 거래, 입금 및 기타 작업은 이용할 수 없습니다.",
   "subAccount.modal.title": "계정 전환",
   "subAccount.modal.switch.success.description": "계정 전환됨",
   "subAccount.modal.mainAccount.title": "메인 계정",

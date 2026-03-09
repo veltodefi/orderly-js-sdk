@@ -183,7 +183,7 @@ const DefaultFallback: React.FC<{
 }> = (props) => {
   const { buttonProps, labels, descriptions, isEmptyView } = props;
   const { t } = useTranslation();
-  const { connectWallet, veltoProps } = useAppContext();
+  const { connectWallet, veltoProps, withdrawOnlyMode } = useAppContext();
   const { account } = useAccount();
   const { isMobile } = useScreen();
   const matches = useMediaQuery(MEDIA_TABLET);
@@ -277,7 +277,7 @@ const DefaultFallback: React.FC<{
     if (isEmptyView) {
       return (
         <NotConnectedView
-          disabled={veltoProps?.isRestrictedRegion}
+          disabled={!withdrawOnlyMode && veltoProps?.isRestrictedRegion}
           title={t("connector.getStarted")}
           description={t("connector.beginYourSetupToUnlock")}
           buttonLabel={t("connector.connectWallet")}
@@ -300,7 +300,10 @@ const DefaultFallback: React.FC<{
         }}
         angle={45}
         description={descriptions?.connectWallet}
-        disabled={props.disabledConnect || veltoProps?.isRestrictedRegion}
+        disabled={
+          !withdrawOnlyMode &&
+          (props.disabledConnect || veltoProps?.isRestrictedRegion)
+        }
         {...buttonProps}
       >
         {labels.connectWallet}
