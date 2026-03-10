@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-scaffold",
-  "version": "2.9.0-velto-dev.20",
+  "version": "2.9.0-velto-dev.21",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
