@@ -39,10 +39,9 @@ const RenderUserCenter = (props: any) => {
   const { linkedAccount } = usePrivyWallet();
   const { state: accountState, account } = useAccount();
   const { connectedChain } = useWalletConnector();
-  const { veltoProps } = useAppContext();
+  const { veltoProps, withdrawOnlyMode } = useAppContext();
 
-  const disabled =
-    state.validating || props.disabledConnect || veltoProps?.isRestrictedRegion;
+  const disabled = state.validating || props.disabledConnect;
 
   const userAddress = useMemo(() => {
     if (
@@ -57,11 +56,11 @@ const RenderUserCenter = (props: any) => {
   // if (accountStatus.status <= ) {}
   if (state.status === AccountStatusEnum.EnableTradingWithoutConnected) {
     return (
-      <Flex className="oui-bg-base-5 oui-px-[7px] oui-rounded-[6px] oui-gap-[6px]">
+      <Flex className="oui-gap-[6px] oui-rounded-[6px] oui-bg-base-5 oui-px-[7px]">
         <LinkDeviceMobile>
           <Text.formatted
             rule="address"
-            className="oui-text-base-contrast oui-text-xs"
+            className="oui-text-xs oui-text-base-contrast"
           >
             {formatAddress(userAddress!)}
           </Text.formatted>
@@ -78,7 +77,7 @@ const RenderUserCenter = (props: any) => {
         angle={45}
         className={cn(
           "wallet-connect-button",
-          isMobile && "oui-font-semibold oui-px-2",
+          isMobile && "oui-px-2 oui-font-semibold",
         )}
         loading={state.validating}
         disabled={disabled}
@@ -111,7 +110,7 @@ const RenderUserCenter = (props: any) => {
             variant="primary"
             angle={45}
             data-testid="oui-testid-nav-bar-address-btn"
-            className="oui-px-2 oui-flex oui-items-center oui-justify-center oui-gap-1"
+            className="oui-flex oui-items-center oui-justify-center oui-gap-1 oui-px-2"
           >
             {linkedAccount && (
               <RenderPrivyTypeIcon

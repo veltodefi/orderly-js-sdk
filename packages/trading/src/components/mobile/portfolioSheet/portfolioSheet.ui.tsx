@@ -159,7 +159,7 @@ const Asset: FC<PortfolioSheetState> = (props) => {
               {props.aggregated.total_unsettled_pnl}
             </Text.pnl>
             <button
-              className="oui-flex oui-gap-1 oui-items-center"
+              className="oui-flex oui-items-center oui-gap-1"
               onClick={onUnsettleClick}
             >
               <RefreshIcon
@@ -259,7 +259,7 @@ const IconButton: React.FC<{
     <Icon
       onClick={disabled ? undefined : onClick}
       className={cn(
-        "oui-text-white oui-m-2 oui-transition-all",
+        "oui-m-2 oui-text-white oui-transition-all",
         disabled
           ? "oui-cursor-not-allowed oui-opacity-20"
           : "oui-cursor-pointer oui-opacity-100",
@@ -344,7 +344,7 @@ export const LeverageSelector: React.FC<PortfolioSheetState> = (props) => {
           itemAlign="center"
           justify="center"
           className={cn(
-            `oui-transition-all oui-cursor-pointer oui-box-border oui-bg-clip-padding oui-px-3 oui-py-2.5 oui-rounded-md oui-border oui-border-solid`,
+            `oui-box-border oui-cursor-pointer oui-rounded-md oui-border oui-border-solid oui-bg-clip-padding oui-px-3 oui-py-2.5 oui-transition-all`,
             value === option
               ? "oui-border-primary oui-bg-base-6"
               : "oui-border-line-12",
@@ -386,6 +386,7 @@ const Buttons: FC<PortfolioSheetState> = (props) => {
           icon={<ArrowDownShortIcon color="white" opacity={0.8} />}
           size="md"
           fullWidth
+          disabled={props.withdrawOnlyMode}
           onClick={props.onDeposit}
         >
           {t("common.deposit")}

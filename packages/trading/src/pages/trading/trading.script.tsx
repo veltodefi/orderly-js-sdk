@@ -65,7 +65,7 @@ export const useTradingScript = () => {
   } = useAppContext();
   const { hideAssets, setHideAssets } = useTradingLocalStorage();
 
-  const isFirstTimeDeposit = useFirstTimeDeposit();
+  const isFirstTimeDeposit = useFirstTimeDeposit() && !withdrawOnlyMode;
 
   const { totalValue } = useCollateral();
 
@@ -96,11 +96,10 @@ export const useTradingScript = () => {
     return (
       !wrongNetwork &&
       !disabledConnect &&
-      !withdrawOnlyMode &&
       (state.status >= AccountStatusEnum.EnableTrading ||
         state.status === AccountStatusEnum.EnableTradingWithoutConnected)
     );
-  }, [state.status, wrongNetwork, disabledConnect, withdrawOnlyMode]);
+  }, [state.status, wrongNetwork, disabledConnect]);
 
   const onShowPortfolioSheet = () => {
     if (canTrade) {

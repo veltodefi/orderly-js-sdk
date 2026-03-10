@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import { RouterAdapter } from "@veltodefi/types";
 import {
   Flex,
@@ -23,6 +24,7 @@ type Props = {
 
 export const PortfolioHandleMobile: FC<Props> = (props) => {
   const { t } = useTranslation();
+  const { withdrawOnlyMode } = useAppContext();
 
   const onGotoHistory = () => {
     props.routerAdapter?.onRouteChange({
@@ -43,8 +45,8 @@ export const PortfolioHandleMobile: FC<Props> = (props) => {
           direction="column"
           gapY={2}
           itemAlign={"center"}
-          className="oui-flex-1 oui-cursor-pointer"
-          onClick={props?.onDeposit}
+          className={`oui-flex-1 ${withdrawOnlyMode ? "oui-cursor-not-allowed oui-opacity-40" : "oui-cursor-pointer"}`}
+          onClick={withdrawOnlyMode ? undefined : props?.onDeposit}
         >
           <div className="oui-flex oui-size-[48px] oui-items-center oui-justify-center oui-rounded-xl oui-bg-base-9">
             <ArrowDownSquareFillIcon size={28} color="white" opacity={1} />
@@ -101,7 +103,7 @@ export const PortfolioHandleMobile: FC<Props> = (props) => {
             color="white"
             opacity={1}
             viewBox="0 0 28 28"
-            className="oui-w-[28px] oui-h-[28px]"
+            className="oui-size-[28px]"
           />
         </div>
         <Text className="oui-text-base-80 oui-text-2xs">
