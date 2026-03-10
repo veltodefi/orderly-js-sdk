@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/affiliate",
-  "version": "2.9.0-velto-dev.21",
+  "version": "2.9.0-velto-main.22",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
