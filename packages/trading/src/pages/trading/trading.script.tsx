@@ -56,11 +56,16 @@ export const useTradingScript = () => {
   const props = useTradingPageContext();
   const { state } = useAccount();
   const { t } = useTranslation();
-  const { wrongNetwork, disabledConnect, restrictedInfo, onRouteChange } =
-    useAppContext();
+  const {
+    wrongNetwork,
+    disabledConnect,
+    withdrawOnlyMode,
+    restrictedInfo,
+    onRouteChange,
+  } = useAppContext();
   const { hideAssets, setHideAssets } = useTradingLocalStorage();
 
-  const isFirstTimeDeposit = useFirstTimeDeposit();
+  const isFirstTimeDeposit = useFirstTimeDeposit() && !withdrawOnlyMode;
 
   const { totalValue } = useCollateral();
 

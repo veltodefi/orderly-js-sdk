@@ -24,8 +24,8 @@ export const orderlyAppProviderConfig: OrderlyAppProviderConfigProps = {
   restrictedInfo: {
     enableDefault: true,
     customRestrictedIps: [],
-    customRestrictedRegions: [],
-    customUnblockRegions: ["United States"],
+    customRestrictedRegions: ["Brazil"],
+    customUnblockRegions: ["United States", "Brazil"],
     // content: ({ ip, brokerName }) =>
     //   `You are accessing ${brokerName} from an IP address (${ip}) associated with a restricted country. Please refer to our Terms of Use</0>. If you believe this is an error, contact x@orerly.network.`,
   },

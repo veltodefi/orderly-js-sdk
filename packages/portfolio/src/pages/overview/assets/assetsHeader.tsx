@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import {
   ArrowDownSquareFillIcon,
   ArrowLeftRightIcon,
@@ -20,6 +21,7 @@ type Props = {
 
 export const AssetsHeader: FC<Props> = (props) => {
   const { t } = useTranslation();
+  const { withdrawOnlyMode } = useAppContext();
 
   return (
     <Flex justify={"between"}>
@@ -27,7 +29,7 @@ export const AssetsHeader: FC<Props> = (props) => {
       <Flex gap={3}>
         {props.isMainAccount && (
           <MainButton
-            disabled={props.disabled}
+            disabled={props.disabled || withdrawOnlyMode}
             size="md"
             variant="primary"
             onClick={() => props.onDeposit?.()}

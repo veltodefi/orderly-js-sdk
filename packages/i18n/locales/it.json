@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Accesso Limitato",
   "restrictedInfo.accessRestricted.description": "A causa di leggi e regolamenti, attualmente non operiamo negli Stati Uniti. Continuando a utilizzare la nostra piattaforma, dichiari e garantisci in ogni momento di non essere residente negli Stati Uniti durante tutto il periodo di utilizzo.",
   "restrictedInfo.accessRestricted.agree": "Ho capito e accetto",
+  "restrictedInfo.withdrawOnly.title": "Modalità Solo Prelievo",
+  "restrictedInfo.withdrawOnly.description": "Il tuo account è in modalità solo prelievo a causa di restrizioni regionali. Puoi prelevare i tuoi fondi, ma il trading, i depositi e altre azioni non sono disponibili.",
   "subAccount.modal.title": "Cambia account",
   "subAccount.modal.switch.success.description": "Account cambiato",
   "subAccount.modal.mainAccount.title": "Account principale",

@@ -85,11 +85,12 @@ const DepositAndWithdrawButton: React.FC<
 > = (props) => {
   const { t } = useTranslation();
   const { isMainAccount, onWithdraw, onDeposit } = props;
-  const { wrongNetwork, disabledConnect } = useAppContext();
+  const { wrongNetwork, disabledConnect, withdrawOnlyMode } = useAppContext();
   if (!isMainAccount) {
     return null;
   }
-  const mergedDisabled = wrongNetwork || disabledConnect;
+  const baseDisabled = wrongNetwork || disabledConnect;
+  const depositDisabled = baseDisabled || withdrawOnlyMode;
   return (
     <Flex
       className="oui-text-2xs oui-text-base-contrast-54"
@@ -97,7 +98,7 @@ const DepositAndWithdrawButton: React.FC<
       gap={3}
     >
       <MainButton
-        disabled={mergedDisabled}
+        disabled={depositDisabled}
         variant="primary"
         data-testid="oui-testid-assetView-deposit-button"
         fullWidth
@@ -106,14 +107,14 @@ const DepositAndWithdrawButton: React.FC<
       >
         <ArrowDownShortIcon
           color="white"
-          opacity={mergedDisabled ? 0.4 : 1}
+          opacity={depositDisabled ? 0.4 : 1}
           className="oui-rotate-0 oui-text-primary-contrast"
         />
         <Text>{t("common.deposit")}</Text>
       </MainButton>
       <MainButton
         fullWidth
-        disabled={mergedDisabled}
+        disabled={baseDisabled}
         variant="secondary"
         size="md"
         onClick={onWithdraw}
@@ -121,7 +122,7 @@ const DepositAndWithdrawButton: React.FC<
       >
         <ArrowDownShortIcon
           color="white"
-          opacity={mergedDisabled ? 0.4 : 1}
+          opacity={baseDisabled ? 0.4 : 1}
           className="oui-rotate-180 oui-text-base-contrast"
         />
         <Text>{t("common.withdraw")}</Text>

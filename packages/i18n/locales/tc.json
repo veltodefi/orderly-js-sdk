@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "存取受限",
   "restrictedInfo.accessRestricted.description": "根據法律法規，我们目前不在美国開展業務。繼續使用我们的平台即表示您聲明并保證在使用期間始終不是美国居民。",
   "restrictedInfo.accessRestricted.agree": "我理解并同意",
+  "restrictedInfo.withdrawOnly.title": "僅提款模式",
+  "restrictedInfo.withdrawOnly.description": "由於地區限制，您的帳戶處於僅提款模式。您可以提取資金，但交易、存款及其他操作不可用。",
   "subAccount.modal.title": "切換帳戶",
   "subAccount.modal.switch.success.description": "帳戶已切換",
   "subAccount.modal.mainAccount.title": "主帳戶",

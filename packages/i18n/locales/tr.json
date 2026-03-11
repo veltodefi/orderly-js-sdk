@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Erişim Kısıtlı",
   "restrictedInfo.accessRestricted.description": "Yasa ve düzenlemeler nedeniyle, şu anda Amerika Birleşik Devletleri'nde faaliyet göstermemekteyiz. Platformumuzu kullanmaya devam ederek, kullanım süresi boyunca Amerika Birleşik Devletleri'nde ikamet etmediğinizi beyan ve garanti edersiniz.",
   "restrictedInfo.accessRestricted.agree": "Anlıyorum ve kabul ediyorum",
+  "restrictedInfo.withdrawOnly.title": "Yalnızca Çekim Modu",
+  "restrictedInfo.withdrawOnly.description": "Hesabınız bölgesel kısıtlamalar nedeniyle yalnızca çekim modunda. Fonlarınızı çekebilirsiniz, ancak işlem, yatırım ve diğer işlemler kullanılamaz.",
   "subAccount.modal.title": "Hesap değiştir",
   "subAccount.modal.switch.success.description": "Hesap değiştirildi",
   "subAccount.modal.mainAccount.title": "Ana hesap",

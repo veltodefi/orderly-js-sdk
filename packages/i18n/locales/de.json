@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Zugriff eingeschränkt",
   "restrictedInfo.accessRestricted.description": "Aufgrund von Gesetzen und Vorschriften sind wir derzeit nicht in den Vereinigten Staaten tätig. Durch die weitere Nutzung unserer Plattform versichern und garantieren Sie, dass Sie während des gesamten Nutzungszeitraums kein Einwohner der Vereinigten Staaten sind.",
   "restrictedInfo.accessRestricted.agree": "Ich verstehe und stimme zu",
+  "restrictedInfo.withdrawOnly.title": "Nur-Auszahlung-Modus",
+  "restrictedInfo.withdrawOnly.description": "Ihr Konto befindet sich aufgrund regionaler Einschränkungen im Nur-Auszahlung-Modus. Sie können Ihre Gelder abheben, aber Trading, Einzahlungen und andere Aktionen sind nicht verfügbar.",
   "subAccount.modal.title": "Konto wechseln",
   "subAccount.modal.switch.success.description": "Konto gewechselt",
   "subAccount.modal.mainAccount.title": "Hauptkonto",

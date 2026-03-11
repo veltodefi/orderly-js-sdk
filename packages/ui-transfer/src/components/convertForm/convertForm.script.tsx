@@ -47,7 +47,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
 
   const [quantity, setQuantity] = useState<string>("");
 
-  const { wrongNetwork } = useAppContext();
+  const { wrongNetwork, withdrawOnlyMode } = useAppContext();
 
   const { wallet } = useWalletConnector();
 
@@ -79,7 +79,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
   const { maxAmount, convert } = useConvert({ token: sourceToken?.token });
 
   const onConvert = async () => {
-    if (loading) {
+    if (withdrawOnlyMode || loading) {
       return;
     }
     setLoading(true);
@@ -174,7 +174,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
     token: sourceToken?.token,
   });
 
-  const disabled = !quantity || Number(quantity) === 0;
+  const disabled = withdrawOnlyMode || !quantity || Number(quantity) === 0;
 
   const { hasPositions, onSettlePnl } = useSettlePnl();
 
@@ -192,6 +192,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
     disabled,
     loading,
     wrongNetwork,
+    withdrawOnlyMode,
     onConvert,
     hasPositions,
     onSettlePnl,

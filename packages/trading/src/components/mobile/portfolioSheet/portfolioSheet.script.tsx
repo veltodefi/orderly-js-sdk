@@ -9,6 +9,7 @@ import {
   usePositionStream,
 } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import { modal, SliderMarks, toast } from "@veltodefi/ui";
 import {
   DepositAndWithdrawWithSheetId,
@@ -22,6 +23,7 @@ export const usePortfolioSheetScript = () => {
   const marginRatio = useMarginRatioAndLeverage();
   const ee = useEventEmitter();
   const { t } = useTranslation();
+  const { withdrawOnlyMode } = useAppContext();
   const subAccounts = state.subAccounts ?? [];
 
   const [showSliderTip, setShowSliderTip] = useState(false);
@@ -84,6 +86,7 @@ export const usePortfolioSheetScript = () => {
     isMainAccount,
     onTransfer,
     hasSubAccount: subAccounts?.length > 0,
+    withdrawOnlyMode,
   };
 };
 

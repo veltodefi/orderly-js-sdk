@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Akses Dibatasi",
   "restrictedInfo.accessRestricted.description": "Karena hukum dan peraturan, saat ini kami tidak beroperasi di Amerika Serikat. Dengan melanjutkan penggunaan platform kami, Anda menyatakan dan menjamin setiap saat bahwa Anda bukan penduduk Amerika Serikat selama periode penggunaan tersebut.",
   "restrictedInfo.accessRestricted.agree": "Saya mengerti dan setuju",
+  "restrictedInfo.withdrawOnly.title": "Mode Hanya Penarikan",
+  "restrictedInfo.withdrawOnly.description": "Akun Anda berada dalam mode hanya penarikan karena pembatasan regional. Anda dapat menarik dana, tetapi trading, deposito, dan tindakan lainnya tidak tersedia.",
   "subAccount.modal.title": "Ganti akun",
   "subAccount.modal.switch.success.description": "Akun beralih",
   "subAccount.modal.mainAccount.title": "Akun utama",

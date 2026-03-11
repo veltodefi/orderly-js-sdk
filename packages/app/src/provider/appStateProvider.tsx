@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren, useState, useMemo, useEffect } from "react";
 import {
   RestrictedInfoOptions,
+  WithdrawOnlyModeProvider,
   useRestrictedInfo,
   useTrackingInstance,
 } from "@veltodefi/hooks";
@@ -49,7 +50,8 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
 
   const restrictedInfo = useRestrictedInfo(props.restrictedInfo);
 
-  const disabledConnect = restrictedInfo.restrictedOpen;
+  const disabledConnect = false;
+  const withdrawOnlyMode = restrictedInfo.restrictedOpen;
 
   useEffect(() => {
     setInitialized(true);
@@ -63,6 +65,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
       setCurrentChainId,
       onChainChanged: props.onChainChanged,
       disabledConnect,
+      withdrawOnlyMode,
       restrictedInfo,
       showAnnouncement,
       setShowAnnouncement,
@@ -75,6 +78,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
       connectWallet,
       currentChainId,
       disabledConnect,
+      withdrawOnlyMode,
       props.onChainChanged,
       restrictedInfo,
       setCurrentChainId,
@@ -88,7 +92,9 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
 
   return (
     <AppStateContext.Provider value={memoizedValue}>
-      {props.children}
+      <WithdrawOnlyModeProvider value={withdrawOnlyMode}>
+        {props.children}
+      </WithdrawOnlyModeProvider>
     </AppStateContext.Provider>
   );
 };

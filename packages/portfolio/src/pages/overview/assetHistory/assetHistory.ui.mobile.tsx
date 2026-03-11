@@ -1,5 +1,6 @@
 import { FC, useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import { AssetHistoryStatusEnum } from "@veltodefi/types";
 import {
   Badge,
@@ -33,6 +34,7 @@ export const AssetHistoryMobile: FC<AssetHistoryMobileProps> = (props) => {
   } = props;
   const { dateRange, target } = queryParameter;
   const { t } = useTranslation();
+  const { withdrawOnlyMode } = useAppContext();
 
   const options = useMemo(() => {
     return [
@@ -235,7 +237,7 @@ export const AssetHistoryMobile: FC<AssetHistoryMobileProps> = (props) => {
             mt={3}
           >
             <EmptyDataState />
-            {dataSource?.length == 0 && (
+            {!withdrawOnlyMode && dataSource?.length == 0 && (
               <Flex
                 direction="row"
                 itemAlign="center"

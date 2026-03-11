@@ -43,6 +43,11 @@ export type AppContextState = {
    */
   wrongNetwork: boolean;
   disabledConnect: boolean;
+  /**
+   * Whether the user is in a restricted region and can only perform withdrawals.
+   * When true: wallet connect and withdrawal are allowed; trading, deposits, and new orders are blocked.
+   */
+  withdrawOnlyMode: boolean;
   currentChainId: number | undefined;
   setCurrentChainId: (chainId: number | undefined) => void;
   onChainChanged?: (
