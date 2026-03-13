@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Середнє значення останніх цін на інших біржах.",
   "markets.symbolInfoBar.24hVolume": "Об'єм за 24г",
   "markets.symbolInfoBar.24hVolume.tooltip": "24-годинний загальний об'єм торгів на Orderly Network.",
-  "markets.symbolInfoBar.predFundingRate": "Прогнозована ставка фінансування",
+  "markets.symbolInfoBar.predFundingRate": "Оцін. ставка фінансування",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Ставки фінансування - це платежі між трейдерами, які відкрили довгі та короткі позиції. Коли ставка позитивна, довгі позиції платять коротким за фінансування. Коли ставка негативна, короткі позиції платять довгим.",
   "portfolio.feeTier": "Тарифний план комісій",
   "portfolio.apiKeys": "API ключі",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "Рівень ризику використовується для оцінки рівня ризику рахунку. Коли рівень ризику досягає 100%, рахунок буде ліквідовано",
   "trading.riskRate.formula": "Рівень ризику = Коефіцієнт підтримки маржі / Коефіцієнт маржі * 100%",
   "trading.asset&Margin": "Активи та маржа",
-  "trading.fundingRate.predFundingRate": "Прогнозована ставка фінансування",
+  "trading.fundingRate.predFundingRate": "Оцін. ставка фінансування",
   "trading.fundingRate.predFundingRate.interval": "Інтервал",
   "trading.fundingRate.predFundingRate.cap": "Ліміт фінансування",
   "trading.fundingRate.predFundingRate.floor": "Мінімум",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "Звідки надходять доходи?",
   "affiliate.faq.answer4": "Доходи надходять від торгових комісій, згенерованих трейдерами на DEX. Кожного разу, коли трейдер у вашій ланцюжку здійснює транзакцію, частина комісії розподіляється зверху вниз по ланцюжку на основі налаштованого розподілу.",
   "affiliate.faq.question5": "Як я отримую свої комісії?",
-  "affiliate.faq.answer5": "Комісії щодня нараховуються безпосередньо на ваш основний торговий рахунок. Ви можете переглянути загальний дохід від комісій як партнер на панелі управління рефералами."
+  "affiliate.faq.answer5": "Комісії щодня нараховуються безпосередньо на ваш основний торговий рахунок. Ви можете переглянути загальний дохід від комісій як партнер на панелі управління рефералами.",
+  "markets.column.24hVol": "Об'єм за 24г",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Остання/24г%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Ціна останньої виконаної угоди за цим символом.",
+  "trading.orderBook.middlePrice.tooltip": "Стабілізована довідкова ціна, розрахована як медіана найкращої bid-заявки, найкращої ask-заявки та ціни закриття за 24 години.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Орієнтовна ставка фінансування ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "Сума депозиту занадто близька до максимального ліміту. Щоб гарантувати успішну транзакцію, зменшіть суму",
+  "transfer.deposit.estGasFee.tooltip": "Розрахункова комісія за газ включає: вартість виконання транзакції в цій мережі та операційну комісію мережі призначення для депозиту Orderly. Будь ласка, підготуйте додаткову суму для забезпечення достатнього покриття.",
+  "transfer.slippage.error.high": "Високе ковзання може призвести до значних втрат"
 }

@@ -14,9 +14,9 @@ import {
   Spinner,
   Text,
   cn,
-  ChevronDownVeltoIcon,
+  ChevronDownVeltoIcon
 } from "@veltodefi/ui";
-import { CurrentChain } from "../depositForm/hooks";
+import { CurrentChain } from "../../types";
 
 type ChainSelectProps = {
   chains: API.NetworkInfos[];
@@ -112,7 +112,6 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
       {renderRightIcon()}
     </Flex>
   );
-
   const content = chains.map((chain, index) => {
     const extendedChain = chain as API.NetworkInfos & {
       isSupported?: boolean;

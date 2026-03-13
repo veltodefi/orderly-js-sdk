@@ -4,18 +4,14 @@ import { API } from "@veltodefi/types";
 import {
   Box,
   Flex,
-  InfoIcon,
   textVariants,
   Text,
-  TokenIcon,
-  ChevronDownVeltoIcon,
-  Tooltip,
-  modal,
-  useScreen,
   cn,
   Spinner,
   Divider,
+  Tips,
 } from "@veltodefi/ui";
+import { InputStatus } from "../../types";
 import { LtvWidget } from "../LTV";
 import { ActionButton } from "../actionButton";
 import { AmountSelector } from "../amountSelector";
@@ -30,18 +26,18 @@ import { Fee } from "../fee";
 import { MinimumReceived } from "../minimumReceived";
 import { QuantityInput } from "../quantityInput";
 import { Slippage } from "../slippage";
-import { Notice } from "../swap/components/notice";
-import { SwapFee } from "../swap/components/swapFee";
-import { SwapCoin } from "../swapCoin";
-import { SwapIndicator } from "../swapIndicator";
 import { Web3Wallet } from "../web3Wallet";
 import { YieldBearingReminder } from "../yieldBearingReminder";
-import {
-  SWAP_USDC_PRECISION,
-  type DepositFormScriptReturn,
-} from "./depositForm.script";
+import { ConvertRate } from "./components/convertRate";
+import { DepositTokenValueFormatter } from "./components/depositTokenValueFormatter";
+import { Notice } from "./components/notice";
+import { type DepositFormScriptReturn } from "./depositForm.script";
 
 type Props = { layout?: "onboarding" } & DepositFormScriptReturn;
+
+// Common animation classes for reusability
+const animationClasses =
+  "oui-animate-in oui-fade-in oui-slide-in-from-bottom-2 oui-duration-500 oui-ease-in-out";
 
 export const DepositForm: FC<Props> = (props) => {
   const {
@@ -51,7 +47,6 @@ export const DepositForm: FC<Props> = (props) => {
     targetTokens,
     onSourceTokenChange,
     onTargetTokenChange,
-    amount,
     quantity,
     collateralContributionQuantity,
     maxQuantity,
@@ -59,6 +54,8 @@ export const DepositForm: FC<Props> = (props) => {
     onQuantityChange,
     hintMessage,
     inputStatus,
+    targetInputStatus,
+    targetHintMessage,
     chains,
     currentChain,
     settingChain,
@@ -67,7 +64,6 @@ export const DepositForm: FC<Props> = (props) => {
     onDeposit,
     onApprove,
     onApproveAndDeposit,
-    fetchBalance,
     wrongNetwork,
     balanceRevalidating,
     loading,
@@ -79,125 +75,37 @@ export const DepositForm: FC<Props> = (props) => {
     nextLTV,
     slippage,
     onSlippageChange,
-    minimumReceived,
+    swapMinReceived,
     needSwap,
-    needCrossSwap,
     swapPrice,
-    swapFee,
+    swapPriceInUSD,
     warningMessage,
     usdcToken,
     targetQuantity,
     targetQuantityLoading,
+    batchBalancesRevalidating,
+    showSourceDepositCap,
+    showTargetDepositCap,
+    slippageValidate,
+    quantityNotional,
     layout,
   } = props;
 
   const { t } = useTranslation();
   const [selectedPercentage, setSelectedPercentage] = useState<Percentages>();
-  const { isMobile } = useScreen();
-
-  const showRegularTokenRenderer =
-    sourceToken?.user_max_qty !== undefined && sourceToken?.user_max_qty === -1;
 
   useEffect(() => {
     setSelectedPercentage(undefined);
   }, [targetToken?.symbol]);
 
-  const renderDepositCapTooltipContent = (tokenLabel: string) => (
-    <Flex direction="column" itemAlign="start">
-      <Text size="2xs" weight="regular">
-        {t("transfer.depositCap.tooltip")}
-        <Text as="span" size="2xs" weight="semibold">
-          {tokenLabel}.
-        </Text>
-      </Text>
-      <a
-        href="https://orderly.network/docs/introduction/trade-on-orderly/multi-collateral#max-deposits-user"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="oui-text-2xs oui-text-primary"
-      >
-        {t("common.learnMore")}
-      </a>
-    </Flex>
-  );
-
   const tokenValueFormatter = (value: string) => (
-    <Flex direction="column" itemAlign="end" gapY={1}>
-      <Flex gapX={1} itemAlign="center">
-        <TokenIcon name={value} className="oui-size-[16px]" />
-        <Text weight="regular" className="oui-text-secondary">
-          {value}
-        </Text>
-        <ChevronDownVeltoIcon
-          size={12}
-          className="oui-text-secondary oui-ml-0.5"
-          opacity={1}
-        />
-      </Flex>
-      <Flex itemAlign="center" className="oui-gap-[2px]">
-        <Text size="2xs" weight="regular" className="oui-leading-[10px]">
-          {t("transfer.depositCap", "Deposit cap")}:{" "}
-          <Text.numeral
-            as="span"
-            size="2xs"
-            intensity={80}
-            weight="regular"
-            className="oui-leading-[10px]"
-            dp={0}
-          >
-            {sourceToken?.user_max_qty?.toString() || "0"}
-          </Text.numeral>
-        </Text>
-        {isMobile ? (
-          <button
-            type="button"
-            className="oui-flex oui-items-center"
-            onClick={(event) => {
-              event.stopPropagation();
-              modal.alert({
-                title: t("common.tips"),
-                message: <Box>{renderDepositCapTooltipContent(value)}</Box>,
-              });
-            }}
-            onMouseDown={(event) => {
-              event.stopPropagation();
-            }}
-            onPointerDown={(event) => {
-              event.stopPropagation();
-            }}
-          >
-            <InfoIcon
-              className="oui-size-3 oui-shrink-0 oui-cursor-pointer"
-              opacity={0.36}
-            />
-          </button>
-        ) : (
-          <Tooltip
-            content={
-              <Box
-                onMouseDown={(event) => {
-                  event.stopPropagation();
-                }}
-                onPointerDown={(event) => {
-                  event.stopPropagation();
-                }}
-              >
-                {renderDepositCapTooltipContent(value)}
-              </Box>
-            }
-          >
-            <InfoIcon className="oui-ml-0.5 oui-size-3 oui-shrink-0 oui-cursor-pointer oui-text-primary oui-opacity-100 oui-filter-none" />
-          </Tooltip>
-        )}
-      </Flex>
-    </Flex>
+    <DepositTokenValueFormatter
+      value={value}
+      userMaxQty={targetToken?.user_max_qty}
+    />
   );
 
   const renderContent = (token?: string) => {
-    // Common animation classes for reusability
-    const animationClasses =
-      "oui-animate-in oui-fade-in oui-slide-in-from-bottom-2 oui-duration-500 oui-ease-in-out";
-
     if (balanceRevalidating) {
       return (
         <Flex key="spinner" justify={"center"}>
@@ -220,49 +128,27 @@ export const DepositForm: FC<Props> = (props) => {
       );
     }
 
-    if (needSwap || needCrossSwap) {
-      return (
-        <Flex
-          key="swap-content"
-          direction="column"
-          className={cn("oui-text-[#C7C7C7]", animationClasses)}
-          itemAlign="start"
-          gap={2}
-        >
-          <Flex width={"100%"} itemAlign="center" justify="between">
-            <Text size="sm" weight="regular">
-              {t("transfer.deposit.convertRate")}
-            </Text>
-            <SwapCoin
-              sourceSymbol={sourceToken?.display_name || sourceToken?.symbol}
-              targetSymbol={targetToken?.display_name || targetToken?.symbol}
-              precision={SWAP_USDC_PRECISION}
-              indexPrice={swapPrice}
-            />
-          </Flex>
-          <Slippage value={slippage} onValueChange={onSlippageChange} />
-          <MinimumReceived
-            value={minimumReceived}
-            symbol={targetToken?.symbol ?? ""}
-            precision={SWAP_USDC_PRECISION}
-          />
-          <SwapFee {...swapFee} />
-        </Flex>
-      );
-    }
-
     return (
       <Flex
-        key="default-content"
         direction="column"
-        className={cn("oui-text-[#C7C7C7]", animationClasses)}
         itemAlign="start"
+        mt={2}
         gap={2}
+        className={cn("oui-text-[#C7C7C7]", animationClasses)}
       >
+        {needSwap && (
+          <ConvertRate
+            sourceSymbol={sourceToken?.display_name || sourceToken?.symbol}
+            targetSymbol={targetToken?.display_name || targetToken?.symbol}
+            precision={targetToken?.precision}
+            swapPrice={swapPrice!}
+            swapPriceInUSD={swapPriceInUSD}
+          />
+        )}
         <CollateralRatioWidget value={collateralRatio} />
         <CollateralContribution
           // it need to use USDC precision
-          precision={usdcToken?.precision ?? 6}
+          precision={usdcToken?.precision}
           value={collateralContributionQuantity}
         />
         <LtvWidget
@@ -270,6 +156,23 @@ export const DepositForm: FC<Props> = (props) => {
           currentLtv={currentLTV}
           nextLTV={nextLTV}
         />
+        {needSwap && (
+          <>
+            <Slippage
+              value={slippage}
+              onValueChange={onSlippageChange}
+              min={0.01}
+              max={50}
+              validate={slippageValidate}
+            />
+            <MinimumReceived
+              value={swapMinReceived!}
+              symbol={targetToken?.symbol ?? ""}
+              precision={targetToken?.precision}
+            />
+          </>
+        )}
+
         <Fee {...fee} nativeSymbol={props.nativeSymbol} />
       </Flex>
     );
@@ -322,17 +225,17 @@ export const DepositForm: FC<Props> = (props) => {
                 onTokenChange={onSourceTokenChange}
                 status={inputStatus}
                 hintMessage={hintMessage}
-                highlightOnHover={!!sourceTokens.length}
-                fetchBalance={fetchBalance}
-                tokenBalances={props.tokenBalances}
-                tokenShowCaret={showRegularTokenRenderer}
-                tokenValueFormatter={
-                  showRegularTokenRenderer ? undefined : tokenValueFormatter
+                // when show deposit cap, hide select caret
+                tokenShowCaret={
+                  !showSourceDepositCap && sourceTokens?.length > 1
                 }
-                data-testId="oui-testid-deposit-dialog-quantity-input"
+                tokenValueFormatter={
+                  showSourceDepositCap ? tokenValueFormatter : undefined
+                }
                 disabled={!props.isLoggedIn}
+                balancesRevalidating={batchBalancesRevalidating}
+                showBalance
               />
-
               <AmountSelector
                 maxAmount={maxDepositAmount}
                 disabled={!maxDepositAmount || maxDepositAmount === "0"}
@@ -345,8 +248,9 @@ export const DepositForm: FC<Props> = (props) => {
 
               <AvailableQuantity
                 token={sourceToken}
-                amount={amount}
+                quantity={quantity}
                 maxQuantity={maxQuantity}
+                notional={quantityNotional}
                 loading={balanceRevalidating}
               />
 
@@ -367,34 +271,22 @@ export const DepositForm: FC<Props> = (props) => {
           >
             <Flex direction={"column"} itemAlign={"stretch"} gap={4}>
               <BrokerWallet />
-
               <TradingBalance
                 targetQuantity={targetQuantity}
                 targetToken={targetToken}
                 targetQuantityLoading={targetQuantityLoading}
+                showTargetDepositCap={showTargetDepositCap}
+                targetHintMessage={targetHintMessage}
+                targetInputStatus={targetInputStatus}
               />
-
               <Divider className="oui-bg-base-6" />
-
               {renderContent(targetToken?.symbol)}
             </Flex>
           </Box>
         </Box>
-
-        <SwapIndicator
-          sourceToken={sourceToken?.symbol}
-          targetToken={targetToken?.symbol}
-          className="oui-mb-3"
-        />
       </div>
       <Box>
-        <Notice
-          message={warningMessage}
-          needSwap={needSwap}
-          needCrossSwap={needCrossSwap}
-          wrongNetwork={wrongNetwork}
-          networkId={networkId}
-        />
+        <Notice message={warningMessage} wrongNetwork={wrongNetwork} />
         <ActionButton
           actionType={actionType}
           symbol={sourceToken?.symbol}
@@ -414,27 +306,101 @@ const TradingBalance = ({
   targetQuantityLoading,
   targetQuantity,
   targetToken,
+  targetHintMessage,
+  targetInputStatus,
+  showTargetDepositCap,
 }: {
   targetQuantityLoading: boolean;
   targetQuantity?: string;
   targetToken?: API.TokenInfo;
+  targetHintMessage?: string;
+  targetInputStatus?: InputStatus;
+  showTargetDepositCap?: boolean;
 }) => {
   const { t } = useTranslation();
 
-  return (
-    <Flex justify={"between"}>
-      <Text size={"sm"} weight="regular" className="oui-text-[#C7C7C7]">
-        {`${t("extend.transfer.tradingBalance")}:`}
-      </Text>
-      {targetQuantityLoading ? (
-        <Spinner size="sm" className="oui-h-[26px]" />
-      ) : (
-        <Text
-          size={"lg"}
-          className="oui-text-primary-contrast oui-font-semibold"
-        >
-          {targetToken ? `${targetQuantity || 0} ${targetToken.symbol}` : "0"}
+  const tipContent = (
+    <Flex direction="column" itemAlign="start">
+      <Text size="2xs" weight="semibold" intensity={36}>
+        {t("transfer.depositCap.tooltip")}
+        <Text as="span" size="2xs" weight="semibold" intensity={80}>
+          {targetToken?.symbol}.
         </Text>
+      </Text>
+      <a
+        href="https://orderly.network/docs/introduction/trade-on-orderly/multi-collateral#max-deposits-user"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="oui-text-2xs oui-text-primary"
+      >
+        {t("common.learnMore")}
+      </a>
+    </Flex>
+  );
+
+  return (
+    <Flex direction={"column"}>
+      <Flex justify={"between"} className="oui-w-full">
+        <Text size={"sm"} weight="regular" className="oui-text-[#C7C7C7]">
+          {`${t("extend.transfer.tradingBalance")}:`}
+        </Text>
+        {targetQuantityLoading ? (
+          <Spinner size="sm" className="oui-h-[26px]" />
+        ) : (
+          <Text
+            size={"lg"}
+            className="oui-text-primary-contrast oui-font-semibold"
+          >
+            {targetToken ? `${targetQuantity || 0} ${targetToken.symbol}` : "0"}
+          </Text>
+        )}
+      </Flex>
+      {showTargetDepositCap && (
+        <div
+          className={cn(
+            "oui-w-full oui-my-2 oui-p-2 oui-rounded-lg oui-bg-base-6",
+            animationClasses,
+          )}
+        >
+          <Flex justify={"between"} className="oui-w-full">
+            <Flex>
+              <Text
+                size={"2xs"}
+                weight="regular"
+                className="oui-text-[#C7C7C7] oui-mr-1"
+              >
+                {t("transfer.depositCap", "Deposit cap") + ":"}
+              </Text>
+              <Tips content={tipContent} title={t("common.tips")} />
+            </Flex>
+            <Text
+              as="span"
+              size="2xs"
+              intensity={98}
+              weight="regular"
+              className="oui-leading-[10px]"
+            >
+              <Text.numeral dp={0}>
+                {targetToken?.user_max_qty ?? 0}
+              </Text.numeral>{" "}
+              {targetToken?.symbol}
+            </Text>
+          </Flex>
+          {targetHintMessage && (
+            <Flex mt={1} justify="between" itemAlign="center">
+              <Text
+                size="2xs"
+                className={cn(
+                  "oui-font-normal",
+                  targetInputStatus === "error" && "oui-text-danger-light",
+                  targetInputStatus === "warning" && "oui-text-warning-light",
+                )}
+              >
+                {targetHintMessage}
+              </Text>
+            </Flex>
+          )}
+        </div>
       )}
     </Flex>
   );

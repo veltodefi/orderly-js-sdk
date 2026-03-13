@@ -4,12 +4,10 @@ import { useAppContext } from "@veltodefi/react-app";
 import { API, NetworkId } from "@veltodefi/types";
 import { modal } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
-import {
-  useActionType,
-  useChainSelect,
-  useDepositAction,
-  useInputStatus,
-} from "../../depositForm/hooks";
+import { useActionType } from "../../depositForm/hooks/useActionType";
+import { useChainSelect } from "../../depositForm/hooks/useChainSelect";
+import { useDepositAction } from "../../depositForm/hooks/useDepositAction";
+import { useInputStatus } from "../../transferForm/transferForm.script";
 import { SwapDialog } from "../components/swapDialog";
 import { useNeedSwapAndCross } from "../hooks/useNeedSwapAndCross";
 import { useSwapEnquiry } from "../hooks/useSwapEnquiry";
@@ -199,17 +197,14 @@ export const useSwapDepositFormScript = (
     withdrawOnlyMode,
   ]);
 
-  const { submitting, onApprove, onDeposit } = useDepositAction({
+  const { onApprove, onDeposit } = useDepositAction({
     quantity,
-    allowance,
     approve,
     deposit,
-    enableCustomDeposit: needSwap || needCrossSwap,
-    customDeposit: onSwapDeposit,
     onSuccess,
   });
 
-  const loading = submitting || depositFeeRevalidating! || swapRevalidating;
+  const loading = depositFeeRevalidating! || swapRevalidating;
 
   const disabled =
     withdrawOnlyMode ||
@@ -243,7 +238,6 @@ export const useSwapDepositFormScript = (
   const swapQuantity = needSwap || needCrossSwap ? swapAmount : quantity;
 
   const actionType = useActionType({
-    isNativeToken,
     allowance,
     quantity,
     maxQuantity,

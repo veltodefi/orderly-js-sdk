@@ -1,6 +1,6 @@
 import { UTCDateMini } from "@date-fns/utc";
-import { AnnouncementType, API } from "@veltodefi/types";
 import { format } from "date-fns";
+import { AnnouncementType, API } from "@veltodefi/types";
 
 export const getTimeString = (timestamp: number) => {
   const date = format(new UTCDateMini(timestamp), "MMM dd");

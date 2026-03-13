@@ -1,8 +1,6 @@
 export * from "./components/depositForm";
 export * from "./components/withdrawForm";
 export * from "./components/depositAndWithdraw";
-export * from "./components/swap/swapDepositForm";
-export * from "./components/depositForm/hooks";
 export * from "./components/transferForm";
 export * from "./components/convertForm";
 export * from "./utils";
@@ -17,6 +15,7 @@ export { SwapCoin } from "./components/swapCoin";
 export { ActionButton } from "./components/actionButton";
 export { Fee } from "./components/fee";
 export { YieldBearingReminder } from "./components/yieldBearingReminder";
+export { useSwapDepositFormScript } from "./components/swap/swapDepositForm/swapDepositForm.script";
 
 export * from "./types";
 export * from "./constants/yieldBearingAssets";

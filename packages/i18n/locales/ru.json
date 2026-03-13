@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Среднее значение последних цен на других биржах.",
   "markets.symbolInfoBar.24hVolume": "Объем за 24ч",
   "markets.symbolInfoBar.24hVolume.tooltip": "Общий объем торгов за 24 часа в сети Orderly.",
-  "markets.symbolInfoBar.predFundingRate": "Прогн. ставка фандинга",
+  "markets.symbolInfoBar.predFundingRate": "Расч. ставка фандинга",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Ставки фандинга - это платежи между трейдерами, которые находятся в длинной и короткой позициях. Когда ставка положительная, длинные позиции платят коротким позициям. Когда отрицательная, короткие позиции платят длинным.",
   "portfolio.feeTier": "Уровень комиссии",
   "portfolio.apiKeys": "API ключи",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "Уровень риска используется для оценки уровня риска аккаунта. Когда уровень риска достигает 100%, аккаунт будет ликвидирован",
   "trading.riskRate.formula": "Уровень риска = Коэффициент поддерживающей маржи / Коэффициент маржи * 100%",
   "trading.asset&Margin": "Активы и маржа",
-  "trading.fundingRate.predFundingRate": "Прогн. ставка фандинга",
+  "trading.fundingRate.predFundingRate": "Расч. ставка фандинга",
   "trading.fundingRate.predFundingRate.interval": "Интервал",
   "trading.fundingRate.predFundingRate.cap": "Лимит финансирования",
   "trading.fundingRate.predFundingRate.floor": "Минимум",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "Откуда берется доход?",
   "affiliate.faq.answer4": "Доход поступает от торговых комиссий, генерируемых трейдерами на DEX. Всякий раз, когда трейдер в вашей цепочке совершает транзакцию, часть комиссии распределяется сверху вниз по цепочке на основе настроенного распределения.",
   "affiliate.faq.question5": "Как я получу свои комиссии?",
-  "affiliate.faq.answer5": "Комиссии ежедневно зачисляются напрямую на ваш основной торговый счет. Вы можете просмотреть общий доход от комиссий в качестве партнера на панели управления рефералами."
+  "affiliate.faq.answer5": "Комиссии ежедневно зачисляются напрямую на ваш основной торговый счет. Вы можете просмотреть общий доход от комиссий в качестве партнера на панели управления рефералами.",
+  "markets.column.24hVol": "Объем за 24ч",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Последняя/24ч%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Цена последней исполненной сделки по этому символу.",
+  "trading.orderBook.middlePrice.tooltip": "Стабилизированная справочная цена, рассчитанная как медиана лучшей bid-заявки, лучшей ask-заявки и цены закрытия за 24 часа.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Оценочная ставка финансирования ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "Сумма депозита слишком близка к максимальному лимиту. Чтобы гарантировать успешную транзакцию, уменьшите сумму",
+  "transfer.deposit.estGasFee.tooltip": "Расчётная комиссия за газ включает: стоимость выполнения транзакции в этой сети и операционную комиссию целевой сети для депозита Orderly. Пожалуйста, подготовьте дополнительную сумму для обеспечения достаточного покрытия.",
+  "transfer.slippage.error.high": "Высокий проскальзывание может привести к значительным потерям"
 }

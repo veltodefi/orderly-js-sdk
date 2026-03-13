@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/trading-leaderboard",
-  "version": "2.9.0-velto-main.22",
+  "version": "2.10.0-velto-dev.10",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

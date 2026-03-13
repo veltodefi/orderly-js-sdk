@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui",
-  "version": "2.9.0-velto-main.22",
+  "version": "2.10.0-velto-dev.10",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -21,7 +21,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@veltodefi/utils": "workspace:*",
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-collapsible": "^1.0.3",
@@ -37,7 +36,9 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.6",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@tanstack/react-table": "^8.20.5",
+    "@veltodefi/utils": "workspace:*",
     "date-fns": "^3.6.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
@@ -50,7 +51,6 @@
     "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
-    "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "^22.15.21",
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",

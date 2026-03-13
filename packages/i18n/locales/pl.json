@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Średnia ostatnich cen na innych giełdach.",
   "markets.symbolInfoBar.24hVolume": "Wolumen 24h",
   "markets.symbolInfoBar.24hVolume.tooltip": "24-godzinny całkowity wolumen handlu w sieci Orderly.",
-  "markets.symbolInfoBar.predFundingRate": "Przewidywana stopa finansowania",
+  "markets.symbolInfoBar.predFundingRate": "Szac. stopa finansowania",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Stopy finansowania to płatności między traderami, którzy są długo i krótko. Gdy jest dodatnia, długie pozycje płacą krótkim pozycjom finansowanie. Gdy jest ujemna, krótkie pozycje płacą długim pozycjom.",
   "portfolio.feeTier": "Poziom opłat",
   "portfolio.apiKeys": "Klucze API",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "Wskaźnik ryzyka służy do oceny poziomu ryzyka konta. Gdy wskaźnik ryzyka osiągnie 100%, konto zostanie zlikwidowane",
   "trading.riskRate.formula": "Wskaźnik ryzyka = Wskaźnik marży utrzymania / Wskaźnik marży * 100%",
   "trading.asset&Margin": "Aktywa i marża",
-  "trading.fundingRate.predFundingRate": "Przewidywana stopa finansowania",
+  "trading.fundingRate.predFundingRate": "Szac. stopa finansowania",
   "trading.fundingRate.predFundingRate.interval": "Interwał",
   "trading.fundingRate.predFundingRate.cap": "Limit finansowania",
   "trading.fundingRate.predFundingRate.floor": "Minimum",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "Skąd pochodzą przychody?",
   "affiliate.faq.answer4": "Przychody pochodzą z opłat handlowych generowanych przez traderów na DEX. Za każdym razem, gdy trader w Twoim łańcuchu dokonuje transakcji, część opłaty jest dystrybuowana od góry łańcucha w dół na podstawie skonfigurowanego przydziału.",
   "affiliate.faq.question5": "Jak otrzymuję swoje prowizje?",
-  "affiliate.faq.answer5": "Prowizje są rozliczane codziennie bezpośrednio na główne konto handlowe. Możesz zobaczyć swoje całkowite zarobki z prowizji jako partner w panelu poleceń."
+  "affiliate.faq.answer5": "Prowizje są rozliczane codziennie bezpośrednio na główne konto handlowe. Możesz zobaczyć swoje całkowite zarobki z prowizji jako partner w panelu poleceń.",
+  "markets.column.24hVol": "Wolumen 24h",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Ostatnia/24h%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Cena ostatniej zrealizowanej transakcji dla tego symbolu.",
+  "trading.orderBook.middlePrice.tooltip": "Stabilizowana cena referencyjna obliczana jako mediana najlepszej oferty kupna, najlepszej oferty sprzedaży i ceny zamknięcia 24-godzinnej.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Szacowana stopa finansowania ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "Kwota depozytu jest zbyt bliska maksymalnemu limitowi. Aby zapewnić powodzenie transakcji, zmniejsz kwotę",
+  "transfer.deposit.estGasFee.tooltip": "Szacowana opłata za gaz obejmuje: koszt wykonania transakcji w tym łańcuchu oraz opłatę operacyjną łańcucha docelowego za depozyt Orderly. Przygotuj dodatkową kwotę, aby zapewnić wystarczające pokrycie.",
+  "transfer.slippage.error.high": "Wysoki poślizg może skutkować znaczną stratą"
 }

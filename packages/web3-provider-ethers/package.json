@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/web3-provider-ethers",
-  "version": "2.9.0-velto-main.22",
+  "version": "2.10.0-velto-dev.10",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@veltodefi/default-evm-adapter": "workspace:*",
     "@veltodefi/types": "workspace:*",
-    "ethers": "^6.15.0",
+    "ethers": "^6.16.0",
     "ethers-decode-error": "^2.1.3"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { cn, Flex, Text } from "@veltodefi/ui";
 
 interface SwapCoinProps {
@@ -7,10 +7,18 @@ interface SwapCoinProps {
   targetSymbol?: string;
   indexPrice: number | string;
   precision?: number;
+  suffix?: ReactNode;
 }
 
 export const SwapCoin: FC<SwapCoinProps> = (props) => {
-  const { sourceSymbol, targetSymbol, indexPrice, precision = 6 } = props;
+  const {
+    sourceSymbol,
+    targetSymbol,
+    indexPrice,
+    precision = 6,
+    suffix,
+  } = props;
+
   return (
     <Flex
       itemAlign="center"
@@ -23,6 +31,7 @@ export const SwapCoin: FC<SwapCoinProps> = (props) => {
         {indexPrice}
       </Text.numeral>
       <Text size="sm">{targetSymbol}</Text>
+      {suffix}
     </Flex>
   );
 };

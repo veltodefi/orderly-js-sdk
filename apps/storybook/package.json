@@ -1,7 +1,7 @@
 {
   "name": "@veltodefi/storybook",
   "private": true,
-  "version": "1.9.0-velto-main.22",
+  "version": "1.10.0-velto-dev.10",
   "type": "module",
   "scripts": {
     "dev": "pnpm loadEnv vite",
@@ -18,6 +18,7 @@
     "copyLocales": "node ./scripts/copyLocales.js"
   },
   "dependencies": {
+    "@project-serum/sol-wallet-adapter": "^0.2.6",
     "@solana-mobile/wallet-adapter-mobile": "^2.1.4",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-wallets": "^0.19.32",

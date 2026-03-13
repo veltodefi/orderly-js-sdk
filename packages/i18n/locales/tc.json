@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "收入來自哪裡？",
   "affiliate.faq.answer4": "收入來自交易者在 DEX 產生的交易手續費。每當您邀請鏈路中的交易者進行交易時，手續費將根據配置比例，從邀請連結頂部向下分配作為返傭。",
   "affiliate.faq.question5": "我如何獲得我的返傭？",
-  "affiliate.faq.answer5": "佣金每日直接結算至您的主交易帳戶。您可以在邀請主頁中查看作為代理商的總佣金收益。"
+  "affiliate.faq.answer5": "佣金每日直接結算至您的主交易帳戶。您可以在邀請主頁中查看作為代理商的總佣金收益。",
+  "markets.column.24hVol": "24小時成交量",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "最新/24小時%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "該交易對最近一筆成交的價格。",
+  "trading.orderBook.middlePrice.tooltip": "以買一、賣一與24小時收盤價的中位數計算的穩定參考價。",
+  "trading.fundingRate.estFundingRateWithTimeframe": "預估資金費率（{{timeframe}}）",
+  "transfer.deposit.closeToMaxLimit": "存入金額過於接近最大限額。為確保交易成功，請減少存入金額",
+  "transfer.deposit.estGasFee.tooltip": "預估 Gas 費用包含：當前鏈上的交易執行成本，以及 Orderly 存入的目標鏈操作費用。請額外準備以確保覆蓋充足。",
+  "transfer.slippage.error.high": "高滑點可能導致較大損失"
 }
