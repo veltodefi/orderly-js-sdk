@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-connector",
-  "version": "2.9.0-velto-dev.25",
+  "version": "2.9.0-velto-main.26",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
