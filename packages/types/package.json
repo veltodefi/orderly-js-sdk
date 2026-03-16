@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/types",
-  "version": "2.9.0-velto-dev.22",
+  "version": "2.9.0-velto-main.23",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
