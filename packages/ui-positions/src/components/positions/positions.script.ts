@@ -1,6 +1,6 @@
 import React from "react";
 import { usePositionStream } from "@veltodefi/hooks";
-import { useDataTap } from "@veltodefi/react-app";
+import { useAppContext, useDataTap } from "@veltodefi/react-app";
 import { usePagination } from "@veltodefi/ui";
 import { TRADING_POSITIONS_SORT_STORAGE_KEY } from "../../constants";
 import type { PositionsProps } from "../../types/types";
@@ -24,7 +24,10 @@ export const usePositionsScript = (props: PositionsProps) => {
   // );
   const { pagination, setPage } = usePagination({ pageSize: 50 });
 
-  const { isEnabled: positionReverse } = useReversePositionEnabled();
+  const { isEnabled: positionReverseEnabled } = useReversePositionEnabled();
+  const { withdrawOnlyMode } = useAppContext();
+  // In withdraw-only mode, disable position reversing to prevent opening new positions
+  const positionReverse = positionReverseEnabled && !withdrawOnlyMode;
 
   // Sorting functionality
   const { tabSort, onTabSort } = useTabSort({

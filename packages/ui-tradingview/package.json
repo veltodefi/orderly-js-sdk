@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-tradingview",
-  "version": "2.9.0-velto-main.20",
+  "version": "2.9.0-velto-main.23",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

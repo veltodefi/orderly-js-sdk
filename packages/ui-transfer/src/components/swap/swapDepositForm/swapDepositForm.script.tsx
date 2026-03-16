@@ -37,7 +37,7 @@ export const useSwapDepositFormScript = (
   const brokerName = config.get("brokerName") || "";
   const networkId = config.get("networkId") as NetworkId;
 
-  const { wrongNetwork } = useAppContext();
+  const { wrongNetwork, withdrawOnlyMode } = useAppContext();
 
   const { chains, currentChain, settingChain, onChainChange } =
     useChainSelect();
@@ -140,6 +140,9 @@ export const useSwapDepositFormScript = (
   }, [options.onClose]);
 
   const onSwapDeposit = useCallback(async () => {
+    if (withdrawOnlyMode) {
+      return;
+    }
     // const _params = getSwapTestData(needCrossSwap);
     // return modal.show(SwapDialog, _params);
 
@@ -186,7 +189,15 @@ export const useSwapDepositFormScript = (
       .catch((error) => {
         // toast.error(error?.message || "Error");
       });
-  }, [quantity, needCrossSwap, dst, currentChain, slippage, depositFee]);
+  }, [
+    quantity,
+    needCrossSwap,
+    dst,
+    currentChain,
+    slippage,
+    depositFee,
+    withdrawOnlyMode,
+  ]);
 
   const { submitting, onApprove, onDeposit } = useDepositAction({
     quantity,
@@ -201,6 +212,7 @@ export const useSwapDepositFormScript = (
   const loading = submitting || depositFeeRevalidating! || swapRevalidating;
 
   const disabled =
+    withdrawOnlyMode ||
     !quantity ||
     Number(quantity) === 0 ||
     inputStatus === "error" ||
@@ -272,6 +284,7 @@ export const useSwapDepositFormScript = (
     fetchBalance,
     dst,
     wrongNetwork,
+    withdrawOnlyMode,
     balanceRevalidating,
     loading,
     disabled,

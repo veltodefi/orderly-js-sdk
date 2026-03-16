@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import {
   ArrowDownSquareFillIcon,
   ArrowUpSquareFillIcon,
@@ -20,15 +21,21 @@ export type DepositAndWithdrawProps = {
 };
 
 export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
+  const { withdrawOnlyMode } = useAppContext();
   const [activeTab, setActiveTab] = useState<string>(
-    props.activeTab || "deposit",
+    withdrawOnlyMode ? "withdraw" : props.activeTab || "deposit",
   );
   const { t } = useTranslation();
+
+  const handleTabChange = (value: string) => {
+    if (withdrawOnlyMode && value === "deposit") return;
+    setActiveTab(value);
+  };
 
   return (
     <Tabs
       value={activeTab}
-      onValueChange={setActiveTab}
+      onValueChange={handleTabChange}
       variant="contained"
       size="lg"
       classNames={{
@@ -43,9 +50,9 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         title={t("common.deposit")}
         icon={<ArrowDownSquareFillIcon />}
         value="deposit"
+        disabled={withdrawOnlyMode}
       >
         <DepositSlot close={props.close} />
-        {/* <DepositFormWidget close={props.close} /> */}
       </TabPanel>
       <TabPanel
         title={t("common.withdraw")}
@@ -53,7 +60,6 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         value="withdraw"
       >
         <WithdrawSlot close={props.close} />
-        {/* <WithdrawFormWidget close={props.close} /> */}
       </TabPanel>
     </Tabs>
   );

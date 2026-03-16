@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Acesso Restrito",
   "restrictedInfo.accessRestricted.description": "Devido a leis e regulamentos, atualmente não operamos nos Estados Unidos. Ao continuar a usar nossa plataforma, você declara e garante em todos os momentos que não é residente dos Estados Unidos durante todo o período de uso.",
   "restrictedInfo.accessRestricted.agree": "Eu entendo e concordo",
+  "restrictedInfo.withdrawOnly.title": "Modo Somente Saque",
+  "restrictedInfo.withdrawOnly.description": "Sua conta está no modo somente saque devido a restrições regionais. Você pode sacar seus fundos, mas negociação, depósitos e outras ações não estão disponíveis.",
   "subAccount.modal.title": "Trocar de conta",
   "subAccount.modal.switch.success.description": "Conta alterada",
   "subAccount.modal.mainAccount.title": "Conta principal",

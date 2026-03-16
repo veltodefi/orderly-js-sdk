@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Accès Restreint",
   "restrictedInfo.accessRestricted.description": "En raison des lois et réglementations, nous n'opérons actuellement pas aux États-Unis. En continuant à utiliser notre plateforme, vous déclarez et garantissez à tout moment que vous n'êtes pas résident des États-Unis pendant toute la durée de cette utilisation.",
   "restrictedInfo.accessRestricted.agree": "Je comprends et j'accepte",
+  "restrictedInfo.withdrawOnly.title": "Mode Retrait Uniquement",
+  "restrictedInfo.withdrawOnly.description": "Votre compte est en mode retrait uniquement en raison de restrictions régionales. Vous pouvez retirer vos fonds, mais le trading, les dépôts et autres actions ne sont pas disponibles.",
   "subAccount.modal.title": "Changer de compte",
   "subAccount.modal.switch.success.description": "Compte changé",
   "subAccount.modal.mainAccount.title": "Compte principal",

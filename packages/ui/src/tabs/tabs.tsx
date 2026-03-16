@@ -32,6 +32,7 @@ type tabConfig = {
   collapsed?: boolean;
   className?: string;
   style?: React.CSSProperties;
+  disabled?: boolean;
 };
 
 interface TabsContextState {
@@ -115,6 +116,7 @@ const Tabs: FC<TabsProps> = (props) => {
               size={rest.size}
               data-testid={tab.testid}
               className={classNames?.trigger}
+              disabled={tab.disabled}
             >
               {tab.title}
             </TabsTrigger>
@@ -183,10 +185,13 @@ export interface TabPanelProps {
   testid?: string;
   className?: string;
   style?: React.CSSProperties;
+  /** When true, the tab trigger is disabled and cannot be selected */
+  disabled?: boolean;
 }
 
 const TabPanel: FC<PropsWithChildren<TabPanelProps>> = (props) => {
-  const { title, value, icon, className, style, testid, children } = props;
+  const { title, value, icon, className, style, testid, disabled, children } =
+    props;
 
   const { registerTab, unregisterTab } = useContext(TabsContext);
 
@@ -198,13 +203,14 @@ const TabPanel: FC<PropsWithChildren<TabPanelProps>> = (props) => {
       testid,
       className,
       style,
+      disabled,
       content: children,
     };
     registerTab(tabConfig);
     return () => {
       unregisterTab(tabConfig);
     };
-  }, [children, className, style, icon, testid, title, value]);
+  }, [children, className, style, icon, testid, title, value, disabled]);
 
   return null;
 };

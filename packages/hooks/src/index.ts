@@ -58,6 +58,11 @@ export {
   type WalletState,
 } from "./walletConnectorContext";
 
+export {
+  WithdrawOnlyModeProvider,
+  useWithdrawOnlyMode,
+} from "./withdrawOnlyModeContext";
+
 export * from "./orderly/orderlyHooks";
 export { useAppStore } from "./orderly/appStore";
 

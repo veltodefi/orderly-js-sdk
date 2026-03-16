@@ -1056,6 +1056,8 @@
   "restrictedInfo.accessRestricted": "Toegang Beperkt",
   "restrictedInfo.accessRestricted.description": "Vanwege wet- en regelgeving opereren we momenteel niet in de Verenigde Staten. Door gebruik te blijven maken van ons platform, verklaart en garandeert u te allen tijde dat u geen inwoner bent van de Verenigde Staten gedurende de gehele periode van gebruik.",
   "restrictedInfo.accessRestricted.agree": "Ik begrijp het en ga akkoord",
+  "restrictedInfo.withdrawOnly.title": "Alleen Opnemen Modus",
+  "restrictedInfo.withdrawOnly.description": "Uw account staat in de alleen opnemen modus vanwege regionale beperkingen. U kunt uw geld opnemen, maar handelen, storten en andere acties zijn niet beschikbaar.",
   "subAccount.modal.title": "Account wisselen",
   "subAccount.modal.switch.success.description": "Account gewisseld",
   "subAccount.modal.mainAccount.title": "Hoofdaccount",
