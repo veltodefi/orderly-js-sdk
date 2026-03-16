@@ -7,6 +7,7 @@ import {
   CommuntiyTelegramIcon,
   CommuntiyXIcon,
   CommunityDappRadarIcon,
+  CommunityDefiLlamaIcon,
   OrderlyTextIcon,
   SignalIcon,
 } from "../icons/index";
@@ -92,6 +93,14 @@ export const Footer: FC<FooterReturns & FooterProps> = (props) => {
                 fill="currentColor"
                 fillOpacity={1}
                 onClick={(e) => openUrl(props.dappRadarUrl)}
+              />
+            )}
+            {typeof props.defiLlamaUrl !== "undefined" && (
+              <CommunityDefiLlamaIcon
+                className="oui-fill-white/[.54] hover:oui-fill-white/[.98] oui-cursor-pointer oui-ml-0.5"
+                fill="currentColor"
+                fillOpacity={1}
+                onClick={(e) => openUrl(props.defiLlamaUrl)}
               />
             )}
           </Flex>
