@@ -160,8 +160,8 @@ export class SymbolsStorage {
 
       return Promise.resolve({
         ...symbolInfo,
-        exchange: "Velto", // Shown in the legend and dialogs
-        listed_exchange: "Velto", // The "official" exchange name
+        exchange: "Velto Powered by Orderly", // Shown in the legend and dialogs
+        listed_exchange: "Velto Powered by Orderly", // The "official" exchange name
       });
     });
   }
