@@ -51,7 +51,11 @@ export const DepositTokenValueFormatter: FC<
         />
       </Flex>
       <Flex itemAlign="center" className="oui-gap-[2px]">
-        <Text size="2xs" weight="regular" className="oui-leading-[10px] oui-mr-1">
+        <Text
+          size="2xs"
+          weight="regular"
+          className="oui-leading-[10px] oui-mr-1"
+        >
           {t("transfer.depositCap", "Deposit cap")}{" "}
           <Text.numeral
             as="span"

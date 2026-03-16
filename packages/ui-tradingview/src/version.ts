@@ -1,13 +1,14 @@
 declare global {
   interface Window {
-      __ORDERLY_VERSION__?: {
-          [key: string]: string;
-      };
+    __ORDERLY_VERSION__?: {
+      [key: string]: string;
+    };
   }
 }
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
-  window.__ORDERLY_VERSION__["@veltodefi/ui-tradingview"] = "2.10.0-velto-dev.10";
+  window.__ORDERLY_VERSION__["@veltodefi/ui-tradingview"] =
+    "2.10.0-velto-dev.10";
 }
 
 export default "2.10.0-velto-dev.10";

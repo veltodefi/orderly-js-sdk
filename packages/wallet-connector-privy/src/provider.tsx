@@ -9,8 +9,6 @@ import React, {
 } from "react";
 import { PrivyClientConfig } from "@privy-io/react-auth";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import { type Chain, defineChain } from "viem";
-import { mainnet } from "viem/chains";
 import {
   Chains,
   useMainnetChainsStore,
@@ -24,6 +22,8 @@ import {
   SolanaDevnetChainInfo,
 } from "@veltodefi/types";
 import { TooltipProvider } from "@veltodefi/ui";
+import { type Chain, defineChain } from "viem";
+import { mainnet } from "viem/chains";
 import { Main } from "./main";
 import { AbstractWallet } from "./providers/abstractWallet";
 import { PrivyWallet } from "./providers/privy";

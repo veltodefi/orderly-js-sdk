@@ -1,8 +1,8 @@
 declare global {
   interface Window {
-      __ORDERLY_VERSION__?: {
-          [key: string]: string;
-      };
+    __ORDERLY_VERSION__?: {
+      [key: string]: string;
+    };
   }
 }
 if (typeof window !== "undefined") {

@@ -2,10 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import { useLocalStorage } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { MenuItem } from "@veltodefi/ui";
-import type {
-  InputFormatter,
-  InputFormatterOptions,
-} from "@veltodefi/ui";
+import type { InputFormatter, InputFormatterOptions } from "@veltodefi/ui";
 import { Decimal, todpIfNeed } from "@veltodefi/utils";
 
 export enum PnLMode {

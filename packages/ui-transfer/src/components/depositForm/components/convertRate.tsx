@@ -41,10 +41,7 @@ export const ConvertRate: FC<ConvertRateProps> = (props) => {
       <Flex
         itemAlign="center"
         gap={1}
-        className={cn(
-          props.className,
-          "oui-text-sm oui-text-[#C7C7C7]",
-        )}
+        className={cn(props.className, "oui-text-sm oui-text-[#C7C7C7]")}
       >
         <Text intensity={98}>1</Text>
         <span>{sourceSymbol}</span>

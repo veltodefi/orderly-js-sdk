@@ -1,6 +1,6 @@
-import { BrowserProvider, Eip1193Provider, ethers } from "ethers";
 import { Web3Provider } from "@veltodefi/default-evm-adapter";
 import { API, isNativeTokenChecker } from "@veltodefi/types";
+import { BrowserProvider, Eip1193Provider, ethers } from "ethers";
 import { parseError } from "./parseError";
 
 class EthersProvider implements Web3Provider {

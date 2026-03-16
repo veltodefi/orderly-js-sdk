@@ -14,7 +14,7 @@ import {
   Spinner,
   Text,
   cn,
-  ChevronDownVeltoIcon
+  ChevronDownVeltoIcon,
 } from "@veltodefi/ui";
 import { CurrentChain } from "../../types";
 

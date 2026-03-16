@@ -2,15 +2,7 @@ import { FC, useMemo, useRef } from "react";
 import { useTpslPriceChecker } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { API, OrderSide, PositionType } from "@veltodefi/types";
-import {
-  Badge,
-  cn,
-  Flex,
-  Grid,
-  Statistic,
-  Text,
-  Tips,
-} from "@veltodefi/ui";
+import { Badge, cn, Flex, Grid, Statistic, Text, Tips } from "@veltodefi/ui";
 import { SymbolLeverageSheetId } from "@veltodefi/ui-leverage";
 import { SharePnLBottomSheetId } from "@veltodefi/ui-share";
 import { CloseToLiqPriceIcon } from "@veltodefi/ui-tpsl";
