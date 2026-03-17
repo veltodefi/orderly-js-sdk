@@ -11,9 +11,9 @@ export const tradingPageConfig: TradingPageConfigProps = {
     scriptSRC: "/tradingview/charting_library/charting_library.js",
     library_path: "/tradingview/charting_library/",
     customCssUrl: "/tradingview/chart.css",
-    overrides: {
-      "mainSeriesProperties.statusViewStyle.showExchange": false,
-    },
+    // overrides: {
+    //   "mainSeriesProperties.statusViewStyle.showExchange": false,
+    // },
     // broker config tradingview bg
     // colorConfig: {
     //   downColor: '#BE1630',
@@ -23,7 +23,9 @@ export const tradingPageConfig: TradingPageConfigProps = {
     //   // chartBG: '#BE1630',
     //   chartBG: '#6a64ed',
     // },
-    // disabled_features: ["mouse_wheel_scale"],
+    // disabled_features: [
+    //   "mouse_wheel_scale",
+    // ],
   },
   sharePnLConfig: {
     backgroundImages: [

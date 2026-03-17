@@ -35,7 +35,6 @@ export const getOveriides = (
     // "mainSeriesProperties.style": 1,
     "paneProperties.backgroundType": "solid",
     // "paneProperties.background": "#151822",
-
     "mainSeriesProperties.candleStyle.upColor": colorConfig.upColor,
     "mainSeriesProperties.candleStyle.downColor": colorConfig.downColor,
     "mainSeriesProperties.candleStyle.borderColor": colorConfig.upColor,
@@ -49,6 +48,7 @@ export const getOveriides = (
     "scalesProperties.fontSize": isMobile ? 8 : 12,
     "scalesProperties.textColor": "#97969B",
     "paneProperties.legendProperties.showSeriesTitle": isMobile ? false : true,
+    // "mainSeriesProperties.statusViewStyle.showExchange": false,
     "mainSeriesProperties.statusViewStyle.symbolTextSource": "ticker",
   };
   const studiesOverrides = {

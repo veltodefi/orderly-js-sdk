@@ -260,6 +260,10 @@ export class Widget {
       theme: options.theme,
       loading_screen: options.loadingScreen,
       overrides: options.overrides,
+      settings_overrides: {
+        // "mainSeriesProperties.statusViewStyle.showExchange": false,
+        "mainSeriesProperties.statusViewStyle.symbolTextSource": "ticker",
+      },
       container: options.container,
       favorites: {
         intervals: [

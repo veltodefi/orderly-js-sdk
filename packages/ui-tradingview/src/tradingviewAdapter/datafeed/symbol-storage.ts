@@ -158,7 +158,11 @@ export class SymbolsStorage {
         return Promise.reject("invalid symbol");
       }
 
-      return Promise.resolve(symbolInfo);
+      return Promise.resolve({
+        ...symbolInfo,
+        exchange: "Velto Powered by Orderly", // Shown in the legend and dialogs
+        listed_exchange: "Velto Powered by Orderly", // The "official" exchange name
+      });
     });
   }
 
