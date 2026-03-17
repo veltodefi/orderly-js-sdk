@@ -5,4 +5,5 @@ export const footerConfig: FooterProps = {
   discordUrl: "https://discord.com/invite/orderlynetwork",
   twitterUrl: "https://twitter.com/OrderlyNetwork",
   dappRadarUrl: "https://dappradar.com/dapp/velto",
+  defiLlamaUrl: "https://defillama.com/protocol/velto",
 };

@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const CumstomizeUrls: Story = {
+export const CustomizeUrls: Story = {
   render: () => {
     return (
       <Scaffold
@@ -33,6 +33,7 @@ export const CumstomizeUrls: Story = {
           discordUrl: "https://orderly.network",
           twitterUrl: "https://orderly.network",
           dappRadarUrl: "https://orderly.network",
+          defiLlamaUrl: "https://orderly.network",
           trailing: (
             <a
               onClick={() => window.open("https://orderly.network")}
