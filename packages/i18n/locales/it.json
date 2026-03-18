@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Media degli ultimi prezzi su altri exchange.",
   "markets.symbolInfoBar.24hVolume": "Volume 24h",
   "markets.symbolInfoBar.24hVolume.tooltip": "Volume totale di trading nelle ultime 24 ore su Orderly Network.",
-  "markets.symbolInfoBar.predFundingRate": "Tasso di finanziamento previsto",
+  "markets.symbolInfoBar.predFundingRate": "Tasso di fin. stim.",
   "markets.symbolInfoBar.predFundingRate.tooltip": "I tassi di finanziamento sono pagamenti tra trader long e short. Quando positivo, le posizioni long pagano il finanziamento alle posizioni short. Quando negativo, le posizioni short pagano alle posizioni long.",
   "portfolio.feeTier": "Livello commissioni",
   "portfolio.apiKeys": "Chiavi API",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "Il tasso di rischio viene utilizzato per valutare il livello di rischio di un account. Quando il tasso di rischio raggiunge il 100%, l'account sarà liquidato",
   "trading.riskRate.formula": "Tasso di rischio = Rapporto margine di mantenimento / Rapporto margine * 100%",
   "trading.asset&Margin": "Asset e Margine",
-  "trading.fundingRate.predFundingRate": "Tasso di finanziamento previsto",
+  "trading.fundingRate.predFundingRate": "Tasso di fin. stim.",
   "trading.fundingRate.predFundingRate.interval": "Intervallo",
   "trading.fundingRate.predFundingRate.cap": "Limite di finanziamento",
   "trading.fundingRate.predFundingRate.floor": "Soglia minima",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "Da dove provengono i ricavi?",
   "affiliate.faq.answer4": "I ricavi provengono dalle commissioni di trading generate dai trader sul DEX. Ogni volta che un trader nella tua catena effettua una transazione, una porzione della commissione viene distribuita dall'alto della catena verso il basso in base all'allocazione configurata.",
   "affiliate.faq.question5": "Come ottengo le mie commissioni?",
-  "affiliate.faq.answer5": "Le commissioni vengono regolate quotidianamente direttamente sul tuo conto di trading principale. Puoi visualizzare i tuoi guadagni totali da commissioni come affiliato nella dashboard dei referral."
+  "affiliate.faq.answer5": "Le commissioni vengono regolate quotidianamente direttamente sul tuo conto di trading principale. Puoi visualizzare i tuoi guadagni totali da commissioni come affiliato nella dashboard dei referral.",
+  "markets.column.24hVol": "Volume 24h",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Ultimo/24h%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Il prezzo dell'ultimo trade eseguito su questo simbolo.",
+  "trading.orderBook.middlePrice.tooltip": "Prezzo di riferimento stabilizzato calcolato come mediana del miglior bid, miglior ask e prezzo di chiusura a 24 ore.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Tasso di finanziamento stimato ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "L'importo del deposito è troppo vicino al limite massimo. Per garantire il successo della transazione, ridurre l'importo",
+  "transfer.deposit.estGasFee.tooltip": "La tariffa del gas stimata include: costo di esecuzione della transazione su questa chain e commissione operativa della chain di destinazione per il deposito Orderly. Preparare un extra per garantire una copertura sufficiente.",
+  "transfer.slippage.error.high": "Uno slippage elevato può comportare perdite significative"
 }

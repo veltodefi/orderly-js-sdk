@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { PublicKey } from "@solana/web3.js";
-import { ethers } from "ethers";
 import {
   useAccount,
   useAssetsHistory,
@@ -30,8 +29,9 @@ import {
   praseChainIdToNumber,
   toNonExponential,
 } from "@veltodefi/utils";
+import { ethers } from "ethers";
 import { InputStatus, WithdrawTo } from "../../types";
-import { CurrentChain } from "../depositForm/hooks";
+import { CurrentChain } from "../../types";
 import { useSettlePnl } from "../unsettlePnlInfo/useSettlePnl";
 import { useVaultBalance } from "./hooks/useVaultBalance";
 import { useWithdrawAccountId } from "./hooks/useWithdrawAccountId";

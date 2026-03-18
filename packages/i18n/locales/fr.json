@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Moyenne des derniers prix sur les autres bourses.",
   "markets.symbolInfoBar.24hVolume": "Volume 24h",
   "markets.symbolInfoBar.24hVolume.tooltip": "Volume total de trading sur 24 heures sur le réseau Orderly.",
-  "markets.symbolInfoBar.predFundingRate": "Taux de financement prévu",
+  "markets.symbolInfoBar.predFundingRate": "Taux de fin. est.",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Les taux de financement sont des paiements entre les traders qui sont long et short. Lorsqu'ils sont positifs, les positions longues paient le financement aux positions courtes. Lorsqu'ils sont négatifs, les positions courtes paient le financement aux positions longues.",
   "portfolio.feeTier": "Niveau de frais",
   "portfolio.apiKeys": "Clés API",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "Le taux de risque est utilisé pour évaluer le niveau de risque d'un compte. Lorsque le taux de risque atteint 100%, le compte sera liquidé",
   "trading.riskRate.formula": "Taux de risque = Ratio de marge de maintenance / Ratio de marge * 100%",
   "trading.asset&Margin": "Actif & Marge",
-  "trading.fundingRate.predFundingRate": "Taux de financement prévu",
+  "trading.fundingRate.predFundingRate": "Taux de fin. est.",
   "trading.fundingRate.predFundingRate.interval": "Intervalle",
   "trading.fundingRate.predFundingRate.cap": "Plafond de financement",
   "trading.fundingRate.predFundingRate.floor": "Plancher",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "D'où viennent les revenus ?",
   "affiliate.faq.answer4": "Les revenus proviennent des frais de trading générés par les traders sur le DEX. Chaque fois qu'un trader de votre chaîne effectue une transaction, une partie des frais est distribuée du haut de la chaîne vers le bas en fonction de l'allocation configurée.",
   "affiliate.faq.question5": "Comment obtenir mes commissions ?",
-  "affiliate.faq.answer5": "Les commissions sont réglées quotidiennement directement sur votre compte de trading principal. Vous pouvez consulter vos revenus de commission globaux en tant qu'affilié sur le tableau de bord de parrainage."
+  "affiliate.faq.answer5": "Les commissions sont réglées quotidiennement directement sur votre compte de trading principal. Vous pouvez consulter vos revenus de commission globaux en tant qu'affilié sur le tableau de bord de parrainage.",
+  "markets.column.24hVol": "Volume 24h",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Dernier/24h%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Le prix de la dernière transaction exécutée sur ce symbole.",
+  "trading.orderBook.middlePrice.tooltip": "Prix de référence stabilisé calculé comme la médiane du meilleur acheteur, du meilleur vendeur et du cours de clôture sur 24 heures.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Taux de financement est. ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "Le montant du dépôt est trop proche de la limite maximale. Pour garantir la réussite de votre transaction, veuillez réduire le montant",
+  "transfer.deposit.estGasFee.tooltip": "Les frais de gas estimés comprennent : les coûts d'exécution de la transaction sur cette chaîne et les frais d'exploitation de la chaîne de destination pour le dépôt Orderly. Veuillez prévoir un surplus pour assurer une couverture suffisante.",
+  "transfer.slippage.error.high": "Un glissement élevé peut entraîner des pertes significatives"
 }

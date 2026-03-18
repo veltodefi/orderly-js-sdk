@@ -1,6 +1,6 @@
-import { BrowserProvider, ethers, toNumber } from "ethers";
-import { DecodedError, ErrorDecoder } from "ethers-decode-error";
 import { API } from "@veltodefi/types";
+import { BrowserProvider, ethers } from "ethers";
+import { DecodedError, ErrorDecoder } from "ethers-decode-error";
 import { IWalletAdapter, WalletAdapterOptions } from "./adapter";
 
 const errorDecoder = ErrorDecoder.create();
@@ -14,6 +14,7 @@ export interface EtherAdapterOptions {
   chain: { id: number };
 }
 
+/** @deprecated will be remove this in next minor version */
 export class EtherAdapter implements IWalletAdapter {
   private provider?: BrowserProvider;
   private _chainId: number;

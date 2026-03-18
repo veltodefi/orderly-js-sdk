@@ -1,10 +1,7 @@
 import React, { useEffect, useMemo } from "react";
 import { useGetRwaSymbolInfo } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import {
-  MarketsSheetWidget,
-  SymbolInfoBarWidget,
-} from "@veltodefi/markets";
+import { MarketsSheetWidget, SymbolInfoBarWidget } from "@veltodefi/markets";
 import {
   Box,
   SimpleSheet,
@@ -162,7 +159,7 @@ export const MobileLayout: React.FC<TradingState> = (props) => {
         onOpenChange={props.onOpenMarketsSheetChange}
         classNames={{
           body: "oui-h-full oui-pb-0",
-          content: "oui-w-[280px] !oui-p-0",
+          content: "!oui-w-[372px] !oui-max-w-[372px] !oui-p-0",
         }}
         contentProps={{ side: "left", closeable: false }}
       >

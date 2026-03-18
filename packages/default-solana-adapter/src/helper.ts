@@ -8,11 +8,6 @@ import {
   TransactionMessage,
   VersionedTransaction,
 } from "@solana/web3.js";
-import { decode as bs58Decode } from "bs58";
-import { Hash } from "crypto";
-import { keccak256 } from "ethereum-cryptography/keccak";
-import { bytesToHex, hexToBytes } from "ethereum-cryptography/utils";
-import { AbiCoder, solidityPackedKeccak256 } from "ethers";
 import {
   utils as CoreUtils,
   AddOrderlyKeyInputs,
@@ -23,10 +18,12 @@ import {
   InternalTransferInputs,
 } from "@veltodefi/core";
 import { DexRequestInputs } from "@veltodefi/core";
-import {
-  DEFAUL_ORDERLY_KEY_SCOPE,
-  LedgerWalletKey,
-} from "@veltodefi/types";
+import { DEFAUL_ORDERLY_KEY_SCOPE, LedgerWalletKey } from "@veltodefi/types";
+import { decode as bs58Decode } from "bs58";
+import { Hash } from "crypto";
+import { keccak256 } from "ethereum-cryptography/keccak";
+import { bytesToHex, hexToBytes } from "ethereum-cryptography/utils";
+import { AbiCoder, solidityPackedKeccak256 } from "ethers";
 import {
   DVN_PROGRAM_ID,
   ENDPOINT_PROGRAM_ID,
@@ -583,10 +580,7 @@ export async function getDepositQuoteFee({
 
   // Convert the Base64 return data
   const decodedBuffer = Buffer.from(encodedReturnData, "base64");
-  console.log(
-    decodedBuffer.readBigUInt64LE(0),
-    decodedBuffer.readBigUInt64LE(1),
-  );
+
   return decodedBuffer.readBigUInt64LE(0);
 }
 const getDepositParams = (

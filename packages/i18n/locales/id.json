@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Rata-rata dari harga terakhir di bursa lain.",
   "markets.symbolInfoBar.24hVolume": "Volume 24h",
   "markets.symbolInfoBar.24hVolume.tooltip": "Total volume trading 24 jam di Orderly Network.",
-  "markets.symbolInfoBar.predFundingRate": "Tingkat pendanaan prediksi",
+  "markets.symbolInfoBar.predFundingRate": "Tingkat pend. perkiraan",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Tingkat pendanaan adalah pembayaran antara trader yang long dan short. Ketika positif, posisi long membayar pendanaan ke posisi short. Ketika negatif, posisi short membayar pendanaan ke posisi long.",
   "portfolio.feeTier": "Tingkat biaya",
   "portfolio.apiKeys": "Kunci API",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "Tingkat risiko digunakan untuk menilai tingkat risiko suatu akun. Ketika Tingkat risiko mencapai 100%, akun akan dilikuidasi",
   "trading.riskRate.formula": "Tingkat risiko = Rasio margin pemeliharaan / Rasio margin * 100%",
   "trading.asset&Margin": "Aset & Margin",
-  "trading.fundingRate.predFundingRate": "Tingkat pendanaan prediksi",
+  "trading.fundingRate.predFundingRate": "Tingkat pend. perkiraan",
   "trading.fundingRate.predFundingRate.interval": "Interval",
   "trading.fundingRate.predFundingRate.cap": "Batas pendanaan",
   "trading.fundingRate.predFundingRate.floor": "Batas bawah",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "Dari mana pendapatan berasal?",
   "affiliate.faq.answer4": "Pendapatan berasal dari biaya trading yang dihasilkan oleh trader di DEX. Setiap kali trader dalam rantai Anda melakukan transaksi, sebagian biaya didistribusikan dari atas rantai ke bawah berdasarkan alokasi yang dikonfigurasi.",
   "affiliate.faq.question5": "Bagaimana saya mendapatkan komisi saya?",
-  "affiliate.faq.answer5": "Komisi diselesaikan setiap hari langsung ke akun trading utama Anda. Anda dapat melihat total pendapatan komisi Anda sebagai afiliasi di dashboard referral."
+  "affiliate.faq.answer5": "Komisi diselesaikan setiap hari langsung ke akun trading utama Anda. Anda dapat melihat total pendapatan komisi Anda sebagai afiliasi di dashboard referral.",
+  "markets.column.24hVol": "Volume 24h",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Terakhir/24h%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Harga perdagangan yang paling baru dieksekusi untuk simbol ini.",
+  "trading.orderBook.middlePrice.tooltip": "Harga referensi yang distabilkan yang dihitung sebagai median dari bid terbaik, ask terbaik, dan harga penutupan 24 jam.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Perkiraan tingkat pembiayaan ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "Jumlah setoran terlalu mendekati batas maksimum. Untuk memastikan transaksi berhasil, harap kurangi jumlahnya",
+  "transfer.deposit.estGasFee.tooltip": "Biaya gas yang diperkirakan mencakup: biaya eksekusi transaksi di chain ini dan biaya operasi chain tujuan untuk setoran Orderly. Harap siapkan ekstra untuk memastikan cakupan yang cukup.",
+  "transfer.slippage.error.high": "Slippage tinggi dapat mengakibatkan kerugian yang signifikan"
 }

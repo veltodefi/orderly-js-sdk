@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "수익은 어디서 오나요?",
   "affiliate.faq.answer4": "수익은 DEX의 거래자가 생성하는 거래 수수료에서 나옵니다. 체인 내의 거래자가 거래를 할 때마다 구성된 할당에 따라 수수료의 일부가 체인 상단에서 하단으로 분배됩니다.",
   "affiliate.faq.question5": "수수료는 어떻게 받나요?",
-  "affiliate.faq.answer5": "커미션은 매일 메인 거래 계정으로 직접 정산됩니다. 추천 대시보드에서 제휴사로서의 전체 커미션 수익을 확인할 수 있습니다."
+  "affiliate.faq.answer5": "커미션은 매일 메인 거래 계정으로 직접 정산됩니다. 추천 대시보드에서 제휴사로서의 전체 커미션 수익을 확인할 수 있습니다.",
+  "markets.column.24hVol": "24시간 거래량",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "마지막/24시간%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "해당 심볼의 가장 최근 체결 가격입니다.",
+  "trading.orderBook.middlePrice.tooltip": "최우선 매수호가, 최우선 매도호가, 24시간 종가의 중간값으로 계산된 안정적인 참조 가격입니다.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "예상 펀딩 요율 ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "입금 금액이 최대 한도에 너무 가깝습니다. 거래가 성공하도록 금액을 줄여 주세요",
+  "transfer.deposit.estGasFee.tooltip": "예상 가스 수수료 포함: 이 체인에서의 거래 실행 비용 및 Orderly 입금을 위한 대상 체인 운영 수수료. 충분한 범위를 보장하려면 여유 있게 준비해 주세요.",
+  "transfer.slippage.error.high": "높은 슬리피지로 인해 상당한 손실이 발생할 수 있습니다"
 }

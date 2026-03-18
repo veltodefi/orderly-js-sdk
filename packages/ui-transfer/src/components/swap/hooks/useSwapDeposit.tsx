@@ -3,7 +3,7 @@ import { useConfig, useLocalStorage } from "@veltodefi/hooks";
 import { API } from "@veltodefi/types";
 import { modal } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
-import { CurrentChain } from "../../depositForm/hooks/useChainSelect";
+import { CurrentChain } from "../../../types";
 import { SwapDialog } from "../components/swapDialog";
 import { DST, SwapMode } from "../types";
 import { useSwapEnquiry } from "./useSwapEnquiry";

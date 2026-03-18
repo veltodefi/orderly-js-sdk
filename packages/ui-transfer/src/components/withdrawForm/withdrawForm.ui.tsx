@@ -186,7 +186,7 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
 
             <AvailableQuantity
               token={sourceToken}
-              amount={amount}
+              quantity={amount}
               maxQuantity={maxQuantity.toString()}
               loading={props.balanceRevalidating}
               tooltipContent={t("transfer.withdraw.available.tooltip", {
@@ -241,16 +241,16 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
                   onAddExternalWallet={() => setAddWalletOpen(true)}
                 />
               )}
-              <Box mb={1}>
-                <ChainSelect
-                  chains={tokenChains}
-                  value={currentChain!}
-                  onValueChange={props.onChainChange}
-                  wrongNetwork={props.wrongNetwork}
-                  loading={settingChain}
-                  disabled={!props.isLoggedIn}
-                />
-              </Box>
+
+              <ChainSelect
+                chains={tokenChains}
+                value={currentChain!}
+                onValueChange={props.onChainChange}
+                wrongNetwork={props.wrongNetwork}
+                loading={settingChain}
+                disabled={!props.isLoggedIn}
+              />
+
               <WalletBalance
                 sourceToken={sourceToken}
                 sourceQuantity={props.showQty}

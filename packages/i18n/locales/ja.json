@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "他の取引所の最終価格の平均。",
   "markets.symbolInfoBar.24hVolume": "24時間のボリューム",
   "markets.symbolInfoBar.24hVolume.tooltip": "Orderly Networkでの24時間の総取引量。",
-  "markets.symbolInfoBar.predFundingRate": "予測資金調達レート",
+  "markets.symbolInfoBar.predFundingRate": "推定資金調達レート",
   "markets.symbolInfoBar.predFundingRate.tooltip": "資金調達レートは、ロングポジションとショートポジションの間の支払いです。ポジティブの場合、ロングポジションがショートポジションに資金を支払います。ネガティブの場合、ショートポジションがロングポジションに資金を支払います。",
   "portfolio.feeTier": "手数料ティア",
   "portfolio.apiKeys": "APIキー",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "リスク率はアカウントのリスクレベルを評価するために使用されます。リスク率が100%に達すると、アカウントは清算されます",
   "trading.riskRate.formula": "リスク率 = 維持証拠金比率 / 証拠金比率 * 100%",
   "trading.asset&Margin": "資産と証拠金",
-  "trading.fundingRate.predFundingRate": "予測資金調達レート",
+  "trading.fundingRate.predFundingRate": "推定資金調達レート",
   "trading.fundingRate.predFundingRate.interval": "間隔",
   "trading.fundingRate.predFundingRate.cap": "ファンディングキャップ",
   "trading.fundingRate.predFundingRate.floor": "フロア",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "収益はどこから来ますか？",
   "affiliate.faq.answer4": "収益は、DEX上のトレーダーが生成する取引手数料から来ます。チェーン内のトレーダーが取引を行うたびに、構成された割り当てに基づいて、手数料の一部がチェーンの上部から下部に分配されます。",
   "affiliate.faq.question5": "手数料はどのように受け取りますか？",
-  "affiliate.faq.answer5": "手数料は毎日、メインの取引口座に直接決済されます。紹介ダッシュボードで、アフィリエイトとしての総手数料収益を確認できます。"
+  "affiliate.faq.answer5": "手数料は毎日、メインの取引口座に直接決済されます。紹介ダッシュボードで、アフィリエイトとしての総手数料収益を確認できます。",
+  "markets.column.24hVol": "24時間のボリューム",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "最終/24時間%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "この銘柄の直近の約定価格。",
+  "trading.orderBook.middlePrice.tooltip": "最良買気配、最良売気配、24時間終値の中央値で算出した安定した参考価格。",
+  "trading.fundingRate.estFundingRateWithTimeframe": "推定資金率（{{timeframe}}）",
+  "transfer.deposit.closeToMaxLimit": "入金額が上限に近すぎます。取引を成功させるため、入金額を減らしてください",
+  "transfer.deposit.estGasFee.tooltip": "推定ガス料金には以下が含まれます：このチェーンでの取引実行コスト、および Orderly 入金の送信先チェーン操作料。十分なカバレッジを確保するため、余分にご用意ください。",
+  "transfer.slippage.error.high": "スリッページが高いと大きな損失につながる可能性があります"
 }

@@ -9,6 +9,8 @@ const RwaIconTab = (props: { iconSize?: number }) => {
       <RwaIcon
         size={iconSize}
         className="group-data-[state=active]:oui-text-mainButton-invertedPressedContrast group-data-[state=inactive]:oui-text-mainButton-invertedContrast"
+        // Original classname from Orderly:
+        //className="group-data-[state=active]:oui-text-base-contrast group-data-[state=inactive]:oui-text-base-contrast-36"
       />
       <Text>{t("common.rwa")}</Text>
     </Flex>

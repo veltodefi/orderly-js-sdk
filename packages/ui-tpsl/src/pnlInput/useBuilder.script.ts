@@ -2,10 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import { useLocalStorage } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { MenuItem } from "@veltodefi/ui";
-import type {
-  InputFormatter,
-  InputFormatterOptions,
-} from "@veltodefi/ui";
+import type { InputFormatter, InputFormatterOptions } from "@veltodefi/ui";
 import { Decimal, todpIfNeed } from "@veltodefi/utils";
 
 export enum PnLMode {
@@ -105,15 +102,20 @@ export const usePNLInputBuilder = (props: BuilderProps) => {
         // }
 
         if (mode === PnLMode.PERCENTAGE) {
-          return `${new Decimal(
-            value.replace(
-              new RegExp(percentageSuffix.current.replace(".", "\\.") + "$"),
-              "",
-            ),
-          )
-            .mul(100)
-            .todp(2, 4)
-            .toString()}${percentageSuffix.current}`;
+          try {
+            // fix value is invalid decimal string, like "-"
+            return `${new Decimal(
+              value.replace(
+                new RegExp(percentageSuffix.current.replace(".", "\\.") + "$"),
+                "",
+              ),
+            )
+              .mul(100)
+              .todp(2, 4)
+              .toString()}${percentageSuffix.current}`;
+          } catch {
+            return "";
+          }
         } else if (mode === PnLMode.OFFSET) {
           value = todpIfNeed(value, dp);
         } else {
@@ -138,7 +140,12 @@ export const usePNLInputBuilder = (props: BuilderProps) => {
             } else {
               percentageSuffix.current = "";
             }
-            value = new Decimal(value).div(100).toString();
+            // fix value is invalid decimal string, like "1-46.35"
+            try {
+              value = new Decimal(value).div(100).toString();
+            } catch {
+              value = "";
+            }
             value = `${value}${percentageSuffix.current}`;
           }
         } else if (mode === PnLMode.PnL && type === "SL" && focus) {

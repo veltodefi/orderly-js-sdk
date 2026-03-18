@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-transfer",
-  "version": "2.9.0-velto-main.28",
+  "version": "2.10.0-velto-main.11",
   "description": "deposit & withdraw",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -30,7 +30,7 @@
     "@veltodefi/perp": "workspace:*",
     "@layerzerolabs/scan-client": "^0.0.6",
     "@solana/web3.js": "^1.95.3",
-    "ethers": "^6.15.0",
+    "ethers": "^6.16.0",
     "ramda": "^0.29.1"
   },
   "devDependencies": {

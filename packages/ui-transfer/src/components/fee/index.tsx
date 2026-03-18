@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { Flex, InfoIcon, Text, Tooltip } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
-import { type UseDepositFeeReturn } from "../depositForm/depositForm.script";
+import { type UseDepositFeeReturn } from "../depositForm/hooks/useDepositFee";
 
 type FeeProps = Partial<UseDepositFeeReturn> & {
   nativeSymbol?: string;

@@ -27,17 +27,18 @@ export type QuantityInputProps = {
   hintSuffix?: ReactNode;
   onValueChange?: (value: string) => void;
   onTokenChange?: (token: any) => void;
-  fetchBalance?: (token: string, decimals: number) => Promise<any>;
   loading?: boolean;
   testId?: string;
   formatters?: InputFormatter[];
+  // TOOD: remove this prop
   vaultBalanceList?: API.VaultBalance[];
   displayType?: "balance" | "vaultBalance";
-  tokenBalances?: Record<string, string>;
   tokenValueFormatter?: (value: string) => ReactNode;
   tokenShowCaret?: boolean;
   highlightOnHover?: boolean;
   iconSize?: AvatarSizeType;
+  balancesRevalidating?: boolean;
+  showBalance?: boolean;
 } & Omit<InputProps, "onClear" | "suffix" | "onValueChange">;
 
 export const QuantityInput: FC<QuantityInputProps> = (props) => {
@@ -51,17 +52,17 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
     hintSuffix,
     value,
     onValueChange,
-    fetchBalance,
     onTokenChange,
     loading,
     placeholder,
     formatters,
     vaultBalanceList,
     displayType,
-    tokenBalances,
     tokenValueFormatter,
     tokenShowCaret,
     highlightOnHover = false,
+    balancesRevalidating,
+    showBalance,
     ...rest
   } = props;
 
@@ -83,10 +84,9 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         ...token,
         name: token.display_name || token.symbol!,
         insufficientBalance,
-        balance: tokenBalances?.[token.symbol!],
       };
     });
-  }, [tokens, value, vaultBalanceList, tokenBalances]);
+  }, [tokens, value, vaultBalanceList]);
 
   useEffect(() => {
     const rect = inputRef?.current?.getBoundingClientRect();
@@ -109,7 +109,6 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
       <TokenOption
         token={item}
         isActive={isActive}
-        fetchBalance={fetchBalance}
         displayType={displayType}
         onTokenChange={(item) => {
           onTokenChange?.(item);
@@ -117,6 +116,8 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
         }}
         open={selectOpen}
         highlightOnHover={props.highlightOnHover}
+        isLoading={balancesRevalidating}
+        showBalance={showBalance}
       />
     );
   };
@@ -158,7 +159,7 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
           trigger: cn(
             "oui-bg-transparent",
             tokenValueFormatter && "oui-px-0 oui-mr-1 oui-ml-3",
-            tokenShowCaret && "oui-px-0 oui-mr-1 oui-ml-3 oui-pr-4",
+            tokenShowCaret && "oui-px-0 oui-mr-1 oui-ml-1 oui-pr-5",
           ),
         }}
         contentProps={{

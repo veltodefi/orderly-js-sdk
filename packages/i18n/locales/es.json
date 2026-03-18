@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Promedio de los últimos precios en otros exchanges.",
   "markets.symbolInfoBar.24hVolume": "Volumen 24h",
   "markets.symbolInfoBar.24hVolume.tooltip": "Volumen total de trading de 24 horas en la Red Orderly.",
-  "markets.symbolInfoBar.predFundingRate": "Tasa de financiamiento pred.",
+  "markets.symbolInfoBar.predFundingRate": "Tasa de fin. est.",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Las tasas de financiamiento son pagos entre traders que están en largo y corto. Cuando es positiva, las posiciones largas pagan financiamiento a las posiciones cortas. Cuando es negativa, las posiciones cortas pagan financiamiento a las posiciones largas.",
   "portfolio.feeTier": "Nivel de comisión",
   "portfolio.apiKeys": "Claves API",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "La tasa de riesgo se utiliza para evaluar el nivel de riesgo de una cuenta. Cuando la tasa de riesgo alcanza el 100%, la cuenta será liquidada",
   "trading.riskRate.formula": "Tasa de riesgo = Ratio de margen de mantenimiento / Ratio de margen * 100%",
   "trading.asset&Margin": "Activos y margen",
-  "trading.fundingRate.predFundingRate": "Tasa de financiamiento pred.",
+  "trading.fundingRate.predFundingRate": "Tasa de fin. est.",
   "trading.fundingRate.predFundingRate.interval": "Intervalo",
   "trading.fundingRate.predFundingRate.cap": "Límite de financiamiento",
   "trading.fundingRate.predFundingRate.floor": "Piso",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "¿De dónde provienen los ingresos?",
   "affiliate.faq.answer4": "Los ingresos provienen de las tarifas de trading generadas por los traders en el DEX. Cada vez que un trader en tu cadena realiza una transacción, una porción de la tarifa se distribuye desde la parte superior de la cadena hacia abajo según la asignación configurada.",
   "affiliate.faq.question5": "¿Cómo obtengo mis comisiones?",
-  "affiliate.faq.answer5": "Las comisiones se liquidan diariamente directamente en su cuenta de trading principal. Puede ver sus ganancias totales por comisiones como afiliado en el panel de referidos."
+  "affiliate.faq.answer5": "Las comisiones se liquidan diariamente directamente en su cuenta de trading principal. Puede ver sus ganancias totales por comisiones como afiliado en el panel de referidos.",
+  "markets.column.24hVol": "Volumen 24h",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Último/24h%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "El precio de la operación ejecutada más reciente en este símbolo.",
+  "trading.orderBook.middlePrice.tooltip": "Precio de referencia estabilizado calculado como la mediana del mejor bid, mejor ask y precio de cierre de 24 horas.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Tasa de financiación est. ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "El monto del depósito está demasiado cerca del límite máximo. Para garantizar que su transacción se complete, reduzca el monto",
+  "transfer.deposit.estGasFee.tooltip": "La tarifa de gas estimada incluye: costo de ejecución de la transacción en esta cadena y tarifa de operación de la cadena de destino para el depósito de Orderly. Prepare un extra para garantizar una cobertura suficiente.",
+  "transfer.slippage.error.high": "Un deslizamiento alto puede resultar en pérdidas significativas"
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { cnBase } from "tailwind-variants";
 import { useScreen } from "../hooks";
-import { InfoCircleIcon } from "../icon";
+import { InfoIcon } from "../icon";
 import { modal } from "../modal";
 import { Tooltip } from "../tooltip";
 
@@ -19,7 +19,6 @@ export type TipsProps = {
   /** Optional className for the wrapper (button on mobile, or Tooltip trigger on desktop). */
   className?: string;
   classNames?: {
-    root?: string;
     trigger?: string;
   };
 };
@@ -34,10 +33,10 @@ export const Tips: React.FC<TipsProps> = ({
   const { isMobile } = useScreen();
 
   const triggerElement = trigger || (
-    <InfoCircleIcon
+    <InfoIcon
       opacity={1}
       className={cnBase(
-        "oui-size-3 oui-shrink-0 oui-cursor-pointer oui-text-base-contrast-36",
+        "oui-size-3 oui-shrink-0 oui-cursor-pointer oui-text-primary",
         classNames?.trigger,
       )}
     />

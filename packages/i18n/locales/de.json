@@ -176,7 +176,7 @@
   "markets.symbolInfoBar.Index.tooltip": "Durchschnitt der letzten Preise über andere Börsen.",
   "markets.symbolInfoBar.24hVolume": "24h Volumen",
   "markets.symbolInfoBar.24hVolume.tooltip": "24-Stunden-Gesamtvolumen auf dem Orderly Network.",
-  "markets.symbolInfoBar.predFundingRate": "Vorhergesagte Finanzierungsrate",
+  "markets.symbolInfoBar.predFundingRate": "Geschätzte Finanzierungsrate",
   "markets.symbolInfoBar.predFundingRate.tooltip": "Finanzierungsraten sind Zahlungen zwischen Händlern, die long und short sind. Wenn positiv, zahlen Long-Positionen Short-Positionen Finanzierung. Wenn negativ, zahlen Short-Positionen Long-Positionen.",
   "portfolio.feeTier": "Gebührenstufe",
   "portfolio.apiKeys": "API-Schlüssel",
@@ -324,7 +324,7 @@
   "trading.riskRate.tooltip": "Die Risikorate wird verwendet, um das Risikoniveau eines Kontos zu bewerten. Wenn die Risikorate 100% erreicht, wird das Konto liquidiert",
   "trading.riskRate.formula": "Risikorate = Wartungsmargenverhältnis / Margenverhältnis * 100%",
   "trading.asset&Margin": "Vermögenswerte & Marge",
-  "trading.fundingRate.predFundingRate": "Vorhergesagte Finanzierungsrate",
+  "trading.fundingRate.predFundingRate": "Geschätzte Finanzierungsrate",
   "trading.fundingRate.predFundingRate.interval": "Intervall",
   "trading.fundingRate.predFundingRate.cap": "Finanzierungsobergrenze",
   "trading.fundingRate.predFundingRate.floor": "Untergrenze",
@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "Woher kommen die Einnahmen?",
   "affiliate.faq.answer4": "Die Einnahmen stammen aus den Trading-Gebühren, die von Tradern auf der DEX generiert werden. Wann immer ein Trader in Ihrer Kette eine Transaktion durchführt, wird ein Teil der Gebühr basierend auf der konfigurierten Zuteilung von oben nach unten in der Kette verteilt.",
   "affiliate.faq.question5": "Wie erhalte ich meine Provisionen?",
-  "affiliate.faq.answer5": "Provisionen werden täglich direkt auf Ihr Haupt-Handelskonto abgerechnet. Sie können Ihre gesamten Provisionserträge als Partner im Empfehlungs-Dashboard einsehen."
+  "affiliate.faq.answer5": "Provisionen werden täglich direkt auf Ihr Haupt-Handelskonto abgerechnet. Sie können Ihre gesamten Provisionserträge als Partner im Empfehlungs-Dashboard einsehen.",
+  "markets.column.24hVol": "24h Volumen",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Letzter/24h%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Der Preis der zuletzt ausgeführten Transaktion für dieses Symbol.",
+  "trading.orderBook.middlePrice.tooltip": "Ein stabilisierter Referenzpreis, berechnet als Median von bestem Geldkurs, bestem Briefkurs und 24-Stunden-Schlusskurs.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Geschätzte Finanzierungsrate ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "Einzahlungsbetrag liegt zu nah am Höchstlimit. Reduzieren Sie den Betrag, um eine erfolgreiche Transaktion zu gewährleisten",
+  "transfer.deposit.estGasFee.tooltip": "Die geschätzte Gasgebühr umfasst: Transaktionsausführungskosten in dieser Chain sowie Betriebsgebühr der Ziel-Chain für die Orderly-Einzahlung. Bitte bereiten Sie zusätzliche Mittel vor, um eine ausreichende Deckung sicherzustellen.",
+  "transfer.slippage.error.high": "Hohe Slippage kann zu erheblichen Verlusten führen"
 }

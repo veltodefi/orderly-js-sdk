@@ -1226,5 +1226,14 @@
   "affiliate.faq.question4": "Gelir nereden geliyor?",
   "affiliate.faq.answer4": "Gelir, DEX'teki tüccarların ürettiği ticaret ücretlerinden gelir. Zincirinizdeki bir tüccar işlem yaptığında, ücretin bir kısmı yapılandırılmış tahsise göre zincirin üstünden aşağıya doğru dağıtılır.",
   "affiliate.faq.question5": "Komisyonlarımı nasıl alırım?",
-  "affiliate.faq.answer5": "Komisyonlar günlük olarak doğrudan ana işlem hesabınıza ödenir. Ortak olarak toplam komisyon kazançlarınızı yönlendirme panosunda görüntüleyebilirsiniz."
+  "affiliate.faq.answer5": "Komisyonlar günlük olarak doğrudan ana işlem hesabınıza ödenir. Ortak olarak toplam komisyon kazançlarınızı yönlendirme panosunda görüntüleyebilirsiniz.",
+  "markets.column.24hVol": "24s hacim",
+  "markets.column.OI": "OI",
+  "markets.column.last&24hPercentage": "Son/24s%",
+  "markets.symbolInfoBar.lastPrice.tooltip": "Bu sembolde gerçekleştirilen en son işlemin fiyatı.",
+  "trading.orderBook.middlePrice.tooltip": "En iyi alış, en iyi satış ve 24 saatlik kapanış fiyatının medyanı olarak hesaplanan stabilize edilmiş referans fiyat.",
+  "trading.fundingRate.estFundingRateWithTimeframe": "Tahmini fonlama oranı ({{timeframe}})",
+  "transfer.deposit.closeToMaxLimit": "Yatırım tutarı maksimum limite çok yakın. İşleminizin başarılı olması için lütfen tutarı azaltın",
+  "transfer.deposit.estGasFee.tooltip": "Tahmini gas ücreti şunları içerir: bu zincirdeki işlem yürütme maliyeti ve Orderly yatırımı için hedef zincir işletim ücreti. Yeterli kapsama sağlamak için lütfen ekstra hazırlayın.",
+  "transfer.slippage.error.high": "Yüksek kayma önemli kayıplara yol açabilir"
 }
