@@ -1,6 +1,6 @@
 {
   "name": "tsconfig",
-  "version": "0.13.0-velto-dev.10",
+  "version": "0.13.0-velto-main.11",
   "private": true,
   "license": "MIT",
   "publishConfig": {

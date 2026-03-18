@@ -950,8 +950,7 @@ export interface ActionDescriptionWithCallback extends ActionDescription {
   action: (a?: ActionDescription) => void;
 }
 export interface ActionOptions
-  extends Partial<OmitActionId<ActionState>>,
-    Pick<ActionState, "actionId"> {
+  extends Partial<OmitActionId<ActionState>>, Pick<ActionState, "actionId"> {
   /**
    * A function which will be called when an action should be executed (e.g. when a user clicks on the item).
    */
@@ -2353,7 +2352,7 @@ export interface ChartDescriptionContext {
   chartTypeName: string;
   /** Symbol's description from the Symbol Info */
   description?: string;
-  /** Symbol identifier, typically the symbols ticker or name defined in the Symbol Info */
+  /** Symbol identifier, typically the symbols  or name defined in the Symbol Info */
   symbol: string;
   /** Symbol's exchange */
   exchange?: string;
@@ -4228,7 +4227,7 @@ export interface ChartingLibraryWidgetOptions {
    * [overrides](#overrides) will not affect values that have been saved to settings so this option can be used instead.
    *
    * ```javascript
-   * settings_overrides: {
+   * : {
    *     "linetooltrendline.linecolor": "blue"
    * }
    * ```
@@ -4698,8 +4697,9 @@ export interface CorrelationLogIndicatorOverrides {
 /**
  * Options for creating an anchored drawing.
  */
-export interface CreateAnchoredShapeOptions<TOverrides extends object>
-  extends CreateShapeOptionsBase<TOverrides> {
+export interface CreateAnchoredShapeOptions<
+  TOverrides extends object,
+> extends CreateShapeOptionsBase<TOverrides> {
   /**
    * A drawing to create;
    */
@@ -4764,8 +4764,9 @@ export interface CreateHTMLButtonOptions {
 /**
  * Options for creating a multipoint drawing.
  */
-export interface CreateMultipointShapeOptions<TOverrides extends object>
-  extends CreateShapeOptionsBase<TOverrides> {
+export interface CreateMultipointShapeOptions<
+  TOverrides extends object,
+> extends CreateShapeOptionsBase<TOverrides> {
   /**
    * A drawing to create.
    */
@@ -4777,8 +4778,9 @@ export interface CreateMultipointShapeOptions<TOverrides extends object>
 /**
  * Options for creating a drawing.
  */
-export interface CreateShapeOptions<TOverrides extends object>
-  extends CreateShapeOptionsBase<TOverrides> {
+export interface CreateShapeOptions<
+  TOverrides extends object,
+> extends CreateShapeOptionsBase<TOverrides> {
   /**
    * A drawing to create.
    */
@@ -9158,8 +9160,7 @@ export interface IBrokerTerminal extends IBrokerWithoutRealtime {
  * Refer to the [Core trading concepts](https://www.tradingview.com/charting-library-docs/latest/trading_terminal/trading-concepts/trading-concepts.md) article for more information.
  */
 export interface IBrokerWithoutRealtime
-  extends IBrokerCommon,
-    IBrokerAccountInfo {
+  extends IBrokerCommon, IBrokerAccountInfo {
   /**
    * Library is requesting that realtime DOM (Depth of Market) updates should be supplied for this symbol
    * @param  {string} symbol - symbol identifier
@@ -11431,8 +11432,9 @@ export interface IDatafeedQuotesApi {
    */
   unsubscribeQuotes(listenerGUID: string): void;
 }
-export interface IDelegate<TFunc extends Function>
-  extends ISubscription<TFunc> {
+export interface IDelegate<
+  TFunc extends Function,
+> extends ISubscription<TFunc> {
   /** Fire (Evoke) */
   fire: TFunc;
 }
@@ -11872,8 +11874,7 @@ export interface IObservable<T> {
 }
 export interface IObservableValue<T> extends IBoxedValue<T>, IObservable<T> {}
 export interface IObservableValueReadOnly<T>
-  extends IBoxedValueReadOnly<T>,
-    IObservable<T> {}
+  extends IBoxedValueReadOnly<T>, IObservable<T> {}
 /**
  * An API object used to control order lines.
  */
@@ -13413,8 +13414,7 @@ export interface IWatchListApi {
   onListRenamed(): ISubscription<WatchListSymbolListRenamedCallback>;
 }
 export interface IWatchedValue<T>
-  extends IWatchedValueReadonly<T>,
-    IObservableValue<T> {
+  extends IWatchedValueReadonly<T>, IObservableValue<T> {
   /**
    * Set value for the watched value
    * @param  {T} value - value to set
@@ -13618,8 +13618,7 @@ export interface ImageLineToolOverrides {
   "linetoolimage.transparency": number;
 }
 export interface IndividualPosition
-  extends IndividualPositionBase,
-    CustomFields {}
+  extends IndividualPositionBase, CustomFields {}
 /**
  * Describes an individual position.
  */
@@ -15462,8 +15461,7 @@ export interface MovingAverageWeightedIndicatorOverrides {
   "plot.color": string;
   [key: string]: StudyOverrideValueType;
 }
-export interface NegativeBaseInputFieldValidatorResult
-  extends BaseInputFieldValidatorResult {
+export interface NegativeBaseInputFieldValidatorResult extends BaseInputFieldValidatorResult {
   /** @inheritDoc */
   valid: false;
   /** Reason why base input value is invalid  */
@@ -17326,8 +17324,7 @@ export interface PositionPercents {
    */
   y: number;
 }
-export interface PositiveBaseInputFieldValidatorResult
-  extends BaseInputFieldValidatorResult {
+export interface PositiveBaseInputFieldValidatorResult extends BaseInputFieldValidatorResult {
   /** @inheritDoc */
   valid: true;
 }
@@ -19251,8 +19248,7 @@ export interface StudyBooleanInputInfo extends StudyInputBaseInfo {
  * A description of a border colorer plot.
  */
 export interface StudyCandleBorderColorerPlotInfo
-  extends StudyPalettedPlotInfo,
-    StudyTargetedPlotInfo {
+  extends StudyPalettedPlotInfo, StudyTargetedPlotInfo {
   /** @inheritDoc */
   readonly type: StudyPlotType.CandleBorderColorer;
 }
@@ -19260,8 +19256,7 @@ export interface StudyCandleBorderColorerPlotInfo
  * A description of a wick colorer plot.
  */
 export interface StudyCandleWickColorerPlotInfo
-  extends StudyPalettedPlotInfo,
-    StudyTargetedPlotInfo {
+  extends StudyPalettedPlotInfo, StudyTargetedPlotInfo {
   /** @inheritDoc */
   readonly type: StudyPlotType.CandleWickColorer;
 }
@@ -19292,8 +19287,7 @@ export interface StudyColorInputInfo extends StudyInputBaseInfo {
  * A description of a colorer plot.
  */
 export interface StudyColorerPlotInfo
-  extends StudyPalettedPlotInfo,
-    StudyTargetedPlotInfo {
+  extends StudyPalettedPlotInfo, StudyTargetedPlotInfo {
   /** @inheritDoc */
   readonly type: StudyPlotType.Colorer;
 }
@@ -19337,8 +19331,7 @@ export interface StudyDefaults {
  * A description of a down colorer plot.
  */
 export interface StudyDownColorerPlotInfo
-  extends StudyPalettedPlotInfo,
-    StudyTargetedPlotInfo {
+  extends StudyPalettedPlotInfo, StudyTargetedPlotInfo {
   /** @inheritDoc */
   readonly type: StudyPlotType.DownColorer;
 }
@@ -19367,8 +19360,7 @@ export interface StudyFieldDescriptor {
 /**
  * Study filled area gradient styles.
  */
-export interface StudyFilledAreaGradientColorStyle
-  extends StudyFilledAreaStyleBase {
+export interface StudyFilledAreaGradientColorStyle extends StudyFilledAreaStyleBase {
   /** Gradient fill type */
   fillType: "gradient";
   /**
@@ -19466,8 +19458,7 @@ export interface StudyFilledAreaInfo {
 /**
  * Study solid color filled area style preferences.
  */
-export interface StudyFilledAreaSolidColorStyle
-  extends StudyFilledAreaStyleBase {
+export interface StudyFilledAreaSolidColorStyle extends StudyFilledAreaStyleBase {
   /** Solid Fill type */
   fillType: undefined;
   /**
@@ -19616,13 +19607,11 @@ export interface StudyNumericInputInfo extends StudyInputBaseInfo {
  * A description of an OHLC colorer plot.
  */
 export interface StudyOhlcColorerPlotInfo
-  extends StudyPalettedPlotInfo,
-    StudyTargetedPlotInfo {
+  extends StudyPalettedPlotInfo, StudyTargetedPlotInfo {
   /** @inheritDoc */
   readonly type: StudyPlotType.OhlcColorer;
 }
-export interface StudyOhlcPlotBarsStylePreferences
-  extends StudyOhlcPlotBaseStylePreferences {
+export interface StudyOhlcPlotBarsStylePreferences extends StudyOhlcPlotBaseStylePreferences {
   /** OHLC Plot type: Bars */
   plottype: OhlcStudyPlotStyle.OhlcBars;
 }
@@ -19634,8 +19623,7 @@ export interface StudyOhlcPlotBaseStylePreferences {
   /** Visibility */
   visible?: boolean;
 }
-export interface StudyOhlcPlotCandlesStylePreferences
-  extends StudyOhlcPlotBaseStylePreferences {
+export interface StudyOhlcPlotCandlesStylePreferences extends StudyOhlcPlotBaseStylePreferences {
   /** OHLC Plot Type: Candles */
   plottype: OhlcStudyPlotStyle.OhlcCandles;
   /** Whether to draw candle wick */
@@ -24509,8 +24497,7 @@ export interface StudyPaletteColor {
  * Study palette style preferences.
  */
 export interface StudyPaletteColorPreferences
-  extends StudyPaletteColor,
-    StudyPaletteInfo {}
+  extends StudyPaletteColor, StudyPaletteInfo {}
 /**
  * A description of a study palette.
  */
@@ -24908,8 +24895,7 @@ export interface StudyTemplateMetaInfo {
  * A description of a text colorer plot.
  */
 export interface StudyTextColorerPlotInfo
-  extends StudyPalettedPlotInfo,
-    StudyTargetedPlotInfo {
+  extends StudyPalettedPlotInfo, StudyTargetedPlotInfo {
   /** @inheritDoc */
   readonly type: StudyPlotType.TextColorer;
 }
@@ -24943,8 +24929,7 @@ export interface StudyTimeInputInfo extends StudyInputBaseInfo {
  * A description of a up colorer plot.
  */
 export interface StudyUpColorerPlotInfo
-  extends StudyPalettedPlotInfo,
-    StudyTargetedPlotInfo {
+  extends StudyPalettedPlotInfo, StudyTargetedPlotInfo {
   /** @inheritDoc */
   readonly type: StudyPlotType.UpColorer;
 }
@@ -25472,8 +25457,7 @@ export interface TextWithCheckboxFieldCustomInfo {
    */
   asterix?: boolean;
 }
-export interface TextWithCheckboxFieldMetaInfo
-  extends CustomInputFieldMetaInfo {
+export interface TextWithCheckboxFieldMetaInfo extends CustomInputFieldMetaInfo {
   /** @inheritDoc */
   inputType: "TextWithCheckBox";
   /** @inheritDoc */
@@ -25743,11 +25727,10 @@ export interface TradingQuotes {
   /** Whether quotes are can not be shorted */
   isNotShortable?: boolean;
 }
-export interface TradingTerminalWidgetOptions
-  extends Omit<
-    ChartingLibraryWidgetOptions,
-    "enabled_features" | "disabled_features" | "favorites"
-  > {
+export interface TradingTerminalWidgetOptions extends Omit<
+  ChartingLibraryWidgetOptions,
+  "enabled_features" | "disabled_features" | "favorites"
+> {
   /**
    * The array containing names of features that should be disabled by default. `Feature` means part of the functionality of the chart (part of the UI/UX). Supported features are listed in [Featuresets](https://www.tradingview.com/charting-library-docs/latest/customization/Featuresets.md).
    *
