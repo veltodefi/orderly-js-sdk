@@ -31,6 +31,10 @@ type tabConfig = {
   content: ReactNode;
   collapsed?: boolean;
   className?: string;
+  classNames?: {
+    content?: string;
+    trigger?: string;
+  };
   style?: React.CSSProperties;
   disabled?: boolean;
 };
@@ -73,9 +77,11 @@ const Tabs: FC<TabsProps> = (props) => {
     ...rest
   } = props;
 
-  const tabsOverrides = getComponentTheme("tabs", { variant: "contained" });
+  const tabsOverrides = getComponentTheme("tabs", {
+    variant: variant ?? "contained",
+  });
 
-  const tabsVariant = variant || tabsOverrides.variant;
+  const tabsVariant = tabsOverrides.variant;
 
   const [tabList, setTabList] = useState<{ [key: string]: tabConfig }>({});
 
@@ -115,8 +121,8 @@ const Tabs: FC<TabsProps> = (props) => {
               variant={tabsVariant}
               size={rest.size}
               data-testid={tab.testid}
-              className={classNames?.trigger}
               disabled={tab.disabled}
+              className={cnBase(classNames?.trigger, tab.classNames?.trigger)}
             >
               {tab.title}
             </TabsTrigger>
@@ -184,14 +190,27 @@ export interface TabPanelProps {
   icon?: React.ReactElement;
   testid?: string;
   className?: string;
+  classNames?: {
+    content?: string;
+    trigger?: string;
+  };
   style?: React.CSSProperties;
   /** When true, the tab trigger is disabled and cannot be selected */
   disabled?: boolean;
 }
 
 const TabPanel: FC<PropsWithChildren<TabPanelProps>> = (props) => {
-  const { title, value, icon, className, style, testid, disabled, children } =
-    props;
+  const {
+    title,
+    value,
+    icon,
+    className,
+    classNames,
+    style,
+    testid,
+    disabled,
+    children,
+  } = props;
 
   const { registerTab, unregisterTab } = useContext(TabsContext);
 
@@ -202,6 +221,7 @@ const TabPanel: FC<PropsWithChildren<TabPanelProps>> = (props) => {
       icon,
       testid,
       className,
+      classNames,
       style,
       disabled,
       content: children,

@@ -1,15 +1,7 @@
 import { KeyboardEventHandler } from "react";
 import { FavoriteTab } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import {
-  Box,
-  cn,
-  Flex,
-  Text,
-  Tooltip,
-  Input,
-  modal,
-} from "@veltodefi/ui";
+import { Box, cn, Flex, Text, Tooltip, Input, modal } from "@veltodefi/ui";
 import { AddIcon, ActiveAddIcon, EditIcon, TrashIcon } from "../../icons";
 import {
   UseFavoritesTabScriptOptions,
@@ -176,7 +168,7 @@ export const FavoritesTab: React.FC<FavoritesTabProps> = (props) => {
               isActive && cn(overLen ? "oui-bg-danger/15" : gradientColor),
             ),
             input: cn(
-              "oui-font-semibold oui-caret-[rgba(217,217,217,1)]",
+              "oui-font-semibold oui-caret-[rgb(var(--oui-color-tertiary))]",
               overLen
                 ? "oui-text-danger"
                 : "oui-text-transparent oui-gradient-brand ",

@@ -7,7 +7,7 @@ import {
   useSymbolsInfo,
 } from "@veltodefi/hooks";
 import { useDataTap } from "@veltodefi/react-app";
-import { API, OrderSide, OrderType } from "@veltodefi/types";
+import { API, MarginMode, OrderSide, OrderType } from "@veltodefi/types";
 import { useScreen } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 
@@ -156,6 +156,8 @@ export const useReversePositionScript = (
         side,
         order_quantity: new Decimal(qty).todp(baseDp).toString(),
         reduce_only: reduceOnly,
+        // Use position's margin_mode or default to CROSS for backward compatibility
+        margin_mode: position.margin_mode || MarginMode.CROSS,
       };
     };
 
@@ -180,6 +182,7 @@ export const useReversePositionScript = (
       side: OrderSide;
       order_quantity: string;
       reduce_only: boolean;
+      margin_mode: MarginMode;
     }[] = [];
     const perOrderQty = baseMax;
     const numOrders = Math.ceil(reverseQty / baseMax);

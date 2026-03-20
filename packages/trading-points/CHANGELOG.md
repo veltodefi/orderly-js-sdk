@@ -1,5 +1,131 @@
 # @veltodefi/trading-points
 
+## 1.3.1
+
+### Patch Changes
+
+- publish
+- 2bb6924: publish
+- Updated dependencies
+- Updated dependencies [2bb6924]
+  - @veltodefi/react-app@2.11.1
+  - @veltodefi/hooks@2.11.1
+  - @veltodefi/i18n@2.11.1
+  - @veltodefi/types@2.11.1
+  - @veltodefi/ui@2.11.1
+  - @veltodefi/ui-connector@2.11.1
+  - @veltodefi/utils@2.11.1
+
+## 1.3.1-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.11.1-alpha.0
+  - @veltodefi/hooks@2.11.1-alpha.0
+  - @veltodefi/i18n@2.11.1-alpha.0
+  - @veltodefi/types@2.11.1-alpha.0
+  - @veltodefi/ui@2.11.1-alpha.0
+  - @veltodefi/ui-connector@2.11.1-alpha.0
+  - @veltodefi/utils@2.11.1-alpha.0
+
+## 1.3.0
+
+### Minor Changes
+
+- d8edbeb: publish
+- publish
+
+### Patch Changes
+
+- Updated dependencies [d8edbeb]
+- Updated dependencies
+  - @veltodefi/react-app@2.11.0
+  - @veltodefi/hooks@2.11.0
+  - @veltodefi/i18n@2.11.0
+  - @veltodefi/types@2.11.0
+  - @veltodefi/ui@2.11.0
+  - @veltodefi/ui-connector@2.11.0
+  - @veltodefi/utils@2.11.0
+
+## 1.3.0-alpha.0
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/react-app@2.11.0-alpha.0
+  - @veltodefi/hooks@2.11.0-alpha.0
+  - @veltodefi/i18n@2.11.0-alpha.0
+  - @veltodefi/types@2.11.0-alpha.0
+  - @veltodefi/ui@2.11.0-alpha.0
+  - @veltodefi/ui-connector@2.11.0-alpha.0
+  - @veltodefi/utils@2.11.0-alpha.0
+
+## 1.2.2
+
+### Patch Changes
+
+- publish
+- 95b95a6: publish
+- Updated dependencies
+- Updated dependencies [95b95a6]
+  - @veltodefi/react-app@2.10.2
+  - @veltodefi/hooks@2.10.2
+  - @veltodefi/i18n@2.10.2
+  - @veltodefi/types@2.10.2
+  - @veltodefi/ui@2.10.2
+  - @veltodefi/ui-connector@2.10.2
+  - @veltodefi/utils@2.10.2
+
+## 1.2.2-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.10.2-alpha.0
+  - @veltodefi/hooks@2.10.2-alpha.0
+  - @veltodefi/i18n@2.10.2-alpha.0
+  - @veltodefi/types@2.10.2-alpha.0
+  - @veltodefi/ui@2.10.2-alpha.0
+  - @veltodefi/ui-connector@2.10.2-alpha.0
+  - @veltodefi/utils@2.10.2-alpha.0
+
+## 1.2.1
+
+### Patch Changes
+
+- 4fadc11: publish
+- publish
+- Updated dependencies [4fadc11]
+- Updated dependencies
+  - @veltodefi/react-app@2.10.1
+  - @veltodefi/hooks@2.10.1
+  - @veltodefi/i18n@2.10.1
+  - @veltodefi/types@2.10.1
+  - @veltodefi/ui@2.10.1
+  - @veltodefi/ui-connector@2.10.1
+  - @veltodefi/utils@2.10.1
+
+## 1.2.1-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/react-app@2.10.1-alpha.0
+  - @veltodefi/hooks@2.10.1-alpha.0
+  - @veltodefi/i18n@2.10.1-alpha.0
+  - @veltodefi/types@2.10.1-alpha.0
+  - @veltodefi/ui@2.10.1-alpha.0
+  - @veltodefi/ui-connector@2.10.1-alpha.0
+  - @veltodefi/utils@2.10.1-alpha.0
+
 ## 1.2.0
 
 ### Minor Changes

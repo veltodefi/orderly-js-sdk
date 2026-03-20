@@ -14,8 +14,8 @@ import {
   Spinner,
   Text,
   cn,
-  ChevronDownVeltoIcon,
 } from "@veltodefi/ui";
+import { ExchangeIcon } from "../../icons";
 import { CurrentChain } from "../../types";
 
 type ChainSelectProps = {
@@ -65,13 +65,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
       return <Spinner size="sm" />;
     }
     if (selectable) {
-      return (
-        <ChevronDownVeltoIcon
-          size={12}
-          opacity={1}
-          className="oui-text-primary"
-        />
-      );
+      return <ExchangeIcon className="oui-text-base-contrast-54" />;
     }
   };
 
@@ -79,7 +73,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
     <Flex
       intensity={500}
       className={cn(
-        "oui-rounded-2xl oui-h-[58px]",
+        "oui-rounded-t-xl oui-rounded-b-sm oui-border oui-border-line",
         disabled
           ? "oui-cursor-not-allowed"
           : selectable
@@ -87,19 +81,19 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
             : "oui-cursor-auto",
       )}
       height={54}
-      px={4}
+      px={3}
       justify="between"
       itemAlign="center"
     >
       <div>
         <Flex>
-          <Text size="2xs" weight="regular" className="oui-text-[#c7c7c7]">
+          <Text size="2xs" intensity={54}>
             {t("transfer.network")}
           </Text>
         </Flex>
-        <Flex gapX={1} itemAlign="center" className="oui-mt-0.5">
+        <Flex gapX={1} itemAlign="center">
           {chainIcon}
-          <Text size="sm" weight="regular" className="oui-text-[#c7c7c7]">
+          <Text size="sm" intensity={80}>
             {chainName}
           </Text>
           {!isCurrentChainSupported && (
@@ -112,6 +106,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
       {renderRightIcon()}
     </Flex>
   );
+
   const content = chains.map((chain, index) => {
     const extendedChain = chain as API.NetworkInfos & {
       isSupported?: boolean;

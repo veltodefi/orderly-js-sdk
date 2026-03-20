@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useMaxQty } from "@veltodefi/hooks";
-import { API, OrderSide } from "@veltodefi/types";
+import { API, MarginMode, OrderSide } from "@veltodefi/types";
 
 export function useEditOrderMaxQty(
   order: API.AlgoOrderExt,
@@ -8,7 +8,10 @@ export function useEditOrderMaxQty(
 ) {
   const { reduce_only } = order;
 
-  const maxQty = useMaxQty(order.symbol, order.side as OrderSide, reduce_only);
+  const maxQty = useMaxQty(order.symbol, order.side as OrderSide, {
+    reduceOnly: reduce_only,
+    marginMode: order.margin_mode ?? MarginMode.CROSS,
+  });
 
   return useMemo(() => {
     if (reduce_only) {

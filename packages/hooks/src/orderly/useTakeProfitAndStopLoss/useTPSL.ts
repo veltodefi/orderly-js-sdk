@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { produce } from "immer";
-import omit from "ramda/es/omit";
 import {
   API,
   AlgoOrderEntity,
+  MarginMode,
   OrderSide,
   OrderType,
   OrderlyOrder,
@@ -12,6 +11,8 @@ import {
 } from "@veltodefi/types";
 import { AlgoOrderRootType } from "@veltodefi/types";
 import { AlgoOrderType } from "@veltodefi/types";
+import { produce } from "immer";
+import omit from "ramda/es/omit";
 import { appendOrderMetadata } from "../../next/useOrderEntry/helper";
 import { useOrderlyContext } from "../../orderlyContext";
 import { OrderFactory } from "../../services/orderCreator/factory";
@@ -177,6 +178,11 @@ export const useTaskProfitAndStopLossInternal = (
     //   ? checkIsEnableTpSL(options?.defaultOrder).sl_enable
     //   : options?.tpslEnable?.sl_enable,
     position_type: options?.positionType,
+    // Use defaultOrder.margin_mode when editing; otherwise position.margin_mode; default CROSS for backward compatibility
+    margin_mode:
+      options?.defaultOrder?.margin_mode ??
+      position?.margin_mode ??
+      MarginMode.CROSS,
   });
 
   const symbolInfo = useSymbolsInfo()[position.symbol!]();

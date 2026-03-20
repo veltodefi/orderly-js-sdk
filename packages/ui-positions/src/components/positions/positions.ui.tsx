@@ -49,7 +49,9 @@ export const Positions: React.FC<Readonly<PositionsState>> = (props) => {
           ? "oui-hide-scrollbar oui-overflow-hidden"
           : "",
       }}
-      generatedRowKey={(record: any) => record.symbol}
+      generatedRowKey={(record: any, index: number) =>
+        `${record.symbol}-${index}`
+      }
       renderRowContainer={(record: any, index: number, children: any) => {
         return (
           <SymbolProvider symbol={record.symbol}>
@@ -169,7 +171,9 @@ export const CombinePositions: React.FC<Readonly<CombinePositionsState>> = (
       currentView="combine_positions"
       expanded
       getSubRows={(row) => row.children}
-      generatedRowKey={(record) => `${record.account_id}${record.symbol || ""}`}
+      generatedRowKey={(record, index) =>
+        `${record.account_id}${record.symbol || ""}-${index}`
+      }
       onCell={(column, record) => {
         const isGroup = (record.children ?? []).length > 0;
         if (isGroup) {

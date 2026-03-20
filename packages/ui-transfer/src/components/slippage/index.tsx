@@ -202,7 +202,7 @@ const SlippageItem: FC<SlippageItemProps> = ({ value, isActive, onClick }) => {
       className={cn(
         "oui-cursor-pointer oui-select-none",
         isActive
-          ? "oui-bg-primary-light oui-text-primary-contrast/80"
+          ? "oui-bg-primary-darken oui-text-primary-contrast/80"
           : "oui-text-base-contrast-80",
       )}
       onClick={onClick}

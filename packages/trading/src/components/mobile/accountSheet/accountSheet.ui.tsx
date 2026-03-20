@@ -1,6 +1,12 @@
 import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { ArrowRightShortIcon, MainButton, Button, Flex, Text } from "@veltodefi/ui";
+import {
+  ArrowRightShortIcon,
+  MainButton,
+  Button,
+  Flex,
+  Text,
+} from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 import { AccountSheetState } from "./accountSheet.script";
 import { CopyIcon, HeadIcon, OrderlyIcon, USDCIcon } from "./icons";
@@ -9,7 +15,7 @@ export const AccountSheet: FC<AccountSheetState> = (props) => {
   const { t } = useTranslation();
 
   return (
-    <Flex direction={"column"} gap={4}>
+    <Flex className="oui-accountSheet" direction={"column"} gap={4}>
       <AccountInfo {...props} />
       <ReferralInfo {...props} />
       <TradingRewardsInfo {...props} />
@@ -21,6 +27,7 @@ export const AccountSheet: FC<AccountSheetState> = (props) => {
             onClick={props.onGetTestUSDC}
             fullWidth
             loading={props.gettingTestUSDC}
+            className="oui-accountSheet-getTestUSDC-btn oui-border-primary-light oui-text-primary-light"
           >
             {t("trading.faucet.getTestUSDC")}
           </MainButton>
@@ -190,7 +197,7 @@ export const TradingRewardsInfo: FC<AccountSheetState> = (props) => {
         width={"100%"}
         angle={180}
         justify={"between"}
-        className="oui-bg-gradient-to-t oui-from-[#2d0061] oui-to-[#bd6bed]"
+        className="oui-bg-gradient-to-t oui-from-[rgb(var(--oui-gradient-secondary-end))] oui-to-[rgb(var(--oui-gradient-secondary-start))]"
       >
         <Text size="2xs" intensity={80}>
           {t("tradingRewards.myEstRewards")}

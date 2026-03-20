@@ -6,6 +6,7 @@ import { OrderStatus } from "@veltodefi/types";
 import {
   MainButton,
   Checkbox,
+  cn,
   Divider,
   Flex,
   TabPanel,
@@ -247,7 +248,7 @@ export const DataList: React.FC<DataListState & { className?: string }> = (
       defaultValue={DataListTabType.position}
       onValueChange={(e) => setTab(e as DataListTabType)}
       size="lg"
-      className={className}
+      className={cn("oui-trading-dataList-tabs", className)}
       classNames={{
         tabsList:
           "oui-bg-base-9 oui-rounded-t-xl oui-p-2 oui-overflow-x-scroll oui-hide-scrollbar",

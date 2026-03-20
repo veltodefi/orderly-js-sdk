@@ -9,7 +9,7 @@ import { useChainSelect } from "../../depositForm/hooks/useChainSelect";
 import { useDepositAction } from "../../depositForm/hooks/useDepositAction";
 import { useInputStatus } from "../../transferForm/transferForm.script";
 import { SwapDialog } from "../components/swapDialog";
-import { useNeedSwapAndCross } from "../hooks/useNeedSwapAndCross";
+import { useNeedSwap } from "../hooks/useNeedSwapAndCross";
 import { useSwapEnquiry } from "../hooks/useSwapEnquiry";
 import { useSwapFee } from "../hooks/useSwapFee";
 import { useToken } from "../hooks/useToken";
@@ -94,8 +94,8 @@ export const useSwapDepositFormScript = (
     maxQuantity,
   });
 
-  const { needSwap, needCrossSwap } = useNeedSwapAndCross({
-    srcToken: token,
+  const { needSwap, needCrossSwap } = useNeedSwap({
+    sourceToken: token,
     srcChainId: currentChain?.id,
     dstChainId: dst?.chainId,
   });

@@ -7,7 +7,7 @@ import {
   useAppStore,
 } from "@veltodefi/hooks";
 import { account } from "@veltodefi/perp";
-import type { API } from "@veltodefi/types";
+import { API, MarginMode } from "@veltodefi/types";
 import { modal } from "@veltodefi/ui";
 import { Decimal, zero } from "@veltodefi/utils";
 
@@ -24,7 +24,7 @@ const useConvertThreshold = () => {
   } as const;
 };
 
-export const useLTVTooltipScript = () => {
+export const useLTVTooltipScript = (marginMode?: MarginMode) => {
   const { data: holdingList = [], isLoading: isHoldingLoading } =
     useHoldingStream();
 
@@ -83,6 +83,7 @@ export const useLTVTooltipScript = () => {
     isThresholdLoading,
     currentLtv: currentLtv,
     onConvert: onConvert,
+    marginMode,
   };
 };
 

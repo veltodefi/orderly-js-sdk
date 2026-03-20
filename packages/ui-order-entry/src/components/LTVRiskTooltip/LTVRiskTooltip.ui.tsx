@@ -1,5 +1,6 @@
 import React from "react";
-import { useTranslation } from "@veltodefi/i18n";
+import { useTranslation, type LocaleMessages } from "@veltodefi/i18n";
+import { MarginMode } from "@veltodefi/types";
 import { MainButton, cn, Divider, Flex, Text } from "@veltodefi/ui";
 import { removeTrailingZeros } from "@veltodefi/utils";
 import type { LTVTooltipScriptReturn } from "./LTVRiskTooltip.script";
@@ -25,9 +26,15 @@ export const LTVRiskTooltipUI: React.FC<LTVTooltipScriptReturn> = (props) => {
     holdingData = [],
     currentLtv,
     onConvert,
+    marginMode,
   } = props;
   return (
-    <Flex gap={1} className="oui-w-72 oui-max-w-72" direction="column">
+    <Flex
+      gap={1}
+      className="oui-orderEntry-ltvRiskTooltip oui-w-72 oui-max-w-72"
+      direction="column"
+      itemAlign="start"
+    >
       <Flex width={"100%"} justify="between" itemAlign="center">
         <Text intensity={36} size="xs">
           {t("common.assets")}
@@ -72,6 +79,7 @@ export const LTVRiskTooltipUI: React.FC<LTVTooltipScriptReturn> = (props) => {
           {currentLtv}%
         </Text>
       </Flex>
+
       <Text className="oui-py-2" intensity={54} size="2xs">
         {t("transfer.LTV.tooltip", {
           threshold: isThresholdLoading ? "-" : ltv_threshold,
@@ -82,6 +90,7 @@ export const LTVRiskTooltipUI: React.FC<LTVTooltipScriptReturn> = (props) => {
         fullWidth
         size={"md"}
         variant="secondary"
+        className="oui-ltvRiskTooltip-convert-btn"
         onClick={onConvert}
       >
         {t("transfer.convert.convertAssets")}

@@ -12,52 +12,52 @@ type Package = {
 
 const base: Package[] = [
   {
-    package: "@veltodefi/react-app",
+    package: "@orderly.network/react-app",
     path: "../../packages/app/src",
     watch: true,
   },
   {
-    package: "@veltodefi/hooks",
+    package: "@orderly.network/hooks",
     path: "../../packages/hooks/src",
     watch: true,
   },
   {
-    package: "@veltodefi/core",
+    package: "@orderly.network/core",
     path: "../../packages/core/src",
     watch: false,
   },
   {
-    package: "@veltodefi/net",
+    package: "@orderly.network/net",
     path: "../../packages/net/src",
     watch: false,
   },
   {
-    package: "@veltodefi/perp",
+    package: "@orderly.network/perp",
     path: "../../packages/perp/src",
     watch: false,
   },
   {
-    package: "@veltodefi/utils",
+    package: "@orderly.network/utils",
     path: "../../packages/utils/src",
     watch: false,
   },
   {
-    package: "@veltodefi/types",
+    package: "@orderly.network/types",
     path: "../../packages/types/src",
     watch: false,
   },
   {
-    package: "@veltodefi/default-evm-adapter",
+    package: "@orderly.network/default-evm-adapter",
     path: "../../packages/default-evm-adapter/src",
     watch: false,
   },
   {
-    package: "@veltodefi/default-solana-adapter",
+    package: "@orderly.network/default-solana-adapter",
     path: "../../packages/default-solana-adapter/src",
     watch: false,
   },
   {
-    package: "@veltodefi/web3-provider-ethers",
+    package: "@orderly.network/web3-provider-ethers",
     path: "../../packages/web3-provider-ethers/src",
     watch: false,
   },
@@ -65,78 +65,78 @@ const base: Package[] = [
 
 const ui: Package[] = [
   {
-    package: "@veltodefi/ui/dist",
+    package: "@orderly.network/ui/dist",
     path: "../../packages/ui/dist",
     watch: true,
     alwaysWatch: true,
   },
   {
-    package: "@veltodefi/ui",
+    package: "@orderly.network/ui",
     path: "../../packages/ui/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-chain-selector",
+    package: "@orderly.network/ui-chain-selector",
     path: "../../packages/ui-chain-selector/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-connector",
+    package: "@orderly.network/ui-connector",
     path: "../../packages/ui-connector/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-leverage",
+    package: "@orderly.network/ui-leverage",
     path: "../../packages/ui-leverage/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-order-entry",
+    package: "@orderly.network/ui-order-entry",
     path: "../../packages/ui-order-entry/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-orders",
+    package: "@orderly.network/ui-orders",
     path: "../../packages/ui-orders/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-positions",
+    package: "@orderly.network/ui-positions",
     path: "../../packages/ui-positions/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-scaffold",
+    package: "@orderly.network/ui-scaffold",
     path: "../../packages/ui-scaffold/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-share",
+    package: "@orderly.network/ui-share",
     path: "../../packages/ui-share/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-tpsl",
+    package: "@orderly.network/ui-tpsl",
     path: "../../packages/ui-tpsl/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-tradingview",
+    package: "@orderly.network/ui-tradingview",
     path: "../../packages/ui-tradingview/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-transfer",
+    package: "@orderly.network/ui-transfer",
     path: "../../packages/ui-transfer/src",
     watch: true,
   },
   {
-    package: "@veltodefi/chart",
+    package: "@orderly.network/chart",
     path: "../../packages/chart/src",
     watch: true,
   },
   {
-    package: "@veltodefi/ui-notification",
+    package: "@orderly.network/ui-notification",
     path: "../../packages/ui-notification/src",
     watch: true,
   },
@@ -144,42 +144,42 @@ const ui: Package[] = [
 
 const page: Package[] = [
   {
-    package: "@veltodefi/affiliate",
+    package: "@orderly.network/affiliate",
     path: "../../packages/affiliate/src",
     watch: true,
   },
   {
-    package: "@veltodefi/markets",
+    package: "@orderly.network/markets",
     path: "../../packages/markets/src",
     watch: true,
   },
   {
-    package: "@veltodefi/portfolio",
+    package: "@orderly.network/portfolio",
     path: "../../packages/portfolio/src",
     watch: true,
   },
   {
-    package: "@veltodefi/trading",
+    package: "@orderly.network/trading",
     path: "../../packages/trading/src",
     watch: true,
   },
   {
-    package: "@veltodefi/trading-leaderboard",
+    package: "@orderly.network/trading-leaderboard",
     path: "../../packages/trading-leaderboard/src",
     watch: true,
   },
   {
-    package: "@veltodefi/trading-points",
+    package: "@orderly.network/trading-points",
     path: "../../packages/trading-points/src",
     watch: true,
   },
   {
-    package: "@veltodefi/trading-rewards",
+    package: "@orderly.network/trading-rewards",
     path: "../../packages/trading-rewards/src",
     watch: true,
   },
   {
-    package: "@veltodefi/vaults",
+    package: "@orderly.network/vaults",
     path: "../../packages/vaults/src",
     watch: true,
   },
@@ -187,26 +187,26 @@ const page: Package[] = [
 
 const walletConnect: Package[] = [
   {
-    package: "@veltodefi/wallet-connector",
+    package: "@orderly.network/wallet-connector",
     path: "../../packages/wallet-connector/src",
     watch: true,
   },
   {
-    package: "@veltodefi/wallet-connector-privy",
+    package: "@orderly.network/wallet-connector-privy",
     path: "../../packages/wallet-connector-privy/src",
     watch: true,
   },
 ];
 
 const i18n: Package[] = [
-  // need to before @veltodefi/i18n
+  // need to before @orderly.network/i18n
   {
-    package: "@veltodefi/i18n/locales",
+    package: "@orderly.network/i18n/locales",
     path: "../../packages/i18n/locales",
     watch: true,
   },
   {
-    package: "@veltodefi/i18n",
+    package: "@orderly.network/i18n",
     path: "../../packages/i18n/src",
     watch: true,
   },
@@ -224,10 +224,10 @@ export function getWatchPackages() {
   const watchPackages = process.env.VITE_WATCH_PACKAGES?.split(",").map(
     (item) => {
       const packageName = item.trim();
-      if (packageName.startsWith("@veltodefi/")) {
+      if (packageName.startsWith("@orderly.network/")) {
         return packageName;
       }
-      return `${"@veltodefi/"}${packageName}`;
+      return `${"@orderly.network/"}${packageName}`;
     },
   );
 

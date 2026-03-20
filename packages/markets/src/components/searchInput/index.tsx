@@ -1,12 +1,6 @@
 import React, { useRef, useCallback } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import {
-  Box,
-  CloseCircleFillIcon,
-  cn,
-  Input,
-  InputProps,
-} from "@veltodefi/ui";
+import { Box, CloseCircleFillIcon, cn, Input, InputProps } from "@veltodefi/ui";
 import { SearchIcon } from "../../icons";
 import { useMarketsContext } from "../marketsProvider";
 
@@ -43,7 +37,10 @@ export const SearchInput: React.FC<SearchInputProps> = (props) => {
       classNames={{
         ...classNames,
         // use mt-px to fix the top border issue
-        root: cn("oui-mt-px oui-border oui-border-line", classNames?.root),
+        root: cn(
+          "oui-mt-px oui-border oui-border-line focus-within:oui-border-transparent",
+          classNames?.root,
+        ),
       }}
       size="sm"
       prefix={

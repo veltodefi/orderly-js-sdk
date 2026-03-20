@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useMaxQty, utils } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import { API, OrderSide } from "@veltodefi/types";
+import { API, MarginMode, OrderSide } from "@veltodefi/types";
 import { AlgoOrderRootType } from "@veltodefi/types";
 import {
   cn,
@@ -10,7 +10,7 @@ import {
   toast,
   Text,
   Slider,
-  MainButton,
+  Button,
   PopoverTrigger,
   PopoverRoot,
   PopoverContent,
@@ -173,6 +173,11 @@ export const QuantityCell = (props: {
     if (order?.tag !== undefined) {
       // @ts-ignore
       params["order_tag"] = order.tag;
+    }
+
+    // include original margin_mode so backend receives it when editing
+    if (order.margin_mode !== undefined) {
+      params.margin_mode = order.margin_mode;
     }
 
     let future;
@@ -385,7 +390,10 @@ const EditState: FC<{
     order,
   } = props;
 
-  const maxBuyQty = useMaxQty(symbol, order.side, order.reduce_only);
+  const maxBuyQty = useMaxQty(symbol, order.side, {
+    reduceOnly: order.reduce_only,
+    marginMode: order.margin_mode ?? MarginMode.CROSS,
+  });
 
   const maxQty = useMemo(() => {
     if (reduce_only) {
@@ -558,9 +566,10 @@ const Buttons = (props: { onClick: (value: number) => void }) => {
     <Flex gap={2} width={"100%"}>
       {list.map((item, index) => {
         return (
-          <MainButton
+          <Button
             key={index}
-            variant="secondary"
+            variant="outlined"
+            color="secondary"
             size="xs"
             onClick={(e) => {
               e.stopPropagation();
@@ -570,7 +579,7 @@ const Buttons = (props: { onClick: (value: number) => void }) => {
             className="oui-w-1/5"
           >
             {item.label}
-          </MainButton>
+          </Button>
         );
       })}
     </Flex>

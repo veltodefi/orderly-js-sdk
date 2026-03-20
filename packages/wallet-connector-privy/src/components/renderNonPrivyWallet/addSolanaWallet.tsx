@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { ChainNamespace } from "@veltodefi/types";
-import {
-  ChevronDownIcon,
-  ChevronUpIcon,
-  cn,
-  Tooltip,
-} from "@veltodefi/ui";
+import { ChevronDownIcon, ChevronUpIcon, cn, Tooltip } from "@veltodefi/ui";
 import { useWallet } from "../../hooks/useWallet";
 import { useWalletConnectorPrivy } from "../../provider";
 import { useSolanaWallet } from "../../providers/solana/solanaWalletProvider";
@@ -53,7 +48,7 @@ export function AddSolanaWallet() {
   }, [open]);
 
   return (
-    <div className="oui-rounded-[8px] oui-bg-[#07080A] oui-px-2 oui-py-[11px]">
+    <div className="oui-rounded-[8px] oui-bg-base-10 oui-px-2 oui-py-[11px]">
       <Tooltip
         className="oui-z-[65] oui-max-w-[200px] oui-text-warning-darken"
         open={open}
@@ -94,7 +89,7 @@ export function AddSolanaWallet() {
         {wallets.map((item, index) => (
           <div
             key={index}
-            className="oui-flex oui-cursor-pointer oui-items-center oui-justify-start  oui-gap-1 oui-bg-[#131519] oui-px-2 oui-py-[11px]"
+            className="oui-flex oui-cursor-pointer oui-items-center oui-justify-start  oui-gap-1 oui-bg-base-9 oui-px-2 oui-py-[11px]"
             onClick={() =>
               connect({
                 walletType: WalletConnectType.SOL,

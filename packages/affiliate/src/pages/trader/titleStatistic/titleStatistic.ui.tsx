@@ -1,9 +1,10 @@
 import { FC } from "react";
-import { Flex, Select, Text } from "@veltodefi/ui";
 import { VolBarChart } from "@veltodefi/chart";
-import { TitleStatisticReturns } from "./titleStatistic.script";
-import { Decimal } from "@veltodefi/utils";
 import { useTranslation } from "@veltodefi/i18n";
+import { Flex, Select, Text } from "@veltodefi/ui";
+import { Decimal } from "@veltodefi/utils";
+import { TitleStatisticReturns } from "./titleStatistic.script";
+
 export const TitleStatistic: FC<TitleStatisticReturns> = (props) => {
   return (
     <Flex
@@ -19,7 +20,7 @@ export const TitleStatistic: FC<TitleStatisticReturns> = (props) => {
       <Flex className="oui-min-h-[170px] oui-h-full oui-w-full oui-flex oui-flex-row oui-items-stretch">
         <VolBarChart
           data={props.dataSource}
-          colors={{ fill: "rgba(0, 180, 158, 1)" }}
+          colors={{ fill: "rgb(var(--oui-color-success))" }}
           className="oui-w-full oui-flex-1"
           tooltip={{
             rm: Decimal.ROUND_DOWN,

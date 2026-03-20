@@ -1,13 +1,14 @@
-const { withTV } = require("tailwind-variants/transformer");
-
-const { sizePlugin } = require("./src/tailwind/size");
-const { gradientPlugin } = require("./src/tailwind/gradient");
-const { positionPlugin } = require("./src/tailwind/position");
-const { basePlugin } = require("./src/tailwind/base");
-const { componentsPlugin } = require("./src/tailwind/components");
-const { themePlugin } = require("./src/tailwind/theme");
-const { scrollBarPlugin } = require("./src/tailwind/scrollBar");
-const { chartPlugin } = require("./src/tailwind/chart");
+import { withTV } from "tailwind-variants/transformer";
+import {
+  darkThemePlugin,
+  basePlugin,
+  sizePlugin,
+  chartPlugin,
+  gradientPlugin,
+  positionPlugin,
+  componentsPlugin,
+  scrollBarPlugin,
+} from "./src/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = withTV({
@@ -101,18 +102,6 @@ module.exports = withTV({
         xl: "var(--oui-spacing-xl, 33.75rem)", // 540px
       },
       colors: {
-        surface: {
-          background: {
-            "medium-dark":
-              "rgb(var(--oui-surface-background-medium-dark, 31 31 31) / <alpha-value>)",
-          },
-        },
-        brand: {
-          primaryPressed: {
-            DEFAULT:
-              "rgb(var(--oui-color-brand-primary-pressed) / <alpha-value>)",
-          },
-        },
         primary: {
           DEFAULT: "rgb(var(--oui-color-primary) / <alpha-value>)",
           light: "rgb(var(--oui-color-primary-light) / <alpha-value>)",
@@ -168,16 +157,35 @@ module.exports = withTV({
             80: "rgb(var(--oui-color-base-foreground) / 0.80)",
             54: "rgb(var(--oui-color-base-foreground) / 0.54)",
             36: "rgb(var(--oui-color-base-foreground) / 0.36)",
+            30: "rgb(var(--oui-color-base-foreground) / 0.30)",
             20: "rgb(var(--oui-color-base-foreground) / 0.2)",
             16: "rgb(var(--oui-color-base-foreground) / 0.16)",
             12: "rgb(var(--oui-color-base-foreground) / 0.12)",
+            10: "rgb(var(--oui-color-base-foreground) / 0.10)",
+            8: "rgb(var(--oui-color-base-foreground) / 0.08)",
+            6: "rgb(var(--oui-color-base-foreground) / 0.06)",
             4: "rgb(var(--oui-color-base-foreground) / 0.04)",
+          },
+          static: {
+            DEFAULT: "rgb(var(--oui-color-base-static) / 0.98)",
+            80: "rgb(var(--oui-color-base-static) / 0.80)",
+            54: "rgb(var(--oui-color-base-static) / 0.54)",
+            36: "rgb(var(--oui-color-base-static) / 0.36)",
+            20: "rgb(var(--oui-color-base-static) / 0.2)",
+            contrast: {
+              DEFAULT: "rgb(var(--oui-color-base-static-contrast) / 0.98)",
+              80: "rgb(var(--oui-color-base-static-contrast) / 0.80)",
+              54: "rgb(var(--oui-color-base-static-contrast) / 0.54)",
+              36: "rgb(var(--oui-color-base-static-contrast) / 0.36)",
+              20: "rgb(var(--oui-color-base-static-contrast) / 0.2)",
+            },
           },
         },
         line: {
           4: "rgb(var(--oui-color-line, 255 255 255) / 0.04)",
           6: "rgb(var(--oui-color-line, 255 255 255) / 0.06)",
           DEFAULT: "rgb(var(--oui-color-line, 255 255 255) / 0.08)",
+          10: "rgb(var(--oui-color-line, 255 255 255) / 0.10)",
           12: "rgb(var(--oui-color-line, 255 255 255) / 0.12)",
           16: "rgb(var(--oui-color-line, 255 255 255) / 0.16)",
         },
@@ -193,61 +201,6 @@ module.exports = withTV({
             contrast:
               "rgb(var(--oui-color-trading-profit-contrast) / <alpha-value>)",
           },
-        },
-        mainButton: {
-          DEFAULT: "rgb(var(--oui-color-main-button) / <alpha-value>)",
-          contrast:
-            "rgb(var(--oui-color-main-button-contrast) / <alpha-value>)",
-          hover: "rgb(var(--oui-color-main-button-hover) / <alpha-value>)",
-          hoverContrast:
-            "rgb(var(--oui-color-main-button-hover-contrast) / <alpha-value>)",
-          pressed: "rgb(var(--oui-color-main-button-pressed) / <alpha-value>)",
-          pressedContrast:
-            "rgb(var(--oui-color-main-button-pressed-contrast) / <alpha-value>)",
-          focus: "rgb(var(--oui-color-main-button-focus) / <alpha-value>)",
-          focusContrast:
-            "rgb(var(--oui-color-main-button-focus-contrast) / <alpha-value>)",
-          disabled:
-            "rgb(var(--oui-color-main-button-disabled) / <alpha-value>)",
-          disabledContrast:
-            "rgb(var(--oui-color-main-button-disabled-contrast) / <alpha-value>)",
-          disabledBorder:
-            "rgb(var(--oui-color-main-button-disabled-border) / <alpha-value>)",
-          loading: "rgb(var(--oui-color-main-button-loading) / <alpha-value>)",
-          loadingContrast:
-            "rgb(var(--oui-color-main-button-loading-contrast) / <alpha-value>)",
-          loadingSpinnerRing:
-            "rgb(var(--oui-color-main-button-loading-spinner-ring) / <alpha-value>)",
-          loadingSpinnerFill:
-            "rgb(var(--oui-color-main-button-loading-spinner-fill) / <alpha-value>)",
-          inverted:
-            "rgb(var(--oui-color-main-button-inverted) / <alpha-value>)",
-          invertedContrast:
-            "rgb(var(--oui-color-main-button-inverted-contrast) / <alpha-value>)",
-          invertedHover:
-            "rgb(var(--oui-color-main-button-inverted-hover) / <alpha-value>)",
-          invertedHoverContrast:
-            "rgb(var(--oui-color-main-button-inverted-hover-contrast) / <alpha-value>)",
-          invertedPressed:
-            "rgb(var(--oui-color-main-button-inverted-pressed) / <alpha-value>)",
-          invertedPressedContrast:
-            "rgb(var(--oui-color-main-button-inverted-pressed-contrast) / <alpha-value>)",
-          invertedFocus:
-            "rgb(var(--oui-color-main-button-inverted-focus) / <alpha-value>)",
-          invertedFocusContrast:
-            "rgb(var(--oui-color-main-button-inverted-focus-contrast) / <alpha-value>)",
-          invertedDisabled:
-            "rgb(var(--oui-color-main-button-inverted-disabled) / <alpha-value>)",
-          invertedDisabledContrast:
-            "rgb(var(--oui-color-main-button-inverted-disabled-contrast) / <alpha-value>)",
-          invertedLoading:
-            "rgb(var(--oui-color-main-button-inverted-loading) / <alpha-value>)",
-          invertedLoadingContrast:
-            "rgb(var(--oui-color-main-button-inverted-loading-contrast) / <alpha-value>)",
-          invertedLoadingSpinnerRing:
-            "rgb(var(--oui-color-main-button-inverted-loading-spinner-ring) / <alpha-value>)",
-          invertedLoadingSpinnerFill:
-            "rgb(var(--oui-color-main-button-inverted-loading-spinner-fill) / <alpha-value>)",
         },
         // gradient: {
         //   success: 'linear-gradient(var(--oui-linear-degree, 90deg), var(--oui-color-success) 0%, var(--oui-color-success-darken) 100%)',
@@ -307,7 +260,7 @@ module.exports = withTV({
     },
   },
   plugins: [
-    themePlugin(),
+    darkThemePlugin(),
     basePlugin(),
     sizePlugin(),
     chartPlugin(),
@@ -315,7 +268,6 @@ module.exports = withTV({
     positionPlugin(),
     componentsPlugin(),
     scrollBarPlugin(),
-    require("@tailwindcss/container-queries"),
     require("tailwindcss-animate"),
   ],
 });

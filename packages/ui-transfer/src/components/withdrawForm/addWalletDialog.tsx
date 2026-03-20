@@ -14,7 +14,7 @@ import {
   CloseRoundFillIcon,
   ChainIcon,
 } from "@veltodefi/ui";
-import { CurrentChain } from "../depositForm/hooks";
+import { CurrentChain } from "../../types";
 import { validateWalletAddress } from "./withdrawForm.script";
 
 interface AddWalletDialogProps {
@@ -166,8 +166,8 @@ export const AddWalletDialog: FC<AddWalletDialogProps> = ({
             onValueChange={onAddressChange}
             autoFocus
             color={showBorderDanger ? "danger" : undefined}
-            className={cn("oui-bg-transparent oui-bg-base-6")}
-            classNames={{ input: "oui-text-white" }}
+            className={cn("oui-bg-base-6 oui-bg-transparent")}
+            classNames={{ input: "oui-text-base-contrast" }}
             suffix={
               address && (
                 <Box className="oui-ml-2.5 oui-mr-2 oui-cursor-pointer">

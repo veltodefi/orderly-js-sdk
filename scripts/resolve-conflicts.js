@@ -600,15 +600,122 @@ const remainingConflictsForLodash = new Set(
     .filter(Boolean) || [],
 );
 
-const lodashFiles = findFilesWithPattern(
-  process.cwd(),
-  /["']lodash["']|["']@types\/lodash["']/,
+// 8a: Handle package.json files via pnpm (proper version resolution)
+const workspaceDirs = ["apps", "packages"];
+let lodashPkgCount = 0;
+
+for (const wsDir of workspaceDirs) {
+  const wsDirPath = path.join(process.cwd(), wsDir);
+  let entries;
+  try {
+    entries = fs.readdirSync(wsDirPath, { withFileTypes: true });
+  } catch {
+    continue;
+  }
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const pkgJsonPath = path.join(wsDirPath, entry.name, "package.json");
+    const relativePkgJson = path.relative(process.cwd(), pkgJsonPath);
+
+    if (remainingConflictsForLodash.has(relativePkgJson)) continue;
+
+    let pkgJson;
+    try {
+      pkgJson = JSON.parse(fs.readFileSync(pkgJsonPath, "utf-8"));
+    } catch {
+      continue;
+    }
+
+    const hasLodash =
+      "lodash" in (pkgJson.dependencies || {}) ||
+      "lodash" in (pkgJson.devDependencies || {});
+    const hasTypesLodash =
+      "@types/lodash" in (pkgJson.dependencies || {}) ||
+      "@types/lodash" in (pkgJson.devDependencies || {});
+
+    if (!hasLodash && !hasTypesLodash) continue;
+
+    const pkgName = pkgJson.name;
+    console.log(`  Processing ${relativePkgJson} (${pkgName})...`);
+
+    // Determine which section each dep is in
+    const lodashInDev = "lodash" in (pkgJson.devDependencies || {});
+    const typesInDev = "@types/lodash" in (pkgJson.devDependencies || {});
+
+    // Remove lodash and @types/lodash
+    const toRemove = [];
+    if (hasLodash) toRemove.push("lodash");
+    if (hasTypesLodash) toRemove.push("@types/lodash");
+
+    try {
+      execSync(`pnpm --filter "${pkgName}" remove ${toRemove.join(" ")}`, {
+        stdio: "pipe",
+        cwd: process.cwd(),
+      });
+    } catch (err) {
+      console.error(
+        `    ✗ Failed to remove ${toRemove.join(", ")}: ${err.message}`,
+      );
+      continue;
+    }
+
+    // Install lodash.merge and @types/lodash.merge in the correct sections
+    const addDeps = [];
+    const addDevDeps = [];
+
+    if (hasLodash) {
+      if (lodashInDev) {
+        addDevDeps.push("lodash.merge");
+      } else {
+        addDeps.push("lodash.merge");
+      }
+    }
+    if (hasTypesLodash) {
+      if (typesInDev) {
+        addDevDeps.push("@types/lodash.merge");
+      } else {
+        addDeps.push("@types/lodash.merge");
+      }
+    }
+
+    try {
+      if (addDeps.length > 0) {
+        execSync(`pnpm --filter "${pkgName}" add ${addDeps.join(" ")}`, {
+          stdio: "pipe",
+          cwd: process.cwd(),
+        });
+      }
+      if (addDevDeps.length > 0) {
+        execSync(`pnpm --filter "${pkgName}" add -D ${addDevDeps.join(" ")}`, {
+          stdio: "pipe",
+          cwd: process.cwd(),
+        });
+      }
+      console.log(`    ✓ Swapped to lodash.merge`);
+      lodashPkgCount++;
+    } catch (err) {
+      console.error(`    ✗ Failed to add lodash.merge: ${err.message}`);
+    }
+  }
+}
+
+console.log(
+  `\nSwapped lodash → lodash.merge in ${lodashPkgCount} packages via pnpm.`,
 );
 
-console.log(`Found ${lodashFiles.length} files with lodash references\n`);
+// 8b: Handle source files (import/require replacements)
+const lodashSourceFiles = findFilesWithPattern(
+  process.cwd(),
+  /["']lodash["']|["']@types\/lodash["']/,
+).filter(({ relativePath }) => !relativePath.endsWith("package.json"));
+
+console.log(
+  `\nFound ${lodashSourceFiles.length} source files with lodash references\n`,
+);
 
 let lodashUpdatedCount = 0;
-for (const { path: filePath, relativePath } of lodashFiles) {
+for (const { path: filePath, relativePath } of lodashSourceFiles) {
   if (remainingConflictsForLodash.has(relativePath)) continue;
 
   try {
@@ -626,13 +733,13 @@ for (const { path: filePath, relativePath } of lodashFiles) {
 
     if (content !== updated) {
       fs.writeFileSync(filePath, updated);
-      console.log(`  \u2713 ${relativePath}`);
+      console.log(`  ✓ ${relativePath}`);
       lodashUpdatedCount++;
     }
   } catch (err) {
-    console.error(`  \u2717 ${relativePath}: ${err.message}`);
+    console.error(`  ✗ ${relativePath}: ${err.message}`);
   }
 }
 
-console.log(`\nUpdated ${lodashUpdatedCount} files.`);
+console.log(`\nUpdated ${lodashUpdatedCount} source files.`);
 console.log("\nAll done!");

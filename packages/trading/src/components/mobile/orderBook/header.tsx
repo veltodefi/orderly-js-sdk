@@ -1,13 +1,7 @@
 import React, { FC, useMemo } from "react";
 import { useLocalStorage } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import {
-  CaretDownIcon,
-  CaretUpIcon,
-  Flex,
-  Picker,
-  Text,
-} from "@veltodefi/ui";
+import { CaretDownIcon, CaretUpIcon, Flex, Picker, Text } from "@veltodefi/ui";
 import { SelectOption } from "@veltodefi/ui/src/select/withOptions";
 import { ORDERBOOK_MOBILE_COIN_TYPE_KEY } from "../../base/orderBook/orderContext";
 
@@ -56,6 +50,7 @@ export const Header: FC<Props> = (props) => {
         direction={"column"}
         itemAlign={"start"}
         id="oui-order-book-header-price"
+        className="oui-orderBook-header-price"
       >
         <Text>{t("common.price")}</Text>
         <Text>{`(${quote})`}</Text>

@@ -1,13 +1,12 @@
 import { useEffect, useMemo, useRef } from "react";
-import omit from "ramda/es/omit";
-import pathOr from "ramda/es/pathOr";
-import { type SWRConfiguration } from "swr";
 import {
   AlgoOrderRootType,
   EMPTY_OBJECT,
   OrderStatus,
   type API,
 } from "@veltodefi/types";
+import { pathOr, omit } from "ramda";
+import { type SWRConfiguration } from "swr";
 import { useApiStatusStore } from "../../next/apiStatus/apiStatus.store";
 import { CalculatorScope } from "../../types";
 import { useCalculatorService } from "../../useCalculatorService";
@@ -281,7 +280,7 @@ export const usePositionStream = (
       rows = rows.map((item) => {
         // Find TP/SL orders matching this position's symbol
         const { fullPositionOrder, partialPositionOrders } =
-          findPositionTPSLFromOrders(tpslOrders, item.symbol);
+          findPositionTPSLFromOrders(tpslOrders, item.symbol, item.margin_mode);
 
         // Extract TP/SL prices from full position order
         const full_tp_sl = fullPositionOrder

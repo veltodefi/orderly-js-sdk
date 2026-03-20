@@ -7,8 +7,6 @@ export {
   useWalletConnectorPrivy,
 } from "./provider";
 export { UserCenter, MwebUserCenter } from "./components/userCenter";
-export { EmbeddedConnector } from "./components/embeddedConnector";
-
 export * from "./types";
 
 export const viem = viemExport;

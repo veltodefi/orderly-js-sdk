@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   useAccountInfo,
   useLocalStorage,
@@ -13,7 +13,7 @@ import {
   account as accountPerp,
   positions as positionsPerp,
 } from "@veltodefi/perp";
-import { OrderSide } from "@veltodefi/types";
+import { MarginMode, OrderSide } from "@veltodefi/types";
 import { modal, SliderMarks, toast, useScreen, Text } from "@veltodefi/ui";
 import { zero } from "@veltodefi/utils";
 
@@ -25,6 +25,7 @@ export type SymbolLeverageScriptOptions = {
   symbol: string;
   side?: OrderSide;
   curLeverage: number;
+  marginMode: MarginMode;
 };
 
 export type SymbolLeverageScriptReturns = ReturnType<
@@ -34,7 +35,7 @@ export type SymbolLeverageScriptReturns = ReturnType<
 export const useSymbolLeverageScript = (
   options: SymbolLeverageScriptOptions & UseLeverageScriptOptions,
 ) => {
-  const { curLeverage = 1, symbol, side } = options;
+  const { curLeverage = 1, symbol, side, marginMode } = options;
   const [showSliderTip, setShowSliderTip] = useState(false);
   // Local leverage value used by the input and slider; it tracks the in-flight user edits.
   // We seed it with curLeverage but intentionally do not sync further changes to avoid jumping while editing.
@@ -50,6 +51,11 @@ export const useSymbolLeverageScript = (
     isLoading,
   } = useSymbolLeverage(symbol);
 
+  // Sync when external current leverage changes (e.g. symbol or margin mode changed)
+  useEffect(() => {
+    setLeverage(curLeverage);
+  }, [curLeverage]);
+
   const maxLeverage = originalMaxLeverage;
 
   const {
@@ -58,7 +64,7 @@ export const useSymbolLeverageScript = (
     maxPositionLeverage,
     overMaxPositionLeverage,
     overRequiredMargin,
-  } = useCalc({ symbol: symbol!, leverage, maxLeverage });
+  } = useCalc({ symbol: symbol!, leverage, maxLeverage, marginMode });
 
   const formattedLeverageLevers = useMemo(() => {
     return generateLeverageLeversForSelector(maxLeverage);
@@ -114,7 +120,7 @@ export const useSymbolLeverageScript = (
 
   const onConfirmSave = async () => {
     try {
-      update?.({ leverage, symbol }).then(
+      update?.({ leverage, symbol, margin_mode: marginMode }).then(
         (res) => {
           if (res.success) {
             options?.close?.();
@@ -185,6 +191,7 @@ export const useSymbolLeverageScript = (
     overRequiredMargin,
     isBuy,
     isMobile,
+    marginMode,
   };
 };
 
@@ -300,8 +307,9 @@ function useCalc(inputs: {
   symbol: string;
   leverage: number;
   maxLeverage: number;
+  marginMode: MarginMode;
 }) {
-  const { symbol, leverage, maxLeverage } = inputs;
+  const { symbol, leverage, maxLeverage, marginMode } = inputs;
 
   const symbolsInfo = useSymbolsInfo();
   const { data: accountInfo } = useAccountInfo();
@@ -318,9 +326,11 @@ function useCalc(inputs: {
 
   const position = useMemo(() => {
     if (symbol && positions?.rows?.length) {
-      return positions.rows.find((item) => item.symbol === symbol);
+      return positions.rows.find(
+        (item) => item.symbol === symbol && item.margin_mode === marginMode,
+      );
     }
-  }, [positions, symbol]);
+  }, [positions, symbol, marginMode]);
 
   /** the highest allowable leverage. Block users from setting leverage above this limit. */
   const maxPositionLeverage = useMemo(() => {
@@ -362,7 +372,7 @@ function useCalc(inputs: {
 
     const positionList = leverage
       ? positions?.rows.map((item) => {
-          if (item.symbol === symbol) {
+          if (item.symbol === symbol && item.margin_mode === marginMode) {
             return {
               ...item,
               leverage,
@@ -371,13 +381,25 @@ function useCalc(inputs: {
           return item;
         })
       : positions?.rows;
+    const maxLeverageBySymbol =
+      positionList?.reduce<Record<string, number>>((acc, item) => {
+        if (
+          item.margin_mode !== MarginMode.ISOLATED &&
+          item.leverage &&
+          !acc[item.symbol]
+        ) {
+          acc[item.symbol] = item.leverage;
+        }
+        return acc;
+      }, {}) ?? {};
 
+    // TODO: Pass actual orders data for accurate initial margin calculation
     const totalInitialMarginWithOrders = accountPerp.totalInitialMarginWithQty({
       positions: positionList,
+      orders: [],
       markPrices,
       IMR_Factors: accountInfo.imr_factor,
-      // not used
-      maxLeverage: accountInfo.max_leverage,
+      maxLeverageBySymbol,
       symbolInfo: symbolsInfo,
     });
 
@@ -395,6 +417,7 @@ function useCalc(inputs: {
     totalCollateral,
     leverage,
     symbol,
+    marginMode,
   ]);
 
   const overRequiredMargin = useMemo(() => {

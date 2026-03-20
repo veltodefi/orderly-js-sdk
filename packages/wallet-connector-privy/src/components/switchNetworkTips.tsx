@@ -1,17 +1,8 @@
 import React, { useMemo } from "react";
 import { useStorageChain } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import {
-  AbstractChains,
-  ChainNamespace,
-  SolanaChains,
-} from "@veltodefi/types";
-import {
-  ExclamationFillIcon,
-  Flex,
-  modal,
-  useScreen,
-} from "@veltodefi/ui";
+import { AbstractChains, ChainNamespace, SolanaChains } from "@veltodefi/types";
+import { ExclamationFillIcon, Flex, modal, useScreen } from "@veltodefi/ui";
 import { useWalletConnectorPrivy } from "../provider";
 import { WalletType } from "../types";
 import { ArrowRightIcon } from "./icons";
@@ -47,7 +38,7 @@ export function SwitchNetworkTips({
   return (
     <div
       onClick={onSwitchNetwork}
-      className="oui-mb-3 oui-flex oui-cursor-pointer oui-items-center oui-justify-between  oui-gap-1 oui-rounded-[8px] oui-bg-[rgba(255,125,0,0.1)] oui-px-2 oui-py-[6px] "
+      className="oui-mb-3 oui-flex oui-cursor-pointer oui-items-center oui-justify-between  oui-gap-1 oui-rounded-[8px] oui-bg-[rgba(var(--oui-color-warning-darken),0.1)] oui-px-2 oui-py-[6px] "
     >
       <Flex gap={1}>
         <ExclamationFillIcon
@@ -60,7 +51,7 @@ export function SwitchNetworkTips({
           })}
         </div>
       </Flex>
-      <ArrowRightIcon size={14} className="oui-text-[#FF7D00]" />
+      <ArrowRightIcon size={14} className="oui-text-warning-darken" />
     </div>
   );
 }

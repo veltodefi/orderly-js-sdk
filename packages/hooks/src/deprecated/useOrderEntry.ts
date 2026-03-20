@@ -1,12 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import compose from "ramda/es/compose";
-import head from "ramda/es/head";
-import omit from "ramda/es/omit";
-import pick from "ramda/es/pick";
-import { useDebouncedCallback } from "use-debounce";
 import { order as orderUtils } from "@veltodefi/perp";
 import {
   API,
+  MarginMode,
   OrderEntity,
   OrderlyOrder,
   OrderSide,
@@ -14,7 +10,10 @@ import {
   SDKError,
 } from "@veltodefi/types";
 import { Decimal, getPrecisionByNumber } from "@veltodefi/utils";
+import { compose, head, includes, omit, pick } from "ramda";
+import { useDebouncedCallback } from "use-debounce";
 import { useCollateral } from "../orderly/useCollateral";
+import { useMarginModeBySymbol } from "../orderly/useMarginModes";
 // import { availableOrderTypes } from "../utils/createOrder";
 import { useMarkPrice } from "../orderly/useMarkPrice";
 import { useMaxQty } from "../orderly/useMaxQty";
@@ -255,7 +254,15 @@ export function useOrderEntry(
     return { key, value, preValue };
   };
 
-  const maxQty = useMaxQty(symbol, sideValue, isReduceOnly);
+  const { marginMode: symbolMarginMode } = useMarginModeBySymbol(symbol);
+  const marginMode =
+    typeof symbolOrOrder === "object" && symbolOrOrder.margin_mode
+      ? symbolOrOrder.margin_mode
+      : symbolMarginMode;
+  const maxQty = useMaxQty(symbol, sideValue, {
+    reduceOnly: isReduceOnly,
+    marginMode: marginMode ?? MarginMode.CROSS,
+  });
 
   const parseString2Number = (
     order: OrderParams & Record<string, any>,
