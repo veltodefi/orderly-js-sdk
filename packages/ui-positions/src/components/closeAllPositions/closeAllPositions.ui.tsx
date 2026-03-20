@@ -79,8 +79,7 @@ export const CloseAllPositions: FC<CloseAllPositionsProps> = (props) => {
       </Flex>
       <Flex gap={2} className="oui-justify-end oui-mt-1 oui-w-full">
         <MainButton
-          variant="outlined"
-          color="secondary"
+          variant="secondary"
           size={isMobile ? "lg" : "md"}
           onClick={() => setOpen(false)}
           fullWidth
@@ -88,8 +87,7 @@ export const CloseAllPositions: FC<CloseAllPositionsProps> = (props) => {
           {t("common.cancel")}
         </MainButton>
         <MainButton
-          variant="contained"
-          color="primary"
+          variant="primary"
           size={isMobile ? "lg" : "md"}
           loading={isClosing}
           onClick={handleConfirm}

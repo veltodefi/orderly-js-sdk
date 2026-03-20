@@ -7,10 +7,6 @@ type WalletProvider = (EIP1193Provider | SolanaWalletProvider) & {
   publicKey?: SolanaWalletProvider["publicKey"]; // For Solana providers
 };
 
-type WalletProvider = (EIP1193Provider | SolanaWalletProvider) & {
-  publicKey?: SolanaWalletProvider["publicKey"]; // For Solana providers
-};
-
 export type ConnectedChain = {
   id: number | string;
   namespace: ChainNamespace;

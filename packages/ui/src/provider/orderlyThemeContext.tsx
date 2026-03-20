@@ -3,7 +3,7 @@ import { ThemeCssVars } from "../tailwind";
 
 export type ComponentOverrides = {
   tabs: {
-    variant: "text" | "contained";
+    variant: "text" | "contained" | "inverted";
   };
   chainSelector: {
     /**
