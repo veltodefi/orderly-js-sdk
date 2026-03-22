@@ -1,5 +1,5 @@
 import { withTV } from "tailwind-variants/transformer";
-import { chartPlugin } from "@orderly.network/chart";
+import { chartPlugin } from "@veltodefi/chart";
 
 const path = require("path");
 
