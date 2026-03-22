@@ -97,6 +97,40 @@ export const DARK_THEME_CSS_VARS = {
   "--oui-spacing-md": "26.25rem",
   "--oui-spacing-lg": "30rem",
   "--oui-spacing-xl": "33.75rem",
+
+  /* main button colors */
+  "--oui-color-main-button": "154 236 219",
+  "--oui-color-main-button-contrast": "3 3 3",
+  "--oui-color-main-button-hover": "115 115 115",
+  "--oui-color-main-button-hover-contrast": "154 236 219",
+  "--oui-color-main-button-pressed": "143 143 143",
+  "--oui-color-main-button-pressed-contrast": "154 236 219",
+  "--oui-color-main-button-focus": "87 87 87",
+  "--oui-color-main-button-focus-contrast": "154 236 219",
+  "--oui-color-main-button-disabled": "32 79 69",
+  "--oui-color-main-button-disabled-contrast": "3 3 3",
+  "--oui-color-main-button-disabled-border": "32 79 69",
+  "--oui-color-main-button-loading": "115 115 115",
+  "--oui-color-main-button-loading-contrast": "154 236 219",
+  "--oui-color-main-button-loading-spinner-ring": "59 59 59",
+  "--oui-color-main-button-loading-spinner-fill": "143 143 143",
+  "--oui-color-main-button-inverted": "45 45 45",
+  "--oui-color-main-button-inverted-contrast": "115 115 115",
+  "--oui-color-main-button-inverted-hover": "59 59 59",
+  "--oui-color-main-button-inverted-hover-contrast": "115 115 115",
+  "--oui-color-main-button-inverted-pressed": "59 59 59",
+  "--oui-color-main-button-inverted-pressed-contrast": "154 236 219",
+  "--oui-color-main-button-inverted-focus": "87 87 87",
+  "--oui-color-main-button-inverted-focus-contrast": "115 115 115",
+  "--oui-color-main-button-inverted-disabled": "45 45 45",
+  "--oui-color-main-button-inverted-disabled-contrast": "87 87 87",
+  "--oui-color-main-button-inverted-loading": "45 45 45",
+  "--oui-color-main-button-inverted-loading-contrast": "115 115 115",
+  "--oui-color-main-button-inverted-loading-spinner-ring": "22 22 22",
+  "--oui-color-main-button-inverted-loading-spinner-fill": "154 236 219",
+
+  /* brand primary pressed */
+  "--oui-color-brand-primary-pressed": "214 255 246",
 };
 
 export type ThemeCssVars = typeof DARK_THEME_CSS_VARS;
