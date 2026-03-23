@@ -37,13 +37,13 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
       value={activeTab}
       onValueChange={handleTabChange}
       variant="contained"
-      size="lg"
+      size="xl"
       classNames={{
         tabsList: "oui-px-0",
         tabsContent:
           activeTab === "deposit"
-            ? "md:oui-h-[600px] oui-pt-5 oui-text-white oui-animate-in oui-slide-in-from-right oui-duration-300"
-            : "md:oui-h-[600px] oui-pt-5 oui-text-white oui-animate-in oui-slide-in-from-left oui-duration-300",
+            ? "md:oui-h-[630px] oui-pt-5 oui-text-white oui-animate-in oui-slide-in-from-right oui-duration-300"
+            : "md:oui-h-[630px] oui-pt-5 oui-text-white oui-animate-in oui-slide-in-from-left oui-duration-300",
       }}
     >
       <TabPanel

@@ -81,12 +81,14 @@ export const useFeatureFlag = (key: FlagKeys): UseFeatureFlagReturn => {
     }
 
     // 2. In public but not in private, hidden
-    if (privateFlag === undefined) {
-      return {
-        enabled: false,
-        data: undefined,
-      };
-    }
+    // TODO: Re-enable once Orderly activates isolated-margin for our account.
+    // Until then, bypass the private flag check so we can test the feature.
+    // if (privateFlag === undefined) {
+    //   return {
+    //     enabled: false,
+    //     data: undefined,
+    //   };
+    // }
 
     // 3. In both public and private, shown
     return {
