@@ -65,6 +65,6 @@ registerSimpleDialog(MarginModeSwitchDialogId, MarginModeSwitchWidget, {
   closable: false,
   classNames: {
     content: "oui-w-[360px] oui-bg-transparent !oui-px-0",
-    body: "oui-p-0",
+    body: "!oui-p-0",
   },
 });

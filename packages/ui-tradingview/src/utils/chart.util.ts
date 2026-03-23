@@ -1,6 +1,6 @@
 import { ColorConfigInterface } from "../tradingviewAdapter/type";
 
-const font = "regular 11px Manrope";
+const font = "regular 11px Satoshi";
 
 /** default dark theme color config */
 export const defaultColorConfig: Record<

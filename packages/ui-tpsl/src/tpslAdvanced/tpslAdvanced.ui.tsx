@@ -14,6 +14,7 @@ import {
   Divider,
   DotStatus,
   Flex,
+  MainButton,
   ScrollArea,
   Text,
 } from "@veltodefi/ui";
@@ -279,30 +280,23 @@ export const TPSLAdvancedUI = (props: Props) => {
         </div>
       </ScrollArea>
       <Flex className="oui-mt-6 oui-px-3" gap={2}>
-        <Button
+        <MainButton
           size="md"
           fullWidth
-          color="gray"
-          variant="outlined"
-          className="oui-text-base-contrast-36"
+          variant="secondary"
           onClick={props.onClose}
         >
           {t("common.cancel")}
-        </Button>
-        <Button
+        </MainButton>
+        <MainButton
           size="md"
           fullWidth
-          color="success"
-          className={cn(
-            formattedOrder.side === OrderSide.SELL
-              ? "oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"
-              : "oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80",
-          )}
+          variant="primary"
           onClick={props.onSubmit}
           disabled={!tpslEnable}
         >
           {t("tpsl.advanced.submit")}
-        </Button>
+        </MainButton>
       </Flex>
     </div>
   );

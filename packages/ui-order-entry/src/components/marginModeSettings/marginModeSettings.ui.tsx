@@ -2,7 +2,6 @@ import React, { FC, useCallback } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { MarginMode } from "@veltodefi/types";
 import {
-  Button,
   Checkbox,
   CloseCircleFillIcon,
   CloseIcon,
@@ -10,6 +9,7 @@ import {
   Flex,
   IconButton,
   Input,
+  MainButton,
   Text,
   cn,
 } from "@veltodefi/ui";
@@ -47,7 +47,7 @@ export const MarginModeSettings: FC<MarginModeSettingsProps> = (props) => {
 
   const selectedCount = props.selectedKeys.size;
   const totalCountTextClassName =
-    selectedCount > 0 ? "oui-text-primary-light" : "oui-text-base-contrast-36";
+    selectedCount > 0 ? "oui-text-primary-light" : "oui-text-base-contrast-80";
 
   const handleClearSearch = useCallback(() => {
     props.onSearchChange("");
@@ -210,7 +210,7 @@ export const MarginModeSettings: FC<MarginModeSettingsProps> = (props) => {
             </label>
           </Flex>
 
-          <Text className="oui-text-sm oui-text-base-contrast-54">
+          <Text className="oui-text-sm oui-text-base-contrast-80">
             {t("common.total")}:{" "}
             <span className={cn("oui-font-semibold", totalCountTextClassName)}>
               {selectedCount}
@@ -233,44 +233,36 @@ export const MarginModeSettings: FC<MarginModeSettingsProps> = (props) => {
             {t("marginMode.setAs")}
           </Text>
 
-          <Button
+          <MainButton
+            variant="primary"
             size="md"
-            className={cn(
-              "oui-bg-base-3 hover:oui-bg-base-3/80 active:oui-bg-base-3/70",
-              selectedCount > 0 && !props.isLoading
-                ? "oui-text-base-contrast-80"
-                : "oui-text-base-contrast-98",
-            )}
             disabled={
               selectedCount === 0 ||
               props.isLoading ||
               (props.isCrossButtonDisabled ?? false)
             }
+            loading={props.isLoading}
             onClick={handleSetCross}
             aria-label={t("marginMode.cross")}
             data-testid="oui-testid-marginModeSettings-set-cross"
           >
             {t("marginMode.cross")}
-          </Button>
-          <Button
+          </MainButton>
+          <MainButton
+            variant="primary"
             size="md"
-            className={cn(
-              "oui-bg-base-3 hover:oui-bg-base-3/80 active:oui-bg-base-3/70",
-              selectedCount > 0 && !props.isLoading
-                ? "oui-text-base-contrast-80"
-                : "oui-text-base-contrast-98",
-            )}
             disabled={
               selectedCount === 0 ||
               props.isLoading ||
               (props.isIsolatedButtonDisabled ?? false)
             }
+            loading={props.isLoading}
             onClick={handleSetIsolated}
             aria-label={t("marginMode.isolated")}
             data-testid="oui-testid-marginModeSettings-set-isolated"
           >
             {t("marginMode.isolated")}
-          </Button>
+          </MainButton>
         </Flex>
       </Flex>
     </Flex>
@@ -310,7 +302,7 @@ const SymbolRow: FC<{
             "oui-inline-flex oui-items-center",
             "oui-rounded oui-bg-base-6 oui-px-2 oui-py-0",
             "oui-h-[18px] oui-text-xs oui-leading-[18px]",
-            "oui-text-base-contrast-36",
+            "oui-text-base-contrast-80",
           )}
         >
           {props.marginMode === MarginMode.ISOLATED

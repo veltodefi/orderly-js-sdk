@@ -7,6 +7,7 @@ import {
   Divider,
   Flex,
   IconButton,
+  MainButton,
   Text,
   TokenIcon,
   cn,
@@ -125,31 +126,16 @@ export const MarginModeSwitch: FC<MarginModeSwitchProps> = (props) => {
         </Flex>
 
         <Flex justify="center" className="oui-mt-3 oui-w-full">
-          <button
-            type="button"
-            className={cn(
-              "oui-flex oui-items-center oui-gap-1",
-              "oui-group",
-              "oui-text-xs oui-leading-[15px] oui-font-semibold oui-text-base-contrast-54 oui-tracking-[0.03em]",
-              props.onOpenSettings
-                ? "oui-cursor-pointer hover:oui-text-base-contrast-80 oui-transition-colors"
-                : "oui-cursor-default",
-            )}
+          <MainButton
+            variant="tertiary"
+            size="sm"
+            trailing={<ChevronRightIcon size={14} />}
             onClick={props.onOpenSettings}
             disabled={!props.onOpenSettings}
             data-testid="oui-testid-marginModeSwitch-settings"
           >
-            <span>{t("marginMode.marginModeSettings")}</span>
-            <ChevronRightIcon
-              size={18}
-              color="white"
-              opacity={1}
-              className={cn(
-                "oui-text-base-contrast-54 oui-transition-colors",
-                props.onOpenSettings && "group-hover:oui-text-base-contrast-80",
-              )}
-            />
-          </button>
+            {t("marginMode.marginModeSettings")}
+          </MainButton>
         </Flex>
 
         {props.isMobile ? (
@@ -185,7 +171,7 @@ const OptionCard: FC<{
         "oui-bg-base-6",
         "oui-text-left",
         props.selected
-          ? "oui-border oui-border-[#38e2fe]"
+          ? "oui-border oui-border-primary-light"
           : "oui-border oui-border-transparent hover:oui-border-line-12",
       )}
       onClick={props.onClick}
@@ -198,7 +184,7 @@ const OptionCard: FC<{
         >
           {title}
         </Text>
-        <Text className="oui-text-2xs oui-leading-[15px] oui-text-base-contrast-36 oui-font-semibold oui-tracking-[0.03em]">
+        <Text className="oui-text-2xs oui-leading-[15px] oui-text-base-contrast-80 oui-tracking-[0.03em]">
           {desc}
         </Text>
       </Flex>
@@ -208,10 +194,10 @@ const OptionCard: FC<{
           className={cn(
             "oui-absolute -oui-right-px -oui-top-px",
             "oui-rounded-bl-md oui-rounded-tr-md",
-            "oui-bg-[#38e2fe] oui-px-1 oui-py-0.5",
+            "oui-bg-primary-light oui-px-1 oui-py-0.5",
           )}
         >
-          <Text className="oui-text-2xs oui-leading-none oui-font-semibold oui-text-black">
+          <Text className="oui-text-2xs oui-leading-none oui-font-semibold oui-text-base-static-contrast">
             {t("marginMode.current")}
           </Text>
         </div>
