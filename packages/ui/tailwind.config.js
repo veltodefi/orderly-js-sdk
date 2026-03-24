@@ -102,6 +102,12 @@ module.exports = withTV({
         xl: "var(--oui-spacing-xl, 33.75rem)", // 540px
       },
       colors: {
+        brand: {
+          primaryPressed: {
+            DEFAULT:
+              "rgb(var(--oui-color-brand-primary-pressed) / <alpha-value>)",
+          },
+        },
         primary: {
           DEFAULT: "rgb(var(--oui-color-primary) / <alpha-value>)",
           light: "rgb(var(--oui-color-primary-light) / <alpha-value>)",

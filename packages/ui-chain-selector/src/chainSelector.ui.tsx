@@ -68,14 +68,14 @@ const chainSelectorVariants = tv({
       variant: "compact",
       selected: true,
       className: {
-        item: "oui-bg-brand-primaryPressed oui-text-mainButton-contrast hover:oui-bg-brand-primaryPressed",
+        item: "!oui-bg-brand-primaryPressed oui-text-mainButton-contrast hover:!oui-bg-brand-primaryPressed",
       },
     },
     {
       variant: "wide",
       selected: true,
       className: {
-        item: "oui-bg-brand-primaryPressed oui-text-mainButton-contrast hover:oui-bg-brand-primaryPressed",
+        item: "!oui-bg-brand-primaryPressed oui-text-mainButton-contrast hover:!oui-bg-brand-primaryPressed",
       },
     },
   ],
