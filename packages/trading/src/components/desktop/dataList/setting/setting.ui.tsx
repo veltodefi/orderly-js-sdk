@@ -124,7 +124,7 @@ export const Setting: FC<SettingState> = (props) => {
   );
 
   return (
-    <Flex className="oui-preference" gap={0}>
+    <Flex className="oui-preference" gap={1}>
       <Flex gap={1}>
         <Checkbox
           id="oui-checkbox-hideOtherSymbols"

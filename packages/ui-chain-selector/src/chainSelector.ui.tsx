@@ -68,14 +68,14 @@ const chainSelectorVariants = tv({
       variant: "compact",
       selected: true,
       className: {
-        item: "hover:oui-bg-base-6",
+        item: "oui-bg-brand-primaryPressed oui-text-mainButton-contrast hover:oui-bg-brand-primaryPressed",
       },
     },
     {
       variant: "wide",
       selected: true,
       className: {
-        item: "hover:oui-bg-base-5",
+        item: "oui-bg-brand-primaryPressed oui-text-mainButton-contrast hover:oui-bg-brand-primaryPressed",
       },
     },
   ],
@@ -125,13 +125,7 @@ export const ChainSelector = (props: ChainSelectorProps) => {
     .filter(Boolean) as TChainItem[];
 
   const getMainnetItemClass = (selected: boolean) =>
-    cn(
-      item({ selected }),
-      selected
-        ? "oui-bg-brand-primaryPressed oui-text-mainButton-contrast"
-        : "hover:oui-bg-mainButton-hover",
-      "hover:oui-bg-mainButton-hover",
-    );
+    cn(item({ selected }), !selected && "hover:oui-bg-mainButton-hover");
 
   return (
     <Box className={cn("oui-font-semibold", props.className)}>
