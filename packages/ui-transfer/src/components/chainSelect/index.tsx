@@ -112,6 +112,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
       {renderRightIcon()}
     </Flex>
   );
+
   const content = chains.map((chain, index) => {
     const extendedChain = chain as API.NetworkInfos & {
       isSupported?: boolean;

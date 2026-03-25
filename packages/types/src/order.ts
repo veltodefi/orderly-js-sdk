@@ -25,6 +25,14 @@ export enum OrderType {
   TRAILING_STOP = "TRAILING_STOP",
 }
 
+/**
+ * Margin mode for the order
+ */
+export enum MarginMode {
+  ISOLATED = "ISOLATED",
+  CROSS = "CROSS",
+}
+
 export enum BBOOrderType {
   COUNTERPARTY1 = "counterparty1",
   COUNTERPARTY5 = "counterparty5",
@@ -93,6 +101,7 @@ export interface OrderExt {
 export interface BaseOrder {
   symbol: string;
   order_type: OrderType;
+  margin_mode: MarginMode;
   order_type_ext?: OrderType;
   order_price: string;
   order_quantity: string;
@@ -148,10 +157,7 @@ export interface TrailingStopOrder {
 }
 
 export interface RegularOrder
-  extends BaseOrder,
-    OrderExt,
-    ScaledOrder,
-    TrailingStopOrder {
+  extends BaseOrder, OrderExt, ScaledOrder, TrailingStopOrder {
   // symbol:           string;
   // client_order_id:  string;
   // type:       OrderType;
@@ -225,6 +231,7 @@ export interface TrailingStopOrder {
 export interface OrderEntity extends ScaledOrder, TrailingStopOrder {
   symbol: string;
   order_type: OrderType;
+  margin_mode?: MarginMode;
   algo_type?: AlgoOrderRootType;
   order_type_ext?: OrderType;
   order_price?: string;
@@ -261,8 +268,9 @@ export type RequireKeys<T extends object, K extends keyof T> = Required<
 > &
   Partial<Omit<T, K>>;
 
-export interface BaseAlgoOrderEntity<T extends AlgoOrderRootType>
-  extends OrderEntity {
+export interface BaseAlgoOrderEntity<
+  T extends AlgoOrderRootType,
+> extends OrderEntity {
   algo_type: AlgoOrderRootType;
   child_orders: (Partial<Omit<AlgoOrderEntity<T>, "algo_type" | "type">> & {
     algo_type: AlgoOrderType;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { API, PositionType } from "@veltodefi/types";
+import { API, MarginMode, PositionType } from "@veltodefi/types";
 import {
   Box,
   ChevronDownIcon,
@@ -33,11 +33,12 @@ export const TPSLDetailUI = (props: TPSLDetailState) => {
     symbolInfo,
   } = props;
   const { estLiqPrice } = useTPSLDetailContext();
-
+  console.log("----- position", position);
   return (
     <Box>
       <ScrollArea className={cn(isMobile && "oui-h-[calc(100vh-100px)]")}>
         <OrderInfo
+          marginMode={position.margin_mode ?? MarginMode.CROSS}
           order={{
             symbol: position.symbol,
             order_quantity: position.position_qty.toString(),
@@ -265,8 +266,9 @@ export const AddButton = (props: {
   };
   return (
     <ThrottledButton
-      variant="secondary"
+      variant="outlined"
       size="sm"
+      color="gray"
       className="oui-h-6 oui-w-[94px] oui-text-2xs"
       onClick={onAdd}
     >
@@ -284,9 +286,10 @@ export const CancelAllBtn = (props: {
   return (
     <ThrottledButton
       loading={loading}
-      variant="secondary"
+      variant="outlined"
       disabled={!props.canCancelAll}
       size="sm"
+      color="gray"
       className="oui-h-6  oui-w-[94px] oui-text-2xs disabled:oui-border-base-contrast-16 disabled:oui-bg-transparent disabled:oui-text-base-contrast-20"
       onClick={() => {
         setLoading(true);

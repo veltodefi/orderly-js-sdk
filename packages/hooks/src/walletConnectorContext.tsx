@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
-import type { EIP1193Provider } from "@web3-onboard/common";
 import { SolanaWalletProvider } from "@veltodefi/default-solana-adapter";
 import { ChainNamespace } from "@veltodefi/types";
+import type { EIP1193Provider } from "@web3-onboard/common";
 
 type WalletProvider = (EIP1193Provider | SolanaWalletProvider) & {
   publicKey?: SolanaWalletProvider["publicKey"]; // For Solana providers

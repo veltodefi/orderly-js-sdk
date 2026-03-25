@@ -1,5 +1,331 @@
 # storybook
 
+## 1.11.1
+
+### Patch Changes
+
+- publish
+- 2bb6924: publish
+- Updated dependencies
+- Updated dependencies [2bb6924]
+  - @veltodefi/affiliate@2.11.1
+  - @veltodefi/react-app@2.11.1
+  - @veltodefi/chart@2.11.1
+  - @veltodefi/core@2.11.1
+  - @veltodefi/default-evm-adapter@2.11.1
+  - @veltodefi/default-solana-adapter@2.11.1
+  - @veltodefi/hooks@2.11.1
+  - @veltodefi/i18n@2.11.1
+  - @veltodefi/markets@2.11.1
+  - @veltodefi/portfolio@2.11.1
+  - @veltodefi/trading@2.11.1
+  - @veltodefi/trading-leaderboard@2.11.1
+  - @veltodefi/trading-points@1.3.1
+  - @veltodefi/trading-rewards@2.11.1
+  - @veltodefi/types@2.11.1
+  - @veltodefi/ui@2.11.1
+  - @veltodefi/ui-chain-selector@2.11.1
+  - @veltodefi/ui-connector@2.11.1
+  - @veltodefi/ui-leverage@2.11.1
+  - @veltodefi/ui-notification@2.11.1
+  - @veltodefi/ui-order-entry@2.11.1
+  - @veltodefi/ui-orders@2.11.1
+  - @veltodefi/ui-positions@2.11.1
+  - @veltodefi/ui-scaffold@2.11.1
+  - @veltodefi/ui-share@2.11.1
+  - @veltodefi/ui-tpsl@2.11.1
+  - @veltodefi/ui-tradingview@2.11.1
+  - @veltodefi/ui-transfer@2.11.1
+  - @veltodefi/utils@2.11.1
+  - @veltodefi/vaults@2.11.1
+  - @veltodefi/wallet-connector@2.11.1
+  - @veltodefi/wallet-connector-privy@2.11.1
+
+## 1.11.1-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/affiliate@2.11.1-alpha.0
+  - @veltodefi/react-app@2.11.1-alpha.0
+  - @veltodefi/chart@2.11.1-alpha.0
+  - @veltodefi/core@2.11.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.11.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.11.1-alpha.0
+  - @veltodefi/hooks@2.11.1-alpha.0
+  - @veltodefi/i18n@2.11.1-alpha.0
+  - @veltodefi/markets@2.11.1-alpha.0
+  - @veltodefi/portfolio@2.11.1-alpha.0
+  - @veltodefi/trading@2.11.1-alpha.0
+  - @veltodefi/trading-leaderboard@2.11.1-alpha.0
+  - @veltodefi/trading-points@1.3.1-alpha.0
+  - @veltodefi/trading-rewards@2.11.1-alpha.0
+  - @veltodefi/types@2.11.1-alpha.0
+  - @veltodefi/ui@2.11.1-alpha.0
+  - @veltodefi/ui-chain-selector@2.11.1-alpha.0
+  - @veltodefi/ui-connector@2.11.1-alpha.0
+  - @veltodefi/ui-leverage@2.11.1-alpha.0
+  - @veltodefi/ui-notification@2.11.1-alpha.0
+  - @veltodefi/ui-order-entry@2.11.1-alpha.0
+  - @veltodefi/ui-orders@2.11.1-alpha.0
+  - @veltodefi/ui-positions@2.11.1-alpha.0
+  - @veltodefi/ui-scaffold@2.11.1-alpha.0
+  - @veltodefi/ui-share@2.11.1-alpha.0
+  - @veltodefi/ui-tpsl@2.11.1-alpha.0
+  - @veltodefi/ui-tradingview@2.11.1-alpha.0
+  - @veltodefi/ui-transfer@2.11.1-alpha.0
+  - @veltodefi/utils@2.11.1-alpha.0
+  - @veltodefi/vaults@2.11.1-alpha.0
+  - @veltodefi/wallet-connector@2.11.1-alpha.0
+  - @veltodefi/wallet-connector-privy@2.11.1-alpha.0
+
+## 1.11.0
+
+### Minor Changes
+
+- d8edbeb: publish
+- publish
+
+### Patch Changes
+
+- Updated dependencies [d8edbeb]
+- Updated dependencies
+  - @veltodefi/affiliate@2.11.0
+  - @veltodefi/react-app@2.11.0
+  - @veltodefi/chart@2.11.0
+  - @veltodefi/core@2.11.0
+  - @veltodefi/default-evm-adapter@2.11.0
+  - @veltodefi/default-solana-adapter@2.11.0
+  - @veltodefi/hooks@2.11.0
+  - @veltodefi/i18n@2.11.0
+  - @veltodefi/markets@2.11.0
+  - @veltodefi/portfolio@2.11.0
+  - @veltodefi/trading@2.11.0
+  - @veltodefi/trading-leaderboard@2.11.0
+  - @veltodefi/trading-points@1.3.0
+  - @veltodefi/trading-rewards@2.11.0
+  - @veltodefi/types@2.11.0
+  - @veltodefi/ui@2.11.0
+  - @veltodefi/ui-chain-selector@2.11.0
+  - @veltodefi/ui-connector@2.11.0
+  - @veltodefi/ui-leverage@2.11.0
+  - @veltodefi/ui-notification@2.11.0
+  - @veltodefi/ui-order-entry@2.11.0
+  - @veltodefi/ui-orders@2.11.0
+  - @veltodefi/ui-positions@2.11.0
+  - @veltodefi/ui-scaffold@2.11.0
+  - @veltodefi/ui-share@2.11.0
+  - @veltodefi/ui-tpsl@2.11.0
+  - @veltodefi/ui-tradingview@2.11.0
+  - @veltodefi/ui-transfer@2.11.0
+  - @veltodefi/utils@2.11.0
+  - @veltodefi/vaults@2.11.0
+  - @veltodefi/wallet-connector@2.11.0
+  - @veltodefi/wallet-connector-privy@2.11.0
+
+## 1.11.0-alpha.0
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/affiliate@2.11.0-alpha.0
+  - @veltodefi/react-app@2.11.0-alpha.0
+  - @veltodefi/chart@2.11.0-alpha.0
+  - @veltodefi/core@2.11.0-alpha.0
+  - @veltodefi/default-evm-adapter@2.11.0-alpha.0
+  - @veltodefi/default-solana-adapter@2.11.0-alpha.0
+  - @veltodefi/hooks@2.11.0-alpha.0
+  - @veltodefi/i18n@2.11.0-alpha.0
+  - @veltodefi/markets@2.11.0-alpha.0
+  - @veltodefi/portfolio@2.11.0-alpha.0
+  - @veltodefi/trading@2.11.0-alpha.0
+  - @veltodefi/trading-leaderboard@2.11.0-alpha.0
+  - @veltodefi/trading-points@1.3.0-alpha.0
+  - @veltodefi/trading-rewards@2.11.0-alpha.0
+  - @veltodefi/types@2.11.0-alpha.0
+  - @veltodefi/ui@2.11.0-alpha.0
+  - @veltodefi/ui-chain-selector@2.11.0-alpha.0
+  - @veltodefi/ui-connector@2.11.0-alpha.0
+  - @veltodefi/ui-leverage@2.11.0-alpha.0
+  - @veltodefi/ui-notification@2.11.0-alpha.0
+  - @veltodefi/ui-order-entry@2.11.0-alpha.0
+  - @veltodefi/ui-orders@2.11.0-alpha.0
+  - @veltodefi/ui-positions@2.11.0-alpha.0
+  - @veltodefi/ui-scaffold@2.11.0-alpha.0
+  - @veltodefi/ui-share@2.11.0-alpha.0
+  - @veltodefi/ui-tpsl@2.11.0-alpha.0
+  - @veltodefi/ui-tradingview@2.11.0-alpha.0
+  - @veltodefi/ui-transfer@2.11.0-alpha.0
+  - @veltodefi/utils@2.11.0-alpha.0
+  - @veltodefi/vaults@2.11.0-alpha.0
+  - @veltodefi/wallet-connector@2.11.0-alpha.0
+  - @veltodefi/wallet-connector-privy@2.11.0-alpha.0
+
+## 1.10.2
+
+### Patch Changes
+
+- publish
+- 95b95a6: publish
+- Updated dependencies
+- Updated dependencies [95b95a6]
+  - @veltodefi/affiliate@2.10.2
+  - @veltodefi/react-app@2.10.2
+  - @veltodefi/chart@2.10.2
+  - @veltodefi/core@2.10.2
+  - @veltodefi/default-evm-adapter@2.10.2
+  - @veltodefi/default-solana-adapter@2.10.2
+  - @veltodefi/hooks@2.10.2
+  - @veltodefi/i18n@2.10.2
+  - @veltodefi/markets@2.10.2
+  - @veltodefi/portfolio@2.10.2
+  - @veltodefi/trading@2.10.2
+  - @veltodefi/trading-leaderboard@2.10.2
+  - @veltodefi/trading-points@1.2.2
+  - @veltodefi/trading-rewards@2.10.2
+  - @veltodefi/types@2.10.2
+  - @veltodefi/ui@2.10.2
+  - @veltodefi/ui-chain-selector@2.10.2
+  - @veltodefi/ui-connector@2.10.2
+  - @veltodefi/ui-leverage@2.10.2
+  - @veltodefi/ui-notification@2.10.2
+  - @veltodefi/ui-order-entry@2.10.2
+  - @veltodefi/ui-orders@2.10.2
+  - @veltodefi/ui-positions@2.10.2
+  - @veltodefi/ui-scaffold@2.10.2
+  - @veltodefi/ui-share@2.10.2
+  - @veltodefi/ui-tpsl@2.10.2
+  - @veltodefi/ui-tradingview@2.10.2
+  - @veltodefi/ui-transfer@2.10.2
+  - @veltodefi/utils@2.10.2
+  - @veltodefi/vaults@2.10.2
+  - @veltodefi/wallet-connector@2.10.2
+  - @veltodefi/wallet-connector-privy@2.10.2
+
+## 1.10.2-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/affiliate@2.10.2-alpha.0
+  - @veltodefi/react-app@2.10.2-alpha.0
+  - @veltodefi/chart@2.10.2-alpha.0
+  - @veltodefi/core@2.10.2-alpha.0
+  - @veltodefi/default-evm-adapter@2.10.2-alpha.0
+  - @veltodefi/default-solana-adapter@2.10.2-alpha.0
+  - @veltodefi/hooks@2.10.2-alpha.0
+  - @veltodefi/i18n@2.10.2-alpha.0
+  - @veltodefi/markets@2.10.2-alpha.0
+  - @veltodefi/portfolio@2.10.2-alpha.0
+  - @veltodefi/trading@2.10.2-alpha.0
+  - @veltodefi/trading-leaderboard@2.10.2-alpha.0
+  - @veltodefi/trading-points@1.2.2-alpha.0
+  - @veltodefi/trading-rewards@2.10.2-alpha.0
+  - @veltodefi/types@2.10.2-alpha.0
+  - @veltodefi/ui@2.10.2-alpha.0
+  - @veltodefi/ui-chain-selector@2.10.2-alpha.0
+  - @veltodefi/ui-connector@2.10.2-alpha.0
+  - @veltodefi/ui-leverage@2.10.2-alpha.0
+  - @veltodefi/ui-notification@2.10.2-alpha.0
+  - @veltodefi/ui-order-entry@2.10.2-alpha.0
+  - @veltodefi/ui-orders@2.10.2-alpha.0
+  - @veltodefi/ui-positions@2.10.2-alpha.0
+  - @veltodefi/ui-scaffold@2.10.2-alpha.0
+  - @veltodefi/ui-share@2.10.2-alpha.0
+  - @veltodefi/ui-tpsl@2.10.2-alpha.0
+  - @veltodefi/ui-tradingview@2.10.2-alpha.0
+  - @veltodefi/ui-transfer@2.10.2-alpha.0
+  - @veltodefi/utils@2.10.2-alpha.0
+  - @veltodefi/vaults@2.10.2-alpha.0
+  - @veltodefi/wallet-connector@2.10.2-alpha.0
+  - @veltodefi/wallet-connector-privy@2.10.2-alpha.0
+
+## 1.10.1
+
+### Patch Changes
+
+- 4fadc11: publish
+- publish
+- Updated dependencies [4fadc11]
+- Updated dependencies
+  - @veltodefi/affiliate@2.10.1
+  - @veltodefi/react-app@2.10.1
+  - @veltodefi/chart@2.10.1
+  - @veltodefi/core@2.10.1
+  - @veltodefi/default-evm-adapter@2.10.1
+  - @veltodefi/default-solana-adapter@2.10.1
+  - @veltodefi/hooks@2.10.1
+  - @veltodefi/i18n@2.10.1
+  - @veltodefi/markets@2.10.1
+  - @veltodefi/portfolio@2.10.1
+  - @veltodefi/trading@2.10.1
+  - @veltodefi/trading-leaderboard@2.10.1
+  - @veltodefi/trading-points@1.2.1
+  - @veltodefi/trading-rewards@2.10.1
+  - @veltodefi/types@2.10.1
+  - @veltodefi/ui@2.10.1
+  - @veltodefi/ui-chain-selector@2.10.1
+  - @veltodefi/ui-connector@2.10.1
+  - @veltodefi/ui-leverage@2.10.1
+  - @veltodefi/ui-notification@2.10.1
+  - @veltodefi/ui-order-entry@2.10.1
+  - @veltodefi/ui-orders@2.10.1
+  - @veltodefi/ui-positions@2.10.1
+  - @veltodefi/ui-scaffold@2.10.1
+  - @veltodefi/ui-share@2.10.1
+  - @veltodefi/ui-tpsl@2.10.1
+  - @veltodefi/ui-tradingview@2.10.1
+  - @veltodefi/ui-transfer@2.10.1
+  - @veltodefi/utils@2.10.1
+  - @veltodefi/vaults@2.10.1
+  - @veltodefi/wallet-connector@2.10.1
+  - @veltodefi/wallet-connector-privy@2.10.1
+
+## 1.10.1-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/affiliate@2.10.1-alpha.0
+  - @veltodefi/react-app@2.10.1-alpha.0
+  - @veltodefi/chart@2.10.1-alpha.0
+  - @veltodefi/core@2.10.1-alpha.0
+  - @veltodefi/default-evm-adapter@2.10.1-alpha.0
+  - @veltodefi/default-solana-adapter@2.10.1-alpha.0
+  - @veltodefi/hooks@2.10.1-alpha.0
+  - @veltodefi/i18n@2.10.1-alpha.0
+  - @veltodefi/markets@2.10.1-alpha.0
+  - @veltodefi/portfolio@2.10.1-alpha.0
+  - @veltodefi/trading@2.10.1-alpha.0
+  - @veltodefi/trading-leaderboard@2.10.1-alpha.0
+  - @veltodefi/trading-points@1.2.1-alpha.0
+  - @veltodefi/trading-rewards@2.10.1-alpha.0
+  - @veltodefi/types@2.10.1-alpha.0
+  - @veltodefi/ui@2.10.1-alpha.0
+  - @veltodefi/ui-chain-selector@2.10.1-alpha.0
+  - @veltodefi/ui-connector@2.10.1-alpha.0
+  - @veltodefi/ui-leverage@2.10.1-alpha.0
+  - @veltodefi/ui-notification@2.10.1-alpha.0
+  - @veltodefi/ui-order-entry@2.10.1-alpha.0
+  - @veltodefi/ui-orders@2.10.1-alpha.0
+  - @veltodefi/ui-positions@2.10.1-alpha.0
+  - @veltodefi/ui-scaffold@2.10.1-alpha.0
+  - @veltodefi/ui-share@2.10.1-alpha.0
+  - @veltodefi/ui-tpsl@2.10.1-alpha.0
+  - @veltodefi/ui-tradingview@2.10.1-alpha.0
+  - @veltodefi/ui-transfer@2.10.1-alpha.0
+  - @veltodefi/utils@2.10.1-alpha.0
+  - @veltodefi/vaults@2.10.1-alpha.0
+  - @veltodefi/wallet-connector@2.10.1-alpha.0
+  - @veltodefi/wallet-connector-privy@2.10.1-alpha.0
+
 ## 1.10.0
 
 ### Minor Changes

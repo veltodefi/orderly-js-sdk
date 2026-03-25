@@ -32,7 +32,7 @@ const dialogVariants = tv({
       "oui-text-base-contrast-54",
       "oui-px-4 lg:oui-px-5",
 
-      "!oui-bg-surface-background-medium-dark",
+      "!oui-bg-base-8",
 
       "oui-shadow-lg",
       "oui-duration-200",

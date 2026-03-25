@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useId, useRef } from "react";
+import { useTranslation } from "@veltodefi/i18n";
+import { useScreen } from "@veltodefi/ui";
 import {
   LineChart,
   XAxis,
@@ -13,8 +15,6 @@ import {
 } from "recharts";
 import type { TooltipProps } from "recharts";
 import type { Props as ResponsiveContainerProps } from "recharts/types/component/ResponsiveContainer";
-import { useTranslation } from "@veltodefi/i18n";
-import { useScreen } from "@veltodefi/ui";
 import { tickFormatter } from "../utils/yTickFormatter";
 import { OrderlyChartTooltip } from "./customTooltip";
 import { useColors } from "./useColors";
@@ -64,18 +64,25 @@ export const AssetLineChart: React.FC<PnlLineChartProps> = (props) => {
       data={props.data}
       margin={{ top: 20, right: 10, left: -20, bottom: -10 }}
     >
-      <CartesianGrid vertical={false} stroke="#FFFFFF" strokeOpacity={0.04} />
+      <CartesianGrid
+        vertical={false}
+        stroke="rgb(var(--oui-color-line))"
+        strokeOpacity={0.04}
+      />
       <XAxis
         dataKey="date"
         interval={props.data.length - 2}
         // tick={{ fontSize: 10, fill: "rgba(255,255,255,0.54)" }}
         tick={<XAxisLabel />}
-        stroke="#FFFFFF"
+        stroke="rgb(var(--oui-color-line))"
         strokeOpacity={0.04}
       />
       <YAxis
         dataKey="account_value"
-        tick={{ fontSize: 10, fill: "rgba(255,255,255,0.54)" }}
+        tick={{
+          fontSize: 10,
+          fill: "rgba(var(--oui-color-base-foreground)/0.54)",
+        }}
         tickLine={false}
         axisLine={false}
         tickFormatter={(value) => tickFormatter(value)}
@@ -84,8 +91,16 @@ export const AssetLineChart: React.FC<PnlLineChartProps> = (props) => {
         <>
           <defs>
             <linearGradient id={colorId} x1="0" y1="0" x2="0" y2="1">
-              <stop stopColor="#00B49E" offset="0%" stopOpacity={0.5} />
-              <stop stopColor="#00B49E" offset="100%" stopOpacity={0} />
+              <stop
+                stopColor="rgb(var(--oui-color-success))"
+                offset="0%"
+                stopOpacity={0.5}
+              />
+              <stop
+                stopColor="rgb(var(--oui-color-success))"
+                offset="100%"
+                stopOpacity={0}
+              />
             </linearGradient>
           </defs>
           <Area
@@ -107,18 +122,25 @@ export const AssetLineChart: React.FC<PnlLineChartProps> = (props) => {
       data={props.data}
       margin={{ top: 20, right: 10, left: -20, bottom: -10 }}
     >
-      <CartesianGrid vertical={false} stroke="#FFFFFF" strokeOpacity={0.04} />
+      <CartesianGrid
+        vertical={false}
+        stroke="rgb(var(--oui-color-line))"
+        strokeOpacity={0.04}
+      />
       <XAxis
         dataKey="date"
         interval={props.data.length - 2}
-        // tick={{ fontSize: 10, fill: "rgba(255,255,255,0.54)" }}
+        // tick={{ fontSize: 10, fill: "rgba(var(--oui-color-base-foreground)/0.54)" }}
         tick={<XAxisLabel />}
-        stroke="#FFFFFF"
+        stroke="rgb(var(--oui-color-line))"
         strokeOpacity={0.04}
       />
       <YAxis
         dataKey="account_value"
-        tick={{ fontSize: 10, fill: "rgba(255,255,255,0.54)" }}
+        tick={{
+          fontSize: 10,
+          fill: "rgba(var(--oui-color-base-foreground)/0.54)",
+        }}
         tickLine={false}
         axisLine={false}
         tickFormatter={tickFormatter}

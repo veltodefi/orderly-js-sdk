@@ -1,5 +1,5 @@
-import path from "ramda/es/path";
 import { commify } from "@veltodefi/utils";
+import { path } from "ramda";
 import { BasePaint, DrawOptions, layoutInfo } from "./basePaint";
 import { qrPaint } from "./qrPaint";
 
@@ -124,6 +124,32 @@ export class DataPaint extends BasePaint {
 
       left += (prevElementBoundingBox.width ?? 0) + this._ratio(7);
       prevElementBoundingBox = this._drawText(options.data?.position.symbol!, {
+        color: layout.color,
+        left: left,
+        top: this._ratio(top),
+        fontSize: this._ratio(fontSize),
+        fontFamily: options.fontFamily,
+      });
+    }
+
+    const marginMode = options.data?.position.marginMode;
+    if (marginMode) {
+      left += (prevElementBoundingBox.width ?? 0) + this._ratio(7);
+
+      if (prevElementBoundingBox.width) {
+        prevElementBoundingBox = this._drawText("|", {
+          color: "rgba(255,255,255,0.2)",
+          left,
+          top: this._ratio(top),
+          fontSize: this._ratio(fontSize),
+          fontFamily: options.fontFamily,
+        });
+      }
+
+      left += (prevElementBoundingBox.width ?? 0) + this._ratio(7);
+      const marginModeText =
+        marginMode.charAt(0).toUpperCase() + marginMode.slice(1);
+      prevElementBoundingBox = this._drawText(marginModeText, {
         color: layout.color,
         left: left,
         top: this._ratio(top),

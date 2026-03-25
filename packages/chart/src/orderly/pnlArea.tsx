@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useId, useMemo, useRef } from "react";
+import { useTranslation } from "@veltodefi/i18n";
+import { useScreen } from "@veltodefi/ui";
 import {
   XAxis,
   YAxis,
@@ -11,8 +13,6 @@ import {
 } from "recharts";
 import type { TooltipProps } from "recharts";
 import type { Props as ResponsiveContainerProps } from "recharts/types/component/ResponsiveContainer";
-import { useTranslation } from "@veltodefi/i18n";
-import { useScreen } from "@veltodefi/ui";
 import { tickFormatter } from "../utils/yTickFormatter";
 import { OrderlyChartTooltip } from "./customTooltip";
 import { useColors } from "./useColors";
@@ -76,17 +76,24 @@ export const PnlAreaChart: React.FC<PnlAreaChartProps> = (props) => {
       data={data}
       margin={{ top: 20, right: 10, left: -10, bottom: 0 }}
     >
-      <CartesianGrid vertical={false} stroke="#FFFFFF" strokeOpacity={0.04} />
+      <CartesianGrid
+        vertical={false}
+        stroke="rgb(var(--oui-color-line))"
+        strokeOpacity={0.04}
+      />
       <XAxis
         dataKey="date"
         interval={props.data.length - 2}
         tick={<XAxisLabel />}
-        stroke="#FFFFFF"
+        stroke="rgb(var(--oui-color-line))"
         strokeOpacity={0.04}
       />
       <YAxis
         dataKey="pnl"
-        tick={{ fontSize: 10, fill: "rgba(255,255,255,0.54)" }}
+        tick={{
+          fontSize: 10,
+          fill: "rgba(var(--oui-color-base-foreground)/0.54)",
+        }}
         tickLine={false}
         axisLine={false}
         tickFormatter={tickFormatter}

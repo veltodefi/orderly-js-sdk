@@ -3,13 +3,7 @@ import { parseJSON, useAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { AccountStatusEnum, ChainNamespace } from "@veltodefi/types";
 import { RouterAdapter } from "@veltodefi/types";
-import {
-  Flex,
-  Text,
-  cn,
-  ArrowRightShortIcon,
-  EyeIcon,
-} from "@veltodefi/ui";
+import { Flex, Text, cn, ArrowRightShortIcon, EyeIcon } from "@veltodefi/ui";
 import { PortfolioLeftSidebarPath } from "../../../layout";
 
 type Props = {
@@ -49,13 +43,13 @@ export const PortfolioValueMobile: FC<Props> = (props) => {
       p={4}
     >
       <Flex direction="row" gapX={1} itemAlign={"center"}>
-        <Text className="oui-text-sm oui-text-base-contrast-54">
+        <Text className="oui-text-sm oui-text-base-static-54">
           {t("portfolio.overview.handle.title")}
         </Text>
         <EyeIcon
           size={16}
           className={cn(
-            props.canTrade ? "oui-text-base-contrast-54" : "oui-hidden",
+            props.canTrade ? "oui-text-base-static-54" : "oui-hidden",
           )}
           onClick={props.toggleVisible}
         />
@@ -68,11 +62,11 @@ export const PortfolioValueMobile: FC<Props> = (props) => {
       >
         <Text.numeral
           visible={props.visible}
-          className="oui-text-3xl oui-font-bold oui-text-base-contrast"
+          className="oui-text-3xl oui-font-bold oui-text-base-static"
         >
           {props.portfolioValue ?? "--"}
         </Text.numeral>
-        <Text className="oui-text-base oui-font-bold oui-text-base-contrast-80">
+        <Text className="oui-text-base oui-font-bold oui-text-base-static-80">
           USDC
         </Text>
       </Flex>
@@ -80,7 +74,7 @@ export const PortfolioValueMobile: FC<Props> = (props) => {
         direction="row"
         gapX={1}
         itemAlign={"center"}
-        className="oui-text-sm oui-text-base-contrast"
+        className="oui-text-sm oui-text-base-static"
       >
         <Text.pnl visible={props.visible}>{props.unrealPnL ?? "--"}</Text.pnl>
         <Text.roi
@@ -101,7 +95,11 @@ export const PortfolioValueMobile: FC<Props> = (props) => {
           })
         }
       >
-        <ArrowRightShortIcon size={18} color="white" opacity={0.54} />
+        <ArrowRightShortIcon
+          size={18}
+          opacity={0.99}
+          className="oui-text-base-static"
+        />
       </div>
     </Flex>
   );

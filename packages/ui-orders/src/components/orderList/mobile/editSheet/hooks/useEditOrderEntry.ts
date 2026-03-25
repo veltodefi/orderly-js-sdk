@@ -1,11 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useOrderEntity } from "@veltodefi/hooks";
-import {
-  API,
-  OrderlyOrder,
-  OrderSide,
-  OrderType,
-} from "@veltodefi/types";
+import { API, OrderlyOrder, OrderSide, OrderType } from "@veltodefi/types";
 
 export const useEditOrderEntry = (props: {
   order: API.AlgoOrderExt;
@@ -19,6 +14,7 @@ export const useEditOrderEntry = (props: {
     side: order.side as OrderSide,
     reduce_only: order.reduce_only,
     order_type: orderType,
+    margin_mode: order.margin_mode,
     // TODO: trailing stop order edit price twice, order.price will be 0
     order_price: order.price || undefined,
     order_quantity: order.quantity,

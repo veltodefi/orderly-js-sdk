@@ -50,12 +50,18 @@ hooks-example/
 
 .vscode
 
+CLAUDE.md
 
 *storybook.log
 storybook-static/
 .claude/
 .specify/
 .specs/
+specs/
 .tmp.*
 .qoder/
 .specflow/
+.agents
+.specflow
+.serena/
+skills-lock.json

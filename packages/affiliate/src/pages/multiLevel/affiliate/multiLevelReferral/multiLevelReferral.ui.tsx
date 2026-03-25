@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { SVGProps } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Flex, Text, Button } from "@veltodefi/ui";
+import { Flex, Text, Button, cn } from "@veltodefi/ui";
 import { TradingVolumeProgress } from "../../components/tradingVolumeProgress";
 import { MultiLevelReferralReturns } from "./multiLevelReferral.script";
 
@@ -18,7 +18,10 @@ export const MultiLevelReferral: FC<MultiLevelReferralReturns> = (props) => {
       p={5}
       direction={"column"}
       intensity={900}
-      className="oui-border oui-border-line-6"
+      className={cn(
+        "oui-affiliate-multiLevelReferral",
+        "oui-border oui-border-line-6",
+      )}
     >
       <Text size="lg" className="oui-w-full oui-text-start">
         {t("affiliate.referral")}

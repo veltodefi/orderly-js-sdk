@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useDebouncedCallback } from "use-debounce";
 import {
   OrderSide,
   OrderEntity,
@@ -8,6 +7,7 @@ import {
   AlgoOrderRootType,
 } from "@veltodefi/types";
 import { SDKError } from "@veltodefi/types";
+import { useDebouncedCallback } from "use-debounce";
 import { useSubAccountMutation, useSubAccountQuery } from "../../subAccount";
 import { useEventEmitter } from "../../useEventEmitter";
 import version from "../../version";
@@ -258,6 +258,8 @@ export const useSubAccountAlgoOrderStream = (
             activated_price: order.activated_price,
             callback_value: order.callback_value,
             callback_rate: order.callback_rate,
+            // include margin_mode if present (align with useOrderStream)
+            ...(order.margin_mode && { margin_mode: order.margin_mode }),
           });
         default:
           return doUpdateOrder({ ...order, order_id: orderId });

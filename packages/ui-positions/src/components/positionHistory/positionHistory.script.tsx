@@ -1,15 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { differenceInDays, setDate, setHours, subDays } from "date-fns";
-import {
-  useAccount,
-  usePrivateQuery,
-  useSymbolsInfo,
-} from "@veltodefi/hooks";
+import { useAccount, usePrivateQuery, useSymbolsInfo } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useDataTap } from "@veltodefi/react-app";
-import { AccountStatusEnum } from "@veltodefi/types";
+import { AccountStatusEnum, MarginMode } from "@veltodefi/types";
 import { API } from "@veltodefi/types";
 import { usePagination, useScreen } from "@veltodefi/ui";
+import { differenceInDays, setDate, setHours, subDays } from "date-fns";
 import { TRADING_POSITIONS_SORT_STORAGE_KEY } from "../../constants";
 import {
   areDatesEqual,
@@ -78,6 +74,12 @@ export const usePositionHistoryScript = (props: PositionHistoryProps) => {
                 item.trading_fee;
               return {
                 ...item,
+                // convert margin_mode to MarginMode
+                margin_mode:
+                  item.margin_mode === 1 ||
+                  item.margin_mode === MarginMode.ISOLATED
+                    ? MarginMode.ISOLATED
+                    : MarginMode.CROSS,
                 netPnL: netPnL,
               };
             }

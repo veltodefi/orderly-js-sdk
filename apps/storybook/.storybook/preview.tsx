@@ -1,14 +1,41 @@
+import { useEffect } from "react";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import type { Preview } from "@storybook/react-vite";
 import { withThemeBuilder } from "storybook-theme-tool/preview";
 import { OrderlyProvider } from "../src/components/orderlyProvider";
+import { ORDERLY_THEME_STORAGE_KEY } from "../src/components/orderlyProvider/themeSync";
 import { customViewports } from "./screenSizes";
 import "../src/playground/styles/fonts.css";
 import "../src/tailwind.css";
 
 const preview: Preview = {
   decorators: [
-    (Story) => {
+    (Story, context) => {
+      const themeId = context.globals?.theme;
+
+      // Sync toolbar selection to localStorage before render so
+      // AppThemeProvider reads the correct value on mount.
+      if (themeId) {
+        const stored = localStorage.getItem(ORDERLY_THEME_STORAGE_KEY);
+        if (JSON.stringify(themeId) !== stored) {
+          localStorage.setItem(
+            ORDERLY_THEME_STORAGE_KEY,
+            JSON.stringify(themeId),
+          );
+        }
+      }
+
+      // Trigger re-read for subsequent toolbar changes.
+      useEffect(() => {
+        if (themeId) {
+          localStorage.setItem(
+            ORDERLY_THEME_STORAGE_KEY,
+            JSON.stringify(themeId),
+          );
+          window.dispatchEvent(new Event("storage"));
+        }
+      }, [themeId]);
+
       return (
         <OrderlyProvider>
           <Story />
@@ -20,9 +47,9 @@ const preview: Preview = {
     withThemeByDataAttribute({
       themes: {
         orderly: "orderly",
+        light: "light",
         custom: "custom",
         roundless: "roundless",
-        lightPrimary: "lightPrimary",
       },
       defaultTheme: import.meta.env.VITE_DEFAULT_THEME || "orderly",
       attributeName: "data-oui-theme",

@@ -2,13 +2,13 @@ import type { OrderlyAppProviderProps } from "@veltodefi/react-app";
 import { AnnouncementType } from "@veltodefi/types";
 
 export const dataAdapter: OrderlyAppProviderProps["dataAdapter"] = {
-  // symbolList(original) {
-  //   return original.filter(
-  //     (item) =>
-  //       item.symbol === "PERP_BTC_USDC" ||
-  //       item.symbol === "PERP_ETH_USDC" ||
-  //       item.symbol === "PERP_SOL_USDC",
-  //   );
+  // symbolList(original, { rwaSymbolsInfo }) {
+  // return original.filter(
+  //   (item) =>
+  //     item.symbol === "PERP_BTC_USDC" ||
+  //     item.symbol === "PERP_ETH_USDC" ||
+  //     item.symbol === "PERP_SOL_USDC",
+  // );
   // },
   // announcementList(data) {
   //   return [

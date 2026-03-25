@@ -1,6 +1,6 @@
 import { createContext, PropsWithChildren, useContext } from "react";
 import { useEstLiqPriceBySymbol, useSymbolsInfo } from "@veltodefi/hooks";
-import { API, OrderSide } from "@veltodefi/types";
+import { API, MarginMode, OrderSide } from "@veltodefi/types";
 
 export interface TPSLDetailContextState {
   base_dp: number;
@@ -21,7 +21,10 @@ export const TPSLDetailProvider = (
   props: PropsWithChildren<TPSLDetailProviderProps>,
 ) => {
   const symbolInfo = useSymbolsInfo()[props.symbol];
-  const estLiqPrice = useEstLiqPriceBySymbol(props.symbol);
+  const estLiqPrice = useEstLiqPriceBySymbol(
+    props.symbol,
+    props.position.margin_mode ?? MarginMode.CROSS,
+  );
 
   return (
     <TPSLDetailContext.Provider

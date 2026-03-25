@@ -61,6 +61,10 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
     setInitialized(true);
   }, []);
 
+  useEffect(() => {
+    setInitialized(true);
+  }, []);
+
   const memoizedValue = useMemo<AppContextState>(
     () => ({
       connectWallet,

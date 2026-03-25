@@ -96,6 +96,7 @@ export const useSwapDepositFormScript = (
 
   const { needSwap, needCrossSwap } = useNeedSwapAndCross({
     srcToken: token,
+    dstToken: dst,
     srcChainId: currentChain?.id,
     dstChainId: dst?.chainId,
   });

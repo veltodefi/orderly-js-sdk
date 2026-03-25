@@ -12,8 +12,6 @@ export const BrokerWallet: FC = () => {
   const icon = useMemo(() => {
     const { secondary } = appIcons || {};
 
-    if (!secondary?.img && secondary?.component) return null;
-
     if (secondary?.img) {
       return <img src={secondary?.img} className="oui-w-6 oui-h-6" />;
     }
@@ -21,6 +19,8 @@ export const BrokerWallet: FC = () => {
     if (secondary?.component) {
       return <>{secondary.component}</>;
     }
+
+    return null;
   }, [appIcons]);
 
   return (

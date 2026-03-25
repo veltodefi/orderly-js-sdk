@@ -2,7 +2,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import { useLocalStorage } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { EMPTY_LIST } from "@veltodefi/types";
-import { cn, Flex, Grid, Spinner, Text, VectorIcon } from "@veltodefi/ui";
+import { cn, Flex, Grid, Spinner } from "@veltodefi/ui";
 import { BasicSymbolInfo } from "../../../types/types";
 import { BuySellRatioBar, BuySellRatio } from "../../base/orderBook";
 import {
@@ -110,6 +110,7 @@ export const DesktopOrderBook: FC<DesktopOrderBookProps> = (props) => {
         id="oui-orderbook-desktop"
         ref={divRef}
         className={cn(
+          "oui-orderBook",
           "oui-relative oui-size-full",
           showBuySellRatio
             ? "oui-grid-rows-[auto,auto,1fr,auto,1fr,auto]"

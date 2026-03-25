@@ -1,15 +1,9 @@
 // import { renderHook } from "@testing-library/react-hooks";
-import {
-  useOrderEntryNextInternal,
-  useOrderStore,
-} from "../src/next/useOrderEntry/useOrderEntry.internal";
-import {
-  AlgoOrderRootType,
-  OrderSide,
-  OrderType,
-} from "@veltodefi/types";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { AlgoOrderRootType, OrderSide, OrderType } from "@veltodefi/types";
 import { OrderlyConfigProvider } from "../lib";
+import { useOrderStore } from "../src/next/useOrderEntry/orderEntry.store";
+import { useOrderEntryNextInternal } from "../src/next/useOrderEntry/useOrderEntry.internal";
 
 // beforeEach(() => {
 //   useOrderStore.getState().actions.resetOrder();
@@ -40,7 +34,7 @@ describe("order state initial", () => {
 
   test("pass symbol", () => {
     const { result } = renderHook(() =>
-      useOrderEntryNextInternal("PERP_ETH_USDC")
+      useOrderEntryNextInternal("PERP_ETH_USDC"),
     );
 
     expect(result.current.formattedOrder).toEqual({
@@ -55,7 +49,7 @@ describe("order state initial", () => {
           side: OrderSide.BUY,
           order_type: OrderType.LIMIT,
         },
-      })
+      }),
     );
     expect(result.current.formattedOrder).toEqual({
       symbol: "PERP_ETH_USDC",
@@ -69,7 +63,7 @@ describe("order state initial", () => {
       ({ symbol }) => useOrderEntryNextInternal(symbol),
       {
         initialProps: { symbol: "PERP_ETH_USDC" },
-      }
+      },
     );
     expect(result.current.formattedOrder).toEqual({
       symbol: "PERP_ETH_USDC",
@@ -92,7 +86,7 @@ describe("order state initial", () => {
             },
           },
         },
-      }
+      },
     );
 
     rerender({
@@ -117,7 +111,7 @@ describe("order state update, LIMIT Order", () => {
 
   test("update order side", () => {
     const { result } = renderHook(() =>
-      useOrderEntryNextInternal("PERP_ETH_USDC")
+      useOrderEntryNextInternal("PERP_ETH_USDC"),
     );
 
     act(() => {
@@ -134,7 +128,7 @@ describe("order state update, LIMIT Order", () => {
   // Bracket order
   test(`update order type: BRACKET ORDER`, () => {
     const { result } = renderHook(() =>
-      useOrderEntryNextInternal("PERP_ETH_USDC")
+      useOrderEntryNextInternal("PERP_ETH_USDC"),
     );
 
     act(() => {
@@ -160,7 +154,7 @@ describe("order state update, LIMIT Order", () => {
           base_dp: 3,
           quote_dp: 3,
         },
-      })
+      }),
     );
 
     // set quantity
@@ -184,7 +178,7 @@ describe("order state update, LIMIT Order", () => {
           base_dp: 3,
           quote_dp: 3,
         },
-      })
+      }),
     );
 
     act(() => {
@@ -207,7 +201,7 @@ describe("order state update, LIMIT Order", () => {
           base_dp: 3,
           quote_dp: 3,
         },
-      })
+      }),
     );
 
     act(() => {
@@ -230,7 +224,7 @@ describe("order state update, LIMIT Order", () => {
           base_dp: 3,
           quote_dp: 3,
         },
-      })
+      }),
     );
 
     act(() => {
@@ -257,7 +251,7 @@ describe("order state update,STOP LIMIT Order", () => {
           base_dp: 3,
           quote_dp: 3,
         },
-      })
+      }),
     );
     act(() => {
       result.current.setValue("type", OrderType.STOP_LIMIT);
@@ -281,7 +275,7 @@ describe("order state update,STOP LIMIT Order", () => {
           base_dp: 3,
           quote_dp: 3,
         },
-      })
+      }),
     );
     act(() => {
       result.current.setValue("trigger_price", 1000);
@@ -305,7 +299,7 @@ describe("order state update,STOP LIMIT Order", () => {
           base_dp: 3,
           quote_dp: 3,
         },
-      })
+      }),
     );
     act(() => {
       result.current.setValue("price", 1000);
@@ -333,7 +327,7 @@ describe("MARKET Order", () => {
           base_dp: 4,
           quote_dp: 2,
         },
-      })
+      }),
     );
 
     act(() => {

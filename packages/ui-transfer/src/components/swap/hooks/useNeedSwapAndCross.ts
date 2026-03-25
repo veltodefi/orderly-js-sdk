@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { API } from "@veltodefi/types";
 
 export function useNeedSwapAndCross(options: {
-  srcToken?: API.TokenInfo;
-  dstToken?: API.TokenInfo;
+  srcToken?: { symbol?: string; is_collateral?: boolean };
+  dstToken?: { symbol?: string };
   srcChainId?: number;
   dstChainId?: number;
 }) {
