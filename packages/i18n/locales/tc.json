@@ -1275,9 +1275,7 @@
   "marginMode.selectAll": "全選",
   "marginMode.setAs": "設為",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feeTier": {
-    "title": "Your fee tier — Level {{level}}",
-    "description": "Trade {{amount}} more to lower your fees and reach Level {{nextLevel}}.",
-    "cta": "Go to VIP tiers"
-  }
+  "feetier.title": "您的手續費等級 — 等級 {{level}}",
+  "feetier.description": "再交易 {{amount}} 可降低手續費並達到等級 {{nextLevel}}。",
+  "feetier.cta": "前往 VIP 等級"
 }

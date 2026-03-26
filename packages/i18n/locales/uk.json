@@ -1275,9 +1275,7 @@
   "marginMode.selectAll": "Вибрати все",
   "marginMode.setAs": "Встановити як",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feeTier": {
-    "title": "Your fee tier — Level {{level}}",
-    "description": "Trade {{amount}} more to lower your fees and reach Level {{nextLevel}}.",
-    "cta": "Go to VIP tiers"
-  }
+  "feetier.title": "Ваш рівень комісії — Рівень {{level}}",
+  "feetier.description": "Проведіть ще торгів на {{amount}}, щоб знизити комісії та досягти рівня {{nextLevel}}.",
+  "feetier.cta": "Перейти до VIP-рівнів"
 }

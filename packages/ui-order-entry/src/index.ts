@@ -5,3 +5,7 @@ export { OrderConfirmDialog } from "./components/dialog/confirm.ui";
 export { AdditionalInfo } from "./components/additional/additionalInfo";
 export { LTVRiskTooltipWidget } from "./components/LTVRiskTooltip";
 export { FeesWidget } from "./components/fee";
+export {
+  FeeTierLabel,
+  type FeeTierLabelProps,
+} from "./components/feeTierLabel";

@@ -1275,9 +1275,7 @@
   "marginMode.selectAll": "Pilih semua",
   "marginMode.setAs": "Atur sebagai",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feeTier": {
-    "title": "Your fee tier — Level {{level}}",
-    "description": "Trade {{amount}} more to lower your fees and reach Level {{nextLevel}}.",
-    "cta": "Go to VIP tiers"
-  }
+  "feetier.title": "Tingkat biaya Anda — Level {{level}}",
+  "feetier.description": "Trading {{amount}} lagi untuk menurunkan biaya Anda dan mencapai Level {{nextLevel}}.",
+  "feetier.cta": "Ke tingkat VIP"
 }

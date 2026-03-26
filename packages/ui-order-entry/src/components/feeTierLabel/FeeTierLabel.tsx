@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { ArrowRightShortIcon } from "../icon";
-import { Tooltip } from "../tooltip/tooltip";
+import { ArrowRightShortIcon, Tooltip } from "@veltodefi/ui";
 
 const labelStyle: React.CSSProperties = {
   color: "var(--Text-Primary-Default, #9AECDB)",
@@ -48,10 +47,10 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
       content={
         <div style={{ minWidth: 200, maxWidth: 250 }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}>
-            {t("feeTier.title", { level: currentLevel })}
+            {t("feetier.title", { level: currentLevel })}
           </div>
           <div style={{ marginBottom: 12 }}>
-            {t("feeTier.description", {
+            {t("feetier.description", {
               amount: (
                 <span
                   style={{
@@ -94,7 +93,7 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
               target="_self"
               rel="noopener noreferrer"
             >
-              {t("feeTier.cta")}
+              {t("feetier.cta")}
               <ArrowRightShortIcon
                 style={{
                   marginLeft: 4,
@@ -110,10 +109,10 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
       <span
         style={labelStyle}
         tabIndex={0}
-        aria-label={t("feeTier.title", { level: currentLevel })}
+        aria-label={t("feetier.title", { level: currentLevel })}
         className={className}
       >
-        {t("feeTier.title", { level: currentLevel })}
+        {t("feetier.title", { level: currentLevel })}
       </span>
     </Tooltip>
   );
