@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { Flex, Text } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
+import { FeeTierLabel } from "@veltodefi/ui/components/FeeTierLabel";
 
 export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
   props,
@@ -21,6 +22,7 @@ export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
         <Text className="oui-fees-label oui-truncate" size="2xs">
           {t("common.fees")}
         </Text>
+        <FeeTierLabel />
         <AuthGuard
           fallback={() => (
             <Text className="oui-truncate" size="2xs">

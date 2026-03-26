@@ -1274,5 +1274,10 @@
   "marginMode.searchPlaceholder": "搜索",
   "marginMode.selectAll": "全选",
   "marginMode.setAs": "设为",
-  "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode."
+  "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
+  "feeTier": {
+    "title": "您的手续费等级 — 等级{{level}}",
+    "description": "再交易{{amount}}即可降低手续费并达到等级{{nextLevel}}。",
+    "cta": "查看VIP等级"
+  }
 }

@@ -29,6 +29,7 @@ export * from "./toast";
 export * from "./listView";
 export * from "./collapsible";
 export * from "./marquee";
+export * from "./feeTierLabel";
 
 export * from "./dropdown";
 

@@ -26,6 +26,14 @@ export type WidgetConfigs = {
   };
 };
 
+export type FeeTierType = {
+  currentLevel: number;
+  nextLevel: number;
+  amountToNextLevel: string;
+  vipTiersUrl: string;
+  showLabelPrefix?: boolean;
+};
+
 export type VeltoProps = {
   onConnectWallet?: (
     defaultConnectWallet?: () => Promise<void>,
@@ -34,6 +42,7 @@ export type VeltoProps = {
   ) => void;
   mostCommonChains?: string[];
   isRestrictedRegion?: boolean;
+  feeTier?: FeeTierType;
 };
 
 export type AppContextState = {
