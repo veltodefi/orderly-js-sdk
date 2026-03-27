@@ -1276,6 +1276,7 @@
   "marginMode.setAs": "設為",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
   "feetier.title": "等級 {{level}}",
-  "feetier.description": "再交易 {{amount}} 可降低手續費並達到等級 {{nextLevel}}。",
-  "feetier.cta": "前往 VIP 等級"
+  "feetier.description": "再交易 <0/> 以降低費用並達到等級 {{nextLevel}}。",
+  "feetier.cta": "前往 VIP 等級",
+  "feetier.tooltip.title": "您的費率等級"
 }

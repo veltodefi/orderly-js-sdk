@@ -146,6 +146,7 @@ export const common = {
   "common.refresh": "Refresh",
   "feetier.title": "Lvl {{level}}",
   "feetier.description":
-    "Trade {{amount}} more to lower your fees and reach Level {{nextLevel}}.",
+    "Trade <0/> more to lower your fees and reach Level {{nextLevel}}.",
   "feetier.cta": "Go to VIP tiers",
+  "feetier.tooltip.title": "Your fee tier",
 };

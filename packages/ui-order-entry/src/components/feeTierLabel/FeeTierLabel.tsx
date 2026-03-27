@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "@veltodefi/i18n";
+import { Trans, useTranslation } from "@veltodefi/i18n";
 import { ArrowRightShortIcon, Tooltip } from "@veltodefi/ui";
 
 const labelStyle: React.CSSProperties = {
@@ -45,29 +45,30 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
   return (
     <Tooltip
       content={
-        <div style={{ minWidth: 200, maxWidth: 250 }}>
+        <div style={{ minWidth: 200, maxWidth: 250, padding: 8 }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}>
-            {t("feetier.title", { level: currentLevel })}
+            {t("feetier.tooltip.title", { level: currentLevel })}
           </div>
 
           <div style={{ marginBottom: 12 }}>
-            {t("feetier.description", {
-              amount: (
+            <Trans
+              i18nKey="feetier.description"
+              values={{ nextLevel }}
+              components={[
                 <span
+                  key="0"
                   style={{
                     color: "#FFF",
                     fontSize: "var(--Desktop-Medium-Size-6, 12px)",
-                    fontStyle: "normal",
                     fontWeight: 700,
                     lineHeight: "18px",
                     letterSpacing: "0.1px",
                   }}
                 >
                   {amountToNextLevel}
-                </span>
-              ),
-              nextLevel,
-            })}
+                </span>,
+              ]}
+            />
           </div>
 
           <div

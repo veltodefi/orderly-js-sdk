@@ -1275,7 +1275,8 @@
   "marginMode.selectAll": "Tümünü seç",
   "marginMode.setAs": "Şu olarak ayarla",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feetier.title": "Lvl {{level}}",
-  "feetier.description": "Daha düşük ücretler ve {{nextLevel}} seviyesine ulaşmak için {{amount}} daha işlem yapın.",
-  "feetier.cta": "VIP seviyelerine git"
+  "feetier.title": "Seviye {{level}}",
+  "feetier.description": "Ücretlerini düşürmek ve Seviye {{nextLevel}}'e ulaşmak için <0/> daha işlem yap.",
+  "feetier.cta": "VIP seviyelerine git",
+  "feetier.tooltip.title": "Ücret seviyen"
 }

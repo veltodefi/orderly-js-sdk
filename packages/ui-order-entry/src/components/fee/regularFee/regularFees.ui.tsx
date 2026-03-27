@@ -23,16 +23,15 @@ export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
       <Flex width={"100%"} itemAlign="center" justify={"between"}>
         <Text className="oui-fees-label oui-truncate" size="2xs">
           {t("common.fees")}
+          {veltoProps?.feeTier && (
+            <FeeTierLabel
+              currentLevel={veltoProps.feeTier?.currentLevel ?? 0}
+              nextLevel={veltoProps.feeTier?.nextLevel ?? 0}
+              amountToNextLevel={veltoProps.feeTier?.amountToNextLevel ?? ""}
+              vipTiersUrl={veltoProps.feeTier?.vipTiersUrl ?? ""}
+            />
+          )}
         </Text>
-
-        {veltoProps?.feeTier && (
-          <FeeTierLabel
-            currentLevel={veltoProps.feeTier?.currentLevel ?? 0}
-            nextLevel={veltoProps.feeTier?.nextLevel ?? 0}
-            amountToNextLevel={veltoProps.feeTier?.amountToNextLevel ?? ""}
-            vipTiersUrl={veltoProps.feeTier?.vipTiersUrl ?? ""}
-          />
-        )}
 
         <AuthGuard
           fallback={() => (

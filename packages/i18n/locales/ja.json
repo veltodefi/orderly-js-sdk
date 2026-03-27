@@ -1276,6 +1276,7 @@
   "marginMode.setAs": "設定",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
   "feetier.title": "レベル {{level}}",
-  "feetier.description": "あと{{amount}}取引して手数料を下げ、レベル{{nextLevel}}に到達しましょう。",
-  "feetier.cta": "VIPティアへ"
+  "feetier.description": "手数料を下げてレベル{{nextLevel}}に到達するには、あと<0/>の取引が必要です。",
+  "feetier.cta": "VIPレベルへ",
+  "feetier.tooltip.title": "あなたの手数料レベル"
 }
