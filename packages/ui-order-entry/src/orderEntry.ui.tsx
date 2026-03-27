@@ -544,9 +544,11 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           variant="primary"
           className={cn(
             "oui-orderEntry-submit-btn",
-            side === OrderSide.BUY
-              ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
-              : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80",
+            "disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36",
+            !submitButtonDisabled &&
+              (side === OrderSide.BUY
+                ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
+                : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"),
           )}
           onClick={onClickSubmitButton}
           loading={props.isMutating}
