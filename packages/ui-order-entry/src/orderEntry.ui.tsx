@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useId, useMemo, useState } from "react";
 import {
   ERROR_MSG_CODES,
   OrderValidationResult,
+  useAccount,
   useLocalStorage,
   useMemoizedFn,
   useOrderlyContext,
@@ -24,12 +25,16 @@ import {
   modal,
   SimpleSheet,
   Switch,
+  Text,
   ThrottledButton,
   toast,
   useScreen,
   ArrowDownShortIcon,
 } from "@veltodefi/ui";
-import { useWalletConnectorBuilder } from "@veltodefi/ui-connector";
+import {
+  WalletConnectorModalId,
+  WalletConnectorSheetId,
+} from "@veltodefi/ui-connector";
 import { TPSLAdvancedWidget } from "@veltodefi/ui-tpsl";
 import { Decimal } from "@veltodefi/utils";
 import { AdditionalConfigButton } from "./components/additional/additionalConfigButton";
@@ -56,6 +61,18 @@ import { getScaledPlaceOrderMessage } from "./utils";
 type OrderEntryProps = OrderEntryScriptReturn & {
   containerRef?: React.RefObject<HTMLDivElement>;
   disableFeatures?: ("slippageSetting" | "feesInfo")[];
+};
+
+const ModalTitle = () => {
+  const { t } = useTranslation();
+  const { state } = useAccount();
+  if (state.status < AccountStatusEnum.SignedIn) {
+    return <Text>{t("connector.createAccount")}</Text>;
+  }
+  if (state.status < AccountStatusEnum.EnableTrading) {
+    return <Text>{t("connector.enableTrading")}</Text>;
+  }
+  return <Text>{t("connector.connectWallet")}</Text>;
 };
 
 export const useHasDeposited = () => {
@@ -93,7 +110,6 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
     accountTotal,
   } = props;
   const [maxQtyConfirmOpen, setMaxQtyConfirmOpen] = useState(false);
-  const connectorBuilder = useWalletConnectorBuilder();
   const { t } = useTranslation();
 
   const { isMobile } = useScreen();
@@ -122,7 +138,6 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   });
 
   const { notification } = useOrderlyContext();
-  // const { state: accountState } = useAccount();
   // const accountState = {
   //   accountStatus: AccountStatusEnum.EnableTrading,
   // };
@@ -136,7 +151,6 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   const submitButtonDisabled = accountStatus === AccountStatusEnum.NotConnected;
 
   const submitButtonLabel = useMemo(() => {
-    console.log("ON CLICK", { accountStatus, accountTotal, hasDeposited });
     // TODO: remove this for bug handling
     // if (isMobile && freeCollateral <= 0) {
     //   return t("common.deposit");
@@ -175,7 +189,10 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
       accountStatus > AccountStatusEnum.NotConnected &&
       accountStatus < AccountStatusEnum.EnableTrading
     ) {
-      return connectorBuilder.enableTrading(true);
+      const modalId = isMobile
+        ? WalletConnectorSheetId
+        : WalletConnectorModalId;
+      return modal.show(modalId, { title: <ModalTitle /> });
     }
 
     if (
