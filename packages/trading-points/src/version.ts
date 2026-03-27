@@ -8,7 +8,7 @@ declare global {
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
   window.__ORDERLY_VERSION__["@veltodefi/trading-points"] =
-    "1.3.1-velto-dev.28";
+    "1.3.1-velto-dev.30";
 }
 
-export default "1.3.1-velto-dev.28";
+export default "1.3.1-velto-dev.30";

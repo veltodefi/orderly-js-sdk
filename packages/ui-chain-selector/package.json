@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-chain-selector",
-  "version": "2.11.1-velto-dev.28",
+  "version": "2.11.1-velto-dev.30",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

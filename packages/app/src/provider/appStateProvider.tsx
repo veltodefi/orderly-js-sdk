@@ -2,6 +2,7 @@ import { FC, PropsWithChildren, useState, useMemo, useEffect } from "react";
 import {
   RestrictedInfoOptions,
   WithdrawOnlyModeProvider,
+  ClientFeatureFlagProvider,
   useRestrictedInfo,
   useTrackingInstance,
 } from "@veltodefi/hooks";
@@ -101,7 +102,9 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
   return (
     <AppStateContext.Provider value={memoizedValue}>
       <WithdrawOnlyModeProvider value={withdrawOnlyMode}>
-        {props.children}
+        <ClientFeatureFlagProvider value={props.veltoProps?.featureFlags ?? []}>
+          {props.children}
+        </ClientFeatureFlagProvider>
       </WithdrawOnlyModeProvider>
     </AppStateContext.Provider>
   );
