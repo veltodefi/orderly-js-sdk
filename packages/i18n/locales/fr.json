@@ -182,7 +182,7 @@
   "portfolio.apiKeys": "Clés API",
   "portfolio.setting": "Paramètre",
   "portfolio.overview.availableWithdraw": "Disponible pour retrait",
-  "feetier.title": "Votre niveau de frais — Niveau {{level}}",
+  "feetier.title": "Lvl {{level}}",
   "feetier.description": "Tradez encore {{amount}} pour réduire vos frais et atteindre le Niveau {{nextLevel}}.",
   "feetier.cta": "Aller aux niveaux VIP",
   "portfolio.overview.handle.title": "Valeur du portefeuille",

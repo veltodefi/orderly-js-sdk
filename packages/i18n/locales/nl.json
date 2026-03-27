@@ -1275,7 +1275,7 @@
   "marginMode.selectAll": "Alles selecteren",
   "marginMode.setAs": "Instellen als",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feetier.title": "Uw tariefniveau — Niveau {{level}}",
+  "feetier.title": "Lvl {{level}}",
   "feetier.description": "Handel nog {{amount}} om uw kosten te verlagen en Niveau {{nextLevel}} te bereiken.",
   "feetier.cta": "Ga naar VIP-niveaus"
 }

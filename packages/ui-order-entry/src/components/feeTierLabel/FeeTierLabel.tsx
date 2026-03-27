@@ -49,6 +49,7 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
           <div style={{ fontWeight: 700, marginBottom: 4 }}>
             {t("feetier.title", { level: currentLevel })}
           </div>
+
           <div style={{ marginBottom: 12 }}>
             {t("feetier.description", {
               amount: (
@@ -68,6 +69,7 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
               nextLevel,
             })}
           </div>
+
           <div
             style={{
               display: "flex",

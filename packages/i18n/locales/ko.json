@@ -1275,7 +1275,7 @@
   "marginMode.selectAll": "전체 선택",
   "marginMode.setAs": "설정",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feetier.title": "귀하의 수수료 등급 — 레벨 {{level}}",
+  "feetier.title": "레벨 {{level}}",
   "feetier.description": "수수료를 낮추고 레벨 {{nextLevel}}에 도달하려면 {{amount}}만큼 더 거래하세요.",
   "feetier.cta": "VIP 등급으로 이동"
 }

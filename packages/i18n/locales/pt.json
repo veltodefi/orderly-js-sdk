@@ -1275,7 +1275,7 @@
   "marginMode.selectAll": "Selecionar tudo",
   "marginMode.setAs": "Definir como",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feetier.title": "Seu nível de taxa — Nível {{level}}",
+  "feetier.title": "Lvl {{level}}",
   "feetier.description": "Negocie mais {{amount}} para reduzir suas taxas e alcançar o Nível {{nextLevel}}.",
   "feetier.cta": "Ver níveis VIP"
 }

@@ -24,6 +24,7 @@ export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
         <Text className="oui-fees-label oui-truncate" size="2xs">
           {t("common.fees")}
         </Text>
+
         {veltoProps?.feeTier && (
           <FeeTierLabel
             currentLevel={veltoProps.feeTier?.currentLevel ?? 0}
@@ -32,6 +33,7 @@ export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
             vipTiersUrl={veltoProps.feeTier?.vipTiersUrl ?? ""}
           />
         )}
+
         <AuthGuard
           fallback={() => (
             <Text className="oui-truncate" size="2xs">

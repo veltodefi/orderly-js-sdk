@@ -1275,7 +1275,7 @@
   "marginMode.selectAll": "Chọn tất cả",
   "marginMode.setAs": "Đặt thành",
   "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
-  "feetier.title": "Cấp phí của bạn — Cấp {{level}}",
+  "feetier.title": "Lvl {{level}}",
   "feetier.description": "Giao dịch thêm {{amount}} để giảm phí và đạt cấp {{nextLevel}}.",
   "feetier.cta": "Đến các cấp VIP"
 }
