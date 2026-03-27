@@ -1,4 +1,4 @@
-import { FeeTierLabel } from "@veltodefi/ui";
+import { FeeTierLabel } from "@veltodefi/ui-order-entry";
 
 export default {
   title: "Components/FeeTierLabel",

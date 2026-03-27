@@ -1,14 +1,16 @@
 import React from "react";
 import { useTranslation } from "@veltodefi/i18n";
+import { useAppContext } from "@veltodefi/react-app";
 import { Flex, Text } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
-import { FeeTierLabel } from "@veltodefi/ui/components/FeeTierLabel";
+import { FeeTierLabel } from "../../feeTierLabel";
 
 export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
   props,
 ) => {
   const { t } = useTranslation();
   const { taker, maker } = props;
+  const { veltoProps } = useAppContext();
 
   const originalTrailingFees = (
     <Flex
@@ -22,7 +24,14 @@ export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
         <Text className="oui-fees-label oui-truncate" size="2xs">
           {t("common.fees")}
         </Text>
-        <FeeTierLabel />
+        {veltoProps?.feeTier && (
+          <FeeTierLabel
+            currentLevel={veltoProps.feeTier?.currentLevel ?? 0}
+            nextLevel={veltoProps.feeTier?.nextLevel ?? 0}
+            amountToNextLevel={veltoProps.feeTier?.amountToNextLevel ?? ""}
+            vipTiersUrl={veltoProps.feeTier?.vipTiersUrl ?? ""}
+          />
+        )}
         <AuthGuard
           fallback={() => (
             <Text className="oui-truncate" size="2xs">
