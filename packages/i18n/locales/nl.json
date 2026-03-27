@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Uw account staat in alleen vermindering modus en kan geen nieuwe posities openen. Wilt u de alleen vermindering modus uitschakelen en doorgaan met de order?",
   "orderEntry.placeOrderNow": "Plaats order nu",
   "orderEntry.maxQty.reminder.content": "Bestelhoeveelheid verlaagd naar maximaal beschikbaar: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Stort geld om te handelen",
+  "orderEntry.cta.enableTrading": "Schakel trading in om orders te plaatsen",
   "leverage.maxAccountLeverage": "Max account hefboom",
   "leverage.accountLeverage": "Account hefboom",
   "leverage.currentLeverage": "Huidige hefboom",

@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Tài khoản của bạn đang ở chế độ chỉ giảm và không thể mở vị thế mới. Bạn có muốn tắt chế độ chỉ giảm và tiếp tục với lệnh không?",
   "orderEntry.placeOrderNow": "Đặt lệnh ngay",
   "orderEntry.maxQty.reminder.content": "Số lượng đơn hàng đã được giảm xuống mức tối đa có sẵn: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Nạp tiền để giao dịch",
+  "orderEntry.cta.enableTrading": "Bật giao dịch để đặt lệnh",
   "leverage.maxAccountLeverage": "Đòn bẩy tài khoản tối đa",
   "leverage.accountLeverage": "Đòn bẩy tài khoản",
   "leverage.currentLeverage": "Đòn bẩy hiện tại",

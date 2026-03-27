@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/portfolio",
-  "version": "2.11.1-velto-main.16",
+  "version": "2.11.1-velto-dev.28",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

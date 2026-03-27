@@ -5,10 +5,12 @@ import {
   useLocalStorage,
   useMemoizedFn,
   useOrderlyContext,
+  useAssetsHistory,
 } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useOrderEntryFormErrorMsg } from "@veltodefi/react-app";
 import {
+  AccountStatusEnum,
   OrderlyOrder,
   OrderSide,
   OrderType,
@@ -25,7 +27,9 @@ import {
   ThrottledButton,
   toast,
   useScreen,
+  ArrowDownShortIcon,
 } from "@veltodefi/ui";
+import { useWalletConnectorBuilder } from "@veltodefi/ui-connector";
 import { TPSLAdvancedWidget } from "@veltodefi/ui-tpsl";
 import { Decimal } from "@veltodefi/utils";
 import { AdditionalConfigButton } from "./components/additional/additionalConfigButton";
@@ -54,6 +58,15 @@ type OrderEntryProps = OrderEntryScriptReturn & {
   disableFeatures?: ("slippageSetting" | "feesInfo")[];
 };
 
+export const useHasDeposited = () => {
+  const [assetsHistory] = useAssetsHistory({
+    side: "DEPOSIT",
+    pageSize: 1,
+  });
+
+  return assetsHistory && assetsHistory.length > 0;
+};
+
 export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   const {
     side,
@@ -76,9 +89,11 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
     soundAlert,
     setSoundAlert,
     currentFocusInput,
+    accountStatus,
+    accountTotal,
   } = props;
   const [maxQtyConfirmOpen, setMaxQtyConfirmOpen] = useState(false);
-
+  const connectorBuilder = useWalletConnectorBuilder();
   const { t } = useTranslation();
 
   const { isMobile } = useScreen();
@@ -107,20 +122,84 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   });
 
   const { notification } = useOrderlyContext();
+  // const { state: accountState } = useAccount();
+  // const accountState = {
+  //   accountStatus: AccountStatusEnum.EnableTrading,
+  // };
+
+  const hasDeposited = useHasDeposited();
 
   const soundAlertId = useId();
 
   const { getErrorMsg } = useOrderEntryFormErrorMsg(validated ? errors : null);
 
-  const buttonLabel = useMemo(() => {
+  const submitButtonDisabled = accountStatus === AccountStatusEnum.NotConnected;
+
+  const submitButtonLabel = useMemo(() => {
+    console.log("ON CLICK", { accountStatus, accountTotal, hasDeposited });
     // TODO: remove this for bug handling
     // if (isMobile && freeCollateral <= 0) {
     //   return t("common.deposit");
     // }
+
+    if (
+      accountStatus > AccountStatusEnum.NotConnected &&
+      accountStatus < AccountStatusEnum.EnableTrading
+    ) {
+      return t("orderEntry.cta.enableTrading");
+    }
+
+    if (
+      accountStatus >= AccountStatusEnum.EnableTrading &&
+      (!hasDeposited || accountTotal === null || accountTotal === 0)
+    ) {
+      return (
+        <>
+          <ArrowDownShortIcon
+            color="white"
+            opacity={1}
+            className="oui-rotate-0 oui-text-primary-contrast"
+          />
+          {t("orderEntry.cta.depositFunds")}
+        </>
+      );
+    }
+
     return side === OrderSide.BUY
       ? t("orderEntry.buyLong")
       : t("orderEntry.sellShort");
-  }, [side, t, isMobile]);
+  }, [side, t, isMobile, accountStatus, accountTotal, hasDeposited]);
+
+  const onClickSubmitButton = () => {
+    if (
+      accountStatus > AccountStatusEnum.NotConnected &&
+      accountStatus < AccountStatusEnum.EnableTrading
+    ) {
+      return connectorBuilder.enableTrading(true);
+    }
+
+    if (
+      accountStatus >= AccountStatusEnum.EnableTrading &&
+      (!hasDeposited || accountTotal === null || accountTotal === 0)
+    ) {
+      return modal.show(
+        isMobile
+          ? "DepositAndWithdrawWithSheetId"
+          : "DepositAndWithdrawWithDialogId",
+        {
+          activeTab: "deposit",
+        },
+      );
+    }
+
+    if (isMobile && freeCollateral <= 0) {
+      modal.show("DepositAndWithdrawWithSheetId", {
+        activeTab: "deposit",
+      });
+    } else {
+      validateSubmit();
+    }
+  };
 
   useEffect(() => {
     if (validated) {
@@ -444,7 +523,7 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           fullWidth
           id={"order-entry-submit-button"}
           data-type={side}
-          data-active={props.canTrade}
+          data-active={!submitButtonDisabled}
           variant="primary"
           className={cn(
             "oui-orderEntry-submit-btn",
@@ -452,19 +531,11 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
               ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
               : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80",
           )}
-          onClick={() => {
-            if (isMobile && freeCollateral <= 0) {
-              modal.show("DepositAndWithdrawWithSheetId", {
-                activeTab: "deposit",
-              });
-            } else {
-              validateSubmit();
-            }
-          }}
+          onClick={onClickSubmitButton}
           loading={props.isMutating}
-          disabled={!props.canTrade}
+          disabled={submitButtonDisabled}
         >
-          {buttonLabel}
+          {submitButtonLabel}
         </ThrottledButton>
 
         {/* Asset info */}

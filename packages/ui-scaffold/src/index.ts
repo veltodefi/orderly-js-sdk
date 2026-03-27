@@ -14,7 +14,10 @@ export {
   BottomNav,
   type BottomNavProps,
 } from "./components/bottomNav";
-export { AccountSummaryWidget } from "./components/accountSummary";
+export {
+  AccountSummaryWidget,
+  useTotalValueBuilderScript,
+} from "./components/accountSummary";
 export {
   ChainMenuWidget,
   ChainMenu,
