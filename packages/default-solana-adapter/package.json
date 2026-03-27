@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/default-solana-adapter",
-  "version": "2.11.1-velto-dev.29",
+  "version": "2.11.1-velto-dev.33",
   "description": "",
   "scripts": {
     "build": "tsup",

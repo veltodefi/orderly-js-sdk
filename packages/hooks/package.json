@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/hooks",
-  "version": "2.11.1-velto-dev.29",
+  "version": "2.11.1-velto-dev.33",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
