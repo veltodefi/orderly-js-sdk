@@ -64,11 +64,12 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           data-active={side === OrderSide.BUY && canTrade}
           className={cn(
             "oui-orderEntry-side-buy-btn",
-            side === OrderSide.BUY && canTrade
-              ? ""
-              : `oui-bg-base-7 oui-text-base-contrast-36 
-                hover:oui-bg-base-6 active:oui-bg-base-6 
-                disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36`,
+            side !== OrderSide.BUY &&
+              `oui-bg-base-7 oui-text-base-contrast-36 disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36`,
+            side === OrderSide.BUY &&
+              !canTrade &&
+              `disabled:oui-bg-success disabled:oui-text-success-contrast`,
+            side === OrderSide.BUY && canTrade && `hover:oui-bg-base-6`,
           )}
           data-testid="oui-testid-orderEntry-side-buy-button"
         >
@@ -87,9 +88,12 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           data-active={side === OrderSide.SELL && canTrade}
           className={cn(
             "oui-orderEntry-side-sell-btn",
-            side === OrderSide.SELL && props.canTrade
-              ? "oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"
-              : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
+            side !== OrderSide.SELL &&
+              `oui-bg-base-7 oui-text-base-contrast-36 disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36`,
+            side === OrderSide.SELL &&
+              !canTrade &&
+              `disabled:oui-bg-danger disabled:oui-text-danger-contrast`,
+            side === OrderSide.SELL && canTrade && `hover:oui-bg-base-6`,
           )}
           data-testid="oui-testid-orderEntry-side-sell-button"
         >

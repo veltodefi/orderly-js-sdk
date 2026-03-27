@@ -20,6 +20,8 @@ export default defineConfig((options) => [
     },
   },
   // Manager entry point for Storybook addon registration
+  // @veltodefi/ui must be bundled (noExternal) because Storybook's manager
+  // build uses esbuild which can't resolve pnpm workspace symlinks.
   {
     entry: ["src/manager.ts"],
     format: ["esm"],
@@ -29,6 +31,7 @@ export default defineConfig((options) => [
     dts: true,
     tsconfig: "tsconfig.build.json",
     external: ["react", "react-dom"],
+    noExternal: ["@veltodefi/ui"],
     outDir: "dist",
     esbuildOptions(esOptions, context) {
       if (!options.watch) {

@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "您的帳戶處於僅减仓模式，無法开新倉位。您是否要關閉僅减仓模式并繼續下單？",
   "orderEntry.placeOrderNow": "立即下單",
   "orderEntry.maxQty.reminder.content": "訂單數量已減少至最大可用數量：{{maxQty}}",
+  "orderEntry.cta.depositFunds": "存入資金以進行交易",
+  "orderEntry.cta.enableTrading": "啟用交易以下單",
   "leverage.maxAccountLeverage": "最大帳戶槓桿",
   "leverage.accountLeverage": "帳戶槓桿",
   "leverage.currentLeverage": "当前槓桿",

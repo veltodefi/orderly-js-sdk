@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "お客様のアカウントはポジション削減のみモードになっており、新しいポジションを開くことができません。ポジション削減のみモードをオフにして注文を続行しますか？",
   "orderEntry.placeOrderNow": "今すぐ注文",
   "orderEntry.maxQty.reminder.content": "注文数量を最大利用可能数に減らしました：{{maxQty}}",
+  "orderEntry.cta.depositFunds": "取引するために資金を入金",
+  "orderEntry.cta.enableTrading": "注文するためにトレーディングを有効化",
   "leverage.maxAccountLeverage": "最大アカウントレバレッジ",
   "leverage.accountLeverage": "アカウントレバレッジ",
   "leverage.currentLeverage": "現在のレバレッジ",

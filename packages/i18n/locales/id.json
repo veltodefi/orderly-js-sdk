@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Akun Anda berada dalam mode hanya pengurangan dan tidak dapat membuka posisi baru. Apakah Anda ingin mematikan mode hanya pengurangan dan melanjutkan dengan pesanan?",
   "orderEntry.placeOrderNow": "Buat pesanan sekarang",
   "orderEntry.maxQty.reminder.content": "Jumlah pesanan dikurangi ke maksimum yang tersedia: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Setor dana untuk trading",
+  "orderEntry.cta.enableTrading": "Aktifkan trading untuk menempatkan order",
   "leverage.maxAccountLeverage": "Leverage akun maksimum",
   "leverage.accountLeverage": "Leverage akun",
   "leverage.currentLeverage": "Leverage saat ini",
