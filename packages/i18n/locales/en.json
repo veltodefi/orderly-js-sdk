@@ -136,7 +136,7 @@
   "feetier.title": "Lvl {{level}}",
   "feetier.description": "Trade <0/> more to lower your fees and reach Level {{nextLevel}}.",
   "feetier.cta": "Go to VIP tiers",
-  "feetier.tooltip.title": "Your fee tier",
+  "feetier.tooltip.title": "Your fee tier - Level {{level}}",
   "markets.favorites": "Favorites",
   "markets.recent": "Recent",
   "markets.newListings": "New listings",

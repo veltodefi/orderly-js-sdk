@@ -1278,5 +1278,5 @@
   "feetier.title": "Seviye {{level}}",
   "feetier.description": "Ücretlerini düşürmek ve Seviye {{nextLevel}}'e ulaşmak için <0/> daha işlem yap.",
   "feetier.cta": "VIP seviyelerine git",
-  "feetier.tooltip.title": "Ücret seviyen"
+  "feetier.tooltip.title": "Ücret seviyen - Seviye {{level}}"
 }

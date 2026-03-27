@@ -1278,5 +1278,5 @@
   "feetier.title": "Poziom {{level}}",
   "feetier.description": "Handluj jeszcze <0/>, aby obniżyć opłaty i osiągnąć poziom {{nextLevel}}.",
   "feetier.cta": "Przejdź do poziomów VIP",
-  "feetier.tooltip.title": "Twój poziom opłat"
+  "feetier.tooltip.title": "Twój poziom opłat - Poziom {{level}}"
 }

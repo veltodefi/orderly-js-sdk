@@ -1278,5 +1278,5 @@
   "feetier.title": "Nível {{level}}",
   "feetier.description": "Negocie mais <0/> para reduzir suas taxas e alcançar o Nível {{nextLevel}}.",
   "feetier.cta": "Ir para níveis VIP",
-  "feetier.tooltip.title": "Seu nível de taxas"
+  "feetier.tooltip.title": "Seu nível de taxas - Nível {{level}}"
 }

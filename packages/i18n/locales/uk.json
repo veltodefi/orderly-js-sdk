@@ -1278,5 +1278,5 @@
   "feetier.title": "Рівень {{level}}",
   "feetier.description": "Торгуйте ще на <0/>, щоб знизити комісії та досягти рівня {{nextLevel}}.",
   "feetier.cta": "Перейти до VIP рівнів",
-  "feetier.tooltip.title": "Ваш рівень комісій"
+  "feetier.tooltip.title": "Ваш рівень комісій - Рівень {{level}}"
 }

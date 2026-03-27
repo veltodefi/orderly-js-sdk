@@ -1278,5 +1278,5 @@
   "feetier.title": "等级 {{level}}",
   "feetier.description": "再交易 <0/> 以降低费用并达到等级 {{nextLevel}}。",
   "feetier.cta": "前往 VIP 等级",
-  "feetier.tooltip.title": "您的费用等级"
+  "feetier.tooltip.title": "您的费用等级 - 等级 {{level}}"
 }

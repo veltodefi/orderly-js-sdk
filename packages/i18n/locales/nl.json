@@ -1278,5 +1278,5 @@
   "feetier.title": "Niveau {{level}}",
   "feetier.description": "Trade nog <0/> om je kosten te verlagen en niveau {{nextLevel}} te bereiken.",
   "feetier.cta": "Ga naar VIP-niveaus",
-  "feetier.tooltip.title": "Jouw kosten niveau"
+  "feetier.tooltip.title": "Jouw kosten niveau - Niveau {{level}}"
 }

@@ -1278,5 +1278,5 @@
   "feetier.title": "Livello {{level}}",
   "feetier.description": "Fai trading per altri <0/> per ridurre le commissioni e raggiungere il Livello {{nextLevel}}.",
   "feetier.cta": "Vai ai livelli VIP",
-  "feetier.tooltip.title": "Il tuo livello di commissioni"
+  "feetier.tooltip.title": "Il tuo livello di commissioni - Livello {{level}}"
 }

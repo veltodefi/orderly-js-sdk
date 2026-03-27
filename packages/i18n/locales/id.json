@@ -1278,5 +1278,5 @@
   "feetier.title": "Level {{level}}",
   "feetier.description": "Trading <0/> lagi untuk menurunkan biaya dan mencapai Level {{nextLevel}}.",
   "feetier.cta": "Lihat level VIP",
-  "feetier.tooltip.title": "Level biaya Anda"
+  "feetier.tooltip.title": "Level biaya Anda - Level {{level}}"
 }

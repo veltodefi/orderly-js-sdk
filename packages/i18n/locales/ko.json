@@ -1278,5 +1278,5 @@
   "feetier.title": "레벨 {{level}}",
   "feetier.description": "수수료를 낮추고 레벨 {{nextLevel}}에 도달하려면 <0/> 더 거래하세요.",
   "feetier.cta": "VIP 등급 보기",
-  "feetier.tooltip.title": "내 수수료 등급"
+  "feetier.tooltip.title": "내 수수료 등급 - 레벨 {{level}}"
 }

@@ -1278,5 +1278,5 @@
   "feetier.title": "Nivel {{level}}",
   "feetier.description": "Opera <0/> más para reducir tus comisiones y alcanzar el Nivel {{nextLevel}}.",
   "feetier.cta": "Ir a niveles VIP",
-  "feetier.tooltip.title": "Tu nivel de comisiones"
+  "feetier.tooltip.title": "Tu nivel de comisiones - Nivel {{level}}"
 }

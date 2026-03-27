@@ -1278,5 +1278,5 @@
   "feetier.title": "Cấp {{level}}",
   "feetier.description": "Giao dịch thêm <0/> để giảm phí và đạt Cấp {{nextLevel}}.",
   "feetier.cta": "Xem cấp VIP",
-  "feetier.tooltip.title": "Cấp phí của bạn"
+  "feetier.tooltip.title": "Cấp phí của bạn - Cấp {{level}}"
 }

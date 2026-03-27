@@ -1278,5 +1278,5 @@
   "feetier.title": "レベル {{level}}",
   "feetier.description": "手数料を下げてレベル{{nextLevel}}に到達するには、あと<0/>の取引が必要です。",
   "feetier.cta": "VIPレベルへ",
-  "feetier.tooltip.title": "あなたの手数料レベル"
+  "feetier.tooltip.title": "あなたの手数料レベル - レベル {{level}}"
 }
