@@ -32,6 +32,11 @@ export type FeeTierType = {
   amountToNextLevel: string;
   vipTiersUrl: string;
   showLabelPrefix?: boolean;
+  /**
+   * Evento disparado ao clicar em "Go to VIP tiers".
+   * Permite que consumidores executem ações customizadas.
+   */
+  onGoToVipTiers?: () => void;
 };
 
 export type VeltoProps = {

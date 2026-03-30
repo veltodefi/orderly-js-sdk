@@ -31,6 +31,9 @@ export const RegularFeesUI: React.FC<{ taker: string; maker: string }> = (
                 nextLevel={veltoProps.feeTier?.nextLevel ?? 0}
                 amountToNextLevel={veltoProps.feeTier?.amountToNextLevel ?? ""}
                 vipTiersUrl={veltoProps.feeTier?.vipTiersUrl ?? ""}
+                onGoToVipTiers={
+                  veltoProps.feeTier?.onGoToVipTiers ?? (() => {})
+                }
               />
             </>
           )}

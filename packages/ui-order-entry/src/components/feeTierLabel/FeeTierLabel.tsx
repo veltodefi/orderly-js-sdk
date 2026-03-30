@@ -26,6 +26,7 @@ export interface FeeTierLabelProps {
   vipTiersUrl: string;
   className?: string;
   showLabelPrefix?: boolean;
+  onGoToVipTiers?: () => void;
 }
 
 export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
@@ -35,6 +36,7 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
   vipTiersUrl,
   className,
   showLabelPrefix = true,
+  onGoToVipTiers,
 }) => {
   const { t } = useTranslation();
 
@@ -95,6 +97,7 @@ export const FeeTierLabel: React.FC<FeeTierLabelProps> = ({
               }}
               target="_self"
               rel="noopener noreferrer"
+              onClick={onGoToVipTiers}
             >
               {t("feetier.cta")}
               <ArrowRightShortIcon
