@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Ihr Konto befindet sich im Nur-Reduzierung-Modus und kann keine neuen Positionen eröffnen. Möchten Sie den Nur-Reduzierung-Modus deaktivieren und mit der Bestellung fortfahren?",
   "orderEntry.placeOrderNow": "Jetzt bestellen",
   "orderEntry.maxQty.reminder.content": "Bestellmenge auf maximal verfügbare Menge reduziert: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Geld einzahlen, um zu handeln",
+  "orderEntry.cta.enableTrading": "Handel aktivieren, um Orders zu platzieren",
   "leverage.maxAccountLeverage": "Maximaler Kontoleverage",
   "leverage.accountLeverage": "Kontoleverage",
   "leverage.currentLeverage": "Aktueller Leverage",

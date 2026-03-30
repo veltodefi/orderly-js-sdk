@@ -182,6 +182,8 @@ export const orderEntry = {
   "orderEntry.placeOrderNow": "Place order now",
   "orderEntry.maxQty.reminder.content":
     "Order qty reduced to max available: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Deposit funds to trade",
+  "orderEntry.cta.enableTrading": "Enable trading to place orders",
 };
 
 export type OrderEntry = typeof orderEntry;

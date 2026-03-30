@@ -634,6 +634,8 @@
   "orderEntry.reduceOnly.reminder.content": "Votre compte est en mode réduction uniquement et ne peut pas ouvrir de nouvelles positions. Souhaitez-vous désactiver le mode réduction uniquement et procéder à la commande ?",
   "orderEntry.placeOrderNow": "Passer la commande maintenant",
   "orderEntry.maxQty.reminder.content": "Quantité de commande réduite au maximum disponible : {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Déposer des fonds pour trader",
+  "orderEntry.cta.enableTrading": "Activer le trading pour passer des ordres",
   "leverage.maxAccountLeverage": "Effet de levier max du compte",
   "leverage.accountLeverage": "Effet de levier du compte",
   "leverage.currentLeverage": "Effet de levier actuel",

@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Ваш акаунт знаходиться в режимі тільки скорочення і не може відкривати нові позиції. Чи хочете ви вимкнути режим тільки скорочення і продовжити з замовленням?",
   "orderEntry.placeOrderNow": "Розмістити замовлення зараз",
   "orderEntry.maxQty.reminder.content": "Кількість замовлення зменшено до максимально доступної: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Внесіть кошти для торгівлі",
+  "orderEntry.cta.enableTrading": "Увімкніть торгівлю для розміщення ордерів",
   "leverage.maxAccountLeverage": "Максимальне кредитне плече рахунку",
   "leverage.accountLeverage": "Кредитне плече рахунку",
   "leverage.currentLeverage": "Поточне кредитне плече",

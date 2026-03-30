@@ -1,5 +1,8 @@
 import React, { createContext, useContext } from "react";
-import { RestrictedInfoReturns } from "@veltodefi/hooks";
+import {
+  RestrictedInfoReturns,
+  type ClientFeatureFlag,
+} from "@veltodefi/hooks";
 import { useWalletStateHandle } from "../hooks/useWalletStateHandle";
 
 export type RouteOption = {

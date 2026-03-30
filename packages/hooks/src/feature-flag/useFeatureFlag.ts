@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { usePrivateQuery } from "../usePrivateQuery";
 import { useQuery } from "../useQuery";
+import { useClientFeatureFlags } from "./clientFeatureFlagContext";
 import { FlagKeys } from "./flagKeys";
 
 /**
@@ -22,7 +23,12 @@ export interface UseFeatureFlagReturn {
 /**
  * Hook to check if a feature flag is enabled
  *
- * Logic:
+ * Three-tier priority (highest to lowest):
+ * - Client flag (via veltoProps.featureFlags) — local override, wins unconditionally
+ * - Private flag (per-broker API) — Orderly can toggle per broker
+ * - Public flag (global API) — global kill switch
+ *
+ * When no client flag is set, the public/private logic is:
  * 1. Hidden by default - returns false when loading
  * 2. In public but not in private, hidden - returns { enabled: false, data: undefined }
  * 3. In both public and private, shown - returns { enabled: true, data: FeatureFlagItem }
@@ -32,6 +38,13 @@ export interface UseFeatureFlagReturn {
  * @returns { enabled: boolean, data: FeatureFlagItem | undefined }
  */
 export const useFeatureFlag = (key: FlagKeys): UseFeatureFlagReturn => {
+  // Check client-level (local) flags first
+  const clientFlags = useClientFeatureFlags();
+  const clientFlag = useMemo(
+    () => clientFlags.find((flag) => flag.key === key),
+    [clientFlags, key],
+  );
+
   // Always query public API
   const { data: publicFlags, isLoading: publicLoading } = useQuery<
     FeatureFlagItem[]
@@ -64,6 +77,14 @@ export const useFeatureFlag = (key: FlagKeys): UseFeatureFlagReturn => {
 
   // Return value based on the logic
   return useMemo(() => {
+    // Client flag takes highest priority
+    if (clientFlag !== undefined) {
+      return {
+        enabled: clientFlag.enabled,
+        data: undefined,
+      };
+    }
+
     // 1. Hidden by default - return false if still loading
     if (publicLoading || (shouldQueryPrivate && privateLoading)) {
       return {
@@ -81,14 +102,12 @@ export const useFeatureFlag = (key: FlagKeys): UseFeatureFlagReturn => {
     }
 
     // 2. In public but not in private, hidden
-    // TODO: Re-enable once Orderly activates isolated-margin for our account.
-    // Until then, bypass the private flag check so we can test the feature.
-    // if (privateFlag === undefined) {
-    //   return {
-    //     enabled: false,
-    //     data: undefined,
-    //   };
-    // }
+    if (privateFlag === undefined) {
+      return {
+        enabled: false,
+        data: undefined,
+      };
+    }
 
     // 3. In both public and private, shown
     return {
@@ -96,6 +115,7 @@ export const useFeatureFlag = (key: FlagKeys): UseFeatureFlagReturn => {
       data: privateFlag,
     };
   }, [
+    clientFlag,
     publicFlag,
     privateFlag,
     publicLoading,

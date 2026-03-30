@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Su cuenta está en modo de solo reducción y no puede abrir nuevas posiciones. ¿Desea desactivar el modo de solo reducción y proceder con la orden?",
   "orderEntry.placeOrderNow": "Realizar orden ahora",
   "orderEntry.maxQty.reminder.content": "Cantidad de orden reducida al máximo disponible: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Depositar fondos para operar",
+  "orderEntry.cta.enableTrading": "Habilitar trading para colocar órdenes",
   "leverage.maxAccountLeverage": "Apalancamiento máximo de cuenta",
   "leverage.accountLeverage": "Apalancamiento de cuenta",
   "leverage.currentLeverage": "Apalancamiento actual",

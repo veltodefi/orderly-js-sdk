@@ -2,13 +2,16 @@ import React, { useCallback, useEffect, useId, useMemo, useState } from "react";
 import {
   ERROR_MSG_CODES,
   OrderValidationResult,
+  useAccount,
   useLocalStorage,
   useMemoizedFn,
   useOrderlyContext,
+  useAssetsHistory,
 } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useOrderEntryFormErrorMsg } from "@veltodefi/react-app";
 import {
+  AccountStatusEnum,
   OrderlyOrder,
   OrderSide,
   OrderType,
@@ -22,10 +25,16 @@ import {
   modal,
   SimpleSheet,
   Switch,
+  Text,
   ThrottledButton,
   toast,
   useScreen,
+  ArrowDownShortIcon,
 } from "@veltodefi/ui";
+import {
+  WalletConnectorModalId,
+  WalletConnectorSheetId,
+} from "@veltodefi/ui-connector";
 import { TPSLAdvancedWidget } from "@veltodefi/ui-tpsl";
 import { Decimal } from "@veltodefi/utils";
 import { AdditionalConfigButton } from "./components/additional/additionalConfigButton";
@@ -54,6 +63,27 @@ type OrderEntryProps = OrderEntryScriptReturn & {
   disableFeatures?: ("slippageSetting" | "feesInfo")[];
 };
 
+const ModalTitle = () => {
+  const { t } = useTranslation();
+  const { state } = useAccount();
+  if (state.status < AccountStatusEnum.SignedIn) {
+    return <Text>{t("connector.createAccount")}</Text>;
+  }
+  if (state.status < AccountStatusEnum.EnableTrading) {
+    return <Text>{t("connector.enableTrading")}</Text>;
+  }
+  return <Text>{t("connector.connectWallet")}</Text>;
+};
+
+export const useHasDeposited = () => {
+  const [assetsHistory] = useAssetsHistory({
+    side: "DEPOSIT",
+    pageSize: 1,
+  });
+
+  return assetsHistory && assetsHistory.length > 0;
+};
+
 export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   const {
     side,
@@ -76,9 +106,10 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
     soundAlert,
     setSoundAlert,
     currentFocusInput,
+    accountStatus,
+    accountTotal,
   } = props;
   const [maxQtyConfirmOpen, setMaxQtyConfirmOpen] = useState(false);
-
   const { t } = useTranslation();
 
   const { isMobile } = useScreen();
@@ -107,20 +138,85 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   });
 
   const { notification } = useOrderlyContext();
+  // const accountState = {
+  //   accountStatus: AccountStatusEnum.EnableTrading,
+  // };
+
+  const hasDeposited = useHasDeposited();
 
   const soundAlertId = useId();
 
   const { getErrorMsg } = useOrderEntryFormErrorMsg(validated ? errors : null);
 
-  const buttonLabel = useMemo(() => {
+  const submitButtonDisabled = accountStatus === AccountStatusEnum.NotConnected;
+
+  const submitButtonLabel = useMemo(() => {
     // TODO: remove this for bug handling
     // if (isMobile && freeCollateral <= 0) {
     //   return t("common.deposit");
     // }
+
+    if (
+      accountStatus > AccountStatusEnum.NotConnected &&
+      accountStatus < AccountStatusEnum.EnableTrading
+    ) {
+      return t("orderEntry.cta.enableTrading");
+    }
+
+    if (
+      accountStatus >= AccountStatusEnum.EnableTrading &&
+      (!hasDeposited || accountTotal === null || accountTotal === 0)
+    ) {
+      return (
+        <>
+          <ArrowDownShortIcon
+            color="white"
+            opacity={1}
+            className="oui-rotate-0 oui-text-primary-contrast"
+          />
+          {t("orderEntry.cta.depositFunds")}
+        </>
+      );
+    }
+
     return side === OrderSide.BUY
       ? t("orderEntry.buyLong")
       : t("orderEntry.sellShort");
-  }, [side, t, isMobile]);
+  }, [side, t, isMobile, accountStatus, accountTotal, hasDeposited]);
+
+  const onClickSubmitButton = () => {
+    if (
+      accountStatus > AccountStatusEnum.NotConnected &&
+      accountStatus < AccountStatusEnum.EnableTrading
+    ) {
+      const modalId = isMobile
+        ? WalletConnectorSheetId
+        : WalletConnectorModalId;
+      return modal.show(modalId, { title: <ModalTitle /> });
+    }
+
+    if (
+      accountStatus >= AccountStatusEnum.EnableTrading &&
+      (!hasDeposited || accountTotal === null || accountTotal === 0)
+    ) {
+      return modal.show(
+        isMobile
+          ? "DepositAndWithdrawWithSheetId"
+          : "DepositAndWithdrawWithDialogId",
+        {
+          activeTab: "deposit",
+        },
+      );
+    }
+
+    if (isMobile && freeCollateral <= 0) {
+      modal.show("DepositAndWithdrawWithSheetId", {
+        activeTab: "deposit",
+      });
+    } else {
+      validateSubmit();
+    }
+  };
 
   useEffect(() => {
     if (validated) {
@@ -444,27 +540,21 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           fullWidth
           id={"order-entry-submit-button"}
           data-type={side}
-          data-active={props.canTrade}
+          data-active={!submitButtonDisabled}
           variant="primary"
           className={cn(
             "oui-orderEntry-submit-btn",
-            side === OrderSide.BUY
-              ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
-              : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80",
+            "disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36",
+            !submitButtonDisabled &&
+              (side === OrderSide.BUY
+                ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
+                : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"),
           )}
-          onClick={() => {
-            if (isMobile && freeCollateral <= 0) {
-              modal.show("DepositAndWithdrawWithSheetId", {
-                activeTab: "deposit",
-              });
-            } else {
-              validateSubmit();
-            }
-          }}
+          onClick={onClickSubmitButton}
           loading={props.isMutating}
-          disabled={!props.canTrade}
+          disabled={submitButtonDisabled}
         >
-          {buttonLabel}
+          {submitButtonLabel}
         </ThrottledButton>
 
         {/* Asset info */}

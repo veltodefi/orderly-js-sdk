@@ -9,6 +9,7 @@ import {
   useOrderEntry,
   useOrderlyContext,
   useTpslPriceChecker,
+  useAccount,
 } from "@veltodefi/hooks";
 import { useCanTrade } from "@veltodefi/react-app";
 import {
@@ -19,6 +20,7 @@ import {
   PositionType,
   ORDER_ENTRY_EST_LIQ_PRICE_CHANGE,
 } from "@veltodefi/types";
+import { useTotalValueBuilderScript } from "@veltodefi/ui-scaffold";
 import { Decimal, removeTrailingZeros } from "@veltodefi/utils";
 import { useAskAndBid } from "./hooks/useAskAndBid";
 import { useBBOState } from "./hooks/useBBOState";
@@ -50,7 +52,11 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
     OrderSide.BUY,
   );
 
+  const { totalValue: accountTotal } = useTotalValueBuilderScript();
   const { notification } = useOrderlyContext();
+  const {
+    state: { status: accountStatus },
+  } = useAccount();
 
   const orderFilledConfig = notification?.orderFilled;
   const defaultSoundValue =
@@ -429,6 +435,8 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
 
   return {
     ...state,
+    accountStatus,
+    accountTotal,
     slPriceError: slPriceError ?? undefined,
     side: formattedOrder.side as OrderSide,
     type: formattedOrder.order_type as OrderType,

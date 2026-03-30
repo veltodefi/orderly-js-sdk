@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Hesabınız sadece azaltma modunda ve yeni pozisyon açamıyor. Sadece azaltma modunu kapatıp emirle devam etmek ister misiniz?",
   "orderEntry.placeOrderNow": "Şimdi emir ver",
   "orderEntry.maxQty.reminder.content": "Sipariş miktarı mevcut maksimuma düşürüldü: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "İşlem yapmak için para yatırın",
+  "orderEntry.cta.enableTrading": "Emir vermek için ticareti etkinleştirin",
   "leverage.maxAccountLeverage": "Maks hesap kaldıracı",
   "leverage.accountLeverage": "Hesap kaldıracı",
   "leverage.currentLeverage": "Mevcut kaldıraç",

@@ -630,6 +630,8 @@
   "orderEntry.reduceOnly.reminder.content": "Twoje konto jest w trybie tylko redukcji i nie może otwierać nowych pozycji. Czy chcesz wyłączyć tryb tylko redukcji i kontynuować z zamówieniem?",
   "orderEntry.placeOrderNow": "Złóż zamówienie teraz",
   "orderEntry.maxQty.reminder.content": "Ilość zamówienia zmniejszona do maksymalnej dostępnej: {{maxQty}}",
+  "orderEntry.cta.depositFunds": "Wpłać środki, aby handlować",
+  "orderEntry.cta.enableTrading": "Włącz trading, aby składać zlecenia",
   "leverage.maxAccountLeverage": "Maks. dźwignia konta",
   "leverage.accountLeverage": "Dźwignia konta",
   "leverage.currentLeverage": "Aktualna dźwignia",
