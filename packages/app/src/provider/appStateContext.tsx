@@ -51,6 +51,7 @@ export type VeltoProps = {
   mostCommonChains?: string[];
   isRestrictedRegion?: boolean;
   feeTier?: FeeTierType;
+  featureFlags?: ClientFeatureFlag[];
 };
 
 export type AppContextState = {
@@ -79,6 +80,7 @@ export type AppContextState = {
   widgetConfigs?: WidgetConfigs;
   veltoProps?: VeltoProps;
   initialized: boolean;
+  featureFlags?: ClientFeatureFlag[];
 };
 
 export const AppStateContext = createContext<AppContextState>({
