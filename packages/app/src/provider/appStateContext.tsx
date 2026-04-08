@@ -3,6 +3,7 @@ import {
   RestrictedInfoReturns,
   type ClientFeatureFlag,
 } from "@veltodefi/hooks";
+import { OrderSide } from "@veltodefi/types";
 import { useWalletStateHandle } from "../hooks/useWalletStateHandle";
 
 export type RouteOption = {
@@ -38,6 +39,7 @@ export type VeltoProps = {
   mostCommonChains?: string[];
   isRestrictedRegion?: boolean;
   featureFlags?: ClientFeatureFlag[];
+  onPerpTrade?: (side: OrderSide) => void;
 };
 
 export type AppContextState = {

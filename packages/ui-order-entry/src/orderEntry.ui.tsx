@@ -9,7 +9,7 @@ import {
   useAssetsHistory,
 } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import { useOrderEntryFormErrorMsg } from "@veltodefi/react-app";
+import { useAppContext, useOrderEntryFormErrorMsg } from "@veltodefi/react-app";
 import {
   AccountStatusEnum,
   OrderlyOrder,
@@ -138,6 +138,7 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   });
 
   const { notification } = useOrderlyContext();
+  const { veltoProps } = useAppContext();
   // const accountState = {
   //   accountStatus: AccountStatusEnum.EnableTrading,
   // };
@@ -309,7 +310,10 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
         },
       )
       .then(() => {
-        // validate success, submit order
+        // validate success (and confirm modal accepted, if shown) — notify Velto
+        // that a perp order is actually being placed
+        veltoProps?.onPerpTrade?.(side);
+        // submit order
         return submit({ resetOnSuccess: false }).then((result: any) => {
           if (!result.success && result.message) {
             toast.error(result.message);
