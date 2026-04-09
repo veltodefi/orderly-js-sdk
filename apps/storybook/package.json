@@ -1,7 +1,7 @@
 {
   "name": "@veltodefi/storybook",
   "private": true,
-  "version": "1.11.1-velto-main.35",
+  "version": "1.11.1-velto-dev.37",
   "type": "module",
   "scripts": {
     "dev": "pnpm loadEnv vite",

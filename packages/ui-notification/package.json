@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-notification",
-  "version": "2.11.1-velto-main.35",
+  "version": "2.11.1-velto-dev.37",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
