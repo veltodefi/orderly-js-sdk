@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui",
-  "version": "2.11.1-velto-dev.36",
+  "version": "2.11.1-velto-main.37",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
