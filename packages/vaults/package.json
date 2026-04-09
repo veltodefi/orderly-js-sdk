@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/vaults",
-  "version": "2.11.1-velto-dev.37",
+  "version": "2.11.1-velto-main.38",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

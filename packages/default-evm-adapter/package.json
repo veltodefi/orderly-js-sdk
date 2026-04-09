@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/default-evm-adapter",
-  "version": "2.11.1-velto-dev.37",
+  "version": "2.11.1-velto-main.38",
   "description": "",
   "scripts": {
     "build": "tsup",
