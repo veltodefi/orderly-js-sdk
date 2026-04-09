@@ -40,6 +40,28 @@ export type FeeTierType = {
    * Permite que consumidores executem ações customizadas.
    */
   onGoToVipTiers?: () => void;
+  /**
+   * Override do taker fee exibido no order entry.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   * Formato: string já formatada como percentual, ex: "0.02%".
+   */
+  takerFee?: string;
+  /**
+   * Override do maker fee exibido no order entry.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   * Formato: string já formatada como percentual, ex: "0%".
+   */
+  makerFee?: string;
+  /**
+   * Override do taker fee para símbolos RWA.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   */
+  rwaTakerFee?: string;
+  /**
+   * Override do maker fee para símbolos RWA.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   */
+  rwaMakerFee?: string;
 };
 
 export type VeltoProps = {
