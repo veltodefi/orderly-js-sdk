@@ -30,6 +30,41 @@ export type WidgetConfigs = {
   };
 };
 
+export type FeeTierType = {
+  currentLevel: number;
+  nextLevel: number;
+  amountToNextLevel: string;
+  vipTiersUrl: string;
+  showLabelPrefix?: boolean;
+  /**
+   * Evento disparado ao clicar em "Go to VIP tiers".
+   * Permite que consumidores executem ações customizadas.
+   */
+  onGoToVipTiers?: () => void;
+  /**
+   * Override do taker fee exibido no order entry.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   * Formato: string já formatada como percentual, ex: "0.02%".
+   */
+  takerFee?: string;
+  /**
+   * Override do maker fee exibido no order entry.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   * Formato: string já formatada como percentual, ex: "0%".
+   */
+  makerFee?: string;
+  /**
+   * Override do taker fee para símbolos RWA.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   */
+  rwaTakerFee?: string;
+  /**
+   * Override do maker fee para símbolos RWA.
+   * Quando informado, substitui o valor retornado pela API da conta.
+   */
+  rwaMakerFee?: string;
+};
+
 export type VeltoProps = {
   onConnectWallet?: (
     defaultConnectWallet?: () => Promise<void>,
@@ -38,6 +73,7 @@ export type VeltoProps = {
   ) => void;
   mostCommonChains?: string[];
   isRestrictedRegion?: boolean;
+  feeTier?: FeeTierType;
   featureFlags?: ClientFeatureFlag[];
   onPerpTrade?: (side: OrderSide) => void;
 };
@@ -68,6 +104,7 @@ export type AppContextState = {
   widgetConfigs?: WidgetConfigs;
   veltoProps?: VeltoProps;
   initialized: boolean;
+  featureFlags?: ClientFeatureFlag[];
 };
 
 export const AppStateContext = createContext<AppContextState>({

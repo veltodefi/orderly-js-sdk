@@ -8,7 +8,7 @@ declare global {
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
   window.__ORDERLY_VERSION__["@veltodefi/wallet-connector-privy"] =
-    "2.11.1-velto-main.37";
+    "2.11.1-velto-main.39";
 }
 
-export default "2.11.1-velto-main.37";
+export default "2.11.1-velto-main.39";

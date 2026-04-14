@@ -144,4 +144,9 @@ export const common = {
   "common.offlineDescription":
     "Currently disconnected, please refresh the page",
   "common.refresh": "Refresh",
+  "feetier.title": "Lvl {{level}}",
+  "feetier.description":
+    "Trade <0/> more to lower your fees and reach Level {{nextLevel}}.",
+  "feetier.cta": "Go to VIP tiers",
+  "feetier.tooltip.title": "Your fee tier - Level {{level}}",
 };
