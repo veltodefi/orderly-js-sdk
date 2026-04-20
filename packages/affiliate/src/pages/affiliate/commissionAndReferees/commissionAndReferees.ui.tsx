@@ -192,6 +192,7 @@ const CommissionList: FC<CommissionAndRefereesReturns> = (props) => {
         ignoreLoadingCheck={true}
         dataSource={props.commission.data}
         pagination={props.commission.pagination}
+        classNames={{ scroll: "oui-min-h-[320px]" }}
         onRow={(record) => {
           return {
             className: "oui-h-[41px]",
