@@ -1276,5 +1276,9 @@
   "marginMode.searchPlaceholder": "Поиск",
   "marginMode.selectAll": "Выбрать все",
   "marginMode.setAs": "Установить как",
-  "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode."
+  "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
+  "feetier.title": "Уровень {{level}}",
+  "feetier.description": "Торгуйте ещё на <0/>, чтобы снизить комиссии и достичь уровня {{nextLevel}}.",
+  "feetier.cta": "Перейти к VIP уровням",
+  "feetier.tooltip.title": "Ваш уровень комиссий - Уровень {{level}}"
 }

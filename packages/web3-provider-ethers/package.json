@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/web3-provider-ethers",
-  "version": "2.11.1-velto-main.37",
+  "version": "2.11.1-velto-main.39",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

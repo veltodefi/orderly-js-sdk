@@ -1276,5 +1276,9 @@
   "marginMode.searchPlaceholder": "Cerca",
   "marginMode.selectAll": "Seleziona tutto",
   "marginMode.setAs": "Imposta come",
-  "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode."
+  "transfer.LTV.isolatedModeUsdcOnly": "Only USDC can be used as margin in Isolated Mode.",
+  "feetier.title": "Livello {{level}}",
+  "feetier.description": "Fai trading per altri <0/> per ridurre le commissioni e raggiungere il Livello {{nextLevel}}.",
+  "feetier.cta": "Vai ai livelli VIP",
+  "feetier.tooltip.title": "Il tuo livello di commissioni - Livello {{level}}"
 }
