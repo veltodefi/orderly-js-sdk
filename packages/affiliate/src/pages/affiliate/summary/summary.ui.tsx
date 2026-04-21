@@ -68,8 +68,6 @@ const CommissionData: FC<SummaryReturns> = (props) => {
 
   return (
     <Flex
-      // gradient="primary"
-      // angle={180}
       r="xl"
       py={4}
       px={6}
