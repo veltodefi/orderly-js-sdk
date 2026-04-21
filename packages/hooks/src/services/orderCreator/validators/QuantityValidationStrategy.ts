@@ -30,6 +30,7 @@ export class QuantityValidationStrategy implements IValidationStrategy<{
   ): OrderValidationItem | undefined {
     let { order_quantity, total, order_price } = values;
     const { maxQty, symbol } = config;
+    if (!symbol) return undefined;
     const { base_min, base_dp, quote_dp } = symbol;
 
     // Calculate order_quantity from total if not provided

@@ -202,7 +202,6 @@ export abstract class BaseOrderCreator<T> implements OrderCreator<T> {
     if (!order_quantity) {
       // calculate order_quantity from total
       if (total && order_price) {
-        const { quote_dp } = configs.symbol;
         const totalNumber = new Decimal(total);
         const qty = totalNumber.dividedBy(order_price).toFixed(quote_dp);
         order_quantity = qty;
@@ -213,17 +212,21 @@ export abstract class BaseOrderCreator<T> implements OrderCreator<T> {
       errors.order_quantity = OrderValidation.required("order_quantity");
     } else {
       // need to use MaxQty+base_max, base_min to compare
-      const { base_min, quote_dp, base_dp } = configs.symbol;
+      const {
+        base_min,
+        quote_dp: symQuoteDp,
+        base_dp: symBaseDp,
+      } = configs.symbol ?? {};
       const qty = new Decimal(order_quantity);
-      if (qty.lt(base_min)) {
+      if (base_min !== undefined && qty.lt(base_min)) {
         errors.order_quantity = OrderValidation.min(
           "order_quantity",
-          new Decimal(base_min).todp(base_dp).toString(),
+          new Decimal(base_min).todp(symBaseDp).toString(),
         );
       } else if (qty.gt(maxQty)) {
         errors.order_quantity = OrderValidation.max(
           "order_quantity",
-          new Decimal(maxQty).todp(base_dp).toString(),
+          new Decimal(maxQty).todp(symBaseDp ?? base_dp).toString(),
         );
       }
     }
