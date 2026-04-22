@@ -68,8 +68,6 @@ const CommissionData: FC<SummaryReturns> = (props) => {
 
   return (
     <Flex
-      gradient="primary"
-      angle={180}
       r="xl"
       py={4}
       px={6}
@@ -77,17 +75,20 @@ const CommissionData: FC<SummaryReturns> = (props) => {
       direction={"column"}
       gap={3}
       height={"100%"}
-      className="oui-max-h-[104px]"
+      className="oui-max-h-[104px] oui-bg-base-5"
     >
-      <Text intensity={54} className="oui-text-base 2xl:oui-text-lg">
+      <Text
+        intensity={54}
+        className="oui-text-base 2xl:oui-text-lg oui-text-primary"
+      >
         {`${t("affiliate.commission")} (USDC)`}
       </Text>
       <Flex
         direction={"row"}
         gap={3}
-        className="oui-text-xl md:oui-text-2xl xl:oui-text-3xl"
+        className="oui-text-xl md:oui-text-2xl xl:oui-text-3xl oui-text-primary"
       >
-        <USDCIcon className="md:oui-w-[24px] md:oui-h-[24px] lg:oui-w-[28px] lg:oui-h-[28px] " />
+        <USDCIcon className="md:oui-w-[24px] md:oui-h-[24px] lg:oui-w-[28px] lg:oui-h-[28px] oui-text-base-10" />
         <Text>
           {commifyOptional(props.commission, { fix: 2, fallback: "0" })}
         </Text>

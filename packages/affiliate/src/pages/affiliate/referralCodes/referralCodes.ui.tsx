@@ -13,6 +13,7 @@ import {
   Column,
   CopyIcon,
 } from "@veltodefi/ui";
+import { AuthGuardEmpty } from "@veltodefi/ui-connector";
 import { Decimal } from "@veltodefi/utils";
 import { EditCode } from "../../../components/editCodeBtn";
 import { PinBtn } from "../../../components/pinButton";
@@ -59,6 +60,9 @@ const Title: FC<ReferralCodesReturns> = (props) => {
 };
 
 const MobileLayout: FC<ReferralCodesReturns> = (props) => {
+  if (!props.codes?.length) {
+    return <AuthGuardEmpty />;
+  }
   return (
     <ListView
       dataSource={props.codes}

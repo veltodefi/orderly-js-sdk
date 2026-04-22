@@ -13,7 +13,7 @@ import {
   Text,
   cn,
 } from "@veltodefi/ui";
-import { AuthGuardDataTable } from "@veltodefi/ui-connector";
+import { AuthGuardDataTable, AuthGuardEmpty } from "@veltodefi/ui-connector";
 import { commifyOptional } from "@veltodefi/utils";
 import { DateRange } from "../../../utils/types";
 import { formatYMDTime } from "../../../utils/utils";
@@ -133,13 +133,20 @@ const CommissionList: FC<CommissionAndRefereesReturns> = (props) => {
 
   const body = useMemo(() => {
     if (isLG) {
+      if (!props.commission.isLoading && !props.commission.data?.length) {
+        return (
+          <Flex width="100%" justify="center">
+            <AuthGuardEmpty />
+          </Flex>
+        );
+      }
       return (
         <ListView<
           RefferalAPI.ReferralRebateSummary,
           RefferalAPI.ReferralRebateSummary[]
         >
           className="oui-max-h-[200px] oui-w-full"
-          dataSource={props.commission.data}
+          dataSource={props.commission.data ?? []}
           loadMore={props.commission.loadMore}
           isLoading={props.commission.isLoading}
           renderItem={(e) => {
@@ -192,6 +199,7 @@ const CommissionList: FC<CommissionAndRefereesReturns> = (props) => {
         ignoreLoadingCheck={true}
         dataSource={props.commission.data}
         pagination={props.commission.pagination}
+        classNames={{ scroll: "oui-min-h-[320px]" }}
         onRow={(record) => {
           return {
             className: "oui-h-[41px]",
@@ -277,10 +285,17 @@ const RefereesList: FC<CommissionAndRefereesReturns> = (props) => {
 
   const body = useMemo(() => {
     if (isLG) {
+      if (!props.referees.isLoading && !props.referees.data?.length) {
+        return (
+          <Flex width="100%" justify="center">
+            <AuthGuardEmpty />
+          </Flex>
+        );
+      }
       return (
         <ListView<RefferalAPI.RefereeInfoItem, RefferalAPI.RefereeInfoItem[]>
           className="oui-w-full oui-max-h-[200px]"
-          dataSource={props.referees.data}
+          dataSource={props.referees.data ?? []}
           loadMore={props.referees.loadMore}
           isLoading={props.referees.isLoading}
           renderItem={(e, index) => {
