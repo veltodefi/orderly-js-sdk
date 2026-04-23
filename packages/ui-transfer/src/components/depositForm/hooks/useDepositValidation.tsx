@@ -16,6 +16,8 @@ type Options = {
   isNativeToken: boolean;
   depositFee: bigint;
   depositFeeRevalidating: boolean;
+  depositFeeFetched: boolean;
+  depositFeeFailed: boolean;
   nativeBalanceRevalidating: boolean;
   dstGasFee: string;
   nativeSymbol?: string;
@@ -36,6 +38,8 @@ export const useDepositValidation = (options: Options) => {
     isNativeToken,
     depositFee,
     depositFeeRevalidating,
+    depositFeeFetched,
+    depositFeeFailed,
     nativeBalanceRevalidating,
     dstGasFee,
     nativeSymbol,
@@ -202,16 +206,35 @@ export const useDepositValidation = (options: Options) => {
   ]);
 
   const feeWarningMessage = useMemo(() => {
+    // No message while idle or mid-fetch.
     if (
-      quantity &&
-      Number(quantity) > 0 &&
-      depositFee === 0n &&
-      !depositFeeRevalidating &&
-      account.walletAdapter?.chainNamespace !== ChainNamespace.solana
+      !quantity ||
+      Number(quantity) <= 0 ||
+      depositFeeRevalidating ||
+      account.walletAdapter?.chainNamespace === ChainNamespace.solana
     ) {
+      return undefined;
+    }
+
+    // Defensive guard for any case where we can't produce a usable fee —
+    // either the fetcher rejected (network / RPC / contract revert) or it
+    // returned a degenerate zero. In both cases the deposit button is
+    // disabled downstream so the user doesn't submit a transaction the
+    // SDK hasn't actually priced.
+    if (depositFeeFailed || (depositFeeFetched && depositFee === 0n)) {
       return t("transfer.deposit.feeUnavailable");
     }
-  }, [t, quantity, depositFee, depositFeeRevalidating, account]);
+
+    return undefined;
+  }, [
+    t,
+    quantity,
+    depositFee,
+    depositFeeFetched,
+    depositFeeFailed,
+    depositFeeRevalidating,
+    account,
+  ]);
 
   const { inputStatus, hintMessage } = useMemo<{
     inputStatus: InputStatus;
