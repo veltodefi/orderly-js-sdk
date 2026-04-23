@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "存款請求",
   "transfer.deposit.completed": "存款完成",
   "transfer.deposit.failed": "存款失敗",
-  "transfer.deposit.feeUnavailable": "費用數據當前不可用。請稍後再試。",
+  "transfer.deposit.feeUnavailable": "無法獲取費用報價。請稍後再試。",
   "transfer.deposit.notEnoughGas": "Gas 不足。請在您的錢包中添加一些 {{token}} 以繼續。",
   "transfer.deposit.exceedCap": "金額超過用戶存款上限",
   "transfer.deposit.estGasFee": "預估燃氣費",

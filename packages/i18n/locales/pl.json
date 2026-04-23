@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "Wpłata zażądana",
   "transfer.deposit.completed": "Wpłata zakończona",
   "transfer.deposit.failed": "Wpłata nie powiodła się",
-  "transfer.deposit.feeUnavailable": "Dane o opłatach są obecnie niedostępne. Spróbuj ponownie później.",
+  "transfer.deposit.feeUnavailable": "Nie udało się pobrać wyceny opłaty. Spróbuj ponownie za chwilę.",
   "transfer.deposit.notEnoughGas": "Za mało gazu. Dodaj {{token}} do swojego portfela, aby kontynuować.",
   "transfer.deposit.exceedCap": "Kwota przekracza limit wpłaty użytkownika",
   "transfer.deposit.estGasFee": "Szac. opłata za gaz",

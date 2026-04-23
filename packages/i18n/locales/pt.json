@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "Depósito solicitado",
   "transfer.deposit.completed": "Depósito concluído",
   "transfer.deposit.failed": "Falha no depósito",
-  "transfer.deposit.feeUnavailable": "Os dados de taxas não estão disponíveis no momento. Por favor, tente novamente mais tarde.",
+  "transfer.deposit.feeUnavailable": "Não foi possível obter uma cotação da taxa. Tente novamente em instantes.",
   "transfer.deposit.notEnoughGas": "Gas insuficiente. Adicione {{token}} à sua carteira para continuar.",
   "transfer.deposit.exceedCap": "O valor excede o limite de depósito do usuário",
   "transfer.deposit.estGasFee": "Taxa de gás estimada",

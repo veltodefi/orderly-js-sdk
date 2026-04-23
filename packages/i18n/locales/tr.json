@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "Yatırma talep edildi",
   "transfer.deposit.completed": "Yatırma tamamlandı",
   "transfer.deposit.failed": "Yatırma başarısız oldu",
-  "transfer.deposit.feeUnavailable": "Ücret verileri şu anda mevcut değil. Lütfen daha sonra tekrar deneyin.",
+  "transfer.deposit.feeUnavailable": "Ücret teklifi alınamadı. Lütfen biraz sonra tekrar deneyin.",
   "transfer.deposit.notEnoughGas": "Yeterli gas yok. Devam etmek için cüzdanınıza {{token}} ekleyin.",
   "transfer.deposit.exceedCap": "Miktar kullanıcı yatırma limitini aşıyor",
   "transfer.deposit.estGasFee": "Tahmini gaz ücreti",
