@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "Deposito richiesto",
   "transfer.deposit.completed": "Deposito completato",
   "transfer.deposit.failed": "Deposito fallito",
-  "transfer.deposit.feeUnavailable": "I dati sulle commissioni non sono attualmente disponibili. Riprova più tardi.",
+  "transfer.deposit.feeUnavailable": "Impossibile ottenere una stima della commissione. Riprova tra un momento.",
   "transfer.deposit.notEnoughGas": "Gas insufficiente. Aggiungi {{token}} al tuo portafoglio per continuare.",
   "transfer.deposit.exceedCap": "L'importo supera il limite di deposito dell'utente",
   "transfer.deposit.estGasFee": "Commissione gas stimata",

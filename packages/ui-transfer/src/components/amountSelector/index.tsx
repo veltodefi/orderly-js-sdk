@@ -5,6 +5,13 @@ export type Percentages = 1 | 0.5 | 0.2 | 0.1;
 
 type Props = {
   maxAmount: string;
+  /**
+   * Display precision of the source token (e.g. 2 for USDC). Quick-fill
+   * output is truncated to this many decimals so it matches what the typed
+   * input would produce for the same logical value — see the note on
+   * `getSelectedValue` below.
+   */
+  precision?: number;
   selectedPercentage?: Percentages;
   disabled?: boolean;
   onClick: (props: {
@@ -15,13 +22,19 @@ type Props = {
 
 export const AmountSelector = ({
   maxAmount,
+  precision,
   selectedPercentage,
   disabled,
   onClick,
 }: Props) => {
+  // Match the typed-input formatter (`inputFormatter.dpFormatter(precision)`)
+  // which truncates to the token's display precision. Without this, quick-fill
+  // produces raw multiplication output (e.g. 10.222273 for 10% of 102.22273),
+  // which diverges from the typed path and can cause the downstream fee quote
+  // to behave differently for what the user perceives as "the same amount".
   const getSelectedValue = (percentage: Percentages) => {
     const value = new Decimal(maxAmount).mul(percentage);
-    return value?.toString();
+    return value.todp(precision ?? 2, Decimal.ROUND_DOWN).toString();
   };
 
   const options: { percentage: Percentages; label: string }[] = [

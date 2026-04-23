@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "Đã yêu cầu nạp tiền",
   "transfer.deposit.completed": "Đã hoàn thành nạp tiền",
   "transfer.deposit.failed": "Nạp tiền thất bại",
-  "transfer.deposit.feeUnavailable": "Dữ liệu phí hiện không khả dụng. Vui lòng thử lại sau.",
+  "transfer.deposit.feeUnavailable": "Không thể lấy báo giá phí. Vui lòng thử lại sau giây lát.",
   "transfer.deposit.notEnoughGas": "Không đủ gas. Thêm một số {{token}} vào ví của bạn để tiếp tục.",
   "transfer.deposit.exceedCap": "Số tiền vượt quá giới hạn nạp tiền của người dùng",
   "transfer.deposit.estGasFee": "Phí gas ước tính",

@@ -238,6 +238,7 @@ export const DepositForm: FC<Props> = (props) => {
               />
               <AmountSelector
                 maxAmount={maxDepositAmount}
+                precision={sourceToken?.precision}
                 disabled={!maxDepositAmount || maxDepositAmount === "0"}
                 selectedPercentage={selectedPercentage}
                 onClick={({ selectedPercentage, selectedValue }) => {

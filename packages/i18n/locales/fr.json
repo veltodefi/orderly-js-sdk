@@ -781,7 +781,7 @@
   "transfer.deposit.requested": "Dépôt demandé",
   "transfer.deposit.completed": "Dépôt terminé",
   "transfer.deposit.failed": "Échec du dépôt",
-  "transfer.deposit.feeUnavailable": "Les données de frais ne sont actuellement pas disponibles. Veuillez réessayer plus tard.",
+  "transfer.deposit.feeUnavailable": "Impossible d'obtenir un devis de frais. Veuillez réessayer dans un instant.",
   "transfer.deposit.notEnoughGas": "Pas assez de gas. Ajoutez des {{token}} à votre portefeuille pour continuer.",
   "transfer.deposit.exceedCap": "Le montant dépasse le plafond de dépôt de l'utilisateur",
   "transfer.deposit.estGasFee": "Frais de gaz estimés",

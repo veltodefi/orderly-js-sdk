@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "Depósito solicitado",
   "transfer.deposit.completed": "Depósito completado",
   "transfer.deposit.failed": "Depósito fallido",
-  "transfer.deposit.feeUnavailable": "Los datos de tarifas no están disponibles actualmente. Por favor, inténtelo de nuevo más tarde.",
+  "transfer.deposit.feeUnavailable": "No se pudo obtener una cotización de la tarifa. Inténtalo de nuevo en un momento.",
   "transfer.deposit.notEnoughGas": "Gas insuficiente. Agrega {{token}} a tu billetera para continuar.",
   "transfer.deposit.exceedCap": "El monto excede el límite de depósito del usuario",
   "transfer.deposit.estGasFee": "Tarifa de gas estimada",

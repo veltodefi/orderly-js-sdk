@@ -777,7 +777,7 @@
   "transfer.deposit.requested": "Запит на депозит",
   "transfer.deposit.completed": "Депозит завершено",
   "transfer.deposit.failed": "Помилка депозиту",
-  "transfer.deposit.feeUnavailable": "Дані про комісію наразі недоступні. Будь ласка, спробуйте пізніше.",
+  "transfer.deposit.feeUnavailable": "Не вдалося отримати оцінку комісії. Спробуйте ще раз за мить.",
   "transfer.deposit.notEnoughGas": "Недостатньо газу. Додайте {{token}} до свого гаманця, щоб продовжити.",
   "transfer.deposit.exceedCap": "Сума перевищує ліміт депозиту користувача",
   "transfer.deposit.estGasFee": "Розрахункова комісія за газ",
