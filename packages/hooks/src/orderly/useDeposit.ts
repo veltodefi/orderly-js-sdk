@@ -127,7 +127,12 @@ export const useDeposit = (options: DepositOptions) => {
     chainId: dst?.chainId,
   });
 
-  const { depositFee, depositFeeRevalidating } = useDepositFee({
+  const {
+    depositFee,
+    depositFeeRevalidating,
+    depositFeeFetched,
+    depositFeeFailed,
+  } = useDepositFee({
     quantity,
     account,
     targetChain,
@@ -260,6 +265,8 @@ export const useDeposit = (options: DepositOptions) => {
     balanceRevalidating,
     allowanceRevalidating,
     depositFeeRevalidating,
+    depositFeeFetched,
+    depositFeeFailed,
     isNativeToken,
     dst,
     targetChain,
@@ -613,6 +620,7 @@ function useDepositFee(options: {
 
   const {
     data,
+    error,
     isValidating: depositFeeRevalidating,
     mutate: mutateDepositFee,
   } = useSWR(key, fetcher, {
@@ -629,7 +637,31 @@ function useDepositFee(options: {
     );
   }, [data]);
 
-  return { depositFee, depositFeeRevalidating, mutateDepositFee };
+  // Distinguishes "SWR has a response for the current key" from "depositFee is
+  // still 0n because we haven't fetched yet". Needed so validation can tell
+  // the difference between a fetched-zero response and the initial/idle state
+  // between a quantity change and SWR's next fetch cycle.
+  const depositFeeFetched = data !== undefined;
+
+  // Surfaces "the fetcher rejected" as a flat boolean. Covers CALL_EXCEPTION
+  // from a contract revert, network errors, timeouts, RPC 5xx — anything
+  // where we don't have usable fee data. We log the raw error so engineers
+  // can investigate if it starts happening in production; we don't expose
+  // the classification to the UI because the remedy is the same either way.
+  const depositFeeFailed = error !== undefined && error !== null;
+  useEffect(() => {
+    if (error) {
+      console.warn("[useDepositFee] fetcher error:", error);
+    }
+  }, [error]);
+
+  return {
+    depositFee,
+    depositFeeRevalidating,
+    depositFeeFetched,
+    depositFeeFailed,
+    mutateDepositFee,
+  };
 }
 
 function useTargetChain(srcChainId?: number) {
