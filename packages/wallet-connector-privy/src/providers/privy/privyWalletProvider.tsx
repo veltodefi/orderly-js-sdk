@@ -15,7 +15,7 @@ import {
   WalletWithMetadata,
 } from "@privy-io/react-auth";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import { useTrack, WalletState } from "@veltodefi/hooks";
+import { useLocalStorage, useTrack, WalletState } from "@veltodefi/hooks";
 import { ChainNamespace, TrackerEventName } from "@veltodefi/types";
 import { useWalletConnectorPrivy } from "../../provider";
 import { ConnectProps, SolanaChainsMap } from "../../types";
