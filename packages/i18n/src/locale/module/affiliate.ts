@@ -32,6 +32,11 @@ export const affiliate = {
   "affiliate.referralCode.label": "Enter referral code",
   "affiliate.referralCode.bound": "Referral code bound",
   "affiliate.referralCode.notExist": "This referral code does not exist.",
+  "affiliate.referralCode.bind.modal.title": "Were you referred by someone?",
+  "affiliate.referralCode.bind.modal.description":
+    "If an affiliate shared their referral code with you, enter it below to bind your account and receive affiliate benefits.",
+  "affiliate.referralCode.bind.input.placeholder": "Enter referrer's code",
+  "affiliate.referralCode.bind.skip": "No, I was not referred by anyone",
 
   "affiliate.process.title": "How It Works",
   "affiliate.process.step1.title": "Trade $10,000+ or apply",
@@ -74,7 +79,7 @@ export const affiliate = {
   "affiliate.base": "Affiliate",
   "affiliate.directBonus": "Direct bonus",
   "affiliate.commission.30d": "30d commission",
-  "affiliate.commission.column.activeUsers": "Referral active users",
+  "affiliate.commission.column.activeUsers": "New traders",
 
   "affiliate.myReferees": "My referees",
   "affiliate.referees": "Referees",
@@ -113,6 +118,7 @@ export const affiliate = {
   "affiliate.direct": "Direct",
   "affiliate.directInclBonus": "Incl. {{amount}} bonus",
   "affiliate.indirect": "Indirect",
+  "affiliate.referredBy": "Referred by {{name}}",
   "affiliate.referrals": "Referrals",
   "affiliate.referralCode.edit.modal.title": "Configure your referral settings",
   "affiliate.referralCode.create": "Create referral code",
@@ -158,6 +164,9 @@ export const affiliate = {
   "affiliate.newReferralProgram.tradeUnlock": "Trade to unlock",
   "affiliate.newReferralProgram.tradeUnlock.description":
     "Trade {{volume}} USDC volume to unlock the ability to invite friends and earn commissions.",
+  "affiliate.newReferralProgram.wereYouReferred":
+    "Were you referred by someone?",
+  "affiliate.newReferralProgram.referredBy": "You were referred by {{code}}.",
 
   "affiliate.commissionConfiguration": "Commission configuration",
   "affiliate.totalCommissionAvailable": "Total commission available",

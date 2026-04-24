@@ -20,7 +20,11 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { CSS, Transform } from "@dnd-kit/utilities";
-import { useGetRwaSymbolOpenStatus, useLocalStorage } from "@veltodefi/hooks";
+import {
+  useBadgeBySymbol,
+  useGetRwaSymbolOpenStatus,
+  useLocalStorage,
+} from "@veltodefi/hooks";
 import {
   SideMarketsWidget,
   SymbolInfoBarFullWidget,
@@ -149,9 +153,19 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
   } = props;
 
   const { showCountdown, closeCountdown } = useShowRwaCountdown(props.symbol);
+  const { brokerName } = useBadgeBySymbol(props.symbol);
+
   const symbolInfoBarHeight = useMemo(() => {
-    return showCountdown ? 104 : 56;
-  }, [showCountdown]);
+    let height = 56;
+    if (brokerName) {
+      height += 46;
+      height += 8;
+    }
+    if (showCountdown) {
+      height += 48;
+    }
+    return height;
+  }, [showCountdown, brokerName]);
 
   const { isRwa, open } = useGetRwaSymbolOpenStatus(props.symbol);
 
@@ -346,9 +360,6 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
   const symbolInfoBarView = (
     <Box
       className="oui-trading-symbolInfoBar-container"
-      intensity={900}
-      r="2xl"
-      px={3}
       width="100%"
       style={{
         minHeight: symbolInfoBarHeight,

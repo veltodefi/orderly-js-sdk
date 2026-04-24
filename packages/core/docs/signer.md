@@ -1,50 +1,70 @@
-# signer
+# signer.ts
 
-> Location: `packages/core/src/signer.ts`
+## signer.ts Responsibility
 
-## Overview
+Defines the Orderly API request signer: `MessageFactor` (url, method, optional data), `SignedMessagePayload` (orderly-key, orderly-timestamp, orderly-signature, optional orderly-account-id), `Signer` interface, and `BaseSigner` implementation that builds a message string from timestamp + method + url + JSON(data) and signs it with OrderlyKeyPair from keyStore, returning base64url signature and public key.
 
-Signing of API requests using orderly key: `MessageFactor` and `SignedMessagePayload` types, `Signer` interface, and `BaseSigner` implementation that uses keyStore and produces orderly-key headers.
+## signer.ts Exports
 
-## Exports
+| Name                 | Type      | Role     | Description                                                                        |
+| -------------------- | --------- | -------- | ---------------------------------------------------------------------------------- |
+| MessageFactor        | type      | Input    | { url, method: "GET"\|"POST"\|"PUT"\|"DELETE", data? }                             |
+| SignedMessagePayload | type      | Output   | { "orderly-key", "orderly-timestamp", "orderly-signature", "orderly-account-id"? } |
+| Signer               | interface | Contract | sign(messageFactor, timestamp?), signText(text)                                    |
+| BaseSigner           | class     | Impl     | Uses OrderlyKeyStore to get OrderlyKeyPair and sign                                |
 
-### MessageFactor (type)
+## Signer Responsibility
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| url | string | Request URL. |
-| method | "GET" \| "POST" \| "PUT" \| "DELETE" | HTTP method. |
-| data? | any | Optional body for POST etc. |
+Produces Orderly API headers (orderly-key, orderly-timestamp, orderly-signature) for authenticated requests. Signing is over the canonical string: timestamp + method + url + (optional) JSON.stringify(data).
 
-### SignedMessagePayload (type)
+## MessageFactor Fields
 
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| "orderly-key" | string | Public key. |
-| "orderly-timestamp" | string | Timestamp string. |
-| "orderly-signature" | string | Base64url signature. |
-| "orderly-account-id"? | string | Optional account ID header. |
+| Field  | Type                                 | Required | Description                                           |
+| ------ | ------------------------------------ | -------- | ----------------------------------------------------- |
+| url    | string                               | Yes      | Request path/URL                                      |
+| method | "GET" \| "POST" \| "PUT" \| "DELETE" | Yes      | HTTP method                                           |
+| data   | any                                  | No       | Request body (object); included in message if present |
 
-### Signer (interface)
+## SignedMessagePayload Fields
 
-- **sign(data: MessageFactor, timestamp?): Promise\<SignedMessagePayload\>**
-- **signText(text: string): Promise\<{ signature, publicKey }\>**
+| Field              | Type   | Description                             |
+| ------------------ | ------ | --------------------------------------- |
+| orderly-key        | string | Public key (ed25519:...)                |
+| orderly-timestamp  | string | Timestamp used in message               |
+| orderly-signature  | string | Base64url signature                     |
+| orderly-account-id | string | Optional; set by Account for some calls |
 
-### BaseSigner (class)
+## BaseSigner Execution Flow
 
-Implements `Signer`. Constructor: `(keyStore: OrderlyKeyStore)`.
+1. sign(messageFactor, timestamp): Build msgStr = timestamp + method + url + (data ? JSON.stringify(data)); call signText(msgStr); return { "orderly-key": publicKey, "orderly-timestamp": timestamp, "orderly-signature": signature }.
+2. signText(text): Get orderlyKeyPair from keyStore.getOrderlyKey(); Buffer.from(text) → sign with keyPair.sign; encode signature as base64url; return { signature, publicKey: await getPublicKey() }.
 
-- **sign(message, timestamp)** – Builds message string from timestamp + method + url + optional JSON data; signs with orderly key; returns headers object.
-- **signText(text)** – Signs raw text; returns base64url signature and public key.
+## signer.ts Dependencies and Call Relationships
 
-## Usage Example
+- **Upstream**: keyStore (OrderlyKeyStore), utils (base64url, getTimestamp), buffer.
+- **Downstream**: Account (signData, signGetMessageFactor), Assets (withdraw, internalTransfer use account.signer).
 
-```ts
-import { BaseSigner } from "@veltodefi/core";
+## signer.ts Errors and Boundaries
+
+| Scenario       | Condition                          | Behavior                              | Handling                                    |
+| -------------- | ---------------------------------- | ------------------------------------- | ------------------------------------------- |
+| No orderly key | signText when getOrderlyKey() null | throw "orderlyKeyPair is not defined" | Ensure keyStore has key for current address |
+
+## signer.ts Example
+
+```typescript
+import {
+  BaseSigner,
+  MessageFactor,
+  SignedMessagePayload,
+} from "@orderly.network/core";
+import { LocalStorageStore } from "@orderly.network/core";
+
+const keyStore = new LocalStorageStore("testnet");
+// ... setAddress, setKey so getOrderlyKey() returns key
 const signer = new BaseSigner(keyStore);
-const headers = await signer.sign({
-  url: "https://api.orderly.org/v1/client/sub_account",
-  method: "GET",
-});
-// Use headers["orderly-key"], headers["orderly-timestamp"], headers["orderly-signature"]
+
+const payload: MessageFactor = { method: "GET", url: "/v1/client/sub_account" };
+const headers: SignedMessagePayload = await signer.sign(payload);
+// Use headers["orderly-key"], headers["orderly-timestamp"], headers["orderly-signature"] in request
 ```

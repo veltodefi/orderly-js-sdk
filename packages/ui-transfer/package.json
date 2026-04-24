@@ -28,6 +28,7 @@
     "@veltodefi/default-solana-adapter": "workspace:*",
     "@veltodefi/react-app": "workspace:*",
     "@veltodefi/perp": "workspace:*",
+    "@akamfoad/qr": "^0.4.0",
     "@layerzerolabs/scan-client": "^0.0.6",
     "@solana/web3.js": "^1.95.3",
     "ethers": "^6.16.0",

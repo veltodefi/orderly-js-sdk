@@ -7,7 +7,6 @@ import {
   ForwardedRef,
   useImperativeHandle,
 } from "react";
-import { differenceInDays, setHours, subDays, format } from "date-fns";
 import {
   useLocalStorage,
   useOrderStream,
@@ -24,6 +23,7 @@ import {
 import { modal, usePagination, Text, Table } from "@veltodefi/ui";
 import { SharePnLConfig } from "@veltodefi/ui-share";
 import { formatSymbol } from "@veltodefi/utils";
+import { differenceInDays, setHours, subDays, format } from "date-fns";
 import { areDatesEqual } from "../../utils/util";
 import { TabType } from "../orders.widget";
 import { useFormatOrderHistory } from "./useFormatOrderHistory";
@@ -137,7 +137,7 @@ export const useOrderListScript = (props: useOrderListScriptOptions) => {
     page: enableLoadMore || !manualPagination ? undefined : page,
     // pending and ts_sl list get all data
     size: manualPagination ? pageSize : 500,
-    sourceTypeAll: type === TabType.orderHistory,
+    sourceTypeAll: type === TabType.orderHistory || type === TabType.filled,
     dateRange,
     includes,
     excludes,
@@ -477,7 +477,6 @@ export const formatDatePickerRange = (option: { from?: Date; to?: Date }) => ({
 type TranslationFn = (...args: any[]) => string;
 
 const getDialogInfo = (type: TabType, t: TranslationFn, symbol?: string) => {
-  // symbol like this: PERP_BTC_USDC, but i want to show BTC, pls help me to format the symbol
   const formattedSymbol = symbol ? formatSymbol(symbol, "base") : symbol;
   switch (type) {
     case TabType.pending:

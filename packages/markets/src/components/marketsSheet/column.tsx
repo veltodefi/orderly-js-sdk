@@ -11,7 +11,9 @@ export const getMarketsSheetColumns = (
   isFavoriteList = false,
 ) => {
   return [
-    getSymbolColumn(favorite, isFavoriteList),
+    getSymbolColumn(favorite, isFavoriteList, {
+      stackLeverageInSecondRow: true,
+    }),
     get24hVolOIColumn(),
     getLastAnd24hPercentageColumn(favorite, isFavoriteList),
   ] as Column[];

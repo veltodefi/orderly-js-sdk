@@ -45,7 +45,7 @@ export const useReferralCodeFormScript = (
       0,
       new Decimal(maxRebatePercentage).sub(referrerRebatePercentage).toNumber(),
     );
-  }, [referrerRebatePercentage]);
+  }, [maxRebatePercentage, referrerRebatePercentage]);
 
   const codeChanged = useMemo(() => {
     return newCode !== referralCode;
@@ -58,18 +58,26 @@ export const useReferralCodeFormScript = (
     );
   }, [referrerRebatePercentage, referrerRebateRate, newCode]);
 
-  const handleError = (err: any) => {
-    console.error("handleError", err);
-    toast.error(err?.message || t("common.somethingWentWrong"));
+  const getErrorMessage = (err: unknown): string | undefined => {
+    if (typeof err === "object" && err !== null && "message" in err) {
+      const msg = (err as { message?: unknown }).message;
+      return typeof msg === "string" ? msg : undefined;
+    }
+    return undefined;
   };
 
-  const handleResult = (res: any) => {
+  const handleError = (err: unknown) => {
+    console.error("handleError", err);
+    toast.error(getErrorMessage(err) || t("common.somethingWentWrong"));
+  };
+
+  const handleResult = (res: { success?: boolean; message?: string }) => {
     if (res.success) {
       options.onSuccess?.();
       toast.success(t("affiliate.confirmChanges.success"));
       options.close?.();
     } else {
-      toast.error(res.message);
+      toast.error(res.message || t("common.somethingWentWrong"));
     }
   };
 
@@ -156,13 +164,16 @@ export const useReferralCodeFormScript = (
   const buttonDisabled =
     type === ReferralCodeFormType.Edit && !codeChanged && !rateChanged;
 
+  const confirmButtonLoading = isMutating;
+
   return {
+    type,
     onClick,
     maxRebatePercentage,
     referrerRebatePercentage,
     setReferrerRebatePercentage,
     refereeRebatePercentage,
-    isMutating,
+    confirmButtonLoading,
     newCode,
     setNewCode,
     isReview,

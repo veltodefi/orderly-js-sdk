@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   useAccount,
   useConfig,
@@ -7,7 +7,7 @@ import {
   useOrderlyContext,
 } from "@veltodefi/hooks";
 import { useAppContext } from "@veltodefi/react-app";
-import { NetworkId } from "@veltodefi/types";
+import { ChainNamespace, NetworkId } from "@veltodefi/types";
 import { useAuthGuard } from "@veltodefi/ui-connector";
 import { useActionType } from "./hooks/useActionType";
 import { useChainSelect } from "./hooks/useChainSelect";
@@ -59,10 +59,10 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
     balance,
     allowance,
     depositFee,
-    balanceRevalidating,
-    depositFeeRevalidating,
     depositFeeFetched,
     depositFeeFailed,
+    balanceRevalidating,
+    depositFeeRevalidating,
     quantity,
     setQuantity,
     approve,
@@ -96,12 +96,6 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
       tokenBalances,
       getIndexPrice,
     );
-
-    const areEqual = areArraysEqual(sourceTokens, sortedTokens);
-    if (areEqual) {
-      return;
-    }
-
     setSourceTokens(sortedTokens);
   }, [orderlyTokens, swapTokens, tokenBalances]);
 
@@ -200,9 +194,9 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
     maxQuantity,
     isNativeToken,
     depositFee,
-    depositFeeRevalidating,
     depositFeeFetched,
     depositFeeFailed,
+    depositFeeRevalidating,
     nativeBalanceRevalidating,
     dstGasFee: fee.dstGasFee,
     nativeSymbol,
@@ -253,6 +247,13 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
   const targetQuantityLoading = swapPriceRevalidating;
 
   const warningMessage = validationMessage || swapErrorMessage;
+
+  const [activeSubTab, setActiveSubTab] = useState<
+    "web3" | "exclusive_deposit"
+  >("web3");
+
+  const showExclusiveDeposit =
+    account.walletAdapter?.chainNamespace !== ChainNamespace.solana;
 
   return {
     sourceToken,
@@ -311,25 +312,9 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
     showSourceDepositCap,
     showTargetDepositCap,
     quantityNotional,
+
+    activeSubTab,
+    setActiveSubTab,
+    showExclusiveDeposit,
   };
 };
-
-interface Identity {
-  symbol?: string;
-  address?: string;
-  amount?: number;
-  balance?: number;
-  user_max_qty?: number;
-}
-
-function areArraysEqual<T extends Identity>(arr1: T[], arr2: T[]): boolean {
-  if (arr1.length !== arr2.length) return false;
-  return arr1.every(
-    (item, i) =>
-      item.symbol === arr2[i].symbol &&
-      item.address === arr2[i].address &&
-      item.balance === arr2[i].balance &&
-      item.user_max_qty === arr2[i].user_max_qty &&
-      item.amount === arr2[i].amount,
-  );
-}

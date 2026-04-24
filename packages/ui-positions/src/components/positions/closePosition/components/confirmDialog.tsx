@@ -2,7 +2,7 @@ import { FC, useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderEntity, OrderSide } from "@veltodefi/types";
 import {
-  MainButton,
+  Button,
   Text,
   CloseIcon,
   Flex,
@@ -12,6 +12,7 @@ import {
   Box,
 } from "@veltodefi/ui";
 import { commify, commifyOptional, Decimal } from "@veltodefi/utils";
+import { SymbolBadge } from "../../desktop/symbolBadge";
 
 export const ConfirmHeader: FC<{
   onClose?: () => void;
@@ -49,20 +50,19 @@ export const ConfirmFooter: FC<{
       width={"100%"}
       className="oui-mt-3 oui-pb-1"
     >
-      <MainButton
+      <Button
         id="oui-positions-confirm-footer-cancel-button"
-        variant="secondary"
+        color={"secondary"}
         fullWidth
         onClick={props.onCancel}
         size="md"
       >
         {t("common.cancel")}
-      </MainButton>
+      </Button>
       <ThrottledButton
         id="oui-positions-confirm-footer-confirm-button"
         onClick={props.onConfirm}
         fullWidth
-        variant="primary"
         loading={props.submitting}
         disabled={props.disabled}
         size="md"
@@ -209,9 +209,10 @@ export const LimitConfirmDialog: FC<{
       <Flex gap={2} mb={4} mt={5} justify={"between"}>
         <Text.formatted
           rule="symbol"
-          formatString="base-type"
+          formatString="base"
           size="base"
           showIcon
+          suffix={<SymbolBadge symbol={order.symbol} />}
         >
           {order.symbol}
         </Text.formatted>

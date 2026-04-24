@@ -186,6 +186,9 @@ export interface BracketOrder extends AlgoOrder, OrderExt {
   tp_pnl?: string;
   tp_offset?: string;
   tp_offset_percentage?: string;
+  /** Offset from mark price (UI / internal; same semantics as offset but base = mark). */
+  tp_offset_from_mark?: string;
+  tp_offset_percentage_from_mark?: string;
   tp_ROI?: string;
   tp_trigger_price?: string;
   tp_order_price?: string;
@@ -197,6 +200,8 @@ export interface BracketOrder extends AlgoOrder, OrderExt {
   sl_pnl?: string;
   sl_offset?: string;
   sl_offset_percentage?: string;
+  sl_offset_from_mark?: string;
+  sl_offset_percentage_from_mark?: string;
   sl_ROI?: string;
   sl_trigger_price?: string;
   sl_order_price?: string;
@@ -298,6 +303,11 @@ export interface BaseAlgoOrderEntity<
   tp_order_type?: OrderType;
   sl_order_price?: string | number;
   sl_order_type?: OrderType;
+  /** Mark-based TP/SL offsets (UI + API); mirrors `BracketOrder` when used on TP/SL algo forms. */
+  tp_offset_from_mark?: string | number;
+  tp_offset_percentage_from_mark?: string | number;
+  sl_offset_from_mark?: string | number;
+  sl_offset_percentage_from_mark?: string | number;
   // tp_enable?: boolean;
   // sl_enable?: boolean;
   position_type?: PositionType;

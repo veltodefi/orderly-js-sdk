@@ -37,6 +37,9 @@ export class PriceValidationStrategy implements IValidationStrategy<{
 
     const price = new Decimal(order_price);
     const { symbol } = config;
+    if (!symbol) {
+      return;
+    }
     const { quote_max, quote_min, quote_dp, price_range, price_scope } = symbol;
 
     // Calculate price range based on side and mark price
@@ -105,6 +108,9 @@ export class TriggerPriceValidationStrategy implements IValidationStrategy<{
   ): OrderValidationItem | undefined {
     const { trigger_price } = values;
     const { symbol } = config;
+    if (!symbol) {
+      return;
+    }
     const { quote_max, quote_min } = symbol;
 
     if (!trigger_price) {

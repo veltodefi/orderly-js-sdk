@@ -13,6 +13,9 @@ import {
   TokenIcon,
   capitalizeFirstLetter,
 } from "@veltodefi/ui";
+import { SymbolBadge } from "./symbolBadge";
+
+export const LIQ_DISTANCE_THRESHOLD = 10;
 
 type Props = {
   order: Partial<OrderlyOrder>;
@@ -34,6 +37,12 @@ export const OrderInfo = (props: Props) => {
   const { symbol } = order;
   const markPrice = useMarkPrice(symbol!);
   const indexPrice = useIndexPrice(symbol!);
+  const marginModeLabel =
+    props.marginMode === MarginMode.ISOLATED
+      ? t("marginMode.isolated")
+      : props.marginMode === MarginMode.CROSS
+        ? t("marginMode.cross")
+        : undefined;
 
   const leverage = useLeverageBySymbol(
     symbolLeverage ? undefined : symbol,
@@ -41,6 +50,17 @@ export const OrderInfo = (props: Props) => {
   );
 
   const currentLeverage = symbolLeverage || leverage;
+  /** Use the numeric mark price value for arithmetic and comparisons. */
+  const markPriceValue = markPrice?.data;
+
+  const estLiqPrice: string | number =
+    props.estLiqPrice === 0 ||
+    !markPriceValue ||
+    markPriceValue === 0 ||
+    Math.abs((props.estLiqPrice ?? 0) - markPriceValue) / markPriceValue >=
+      LIQ_DISTANCE_THRESHOLD
+      ? "--"
+      : (props.estLiqPrice ?? "--");
 
   return (
     <Flex
@@ -60,20 +80,21 @@ export const OrderInfo = (props: Props) => {
           <Text.formatted
             className="oui-whitespace-nowrap oui-break-normal"
             rule="symbol"
-            formatString="base-type"
+            formatString="base"
             size="sm"
             weight="semibold"
             intensity={98}
+            suffix={<SymbolBadge symbol={symbol ?? ""} />}
           >
             {symbol}
           </Text.formatted>
         </Flex>
-        {props.marginMode && (
+        {marginModeLabel && (
           <Text
             size="2xs"
             className="oui-h-[18px] oui-rounded oui-bg-base-7 oui-px-2 oui-font-semibold oui-text-base-contrast-36"
           >
-            {capitalizeFirstLetter(props.marginMode)}
+            {marginModeLabel}
           </Text>
         )}
         <Text
@@ -141,7 +162,7 @@ export const OrderInfo = (props: Props) => {
             size="2xs"
             dp={props.quoteDP ?? 2}
           >
-            {props.estLiqPrice ?? "--"}
+            {estLiqPrice}
           </Text.numeral>
         </Flex>
       </Grid>

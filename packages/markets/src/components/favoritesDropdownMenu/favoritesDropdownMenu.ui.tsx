@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Box,
-  MainButton,
+  Button,
   CheckedSquareFillIcon,
   CheckSquareEmptyIcon,
   PlusIcon,
@@ -19,6 +19,7 @@ import {
   CloseCircleFillIcon,
   Tooltip,
 } from "@veltodefi/ui";
+import { SymbolBadge } from "../symbolBadge";
 import type { UseFavoritesDropdownMenuScriptReturn } from "./favoritesDropdownMenu.script";
 
 export type FavoritesDropdownMenuProps =
@@ -81,15 +82,14 @@ export const FavoritesDropdownMenu: React.FC<FavoritesDropdownMenuProps> = (
               }
             />
 
-            <MainButton
+            <Button
               className="oui-rounded-sm"
               size="sm"
-              variant="primary"
               onClick={addTab}
               disabled={!value || overLen}
             >
               {t("common.add")}
-            </MainButton>
+            </Button>
           </Flex>
 
           {overLen && (
@@ -149,9 +149,10 @@ export const FavoritesDropdownMenu: React.FC<FavoritesDropdownMenuProps> = (
         {t("markets.favorites.dropdown.title")}
         <Text.formatted
           rule="symbol"
-          formatString="base-type"
+          formatString="base"
           size="base"
           showIcon
+          suffix={<SymbolBadge symbol={symbol} />}
         >
           {symbol}
         </Text.formatted>
@@ -210,27 +211,26 @@ export const FavoritesDropdownMenu: React.FC<FavoritesDropdownMenuProps> = (
 
   const footer = (
     <Flex gapX={3} mt={3}>
-      <MainButton
+      <Button
         key="secondary"
-        variant="secondary"
+        color="gray"
         onClick={hide}
         fullWidth
         className="oui-text-sm"
         size="md"
       >
         {t("common.cancel")}
-      </MainButton>
+      </Button>
 
-      <MainButton
+      <Button
         key="primary"
-        variant="primary"
         onClick={confirm}
         fullWidth
         className="oui-text-sm"
         size="md"
       >
         {t("common.confirm")}
-      </MainButton>
+      </Button>
     </Flex>
   );
 

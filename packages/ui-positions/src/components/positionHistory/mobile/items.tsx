@@ -1,6 +1,6 @@
 import { FC, ReactNode, useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { API } from "@veltodefi/types";
+import { API, MarginMode } from "@veltodefi/types";
 import {
   Badge,
   capitalizeFirstLetter,
@@ -11,6 +11,7 @@ import {
 } from "@veltodefi/ui";
 import { commifyOptional } from "@veltodefi/utils";
 import { FundingFeeButton } from "../../fundingFeeHistory/fundingFeeButton";
+import { SymbolBadge } from "../../positions/desktop/symbolBadge";
 import { PositionHistorySide } from "../positionHistory.script";
 import { PositionHistoryCellState } from "./positionHistoryCell.script";
 
@@ -23,7 +24,7 @@ export const SymbolToken: FC<PositionHistoryCellState> = (props) => {
     <Text.formatted
       intensity={80}
       rule="symbol"
-      formatString="base-type"
+      formatString="base"
       size="sm"
       // @ts-ignore
       prefix={
@@ -31,6 +32,7 @@ export const SymbolToken: FC<PositionHistoryCellState> = (props) => {
           {isBuy ? t("common.buy") : t("common.sell")}
         </Badge>
       }
+      suffix={<SymbolBadge symbol={symbol} />}
       onClick={() => {
         props.onSymbolChange?.({ symbol: symbol } as API.Symbol);
       }}
@@ -143,8 +145,18 @@ export const PositionHistoryType: FC<PositionHistoryCellState> = (props) => {
       );
     }
 
+    if (record.margin_mode != null) {
+      list.push(
+        <Badge key={`margin-${record.margin_mode}`} color="neutral" size="xs">
+          {record.margin_mode === MarginMode.ISOLATED
+            ? t("marginMode.isolated")
+            : t("marginMode.cross")}
+        </Badge>,
+      );
+    }
+
     return list;
-  }, [record]);
+  }, [record, t]);
 
   return <Flex gap={1}>{tags}</Flex>;
 };

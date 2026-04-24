@@ -1,24 +1,23 @@
-import { ReactNode, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { Trans, useTranslation } from "@veltodefi/i18n";
 import {
   Box,
   Button,
   Flex,
-  inputFormatter,
   Slider,
   Text,
-  TextField,
-  WarningIcon,
   Divider,
   formatAddress,
 } from "@veltodefi/ui";
 import { GiftIcon } from "../../../../icons/giftIcon";
 import { ReferralCodeFormField, ReferralCodeFormType } from "../../../../types";
+import { WarningBox } from "../../components/warningBox";
 import { ReferralCodeFormReturns } from "./referralCodeForm.script";
 import { ReferralCodeFormWidgetProps } from "./referralCodeForm.widget";
+import { ReferralCodeInput } from "./referralCodeInput";
 
 export type ReferralCodeFormProps = ReferralCodeFormReturns &
-  ReferralCodeFormWidgetProps;
+  Omit<ReferralCodeFormWidgetProps, "type">;
 
 export const ReferralCodeForm = (props: ReferralCodeFormProps) => {
   const { type, isReview } = props;
@@ -101,6 +100,7 @@ export const ReferralCodeForm = (props: ReferralCodeFormProps) => {
       onChange={props.setNewCode}
       autoFocus={props.focusField === ReferralCodeFormField.ReferralCode}
       disabled={isReview || hasBoundReferee}
+      label={t("affiliate.referralCode.editCodeModal.label")}
     />
   );
 
@@ -173,8 +173,8 @@ export const ReferralCodeForm = (props: ReferralCodeFormProps) => {
       <Button
         fullWidth
         onClick={props.onClick}
-        disabled={props.buttonDisabled || props.isMutating}
-        loading={props.isMutating}
+        disabled={props.buttonDisabled || props.confirmButtonLoading}
+        loading={props.confirmButtonLoading}
         size="md"
         className="oui-referralCodeForm-confirm-btn"
       >
@@ -257,7 +257,7 @@ const NoCommissionCard = (props: { directBonusRebateRate?: number }) => {
           <Text size="2xs" intensity={54}>
             {t("affiliate.noCommissionCard.title")}
           </Text>
-          <Text size="lg" className="oui-text-primary-light oui-font-semibold">
+          <Text size="lg" className="oui-font-semibold oui-text-primary-light">
             + {amount}%
           </Text>
         </Flex>
@@ -340,7 +340,7 @@ const RebateRateSlider = (props: RebateRateSliderProps) => {
             <Flex gap={2} mt={2} width={"100%"}>
               <GiftIcon
                 size={16}
-                className="oui-text-base-contrast oui-mt-[1px]"
+                className="oui-mt-px oui-text-base-contrast"
               />
               <Text
                 size="base"
@@ -360,81 +360,4 @@ const RebateRateSlider = (props: RebateRateSliderProps) => {
       </div>
     </>
   );
-};
-
-type ReferralCodeInputProps = {
-  value: string;
-  onChange: (value: string) => void;
-  autoFocus: boolean;
-  disabled: boolean;
-};
-
-const ReferralCodeInput = (props: ReferralCodeInputProps) => {
-  const { t } = useTranslation();
-
-  const hasSetCursorToEnd = useRef(false);
-
-  return (
-    <TextField
-      type="text"
-      fullWidth
-      label={t("affiliate.referralCode.editCodeModal.label")}
-      value={props.value}
-      onChange={(e) => {
-        props.onChange(e.target.value);
-      }}
-      onFocus={(e) => {
-        if (props.autoFocus && !hasSetCursorToEnd.current) {
-          hasSetCursorToEnd.current = true;
-          const input = e.target as HTMLInputElement;
-          const len = input.value.length;
-          requestAnimationFrame(() => {
-            input.setSelectionRange(len, len);
-          });
-        }
-      }}
-      formatters={[
-        inputFormatter.createRegexInputFormatter((value: string | number) => {
-          return String(value).replace(/[a-z]/g, (char: string) =>
-            char.toUpperCase(),
-          );
-        }),
-        inputFormatter.createRegexInputFormatter(/[^A-Z0-9]/g),
-      ]}
-      className="oui-w-full"
-      classNames={{
-        label: "oui-text-base-contrast-54 oui-text-xs",
-        input: "placeholder:oui-text-base-contrast-20 placeholder:oui-text-sm",
-      }}
-      maxLength={10}
-      minLength={4}
-      autoComplete="off"
-      disabled={props.disabled}
-      autoFocus={props.autoFocus}
-    />
-  );
-};
-
-const WarningBox = (props: { children: ReactNode }) => {
-  const { children } = props;
-
-  if (typeof children === "string") {
-    return (
-      <Flex
-        className="oui-bg-warning/10"
-        justify="start"
-        itemAlign="start"
-        gap={1}
-        r="lg"
-        p={3}
-      >
-        <WarningIcon className="oui-shrink-0 oui-text-warning" />
-        <Text size="2xs" intensity={54} className="oui-text-warning">
-          {children}
-        </Text>
-      </Flex>
-    );
-  }
-
-  return children;
 };

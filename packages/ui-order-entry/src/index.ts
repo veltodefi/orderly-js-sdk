@@ -9,3 +9,4 @@ export {
   FeeTierLabel,
   type FeeTierLabelProps,
 } from "./components/feeTierLabel";
+export { SymbolBadge } from "./components/symbolBadge";

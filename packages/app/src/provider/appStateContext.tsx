@@ -2,6 +2,7 @@ import React, { createContext, useContext } from "react";
 import {
   RestrictedInfoReturns,
   type ClientFeatureFlag,
+  type MarketCategoryConfig,
 } from "@veltodefi/hooks";
 import { OrderSide } from "@veltodefi/types";
 import { useWalletStateHandle } from "../hooks/useWalletStateHandle";
@@ -28,6 +29,11 @@ export type WidgetConfigs = {
      */
     enableWithdrawToExternalWallet?: boolean;
   };
+  /**
+   * Custom market tab configuration.
+   * Function receives the default built-in tabs and context, returns the final tab sequence.
+   */
+  marketTabs?: MarketCategoryConfig;
 };
 
 export type FeeTierType = {

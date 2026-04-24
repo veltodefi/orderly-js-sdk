@@ -3,6 +3,7 @@ import {
   RestrictedInfoOptions,
   WithdrawOnlyModeProvider,
   ClientFeatureFlagProvider,
+  MarketCategoriesConfigProvider,
   useRestrictedInfo,
   useTrackingInstance,
 } from "@veltodefi/hooks";
@@ -103,7 +104,11 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
     <AppStateContext.Provider value={memoizedValue}>
       <WithdrawOnlyModeProvider value={withdrawOnlyMode}>
         <ClientFeatureFlagProvider value={props.veltoProps?.featureFlags ?? []}>
-          {props.children}
+          <MarketCategoriesConfigProvider
+            value={props.widgetConfigs?.marketTabs}
+          >
+            {props.children}
+          </MarketCategoriesConfigProvider>
         </ClientFeatureFlagProvider>
       </WithdrawOnlyModeProvider>
     </AppStateContext.Provider>

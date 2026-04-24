@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/trading",
-  "version": "2.11.1-velto-main.50",
+  "version": "2.12.4",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

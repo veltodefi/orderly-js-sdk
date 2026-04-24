@@ -12,6 +12,7 @@ import {
   TokenIcon,
   cn,
 } from "@veltodefi/ui";
+import { SymbolBadge } from "../symbolBadge";
 import type { MarginModeSwitchState } from "./marginModeSwitch.script";
 
 export type MarginModeSwitchProps = Pick<
@@ -20,6 +21,7 @@ export type MarginModeSwitchProps = Pick<
   | "isMobile"
   | "currentMarginMode"
   | "selectedMarginMode"
+  | "isPermissionlessListing"
   | "onSelect"
 > & {
   close?: () => void;
@@ -101,10 +103,11 @@ export const MarginModeSwitch: FC<MarginModeSwitchProps> = (props) => {
           <Text.formatted
             className="oui-tracking-[0.03em]"
             rule="symbol"
-            formatString="base-type"
+            formatString="base"
             size="base"
             weight="semibold"
             intensity={98}
+            suffix={<SymbolBadge symbol={props.symbol} />}
           >
             {props.symbol}
           </Text.formatted>
@@ -116,6 +119,7 @@ export const MarginModeSwitch: FC<MarginModeSwitchProps> = (props) => {
             selected={props.selectedMarginMode === MarginMode.CROSS}
             isCurrent={props.currentMarginMode === MarginMode.CROSS}
             onClick={() => handleSelect(MarginMode.CROSS)}
+            disabled={props.isPermissionlessListing}
           />
           <OptionCard
             mode={MarginMode.ISOLATED}
@@ -151,6 +155,7 @@ const OptionCard: FC<{
   selected: boolean;
   isCurrent: boolean;
   onClick: () => void;
+  disabled?: boolean;
 }> = (props) => {
   const { t } = useTranslation();
 
@@ -170,11 +175,15 @@ const OptionCard: FC<{
         "oui-relative oui-w-full oui-rounded-md oui-p-2",
         "oui-bg-base-6",
         "oui-text-left",
-        props.selected
-          ? "oui-border oui-border-primary-light"
-          : "oui-border oui-border-transparent hover:oui-border-line-12",
+        props.disabled
+          ? "oui-cursor-not-allowed oui-opacity-50 oui-border oui-border-transparent"
+          : props.selected
+            ? "oui-border oui-border-primary-light"
+            : "oui-border oui-border-transparent hover:oui-border-line-12",
       )}
-      onClick={props.onClick}
+      onClick={props.disabled ? undefined : props.onClick}
+      disabled={props.disabled}
+      aria-disabled={props.disabled}
       data-testid={`oui-testid-marginModeSwitch-option-${props.mode}`}
     >
       <Flex direction="column" gap={2} itemAlign="start" className="oui-w-full">

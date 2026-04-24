@@ -178,7 +178,8 @@ const VaultListRow: FC<{ vault: VaultInfo }> = ({ vault }) => {
     availableBalance,
     openVaultWebsite,
     icon,
-    isButtonsDisabled,
+    isDepositDisabled,
+    isWithdrawDisabled,
   } = script;
 
   const isPreLaunch = vaultInfo.status === "pre_launch";
@@ -387,7 +388,7 @@ const VaultListRow: FC<{ vault: VaultInfo }> = ({ vault }) => {
                 variant="primary"
                 size="sm"
                 className="oui-flex-1"
-                disabled={isButtonsDisabled}
+                disabled={isDepositDisabled}
                 onClick={() => openDepositAndWithdraw("deposit")}
               >
                 {t("common.deposit")}
@@ -396,7 +397,7 @@ const VaultListRow: FC<{ vault: VaultInfo }> = ({ vault }) => {
                 size="sm"
                 variant="secondary"
                 className="oui-flex-1"
-                disabled={isButtonsDisabled}
+                disabled={isWithdrawDisabled}
                 onClick={() => openDepositAndWithdraw("withdraw")}
               >
                 {t("common.withdraw")}
