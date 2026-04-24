@@ -323,13 +323,18 @@ export const DepositForm: FC<Props> = (props) => {
             title={t("transfer.deposit.tab.connectedWallet")}
             value="web3"
           >
-            {web3Content}
+            <div className="oui-pt-3">{web3Content}</div>
           </TabPanel>
           <TabPanel
             title={t("transfer.deposit.tab.exchangeOrOtherWallet")}
             value="exclusive_deposit"
           >
-            <ExclusiveDeposit active={activeSubTab === "exclusive_deposit"} />
+            <Box className={"oui-overflow-hidden oui-rounded-2xl"}>
+              <ExclusiveDeposit
+                layout={layout}
+                active={activeSubTab === "exclusive_deposit"}
+              />
+            </Box>
           </TabPanel>
         </Tabs>
       ) : (
