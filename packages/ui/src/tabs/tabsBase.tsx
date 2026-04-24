@@ -24,8 +24,6 @@ const baseTriggerClasses = [
   "data-[state=active]:oui-bg-mainButton-invertedPressed",
   "data-[state=active]:oui-text-mainButton-invertedPressedContrast",
   "data-[state=active]:oui-font-bold",
-  "first:oui-rounded-l-lg",
-  "last:oui-rounded-r-lg",
   "-ml-[1px]",
 ];
 
@@ -95,12 +93,18 @@ const tabsVariants = tv({
       },
       contained: {
         list: ["oui-space-x-[6px]"],
-        trigger: ["oui-rounded", "oui-px-3", ...baseTriggerClasses],
+        trigger: ["oui-rounded-lg", "oui-px-3", ...baseTriggerClasses],
         icon: ["oui-text-inherit"],
       },
       inverted: {
         list: ["oui-w-full", "oui-flex"],
-        trigger: ["oui-w-full", "oui-h-[40px]", ...baseTriggerClasses],
+        trigger: [
+          "oui-w-full",
+          "oui-h-[40px]",
+          "first:oui-rounded-l-lg",
+          "last:oui-rounded-r-lg",
+          ...baseTriggerClasses,
+        ],
         icon: ["oui-text-inherit"],
       },
     },
