@@ -3,12 +3,23 @@ import { useAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
 import { AccountStatusEnum } from "@veltodefi/types";
-import { Button, Flex, modal, Text } from "@veltodefi/ui";
+import { Button, cn, Flex, modal, Text } from "@veltodefi/ui";
 import { AuthGuard } from "@veltodefi/ui-connector";
 import { useReferralContext } from "../../../../provider";
 import { ReferralCodeFormType } from "../../../../types";
 import { ReferralCodeFormDialogId } from "../../affiliate/referralCodeForm/modal";
+import type { BindReferralCodeSuccessPayload } from "../../components/bindReferralCode/bindReferralCode.widget";
+import { BindReferralCodeDialogId } from "../../components/bindReferralCode/modal";
 import { TradingVolumeProgress } from "../../components/tradingVolumeProgress";
+
+/** SWR mutate may resolve to various shapes — only treat numeric max_rebate_rate as valid. */
+function parseMaxRebateRateFromSettled(
+  result: PromiseSettledResult<unknown>,
+): number | undefined {
+  if (result.status !== "fulfilled") return undefined;
+  const num = (result.value as { max_rebate_rate?: unknown })?.max_rebate_rate;
+  return typeof num === "number" ? num : undefined;
+}
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -19,20 +30,63 @@ export const Hero = () => {
   const {
     isMultiLevelReferralUnlocked,
     isMultiLevelEnabled,
+    isTrader,
     multiLevelRebateInfo,
     multiLevelRebateInfoMutate,
     maxRebateRate,
+    maxRebateRateMutate,
+    mutate,
+    referralInfo,
   } = useReferralContext();
 
-  const onCreateReferralCode = () => {
+  const boundReferralCode =
+    referralInfo?.referee_info?.referer_code?.trim() ?? "";
+
+  const openBindReferralOnlyModal = () => {
+    modal.show(BindReferralCodeDialogId, {
+      onSuccess: async ({ skipped }: BindReferralCodeSuccessPayload) => {
+        if (skipped) return;
+        await Promise.allSettled([multiLevelRebateInfoMutate?.(), mutate?.()]);
+      },
+    });
+  };
+
+  const showCreateReferralCodeModal = (maxRateOverride?: number) => {
     modal.show(ReferralCodeFormDialogId, {
       type: ReferralCodeFormType.Create,
-      maxRebateRate,
+      maxRebateRate: maxRateOverride ?? maxRebateRate ?? 0,
       directBonusRebateRate: 0,
       onSuccess: () => {
         multiLevelRebateInfoMutate();
       },
     });
+  };
+
+  const onCreateReferralCode = () => {
+    // if not bound to any codes, show the bind modal
+    if (!isTrader) {
+      modal.show(BindReferralCodeDialogId, {
+        onSuccess: async ({ skipped }: BindReferralCodeSuccessPayload) => {
+          if (skipped) {
+            showCreateReferralCodeModal();
+            return;
+          }
+          const results = await Promise.allSettled([
+            maxRebateRateMutate(),
+            multiLevelRebateInfoMutate(),
+            mutate(),
+          ]);
+
+          const latestMaxRebateRate =
+            parseMaxRebateRateFromSettled(results[0]) ?? maxRebateRate;
+
+          showCreateReferralCodeModal(latestMaxRebateRate);
+        },
+      });
+      return;
+    }
+
+    showCreateReferralCodeModal();
   };
 
   const description = useMemo(() => {
@@ -56,28 +110,68 @@ export const Hero = () => {
     }
 
     return t("affiliate.newReferralProgram.description");
-  }, [t, wrongNetwork, status]);
+  }, [t, wrongNetwork, status, isMultiLevelReferralUnlocked]);
 
   const renderContent = () => {
     if (!isMultiLevelReferralUnlocked) {
       return (
-        <TradingVolumeProgress
-          classNames={{
-            root: "oui-items-start",
-            description: "!oui-text-start",
-          }}
-          buttonProps={{
-            size: "xl",
-          }}
-        />
+        <Flex
+          direction="column"
+          itemAlign="start"
+          gap={4}
+          className="oui-w-full"
+        >
+          <TradingVolumeProgress
+            classNames={{
+              root: "oui-items-start",
+              description: "!oui-text-start",
+            }}
+            buttonProps={{
+              size: "xl",
+            }}
+          />
+          {boundReferralCode ? (
+            <Text size="sm" intensity={54} className="oui-leading-normal">
+              {t("affiliate.newReferralProgram.referredBy", {
+                code: boundReferralCode,
+              })}
+            </Text>
+          ) : (
+            <button
+              type="button"
+              className={cn(
+                "oui-cursor-pointer oui-border-none oui-bg-transparent oui-p-0",
+                "oui-text-start oui-text-sm oui-font-normal oui-text-base-contrast-54 oui-underline oui-underline-offset-2",
+                "oui-affiliate-landing-hero-bindReferralCode",
+              )}
+              onClick={openBindReferralOnlyModal}
+            >
+              {t("affiliate.newReferralProgram.wereYouReferred")}
+            </button>
+          )}
+        </Flex>
       );
     }
 
     if (isMultiLevelEnabled && !multiLevelRebateInfo?.referral_code) {
       return (
-        <Button size="lg" className="oui-px-4" onClick={onCreateReferralCode}>
-          {t("affiliate.referralCode.create")}
-        </Button>
+        <Flex
+          direction="column"
+          itemAlign="start"
+          gap={4}
+          className="oui-w-full"
+        >
+          <Button size="lg" className="oui-px-4" onClick={onCreateReferralCode}>
+            {t("affiliate.referralCode.create")}
+          </Button>
+          {boundReferralCode ? (
+            <Text size="sm" intensity={54} className="oui-leading-normal">
+              {t("affiliate.newReferralProgram.referredBy", {
+                code: boundReferralCode,
+              })}
+            </Text>
+          ) : null}
+        </Flex>
       );
     }
 

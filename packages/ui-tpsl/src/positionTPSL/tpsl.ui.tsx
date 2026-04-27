@@ -95,7 +95,7 @@ export const TPSL: React.FC<TPSLBuilderState & TPSLProps> = (props) => {
       <Box className="oui-px-0.5">
         <TPSLQuantity
           maxQty={props.maxQty}
-          quantity={(props.orderQuantity ?? props.maxQty) as number}
+          quantity={props.orderQuantity ?? props.maxQty}
           baseTick={symbolInfo("base_tick")}
           base_dp={symbolInfo("base_dp")}
           onQuantityChange={props.setQuantity}
@@ -173,6 +173,11 @@ export const TPSL: React.FC<TPSLBuilderState & TPSLProps> = (props) => {
                 "Offset%":
                   TPSL_OrderEntity.tp_offset_percentage?.toString() ??
                   undefined,
+                OffsetFromMark:
+                  TPSL_OrderEntity.tp_offset_from_mark?.toString() ?? undefined,
+                PercentageFromMark:
+                  TPSL_OrderEntity.tp_offset_percentage_from_mark?.toString() ??
+                  undefined,
                 order_price:
                   TPSL_OrderEntity.tp_order_price?.toString() ?? undefined,
                 order_type: TPSL_OrderEntity.tp_order_type ?? OrderType.MARKET,
@@ -216,6 +221,11 @@ export const TPSL: React.FC<TPSLBuilderState & TPSLProps> = (props) => {
                 Offset: TPSL_OrderEntity.sl_offset?.toString() ?? undefined,
                 "Offset%":
                   TPSL_OrderEntity.sl_offset_percentage?.toString() ??
+                  undefined,
+                OffsetFromMark:
+                  TPSL_OrderEntity.sl_offset_from_mark?.toString() ?? undefined,
+                PercentageFromMark:
+                  TPSL_OrderEntity.sl_offset_percentage_from_mark?.toString() ??
                   undefined,
                 order_price:
                   TPSL_OrderEntity.sl_order_price?.toString() ?? undefined,

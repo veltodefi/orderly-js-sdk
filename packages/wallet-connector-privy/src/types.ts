@@ -7,7 +7,6 @@ import {
   WalletError,
 } from "@solana/wallet-adapter-base";
 import { QueryClient } from "@tanstack/react-query";
-import { Connector, CreateConnectorFn, Storage } from "wagmi";
 import { WalletState } from "@veltodefi/hooks";
 import {
   ABSTRACT_MAINNET_CHAINID,
@@ -16,6 +15,7 @@ import {
   SOLANA_MAINNET_CHAINID,
   SOLANA_TESTNET_CHAINID,
 } from "@veltodefi/types";
+import { Connector, CreateConnectorFn, Storage } from "wagmi";
 
 export type SolanaInitialProps = PropsWithChildren<{
   network?: WalletAdapterNetwork;
@@ -52,15 +52,26 @@ export interface ConnectProps {
   walletAdapter?: WalletAdapter;
 }
 
+type PrivyAppearanceConfig = NonNullable<PrivyClientConfig["appearance"]>;
+
+/** Appearance subset for InitPrivy; accentColor widened for CSS vars / rgb(). */
+export type InitPrivyAppearance = Omit<
+  PrivyAppearanceConfig,
+  "walletChainType" | "walletList" | "accentColor"
+> & {
+  accentColor?: string;
+};
+
+/** Pass-through Privy client config; chains are owned by the SDK. */
+export type InitPrivyClientConfig = Partial<
+  Omit<PrivyClientConfig, "supportedChains" | "defaultChain" | "appearance">
+> & {
+  appearance?: InitPrivyAppearance;
+};
+
 export interface InitPrivy {
   appid: string;
-  config?: {
-    appearance: Omit<
-      PrivyClientConfig["appearance"],
-      "walletChainType" | "walletList"
-    >;
-    loginMethods?: PrivyClientConfig["loginMethods"];
-  };
+  config?: InitPrivyClientConfig;
 }
 
 export interface InitWagmi {

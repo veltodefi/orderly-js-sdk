@@ -1,5 +1,7 @@
 // Import AlgoOrderType enum
 import { AlgoOrderType } from "@veltodefi/types";
+// Import functions to be tested
+import { OrderSide } from "@veltodefi/types";
 import {
   offsetToPrice,
   priceToOffset,
@@ -9,8 +11,7 @@ import {
   priceToPnl,
   tpslCalculateHelper,
   UpdateOrderKey,
-} from "../tp_slUtils"; // Import functions to be tested
-import { OrderSide } from "@veltodefi/types";
+} from "../tp_slUtils";
 
 describe("TP/SL Utils function", () => {
   describe("offsetToPrice", () => {

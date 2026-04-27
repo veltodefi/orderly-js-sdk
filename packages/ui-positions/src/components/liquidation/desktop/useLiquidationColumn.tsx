@@ -3,6 +3,7 @@ import { useTranslation } from "@veltodefi/i18n";
 import { API } from "@veltodefi/types";
 import { Column, Flex, Text, Tooltip, cn } from "@veltodefi/ui";
 import { commifyOptional } from "@veltodefi/utils";
+import { PositionSymbolCell } from "../../positions/desktop/positionSymbolCell";
 
 const TooltipButton: FC<{
   tooltip: string;
@@ -51,17 +52,11 @@ export const useLiquidationColumn = (props: {}) => {
         {
           title: t("common.symbol"),
           dataIndex: "Symbol",
-          // width: 202,
+          width: 120,
           render: (_: any, record) => (
             <Flex direction={"column"} itemAlign={"start"}>
               {record.positions_by_perp?.map((item) => (
-                <Text.formatted
-                  rule={"symbol"}
-                  formatString="base-quote"
-                  key={item.symbol}
-                >
-                  {item.symbol}
-                </Text.formatted>
+                <PositionSymbolCell key={item.symbol} symbol={item.symbol} />
               ))}
             </Flex>
           ),

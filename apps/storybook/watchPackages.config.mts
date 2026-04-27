@@ -8,6 +8,7 @@ type Package = {
   path: string;
   watch: boolean;
   alwaysWatch?: boolean;
+  includeCSS?: boolean;
 };
 
 const base: Package[] = [
@@ -15,6 +16,7 @@ const base: Package[] = [
     package: "@veltodefi/react-app",
     path: "../../packages/app/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/hooks",
@@ -74,16 +76,19 @@ const ui: Package[] = [
     package: "@veltodefi/ui",
     path: "../../packages/ui/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-chain-selector",
     path: "../../packages/ui-chain-selector/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-connector",
     path: "../../packages/ui-connector/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-leverage",
@@ -94,51 +99,61 @@ const ui: Package[] = [
     package: "@veltodefi/ui-order-entry",
     path: "../../packages/ui-order-entry/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-orders",
     path: "../../packages/ui-orders/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-positions",
     path: "../../packages/ui-positions/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-scaffold",
     path: "../../packages/ui-scaffold/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-share",
     path: "../../packages/ui-share/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-tpsl",
     path: "../../packages/ui-tpsl/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-tradingview",
     path: "../../packages/ui-tradingview/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-transfer",
     path: "../../packages/ui-transfer/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/chart",
     path: "../../packages/chart/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/ui-notification",
     path: "../../packages/ui-notification/src",
     watch: true,
+    includeCSS: true,
   },
 ];
 
@@ -147,41 +162,43 @@ const page: Package[] = [
     package: "@veltodefi/affiliate",
     path: "../../packages/affiliate/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/markets",
     path: "../../packages/markets/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/portfolio",
     path: "../../packages/portfolio/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/trading",
     path: "../../packages/trading/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/trading-leaderboard",
     path: "../../packages/trading-leaderboard/src",
     watch: true,
-  },
-  {
-    package: "@veltodefi/trading-points",
-    path: "../../packages/trading-points/src",
-    watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/trading-rewards",
     path: "../../packages/trading-rewards/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/vaults",
     path: "../../packages/vaults/src",
     watch: true,
+    includeCSS: true,
   },
 ];
 
@@ -190,11 +207,13 @@ const walletConnect: Package[] = [
     package: "@veltodefi/wallet-connector",
     path: "../../packages/wallet-connector/src",
     watch: true,
+    includeCSS: true,
   },
   {
     package: "@veltodefi/wallet-connector-privy",
     path: "../../packages/wallet-connector-privy/src",
     watch: true,
+    includeCSS: true,
   },
 ];
 
@@ -204,6 +223,7 @@ const i18n: Package[] = [
     package: "@veltodefi/i18n/locales",
     path: "../../packages/i18n/locales",
     watch: true,
+    alwaysWatch: true,
   },
   {
     package: "@veltodefi/i18n",
@@ -220,23 +240,69 @@ export const packages: Package[] = [
   ...i18n,
 ];
 
+/**
+ * Parse VITE_WATCH_PACKAGES: comma-separated package names only.
+ * Short names (e.g. "net") get @veltodefi/ prefix
+ */
+function parseWatchPackagesList(raw: string | undefined): string[] | undefined {
+  if (!raw?.trim()) return undefined;
+  const selectedNames: string[] = [];
+  raw.split(",").forEach((entry) => {
+    const trimmed = entry.trim();
+    if (!trimmed) return;
+    // Ignore path part: do not support pkg=path in VITE_WATCH_PACKAGES
+    const namePart = trimmed.split("=", 2)[0].trim();
+    if (!namePart) return;
+    const normalizedName = namePart.startsWith("@veltodefi/")
+      ? namePart
+      : `@veltodefi/${namePart}`;
+    selectedNames.push(normalizedName);
+  });
+  return selectedNames.length ? selectedNames : undefined;
+}
+
+/**
+ * Parse VITE_WATCH_PACKAGE_PATHS: comma-separated "package=path" entries.
+ * Package names are used as-is (no @veltodefi/ prefix).
+ *
+ * In getWatchPackages:
+ * - if a custom path ends with "/dist" or "/src", that directory is watched as-is
+ * - if a custom path does NOT end with "/dist" or "/src", both "<path>/dist" and "<path>/src"
+ *   will be watched for that package.
+ */
+function parseWatchPackagePaths(
+  raw: string | undefined,
+): Record<string, string> {
+  const pathOverrides: Record<string, string> = {};
+  if (!raw?.trim()) return pathOverrides;
+  raw.split(",").forEach((entry) => {
+    const trimmed = entry.trim();
+    if (!trimmed) return;
+    const eq = trimmed.indexOf("=");
+    if (eq === -1) return;
+    const pkg = trimmed.slice(0, eq).trim();
+    const pathPart = trimmed.slice(eq + 1).trim();
+    if (!pkg || !pathPart) return;
+    pathOverrides[pkg] = pathPart;
+  });
+  return pathOverrides;
+}
+
 export function getWatchPackages() {
-  const watchPackages = process.env.VITE_WATCH_PACKAGES?.split(",").map(
-    (item) => {
-      const packageName = item.trim();
-      if (packageName.startsWith("@veltodefi/")) {
-        return packageName;
-      }
-      return `${"@veltodefi/"}${packageName}`;
-    },
+  const watchPackages = parseWatchPackagesList(process.env.VITE_WATCH_PACKAGES);
+  const pathOverrides = parseWatchPackagePaths(
+    process.env.VITE_WATCH_PACKAGE_PATHS,
   );
 
   const watchs: Package[] = [];
   const unwatchs: Package[] = [];
 
   packages.forEach((item) => {
-    // fill full path
-    item.path = resolve(__dirname, item.path);
+    const finalPath = item.path.startsWith("/")
+      ? item.path
+      : resolve(__dirname, item.path);
+
+    item.path = finalPath;
 
     if (
       (watchPackages && watchPackages.includes(item.package)) ||
@@ -247,6 +313,49 @@ export function getWatchPackages() {
     } else {
       unwatchs.push(item);
     }
+  });
+
+  // Handle custom entries only from VITE_WATCH_PACKAGE_PATHS (not in predefined `packages`)
+  Object.entries(pathOverrides).forEach(([pkgName, overridePath]) => {
+    const exists = packages.some((item) => item.package === pkgName);
+    if (exists) return;
+
+    const basePath = overridePath.startsWith("/")
+      ? overridePath
+      : resolve(__dirname, overridePath);
+
+    // Normalize to forward slashes so the suffix check works on all platforms
+    const normalized = basePath.replace(/\\+/g, "/");
+    const endsWithDistOrSrc = /\/(dist|src)\/?$/.test(normalized);
+
+    if (endsWithDistOrSrc) {
+      // Path already points to a specific dist/src directory: watch it as-is
+      watchs.push({
+        package: pkgName,
+        path: basePath,
+        watch: true,
+        includeCSS: true,
+      });
+      return;
+    }
+
+    // Path is the package root: automatically watch both <path>/dist and <path>/src
+    const distPath = resolve(basePath, "dist");
+    const srcPath = resolve(basePath, "src");
+
+    watchs.push({
+      package: `${pkgName}/dist`,
+      path: distPath,
+      watch: true,
+      includeCSS: true,
+    });
+
+    watchs.push({
+      package: pkgName,
+      path: srcPath,
+      watch: true,
+      includeCSS: true,
+    });
   });
 
   // console.log("packages", packages);

@@ -1,5 +1,9 @@
 import { useMemo } from "react";
-import { useReferralInfo, useLeverageBySymbol } from "@veltodefi/hooks";
+import {
+  useBadgeBySymbol,
+  useReferralInfo,
+  useLeverageBySymbol,
+} from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { modal } from "@veltodefi/ui";
 import { SharePnLConfig } from "@veltodefi/ui-share";
@@ -15,6 +19,7 @@ export const useShareButtonScript = (props: {
   const { sharePnLConfig, order, iconSize } = props;
   const { t } = useTranslation();
   const { getFirstRefCode } = useReferralInfo();
+  const { brokerNameRaw } = useBadgeBySymbol(order.symbol);
   const refCode = useMemo(() => {
     return getFirstRefCode()?.code;
   }, [getFirstRefCode]);
@@ -37,6 +42,7 @@ export const useShareButtonScript = (props: {
         refCode,
         leverage,
         ...sharePnLConfig,
+        brokerName: sharePnLConfig?.brokerName ?? brokerNameRaw,
       },
     });
   };

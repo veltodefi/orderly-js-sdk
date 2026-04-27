@@ -33,98 +33,97 @@
 
     /* Path mapping */
     "paths": {
-      "@veltodefi/affiliate": [
+      "@orderly.network/affiliate": [
         "../../packages/affiliate/src"
       ],
-      "@veltodefi/chart": [
+      "@orderly.network/chart": [
         "../../packages/chart/src"
       ],
-      "@veltodefi/core": [
+      "@orderly.network/core": [
         "../../packages/core/src"
       ],
-      "@veltodefi/default-evm-adapter": [
+      "@orderly.network/default-evm-adapter": [
         "../../packages/default-evm-adapter/src"
       ],
-      "@veltodefi/default-solana-adapter": [
+      "@orderly.network/default-solana-adapter": [
         "../../packages/default-solana-adapter/src"
       ],
-      "@veltodefi/hooks": [
+      "@orderly.network/hooks": [
         "../../packages/hooks/src"
       ],
-      "@veltodefi/i18n": [
+      "@orderly.network/i18n": [
         "../../packages/i18n/src"
       ],
-      "@veltodefi/markets": [
+      "@orderly.network/markets": [
         "../../packages/markets/src"
       ],
-      "@veltodefi/portfolio": [
+      "@orderly.network/portfolio": [
         "../../packages/portfolio/src"
       ],
-      "@veltodefi/react-app": [
+      "@orderly.network/react-app": [
         "../../packages/app/src"
       ],
-      "@veltodefi/trading": [
+      "@orderly.network/trading": [
         "../../packages/trading/src"
       ],
-      "@veltodefi/trading-leaderboard": [
+      "@orderly.network/trading-leaderboard": [
         "../../packages/trading-leaderboard/src"
       ],
-      "@veltodefi/trading-points": ["../../packages/trading-points/src"],
-      "@veltodefi/trading-rewards": [
+      "@orderly.network/trading-rewards": [
         "../../packages/trading-rewards/src"
       ],
-      "@veltodefi/types": [
+      "@orderly.network/types": [
         "../../packages/types/src"
       ],
-      "@veltodefi/ui": [
+      "@orderly.network/ui": [
         "../../packages/ui/src"
       ],
-      "@veltodefi/ui-chain-selector": [
+      "@orderly.network/ui-chain-selector": [
         "../../packages/ui-chain-selector/src"
       ],
-      "@veltodefi/ui-connector": [
+      "@orderly.network/ui-connector": [
         "../../packages/ui-connector/src"
       ],
-      "@veltodefi/ui-leverage": [
+      "@orderly.network/ui-leverage": [
         "../../packages/ui-leverage/src"
       ],
-      "@veltodefi/ui-notification": [
+      "@orderly.network/ui-notification": [
         "../../packages/ui-notification/src"
       ],
-      "@veltodefi/ui-order-entry": [
+      "@orderly.network/ui-order-entry": [
         "../../packages/ui-order-entry/src"
       ],
-      "@veltodefi/ui-orders": [
+      "@orderly.network/ui-orders": [
         "../../packages/ui-orders/src"
       ],
-      "@veltodefi/ui-positions": [
+      "@orderly.network/ui-positions": [
         "../../packages/ui-positions/src"
       ],
-      "@veltodefi/ui-scaffold": [
+      "@orderly.network/ui-scaffold": [
         "../../packages/ui-scaffold/src"
       ],
-      "@veltodefi/ui-share": [
+      "@orderly.network/ui-share": [
         "../../packages/ui-share/src"
       ],
-      "@veltodefi/ui-tpsl": [
+      "@orderly.network/ui-tpsl": [
         "../../packages/ui-tpsl/src"
       ],
-      "@veltodefi/ui-tradingview": [
+      "@orderly.network/ui-tradingview": [
         "../../packages/ui-tradingview/src"
       ],
-      "@veltodefi/ui-transfer": [
+      "@orderly.network/ui-transfer": [
         "../../packages/ui-transfer/src"
       ],
-      "@veltodefi/utils": [
+      "@orderly.network/utils": [
         "../../packages/utils/src"
       ],
-      "@veltodefi/vaults": [
+      "@orderly.network/vaults": [
         "../../packages/vaults/src"
       ],
-      "@veltodefi/wallet-connector": [
+      "@orderly.network/wallet-connector": [
         "../../packages/wallet-connector/src"
       ],
-      "@veltodefi/wallet-connector-privy": [
+      "@orderly.network/wallet-connector-privy": [
         "../../packages/wallet-connector-privy/src"
       ]
     }

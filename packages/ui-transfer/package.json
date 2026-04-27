@@ -1,11 +1,12 @@
 {
   "name": "@veltodefi/ui-transfer",
-  "version": "2.11.1-velto-main.50",
+  "version": "2.12.4-velto-main.2",
   "description": "deposit & withdraw",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
+    "dev": "tsup --watch",
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss build -i src/tailwind.css -o dist/styles.css --minify"
   },
@@ -28,6 +29,7 @@
     "@veltodefi/default-solana-adapter": "workspace:*",
     "@veltodefi/react-app": "workspace:*",
     "@veltodefi/perp": "workspace:*",
+    "@akamfoad/qr": "^0.4.0",
     "@layerzerolabs/scan-client": "^0.0.6",
     "@solana/web3.js": "^1.95.3",
     "ethers": "^6.16.0",

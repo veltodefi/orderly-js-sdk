@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import {
+  useAccount,
   useComputedLTV,
   useEventEmitter,
   useLocalStorage,
@@ -9,7 +10,6 @@ import {
   useOrderEntry,
   useOrderlyContext,
   useTpslPriceChecker,
-  useAccount,
 } from "@veltodefi/hooks";
 import { useCanTrade } from "@veltodefi/react-app";
 import {
@@ -75,12 +75,15 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
   void initialSoundValue;
 
   const canTrade = useCanTrade();
-  const { marginMode } = useMarginModeBySymbol(symbol);
+  const { state: accountState } = useAccount();
+  const { marginMode, isPermissionlessListing } = useMarginModeBySymbol(symbol);
+  const walletAddress = accountState?.address;
 
   const {
     formattedOrder,
     setValue,
     setValues: setOrderValues,
+    setValuesRaw: setOrderValuesRaw,
     symbolInfo,
     symbolLeverage,
     ...state
@@ -209,6 +212,21 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
         value as (typeof formattedOrder)[keyof typeof formattedOrder],
         options,
       );
+    },
+  );
+
+  const manualSetOrderValue = useMemoizedFn(
+    (
+      key: keyof typeof formattedOrder | string,
+      value: unknown,
+      options?: {
+        shouldUpdateLastChangedField?: boolean;
+      },
+    ) => {
+      // Manually triggered updates should mark the user as active for estLiqPrice window calculations.
+      lastUserActiveTimeRef.current = Date.now();
+      console.log("manualSetOrderValue----", key, value, options);
+      setOrderValue(key, value, options);
     },
   );
 
@@ -358,6 +376,25 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
     }
   }, [formattedOrder.order_type, formattedOrder.distribution_type]);
 
+  const isSymbolPostOnly =
+    (symbolInfo as { status?: string } | undefined)?.status === "POST_ONLY";
+
+  // check if the symbol is in POST_ONLY mode,
+  // and fix order type to limit if the order type is market or stop market
+  useEffect(() => {
+    if (
+      isSymbolPostOnly &&
+      (formattedOrder.order_type === OrderType.MARKET ||
+        formattedOrder.order_type === OrderType.STOP_MARKET)
+    ) {
+      setLocalOrderType(OrderType.LIMIT);
+      setOrderValues({
+        order_type: OrderType.LIMIT,
+        order_type_ext: undefined,
+      });
+    }
+  }, [isSymbolPostOnly, formattedOrder.order_type, setOrderValues]);
+
   const currentLtv = useComputedLTV();
   const askAndBid = useAskAndBid();
 
@@ -384,10 +421,38 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
       order_type_ext: formattedOrder.order_type_ext,
     });
 
+  /**
+   * Same rules as est-liq broadcast: when estimate is missing or inconsistent with
+   * mark/side, treat as no liq for SL validation. Otherwise SL vs liq checks can fire
+   * while the UI shows no usable est. liq. price.
+   */
+  const effectiveEstLiqPriceForSlCheck = useMemo(() => {
+    const estLiqPrice = state.estLiqPrice;
+    if (
+      estLiqPrice == null ||
+      formattedOrder.side == null ||
+      state.markPrice == null
+    ) {
+      return null;
+    }
+    if (
+      (formattedOrder.side === OrderSide.BUY &&
+        estLiqPrice > state.markPrice) ||
+      (formattedOrder.side === OrderSide.SELL && estLiqPrice < state.markPrice)
+    ) {
+      return null;
+    }
+    if (!Number.isFinite(estLiqPrice) || estLiqPrice <= 0) {
+      return null;
+    }
+    return estLiqPrice;
+  }, [state.estLiqPrice, state.markPrice, formattedOrder.side]);
+
   const slPriceError = useTpslPriceChecker({
     slPrice: formattedOrder.sl_trigger_price,
-    liqPrice: state.estLiqPrice,
+    liqPrice: effectiveEstLiqPriceForSlCheck,
     side: formattedOrder.side,
+    markPrice: state.markPrice,
     currentPosition: state.currentPosition,
     orderQuantity: Number(formattedOrder.order_quantity),
   });
@@ -404,20 +469,13 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
     }
   }, [tpslSwitch]);
 
-  /** Track user activity via core order fields (price, quantity, side) to drive estLiqPrice active window. */
-  useEffect(() => {
-    lastUserActiveTimeRef.current = Date.now();
-  }, [
-    formattedOrder.order_price,
-    formattedOrder.order_quantity,
-    formattedOrder.side,
-  ]);
-
   /**
    * Broadcast estimated liquidation price for TradingView chart liquidation line (avoids parent state / callback loops).
    * Includes a user-activity flag so downstream consumers can decide whether to treat this estLiqPrice as active.
    */
   useEffect(() => {
+    const estLiqPrice = effectiveEstLiqPriceForSlCheck;
+
     const lastActive = lastUserActiveTimeRef.current;
     const now = Date.now();
     const isUserActive =
@@ -425,10 +483,11 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
 
     ee.emit(ORDER_ENTRY_EST_LIQ_PRICE_CHANGE, {
       symbol,
-      estLiqPrice: state.estLiqPrice ?? null,
+      estLiqPrice,
       isUserActive,
     });
-  }, [ee, symbol, state.estLiqPrice]);
+  }, [ee, symbol, effectiveEstLiqPriceForSlCheck]);
+
   useEffect(() => {
     setOrderValue("margin_mode", marginMode);
   }, [marginMode]);
@@ -443,7 +502,9 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
     level: formattedOrder.level as OrderLevel,
     formattedOrder,
     setOrderValue,
+    manualSetOrderValue,
     setOrderValues,
+    setOrderValuesRaw,
     // account-level leverage (for other consumers)
     currentLeverage,
     // symbol-level leverage & margin mode for this order entry
@@ -476,5 +537,8 @@ export const useOrderEntryScript = (inputs: OrderEntryScriptInputs) => {
     soundAlert,
     setSoundAlert,
     currentFocusInput,
+    walletAddress,
+    isPermissionlessListing,
+    isSymbolPostOnly,
   };
 };

@@ -1,101 +1,50 @@
-# Box Reference
+# box.tsx
 
-> Location: `packages/ui/src/box/box.tsx`, `packages/ui/src/box/index.ts`
+## box.tsx 的职责
 
-## Overview
+Provides the `Box` layout primitive and `boxVariants` (tailwind-variants). Box is a polymorphic container (div by default; optional `as` or `asChild` for Slot) with layout, shadow, decoration, position, and visible variants, plus optional width, height, left, right, top, bottom, and angle for gradient. Used as the primary layout building block across the UI package.
 
-`Box` is the foundational layout primitive for the UI kit. It wraps any HTML element (div, span, section, etc.) and exposes a rich set of spacing, positioning, decoration, and visibility props through `tailwind-variants`. Higher-level components such as `Flex`, `Grid`, `Card`, and `Button` all reuse Box’s variant definitions to stay visually aligned.
+## box.tsx 对外导出内容
 
-## Source Structure
+| Name        | Type      | Role             | Description                        |
+| ----------- | --------- | ---------------- | ---------------------------------- |
+| Box         | component | Layout primitive | ForwardRef component with BoxProps |
+| boxVariants | function  | tv() variants    | Style variants for box             |
 
-| File       | Description                                                    |
-| ---------- | -------------------------------------------------------------- |
-| `box.tsx`  | Implements `boxVariants`, the `Box` component, and `BoxProps`. |
-| `index.ts` | Re-exports `Box` and `boxVariants`.                            |
+## Box 的输入与输出
 
-## Exports & Types
+- **Input**: BoxProps (as, asChild, width, height, left, right, top, bottom, angle, className, and layout/shadow/decoration/position/visible variant props).
+- **Output**: Rendered element (default div or Slot) with variant classes and size/position styles.
 
-### `Box`
+## Box Props
 
-```typescript
-const Box: React.ForwardRefExoticComponent<
-  BoxProps & React.RefAttributes<HTMLDivElement>
->
-```
+| Prop                     | Type                                                                                  | Required | Default | Description                              |
+| ------------------------ | ------------------------------------------------------------------------------------- | -------- | ------- | ---------------------------------------- |
+| asChild                  | boolean                                                                               | No       | false   | Use Radix Slot to merge props onto child |
+| as                       | "div" \| "span" \| "nav" \| "section" \| "article" \| "aside" \| "header" \| "footer" | No       | "div"   | Element type when not asChild            |
+| width                    | string \| number                                                                      | No       | —       | Width (e.g. "100%", 200)                 |
+| height                   | string \| number                                                                      | No       | —       | Height                                   |
+| left, right, top, bottom | string \| number                                                                      | No       | —       | Position values                          |
+| angle                    | number                                                                                | No       | —       | Gradient angle                           |
+| className                | string                                                                                | No       | —       | Additional classes                       |
+| ...layoutVariants        | —                                                                                     | No       | —       | p, px, py, pt, pb, etc. from layout      |
+| ...shadowVariants        | —                                                                                     | No       | —       | shadow variant                           |
+| ...decorationVariants    | —                                                                                     | No       | —       | decoration variant                       |
+| ...positionVariants      | —                                                                                     | No       | —       | position variant                         |
+| ...visibleVariants       | —                                                                                     | No       | —       | visible variant                          |
 
-Forward ref component that can render as any HTML tag or forward styles to a child via Radix's `Slot`.
+## Box 依赖与调用关系
 
-### `boxVariants`
+- **Upstream**: Slot (radix-ui), layoutVariants, decorationVariants, positionVariants, shadowVariants, visibleVariants (layout/), parseSizeProps (helpers/parse-props), tv (utils/tv).
+- **Downstream**: Most layout and container components; Button and others use layout/shadow variants.
 
-```typescript
-const boxVariants: ReturnType<typeof tv>
-```
-
-Collects layout, shadow, decoration, position, and visibility variants for reuse.
-
-### `BoxProps`
-
-```typescript
-interface BoxProps
-  extends React.ButtonHTMLAttributes<HTMLDivElement | HTMLSpanElement>,
-    Omit<
-      VariantProps<typeof boxVariants>,
-      "__position" | "__size_width" | "__size_height"
-    > {
-  asChild?: boolean;
-  as?:
-    | "div"
-    | "span"
-    | "nav"
-    | "section"
-    | "article"
-    | "aside"
-    | "header"
-    | "footer";
-  width?: string | number;
-  height?: string | number;
-  left?: string | number;
-  right?: string | number;
-  top?: string | number;
-  bottom?: string | number;
-  angle?: number;
-}
-```
-
-Extends HTML attributes with Box-specific fields for element control, spacing, sizing, decoration, and positioning.
-
-## Props & Behavior
-
-- **Element control**: `as` chooses the DOM tag; `asChild` lets Box pass styles to an existing child element.
-- **Spacing**: `p`, `px`, `py`, `m`, `mx`, `my`, `pt`, `mb`, etc. Numeric values are parsed via `parseSizeProps` and converted to Tailwind classes.
-- **Sizing**: `width`, `height` accept numbers or strings and are applied through inline styles with helper flags (`__size_width`, `__size_height`) to prevent redundant classes.
-- **Decoration**: `shadow`, `border`, `gradient`, `intensity`, `borderColor`, `r` (radius) map to design tokens.
-- **Positioning**: `position`, `top`, `right`, `bottom`, `left`, `zIndex`, `invisible`, `grow` all plug into `positionVariants` / `visibleVariants`.
-- **Angle**: When using gradient options, `angle` controls the gradient direction in degrees.
-
-## Usage
+## Box Example
 
 ```tsx
 import { Box } from "@veltodefi/ui";
 
-<Box p={4} shadow="md" border="base" r="xl" width={360}>
-  <h4 className="oui-text-base">Wallet balance</h4>
-</Box>
-
-<Box asChild p={2}>
-  <a href="/markets">Browse markets</a>
-</Box>
+<Box p="4" className="flex gap-2">
+  <Box width={200} height={100} shadow="md" />
+  <Box as="section" px="2" py="3" />
+</Box>;
 ```
-
-## Implementation Notes
-
-- `parseSizeProps` splits spacing/sizing props from the rest, ensuring unsupported attributes don’t leak onto the DOM.
-- Variant flags such as `__position` prevent Tailwind from generating conflicting classes when no positional props are supplied.
-- `Slot` support (`asChild`) is ideal when styling Next.js `Link`, custom buttons, or Router components without extra wrapper nodes.
-
-## Integration Tips
-
-1. Create higher-level primitives (e.g., KPI cards) by composing Box and exposing only the subset of props you want teams to tweak.
-2. Use `gradient` + `angle` for marketing banners while still leveraging the design token palette.
-3. In high-frequency lists, keep props minimal to reduce `tv` computation overhead, or memoize Box variants when possible.
-4. Combine Box with `useObserverElement` to watch when a styled container enters the viewport—helpful for lazy-loading charts/cards.

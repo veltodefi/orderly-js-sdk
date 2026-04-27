@@ -5,9 +5,9 @@ import type {
   OrderlyKeyStore,
   WalletAdapter,
 } from "@veltodefi/core";
-import type { API, Chain, NetworkId, OrderlyOrder } from "@veltodefi/types";
+import type { API, NetworkId, OrderlyOrder } from "@veltodefi/types";
 import type { Chains } from "./orderly/useChains";
-import { RwaSymbolsInfo } from "./orderly/useRwaSymbolsInfo";
+import type { RwaSymbolsInfo } from "./orderly/useRwaSymbolsInfo";
 
 export type FilteredChains = {
   mainnet?: { id: number }[];

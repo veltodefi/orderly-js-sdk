@@ -10,6 +10,8 @@ import {
   Spinner,
   Divider,
   Tips,
+  Tabs,
+  TabPanel,
 } from "@veltodefi/ui";
 import { InputStatus } from "../../types";
 import { LtvWidget } from "../LTV";
@@ -22,6 +24,7 @@ import { ChainSelect } from "../chainSelect";
 import { CollateralContribution } from "../collateralContribution";
 import { CollateralRatioWidget } from "../collateralRatio";
 import { ExchangeDivider } from "../exchangeDivider";
+import { ExclusiveDeposit } from "../exclusiveDeposit";
 import { Fee } from "../fee";
 import { MinimumReceived } from "../minimumReceived";
 import { QuantityInput } from "../quantityInput";
@@ -89,6 +92,9 @@ export const DepositForm: FC<Props> = (props) => {
     slippageValidate,
     quantityNotional,
     layout,
+    activeSubTab,
+    setActiveSubTab,
+    showExclusiveDeposit,
   } = props;
 
   const { t } = useTranslation();
@@ -178,15 +184,8 @@ export const DepositForm: FC<Props> = (props) => {
     );
   };
 
-  return (
-    <Box
-      id="oui-deposit-form"
-      className={cn(
-        textVariants({ weight: "semibold" }),
-        layout !== "onboarding" &&
-          "oui-justify-between oui-h-full oui-flex oui-flex-col",
-      )}
-    >
+  const web3Content = (
+    <>
       <div>
         <Box className="oui-mb-6 lg:oui-mb-8">
           <Box
@@ -299,6 +298,48 @@ export const DepositForm: FC<Props> = (props) => {
           networkId={networkId}
         />
       </Box>
+    </>
+  );
+
+  return (
+    <Box
+      id="oui-deposit-form"
+      className={cn(
+        textVariants({ weight: "semibold" }),
+        layout !== "onboarding" &&
+          "oui-justify-between oui-h-full oui-flex oui-flex-col",
+      )}
+    >
+      {showExclusiveDeposit ? (
+        <Tabs
+          value={activeSubTab}
+          onValueChange={(value) =>
+            setActiveSubTab(value as "web3" | "exclusive_deposit")
+          }
+          variant="contained"
+          classNames={{ tabsList: "oui-w-fit" }}
+        >
+          <TabPanel
+            title={t("transfer.deposit.tab.connectedWallet")}
+            value="web3"
+          >
+            <div className="oui-pt-3">{web3Content}</div>
+          </TabPanel>
+          <TabPanel
+            title={t("transfer.deposit.tab.exchangeOrOtherWallet")}
+            value="exclusive_deposit"
+          >
+            <Box className={"oui-overflow-hidden oui-rounded-2xl"}>
+              <ExclusiveDeposit
+                layout={layout}
+                active={activeSubTab === "exclusive_deposit"}
+              />
+            </Box>
+          </TabPanel>
+        </Tabs>
+      ) : (
+        web3Content
+      )}
     </Box>
   );
 };

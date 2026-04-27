@@ -1,5 +1,83 @@
 # tsconfig
 
+## 0.15.4
+
+### Patch Changes
+
+- publish
+- 07c88a0: publish
+
+## 0.15.4-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 0.15.3
+
+### Patch Changes
+
+- publish
+- 528e3f4: publish
+
+## 0.15.3-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 0.15.2
+
+### Patch Changes
+
+- publish
+- 06007f7: publish
+
+## 0.15.2-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 0.15.1
+
+### Patch Changes
+
+- publish
+- 75b87bc: publish
+
+## 0.15.1-alpha.0
+
+### Patch Changes
+
+- publish
+
+## 0.15.0
+
+### Minor Changes
+
+- 1053a3d: publish
+- publish
+
+## 0.15.0-alpha.0
+
+### Minor Changes
+
+- publish
+
+## 0.14.2
+
+### Patch Changes
+
+- publish
+- 1c40427: publish
+
+## 0.14.2-alpha.0
+
+### Patch Changes
+
+- publish
+
 ## 0.14.1
 
 ### Patch Changes
@@ -1180,11 +1258,7 @@
 - a1ea426b: export ChainDialog component;
 - 22ad6134: fix bug
 
-<<<<<<< HEAD
-
 ## 0.0.88
-
-=======
 
 ## 0.0.87-alpha.35
 
@@ -1230,11 +1304,7 @@
 
 - fix bugs
 
-<<<<<<< HEAD
-
 ## 0.0.87
-
-=======
 
 ## 0.0.87-alpha.28
 

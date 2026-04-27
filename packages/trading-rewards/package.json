@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/trading-rewards",
-  "version": "2.11.1-velto-main.50",
+  "version": "2.12.4-velto-main.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

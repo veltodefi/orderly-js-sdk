@@ -2,6 +2,7 @@ import React, { FC, useCallback } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { MarginMode } from "@veltodefi/types";
 import {
+  Button,
   Checkbox,
   CloseCircleFillIcon,
   CloseIcon,
@@ -9,10 +10,11 @@ import {
   Flex,
   IconButton,
   Input,
-  MainButton,
   Text,
+  Tooltip,
   cn,
 } from "@veltodefi/ui";
+import { SymbolBadge } from "../symbolBadge";
 import type {
   MarginModeSettingsItem,
   MarginModeSettingsState,
@@ -47,7 +49,7 @@ export const MarginModeSettings: FC<MarginModeSettingsProps> = (props) => {
 
   const selectedCount = props.selectedKeys.size;
   const totalCountTextClassName =
-    selectedCount > 0 ? "oui-text-primary-light" : "oui-text-base-contrast-80";
+    selectedCount > 0 ? "oui-text-primary-light" : "oui-text-base-contrast-36";
 
   const handleClearSearch = useCallback(() => {
     props.onSearchChange("");
@@ -176,6 +178,7 @@ export const MarginModeSettings: FC<MarginModeSettingsProps> = (props) => {
               checked={props.selectedKeys.has(item.key)}
               marginMode={props.itemMarginModes[item.key] ?? MarginMode.CROSS}
               onToggle={props.onToggleItem}
+              disabled={!!item.brokerId}
             />
           ))}
         </Flex>
@@ -210,7 +213,7 @@ export const MarginModeSettings: FC<MarginModeSettingsProps> = (props) => {
             </label>
           </Flex>
 
-          <Text className="oui-text-sm oui-text-base-contrast-80">
+          <Text className="oui-text-sm oui-text-base-contrast-54">
             {t("common.total")}:{" "}
             <span className={cn("oui-font-semibold", totalCountTextClassName)}>
               {selectedCount}
@@ -233,36 +236,44 @@ export const MarginModeSettings: FC<MarginModeSettingsProps> = (props) => {
             {t("marginMode.setAs")}
           </Text>
 
-          <MainButton
-            variant="primary"
+          <Button
             size="md"
+            className={cn(
+              "oui-bg-base-3 hover:oui-bg-base-3/80 active:oui-bg-base-3/70",
+              selectedCount > 0 && !props.isLoading
+                ? "oui-text-base-contrast-80"
+                : "oui-text-base-contrast-98",
+            )}
             disabled={
               selectedCount === 0 ||
               props.isLoading ||
               (props.isCrossButtonDisabled ?? false)
             }
-            loading={props.isLoading}
             onClick={handleSetCross}
             aria-label={t("marginMode.cross")}
             data-testid="oui-testid-marginModeSettings-set-cross"
           >
             {t("marginMode.cross")}
-          </MainButton>
-          <MainButton
-            variant="primary"
+          </Button>
+          <Button
             size="md"
+            className={cn(
+              "oui-bg-base-3 hover:oui-bg-base-3/80 active:oui-bg-base-3/70",
+              selectedCount > 0 && !props.isLoading
+                ? "oui-text-base-contrast-80"
+                : "oui-text-base-contrast-98",
+            )}
             disabled={
               selectedCount === 0 ||
               props.isLoading ||
               (props.isIsolatedButtonDisabled ?? false)
             }
-            loading={props.isLoading}
             onClick={handleSetIsolated}
             aria-label={t("marginMode.isolated")}
             data-testid="oui-testid-marginModeSettings-set-isolated"
           >
             {t("marginMode.isolated")}
-          </MainButton>
+          </Button>
         </Flex>
       </Flex>
     </Flex>
@@ -274,17 +285,20 @@ const SymbolRow: FC<{
   checked: boolean;
   marginMode: MarginMode;
   onToggle: (key: string) => void;
+  disabled?: boolean;
 }> = (props) => {
   const { t } = useTranslation();
   const handleCheckedChange = useCallback(() => {
+    if (props.disabled) return;
     props.onToggle(props.item.key);
   }, [props]);
 
-  return (
+  const row = (
     <Flex itemAlign="center" className="oui-w-full">
       <label
         className={cn(
           "oui-flex oui-items-center oui-gap-2 oui-flex-1 oui-cursor-pointer oui-select-none oui-w-full",
+          props.disabled ? "oui-cursor-not-allowed oui-opacity-50" : "",
         )}
         data-testid={`oui-testid-marginModeSettings-item-${props.item.key}`}
       >
@@ -293,16 +307,18 @@ const SymbolRow: FC<{
           checked={props.checked}
           onCheckedChange={handleCheckedChange}
           aria-label={props.item.symbol}
+          disabled={props.disabled}
         />
         <Text className="oui-text-sm oui-font-semibold oui-text-base-contrast-80">
           {props.item.symbol}
         </Text>
+        <SymbolBadge symbol={props.item.key} />
         <span
           className={cn(
             "oui-inline-flex oui-items-center",
             "oui-rounded oui-bg-base-6 oui-px-2 oui-py-0",
             "oui-h-[18px] oui-text-xs oui-leading-[18px]",
-            "oui-text-base-contrast-80",
+            "oui-text-base-contrast-36",
           )}
         >
           {props.marginMode === MarginMode.ISOLATED
@@ -312,6 +328,19 @@ const SymbolRow: FC<{
       </label>
     </Flex>
   );
+
+  if (props.disabled) {
+    return (
+      <Tooltip
+        content={t("marginMode.disabledSymbolTooltip")}
+        className="oui-max-w-[280px] oui-text-2xs oui-text-base-contrast-80"
+      >
+        {row}
+      </Tooltip>
+    );
+  }
+
+  return row;
 };
 
 const SearchGlyph: FC<{ className?: string }> = (props) => {

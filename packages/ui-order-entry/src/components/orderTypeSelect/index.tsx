@@ -1,16 +1,21 @@
 import { useMemo } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { OrderSide, OrderType } from "@veltodefi/types";
-import { cn, Select, Text, useScreen } from "@veltodefi/ui";
+import { cn, modal, Select, Text, Tooltip, useScreen } from "@veltodefi/ui";
 
 export const OrderTypeSelect = (props: {
   type: OrderType;
   onChange: (type: OrderType) => void;
   side: OrderSide;
   canTrade: boolean;
+  /** When true, Market order type is disabled (e.g. symbol in POST_ONLY mode). */
+  marketOrderDisabled?: boolean;
+  /** Tooltip text when hovering over the disabled Market button. */
+  marketOrderDisabledTooltip?: string;
 }) => {
   const { t } = useTranslation();
   const { isMobile } = useScreen();
+  const { marketOrderDisabled = false, marketOrderDisabledTooltip } = props;
 
   const allOptions = useMemo(() => {
     return [
@@ -64,6 +69,9 @@ export const OrderTypeSelect = (props: {
     };
   }, [t]);
 
+  // Must run on every render; do not place after `if (!isMobile) return` or hook order breaks when isMobile toggles.
+  const mobileOptions = useMemo(() => allOptions, [allOptions]);
+
   if (!isMobile) {
     const baseButtonClassName =
       "oui-flex oui-flex-1 oui-items-center oui-justify-center oui-gap-x-1 oui-rounded oui-px-3 oui-py-0.5 oui-text-xs oui-font-semibold oui-h-8";
@@ -101,20 +109,39 @@ export const OrderTypeSelect = (props: {
           <Text size="xs">{t("orderEntry.orderType.limit")}</Text>
         </button>
 
-        <button
-          type="button"
-          className={
-            props.type === OrderType.MARKET
-              ? selectedButtonClassName
-              : unselectedButtonClassName
-          }
-          aria-pressed={props.type === OrderType.MARKET}
-          onClick={() => handleChange(OrderType.MARKET)}
-          disabled={!props.canTrade}
-          data-testid="oui-testid-orderEntry-orderType-market"
-        >
-          <Text size="xs">{t("orderEntry.orderType.market")}</Text>
-        </button>
+        {marketOrderDisabled && marketOrderDisabledTooltip ? (
+          <Tooltip
+            content={marketOrderDisabledTooltip}
+            className="oui-max-w-[275px]"
+          >
+            <span className="oui-inline-flex oui-flex-1">
+              <button
+                type="button"
+                className={unselectedButtonClassName}
+                aria-pressed={false}
+                disabled
+                data-testid="oui-testid-orderEntry-orderType-market"
+              >
+                <Text size="xs">{t("orderEntry.orderType.market")}</Text>
+              </button>
+            </span>
+          </Tooltip>
+        ) : (
+          <button
+            type="button"
+            className={
+              props.type === OrderType.MARKET
+                ? selectedButtonClassName
+                : unselectedButtonClassName
+            }
+            aria-pressed={props.type === OrderType.MARKET}
+            onClick={() => handleChange(OrderType.MARKET)}
+            disabled={!props.canTrade}
+            data-testid="oui-testid-orderEntry-orderType-market"
+          >
+            <Text size="xs">{t("orderEntry.orderType.market")}</Text>
+          </button>
+        )}
 
         <div
           className="oui-flex-1"
@@ -162,13 +189,28 @@ export const OrderTypeSelect = (props: {
     );
   }
 
+  const handleMobileValueChange = (value: OrderType) => {
+    if (
+      marketOrderDisabled &&
+      value === OrderType.MARKET &&
+      marketOrderDisabledTooltip
+    ) {
+      modal.alert({
+        title: t("common.tips"),
+        message: marketOrderDisabledTooltip,
+      });
+      return;
+    }
+    props.onChange(value);
+  };
+
   return (
     <Select.options
       testid="oui-testid-orderEntry-orderType-button"
       currentValue={props.type}
       value={props.type}
-      options={allOptions}
-      onValueChange={props.onChange}
+      options={mobileOptions}
+      onValueChange={handleMobileValueChange}
       contentProps={{
         className: cn(
           "oui-orderEntry-orderTypeSelect-content",

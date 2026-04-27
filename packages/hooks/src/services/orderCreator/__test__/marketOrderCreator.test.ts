@@ -141,6 +141,15 @@ describe("MarketOrderCreator", () => {
       expect(errors.slippage).toBeUndefined();
     });
 
+    test("should not throw when symbol data is not yet loaded", async () => {
+      const values = { order_quantity: "0.5" };
+      const config = createMockConfig({ symbol: undefined as any });
+
+      await expect(
+        marketOrderCreator.validate(values, config),
+      ).resolves.not.toThrow();
+    });
+
     test("should inherit baseValidate errors for order_quantity", async () => {
       const values = {
         order_quantity: undefined,

@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/wallet-connector",
-  "version": "2.11.1-velto-main.50",
+  "version": "2.12.4-velto-main.2",
   "description": "",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
@@ -26,6 +26,7 @@
     "@web3-onboard/injected-wallets": "^2.10.16",
     "@web3-onboard/react": "^2.8.17",
     "lodash.merge": "^4.6.2",
+    "@types/lodash.merge": "^4.6.9",
     "@solana/spl-token": "0.4.8",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
@@ -36,7 +37,6 @@
     "rxjs": "^7.5.5"
   },
   "devDependencies": {
-    "@types/lodash.merge": "^4.6.7",
     "@types/react": "^18.2.38",
     "react": "^18.2.0",
     "tsconfig": "workspace:*",

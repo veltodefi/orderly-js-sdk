@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   Badge,
-  MainButton,
+  Button,
   cn,
   Divider,
   Flex,
@@ -13,6 +13,7 @@ import {
   Text,
   ThrottledButton,
 } from "@veltodefi/ui";
+import { SymbolBadge } from "../desktop/symbolBadge";
 import { ClosePositionScriptReturn } from "./closePosition.script";
 import {
   LimitConfirmDialog,
@@ -63,7 +64,12 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
 
   const header = (
     <Flex width={"100%"} justify={"between"}>
-      <Text.formatted rule={"symbol"} showIcon>
+      <Text.formatted
+        rule={"symbol"}
+        formatString="base"
+        showIcon
+        suffix={<SymbolBadge symbol={position.symbol} />}
+      >
         {position.symbol}
       </Text.formatted>
       <Flex gap={1}>
@@ -152,15 +158,14 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
 
   const footer = (
     <Flex width={"100%"} gap={3} mt={2}>
-      <MainButton fullWidth variant="secondary" onClick={props.onCloseSheet}>
+      <Button fullWidth color="secondary" onClick={props.onCloseSheet}>
         {t("common.cancel")}
-      </MainButton>
+      </Button>
 
       <ThrottledButton
         fullWidth
         disabled={submitting || disabled}
         loading={submitting}
-        variant="primary"
         onClick={(e) => {
           e.stopPropagation();
           e.preventDefault();
@@ -174,8 +179,9 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
 
   return (
     <>
-      <MainButton
-        variant="secondary"
+      <Button
+        variant="outlined"
+        color="secondary"
         size="sm"
         className="oui-border-base-contrast-36"
         onClick={(e) => {
@@ -185,7 +191,7 @@ export const MobileClosePosition: FC<ClosePositionScriptReturn> = (props) => {
         }}
       >
         {title}
-      </MainButton>
+      </Button>
 
       <SimpleSheet title={title} open={sheetOpen} onOpenChange={setSheetOpen}>
         <Flex

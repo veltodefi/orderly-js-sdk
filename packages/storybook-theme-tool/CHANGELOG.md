@@ -1,5 +1,119 @@
 # storybook-theme-tool
 
+## 2.12.4
+
+### Patch Changes
+
+- publish
+- 07c88a0: publish
+- Updated dependencies
+- Updated dependencies [07c88a0]
+  - @veltodefi/ui@2.12.4
+
+## 2.12.4-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/ui@2.12.4-alpha.0
+
+## 2.12.3
+
+### Patch Changes
+
+- publish
+- 528e3f4: publish
+- Updated dependencies
+- Updated dependencies [528e3f4]
+  - @veltodefi/ui@2.12.3
+
+## 2.12.3-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/ui@2.12.3-alpha.0
+
+## 2.12.2
+
+### Patch Changes
+
+- publish
+- 06007f7: publish
+- Updated dependencies
+- Updated dependencies [06007f7]
+  - @veltodefi/ui@2.12.2
+
+## 2.12.2-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/ui@2.12.2-alpha.0
+
+## 2.12.1
+
+### Patch Changes
+
+- publish
+- 75b87bc: publish
+- Updated dependencies
+- Updated dependencies [75b87bc]
+  - @veltodefi/ui@2.12.1
+
+## 2.12.1-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/ui@2.12.1-alpha.0
+
+## 2.12.0
+
+### Minor Changes
+
+- 1053a3d: publish
+- publish
+
+### Patch Changes
+
+- Updated dependencies [1053a3d]
+- Updated dependencies
+  - @veltodefi/ui@2.12.0
+
+## 2.12.0-alpha.0
+
+### Minor Changes
+
+- publish
+
+### Patch Changes
+
+- Updated dependencies
+  - @veltodefi/ui@2.12.0-alpha.0
+
+## 2.11.2
+
+### Patch Changes
+
+- publish
+- 1c40427: publish
+- Updated dependencies
+- Updated dependencies [1c40427]
+  - @veltodefi/ui@2.11.2
+
+## 2.11.2-alpha.0
+
+### Patch Changes
+
+- publish
+- Updated dependencies
+  - @veltodefi/ui@2.11.2-alpha.0
+
 ## 2.11.1
 
 ### Patch Changes

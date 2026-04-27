@@ -47,7 +47,8 @@ export const VaultCard: FC<VaultCardScript> = (props) => {
     availableBalance,
     openVaultWebsite,
     icon,
-    isButtonsDisabled,
+    isDepositDisabled,
+    isWithdrawDisabled,
   } = props;
 
   const { t } = useTranslation();
@@ -249,7 +250,8 @@ export const VaultCard: FC<VaultCardScript> = (props) => {
               isEVMConnected={isEVMConnected}
               isSOLConnected={isSOLConnected}
               openDepositAndWithdraw={openDepositAndWithdraw}
-              isButtonsDisabled={isButtonsDisabled}
+              isDepositDisabled={isDepositDisabled}
+              isWithdrawDisabled={isWithdrawDisabled}
             />
           </div>
         </div>
@@ -335,7 +337,8 @@ type VaultCardOperationProps = {
   isEVMConnected: boolean;
   isSOLConnected: boolean;
   openDepositAndWithdraw: (activeTab: "deposit" | "withdraw") => void;
-  isButtonsDisabled: boolean;
+  isDepositDisabled: boolean;
+  isWithdrawDisabled: boolean;
 };
 
 const VaultCardOperation: FC<VaultCardOperationProps> = (props) => {
@@ -343,7 +346,8 @@ const VaultCardOperation: FC<VaultCardOperationProps> = (props) => {
     isEVMConnected,
     isSOLConnected,
     openDepositAndWithdraw,
-    isButtonsDisabled,
+    isDepositDisabled,
+    isWithdrawDisabled,
   } = props;
   const { t } = useTranslation();
 
@@ -355,7 +359,7 @@ const VaultCardOperation: FC<VaultCardOperationProps> = (props) => {
             className="oui-flex-1"
             size="md"
             variant="primary"
-            disabled={isButtonsDisabled}
+            disabled={isDepositDisabled}
             onClick={() => openDepositAndWithdraw("deposit")}
           >
             {t("common.deposit")}
@@ -364,7 +368,7 @@ const VaultCardOperation: FC<VaultCardOperationProps> = (props) => {
             className="oui-flex-1"
             size="md"
             variant="secondary"
-            disabled={isButtonsDisabled}
+            disabled={isWithdrawDisabled}
             onClick={() => openDepositAndWithdraw("withdraw")}
           >
             {t("common.withdraw")}

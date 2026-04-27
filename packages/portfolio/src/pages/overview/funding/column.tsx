@@ -1,7 +1,25 @@
 import { useMemo } from "react";
+import { useBadgeBySymbol } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { API } from "@veltodefi/types";
 import { Flex, Text, type Column } from "@veltodefi/ui";
+
+const SymbolBadge = (props: { symbol: string }) => {
+  const { brokerId, brokerName, brokerNameRaw } = useBadgeBySymbol(
+    props.symbol,
+  );
+
+  return (
+    <Text.symbolBadge
+      badge={brokerName ?? brokerId ?? undefined}
+      fullName={brokerNameRaw}
+      className="oui-cursor-pointer"
+      showIcon
+    >
+      {props.symbol}
+    </Text.symbolBadge>
+  );
+};
 
 export const useFundingHistoryColumns = () => {
   const { t } = useTranslation();
@@ -12,10 +30,7 @@ export const useFundingHistoryColumns = () => {
         title: t("common.symbol"),
         dataIndex: "symbol",
         width: 80,
-        rule: "symbol",
-        textProps: {
-          showIcon: true,
-        },
+        render: (value: string) => <SymbolBadge symbol={value} />,
       },
       {
         title: t("common.time"),

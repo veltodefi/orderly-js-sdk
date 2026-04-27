@@ -2,10 +2,7 @@ import { i18n } from "@veltodefi/i18n";
 import { API, OrderStatus, OrderType } from "@veltodefi/types";
 import { AlgoOrderRootType } from "@veltodefi/types";
 import { parseNumber } from "@veltodefi/ui";
-import {
-  capitalizeString,
-  transSymbolformString,
-} from "@veltodefi/utils";
+import { capitalizeString } from "@veltodefi/utils";
 
 function getDisplaySide(side: string) {
   if (side === "BUY") {
@@ -25,6 +22,7 @@ export function getOrderExecutionReportMsg(
     fieldChanges?: AlgoOrderFieldChanges;
   },
   symbolsInfo: any,
+  displaySymbol: string,
 ) {
   const { symbol, side, quantity, client_order_id, fieldChanges } = data;
   const total_executed_quantity =
@@ -34,7 +32,6 @@ export function getOrderExecutionReportMsg(
   const base_dp = getSymbolInfo("base_dp");
   const quote_dp = getSymbolInfo("quote_dp");
   const displaySide = getDisplaySide(side);
-  const displaySymbol = transSymbolformString(symbol);
   const displayQuantity =
     "algo_type" in data && data.algo_type === AlgoOrderRootType.POSITIONAL_TP_SL
       ? i18n.t("tpsl.entirePosition")
