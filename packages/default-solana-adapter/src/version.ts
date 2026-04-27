@@ -7,7 +7,8 @@ declare global {
 }
 if (typeof window !== "undefined") {
   window.__ORDERLY_VERSION__ = window.__ORDERLY_VERSION__ || {};
-  window.__ORDERLY_VERSION__["@veltodefi/default-solana-adapter"] = "2.12.4";
+  window.__ORDERLY_VERSION__["@veltodefi/default-solana-adapter"] =
+    "2.12.4-velto-dev.1";
 }
 
-export default "2.12.4";
+export default "2.12.4-velto-dev.1";

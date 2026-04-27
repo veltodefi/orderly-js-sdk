@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/chart",
-  "version": "2.12.4",
+  "version": "2.12.4-velto-dev.1",
   "description": "Charting library for Orderly Network",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
