@@ -21,6 +21,7 @@ function getAmplitudeConfig(
   amplitudeConfig?: {
     amplitudeId?: string;
     serverZone?: amplitude.Types.ServerZoneType;
+    serverUrl?: string;
   },
 ): { amplitudeId: string; options: amplitude.Types.BrowserOptions } {
   if (!amplitudeConfig) {
@@ -31,14 +32,16 @@ function getAmplitudeConfig(
       },
     };
   }
-  const { amplitudeId, serverZone } = amplitudeConfig;
+  const { amplitudeId, serverZone, serverUrl } = amplitudeConfig;
+  const options: amplitude.Types.BrowserOptions = {};
+  if (serverUrl) {
+    options.serverUrl = serverUrl;
+  } else if (serverZone) {
+    options.serverZone = serverZone;
+  }
   return {
-    amplitudeId: amplitudeId!,
-    options: serverZone
-      ? {
-          serverZone: serverZone as amplitude.Types.ServerZoneType,
-        }
-      : {},
+    amplitudeId: amplitudeId ?? apiKeyMap[env],
+    options,
   };
 }
 
@@ -51,7 +54,11 @@ export class AmplitudeTracker {
   constructor(
     env: ENVType,
     amplitudeConfig:
-      | { amplitudeId: string; serverZone?: amplitude.Types.ServerZoneType }
+      | {
+          amplitudeId?: string;
+          serverZone?: amplitude.Types.ServerZoneType;
+          serverUrl?: string;
+        }
       | undefined,
     sdkInfo: any,
   ) {
