@@ -154,6 +154,8 @@ const useOrderEntryNextInternal = (
     value: any,
     additional?: {
       markPrice: number;
+      tpAnchorKey?: keyof FullOrderState | null;
+      slAnchorKey?: keyof FullOrderState | null;
     },
   ) => {
     if (!symbolInfo) {
@@ -164,7 +166,9 @@ const useOrderEntryNextInternal = (
 
     /** Use local state directly to avoid stale closure. */
     const currentEntry = orderEntity;
-    const { markPrice } = additional ?? { markPrice: 0 };
+    const { markPrice, tpAnchorKey, slAnchorKey } = additional ?? {
+      markPrice: 0,
+    };
 
     let newValues = calculate(
       { ...currentEntry },
@@ -192,6 +196,17 @@ const useOrderEntryNextInternal = (
       hasTPSL(newValues)
     ) {
       newValues = calculateTPSL(key, newValues, markPrice, symbolInfo);
+    }
+
+    // Anchor seal — preserve verbatim the TP/SL field the user typed into. The cascade above
+    // can re-derive the anchor from a rounded trigger_price (lossy), causing drift on each
+    // qty/price/order_type change. Seal the anchor against currentEntry, but only when the
+    // user is changing some OTHER field — typing into the anchor itself must update its value.
+    if (tpAnchorKey && tpAnchorKey !== key) {
+      (newValues as any)[tpAnchorKey] = currentEntry[tpAnchorKey];
+    }
+    if (slAnchorKey && slAnchorKey !== key) {
+      (newValues as any)[slAnchorKey] = currentEntry[slAnchorKey];
     }
 
     const { tp_ROI, sl_ROI } = priceToROI({
@@ -441,6 +456,16 @@ const useOrderEntryNextInternal = (
           );
         });
       }
+
+      // Anchor seal: TP/SL fields named in baseOn are the user's input. Restore them verbatim
+      // from pre-tick state so the cascade can't drift them via lossy round-trips through the
+      // rounded trigger_price (KPT-5552). Derivatives recompute every tick; the anchor never does.
+      baseOn.forEach((key) => {
+        if (key.startsWith("tp_") || key.startsWith("sl_")) {
+          const k = key as keyof FullOrderState;
+          (newValues as any)[k] = orderEntity[k];
+        }
+      });
 
       if (hasTPSL(newValues)) {
         const { tp_ROI, sl_ROI } = priceToROI({
