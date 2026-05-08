@@ -98,8 +98,9 @@ export interface OrderlyConfigContextState {
   };
 
   amplitudeConfig?: {
-    amplitudeId: string;
+    amplitudeId?: string;
     serverZone?: "EU" | "US";
+    serverUrl?: string;
   };
   orderMetadata?: OrderMetadataConfig;
 }
