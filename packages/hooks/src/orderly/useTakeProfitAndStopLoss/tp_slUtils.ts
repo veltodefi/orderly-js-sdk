@@ -655,14 +655,27 @@ export function tpslCalculateHelper(
     }
   }
   if (!trigger_price && checkTPSLOrderTypeIsMarket(key, inputs.values)) {
+    // Transient: the cascade can't resolve a trigger price right now (e.g. qty=0 mid-load,
+    // mark price not yet bound, entryPrice falsy). Previously every derivative was wiped to ""
+    // on this branch, which left tp_trigger_price empty and produced naked submits because
+    // baseCreator.parseBracketOrder reads only tp_trigger_price / sl_trigger_price.
+    // Instead preserve the previous derivatives from inputs.values; the next stable tick will
+    // overwrite them via the normal cascade. (KPT-5552)
+    const prev = inputs.values;
     return {
-      [`${keyPrefix}trigger_price`]: "",
-      [`${keyPrefix}offset`]: "",
-      [`${keyPrefix}offset_percentage`]: "",
-      [`${keyPrefix}offset_from_mark`]: "",
-      [`${keyPrefix}offset_percentage_from_mark`]: "",
-      [`${keyPrefix}pnl`]: "",
-      [`${keyPrefix}ROI`]: "",
+      [`${keyPrefix}trigger_price`]:
+        prev[`${keyPrefix}trigger_price` as keyof OrderlyOrder] ?? "",
+      [`${keyPrefix}offset`]:
+        prev[`${keyPrefix}offset` as keyof OrderlyOrder] ?? "",
+      [`${keyPrefix}offset_percentage`]:
+        prev[`${keyPrefix}offset_percentage` as keyof OrderlyOrder] ?? "",
+      [`${keyPrefix}offset_from_mark`]:
+        prev[`${keyPrefix}offset_from_mark` as keyof OrderlyOrder] ?? "",
+      [`${keyPrefix}offset_percentage_from_mark`]:
+        prev[`${keyPrefix}offset_percentage_from_mark` as keyof OrderlyOrder] ??
+        "",
+      [`${keyPrefix}pnl`]: prev[`${keyPrefix}pnl` as keyof OrderlyOrder] ?? "",
+      [`${keyPrefix}ROI`]: prev[`${keyPrefix}ROI` as keyof OrderlyOrder] ?? "",
       [key]: inputs.value,
     };
   }

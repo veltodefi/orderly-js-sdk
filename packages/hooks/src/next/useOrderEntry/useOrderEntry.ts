@@ -49,6 +49,25 @@ import {
 import type { FullOrderState } from "./orderEntry.store";
 import { useOrderEntryNextInternal } from "./useOrderEntry.internal";
 
+/**
+ * Identifier for the TP/SL field the user typed into. Values are the suffix of the corresponding
+ * `tp_*` / `sl_*` `OrderlyOrder` key. Used to pin user input across price-feed ticks.
+ */
+export type TPSLAnchor =
+  | "trigger_price"
+  | "offset"
+  | "offset_percentage"
+  | "offset_from_mark"
+  | "offset_percentage_from_mark"
+  | "pnl";
+
+/** Maps an `OrderlyOrder` TP/SL field name (e.g. `"tp_offset_percentage"`) to its anchor suffix. */
+const tpslAnchorFromKey = (key: string): TPSLAnchor | null => {
+  if (key.startsWith("tp_")) return key.slice(3) as TPSLAnchor;
+  if (key.startsWith("sl_")) return key.slice(3) as TPSLAnchor;
+  return null;
+};
+
 type OrderEntryParameters = Parameters<typeof useOrderEntryNextInternal>;
 type Options = Omit<OrderEntryParameters["1"], "symbolInfo">;
 
@@ -209,10 +228,16 @@ const useOrderEntry = (
   const lastLevel = useRef<OrderLevel>();
   const fundingRates = useFundingRatesStore();
 
-  const calculateTPSL_baseOn = useRef<{ tp: string; sl: string }>({
-    tp: "",
-    sl: "",
-  });
+  /**
+   * The TP/SL field the user last typed into. The anchor pins on price-feed ticks: derivatives
+   * recompute every tick from the anchor's verbatim stored value; the anchor field itself is
+   * never overwritten. Without this, the cascade re-derives the anchor from a rounded
+   * trigger_price each tick and the user's input drifts (KPT-5552).
+   */
+  const tpslAnchor = useRef<{
+    tp: TPSLAnchor | null;
+    sl: TPSLAnchor | null;
+  }>({ tp: null, sl: null });
 
   const actions = useMarkPriceActions();
   const symbolConfig = useSymbolsInfo();
@@ -236,7 +261,7 @@ const useOrderEntry = (
     setValuesRaw: setValuesRawInternal,
     validate,
     generateOrder,
-    reset,
+    reset: resetInternal,
     // submit,
     ...orderEntryActions
   } = useOrderEntryNextInternal(symbol, {
@@ -244,6 +269,19 @@ const useOrderEntry = (
     symbolInfo,
     symbolLeverage,
   });
+
+  /** Reset must clear the anchor ref alongside form state — otherwise stale anchors survive into the next order. */
+  const reset = useCallback(() => {
+    tpslAnchor.current.tp = null;
+    tpslAnchor.current.sl = null;
+    resetInternal();
+  }, [resetInternal]);
+
+  /** Clear anchors on symbol change. Internal `initOrder` zeros the form fields; the anchor ref is local to this hook and must follow. */
+  useEffect(() => {
+    tpslAnchor.current.tp = null;
+    tpslAnchor.current.sl = null;
+  }, [symbol]);
 
   const [estSlippage, setEstSlippage] = useState<number | null>(null);
 
@@ -415,11 +453,11 @@ const useOrderEntry = (
       if (lastChangedField.current) {
         baseOn.add(lastChangedField.current);
       }
-      if (calculateTPSL_baseOn.current.tp) {
-        baseOn.add(calculateTPSL_baseOn.current.tp);
+      if (tpslAnchor.current.tp) {
+        baseOn.add(`tp_${tpslAnchor.current.tp}`);
       }
-      if (calculateTPSL_baseOn.current.sl) {
-        baseOn.add(calculateTPSL_baseOn.current.sl);
+      if (tpslAnchor.current.sl) {
+        baseOn.add(`sl_${tpslAnchor.current.sl}`);
       }
       orderEntryActions.onMarkPriceChange(markPrice, Array.from(baseOn));
     }
@@ -431,6 +469,12 @@ const useOrderEntry = (
       maxQty,
       estSlippage,
       askAndBid: askAndBid.current?.[0] || [],
+      tpAnchorKey: tpslAnchor.current.tp
+        ? (`tp_${tpslAnchor.current.tp}` as keyof FullOrderState)
+        : null,
+      slAnchorKey: tpslAnchor.current.sl
+        ? (`sl_${tpslAnchor.current.sl}` as keyof FullOrderState)
+        : null,
     };
   }, [maxQty, symbol, estSlippage]);
 
@@ -502,10 +546,11 @@ const useOrderEntry = (
     }
 
     if (shouldUpdateLastChangedField) {
-      if (key.startsWith("tp_")) {
-        calculateTPSL_baseOn.current.tp = key;
-      } else if (key.startsWith("sl_")) {
-        calculateTPSL_baseOn.current.sl = key;
+      const anchor = tpslAnchorFromKey(key);
+      if (anchor && key.startsWith("tp_")) {
+        tpslAnchor.current.tp = anchor;
+      } else if (anchor && key.startsWith("sl_")) {
+        tpslAnchor.current.sl = anchor;
       }
 
       lastChangedField.current = key;
