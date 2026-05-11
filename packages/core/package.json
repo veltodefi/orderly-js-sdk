@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/core",
-  "version": "2.12.4-velto-main.3",
+  "version": "2.12.4-velto-main.10",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
