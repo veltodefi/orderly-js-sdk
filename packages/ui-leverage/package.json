@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-leverage",
-  "version": "2.12.4-velto-main.3",
+  "version": "2.12.4-velto-main.10",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -24,6 +24,7 @@
     "@veltodefi/hooks": "workspace:*",
     "@veltodefi/types": "workspace:*",
     "@veltodefi/ui": "workspace:*",
+    "@veltodefi/ui-connector": "workspace:*",
     "@veltodefi/perp": "workspace:*",
     "@veltodefi/utils": "workspace:*"
   },

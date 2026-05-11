@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
+  useAccount,
   useAccountInfo,
   useLocalStorage,
   useMarkPricesStream,
@@ -13,8 +14,12 @@ import {
   account as accountPerp,
   positions as positionsPerp,
 } from "@veltodefi/perp";
-import { MarginMode, OrderSide } from "@veltodefi/types";
+import { AccountStatusEnum, MarginMode, OrderSide } from "@veltodefi/types";
 import { modal, SliderMarks, toast, useScreen, Text } from "@veltodefi/ui";
+import {
+  WalletConnectorModalId,
+  WalletConnectorSheetId,
+} from "@veltodefi/ui-connector";
 import { zero } from "@veltodefi/utils";
 
 type UseLeverageScriptOptions = {
@@ -44,6 +49,8 @@ export const useSymbolLeverageScript = (
   const { t } = useTranslation();
 
   const { isMobile } = useScreen();
+  const { state: accountState } = useAccount();
+  const isPreConnect = accountState.status < AccountStatusEnum.EnableTrading;
 
   const {
     maxLeverage: originalMaxLeverage,
@@ -139,6 +146,12 @@ export const useSymbolLeverageScript = (
   };
 
   const onSave = async () => {
+    if (isPreConnect) {
+      options?.close?.();
+      modal.show(isMobile ? WalletConnectorSheetId : WalletConnectorModalId);
+      return;
+    }
+
     modal.confirm({
       title: t("leverage.confirm"),
       content: <Text intensity={54}>{t("leverage.confirm.content")}</Text>,
@@ -156,12 +169,13 @@ export const useSymbolLeverageScript = (
     ? side === OrderSide.BUY
     : position?.position_qty && position.position_qty > 0;
 
-  const disabled =
-    !leverage ||
-    leverage < 1 ||
-    leverage > maxLeverage ||
-    overRequiredMargin ||
-    overMaxPositionLeverage;
+  const disabled = isPreConnect
+    ? !leverage || leverage < 1 || leverage > maxLeverage
+    : !leverage ||
+      leverage < 1 ||
+      leverage > maxLeverage ||
+      overRequiredMargin ||
+      overMaxPositionLeverage;
 
   return {
     leverageLevers,

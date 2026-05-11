@@ -18,23 +18,19 @@ type LeverageBadgeProps = {
   side: OrderSide;
   symbolLeverage?: number;
   marginMode?: MarginMode;
-  disabled?: boolean;
 };
 
 export const LeverageBadge = (props: LeverageBadgeProps) => {
-  const { symbol, side, symbolLeverage, disabled } = props;
+  const { symbol, side, symbolLeverage } = props;
   const { isMobile } = useScreen();
   const { t } = useTranslation();
   const { enabled } = useFeatureFlag(FlagKeys.IsolatedMargin);
 
   const marginMode = props.marginMode;
 
-  const isDisabled = !!disabled;
   const curLeverage = symbolLeverage ?? 1;
 
   const showLeverageModal = () => {
-    if (isDisabled) return;
-
     const modalId = isMobile ? SymbolLeverageSheetId : SymbolLeverageDialogId;
     modal.show(modalId, {
       symbol,
@@ -45,9 +41,7 @@ export const LeverageBadge = (props: LeverageBadgeProps) => {
   };
 
   const showMarginModeModal = () => {
-    if (isDisabled || !enabled) {
-      return;
-    }
+    if (!enabled) return;
 
     const modalId = isMobile
       ? MarginModeSwitchSheetId
@@ -73,13 +67,11 @@ export const LeverageBadge = (props: LeverageBadgeProps) => {
           "oui-flex oui-flex-1 oui-items-center oui-justify-center oui-gap-x-1",
           "oui-px-3 oui-py-1.5",
           "oui-text-xs oui-font-semibold oui-text-base-contrast-54",
-          isDisabled || !enabled
-            ? "oui-cursor-not-allowed"
-            : "oui-cursor-pointer",
+          enabled ? "oui-cursor-pointer" : "oui-cursor-not-allowed",
         )}
         data-testid="oui-testid-orderEntry-margin-mode"
         aria-label={t("marginMode.switchMarginMode")}
-        disabled={isDisabled}
+        disabled={!enabled}
         onClick={showMarginModeModal}
       >
         <Text>
@@ -97,10 +89,9 @@ export const LeverageBadge = (props: LeverageBadgeProps) => {
           "oui-flex oui-flex-1 oui-items-center oui-justify-center oui-gap-x-1",
           "oui-px-3 oui-py-1.5",
           "oui-text-xs oui-font-semibold oui-text-base-contrast-54",
-          isDisabled ? "oui-cursor-not-allowed" : "oui-cursor-pointer",
+          "oui-cursor-pointer",
         )}
         aria-label="Adjust leverage"
-        disabled={isDisabled}
         onClick={showLeverageModal}
         data-testid="oui-testid-orderEntry-leverage"
       >

@@ -32,15 +32,15 @@ export const TotalTypeSelect: FC<TotalTypeSelectProps> = memo((props) => {
     <Select.options
       size={"xs"}
       value={props.value}
-      valueFormatter={(value, option) => {
+      valueFormatter={(value) => {
         const item = options.find((o) => o.value === value);
-        return item?.label + "≈";
+        return <span>{item?.label}≈</span>;
       }}
       classNames={{
         trigger: cn(
           "oui-orderEntry-totalTypeSelect-btn",
           "oui-w-auto oui-border-none oui-bg-transparent oui-shadow-none",
-          "oui-absolute oui-left-0 oui-top-[5px] oui-text-2xs oui-text-base-contrast-36",
+          "oui-absolute oui-left-0 oui-top-[5px] oui-z-10 oui-text-2xs oui-text-base-contrast-36",
         ),
       }}
       onValueChange={props.onChange}
