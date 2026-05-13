@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/hooks",
-  "version": "3.0.4",
+  "version": "3.0.4-velto-dev.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -42,7 +42,8 @@
     "@veltodefi/perp": "workspace:*",
     "@veltodefi/types": "workspace:*",
     "@veltodefi/utils": "workspace:*",
-    "@veltodefi/web3-provider-ethers": "workspace:*",    "immer": "^10.1.1",
+    "@veltodefi/web3-provider-ethers": "workspace:*",
+    "immer": "^10.1.1",
     "lodash": "^4.17.21",
     "ramda": "^0.29.0",
     "swr": "2.2.4",

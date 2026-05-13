@@ -1,7 +1,7 @@
 {
   "name": "@veltodefi/storybook",
   "private": true,
-  "version": "2.0.4-velto-main.3",
+  "version": "2.0.4-velto-dev.0",
   "type": "module",
   "scripts": {
     "dev": "pnpm loadEnv vite",
@@ -52,7 +52,7 @@
     "@veltodefi/vaults": "workspace:*",
     "@veltodefi/wallet-connector": "workspace:*",
     "@veltodefi/wallet-connector-privy": "workspace:*",
-     "@veltodefi/plugin-core": "workspace:*",
+    "@veltodefi/plugin-core": "workspace:*",
     "@project-serum/sol-wallet-adapter": "^0.2.6",
     "@solana-mobile/wallet-adapter-mobile": "^2.1.4",
     "@solana/wallet-adapter-base": "^0.9.23",

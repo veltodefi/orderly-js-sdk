@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/wallet-connector-privy",
-  "version": "3.0.4",
+  "version": "3.0.4-velto-dev.0",
   "description": "",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
