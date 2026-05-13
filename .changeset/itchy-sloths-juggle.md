@@ -1,0 +1,49 @@
+---
+"@veltodefi/ai-docs": patch
+"@veltodefi/storybook": patch
+"@veltodefi/affiliate": patch
+"@veltodefi/react-app": patch
+"@veltodefi/chart": patch
+"@veltodefi/devkit": patch
+"@veltodefi/core": patch
+"@veltodefi/default-evm-adapter": patch
+"@veltodefi/default-solana-adapter": patch
+"@veltodefi/hooks": patch
+"@veltodefi/i18n": patch
+"@veltodefi/layout-core": patch
+"@veltodefi/layout-grid": patch
+"@veltodefi/layout-split": patch
+"@veltodefi/markets": patch
+"@veltodefi/net": patch
+"@veltodefi/perp": patch
+"@veltodefi/plugin-core": patch
+"@veltodefi/portfolio": patch
+"@veltodefi/sdk-docs": patch
+"storybook-theme-tool": patch
+"@veltodefi/trading": patch
+"@veltodefi/trading-leaderboard": patch
+"@veltodefi/trading-next": patch
+"@veltodefi/trading-rewards": patch
+"tsconfig": patch
+"@veltodefi/types": patch
+"@veltodefi/ui": patch
+"@veltodefi/ui-chain-selector": patch
+"@veltodefi/ui-connector": patch
+"@veltodefi/ui-leverage": patch
+"@veltodefi/ui-notification": patch
+"@veltodefi/ui-order-entry": patch
+"@veltodefi/ui-orders": patch
+"@veltodefi/ui-positions": patch
+"@veltodefi/ui-scaffold": patch
+"@veltodefi/ui-share": patch
+"@veltodefi/ui-tpsl": patch
+"@veltodefi/ui-tradingview": patch
+"@veltodefi/ui-transfer": patch
+"@veltodefi/utils": patch
+"@veltodefi/vaults": patch
+"@veltodefi/wallet-connector": patch
+"@veltodefi/wallet-connector-privy": patch
+"@veltodefi/web3-provider-ethers": patch
+---
+
+publish

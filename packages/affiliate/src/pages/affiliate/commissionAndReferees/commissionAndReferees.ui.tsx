@@ -1,5 +1,5 @@
 import { FC, ReactNode, useMemo } from "react";
-import { RefferalAPI, useMediaQuery } from "@veltodefi/hooks";
+import { RefferalAPI } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import {
   DatePicker,
@@ -12,8 +12,9 @@ import {
   Tabs,
   Text,
   cn,
+  useScreen,
 } from "@veltodefi/ui";
-import { AuthGuardDataTable, AuthGuardEmpty } from "@veltodefi/ui-connector";
+import { AuthGuardDataTable } from "@veltodefi/ui-connector";
 import { commifyOptional } from "@veltodefi/utils";
 import { DateRange } from "../../../utils/types";
 import { formatYMDTime } from "../../../utils/utils";
@@ -80,7 +81,7 @@ const MobileCellItem: FC<{
 
 const CommissionList: FC<CommissionAndRefereesReturns> = (props) => {
   const { t } = useTranslation();
-  const isLG = useMediaQuery("(max-width: 767px)");
+  const { isMobile } = useScreen();
 
   const columns = useMemo(() => {
     const cols: Column[] = [
@@ -132,7 +133,7 @@ const CommissionList: FC<CommissionAndRefereesReturns> = (props) => {
   }, [t]);
 
   const body = useMemo(() => {
-    if (isLG) {
+    if (isMobile) {
       if (!props.commission.isLoading && !props.commission.data?.length) {
         return (
           <Flex width="100%" justify="center">
@@ -207,7 +208,7 @@ const CommissionList: FC<CommissionAndRefereesReturns> = (props) => {
         }}
       />
     );
-  }, [isLG, props.commission]);
+  }, [isMobile, props.commission]);
 
   return (
     <Flex
@@ -228,7 +229,7 @@ const CommissionList: FC<CommissionAndRefereesReturns> = (props) => {
 const RefereesList: FC<CommissionAndRefereesReturns> = (props) => {
   const { t } = useTranslation();
 
-  const isLG = useMediaQuery("(max-width: 767px)");
+  const { isMobile } = useScreen();
 
   const columns = useMemo(() => {
     const cols: Column[] = [
@@ -284,7 +285,7 @@ const RefereesList: FC<CommissionAndRefereesReturns> = (props) => {
   }, [t]);
 
   const body = useMemo(() => {
-    if (isLG) {
+    if (isMobile) {
       if (!props.referees.isLoading && !props.referees.data?.length) {
         return (
           <Flex width="100%" justify="center">
@@ -369,7 +370,7 @@ const RefereesList: FC<CommissionAndRefereesReturns> = (props) => {
         }}
       />
     );
-  }, [isLG, props.referees]);
+  }, [isMobile, props.referees]);
 
   return (
     <Flex

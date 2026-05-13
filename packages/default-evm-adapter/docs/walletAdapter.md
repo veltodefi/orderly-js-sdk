@@ -16,7 +16,7 @@ EVM implementation of Orderly wallet adapter: lifecycle (active/update/deactivat
 
 ## DefaultEVMWalletAdapter Input and Output
 
-- **Input**: Constructor takes `Web3Provider`. Methods take `EVMAdapterOptions` (active, update) or operation-specific inputs from `@orderly.network/core`.
+- **Input**: Constructor takes `Web3Provider`. Methods take `EVMAdapterOptions` (active, update) or operation-specific inputs from `@veltodefi/core`.
 - **Output**: Getters (address, chainId), message objects with `message` and `signatured`, or raw results from provider (call, sendTransaction, getBalance, etc.).
 
 ## DefaultEVMWalletAdapter Constructor and Config
@@ -71,7 +71,7 @@ Each returns a structure with `message` (including `chainType: "EVM"`) and `sign
 
 ## DefaultEVMWalletAdapter Dependencies and Callers
 
-- **Upstream**: `@orderly.network/core` (BaseWalletAdapter, IContract, input types, Message, SignatureDomain), `@orderly.network/types` (API, ChainNamespace), `./helper` (message builders), `./provider/web3Provider.interface` (Web3Provider), `./types` (EVMAdapterOptions).
+- **Upstream**: `@veltodefi/core` (BaseWalletAdapter, IContract, input types, Message, SignatureDomain), `@veltodefi/types` (API, ChainNamespace), `./helper` (message builders), `./provider/web3Provider.interface` (Web3Provider), `./types` (EVMAdapterOptions).
 - **Downstream**: Consumers that instantiate the adapter and pass a Web3Provider; core uses the adapter for registration, trading, withdraw, etc.
 
 ## DefaultEVMWalletAdapter Implementation Flow (Message Generation)
@@ -91,14 +91,14 @@ Each returns a structure with `message` (including `chainType: "EVM"`) and `sign
 ## DefaultEVMWalletAdapter Extension and Modification Points
 
 - **Lifecycle logging**: `lifecycleName` currently logs to console; replace or extend for analytics.
-- **Message builders**: All EIP-712 message shapes are built in `helper.ts`; change domain or primary types there and in `@orderly.network/types` definedTypes.
+- **Message builders**: All EIP-712 message shapes are built in `helper.ts`; change domain or primary types there and in `@veltodefi/types` definedTypes.
 - **Domain**: getDomain logic (name, version, verifyingContract) is the single place for EIP-712 domain for the EVM adapter.
 
 ## DefaultEVMWalletAdapter Example
 
 ```typescript
-import { DefaultEVMWalletAdapter } from "@orderly.network/default-evm-adapter";
-import type { Web3Provider } from "@orderly.network/default-evm-adapter";
+import { DefaultEVMWalletAdapter } from "@veltodefi/default-evm-adapter";
+import type { Web3Provider } from "@veltodefi/default-evm-adapter";
 import { myContractManager } from "./contractManager";
 
 const web3Provider: Web3Provider = createMyWeb3Provider(window.ethereum);

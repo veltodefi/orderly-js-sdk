@@ -1,0 +1,28 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "paths": {
+      "@veltodefi/ui": [
+        "../ui/src"
+      ],
+      "@veltodefi/i18n": [
+        "../i18n/src"
+      ],
+      "@veltodefi/layout-core": [
+        "../layout-core/src"
+      ],
+      "@veltodefi/hooks": [
+        "../hooks/src"
+      ],
+      "@veltodefi/markets": [
+        "../markets/src"
+      ],
+      "@veltodefi/trading-next": [
+        "../trading-next/src"
+      ],
+      "@veltodefi/types": [
+        "../types/src"
+      ]
+    }
+  }
+}

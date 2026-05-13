@@ -41,12 +41,12 @@ const base: Package[] = [
   {
     package: "@veltodefi/utils",
     path: "../../packages/utils/src",
-    watch: false,
+    watch: true,
   },
   {
     package: "@veltodefi/types",
     path: "../../packages/types/src",
-    watch: false,
+    watch: true,
   },
   {
     package: "@veltodefi/default-evm-adapter",
@@ -62,6 +62,11 @@ const base: Package[] = [
     package: "@veltodefi/web3-provider-ethers",
     path: "../../packages/web3-provider-ethers/src",
     watch: false,
+  },
+  {
+    package: "@veltodefi/plugin-core",
+    path: "../../packages/plugin-core/src",
+    watch: true,
   },
 ];
 
@@ -232,8 +237,32 @@ const i18n: Package[] = [
   },
 ];
 
+/** Layout packages: resolve to src in dev so exports (e.g. TRADING_PANEL_IDS) are available without relying on dist */
+const layout: Package[] = [
+  {
+    package: "@veltodefi/layout-core",
+    path: "../../packages/layout-core/src",
+    watch: true,
+  },
+  {
+    package: "@veltodefi/layout-split",
+    path: "../../packages/layout-split/src",
+    watch: true,
+    alwaysWatch: true,
+    includeCSS: true,
+  },
+  {
+    package: "@veltodefi/layout-grid",
+    path: "../../packages/layout-grid/src",
+    watch: true,
+    alwaysWatch: true,
+    includeCSS: true,
+  },
+];
+
 export const packages: Package[] = [
   ...base,
+  ...layout,
   ...ui,
   ...page,
   ...walletConnect,

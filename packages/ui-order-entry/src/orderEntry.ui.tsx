@@ -26,7 +26,6 @@ import {
   SimpleSheet,
   Switch,
   Text,
-  ThrottledButton,
   toast,
   useScreen,
   ArrowDownShortIcon,
@@ -44,8 +43,6 @@ import {
 } from "./components/additional/additionalInfo";
 import { PinButton } from "./components/additional/pinButton";
 import { AdvancedTPSLResult } from "./components/advancedTPSLResult";
-import { AssetInfo } from "./components/assetInfo";
-import { Available } from "./components/available";
 import { orderConfirmDialogId } from "./components/dialog/confirm.ui";
 import { MaxQtyConfirm } from "./components/dialog/maxQtyConfirm";
 import {
@@ -54,15 +51,19 @@ import {
 } from "./components/dialog/permissionlessMarketNotice.ui";
 import { scaledOrderConfirmDialogId } from "./components/dialog/scaledOrderConfirm";
 import { OrderEntryHeader } from "./components/header";
+import {
+  OrderEntryAvailableInjectabled,
+  OrderEntryQuantitySliderInjectabled,
+  OrderEntrySubmitSectionInjectabled,
+} from "./components/orderEntry.injectabled";
 import { OrderEntryProvider } from "./components/orderEntryProvider";
 import { OrderInput } from "./components/orderInput";
-import { QuantitySlider } from "./components/quantitySlider";
 import { ReduceOnlySwitch } from "./components/reduceOnlySwitch";
 import { OrderTPSL } from "./components/tpsl";
 import { type OrderEntryScriptReturn } from "./orderEntry.script";
 import { getScaledPlaceOrderMessage } from "./utils";
 
-type OrderEntryProps = OrderEntryScriptReturn & {
+export type OrderEntryProps = OrderEntryScriptReturn & {
   containerRef?: React.RefObject<HTMLDivElement>;
   disableFeatures?: ("slippageSetting" | "feesInfo")[];
 };
@@ -567,7 +568,7 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           )}
         />
 
-        <Available
+        <OrderEntryAvailableInjectabled
           currentLtv={currentLtv}
           canTrade={props.canTrade}
           quote={symbolInfo?.quote}
@@ -587,51 +588,35 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
           }}
         />
 
-        <QuantitySlider
+        <OrderEntryQuantitySliderInjectabled
           canTrade={props.canTrade}
           side={props.side}
           order_quantity={formattedOrder.order_quantity}
           maxQty={maxQty}
         />
 
-        {/* Submit button */}
-        <ThrottledButton
-          fullWidth
-          id={"order-entry-submit-button"}
-          data-type={side}
-          data-active={!submitButtonDisabled}
-          variant="primary"
-          className={cn(
-            "oui-orderEntry-submit-btn",
-            "disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36",
-            !submitButtonDisabled &&
-              (side === OrderSide.BUY
-                ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
-                : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"),
-          )}
-          onClick={onClickSubmitButton}
-          loading={props.isMutating}
-          disabled={submitButtonDisabled}
-        >
-          {submitButtonLabel}
-        </ThrottledButton>
-
-        {/* Asset info */}
-        <AssetInfo
-          canTrade={props.canTrade}
-          quote={symbolInfo.quote}
-          estLiqPrice={props.estLiqPrice}
-          estLiqPriceDistance={props.estLiqPriceDistance}
-          estLeverage={props.estLeverage}
-          currentLeverage={props.currentLeverage}
-          slippage={slippage}
-          dp={symbolInfo.quote_dp}
-          setSlippage={setSlippage}
-          estSlippage={props.estSlippage}
-          orderType={formattedOrder.order_type!}
-          disableFeatures={disableFeatures}
-          symbol={props.symbol}
+        <OrderEntrySubmitSectionInjectabled
+          buttonLabel={submitButtonLabel}
           side={side}
+          canTrade={props.canTrade}
+          isMutating={props.isMutating}
+          onSubmit={validateSubmit}
+          assetInfo={{
+            canTrade: props.canTrade,
+            quote: symbolInfo.quote,
+            estLiqPrice: props.estLiqPrice,
+            estLiqPriceDistance: props.estLiqPriceDistance,
+            estLeverage: props.estLeverage,
+            currentLeverage: props.currentLeverage,
+            slippage,
+            dp: symbolInfo.quote_dp,
+            setSlippage,
+            estSlippage: props.estSlippage,
+            orderType: formattedOrder.order_type!,
+            disableFeatures,
+            symbol: props.symbol,
+            side,
+          }}
         />
 
         <Divider className="oui-w-full" />

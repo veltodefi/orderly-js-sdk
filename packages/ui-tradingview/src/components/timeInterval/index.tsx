@@ -1,7 +1,5 @@
 import React, { ReactNode, useMemo } from "react";
-import { useMediaQuery } from "@veltodefi/hooks";
 import { useTranslation, i18n } from "@veltodefi/i18n";
-import { MEDIA_TABLET } from "@veltodefi/types";
 import {
   Box,
   cn,
@@ -11,6 +9,7 @@ import {
   DropdownMenuTrigger,
   Flex,
   Text,
+  useScreen,
 } from "@veltodefi/ui";
 import { CaretIcon } from "../../icons";
 
@@ -68,7 +67,7 @@ const useMobileTimeIntervalMoreMap = () => {
 };
 
 export const TimeInterval: React.FC<IProps> = (props) => {
-  const isMobile = useMediaQuery(MEDIA_TABLET);
+  const { isMobile } = useScreen();
   if (isMobile) {
     return <MobileTimeInterval {...props} />;
   }

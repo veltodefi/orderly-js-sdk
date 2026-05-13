@@ -25,12 +25,12 @@ Defines shared types and enums for the markets package: favorite instance type f
 | Field     | Type      | Required | Description                                |
 | --------- | --------- | -------- | ------------------------------------------ |
 | sortKey   | string    | No       | Property key to sort by                    |
-| sortOrder | SortOrder | No       | From `@orderly.network/ui` (e.g. asc/desc) |
+| sortOrder | SortOrder | No       | From `@veltodefi/ui` (e.g. asc/desc) |
 
 ## GetColumns
 
 - **Input**: `favorite: FavoriteInstance`, `isFavoriteList: boolean`.
-- **Output**: `Column[]` from `@orderly.network/ui`. Used to build table columns for market lists with or without favorite actions.
+- **Output**: `Column[]` from `@veltodefi/ui`. Used to build table columns for market lists with or without favorite actions.
 
 ## MarketsPageTab Enum Values
 
@@ -58,7 +58,7 @@ Defines shared types and enums for the markets package: favorite instance type f
 
 ## Dependencies
 
-- **Upstream**: `@orderly.network/hooks` (useMarkets), `@orderly.network/ui` (SortOrder, Column).
+- **Upstream**: `@veltodefi/hooks` (useMarkets), `@veltodefi/ui` (SortOrder, Column).
 - **Downstream**: Used by list scripts, column definitions, and tab UIs across components and pages.
 
 ## type.ts Example
@@ -70,7 +70,7 @@ import {
   FundingTabName,
   SortType,
   GetColumns,
-} from "@orderly.network/markets";
+} from "@veltodefi/markets";
 
 const tab: MarketsPageTab = MarketsPageTab.Markets;
 const sort: SortType = { sortKey: "symbol", sortOrder: "asc" };

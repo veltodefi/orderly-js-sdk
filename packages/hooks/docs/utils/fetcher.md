@@ -2,7 +2,7 @@
 
 ## fetcher.ts Responsibility
 
-Provides the default SWR fetcher and related types: `fetcher` (uses `get` from `@orderly.network/net` with optional formatter), `useQueryOptions` type (SWR config + formatter), and `noCacheConfig` (dedupingInterval 0, revalidate on mount and if stale). Used by `useQuery` and other SWR-based hooks for public API requests.
+Provides the default SWR fetcher and related types: `fetcher` (uses `get` from `@veltodefi/net` with optional formatter), `useQueryOptions` type (SWR config + formatter), and `noCacheConfig` (dedupingInterval 0, revalidate on mount and if stale). Used by `useQuery` and other SWR-based hooks for public API requests.
 
 ## fetcher.ts Exports
 
@@ -24,7 +24,7 @@ Provides the default SWR fetcher and related types: `fetcher` (uses `get` from `
 
 ## fetcher Dependencies
 
-- **Upstream**: `get` from `@orderly.network/net`, SWRConfiguration from `swr`.
+- **Upstream**: `get` from `@veltodefi/net`, SWRConfiguration from `swr`.
 - **Downstream**: useQuery and other hooks that pass this fetcher to SWR.
 
 ## fetcher Example
@@ -34,7 +34,7 @@ import {
   fetcher,
   noCacheConfig,
   useQueryOptions,
-} from "@orderly.network/hooks";
+} from "@veltodefi/hooks";
 
 const options: useQueryOptions<{ list: Item[] }> = {
   ...noCacheConfig,

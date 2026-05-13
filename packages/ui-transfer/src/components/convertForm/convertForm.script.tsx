@@ -47,7 +47,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
 
   const [quantity, setQuantity] = useState<string>("");
 
-  const { wrongNetwork, withdrawOnlyMode } = useAppContext();
+  const { wrongNetwork, veltoWithdrawOnlyMode } = useAppContext();
 
   const { wallet } = useWalletConnector();
 
@@ -79,7 +79,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
   const { maxAmount, convert } = useConvert({ token: sourceToken?.token });
 
   const onConvert = async () => {
-    if (withdrawOnlyMode || loading) {
+    if (veltoWithdrawOnlyMode || loading) {
       return;
     }
     setLoading(true);
@@ -174,7 +174,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
     token: sourceToken?.token,
   });
 
-  const disabled = withdrawOnlyMode || !quantity || Number(quantity) === 0;
+  const disabled = veltoWithdrawOnlyMode || !quantity || Number(quantity) === 0;
 
   const { hasPositions, onSettlePnl } = useSettlePnl();
 
@@ -192,7 +192,7 @@ export const useConvertFormScript = (options: ConvertFormScriptOptions) => {
     disabled,
     loading,
     wrongNetwork,
-    withdrawOnlyMode,
+    veltoWithdrawOnlyMode,
     onConvert,
     hasPositions,
     onSettlePnl,

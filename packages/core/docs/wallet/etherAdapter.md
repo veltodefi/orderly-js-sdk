@@ -29,7 +29,7 @@ Provides EVM wallet operations for Orderly when using the legacy adapter path: c
 
 ## etherAdapter.ts Dependencies and Call Relationships
 
-- **Upstream**: ethers (BrowserProvider, Contract, JsonRpcProvider), ethers-decode-error (ErrorDecoder), ./adapter (IWalletAdapter, WalletAdapterOptions), @orderly.network/types (API).
+- **Upstream**: ethers (BrowserProvider, Contract, JsonRpcProvider), ethers-decode-error (ErrorDecoder), ./adapter (IWalletAdapter, WalletAdapterOptions), @veltodefi/types (API).
 - **Downstream**: Apps that still use legacy IWalletAdapter for EVM.
 
 ## etherAdapter.ts Errors and Boundaries
@@ -40,7 +40,7 @@ Provides EVM wallet operations for Orderly when using the legacy adapter path: c
 ## etherAdapter.ts Example
 
 ```typescript
-import { EtherAdapter } from "@orderly.network/core/wallet/etherAdapter";
+import { EtherAdapter } from "@veltodefi/core/wallet/etherAdapter";
 
 const adapter = new EtherAdapter({
   provider,

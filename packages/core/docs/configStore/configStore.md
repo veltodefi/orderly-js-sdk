@@ -45,7 +45,7 @@ Defines the configuration key set (`ConfigKey`) and the configuration store cont
 ## configStore.ts Example
 
 ```typescript
-import type { ConfigStore, ConfigKey } from "@orderly.network/core";
+import type { ConfigStore, ConfigKey } from "@veltodefi/core";
 
 function useConfig(store: ConfigStore) {
   const apiBaseUrl = store.get<string>("apiBaseUrl");

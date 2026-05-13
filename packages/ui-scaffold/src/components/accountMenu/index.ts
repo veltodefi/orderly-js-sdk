@@ -1,3 +1,3 @@
-export { AccountMenuWidget } from "./menu.widget";
-export { AccountMenu } from "./menu.ui";
 export { useAccountMenu } from "./useWidgetBuilder.script";
+export { AccountMenuWidget } from "./menu.widget";
+export { AccountMenu, type AccountMenuProps } from "./menu.ui";

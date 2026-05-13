@@ -40,7 +40,7 @@ Implements OrderlyKeyPair: constructor(secretKey) decodes base58 to private key;
 ## keyPair.ts Example
 
 ```typescript
-import { BaseOrderlyKeyPair, OrderlyKeyPair } from "@orderly.network/core";
+import { BaseOrderlyKeyPair, OrderlyKeyPair } from "@veltodefi/core";
 
 const keyPair = BaseOrderlyKeyPair.generateKey();
 const pub = await keyPair.getPublicKey(); // "ed25519:..."

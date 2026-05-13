@@ -52,7 +52,7 @@ import {
   EVENT_NAMES,
   mainnetUSDCAddress,
   mainnetVaultAddress,
-} from "@orderly.network/core";
+} from "@veltodefi/core";
 
 account.on(EVENT_NAMES.statusChanged, (state) => {
   /* ... */

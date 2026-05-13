@@ -11,6 +11,9 @@
       "@veltodefi/utils": [
         "../utils/src"
       ],
+      "@veltodefi/plugin-core": [
+        "../plugin-core/src"
+      ],
       "@veltodefi/ui-connector": [
         "../ui-connector/src"
       ],

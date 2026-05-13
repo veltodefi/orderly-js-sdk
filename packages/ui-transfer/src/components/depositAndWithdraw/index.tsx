@@ -1,6 +1,7 @@
-import { FC, useState } from "react";
+import { FC, isValidElement, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
+import { injectable } from "@veltodefi/plugin-core";
 import {
   ArrowDownSquareFillIcon,
   ArrowUpSquareFillIcon,
@@ -15,20 +16,33 @@ import { WithdrawSlot } from "./withdrawSlot";
 export const DepositAndWithdrawWithDialogId = "DepositAndWithdrawWithDialogId";
 export const DepositAndWithdrawWithSheetId = "DepositAndWithdrawWithSheetId";
 
+export interface DepositTabExtension {
+  id: string;
+  title: string;
+  icon: React.ReactNode;
+  component: React.ComponentType<{ close?: () => void }>;
+  order?: number;
+}
+
 export type DepositAndWithdrawProps = {
-  activeTab?: "deposit" | "withdraw";
+  activeTab?: string;
   close?: () => void;
+  extraTabs?: DepositTabExtension[];
 };
 
 export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
-  const { withdrawOnlyMode } = useAppContext();
+  const { veltoWithdrawOnlyMode } = useAppContext();
+  const { extraTabs = [] } = props;
   const [activeTab, setActiveTab] = useState<string>(
-    withdrawOnlyMode ? "withdraw" : props.activeTab || "deposit",
+    veltoWithdrawOnlyMode ? "withdraw" : props.activeTab || "deposit",
   );
   const { t } = useTranslation();
+  const sortedExtra = [...extraTabs].sort(
+    (a, b) => (a.order ?? 100) - (b.order ?? 100),
+  );
 
   const handleTabChange = (value: string) => {
-    if (withdrawOnlyMode && value === "deposit") return;
+    if (veltoWithdrawOnlyMode && value === "deposit") return;
     setActiveTab(value);
   };
 
@@ -50,7 +64,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         title={t("common.deposit")}
         icon={<ArrowDownSquareFillIcon />}
         value="deposit"
-        disabled={withdrawOnlyMode}
+        disabled={veltoWithdrawOnlyMode}
       >
         <DepositSlot close={props.close} />
       </TabPanel>
@@ -61,15 +75,37 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
       >
         <WithdrawSlot close={props.close} />
       </TabPanel>
+      {sortedExtra.map((tab) => (
+        <TabPanel
+          key={tab.id}
+          title={tab.title}
+          icon={isValidElement(tab.icon) ? tab.icon : undefined}
+          value={tab.id}
+        >
+          <tab.component close={props.close} />
+        </TabPanel>
+      ))}
     </Tabs>
   );
 };
 
-registerSimpleDialog(DepositAndWithdrawWithDialogId, DepositAndWithdraw, {
-  size: "md",
-  classNames: {
-    content: "oui-border oui-border-line-6",
-  },
-});
+export const InjectableDepositAndWithdraw = injectable(
+  DepositAndWithdraw,
+  "Transfer.DepositAndWithdraw",
+);
 
-registerSimpleSheet(DepositAndWithdrawWithSheetId, DepositAndWithdraw);
+registerSimpleDialog(
+  DepositAndWithdrawWithDialogId,
+  InjectableDepositAndWithdraw,
+  {
+    size: "md",
+    classNames: {
+      content: "oui-border oui-border-line-6",
+    },
+  },
+);
+
+registerSimpleSheet(
+  DepositAndWithdrawWithSheetId,
+  InjectableDepositAndWithdraw,
+);

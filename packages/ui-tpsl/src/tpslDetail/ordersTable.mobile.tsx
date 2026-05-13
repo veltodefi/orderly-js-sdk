@@ -34,7 +34,7 @@ export const OrdersTableMobile = (props: {
       columns={columns}
       dataSource={orders}
       expanded={orderIds}
-      currentView="tpsl_orders"
+      veltoCurrentView="tpsl_orders"
       bordered
       getRowCanExpand={() => true}
       expandRowRender={(row) => {

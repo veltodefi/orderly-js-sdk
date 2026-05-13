@@ -59,13 +59,13 @@ export const useTradingScript = () => {
   const {
     wrongNetwork,
     disabledConnect,
-    withdrawOnlyMode,
+    veltoWithdrawOnlyMode,
     restrictedInfo,
     onRouteChange,
   } = useAppContext();
   const { hideAssets, setHideAssets } = useTradingLocalStorage();
 
-  const isFirstTimeDeposit = useFirstTimeDeposit() && !withdrawOnlyMode;
+  const isFirstTimeDeposit = useFirstTimeDeposit() && !veltoWithdrawOnlyMode;
 
   const { totalValue } = useCollateral();
 
@@ -350,8 +350,8 @@ function useExtraHeight(options: {
   dataListMinHeight: number;
 }) {
   const { tradindviewMaxHeight, dataListMinHeight } = options;
-  const tradingviewAndOrderbookSplitRef = useRef<Split>(null);
-  const max2XLSplitRef = useRef<Split>(null);
+  const tradingviewAndOrderbookSplitRef = useRef<typeof Split>(null);
+  const max2XLSplitRef = useRef<typeof Split>(null);
 
   const [extraHeight, setExtraHeight] = useLocalStorage(
     "orderly_order_entry_extra_height",

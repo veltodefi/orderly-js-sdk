@@ -1,8 +1,8 @@
-# @orderly.network/net
+# @veltodefi/net
 
 ## Package 职责
 
-`@orderly.network/net` 提供 Orderly 前端的网络层能力：HTTP 请求封装、WebSocket 客户端、版本与常量。不负责业务路由或 UI，仅负责与后端的通信与流式数据。
+`@veltodefi/net` 提供 Orderly 前端的网络层能力：HTTP 请求封装、WebSocket 客户端、版本与常量。不负责业务路由或 UI，仅负责与后端的通信与流式数据。
 
 ## 关键实体表
 

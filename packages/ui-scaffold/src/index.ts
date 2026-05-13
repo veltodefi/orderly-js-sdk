@@ -1,6 +1,12 @@
+/**
+ * Side-effect: augment InterceptorTargetPropsMap for typed interceptor props.
+ */
+import "./interceptorTargets";
+
 export {
   AccountMenuWidget,
   AccountMenu,
+  type AccountMenuProps,
   useAccountMenu,
 } from "./components/accountMenu";
 export {
@@ -9,6 +15,7 @@ export {
 } from "./components/main/mainNav.widget";
 export { MainNavMobile } from "./components/main/mainNav.ui.mobile";
 export { type MainNavItem } from "./components/main/mainMenus/navItem";
+export { type MainNavItemsProps } from "./components/main/mainMenus/mainNavMenus.ui";
 export {
   BottomNavWidget,
   BottomNav,

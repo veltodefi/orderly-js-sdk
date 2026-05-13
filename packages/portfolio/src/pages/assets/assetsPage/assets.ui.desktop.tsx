@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import pick from "ramda/es/pick";
 import { SubAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
@@ -18,9 +19,8 @@ import {
   MainButton,
   Divider,
 } from "@veltodefi/ui";
-import { AuthGuard, AuthGuardDataTable } from "@veltodefi/ui-connector";
+import { AuthGuardDataTable } from "@veltodefi/ui-connector";
 import type { SelectOption } from "@veltodefi/ui/src/select/withOptions";
-import pick from "ramda/es/pick";
 import type { useAssetsScriptReturn } from "./assets.script";
 import type {
   AssetsDataTableWidgetProps,
@@ -85,12 +85,12 @@ const DepositAndWithdrawButton: React.FC<
 > = (props) => {
   const { t } = useTranslation();
   const { isMainAccount, onWithdraw, onDeposit } = props;
-  const { wrongNetwork, disabledConnect, withdrawOnlyMode } = useAppContext();
+  const { wrongNetwork, disabledConnect, veltoWithdrawOnlyMode } = useAppContext();
   if (!isMainAccount) {
     return null;
   }
   const baseDisabled = wrongNetwork || disabledConnect;
-  const depositDisabled = baseDisabled || withdrawOnlyMode;
+  const depositDisabled = baseDisabled || veltoWithdrawOnlyMode;
   return (
     <Flex
       className="oui-text-2xs oui-text-base-contrast-54"
@@ -242,7 +242,7 @@ export const AssetsDataTable: React.FC<
           scroll: "oui-h-full oui-min-h-[325px]",
         }}
         loading={props.canTrade}
-        currentView="assets"
+        veltoCurrentView="assets"
         columns={[]}
         dataSource={[]}
       />
@@ -250,7 +250,7 @@ export const AssetsDataTable: React.FC<
   }
 
   return (
-    <Flex width="100%" height="100%" direction={"column"} className={root}>
+    <Flex width="100%" direction={"column"} className={root}>
       <DataFilterSection
         {...pick(
           [
@@ -284,11 +284,13 @@ export const AssetsDataTable: React.FC<
             </Text>
             <AuthGuardDataTable
               bordered
-              currentView="assets"
+              veltoCurrentView="assets"
               className="oui-font-semibold"
               classNames={{
-                // root: "oui-bg-transparent",
-                // scroll: "oui-min-h-0",
+                scroll: cn(
+                  "oui-h-auto oui-min-h-0 oui-overflow-x-auto oui-overflow-y-visible",
+                  dataTableClassNames?.scroll,
+                ),
                 ...dataTableClassNames,
               }}
               columns={columns}
@@ -305,7 +307,7 @@ export const AssetsTable: React.FC<AssetsWidgetProps> = (props) => {
   const { t } = useTranslation();
   return (
     <Card
-      className={"oui-bg-transparent oui-p-0 oui-border-none oui-shadow-none"}
+      className="oui-border-none oui-bg-transparent oui-p-0 oui-shadow-none"
       classNames={{ content: "!oui-pt-0" }}
     >
       <Tabs

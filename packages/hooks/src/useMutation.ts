@@ -5,7 +5,7 @@ import useSWRMutation, { type SWRMutationConfiguration } from "swr/mutation";
 import { useMemoizedFn } from ".";
 import { useAccountInstance } from "./useAccountInstance";
 import { useConfig } from "./useConfig";
-import { useWithdrawOnlyMode } from "./withdrawOnlyModeContext";
+import { useWithdrawOnlyMode } from "./veltoWithdrawOnlyModeContext";
 
 type HTTP_METHOD = "POST" | "PUT" | "DELETE" | "GET";
 
@@ -70,7 +70,7 @@ export const useMutation = <T, E>(
     fullUrl = `${apiBaseUrl}${url}`;
   }
 
-  const withdrawOnlyMode = useWithdrawOnlyMode();
+  const veltoWithdrawOnlyMode = useWithdrawOnlyMode();
   const account = useAccountInstance();
 
   const { trigger, data, error, reset, isMutating } = useSWRMutation(
@@ -91,7 +91,7 @@ export const useMutation = <T, E>(
     params?: Record<string, any>,
     options?: SWRMutationConfiguration<T, E>,
   ): Promise<any> => {
-    if (withdrawOnlyMode) {
+    if (veltoWithdrawOnlyMode) {
       // In withdraw-only mode, allow: DELETE (order cancels) and reduce_only orders (position closes).
       // Block all other mutations.
       const isAllowed = method === "DELETE" || data?.reduce_only === true;

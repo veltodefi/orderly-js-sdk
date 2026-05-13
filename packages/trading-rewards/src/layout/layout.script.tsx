@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { useMediaQuery } from "@veltodefi/hooks";
-import type { SideBarProps } from "@veltodefi/ui-scaffold";
 import { useTranslation } from "@veltodefi/i18n";
+import { useScreen } from "@veltodefi/ui";
+import type { SideBarProps } from "@veltodefi/ui-scaffold";
 
 export enum TradingRewardsLeftSidebarPath {
   Trading = "/rewards/trading",
@@ -80,7 +80,7 @@ export const useTradingRewardsLayoutScript = (props: {
     ];
   }, [t]);
 
-  const hideSideBar = useMediaQuery("(max-width: 768px)");
+  const { isMobile: hideSideBar } = useScreen();
 
   return {
     items,

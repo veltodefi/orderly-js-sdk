@@ -64,7 +64,7 @@ Builds vault deposit instruction (depositSol or deposit) with LayerZero send rem
 
 ## helper.ts dependency and usage
 
-- **Upstream**: @coral-xyz/anchor (BN, Program), @solana/wallet-adapter-base, @solana/web3.js, bs58, ethereum-cryptography, ethers, @orderly.network/core, @orderly.network/types, ./constant, ./idl/solana_vault, ./solana.util.
+- **Upstream**: @coral-xyz/anchor (BN, Program), @solana/wallet-adapter-base, @solana/web3.js, bs58, ethereum-cryptography, ethers, @veltodefi/core, @veltodefi/types, ./constant, ./idl/solana_vault, ./solana.util.
 - **Downstream**: walletAdapter.ts uses all message builders, getDepositQuoteFee, deposit, checkIsLedgerWallet.
 
 ## helper.ts errors and boundaries

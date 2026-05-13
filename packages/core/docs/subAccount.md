@@ -20,13 +20,13 @@ Defines the `SubAccount` type used by Account state: sub-account id, description
 
 ## subAccount.ts Dependencies and Call Relationships
 
-- **Upstream**: @orderly.network/types (API.Holding).
+- **Upstream**: @veltodefi/types (API.Holding).
 - **Downstream**: account.ts (AccountState.subAccounts, \_restoreSubAccount, createSubAccount, updateSubAccount, switchAccount).
 
 ## subAccount.ts Example
 
 ```typescript
-import type { SubAccount } from "@orderly.network/core";
+import type { SubAccount } from "@veltodefi/core";
 
 const sub: SubAccount = { id: "0", description: "Trading", holding: [] };
 ```

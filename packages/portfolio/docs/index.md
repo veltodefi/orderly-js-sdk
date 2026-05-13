@@ -46,7 +46,7 @@ The `packages/portfolio/src` directory implements the **portfolio** UI and logic
 | File       | Language   | Responsibility                                    | Entry symbol(s)                                     | Link                          |
 | ---------- | ---------- | ------------------------------------------------- | --------------------------------------------------- | ----------------------------- |
 | index.ts   | TypeScript | Package re-exports (layout, OverviewModule, etc.) | (re-exports)                                        | See "Top-level exports" above |
-| version.ts | TypeScript | Package version on window                         | `__ORDERLY_VERSION__["@orderly.network/portfolio"]` | [version.md](version.md)      |
+| version.ts | TypeScript | Package version on window                         | `__ORDERLY_VERSION__["@veltodefi/portfolio"]` | [version.md](version.md)      |
 
 ## Search keywords
 

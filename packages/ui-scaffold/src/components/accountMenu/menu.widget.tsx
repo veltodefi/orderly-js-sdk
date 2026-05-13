@@ -1,31 +1,23 @@
-import { FC } from "react";
-import {
-  ExtensionPositionEnum,
-  ExtensionSlot,
-  installExtension,
-} from "@veltodefi/ui";
-import { AccountMenu, AccountMenuProps } from "./menu.ui";
+import { injectable } from "@veltodefi/ui";
+import { AccountMenu } from "./menu.ui";
 import { useAccountMenu } from "./useWidgetBuilder.script";
+
+/** Default account menu - can be intercepted by plugins via Account.AccountMenu path */
+const InjectableAccountMenu = injectable(AccountMenu, "Account.AccountMenu");
 
 export const AccountMenuWidget = ({
   onConnectWallet,
 }: {
   onConnectWallet?: (defaultConnectWallet: () => Promise<void>) => void;
-}) => {
-  const state = useAccountMenu();
+}) => {  const state = useAccountMenu();
   return <AccountMenu {...state} onConnectWallet={onConnectWallet} />;
 };
 
-installExtension<AccountMenuProps>({
-  name: "account-menu",
-  scope: ["*"],
-  positions: [ExtensionPositionEnum.AccountMenu],
-  builder: useAccountMenu,
-  __isInternal: true,
-})((props: AccountMenuProps) => {
-  return <AccountMenu {...props} />;
-});
-
+/**
+ * Extension slot for account menu (connect wallet button). Uses injectable pattern -
+ * plugins can register interceptors for 'Account.AccountMenu' via OrderlyPluginProvider.
+ */
 export const WalletConnectButtonExtension = () => {
-  return <ExtensionSlot position={ExtensionPositionEnum.AccountMenu} />;
+  const state = useAccountMenu();
+  return <InjectableAccountMenu {...state} />;
 };

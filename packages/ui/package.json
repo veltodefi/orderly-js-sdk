@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui",
-  "version": "2.12.4-velto-main.5",
+  "version": "3.0.4",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -21,6 +21,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@veltodefi/plugin-core": "workspace:*",
     "@veltodefi/utils": "workspace:*",
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-checkbox": "^1.0.4",

@@ -2,7 +2,7 @@
 
 ## version.ts Responsibility
 
-Exports the package version string for `@orderly.network/core` and, in browser, sets `window.__ORDERLY_VERSION__["@orderly.network/core"]` to that version for runtime checks.
+Exports the package version string for `@veltodefi/core` and, in browser, sets `window.__ORDERLY_VERSION__["@veltodefi/core"]` to that version for runtime checks.
 
 ## version.ts Exports
 
@@ -12,14 +12,14 @@ Exports the package version string for `@orderly.network/core` and, in browser, 
 
 ## version.ts Behavior
 
-- In browser (typeof window !== "undefined"): assigns `window.__ORDERLY_VERSION__["@orderly.network/core"] = "2.10.2"` (or current version).
+- In browser (typeof window !== "undefined"): assigns `window.__ORDERLY_VERSION__["@veltodefi/core"] = "2.10.2"` (or current version).
 - Default export is the version string.
 
 ## version.ts Example
 
 ```typescript
-import version from "@orderly.network/core";
+import version from "@veltodefi/core";
 
 console.log(version); // "2.10.2"
-// In browser: window.__ORDERLY_VERSION__?.["@orderly.network/core"]
+// In browser: window.__ORDERLY_VERSION__?.["@veltodefi/core"]
 ```

@@ -391,7 +391,7 @@ const Buttons: FC<PortfolioSheetState> = (props) => {
           icon={<ArrowDownShortIcon color="white" opacity={0.8} />}
           size="md"
           fullWidth
-          disabled={props.withdrawOnlyMode}
+          disabled={props.veltoWithdrawOnlyMode}
           onClick={props.onDeposit}
         >
           {t("common.deposit")}

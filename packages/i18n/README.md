@@ -1,4 +1,4 @@
-# @orderly.network/i18n
+# @veltodefi/i18n
 
 Internationalization and CLI tools for Orderly SDK. Based on i18next ecosystem.
 
@@ -7,7 +7,7 @@ Internationalization and CLI tools for Orderly SDK. Based on i18next ecosystem.
 Install the package, wrap your app root with `LocaleProvider`, and you get English by default.
 
 ```tsx
-import { LocaleProvider } from "@orderly.network/i18n";
+import { LocaleProvider } from "@veltodefi/i18n";
 
 export function App() {
   return (
@@ -39,9 +39,9 @@ Generated API notes for `src/` live under `packages/i18n/docs/` in the monorepo 
 
 | Export                            | Description                                                                                                  |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `@orderly.network/i18n`           | Main entry: providers, hooks, `i18n`, resource helpers, types — see [exports guide](./docs/guide/exports.md) |
-| `@orderly.network/i18n/locales/*` | Built-in locale JSON files                                                                                   |
-| `@orderly.network/i18n/constant`  | Constants (`LocaleEnum`, `defaultLanguages`, …)                                                              |
-| `@orderly.network/i18n/utils`     | Utilities — see [Utils](./docs/guide/utils.md)                                                               |
+| `@veltodefi/i18n`           | Main entry: providers, hooks, `i18n`, resource helpers, types — see [exports guide](./docs/guide/exports.md) |
+| `@veltodefi/i18n/locales/*` | Built-in locale JSON files                                                                                   |
+| `@veltodefi/i18n/constant`  | Constants (`LocaleEnum`, `defaultLanguages`, …)                                                              |
+| `@veltodefi/i18n/utils`     | Utilities — see [Utils](./docs/guide/utils.md)                                                               |
 
 The default i18n namespace is **`translation`** (`defaultNS`).

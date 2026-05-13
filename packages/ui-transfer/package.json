@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-transfer",
-  "version": "2.12.4-velto-main.5",
+  "version": "3.0.4",
   "description": "deposit & withdraw",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,6 +25,7 @@
     "@veltodefi/utils": "workspace:*",
     "@veltodefi/types": "workspace:*",
     "@veltodefi/ui-connector": "workspace:*",
+    "@veltodefi/plugin-core": "workspace:*",
     "@veltodefi/ui-chain-selector": "workspace:*",
     "@veltodefi/default-solana-adapter": "workspace:*",
     "@veltodefi/react-app": "workspace:*",

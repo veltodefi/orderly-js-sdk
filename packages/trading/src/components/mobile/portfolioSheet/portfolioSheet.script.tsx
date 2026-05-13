@@ -23,7 +23,7 @@ export const usePortfolioSheetScript = () => {
   const marginRatio = useMarginRatioAndLeverage();
   const ee = useEventEmitter();
   const { t } = useTranslation();
-  const { withdrawOnlyMode } = useAppContext();
+  const { veltoWithdrawOnlyMode } = useAppContext();
   const subAccounts = state.subAccounts ?? [];
 
   const [showSliderTip, setShowSliderTip] = useState(false);
@@ -86,7 +86,7 @@ export const usePortfolioSheetScript = () => {
     isMainAccount,
     onTransfer,
     hasSubAccount: subAccounts?.length > 0,
-    withdrawOnlyMode,
+    veltoWithdrawOnlyMode,
   };
 };
 

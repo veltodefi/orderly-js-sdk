@@ -2,8 +2,8 @@ import { FC, useEffect } from "react";
 import { useSymbolsInfo } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { toast, useScreen } from "@veltodefi/ui";
+import { InjectableDesktopLayout } from "./trading.injectable";
 import type { TradingState } from "./trading.script";
-import { DesktopLayout } from "./trading.ui.desktop";
 import { MobileLayout } from "./trading.ui.mobile";
 
 export const Trading: FC<TradingState> = (props) => {
@@ -33,7 +33,7 @@ export const Trading: FC<TradingState> = (props) => {
   }
 
   return (
-    <DesktopLayout
+    <InjectableDesktopLayout
       className="oui-h-[calc(100vh_-_48px_-_29px)] oui-bg-base-10"
       {...props}
     />

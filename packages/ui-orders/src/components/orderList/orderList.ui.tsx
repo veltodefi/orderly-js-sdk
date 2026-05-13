@@ -65,7 +65,7 @@ export const DesktopOrderList: FC<
           dataSource={props.dataSource}
           bordered
           ignoreLoadingCheck={true}
-          currentView={`orders_${props.type}`}
+          veltoCurrentView={`orders_${props.type}`}
           testIds={{
             body: props.testIds?.tableBody,
           }}

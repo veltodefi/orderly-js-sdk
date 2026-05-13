@@ -1,10 +1,22 @@
 import { FC, PropsWithChildren } from "react";
+// import { registerOrderlyYoutubeLivePlugin } from "@veltodefi/youtube-live-plugin";
+// import { registerOnrampPlugin } from "@veltodefi/onramper-plugin";
+// import { registerFastPlaceOrderPlugin } from "@veltodefi/fast-place-order-plugin";
 import { OrderlyAppProvider } from "@veltodefi/react-app";
+import {
+  Arbitrum,
+  ARBITRUM_MAINNET_CHAINID,
+  ARBITRUM_TESTNET_CHAINID,
+  ArbitrumSepolia,
+  ETHEREUM_MAINNET_CHAINID,
+  SOLANA_TESTNET_CHAINID,
+} from "@veltodefi/types";
 import { cn } from "@veltodefi/ui";
 import { orderlyAppProviderConfig } from "../../orderlyConfig";
 import { dataAdapter } from "../../orderlyConfig/dataAdapter";
 import { useSymbolList } from "../../orderlyConfig/hooks/useSymbolList";
 import { notification } from "../../orderlyConfig/notification";
+// import { plugins } from "../../orderlyConfig/plugins";
 import { themes } from "../../orderlyConfig/themes";
 import { widgetConfigs } from "../../orderlyConfig/widgetConfigs";
 import { useConfigStore, ConfigStoreOptions } from "./configStore";
@@ -33,6 +45,20 @@ export const OrderlyAppRootProvider: FC<
         widgetConfigs={widgetConfigs}
         notification={notification}
         dataAdapter={{ ...dataAdapter, symbolList }}
+        plugins={
+          [
+            // registerOrderlyYoutubeLivePlugin({
+            //   src: "https://www.youtube.com/embed/NOrvXR48WaY?mute=0&autoplay=1",
+            //   title: "Youtube Live",
+            // }),
+            // registerFastPlaceOrderPlugin(),
+            // registerOnrampPlugin({
+            //   apiKey: "pk_prod_01JWTGETB1H32953X7KR3DSH1S",
+            //   secretKey: "01JWTGETB259KDVKEEVHBCGT7D",
+            //   // workerUrl: "https://gentle-butterfly-db9c.han-eff.workers.dev/",
+            // }),
+          ]
+        }
         amplitudeConfig={{
           amplitudeId: "4463418c103f3a66c6d863357f951e25",
         }}

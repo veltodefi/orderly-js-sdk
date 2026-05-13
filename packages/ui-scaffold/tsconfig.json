@@ -28,6 +28,9 @@
       ],
       "@veltodefi/ui-notification": [
         "../ui-notification/src"
+      ],
+      "@veltodefi/plugin-core": [
+        "../plugin-core/src"
       ]
     }
   }

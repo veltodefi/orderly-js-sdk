@@ -49,7 +49,7 @@ Interface that the default EVM adapter uses for all chain and signing operations
 
 ## Web3Provider Dependencies and Callers
 
-- **Upstream**: `@orderly.network/types` (API.NetworkInfos for callOnChain).
+- **Upstream**: `@veltodefi/types` (API.NetworkInfos for callOnChain).
 - **Downstream**: `DefaultEVMWalletAdapter` (uses every method); `types.ts` (getWalletAdapterFunc return type and EVMAdapterOptions do not reference Web3Provider directly but adapter expects it).
 
 ## Web3Provider Execution Flow (Typical)
@@ -74,7 +74,7 @@ Not inferable from code: error codes and retry behavior are implementation-defin
 import type {
   Web3Provider,
   Eip1193Provider,
-} from "@orderly.network/default-evm-adapter";
+} from "@veltodefi/default-evm-adapter";
 
 const eip1193: Eip1193Provider = window.ethereum;
 

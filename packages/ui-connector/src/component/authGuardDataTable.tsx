@@ -4,8 +4,7 @@ import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext, useDataTap } from "@veltodefi/react-app";
 import { AccountStatusEnum } from "@veltodefi/types";
 import {
-  ExtensionPositionEnum,
-  ExtensionSlot,
+  InjectableEmptyDataState,
   DataTable,
   DataTableProps,
 } from "@veltodefi/ui";
@@ -14,7 +13,7 @@ import { alertMessages, AuthGuard } from "./authGuard";
 
 export const AuthGuardDataTable = <RecordType,>(
   props: PropsWithChildren<
-    DataTableProps<RecordType> & { currentView?: string } & Omit<
+    DataTableProps<RecordType> & { veltoCurrentView?: string } & Omit<
         GuardViewProps,
         "status"
       > & {
@@ -32,7 +31,7 @@ export const AuthGuardDataTable = <RecordType,>(
     description,
     dataSource,
     children,
-    currentView,
+    veltoCurrentView,
     ...rest
   } = props;
   const { state } = useAccount();
@@ -66,10 +65,10 @@ export const AuthGuardDataTable = <RecordType,>(
           status={_status}
           description={description}
           labels={labels}
-          currentView={currentView}
+          veltoCurrentView={veltoCurrentView}
           className={props.classNames?.authGuardDescription}
           visible={!state.validating}
-          isEmptyView
+          veltoIsEmptyView
         />
       }
       manualPagination
@@ -86,8 +85,8 @@ type GuardViewProps = {
   labels?: alertMessages;
   className?: string;
   visible?: boolean;
-  isEmptyView?: boolean;
-  currentView?: string;
+  veltoIsEmptyView?: boolean;
+  veltoCurrentView?: string;
 };
 
 const GuardView: React.FC<GuardViewProps> = (props) => {
@@ -109,14 +108,14 @@ const GuardView: React.FC<GuardViewProps> = (props) => {
       <AuthGuard
         status={props.status}
         labels={props.labels}
-        isEmptyView={props.isEmptyView}
+        veltoIsEmptyView={props.veltoIsEmptyView}
         descriptions={descriptions}
-        currentView={props.currentView}
+        veltoCurrentView={props.veltoCurrentView}
         buttonProps={{
           size: "md",
         }}
       >
-        <ExtensionSlot position={ExtensionPositionEnum.EmptyDataIdentifier} />
+        <InjectableEmptyDataState />
       </AuthGuard>
     </Flex>
   );

@@ -1,0 +1,76 @@
+{
+  "extends": "./tsconfig.build.json",
+  "compilerOptions": {
+    "paths": {
+      "@veltodefi/ui": [
+        "../ui/src"
+      ],
+      "@veltodefi/ui-positions": [
+        "../ui-positions/src"
+      ],
+      "@veltodefi/ui-tpsl": [
+        "../ui-tpsl/src"
+      ],
+      "@veltodefi/ui-orders": [
+        "../ui-orders/src"
+      ],
+      "@veltodefi/ui-order-entry": [
+        "../ui-order-entry/src"
+      ],
+      "@veltodefi/hooks": [
+        "../hooks/src"
+      ],
+      "@veltodefi/types": [
+        "../types/src"
+      ],
+      "@veltodefi/utils": [
+        "../utils/src"
+      ],
+      "@veltodefi/markets": [
+        "../markets/src"
+      ],
+      "@veltodefi/ui-tradingview": [
+        "../ui-tradingview/src"
+      ],
+      "@veltodefi/react-app": [
+        "../app/src"
+      ],
+      "@veltodefi/ui-transfer": [
+        "../ui-transfer/src"
+      ],
+      "@veltodefi/ui-connector": [
+        "../ui-connector/src"
+      ],
+      "@veltodefi/ui-leverage": [
+        "../ui-leverage/src"
+      ],
+      "@veltodefi/ui-chain-selector": [
+        "../ui-chain-selector/src"
+      ],
+      "@veltodefi/ui-share": [
+        "../ui-share/src"
+      ],
+      "@veltodefi/ui-order": [
+        "../ui-order/src"
+      ],
+      "@veltodefi/ui-scaffold": [
+        "../ui-scaffold/src"
+      ],
+      "@veltodefi/i18n": [
+        "../i18n/src"
+      ],
+      "@veltodefi/core": [
+        "../core/src"
+      ],
+      "@veltodefi/portfolio": [
+        "../portfolio/src"
+      ],
+      "@veltodefi/layout-core": [
+        "../layout-core/src"
+      ],
+      "@veltodefi/plugin-core": [
+        "../plugin-core/src"
+      ]
+    }
+  }
+}

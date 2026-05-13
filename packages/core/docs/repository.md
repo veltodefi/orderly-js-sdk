@@ -39,7 +39,7 @@ Generic address-scoped storage for arbitrary key-value data. Used by AdditionalI
 ## repository.ts Example
 
 ```typescript
-import { LocalStorageRepository, Repository } from "@orderly.network/core";
+import { LocalStorageRepository, Repository } from "@veltodefi/core";
 
 const repo = new LocalStorageRepository("my_store");
 repo.save("0x123", { activeSubAccountId: "0" });

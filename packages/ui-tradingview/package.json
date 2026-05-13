@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-tradingview",
-  "version": "2.12.4-velto-main.5",
+  "version": "3.0.4",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@veltodefi/hooks": "workspace:*",
+    "@veltodefi/plugin-core": "workspace:*",
     "@veltodefi/i18n": "workspace:*",
     "@veltodefi/net": "workspace:*",
     "@veltodefi/react-app": "workspace:*",

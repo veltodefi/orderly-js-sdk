@@ -13,7 +13,7 @@ Exports the package version string. Used for debugging or display.
 ## version Example
 
 ```ts
-import { version } from "@orderly.network/hooks";
+import { version } from "@veltodefi/hooks";
 
 console.log("hooks version:", version);
 ```

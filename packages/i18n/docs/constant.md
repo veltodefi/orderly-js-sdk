@@ -51,7 +51,7 @@ import {
   defaultLng,
   defaultNS,
   i18nLocalStorageKey,
-} from "@orderly.network/i18n";
+} from "@veltodefi/i18n";
 
 const lang = LocaleEnum.zh;
 const list = defaultLanguages; // [{ localCode: "en", displayName: "English" }, ...]

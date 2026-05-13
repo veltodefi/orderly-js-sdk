@@ -53,7 +53,7 @@ Provides the main `Button` component and `buttonVariants` (tailwind-variants) fo
 ## Button Example
 
 ```tsx
-import { Button } from "@orderly.network/ui";
+import { Button } from "@veltodefi/ui";
 
 <Button variant="contained" color="primary" size="lg">Submit</Button>
 <Button variant="outlined" color="danger" size="sm">Cancel</Button>

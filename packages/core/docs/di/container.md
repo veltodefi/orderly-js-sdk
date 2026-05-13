@@ -38,7 +38,7 @@ Stores services in a map; register() instantiates classes and adds them via add(
 ## container.ts Example
 
 ```typescript
-import Container from "@orderly.network/core/di/container";
+import Container from "@veltodefi/core/di/container";
 
 const container = new Container();
 container.register(MyService);

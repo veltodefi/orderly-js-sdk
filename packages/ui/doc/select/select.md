@@ -7,5 +7,5 @@ This file provides select (component or utility). See directory index for contex
 ## select Example
 
 ```ts
-// Import from @orderly.network/ui or relative path as needed.
+// Import from @veltodefi/ui or relative path as needed.
 ```
