@@ -68,7 +68,8 @@
   "pnpm": {
     "overrides": {
       "@veltodefi/plugin-core": "workspace:*",
-      "tailwindcss": "^3.4.4"
+      "tailwindcss": "^3.4.4",
+      "@uiw/react-split": "5.9.3"
     },
     "onlyBuiltDependencies": [
       "better-sqlite3"

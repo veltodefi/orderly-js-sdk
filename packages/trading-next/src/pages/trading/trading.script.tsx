@@ -8,10 +8,7 @@ import {
 } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext, useDataTap } from "@veltodefi/react-app";
-import {
-  OrderEntrySortKeys,
-  TradingviewFullscreenKey,
-} from "@veltodefi/types";
+import { OrderEntrySortKeys, TradingviewFullscreenKey } from "@veltodefi/types";
 import { AccountStatusEnum } from "@veltodefi/types";
 import { modal } from "@veltodefi/ui";
 import { PortfolioSheetWidget } from "../../components/mobile/portfolioSheet";
@@ -262,8 +259,8 @@ function useExtraHeight(options: {
   dataListMinHeight: number;
 }) {
   const { tradindviewMaxHeight, dataListMinHeight } = options;
-  const tradingviewAndOrderbookSplitRef = useRef<typeof Split>(null);
-  const max2XLSplitRef = useRef<typeof Split>(null);
+  const tradingviewAndOrderbookSplitRef = useRef<Split>(null);
+  const max2XLSplitRef = useRef<Split>(null);
 
   const [extraHeight, setExtraHeight] = useLocalStorage(
     "orderly_order_entry_extra_height",

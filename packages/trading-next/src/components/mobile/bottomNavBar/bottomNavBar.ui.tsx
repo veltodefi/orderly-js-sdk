@@ -90,8 +90,7 @@ const LinkDevice: FC<LinkDeviceProps> = (props) => {
               hideDialog();
             },
             size: "md",
-            variant: "outlined",
-            color: "danger",
+            variant: "secondary",
           },
         }}
       >

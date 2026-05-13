@@ -6,11 +6,11 @@ type SplitLayoutProps = PropsWithChildren<SplitProps> & {
   onSizeChange?: (size: string) => void;
 };
 
-export const SplitLayout = forwardRef<typeof Split, SplitLayoutProps>((props) => {
+export const SplitLayout = forwardRef<Split, SplitLayoutProps>((props, ref) => {
   const { onSizeChange, ...rest } = props;
   return (
     <Split
-      //ref={ref}
+      ref={ref}
       {...rest}
       lineBar
       renderBar={(barProps) => <SplitLineBar {...barProps} mode={props.mode} />}

@@ -7,6 +7,7 @@ settings:
 overrides:
   '@veltodefi/plugin-core': workspace:*
   tailwindcss: ^3.4.4
+  '@uiw/react-split': 5.9.3
 
 importers:
 
@@ -143,8 +144,8 @@ importers:
         specifier: ^1.95.3
         version: 1.98.4(bufferutil@4.1.0)(encoding@0.1.13)(typescript@5.8.3)(utf-8-validate@5.0.10)
       '@uiw/react-split':
-        specifier: ^5.9.3
-        version: 5.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.9.3
+        version: 5.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@veltodefi/affiliate':
         specifier: workspace:*
         version: link:../../packages/affiliate
@@ -1072,8 +1073,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(react@18.3.1)
       '@uiw/react-split':
-        specifier: ^5.9.3
-        version: 5.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.9.3
+        version: 5.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@veltodefi/hooks':
         specifier: workspace:*
         version: link:../hooks
@@ -1500,8 +1501,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(react@18.3.1)
       '@uiw/react-split':
-        specifier: ^5.9.3
-        version: 5.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.9.3
+        version: 5.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@veltodefi/hooks':
         specifier: workspace:*
         version: link:../hooks
@@ -1670,8 +1671,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2(react@18.3.1)
       '@uiw/react-split':
-        specifier: ^5.9.3
-        version: 5.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 5.9.3
+        version: 5.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@veltodefi/core':
         specifier: workspace:*
         version: link:../core
@@ -8944,8 +8945,8 @@ packages:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
 
-  '@uiw/react-split@5.9.4':
-    resolution: {integrity: sha512-gZbMMAV9xFDJQ3aKAzMXVvQfrCFWPILvxFGM2DSdIvhKwjSWP+yTl8fNI246Nu3XR4iHyB4Cohh9JJZEbfIXjQ==}
+  '@uiw/react-split@5.9.3':
+    resolution: {integrity: sha512-HgwETU+kRhzZAp+YiE4Yu8bNJm3jxxnGgGPfkadUl8jA1wsMD3aMMskuhQF5akiUUUadiLUvAc8e1RH9Y/SKDw==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -26250,9 +26251,8 @@ snapshots:
       - '@codemirror/lint'
       - '@codemirror/search'
 
-  '@uiw/react-split@5.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@uiw/react-split@5.9.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@babel/runtime': 7.29.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 

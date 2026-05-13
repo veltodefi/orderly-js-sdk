@@ -350,8 +350,8 @@ function useExtraHeight(options: {
   dataListMinHeight: number;
 }) {
   const { tradindviewMaxHeight, dataListMinHeight } = options;
-  const tradingviewAndOrderbookSplitRef = useRef<typeof Split>(null);
-  const max2XLSplitRef = useRef<typeof Split>(null);
+  const tradingviewAndOrderbookSplitRef = useRef<Split>(null);
+  const max2XLSplitRef = useRef<Split>(null);
 
   const [extraHeight, setExtraHeight] = useLocalStorage(
     "orderly_order_entry_extra_height",
