@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/layout-core",
-  "version": "2.0.4-velto-dev.2",
+  "version": "2.0.4-velto-dev.3",
   "description": "Core layout strategy protocol and runtime glue for Orderly layout system",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
