@@ -1,6 +1,12 @@
 import { useTranslation } from "@veltodefi/i18n";
 import { MarginMode, OrderSide, OrderType } from "@veltodefi/types";
-import { Button, cn, injectable, ThrottledButton } from "@veltodefi/ui";
+import {
+  Button,
+  cn,
+  injectable,
+  MainButton,
+  ThrottledButton,
+} from "@veltodefi/ui";
 import { AssetInfo } from "./assetInfo";
 import { Available } from "./available";
 import { OrderTypeSelect } from "./orderTypeSelect";
@@ -72,7 +78,6 @@ export const OrderEntryTypeTabsInjectabled =
         <OrderTypeSelect
           type={props.type}
           side={props.side}
-          canTrade={props.canTrade}
           onChange={props.onChange}
           marketOrderDisabled={props.marketOrderDisabled}
           marketOrderDisabledTooltip={props.marketOrderDisabledTooltip}
@@ -89,44 +94,50 @@ export const OrderEntryBuySellSwitchInjectabled =
         <div
           className={cn(
             "oui-orderEntry-side",
-            "oui-grid oui-w-full oui-flex-1 oui-gap-x-2 xl:oui-flex xl:oui-gap-x-[6px]",
+            "oui-grid oui-w-full oui-flex-1 oui-gap-x-2 lg:oui-flex lg:oui-gap-x-[6px]",
             "oui-grid-cols-2",
           )}
         >
-          <Button
-            onClick={() => {
+          <MainButton
+            variant="primary"
+            onClick={(e) => {
               props.onSideChange(OrderSide.BUY);
+              e.currentTarget.blur();
             }}
             size={"md"}
             fullWidth
             data-type={OrderSide.BUY}
+            data-active={props.side === OrderSide.BUY && props.canTrade}
             className={cn(
               "oui-orderEntry-side-buy-btn",
               props.side === OrderSide.BUY && props.canTrade
-                ? "oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
-                : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
+                ? "hover:oui-bg-base-6"
+                : "oui-bg-base-7 oui-text-base-contrast-36",
             )}
             data-testid="oui-testid-orderEntry-side-buy-button"
           >
             {t("common.buy")}
-          </Button>
-          <Button
-            onClick={() => {
+          </MainButton>
+          <MainButton
+            variant="primary"
+            onClick={(e) => {
               props.onSideChange(OrderSide.SELL);
+              e.currentTarget.blur();
             }}
             data-type={OrderSide.SELL}
+            data-active={props.side === OrderSide.SELL && props.canTrade}
             fullWidth
             size={"md"}
             className={cn(
               "oui-orderEntry-side-sell-btn",
               props.side === OrderSide.SELL && props.canTrade
-                ? "oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"
-                : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
+                ? "hover:oui-bg-base-6"
+                : "oui-bg-base-7 oui-text-base-contrast-36",
             )}
             data-testid="oui-testid-orderEntry-side-sell-button"
           >
             {t("common.sell")}
-          </Button>
+          </MainButton>
         </div>
       );
     },

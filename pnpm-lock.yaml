@@ -2095,6 +2095,9 @@ importers:
       '@veltodefi/ui':
         specifier: workspace:*
         version: link:../ui
+      '@veltodefi/ui-connector':
+        specifier: workspace:*
+        version: link:../ui-connector
       '@veltodefi/utils':
         specifier: workspace:*
         version: link:../utils

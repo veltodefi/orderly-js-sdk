@@ -7,7 +7,6 @@ export const OrderTypeSelect = (props: {
   type: OrderType;
   onChange: (type: OrderType) => void;
   side: OrderSide;
-  canTrade: boolean;
   /** When true, Market order type is disabled (e.g. symbol in POST_ONLY mode). */
   marketOrderDisabled?: boolean;
   /** Tooltip text when hovering over the disabled Market button. */
@@ -103,7 +102,6 @@ export const OrderTypeSelect = (props: {
           }
           aria-pressed={props.type === OrderType.LIMIT}
           onClick={() => handleChange(OrderType.LIMIT)}
-          disabled={!props.canTrade}
           data-testid="oui-testid-orderEntry-orderType-limit"
         >
           <Text size="xs">{t("orderEntry.orderType.limit")}</Text>
@@ -136,7 +134,6 @@ export const OrderTypeSelect = (props: {
             }
             aria-pressed={props.type === OrderType.MARKET}
             onClick={() => handleChange(OrderType.MARKET)}
-            disabled={!props.canTrade}
             data-testid="oui-testid-orderEntry-orderType-market"
           >
             <Text size="xs">{t("orderEntry.orderType.market")}</Text>
@@ -154,7 +151,6 @@ export const OrderTypeSelect = (props: {
             options={advancedOptions}
             onValueChange={props.onChange}
             placeholder={t("trading.layout.advanced")}
-            disabled={!props.canTrade}
             contentProps={{
               className: "oui-bg-base-8",
             }}
