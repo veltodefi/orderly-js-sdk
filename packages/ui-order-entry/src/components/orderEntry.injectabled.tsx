@@ -181,12 +181,16 @@ export const OrderEntrySubmitSectionInjectabled =
           <ThrottledButton
             fullWidth
             id={"order-entry-submit-button"}
-            data-type={OrderSide.BUY}
+            data-type={props.side}
+            data-active={props.canTrade}
+            variant="primary"
             className={cn(
               "oui-orderEntry-submit-btn",
-              props.side === OrderSide.BUY
-                ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
-                : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80",
+              "disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36",
+              props.canTrade &&
+                (props.side === OrderSide.BUY
+                  ? "orderly-order-entry-submit-button-buy oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
+                  : "orderly-order-entry-submit-button-sell oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"),
             )}
             onClick={props.onSubmit}
             loading={props.isMutating}
