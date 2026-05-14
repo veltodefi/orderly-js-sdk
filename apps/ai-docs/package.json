@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ai-docs",
-  "version": "1.0.4-velto-dev.1",
+  "version": "1.0.4-velto-dev.2",
   "private": true,
   "type": "module",
   "description": "Orderly AI documentation artifact generator (manifest, JSON shards, indexes, component MD, QMD index)",
