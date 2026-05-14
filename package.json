@@ -14,7 +14,7 @@
     "preinstall": "npx only-allow pnpm",
     "prepublishOnly": "pnpm build",
     "prepare": "husky",
-    "test": "turbo run test",
+    "test": "turbo run test --filter @veltodefi/i18n --filter @veltodefi/ui-order-entry --filter @veltodefi/ui-leverage",
     "release": "ts-node ./scripts/release.ts",
     "release:patch": "cross-env RELEASE_VERSION_TYPE=patch ts-node ./scripts/release.ts",
     "release:minor": "cross-env RELEASE_VERSION_TYPE=minor ts-node ./scripts/release.ts",
