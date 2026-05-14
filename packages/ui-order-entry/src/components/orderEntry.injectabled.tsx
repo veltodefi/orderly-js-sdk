@@ -107,10 +107,10 @@ export const OrderEntryBuySellSwitchInjectabled =
             size={"md"}
             fullWidth
             data-type={OrderSide.BUY}
-            data-active={props.side === OrderSide.BUY && props.canTrade}
+            data-active={props.side === OrderSide.BUY}
             className={cn(
               "oui-orderEntry-side-buy-btn",
-              props.side === OrderSide.BUY && props.canTrade
+              props.side === OrderSide.BUY
                 ? "hover:oui-bg-base-6"
                 : "oui-bg-base-7 oui-text-base-contrast-36",
             )}
@@ -125,12 +125,12 @@ export const OrderEntryBuySellSwitchInjectabled =
               e.currentTarget.blur();
             }}
             data-type={OrderSide.SELL}
-            data-active={props.side === OrderSide.SELL && props.canTrade}
+            data-active={props.side === OrderSide.SELL}
             fullWidth
             size={"md"}
             className={cn(
               "oui-orderEntry-side-sell-btn",
-              props.side === OrderSide.SELL && props.canTrade
+              props.side === OrderSide.SELL
                 ? "hover:oui-bg-base-6"
                 : "oui-bg-base-7 oui-text-base-contrast-36",
             )}

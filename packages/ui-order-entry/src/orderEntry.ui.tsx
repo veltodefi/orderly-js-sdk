@@ -603,9 +603,9 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
         <OrderEntrySubmitSectionInjectabled
           buttonLabel={submitButtonLabel}
           side={side}
-          canTrade={props.canTrade}
+          canTrade={!submitButtonDisabled}
           isMutating={props.isMutating}
-          onSubmit={validateSubmit}
+          onSubmit={onClickSubmitButton}
           assetInfo={{
             canTrade: props.canTrade,
             quote: symbolInfo.quote,

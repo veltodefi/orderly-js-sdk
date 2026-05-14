@@ -35,7 +35,6 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           side={props.side}
           symbolLeverage={props.symbolLeverage}
           marginMode={props.marginMode}
-          disabled={!props.canTrade}
         />
       </div>
       <OrderEntryTypeTabsInjectabled
