@@ -116,6 +116,11 @@ export const QuantitySlider = memo((props: QuantitySliderProps) => {
         }}
         min={SLIDER_MIN}
         max={SLIDER_MAX}
+        className="hover:oui-cursor-pointer"
+        classNames={{
+          thumb: "hover:oui-cursor-pointer",
+          track: "hover:oui-cursor-pointer",
+        }}
       />
       <Flex
         justify={"between"}

@@ -5,14 +5,13 @@ import {
   OrderSide,
   OrderType,
 } from "@veltodefi/types";
-import { MainButton, Button, cn } from "@veltodefi/ui";
+import { MainButton, cn } from "@veltodefi/ui";
 import { OrderTypeSelect } from "../orderTypeSelect";
 import { LeverageBadge } from "./LeverageBadge";
 
 type OrderEntryHeaderProps = {
   symbol: string;
   side: OrderSide;
-  canTrade: boolean;
   order_type: OrderType;
   setOrderValue: (key: keyof OrderlyOrder, value: unknown) => void;
   symbolLeverage?: number;
@@ -24,7 +23,7 @@ type OrderEntryHeaderProps = {
 };
 
 export function OrderEntryHeader(props: OrderEntryHeaderProps) {
-  const { canTrade, side, order_type, setOrderValue } = props;
+  const { side, order_type, setOrderValue } = props;
   const { t } = useTranslation();
 
   return (
@@ -35,14 +34,12 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           side={props.side}
           symbolLeverage={props.symbolLeverage}
           marginMode={props.marginMode}
-          disabled={!props.canTrade}
         />
       </div>
       <div className="oui-w-full">
         <OrderTypeSelect
           type={order_type!}
           side={side}
-          canTrade={canTrade}
           onChange={(type) => {
             setOrderValue("order_type", type);
           }}
@@ -66,16 +63,12 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           size={"md"}
           fullWidth
           data-type={OrderSide.BUY}
-          disabled={!canTrade}
-          data-active={side === OrderSide.BUY && canTrade}
+          data-active={side === OrderSide.BUY}
           className={cn(
             "oui-orderEntry-side-buy-btn",
-            side !== OrderSide.BUY &&
-              `oui-bg-base-7 oui-text-base-contrast-36 disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36`,
-            side === OrderSide.BUY &&
-              !canTrade &&
-              `disabled:oui-bg-success disabled:oui-text-success-contrast`,
-            side === OrderSide.BUY && canTrade && `hover:oui-bg-base-6`,
+            side === OrderSide.BUY
+              ? "hover:oui-bg-base-6"
+              : "oui-bg-base-7 oui-text-base-contrast-36",
           )}
           data-testid="oui-testid-orderEntry-side-buy-button"
         >
@@ -90,16 +83,12 @@ export function OrderEntryHeader(props: OrderEntryHeaderProps) {
           fullWidth
           size={"md"}
           data-type={OrderSide.SELL}
-          disabled={!canTrade}
-          data-active={side === OrderSide.SELL && canTrade}
+          data-active={side === OrderSide.SELL}
           className={cn(
             "oui-orderEntry-side-sell-btn",
-            side !== OrderSide.SELL &&
-              `oui-bg-base-7 oui-text-base-contrast-36 disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36`,
-            side === OrderSide.SELL &&
-              !canTrade &&
-              `disabled:oui-bg-danger disabled:oui-text-danger-contrast`,
-            side === OrderSide.SELL && canTrade && `hover:oui-bg-base-6`,
+            side === OrderSide.SELL
+              ? "hover:oui-bg-base-6"
+              : "oui-bg-base-7 oui-text-base-contrast-36",
           )}
           data-testid="oui-testid-orderEntry-side-sell-button"
         >

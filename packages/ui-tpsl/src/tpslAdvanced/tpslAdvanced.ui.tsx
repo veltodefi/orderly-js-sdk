@@ -9,7 +9,6 @@ import {
   PositionType,
 } from "@veltodefi/types";
 import {
-  Button,
   cn,
   Divider,
   DotStatus,
@@ -162,40 +161,44 @@ export const TPSLAdvancedUI = (props: Props) => {
         <Divider className="oui-my-3" />
         <div className="oui-px-3">
           <Flex className="oui-gap-[6px]">
-            <Button
+            <MainButton
+              variant="primary"
               onClick={() => {
                 setOrderValue("side", OrderSide.BUY);
               }}
-              size={"sm"}
+              size={"md"}
               fullWidth
               data-type={OrderSide.BUY}
-              // color={side === OrderSide.BUY ? "buy" : "secondary"}
+              data-active={formattedOrder.side === OrderSide.BUY}
               className={cn(
+                "oui-orderEntry-side-buy-btn",
                 formattedOrder.side === OrderSide.BUY
-                  ? "oui-bg-success-darken hover:oui-bg-success-darken/80 active:oui-bg-success-darken/80"
-                  : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
+                  ? "hover:oui-bg-base-6"
+                  : "oui-bg-base-7 oui-text-base-contrast-36 disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36",
               )}
               data-testid="oui-testid-orderEntry-side-buy-button"
             >
               {t("common.buy")}
-            </Button>
-            <Button
+            </MainButton>
+            <MainButton
+              variant="primary"
               onClick={() => {
                 setOrderValue("side", OrderSide.SELL);
               }}
               data-type={OrderSide.SELL}
+              data-active={formattedOrder.side === OrderSide.SELL}
               fullWidth
-              size={"sm"}
-              // color={side === OrderSide.SELL ? "sell" : "secondary"}
+              size={"md"}
               className={cn(
+                "oui-orderEntry-side-sell-btn",
                 formattedOrder.side === OrderSide.SELL
-                  ? "oui-bg-danger-darken hover:oui-bg-danger-darken/80 active:oui-bg-danger-darken/80"
-                  : "oui-bg-base-7 oui-text-base-contrast-36 hover:oui-bg-base-6 active:oui-bg-base-6",
+                  ? "hover:oui-bg-base-6"
+                  : "oui-bg-base-7 oui-text-base-contrast-36 disabled:oui-bg-base-7 disabled:oui-text-base-contrast-36",
               )}
               data-testid="oui-testid-orderEntry-side-sell-button"
             >
               {t("common.sell")}
-            </Button>
+            </MainButton>
           </Flex>
           <div className="oui-py-3">
             <TPSLPositionTypeWidget

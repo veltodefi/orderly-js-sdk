@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-tpsl",
-  "version": "2.12.4-velto-main.5",
+  "version": "2.12.4-velto-main.10",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

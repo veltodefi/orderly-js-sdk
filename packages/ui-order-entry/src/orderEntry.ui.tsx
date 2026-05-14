@@ -418,6 +418,11 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
   };
 
   const onShowTPSLAdvanced = () => {
+    if (accountStatus < AccountStatusEnum.EnableTrading) {
+      setShowTPSLAdvanced(true);
+      return;
+    }
+
     helper.validate().then(
       () => {
         setShowTPSLAdvanced(true);
@@ -555,7 +560,6 @@ export const OrderEntry: React.FC<OrderEntryProps> = (props) => {
       >
         <OrderEntryHeader
           symbol={props.symbol}
-          canTrade={props.canTrade}
           side={side}
           order_type={formattedOrder.order_type!}
           setOrderValue={manualSetOrderValue}

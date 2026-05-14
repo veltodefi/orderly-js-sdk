@@ -1,8 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import { useMarginModeBySymbol } from "@veltodefi/hooks";
+import { useAccount, useMarginModeBySymbol } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
-import { MarginMode } from "@veltodefi/types";
-import { toast, useScreen } from "@veltodefi/ui";
+import { AccountStatusEnum, MarginMode } from "@veltodefi/types";
+import { modal, toast, useScreen } from "@veltodefi/ui";
+import {
+  WalletConnectorModalId,
+  WalletConnectorSheetId,
+} from "@veltodefi/ui-connector";
 
 export type MarginModeSwitchScriptOptions = {
   symbol: string;
@@ -15,6 +19,7 @@ export const useMarginModeSwitchScript = (
   const { symbol, close } = options;
   const { isMobile } = useScreen();
   const { t } = useTranslation();
+  const { state: accountState } = useAccount();
 
   const {
     marginMode: currentMarginMode,
@@ -45,6 +50,12 @@ export const useMarginModeSwitchScript = (
         return;
       }
 
+      if (accountState.status < AccountStatusEnum.EnableTrading) {
+        close?.();
+        modal.show(isMobile ? WalletConnectorSheetId : WalletConnectorModalId);
+        return;
+      }
+
       close?.();
 
       applyMarginMode(mode)
@@ -59,7 +70,14 @@ export const useMarginModeSwitchScript = (
           );
         });
     },
-    [applyMarginMode, close, currentMarginMode, t],
+    [
+      accountState.status,
+      applyMarginMode,
+      close,
+      currentMarginMode,
+      isMobile,
+      t,
+    ],
   );
 
   return {
