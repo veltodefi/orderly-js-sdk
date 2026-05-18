@@ -22,7 +22,7 @@ All functions accept an object that extends the core input type with:
 - **domain**: `SignatureDomain` (EIP-712 domain)
 - **chainId**: `number`
 
-Other fields come from `@orderly.network/core` input types (e.g. `RegisterAccountInputs`, `WithdrawInputs`).
+Other fields come from `@veltodefi/core` input types (e.g. `RegisterAccountInputs`, `WithdrawInputs`).
 
 ## Common Output
 
@@ -63,7 +63,7 @@ Each function returns `Promise<[message, toSignatureMessage]>` where:
 
 ## helper.ts Dependencies
 
-- **Upstream**: `@orderly.network/core` (input types, SignatureDomain), `@orderly.network/types` (DEFAUL_ORDERLY_KEY_SCOPE, definedTypes for EIP-712).
+- **Upstream**: `@veltodefi/core` (input types, SignatureDomain), `@veltodefi/types` (DEFAUL_ORDERLY_KEY_SCOPE, definedTypes for EIP-712).
 - **Downstream**: `DefaultEVMWalletAdapter` in `walletAdapter.ts` (calls these to build messages then signs via web3Provider).
 
 ## helper.ts Execution Flow
@@ -77,7 +77,7 @@ Each function returns `Promise<[message, toSignatureMessage]>` where:
 ## helper.ts Example
 
 ```typescript
-import type { SignatureDomain } from "@orderly.network/core";
+import type { SignatureDomain } from "@veltodefi/core";
 import { registerAccountMessage, addOrderlyKeyMessage } from "./helper";
 
 const domain: SignatureDomain = {

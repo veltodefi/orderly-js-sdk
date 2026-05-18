@@ -23,7 +23,7 @@
 ## sum Example
 
 ```typescript
-import { sum } from "@orderly.network/net/src/sum";
+import { sum } from "@veltodefi/net/src/sum";
 
 sum(1, 2); // 3
 ```

@@ -101,7 +101,7 @@ export const PositionHistory: FC<PositionHistoryProps> = (props) => {
         )}
         manualPagination={false}
         pagination={pagination}
-        currentView="position_history"
+        veltoCurrentView="position_history"
         manualSorting={true}
         onSort={props.onSort}
         initialSort={

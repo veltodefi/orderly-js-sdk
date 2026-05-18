@@ -72,9 +72,9 @@ export {
 } from "./walletConnectorContext";
 
 export {
-  WithdrawOnlyModeProvider,
+  VeltoWithdrawOnlyModeProvider,
   useWithdrawOnlyMode,
-} from "./withdrawOnlyModeContext";
+} from "./veltoWithdrawOnlyModeContext";
 
 export * from "./orderly/orderlyHooks";
 export { useAppStore } from "./orderly/appStore";

@@ -35,7 +35,7 @@ export const useSwapDepositFormScript = (
   const brokerName = config.get("brokerName") || "";
   const networkId = config.get("networkId") as NetworkId;
 
-  const { wrongNetwork, withdrawOnlyMode } = useAppContext();
+  const { wrongNetwork, veltoWithdrawOnlyMode } = useAppContext();
 
   const { chains, currentChain, settingChain, onChainChange } =
     useChainSelect();
@@ -139,7 +139,7 @@ export const useSwapDepositFormScript = (
   }, [options.onClose]);
 
   const onSwapDeposit = useCallback(async () => {
-    if (withdrawOnlyMode) {
+    if (veltoWithdrawOnlyMode) {
       return;
     }
     // const _params = getSwapTestData(needCrossSwap);
@@ -195,7 +195,7 @@ export const useSwapDepositFormScript = (
     currentChain,
     slippage,
     depositFee,
-    withdrawOnlyMode,
+    veltoWithdrawOnlyMode,
   ]);
 
   const { onApprove, onDeposit } = useDepositAction({
@@ -208,7 +208,7 @@ export const useSwapDepositFormScript = (
   const loading = depositFeeRevalidating! || swapRevalidating;
 
   const disabled =
-    withdrawOnlyMode ||
+    veltoWithdrawOnlyMode ||
     !quantity ||
     Number(quantity) === 0 ||
     inputStatus === "error" ||
@@ -279,7 +279,7 @@ export const useSwapDepositFormScript = (
     fetchBalance,
     dst,
     wrongNetwork,
-    withdrawOnlyMode,
+    veltoWithdrawOnlyMode,
     balanceRevalidating,
     loading,
     disabled,

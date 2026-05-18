@@ -33,7 +33,7 @@ Describes the inputs required to activate or update the EVM wallet adapter: an E
 
 - **Eip1193Provider**: From `./provider/web3Provider.interface.ts` (object with `request({ method, params })`).
 - **Web3Provider**: From same file; `getWalletAdapterFunc` returns it.
-- **IContract**: From `@orderly.network/core`.
+- **IContract**: From `@veltodefi/core`.
 
 ## getWalletAdapterFunc Description
 
@@ -42,11 +42,11 @@ Type alias for a function that takes `EVMAdapterOptions` and returns a `Web3Prov
 ## types.ts Example
 
 ```typescript
-import type { IContract } from "@orderly.network/core";
+import type { IContract } from "@veltodefi/core";
 import type {
   EVMAdapterOptions,
   getWalletAdapterFunc,
-} from "@orderly.network/default-evm-adapter";
+} from "@veltodefi/default-evm-adapter";
 
 const options: EVMAdapterOptions = {
   provider: window.ethereum,

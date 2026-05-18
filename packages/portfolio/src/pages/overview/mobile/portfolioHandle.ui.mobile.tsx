@@ -24,7 +24,7 @@ type Props = {
 
 export const PortfolioHandleMobile: FC<Props> = (props) => {
   const { t } = useTranslation();
-  const { withdrawOnlyMode } = useAppContext();
+  const { veltoWithdrawOnlyMode } = useAppContext();
 
   const onGotoHistory = () => {
     props.routerAdapter?.onRouteChange({
@@ -45,8 +45,8 @@ export const PortfolioHandleMobile: FC<Props> = (props) => {
           direction="column"
           gapY={2}
           itemAlign={"center"}
-          className={`oui-flex-1 ${withdrawOnlyMode ? "oui-cursor-not-allowed oui-opacity-40" : "oui-cursor-pointer"}`}
-          onClick={withdrawOnlyMode ? undefined : props?.onDeposit}
+          className={`oui-flex-1 ${veltoWithdrawOnlyMode ? "oui-cursor-not-allowed oui-opacity-40" : "oui-cursor-pointer"}`}
+          onClick={veltoWithdrawOnlyMode ? undefined : props?.onDeposit}
         >
           <div className="oui-flex oui-size-[48px] oui-items-center oui-justify-center oui-rounded-xl oui-bg-base-9">
             <ArrowDownSquareFillIcon size={28} color="white" opacity={1} />

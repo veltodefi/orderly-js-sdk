@@ -42,7 +42,7 @@ export const Positions: React.FC<Readonly<PositionsState>> = (props) => {
       id="oui-desktop-positions-content"
       columns={columns}
       bordered
-      currentView="positions"
+      veltoCurrentView="positions"
       dataSource={dataSource}
       classNames={{
         scroll: !dataSource?.length
@@ -168,7 +168,7 @@ export const CombinePositions: React.FC<Readonly<CombinePositionsState>> = (
       id="oui-desktop-positions-content"
       columns={columns}
       dataSource={dataSource}
-      currentView="combine_positions"
+      veltoCurrentView="combine_positions"
       expanded
       getSubRows={(row) => row.children}
       generatedRowKey={(record, index) =>

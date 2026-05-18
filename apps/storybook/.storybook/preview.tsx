@@ -92,6 +92,7 @@ const preview: Preview = {
           "Design Tokens",
           "Package",
           [
+            "plugin-core",
             "trading",
             "portfolio",
             "markets",

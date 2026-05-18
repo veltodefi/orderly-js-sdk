@@ -21,7 +21,7 @@ type Props = {
 
 export const AssetsHeader: FC<Props> = (props) => {
   const { t } = useTranslation();
-  const { withdrawOnlyMode } = useAppContext();
+  const { veltoWithdrawOnlyMode } = useAppContext();
 
   return (
     <Flex justify={"between"}>
@@ -29,7 +29,7 @@ export const AssetsHeader: FC<Props> = (props) => {
       <Flex gap={3}>
         {props.isMainAccount && (
           <MainButton
-            disabled={props.disabled || withdrawOnlyMode}
+            disabled={props.disabled || veltoWithdrawOnlyMode}
             size="md"
             variant="primary"
             onClick={() => props.onDeposit?.()}

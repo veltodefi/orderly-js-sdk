@@ -159,7 +159,7 @@ export const ConvertDesktopUI: React.FC<ConvertDesktopUIProps> = ({
         loading={convertState.isLoading}
         pagination={convertState.pagination}
         manualPagination
-        currentView="convert_history"
+        veltoCurrentView="convert_history"
         className="oui-mt-4 oui-w-full"
         classNames={{
           root: "oui-h-[calc(100%_-_49px)]",

@@ -57,8 +57,8 @@ import {
   BaseSigner,
   MessageFactor,
   SignedMessagePayload,
-} from "@orderly.network/core";
-import { LocalStorageStore } from "@orderly.network/core";
+} from "@veltodefi/core";
+import { LocalStorageStore } from "@veltodefi/core";
 
 const keyStore = new LocalStorageStore("testnet");
 // ... setAddress, setKey so getOrderlyKey() returns key

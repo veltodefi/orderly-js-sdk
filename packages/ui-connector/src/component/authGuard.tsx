@@ -1,8 +1,8 @@
 import React, { ReactElement, useMemo } from "react";
-import { useAccount, useMediaQuery } from "@veltodefi/hooks";
+import { useAccount } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import { useAppContext } from "@veltodefi/react-app";
-import { AccountStatusEnum, MEDIA_TABLET, NetworkId } from "@veltodefi/types";
+import { AccountStatusEnum, NetworkId } from "@veltodefi/types";
 import {
   MainButton,
   Either,
@@ -24,6 +24,11 @@ import {
   WalletConnectorSheetId,
 } from "./walletConnector";
 
+type ChainProps = {
+  networkId?: NetworkId;
+  bridgeLessOnly?: boolean;
+};
+
 export type alertMessages = {
   connectWallet?: string;
   switchChain?: string;
@@ -44,7 +49,7 @@ export type AuthGuardProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   status?: AccountStatusEnum;
 
   bridgeLessOnly?: boolean;
-  currentView?: string;
+  veltoCurrentView?: string;
 
   buttonProps?: MainButtonProps;
 
@@ -58,7 +63,7 @@ export type AuthGuardProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   };
 
   networkId?: NetworkId;
-  isEmptyView?: boolean;
+  veltoIsEmptyView?: boolean;
 };
 
 export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
@@ -69,9 +74,12 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
     buttonProps,
     fallback,
     descriptions,
-    isEmptyView,
+    veltoIsEmptyView,
+    classNames,
+    networkId,
     id,
     bridgeLessOnly,
+    // ...rest
   } = props;
   const { t } = useTranslation();
   const { state } = useAccount();
@@ -106,9 +114,10 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
     if (state.validating && !disabledConnect) {
       return (
         <StatusInfo
+          // variant={"gradient"}
           angle={45}
+          // fullWidth
           disabled
-          variant="primary"
           loading
           description={descriptions?.connectWallet}
           id={id}
@@ -124,12 +133,12 @@ export const AuthGuard: React.FC<React.PropsWithChildren<AuthGuardProps>> = (
       <DefaultFallback
         bridgeLessOnly={bridgeLessOnly}
         status={state.status}
-        isEmptyView={isEmptyView}
+        veltoIsEmptyView={veltoIsEmptyView}
         buttonProps={{ ...buttonProps, id, type: "button" }}
         wrongNetwork={wrongNetwork}
         networkId={props.networkId}
         labels={labels}
-        currentView={props.currentView}
+        veltoCurrentView={props.veltoCurrentView}
         descriptions={descriptions}
         disabledConnect={disabledConnect}
       />
@@ -177,20 +186,20 @@ const DefaultFallback: React.FC<{
   labels: alertMessages;
   bridgeLessOnly?: boolean;
   descriptions?: alertMessages;
-  currentView?: string;
+  veltoCurrentView?: string;
   disabledConnect?: boolean;
-  isEmptyView?: boolean;
+  veltoIsEmptyView?: boolean;
+  
 }> = (props) => {
-  const { buttonProps, labels, descriptions, isEmptyView } = props;
+  const { buttonProps, labels, descriptions, veltoIsEmptyView } = props;
   const { t } = useTranslation();
-  const { connectWallet, veltoProps, withdrawOnlyMode } = useAppContext();
+  const { connectWallet, veltoProps, veltoWithdrawOnlyMode } = useAppContext();
   const { account } = useAccount();
   const { isMobile } = useScreen();
-  const matches = useMediaQuery(MEDIA_TABLET);
 
   const onConnectOrderly = () => {
     modal
-      .show(matches ? WalletConnectorSheetId : WalletConnectorModalId, {
+      .show(isMobile ? WalletConnectorSheetId : WalletConnectorModalId, {
         title: <ModalTitle />,
       })
       .then(
@@ -199,29 +208,22 @@ const DefaultFallback: React.FC<{
       );
   };
 
-  const onConnectWallet = async (sendToOnboarding?: boolean) => {
-    const defaultConnectWallet = async () => {
-      const res = await connectWallet();
+  const onConnectWallet = async () => {
+    const res = await connectWallet();
 
-      if (!res) {
-        return;
-      }
-
-      if (res.wrongNetwork) {
-        switchChain();
-      } else {
-        if (
-          (res?.status ?? AccountStatusEnum.NotConnected) <
-          AccountStatusEnum.EnableTrading
-        ) {
-          onConnectOrderly();
-        }
-      }
-    };
-
-    if (veltoProps?.onConnectWallet) {
-      veltoProps?.onConnectWallet(defaultConnectWallet, sendToOnboarding);
+    if (!res) {
       return;
+    }
+
+    if (res.wrongNetwork) {
+      switchChain();
+    } else {
+      if (
+        (res?.status ?? AccountStatusEnum.NotConnected) <
+        AccountStatusEnum.EnableTrading
+      ) {
+        onConnectOrderly();
+      }
     }
   };
 
@@ -262,6 +264,8 @@ const DefaultFallback: React.FC<{
     return (
       <StatusInfo
         variant="primary"
+        // size="md"
+        // fullWidth
         onClick={() => {
           switchChain();
         }}
@@ -274,16 +278,16 @@ const DefaultFallback: React.FC<{
   }
 
   if (props.status <= AccountStatusEnum.NotConnected || props.disabledConnect) {
-    if (isEmptyView) {
+    if (veltoIsEmptyView) {
       return (
         <NotConnectedView
-          disabled={!withdrawOnlyMode && veltoProps?.isRestrictedRegion}
+          disabled={!veltoWithdrawOnlyMode && veltoProps?.isRestrictedRegion}
           title={t("connector.getStarted")}
           description={t("connector.beginYourSetupToUnlock")}
           buttonLabel={t("connector.connectWallet")}
           onClick={() =>
             veltoProps?.onConnectWallet?.(undefined, true, {
-              currentView: props.currentView,
+              currentView: props.veltoCurrentView,
               state: "wallet_not_connected",
             })
           }
@@ -298,10 +302,11 @@ const DefaultFallback: React.FC<{
         onClick={() => {
           onConnectWallet();
         }}
+        // fullWidth
         angle={45}
         description={descriptions?.connectWallet}
         disabled={
-          !withdrawOnlyMode &&
+          !veltoWithdrawOnlyMode &&
           (props.disabledConnect || veltoProps?.isRestrictedRegion)
         }
         {...buttonProps}
@@ -315,7 +320,6 @@ const DefaultFallback: React.FC<{
     return (
       <StatusInfo
         size="lg"
-        variant="primary"
         onClick={() => {
           onConnectOrderly();
         }}
@@ -332,7 +336,7 @@ const DefaultFallback: React.FC<{
   return (
     <StatusInfo
       size="lg"
-      variant="primary"
+      // fullWidth
       description={descriptions?.enableTrading}
       {...buttonProps}
       onClick={() => onConnectOrderly()}
@@ -340,6 +344,59 @@ const DefaultFallback: React.FC<{
       {labels.enableTrading}
     </StatusInfo>
   );
+
+  // return (
+  //   <Match
+  //     value={props.status}
+  //     case={(value: AccountStatusEnum) => {
+  //       if (value <= AccountStatusEnum.NotConnected || props.disabledConnect) {
+  //         return (
+  //           <StatusInfo
+  //             size="lg"
+  //             onClick={() => {
+  //               onConnectWallet();
+  //             }}
+  //             // fullWidth
+  //             variant={props.disabledConnect ? undefined : "gradient"}
+  //             angle={45}
+  //             description={descriptions?.connectWallet}
+  //             disabled={props.disabledConnect}
+  //             {...buttonProps}
+  //           >
+  //             {labels.connectWallet}
+  //           </StatusInfo>
+  //         );
+  //       }
+  //       if (value <= AccountStatusEnum.NotSignedIn) {
+  //         return (
+  //           <StatusInfo
+  //             size="lg"
+  //             onClick={() => {
+  //               onConnectOrderly();
+  //             }}
+  //             // fullWidth
+  //             angle={45}
+  //             description={descriptions?.signin}
+  //             {...buttonProps}
+  //           >
+  //             {labels.signin}
+  //           </StatusInfo>
+  //         );
+  //       }
+  //     }}
+  //     default={
+  //       <StatusInfo
+  //         size="lg"
+  //         // fullWidth
+  //         description={descriptions?.enableTrading}
+  //         {...buttonProps}
+  //         onClick={() => onConnectOrderly()}
+  //       >
+  //         {labels.enableTrading}
+  //       </StatusInfo>
+  //     }
+  //   />
+  // );
 };
 
 AuthGuard.displayName = "AuthGuard";

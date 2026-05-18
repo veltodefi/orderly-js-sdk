@@ -52,7 +52,7 @@ import {
   removeLangPrefix,
   getLocalePathFromPathname,
   generatePath,
-} from "@orderly.network/i18n";
+} from "@veltodefi/i18n";
 
 parseI18nLang("en-US"); // "en"
 removeLangPrefix("/en/perp/PERP_ETH_USDC"); // "/perp/PERP_ETH_USDC"

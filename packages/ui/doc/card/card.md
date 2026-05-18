@@ -7,5 +7,5 @@ This file provides card (component or utility). See directory index for context 
 ## card Example
 
 ```ts
-// Import from @orderly.network/ui or relative path as needed.
+// Import from @veltodefi/ui or relative path as needed.
 ```

@@ -2,7 +2,7 @@
 
 ## helper.ts Responsibility
 
-Provides signer factories (getMockSigner, getDefaultSigner) and EIP-712 message builders for Orderly: generateRegisterAccountMessage, generateAddOrderlyKeyMessage, generateSettleMessage, generateDexRequestMessage. Uses keyStore, signer, utils (getTimestamp, SignatureDomain) and types from @orderly.network/types (definedTypes, DEFAUL_ORDERLY_KEY_SCOPE).
+Provides signer factories (getMockSigner, getDefaultSigner) and EIP-712 message builders for Orderly: generateRegisterAccountMessage, generateAddOrderlyKeyMessage, generateSettleMessage, generateDexRequestMessage. Uses keyStore, signer, utils (getTimestamp, SignatureDomain) and types from @veltodefi/types (definedTypes, DEFAUL_ORDERLY_KEY_SCOPE).
 
 ## helper.ts Exports
 
@@ -39,7 +39,7 @@ Provides signer factories (getMockSigner, getDefaultSigner) and EIP-712 message 
 
 ## helper.ts Dependencies and Call Relationships
 
-- **Upstream**: keyStore (MockKeyStore, LocalStorageStore), signer (BaseSigner), utils (getTimestamp, SignatureDomain), @orderly.network/types (definedTypes, DEFAUL_ORDERLY_KEY_SCOPE).
+- **Upstream**: keyStore (MockKeyStore, LocalStorageStore), signer (BaseSigner), utils (getTimestamp, SignatureDomain), @veltodefi/types (definedTypes, DEFAUL_ORDERLY_KEY_SCOPE).
 - **Downstream**: Account and wallet adapters use these for signing flows; getMockSigner/getDefaultSigner for tests or default signer.
 
 ## helper.ts Errors and Boundaries
@@ -59,7 +59,7 @@ import {
   generateAddOrderlyKeyMessage,
   generateSettleMessage,
   generateDexRequestMessage,
-} from "@orderly.network/core";
+} from "@veltodefi/core";
 
 const signer = getMockSigner(); // or getDefaultSigner()
 const [regMsg, regToSign] = generateRegisterAccountMessage({

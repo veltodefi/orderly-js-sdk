@@ -41,7 +41,7 @@ Provides list pagination, sorting, search-by-symbol, and window size utilities u
 
 ## Dependencies
 
-- **Upstream**: `react`, `@orderly.network/ui` (TableSort), `@orderly.network/utils` (formatSymbol), `./type` (SortType).
+- **Upstream**: `react`, `@veltodefi/ui` (TableSort), `@veltodefi/utils` (formatSymbol), `./type` (SortType).
 - **Downstream**: List/table components that need pagination, sort, or search.
 
 ## utils.ts Example
@@ -53,7 +53,7 @@ import {
   useSort,
   searchBySymbol,
   useSize,
-} from "@orderly.network/markets";
+} from "@veltodefi/markets";
 
 const page = getPagedData(allItems, 20, 1);
 const sorted = sortList(items, { sortKey: "symbol", sortOrder: "asc" });

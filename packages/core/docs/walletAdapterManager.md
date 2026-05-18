@@ -26,7 +26,7 @@ Single point to switch between EVM and Solana (or other) adapters when the user 
 
 ## walletAdapterManager.ts Dependencies and Call Relationships
 
-- **Upstream**: wallet/walletAdapter (WalletAdapter), contract (IContract), ethers (Eip1193Provider), @orderly.network/types (ChainNamespace).
+- **Upstream**: wallet/walletAdapter (WalletAdapter), contract (IContract), ethers (Eip1193Provider), @veltodefi/types (ChainNamespace).
 - **Downstream**: Account constructs it with wallet adapters and calls switchWallet from setAddress; Account exposes walletAdapter and chainId via this manager.
 
 ## walletAdapterManager.ts Errors and Boundaries
@@ -39,7 +39,7 @@ Single point to switch between EVM and Solana (or other) adapters when the user 
 ## walletAdapterManager.ts Example
 
 ```typescript
-import { WalletAdapterManager } from "@orderly.network/core";
+import { WalletAdapterManager } from "@veltodefi/core";
 import { EvmWalletAdapter } from "./wallet/evmAdapter";
 import { SolanaWalletAdapter } from "./wallet/solanaAdapter";
 

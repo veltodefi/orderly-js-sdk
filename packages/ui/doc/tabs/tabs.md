@@ -7,5 +7,5 @@ This file provides tabs (component or utility). See directory index for context 
 ## tabs Example
 
 ```ts
-// Import from @orderly.network/ui or relative path as needed.
+// Import from @veltodefi/ui or relative path as needed.
 ```

@@ -67,7 +67,7 @@ import {
   BaseContract,
   getContractInfoByChainId,
   IContract,
-} from "@orderly.network/core";
+} from "@veltodefi/core";
 
 const contractManager = new BaseContract(configStore);
 const info = contractManager.getContractInfoByEnv();

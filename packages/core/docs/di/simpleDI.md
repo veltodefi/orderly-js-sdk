@@ -39,7 +39,7 @@ Single entry point for DI: lazily creates one Container and stores it on the glo
 ## simpleDI.ts Example
 
 ```typescript
-import SimpleDI from "@orderly.network/core";
+import SimpleDI from "@veltodefi/core";
 
 SimpleDI.register(Account, ConfigStore);
 SimpleDI.registerByName("account", accountInstance);

@@ -44,7 +44,7 @@ Provides two React providers: I18nProvider (pass-through to I18nextProvider) and
 ## provider.tsx Example
 
 ```tsx
-import { LocaleProvider, LocaleEnum } from "@orderly.network/i18n";
+import { LocaleProvider, LocaleEnum } from "@veltodefi/i18n";
 
 <LocaleProvider
   supportedLanguages={[LocaleEnum.en, LocaleEnum.zh]}

@@ -34,7 +34,7 @@ export const AssetHistoryMobile: FC<AssetHistoryMobileProps> = (props) => {
   } = props;
   const { dateRange, target } = queryParameter;
   const { t } = useTranslation();
-  const { withdrawOnlyMode } = useAppContext();
+  const { veltoWithdrawOnlyMode } = useAppContext();
 
   const options = useMemo(() => {
     return [
@@ -237,7 +237,7 @@ export const AssetHistoryMobile: FC<AssetHistoryMobileProps> = (props) => {
             mt={3}
           >
             <EmptyDataState />
-            {!withdrawOnlyMode && dataSource?.length == 0 && (
+            {!veltoWithdrawOnlyMode && dataSource?.length == 0 && (
               <Flex
                 direction="row"
                 itemAlign="center"

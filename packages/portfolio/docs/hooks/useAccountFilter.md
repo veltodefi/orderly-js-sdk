@@ -48,7 +48,7 @@ Returns: `T[]` (memoized). Item kept if selected account is main and (from or to
 
 ## useAccountFilter dependency and call relationship
 
-- **Upstream**: `useAccount` from `@orderly.network/hooks`; `AccountType` from `../pages/assets/assetsPage/assets.ui.desktop`.
+- **Upstream**: `useAccount` from `@veltodefi/hooks`; `AccountType` from `../pages/assets/assetsPage/assets.ui.desktop`.
 - **Downstream**: Used by overview, assets, and transfer history components that need account-filtered lists.
 
 ## useAccountFilter execution flow

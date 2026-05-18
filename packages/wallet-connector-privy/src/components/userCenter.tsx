@@ -39,7 +39,7 @@ const RenderUserCenter = (props: any) => {
   const { linkedAccount } = usePrivyWallet();
   const { state: accountState, account } = useAccount();
   const { connectedChain } = useWalletConnector();
-  const { veltoProps, withdrawOnlyMode } = useAppContext();
+  const { veltoProps, veltoWithdrawOnlyMode } = useAppContext();
 
   const disabled = state.validating || props.disabledConnect;
 

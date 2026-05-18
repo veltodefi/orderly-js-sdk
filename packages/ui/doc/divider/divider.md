@@ -7,5 +7,5 @@ This file provides divider (component or utility). See directory index for conte
 ## divider Example
 
 ```ts
-// Import from @orderly.network/ui or relative path as needed.
+// Import from @veltodefi/ui or relative path as needed.
 ```

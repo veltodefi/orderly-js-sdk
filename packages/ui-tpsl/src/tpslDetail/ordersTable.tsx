@@ -19,7 +19,7 @@ export const OrdersTable = (props: {
       dataSource={orders}
       className="oui-bg-transparent oui-text-2xs"
       bordered
-      currentView="tpsl_orders"
+      veltoCurrentView="tpsl_orders"
       classNames={{
         root: cn(props.className),
         header: "!oui-bg-base-8",

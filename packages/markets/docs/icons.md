@@ -40,7 +40,7 @@ All icon components accept `SVGProps<SVGSVGElement>` (e.g. width, height, classN
 
 ## Dependencies
 
-- **Upstream**: `react`, `@orderly.network/ui` (cn).
+- **Upstream**: `react`, `@veltodefi/ui` (cn).
 - **Downstream**: Markets list, favorites, funding, and sheet components.
 
 ## icons.tsx Example
@@ -52,7 +52,7 @@ import {
   UnFavoritesIcon,
   ExpandIcon,
   CollapseIcon,
-} from "@orderly.network/markets";
+} from "@veltodefi/markets";
 
 <SearchIcon className="oui-w-4 oui-h-4" />
 <FavoritesIcon />

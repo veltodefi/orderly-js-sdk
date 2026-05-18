@@ -49,7 +49,7 @@ import {
   base64url,
   SignatureDomain,
   parseUnits,
-} from "@orderly.network/core";
+} from "@veltodefi/core";
 
 const accountIdHash = parseAccountId("0x...", "orderly");
 const brokerHash = parseBrokerHash("orderly");

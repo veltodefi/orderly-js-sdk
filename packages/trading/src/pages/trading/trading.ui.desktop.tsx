@@ -25,16 +25,29 @@ import {
   useGetRwaSymbolOpenStatus,
   useLocalStorage,
 } from "@veltodefi/hooks";
+import { useTranslation } from "@veltodefi/i18n";
 import {
   SideMarketsWidget,
   SymbolInfoBarFullWidget,
   HorizontalMarketsWidget,
 } from "@veltodefi/markets";
-import { OrderEntrySortKeys, TradingviewFullscreenKey } from "@veltodefi/types";
-import { Box, cn, Flex } from "@veltodefi/ui";
+import {
+  OrderEntrySortKeys,
+  TradingviewFullscreenKey,
+} from "@veltodefi/types";
+import {
+  Box,
+  Button,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  cn,
+  Flex,
+  Text,
+} from "@veltodefi/ui";
 import { OrderEntryWidget } from "@veltodefi/ui-order-entry";
 import { TradingviewWidget } from "@veltodefi/ui-tradingview";
 import { DepositStatusWidget } from "@veltodefi/ui-transfer";
+import { CollapseIcon, ExpandIcon } from "../../components/base/icons";
 import { SortablePanel } from "../../components/desktop/layout/sortablePanel";
 import { SplitLayout } from "../../components/desktop/layout/splitLayout";
 import { showRwaOutsideMarketHoursNotify } from "../../components/desktop/notify/rwaNotification";
@@ -154,6 +167,7 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
 
   const { showCountdown, closeCountdown } = useShowRwaCountdown(props.symbol);
   const { brokerName } = useBadgeBySymbol(props.symbol);
+  const { t } = useTranslation();
 
   const symbolInfoBarHeight = useMemo(() => {
     let height = 56;
@@ -214,7 +228,13 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
           },
         ];
       },
-      sideEffects: ({ active, dragOverlay }) => {
+      sideEffects: ({
+        active,
+        dragOverlay,
+      }: {
+        active: { node: HTMLElement };
+        dragOverlay: { node: HTMLElement };
+      }) => {
         // console.log(active.node);
         active.node.style.opacity = "0";
         const innerElement = dragOverlay.node.querySelector(".inner-content");
@@ -334,12 +354,50 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
 
   const marketsWidget = (
     <SideMarketsWidget
-      resizeable={resizeable}
-      panelSize={panelSize}
-      onPanelSizeChange={onPanelSizeChange as any}
       symbol={props.symbol}
       onSymbolChange={props.onSymbolChange}
+      panelSize={panelSize}
     />
+  );
+
+  const toggleButtoncls = cn(
+    "oui-text-base-contrast-36",
+    resizeable
+      ? "oui-cursor-pointer hover:oui-text-base-contrast-80"
+      : "oui-cursor-not-allowed",
+  );
+
+  const marketsHeader = (
+    <Flex
+      className={
+        panelSize === "small"
+          ? "oui-absolute oui-end-[-20px] oui-z-50"
+          : "oui-relative"
+      }
+      justify={panelSize === "large" ? "between" : "center"}
+      width="100%"
+      px={3}
+    >
+      {panelSize === "large" && (
+        <Text size="base" intensity={80}>
+          {t("common.markets")}
+        </Text>
+      )}
+      {panelSize === "large" && (
+        <div
+          onClick={resizeable ? () => onPanelSizeChange?.("middle") : undefined}
+        >
+          <CollapseIcon className={toggleButtoncls} />
+        </div>
+      )}
+      {(panelSize === "middle" || panelSize === "small") && (
+        <div
+          onClick={resizeable ? () => onPanelSizeChange?.("large") : undefined}
+        >
+          <ExpandIcon className={toggleButtoncls} />
+        </div>
+      )}
+    </Flex>
   );
 
   const marketsView = (
@@ -350,10 +408,29 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
       height="100%"
       width={marketsWidth}
       style={{ minWidth: marketsWidth }}
-      className="oui-trading-markets-container oui-transition-all oui-duration-150"
+      className="oui-trading-markets-container oui-min-h-0 oui-min-w-0 oui-max-w-full oui-transition-all oui-duration-150"
       onTransitionEnd={() => setAnimating(false)}
     >
-      {!animating && marketLayout === "left" && marketsWidget}
+      <Flex
+        id="oui-side-markets"
+        className="oui-relative oui-min-h-0 oui-min-w-0 oui-font-semibold"
+        direction="column"
+        gapY={5}
+        height="100%"
+        width="100%"
+      >
+        {marketsHeader}
+
+        {/* List: flex-1 min-h-0 under header+gap; overflow-hidden + rounded-b-2xl clips table to card bottom (outer Box r="2xl"). */}
+        {!animating && marketLayout === "left" && (
+          <Box
+            width="100%"
+            className="oui-min-h-0 oui-min-w-0 oui-max-w-full oui-flex-1 oui-overflow-hidden oui-rounded-b-2xl"
+          >
+            {marketsWidget}
+          </Box>
+        )}
+      </Flex>
     </Box>
   );
 
@@ -392,12 +469,12 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
       classNames={{
         root: cn(
           tradingViewFullScreen
-            ? "!oui-absolute oui-top-0 oui-left-0 oui-right-0 oui-bottom-0 oui-z-[40] oui-bg-base-10"
+            ? "!oui-absolute oui-inset-0 oui-z-40 oui-bg-base-10"
             : "oui-z-1",
         ),
         content: cn(
           tradingViewFullScreen
-            ? "oui-top-3 oui-bottom-3 oui-left-3 oui-right-3 oui-bg-base-9 oui-rounded-[16px] oui-overflow-hidden"
+            ? "oui-inset-3 oui-overflow-hidden oui-rounded-[16px] oui-bg-base-9"
             : "",
         ),
       }}
@@ -557,7 +634,8 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
       return (
         <Flex
           gap={2}
-          className="oui-flex-1 oui-overflow-hidden"
+          itemAlign="stretch"
+          className="oui-min-h-0 oui-flex-1 oui-overflow-hidden"
           style={{ minWidth: marketsWidth + tradingViewMinWidth + space }}
         >
           {marketLayout === "left" && marketsView}
@@ -588,7 +666,13 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
   const renderTradingViewAndOrderbookView = () => {
     if (max4XL && layout === "left") {
       return (
-        <Flex gapX={2} style={{ minHeight: orderbookMinHeight }} height="100%">
+        <Flex
+          gapX={2}
+          itemAlign="stretch"
+          className="oui-min-h-0"
+          style={{ minHeight: orderbookMinHeight }}
+          height="100%"
+        >
           {tradingViewAndOrderbookView}
           {marketLayout === "left" && marketsView}
         </Flex>
@@ -655,7 +739,7 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
             )}
 
             <SplitLayout
-              ref={props.max2XLSplitRef}
+              //ref={props.max2XLSplitRef}
               style={{
                 minHeight: minScreenHeightSM,
                 minWidth: 1024 - scrollBarWidth,
@@ -722,6 +806,7 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
                         pt={3}
                         r="2xl"
                         width={marketsWidth}
+                        className="oui-overflow-hidden"
                         style={{
                           minHeight:
                             tradindviewMinHeight + orderbookMinHeight + space,
@@ -898,8 +983,9 @@ export const DesktopLayout: React.FC<DesktopLayoutProps> = (props) => {
 
           {/* Main Content Group */}
           <Flex
+            itemAlign="stretch"
             className={cn(
-              "oui-flex-1 oui-overflow-hidden",
+              "oui-min-h-0 oui-flex-1 oui-overflow-hidden",
               layout === "left" && "oui-flex-row-reverse",
             )}
             gap={2}

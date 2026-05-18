@@ -23,7 +23,7 @@ export const useAssetViewScript = () => {
   const { t } = useTranslation();
   const account = useAccountInstance();
   const ee = useEventEmitter();
-  const { withdrawOnlyMode } = useAppContext();
+  const { veltoWithdrawOnlyMode } = useAppContext();
 
   const { totalValue } = useCollateral({
     dp: 2,
@@ -141,7 +141,7 @@ export const useAssetViewScript = () => {
     isMainAccount,
     hasSubAccount: !!state.subAccounts?.length,
     currentLtv,
-    withdrawOnlyMode,
+    veltoWithdrawOnlyMode,
   };
 };
 

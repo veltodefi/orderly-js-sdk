@@ -7,5 +7,5 @@ This file provides dropdown (component or utility). See directory index for cont
 ## dropdown Example
 
 ```ts
-// Import from @orderly.network/ui or relative path as needed.
+// Import from @veltodefi/ui or relative path as needed.
 ```

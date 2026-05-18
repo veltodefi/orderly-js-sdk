@@ -59,13 +59,13 @@ export const useTradingScript = () => {
   const {
     wrongNetwork,
     disabledConnect,
-    withdrawOnlyMode,
+    veltoWithdrawOnlyMode,
     restrictedInfo,
     onRouteChange,
   } = useAppContext();
   const { hideAssets, setHideAssets } = useTradingLocalStorage();
 
-  const isFirstTimeDeposit = useFirstTimeDeposit() && !withdrawOnlyMode;
+  const isFirstTimeDeposit = useFirstTimeDeposit() && !veltoWithdrawOnlyMode;
 
   const { totalValue } = useCollateral();
 

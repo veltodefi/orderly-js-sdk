@@ -6,17 +6,17 @@ import { useAppContext } from "../provider/appStateContext";
 export function useCanTrade() {
   const { state } = useAccount();
 
-  const { wrongNetwork, disabledConnect, withdrawOnlyMode } = useAppContext();
+  const { wrongNetwork, disabledConnect, veltoWithdrawOnlyMode } = useAppContext();
 
   const canTrade = useMemo(() => {
     return (
       !wrongNetwork &&
       !disabledConnect &&
-      !withdrawOnlyMode &&
+      !veltoWithdrawOnlyMode &&
       (state.status === AccountStatusEnum.EnableTrading ||
         state.status === AccountStatusEnum.EnableTradingWithoutConnected)
     );
-  }, [state.status, wrongNetwork, disabledConnect, withdrawOnlyMode]);
+  }, [state.status, wrongNetwork, disabledConnect, veltoWithdrawOnlyMode]);
 
   return canTrade;
 }

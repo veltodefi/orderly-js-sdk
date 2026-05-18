@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/hooks",
-  "version": "2.12.4-velto-main.10",
+  "version": "3.0.4-velto-dev.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -35,6 +35,7 @@
     "@akamfoad/qr": "^0.4.0",
     "@amplitude/analytics-browser": "2.11.13",
     "@veltodefi/core": "workspace:*",
+    "@veltodefi/plugin-core": "workspace:*",
     "@veltodefi/default-evm-adapter": "workspace:*",
     "@veltodefi/default-solana-adapter": "workspace:*",
     "@veltodefi/net": "workspace:*",

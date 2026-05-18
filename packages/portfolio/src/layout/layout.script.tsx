@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { useMediaQuery } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
+import { useScreen } from "@veltodefi/ui";
 import { SideMenuItem, useScaffoldContext } from "@veltodefi/ui-scaffold";
 
 export enum PortfolioLeftSidebarPath {
@@ -167,7 +167,7 @@ export const usePortfolioLayoutScript = (props: UseLayoutBuilderOptions) => {
     ];
   }, [t]);
 
-  const hideSideBar = useMediaQuery("(max-width: 768px)");
+  const { isMobile: hideSideBar } = useScreen();
 
   return {
     items,

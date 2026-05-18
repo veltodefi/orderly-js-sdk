@@ -51,7 +51,7 @@ Bridges a Solana wallet (via SolanaWalletProvider) to Orderly: provides address,
 ## DefaultSolanaWalletAdapter dependency and call relationship
 
 - **Upstream**: Configured by wallet connector with `SolanaAdapterOption`; called by core for signing and sending.
-- **Downstream**: `@orderly.network/core` (BaseWalletAdapter, message types, Account, SimpleDI), `@orderly.network/types` (API, MaxUint256, isNativeTokenChecker), `./helper` (message builders, deposit, getDepositQuoteFee, checkIsLedgerWallet), `./solana.util` (getTokenAccounts), `./types`.
+- **Downstream**: `@veltodefi/core` (BaseWalletAdapter, message types, Account, SimpleDI), `@veltodefi/types` (API, MaxUint256, isNativeTokenChecker), `./helper` (message builders, deposit, getDepositQuoteFee, checkIsLedgerWallet), `./solana.util` (getTokenAccounts), `./types`.
 
 ## DefaultSolanaWalletAdapter execution flow (sign and deposit)
 
@@ -77,8 +77,8 @@ Bridges a Solana wallet (via SolanaWalletProvider) to Orderly: provides address,
 ## DefaultSolanaWalletAdapter Example
 
 ```typescript
-import { DefaultSolanaWalletAdapter } from "@orderly.network/default-solana-adapter";
-import type { SolanaAdapterOption } from "@orderly.network/default-solana-adapter";
+import { DefaultSolanaWalletAdapter } from "@veltodefi/default-solana-adapter";
+import type { SolanaAdapterOption } from "@veltodefi/default-solana-adapter";
 
 const adapter = new DefaultSolanaWalletAdapter();
 const option: SolanaAdapterOption = {

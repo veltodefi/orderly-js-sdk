@@ -1,0 +1,13 @@
+{
+  "discoverWorkspace": true,
+  "excludePackages": [],
+  "packages": [],
+  "componentSamples": [
+    {
+      "name": "@veltodefi/react-app",
+      "root": "packages/app",
+      "tsconfig": "tsconfig.json",
+      "files": ["src/provider/orderlyAppProvider.tsx"]
+    }
+  ]
+}

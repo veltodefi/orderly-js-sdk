@@ -1,8 +1,8 @@
-# @orderly.network/hooks — Documentation Index
+# @veltodefi/hooks — Documentation Index
 
 ## Module Overview
 
-The `packages/hooks/src` directory contains the **@orderly.network/hooks** package: React hooks, providers, and services for Orderly Network trading and account flows. It provides data fetching (SWR-based), WebSocket streams, order creation/merge logic, config/wallet wiring, referral and trading-rewards hooks, and shared utilities.
+The `packages/hooks/src` directory contains the **@veltodefi/hooks** package: React hooks, providers, and services for Orderly Network trading and account flows. It provides data fetching (SWR-based), WebSocket streams, order creation/merge logic, config/wallet wiring, referral and trading-rewards hooks, and shared utilities.
 
 ## Module Responsibilities
 
@@ -37,7 +37,7 @@ The `packages/hooks/src` directory contains the **@orderly.network/hooks** packa
 
 ## Package Entry (index.ts)
 
-The main entry `src/index.ts` re-exports the public API: version, data hooks (useQuery, usePrivateQuery, useInfiniteQuery, useMutation, etc.), account/wallet hooks, OrderlyConfigProvider, orderly context, middleware, orderly domain hooks, referral, trading-rewards, API keys, next order entry, sub-account, feature flag, and SWR/debounce utilities. Consumers import from `@orderly.network/hooks` (e.g. `import { useAccount, useOrderEntry } from "@orderly.network/hooks"`). See [useAccount](useAccount.md), [configProvider](configProvider.md), [orderlyContext](orderlyContext.md) for core setup.
+The main entry `src/index.ts` re-exports the public API: version, data hooks (useQuery, usePrivateQuery, useInfiniteQuery, useMutation, etc.), account/wallet hooks, OrderlyConfigProvider, orderly context, middleware, orderly domain hooks, referral, trading-rewards, API keys, next order entry, sub-account, feature flag, and SWR/debounce utilities. Consumers import from `@veltodefi/hooks` (e.g. `import { useAccount, useOrderEntry } from "@veltodefi/hooks"`). See [useAccount](useAccount.md), [configProvider](configProvider.md), [orderlyContext](orderlyContext.md) for core setup.
 
 ## Subdirectories
 

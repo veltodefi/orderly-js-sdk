@@ -31,7 +31,7 @@ export const VaultsHistoryUI: React.FC<Readonly<HistoryProps>> = (props) => {
         bordered
         columns={columns}
         dataSource={dataSource}
-        currentView="vaults_history"
+        veltoCurrentView="vaults_history"
         loading={isLoading}
         className="oui-font-semibold"
         classNames={{

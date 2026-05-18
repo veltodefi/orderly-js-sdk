@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { generatePath } from "@veltodefi/i18n";
+import { registerLayoutSplitPlugin } from "@veltodefi/layout-split";
 import { TradingPage, TradingPageProps } from "@veltodefi/trading";
 import { API } from "@veltodefi/types";
+import { OrderlyPluginProvider } from "@veltodefi/ui";
 import { tradingPageConfig } from "../../../orderlyConfig";
 import { BaseLayout } from "../../components/layout/baseLayout";
 import { PathEnum } from "../../constant";

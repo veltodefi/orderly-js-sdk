@@ -62,7 +62,7 @@ export const FundingHistoryDesktop: FC<FundingHistoryProps> = (props) => {
       <AuthGuardDataTable
         bordered
         columns={columns}
-        currentView="funding_history"
+        veltoCurrentView="funding_history"
         dataSource={dataSource}
         loading={isLoading}
         generatedRowKey={(record) => `${record.updated_time}`}

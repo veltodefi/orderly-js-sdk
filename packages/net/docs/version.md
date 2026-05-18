@@ -2,7 +2,7 @@
 
 ## version.ts 的职责
 
-提供当前包版本号字符串，并在浏览器环境下将版本写入 `window.__ORDERLY_VERSION__['@orderly.network/net']`，便于运行时与调试时查看 net 包版本。
+提供当前包版本号字符串，并在浏览器环境下将版本写入 `window.__ORDERLY_VERSION__['@veltodefi/net']`，便于运行时与调试时查看 net 包版本。
 
 ## version.ts 对外暴露的类型与入口
 
@@ -30,9 +30,9 @@
 ## version Example
 
 ```typescript
-import version from "@orderly.network/net";
+import version from "@veltodefi/net";
 
 console.log(version); // "2.10.2"
 
-// In browser: window.__ORDERLY_VERSION__?.["@orderly.network/net"] === "2.10.2"
+// In browser: window.__ORDERLY_VERSION__?.["@veltodefi/net"] === "2.10.2"
 ```

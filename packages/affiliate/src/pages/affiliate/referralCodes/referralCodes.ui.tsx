@@ -1,8 +1,7 @@
 import { FC, ReactNode, useMemo } from "react";
-import { useMediaQuery } from "@veltodefi/hooks";
 import { useTranslation } from "@veltodefi/i18n";
 import {
-  MainButton,
+  Button,
   DataTable,
   Divider,
   Flex,
@@ -12,8 +11,8 @@ import {
   cn,
   Column,
   CopyIcon,
+  useScreen,
 } from "@veltodefi/ui";
-import { AuthGuardEmpty } from "@veltodefi/ui-connector";
 import { Decimal } from "@veltodefi/utils";
 import { EditCode } from "../../../components/editCodeBtn";
 import { PinBtn } from "../../../components/pinButton";
@@ -21,7 +20,7 @@ import { EditIcon } from "../../../icons/editIcon";
 import { ReferralCodesReturns, ReferralCodeType } from "./referralCodes.script";
 
 export const ReferralCodes: FC<ReferralCodesReturns> = (props) => {
-  const isTablet = useMediaQuery("(max-width: 767px)");
+  const { isMobile } = useScreen();
   return (
     <Flex
       r={"2xl"}
@@ -35,7 +34,7 @@ export const ReferralCodes: FC<ReferralCodesReturns> = (props) => {
 
       <div className="oui-flex oui-w-full oui-flex-col 2xl:oui-h-full">
         <Divider />
-        {isTablet ? <MobileLayout {...props} /> : <DesktopLayout {...props} />}
+        {isMobile ? <MobileLayout {...props} /> : <DesktopLayout {...props} />}
       </div>
     </Flex>
   );
@@ -60,9 +59,6 @@ const Title: FC<ReferralCodesReturns> = (props) => {
 };
 
 const MobileLayout: FC<ReferralCodesReturns> = (props) => {
-  if (!props.codes?.length) {
-    return <AuthGuardEmpty />;
-  }
   return (
     <ListView
       dataSource={props.codes}
@@ -205,8 +201,8 @@ const MobileCell: FC<{
             setPinCode(data.code, !e);
           }}
         />
-        <MainButton
-          variant="secondary"
+        <Button
+          variant="outlined"
           size="xs"
           className="oui-px-[20px]"
           onClick={(e) => {
@@ -214,7 +210,7 @@ const MobileCell: FC<{
           }}
         >
           {t("affiliate.referralCodes.copyLink")}
-        </MainButton>
+        </Button>
       </Flex>
     </Flex>
   );
@@ -223,7 +219,7 @@ const MobileCell: FC<{
 const DesktopLayout: FC<ReferralCodesReturns> = (props) => {
   const { t } = useTranslation();
 
-  const moreColumn = useMediaQuery("(min-width: 1024px)");
+  const { isDesktop: moreColumn } = useScreen();
 
   const columns = useMemo(() => {
     const cols: Column[] = [
@@ -320,8 +316,8 @@ const DesktopLayout: FC<ReferralCodesReturns> = (props) => {
       width: 74,
       className: "!oui-px-0",
       render: (value, data) => (
-        <MainButton
-          variant="secondary"
+        <Button
+          variant="outlined"
           size="sm"
           className="oui-px-5"
           onClick={(e) => {
@@ -329,7 +325,7 @@ const DesktopLayout: FC<ReferralCodesReturns> = (props) => {
           }}
         >
           {t("affiliate.referralCodes.copyLink")}
-        </MainButton>
+        </Button>
       ),
     });
 

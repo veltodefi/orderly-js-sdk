@@ -51,7 +51,7 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import type {
   SolanaAdapterOption,
   SolanaWalletProvider,
-} from "@orderly.network/default-solana-adapter";
+} from "@veltodefi/default-solana-adapter";
 
 const option: SolanaAdapterOption = {
   provider: {

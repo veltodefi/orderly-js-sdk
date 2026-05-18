@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useState, useMemo, useEffect } from "react";
 import {
   RestrictedInfoOptions,
-  WithdrawOnlyModeProvider,
+  VeltoWithdrawOnlyModeProvider,
   ClientFeatureFlagProvider,
   MarketCategoriesConfigProvider,
   useRestrictedInfo,
@@ -53,7 +53,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
   const restrictedInfo = useRestrictedInfo(props.restrictedInfo);
 
   const disabledConnect = false;
-  const withdrawOnlyMode = restrictedInfo.restrictedOpen;
+  const veltoWithdrawOnlyMode = restrictedInfo.restrictedOpen;
 
   useEffect(() => {
     setInitialized(true);
@@ -75,7 +75,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
       setCurrentChainId,
       onChainChanged: props.onChainChanged,
       disabledConnect,
-      withdrawOnlyMode,
+      veltoWithdrawOnlyMode,
       restrictedInfo,
       showAnnouncement,
       setShowAnnouncement,
@@ -88,7 +88,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
       connectWallet,
       currentChainId,
       disabledConnect,
-      withdrawOnlyMode,
+      veltoWithdrawOnlyMode,
       props.onChainChanged,
       restrictedInfo,
       setCurrentChainId,
@@ -102,7 +102,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
 
   return (
     <AppStateContext.Provider value={memoizedValue}>
-      <WithdrawOnlyModeProvider value={withdrawOnlyMode}>
+      <VeltoWithdrawOnlyModeProvider value={veltoWithdrawOnlyMode}>
         <ClientFeatureFlagProvider value={props.veltoProps?.featureFlags ?? []}>
           <MarketCategoriesConfigProvider
             value={props.widgetConfigs?.marketTabs}
@@ -110,7 +110,7 @@ export const AppStateProvider: FC<PropsWithChildren<AppStateProviderProps>> = (
             {props.children}
           </MarketCategoriesConfigProvider>
         </ClientFeatureFlagProvider>
-      </WithdrawOnlyModeProvider>
+      </VeltoWithdrawOnlyModeProvider>
     </AppStateContext.Provider>
   );
 };

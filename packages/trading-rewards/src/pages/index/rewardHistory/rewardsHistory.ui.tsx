@@ -1,4 +1,6 @@
 import { FC } from "react";
+import { useTranslation } from "@veltodefi/i18n";
+import { AccountStatusEnum } from "@veltodefi/types";
 import {
   Box,
   Divider,
@@ -7,16 +9,14 @@ import {
   Text,
   DataTable,
   Column,
+  useScreen,
 } from "@veltodefi/ui";
+import { AuthGuardEmpty } from "@veltodefi/ui-connector";
+import { commifyOptional } from "@veltodefi/utils";
 import { EsOrderlyIcon } from "../components/esOrderlyIcon";
 import { OrderlyIcon } from "../components/orderlyIcon";
-import { ListType, RewardsHistoryReturns } from "./rewardsHistory.script";
-import { useMediaQuery } from "@veltodefi/hooks";
-import { commifyOptional } from "@veltodefi/utils";
-import { AuthGuardEmpty } from "@veltodefi/ui-connector";
-import { AccountStatusEnum } from "@veltodefi/types";
 import { RewardsTooltip } from "../curEpoch/rewardsTooltip";
-import { useTranslation } from "@veltodefi/i18n";
+import { ListType, RewardsHistoryReturns } from "./rewardsHistory.script";
 
 export const RewardHistory: FC<RewardsHistoryReturns> = (props) => {
   const { t } = useTranslation();
@@ -43,7 +43,7 @@ export const RewardHistory: FC<RewardsHistoryReturns> = (props) => {
 };
 
 const List: FC<RewardsHistoryReturns> = (props) => {
-  const isMobile = useMediaQuery("(max-width: 767px)");
+  const { isMobile } = useScreen();
 
   return isMobile ? (
     <ListView

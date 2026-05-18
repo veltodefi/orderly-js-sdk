@@ -42,13 +42,13 @@ Provides the default configuration for Orderly: mainnet/testnet API and WS URLs,
 
 ## defaultConfigStore.ts Dependencies and Call Relationships
 
-- **Upstream**: configStore (ConfigKey, ConfigStore), @orderly.network/types (ChainNamespace, NetworkId).
+- **Upstream**: configStore (ConfigKey, ConfigStore), @veltodefi/types (ChainNamespace, NetworkId).
 - **Downstream**: Account and app bootstrap use DefaultConfigStore; core uses get("apiBaseUrl"), get("brokerId"), get("networkId"), get("env"), get("chainNamespace").
 
 ## defaultConfigStore.ts Example
 
 ```typescript
-import { DefaultConfigStore, API_URLS } from "@orderly.network/core";
+import { DefaultConfigStore, API_URLS } from "@veltodefi/core";
 
 const config = new DefaultConfigStore({
   networkId: "testnet",

@@ -29,7 +29,7 @@ Provides Avatar and EVMAvatar components. Avatar uses Radix Avatar primitive wit
 ## Avatar / EVMAvatar Example
 
 ```tsx
-import { Avatar, EVMAvatar } from "@orderly.network/ui";
+import { Avatar, EVMAvatar } from "@veltodefi/ui";
 
 <Avatar src="/me.png" alt="Me" size="md" />
 <EVMAvatar address="0x1234…" size="lg" />

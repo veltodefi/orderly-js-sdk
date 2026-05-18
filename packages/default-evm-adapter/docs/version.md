@@ -13,12 +13,12 @@ Exposes the default-evm-adapter package version as a string and registers it on 
 ## version.ts Input and Output
 
 - **Input**: None.
-- **Output**: Default export is the version string; side effect in browser: `window.__ORDERLY_VERSION__["@orderly.network/default-evm-adapter"]` is set.
+- **Output**: Default export is the version string; side effect in browser: `window.__ORDERLY_VERSION__["@veltodefi/default-evm-adapter"]` is set.
 
 ## version.ts Global Augmentation
 
 - **Global**: Extends `Window` with optional `__ORDERLY_VERSION__?: { [key: string]: string }`.
-- **Side effect**: When `typeof window !== "undefined"`, assigns the current version to `window.__ORDERLY_VERSION__["@orderly.network/default-evm-adapter"]`.
+- **Side effect**: When `typeof window !== "undefined"`, assigns the current version to `window.__ORDERLY_VERSION__["@veltodefi/default-evm-adapter"]`.
 
 ## version.ts Dependencies and Callers
 
@@ -28,10 +28,10 @@ Exposes the default-evm-adapter package version as a string and registers it on 
 ## version.ts Example
 
 ```typescript
-import version from "@orderly.network/default-evm-adapter";
+import version from "@veltodefi/default-evm-adapter";
 
 console.log(version); // "2.10.2"
 
 // In browser, after import:
-// window.__ORDERLY_VERSION__["@orderly.network/default-evm-adapter"] === "2.10.2"
+// window.__ORDERLY_VERSION__["@veltodefi/default-evm-adapter"] === "2.10.2"
 ```

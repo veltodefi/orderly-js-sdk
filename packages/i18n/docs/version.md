@@ -2,7 +2,7 @@
 
 ## version.ts responsibility
 
-Exposes the package version string and attaches it to window.**ORDERLY_VERSION**["@orderly.network/i18n"] when running in a browser. Used for diagnostics and version reporting.
+Exposes the package version string and attaches it to window.**ORDERLY_VERSION**["@veltodefi/i18n"] when running in a browser. Used for diagnostics and version reporting.
 
 ## version.ts exports
 
@@ -12,12 +12,12 @@ Exposes the package version string and attaches it to window.**ORDERLY_VERSION**
 
 ## version.ts side effect
 
-- If typeof window !== "undefined": window.**ORDERLY_VERSION** = window.**ORDERLY_VERSION** || {}; window.**ORDERLY_VERSION**["@orderly.network/i18n"] = "2.10.2".
+- If typeof window !== "undefined": window.**ORDERLY_VERSION** = window.**ORDERLY_VERSION** || {}; window.**ORDERLY_VERSION**["@veltodefi/i18n"] = "2.10.2".
 
 ## version.ts Example
 
 ```typescript
-import version from "@orderly.network/i18n/version";
+import version from "@veltodefi/i18n/version";
 
 console.log(version); // "2.10.2"
 ```

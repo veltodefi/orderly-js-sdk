@@ -2,7 +2,7 @@
 
 ## version.ts Responsibilities
 
-Sets the package version string and registers it on `window.__ORDERLY_VERSION__["@orderly.network/markets"]` in browser environments. Used for runtime version reporting.
+Sets the package version string and registers it on `window.__ORDERLY_VERSION__["@veltodefi/markets"]` in browser environments. Used for runtime version reporting.
 
 ## version.ts Exports
 
@@ -13,7 +13,7 @@ Sets the package version string and registers it on `window.__ORDERLY_VERSION__[
 ## Input/Output
 
 - **Input**: None.
-- **Output**: Default export is the version string. Side effect: when `window` is defined, sets `window.__ORDERLY_VERSION__["@orderly.network/markets"]` to the same version.
+- **Output**: Default export is the version string. Side effect: when `window` is defined, sets `window.__ORDERLY_VERSION__["@veltodefi/markets"]` to the same version.
 
 ## Global Augmentation
 
@@ -28,9 +28,9 @@ Sets the package version string and registers it on `window.__ORDERLY_VERSION__[
 ## version.ts Example
 
 ```typescript
-import version from "@orderly.network/markets/version";
+import version from "@veltodefi/markets/version";
 
 // or from package entry if re-exported
 console.log(version); // "2.10.2"
-// In browser: window.__ORDERLY_VERSION__["@orderly.network/markets"] === "2.10.2"
+// In browser: window.__ORDERLY_VERSION__["@veltodefi/markets"] === "2.10.2"
 ```

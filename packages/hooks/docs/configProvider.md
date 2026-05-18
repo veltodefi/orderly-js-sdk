@@ -29,14 +29,14 @@ Exclusive config (one of):
 
 ## OrderlyConfigProvider Dependencies
 
-- **Upstream**: `@orderly.network/core` (ConfigStore, OrderlyKeyStore, Account, etc.), default EVM/Solana adapters, `ExtendedConfigStore`, `OrderlyProvider`, `DataCenterProvider`, `StatusProvider`.
+- **Upstream**: `@veltodefi/core` (ConfigStore, OrderlyKeyStore, Account, etc.), default EVM/Solana adapters, `ExtendedConfigStore`, `OrderlyProvider`, `DataCenterProvider`, `StatusProvider`.
 - **Downstream**: Any component using `OrderlyContext`, `useAccount`, `useConfig`, etc.
 
 ## OrderlyConfigProvider Example
 
 ```tsx
-import { ConfigStore, OrderlyKeyStore } from "@orderly.network/core";
-import { OrderlyConfigProvider } from "@orderly.network/hooks";
+import { ConfigStore, OrderlyKeyStore } from "@veltodefi/core";
+import { OrderlyConfigProvider } from "@veltodefi/hooks";
 
 <OrderlyConfigProvider
   brokerId="your_broker"

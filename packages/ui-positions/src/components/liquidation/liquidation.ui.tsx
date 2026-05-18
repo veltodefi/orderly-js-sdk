@@ -69,7 +69,7 @@ export const Liquidation: FC<LiquidationState> = (props) => {
         id="oui-desktop-liquidation-content"
         columns={column}
         bordered
-        currentView="liquidation"
+        veltoCurrentView="liquidation"
         dataSource={props.dataSource}
         generatedRowKey={(record: API.Liquidation) =>
           `${record.liquidation_id}`

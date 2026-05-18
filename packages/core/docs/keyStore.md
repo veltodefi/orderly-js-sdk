@@ -55,7 +55,7 @@ import {
   LocalStorageStore,
   MockKeyStore,
   BaseOrderlyKeyPair,
-} from "@orderly.network/core";
+} from "@veltodefi/core";
 
 const keyStore = new LocalStorageStore("testnet");
 keyStore.setAddress("0x123...");

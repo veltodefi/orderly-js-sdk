@@ -4,6 +4,9 @@
     "paths": {
       "@veltodefi/utils": [
         "../utils/src"
+      ],
+      "@veltodefi/plugin-core": [
+        "../plugin-core/src"
       ]
     },
   }

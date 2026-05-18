@@ -25,9 +25,9 @@ export const usePositionsScript = (props: PositionsProps) => {
   const { pagination, setPage } = usePagination({ pageSize: 50 });
 
   const { isEnabled: positionReverseEnabled } = useReversePositionEnabled();
-  const { withdrawOnlyMode } = useAppContext();
+  const { veltoWithdrawOnlyMode } = useAppContext();
   // In withdraw-only mode, disable position reversing to prevent opening new positions
-  const positionReverse = positionReverseEnabled && !withdrawOnlyMode;
+  const positionReverse = positionReverseEnabled && !veltoWithdrawOnlyMode;
 
   // Sorting functionality
   const { tabSort, onTabSort } = useTabSort({

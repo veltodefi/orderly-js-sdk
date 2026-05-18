@@ -25,7 +25,7 @@ Exports shared types used across the core package. Currently only `Ed25519Keypai
 ## types.ts Example
 
 ```typescript
-import type { Ed25519Keypair } from "@orderly.network/core";
+import type { Ed25519Keypair } from "@veltodefi/core";
 
 const keypair: Ed25519Keypair = { secretKey: "...", publicKey: "..." };
 ```

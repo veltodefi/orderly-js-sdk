@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTranslation } from "@veltodefi/i18n";
 import {
   DatePicker,
   Divider,
@@ -7,12 +8,11 @@ import {
   Statistic,
   Column,
   Text,
+  useScreen,
 } from "@veltodefi/ui";
-import { RebatesItem, RebatesReturns } from "./rebates.script";
-import { commifyOptional } from "@veltodefi/utils";
-import { useMediaQuery } from "@veltodefi/hooks";
 import { AuthGuardDataTable } from "@veltodefi/ui-connector";
-import { useTranslation } from "@veltodefi/i18n";
+import { commifyOptional } from "@veltodefi/utils";
+import { RebatesItem, RebatesReturns } from "./rebates.script";
 
 export const Rebates: FC<RebatesReturns> = (props) => {
   return (
@@ -68,7 +68,7 @@ const Title: FC<RebatesReturns> = (props) => {
 const List: FC<RebatesReturns> = (props) => {
   const { t } = useTranslation();
 
-  const layout767 = useMediaQuery("(max-width: 767px)");
+  const { isMobile } = useScreen();
 
   const columns: Column<RebatesItem>[] = [
     {
@@ -108,7 +108,7 @@ const List: FC<RebatesReturns> = (props) => {
     },
   ];
 
-  if (layout767) {
+  if (isMobile) {
     return (
       <ListView<RebatesItem, RebatesItem[]>
         dataSource={props.dataSource}

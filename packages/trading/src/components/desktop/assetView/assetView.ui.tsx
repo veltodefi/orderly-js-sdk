@@ -405,7 +405,7 @@ export const AssetView: FC<
   isMainAccount,
   hasSubAccount,
   currentLtv,
-  withdrawOnlyMode,
+  veltoWithdrawOnlyMode,
 }) => {
   const { title, description, titleColor, titleClsName } =
     useCurrentStatusText();
@@ -432,7 +432,7 @@ export const AssetView: FC<
       data-testid="oui-testid-assetView-deposit-button"
       fullWidth
       size="md"
-      disabled={withdrawOnlyMode}
+      disabled={veltoWithdrawOnlyMode}
       onClick={onDeposit}
     >
       {!hasSubAccount && (
@@ -506,7 +506,7 @@ export const AssetView: FC<
               data-testid="oui-testid-assetView-deposit-button"
               fullWidth
               size="md"
-              disabled={withdrawOnlyMode}
+              disabled={veltoWithdrawOnlyMode}
               onClick={onDeposit}
             >
               <ArrowDownShortIcon

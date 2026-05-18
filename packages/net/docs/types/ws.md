@@ -38,7 +38,7 @@
 ## MessageHandler Example
 
 ```typescript
-import type { MessageHandler } from "@orderly.network/net";
+import type { MessageHandler } from "@veltodefi/net";
 
 const MyHandler: MessageHandler = {
   handle(message: any, webSocket: WebSocket) {
@@ -55,7 +55,7 @@ const MyHandler: MessageHandler = {
 import type {
   MessageObserveTopic,
   MessageObserveParams,
-} from "@orderly.network/net";
+} from "@veltodefi/net";
 
 const sub: MessageObserveTopic = { event: "subscribe", topic: "orderbook" };
 const params: MessageObserveParams = "orderbook"; // or sub

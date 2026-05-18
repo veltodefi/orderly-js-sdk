@@ -32,7 +32,7 @@ Provides React context for locale configuration: supported languages list, callb
 ## context.ts Example
 
 ```typescript
-import { useLocaleContext } from "@orderly.network/i18n";
+import { useLocaleContext } from "@veltodefi/i18n";
 
 function LanguageSwitcher() {
   const { languages, onLanguageBeforeChanged, onLanguageChanged } = useLocaleContext();
