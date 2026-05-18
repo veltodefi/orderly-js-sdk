@@ -43,7 +43,7 @@ export const DepositFormBoth: Story = {
       <Scaffold>
         <Flex justify="center" itemAlign={"start"} gap={6}>
           <Box width={420} r="lg">
-            <DepositFormWidget layout="onboarding" />
+            <DepositFormWidget />
           </Box>
 
           <Box width={420} p={2} r="lg" className="oui-bg-base-8">
