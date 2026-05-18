@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
-import { Box, Flex, Text, cn } from "@veltodefi/ui";
+import { Box, Flex, Text } from "@veltodefi/ui";
 import { CopyAddress } from "./CopyAddress";
 import { DepositStatusBlock } from "./DepositStatus";
 import { NetworkTokenSelect } from "./NetworkTokenSelect";
@@ -11,10 +11,9 @@ import { useExclusiveDepositOptions } from "./hooks/useExclusiveDepositOptions";
 
 type ExclusiveDepositProps = {
   active?: boolean;
-  layout?: "onboarding";
 };
 
-export const ExclusiveDeposit: FC<ExclusiveDepositProps> = ({ active, layout }) => {
+export const ExclusiveDeposit: FC<ExclusiveDepositProps> = ({ active }) => {
   const { t: t0 } = useTranslation();
   const t = t0 as any;
   const [selectedNetwork, setSelectedNetwork] = useState("");
@@ -83,12 +82,7 @@ export const ExclusiveDeposit: FC<ExclusiveDepositProps> = ({ active, layout }) 
     : "--";
 
   return (
-    <Box
-      className={cn(
-        "oui-flex oui-flex-col oui-items-center oui-rounded-xl oui-bg-base-8 oui-tracking-[0.03em]",
-        layout === "onboarding" && "oui-mt-3 oui-px-3 oui-pb-3",
-      )}
-    >
+    <Box className="oui-flex oui-flex-col oui-items-center oui-rounded-xl oui-bg-base-8 oui-tracking-[0.03em] oui-mt-3 oui-px-3 oui-pb-3">
       <WarningBanner message={warningMessage} />
 
       {confirmed && (

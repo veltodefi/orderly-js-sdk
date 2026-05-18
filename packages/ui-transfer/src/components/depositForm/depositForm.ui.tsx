@@ -36,7 +36,7 @@ import { DepositTokenValueFormatter } from "./components/depositTokenValueFormat
 import { Notice } from "./components/notice";
 import { type DepositFormScriptReturn } from "./depositForm.script";
 
-type Props = { layout?: "onboarding" } & DepositFormScriptReturn;
+type Props = { onAuditLinkClick?: () => void } & DepositFormScriptReturn;
 
 // Common animation classes for reusability
 const animationClasses =
@@ -91,10 +91,10 @@ export const DepositForm: FC<Props> = (props) => {
     showTargetDepositCap,
     slippageValidate,
     quantityNotional,
-    layout,
     activeSubTab,
     setActiveSubTab,
     showExclusiveDeposit,
+    onAuditLinkClick,
   } = props;
 
   const { t } = useTranslation();
@@ -130,6 +130,7 @@ export const DepositForm: FC<Props> = (props) => {
           gap={2}
         >
           <Fee {...fee} nativeSymbol={props.nativeSymbol} />
+          {onAuditLinkClick && <AuditLink onClick={onAuditLinkClick} />}
         </Flex>
       );
     }
@@ -180,6 +181,7 @@ export const DepositForm: FC<Props> = (props) => {
         )}
 
         <Fee {...fee} nativeSymbol={props.nativeSymbol} />
+        {onAuditLinkClick && <AuditLink onClick={onAuditLinkClick} />}
       </Flex>
     );
   };
@@ -188,20 +190,9 @@ export const DepositForm: FC<Props> = (props) => {
     <>
       <div>
         <Box className="oui-mb-6 lg:oui-mb-8">
-          <Box
-            className="oui-bg-base-8"
-            p={layout === "onboarding" ? 4 : 0}
-            r="2xl"
-          >
+          <Box className="oui-bg-base-8" p={4} r="2xl">
             <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
               <Web3Wallet />
-
-              {layout === "onboarding" && (
-                <Text size="sm" weight="regular" className="oui-text-[#5B8FFF]">
-                  {/* @ts-ignore */}
-                  {t("transfer.ourTraders")}
-                </Text>
-              )}
 
               <ChainSelect
                 chains={chains}
@@ -262,13 +253,9 @@ export const DepositForm: FC<Props> = (props) => {
             </Flex>
           </Box>
 
-          <ExchangeDivider layout={layout} />
+          <ExchangeDivider />
 
-          <Box
-            className="oui-bg-base-8"
-            p={layout === "onboarding" ? 4 : 0}
-            r="2xl"
-          >
+          <Box className="oui-bg-base-8" p={4} r="2xl">
             <Flex direction={"column"} itemAlign={"stretch"} gap={4}>
               <BrokerWallet />
               <TradingBalance
@@ -306,8 +293,7 @@ export const DepositForm: FC<Props> = (props) => {
       id="oui-deposit-form"
       className={cn(
         textVariants({ weight: "semibold" }),
-        layout !== "onboarding" &&
-          "oui-justify-between oui-h-full oui-flex oui-flex-col",
+        "oui-justify-between oui-h-full oui-flex oui-flex-col",
       )}
     >
       {showExclusiveDeposit ? (
@@ -330,10 +316,7 @@ export const DepositForm: FC<Props> = (props) => {
             value="exclusive_deposit"
           >
             <Box className={"oui-overflow-hidden oui-rounded-2xl"}>
-              <ExclusiveDeposit
-                layout={layout}
-                active={activeSubTab === "exclusive_deposit"}
-              />
+              <ExclusiveDeposit active={activeSubTab === "exclusive_deposit"} />
             </Box>
           </TabPanel>
         </Tabs>
@@ -341,6 +324,24 @@ export const DepositForm: FC<Props> = (props) => {
         web3Content
       )}
     </Box>
+  );
+};
+
+const AuditLink: FC<{ onClick: () => void }> = ({ onClick }) => {
+  const { t } = useTranslation();
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="oui-flex oui-items-center oui-gap-1 oui-text-primary oui-text-sm oui-font-regular hover:oui-text-primary-light oui-cursor-pointer"
+    >
+      <Text size="sm" weight="regular" className="oui-text-primary">
+        {t("transfer.deposit.auditedProtocol", "Audited protocol")}
+      </Text>
+      <span aria-hidden className="oui-text-primary">
+        ↗
+      </span>
+    </button>
   );
 };
 
