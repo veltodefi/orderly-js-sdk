@@ -43,6 +43,13 @@ export type DepositAndWithdrawProps = {
    * link near the gas-fee row.
    */
   onAuditLinkClick?: () => void;
+  /**
+   * Renders the onboarding-only chrome: a dialog title, a non-custodial
+   * subtitle, and a "Skip for now" footer with reassurance copy. Defaults to
+   * false (account-level dialog has no title/subtitle/footer per the
+   * design prototype).
+   */
+  isOnboarding?: boolean;
 };
 
 export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
@@ -86,44 +93,46 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           value="deposit"
           disabled={veltoWithdrawOnlyMode}
         >
-          <Flex
-            direction="column"
-            itemAlign="stretch"
-            gap={3}
-            className="oui-mb-4"
-          >
-            <Flex itemAlign="center" gap={2}>
-              <Text
-                size="xl"
-                weight="semibold"
-                className="oui-text-primary-contrast"
-              >
-                {t(
-                  "transfer.deposit.dialogTitle",
-                  "Set up your trading balance",
-                )}
-              </Text>
-              {props.onInfoIconClick && (
-                <button
-                  type="button"
-                  onClick={props.onInfoIconClick}
-                  className="oui-cursor-pointer oui-text-primary hover:oui-text-primary-light oui-flex oui-items-center"
-                  aria-label={t(
+          {props.isOnboarding && (
+            <Flex
+              direction="column"
+              itemAlign="stretch"
+              gap={3}
+              className="oui-mb-4"
+            >
+              <Flex itemAlign="center" gap={2}>
+                <Text
+                  size="xl"
+                  weight="semibold"
+                  className="oui-text-primary-contrast"
+                >
+                  {t(
                     "transfer.deposit.dialogTitle",
                     "Set up your trading balance",
                   )}
-                >
-                  <InfoIcon size={20} />
-                </button>
-              )}
+                </Text>
+                {props.onInfoIconClick && (
+                  <button
+                    type="button"
+                    onClick={props.onInfoIconClick}
+                    className="oui-cursor-pointer oui-text-primary hover:oui-text-primary-light oui-flex oui-items-center"
+                    aria-label={t(
+                      "transfer.deposit.dialogTitle",
+                      "Set up your trading balance",
+                    )}
+                  >
+                    <InfoIcon size={20} />
+                  </button>
+                )}
+              </Flex>
+              <Text size="sm" weight="regular" className="oui-text-[#C7C7C7]">
+                {t(
+                  "transfer.deposit.dialogSubtitle",
+                  "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
+                )}
+              </Text>
             </Flex>
-            <Text size="sm" weight="regular" className="oui-text-[#C7C7C7]">
-              {t(
-                "transfer.deposit.dialogSubtitle",
-                "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
-              )}
-            </Text>
-          </Flex>
+          )}
           <DepositSlot
             close={props.close}
             onAuditLinkClick={props.onAuditLinkClick}
@@ -148,7 +157,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         ))}
       </Tabs>
 
-      {isDeposit && props.close && (
+      {isDeposit && props.isOnboarding && props.close && (
         <Flex
           direction="column"
           itemAlign="center"
