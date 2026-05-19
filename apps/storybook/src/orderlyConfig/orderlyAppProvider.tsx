@@ -1,6 +1,5 @@
 import type { RestrictedInfoOptions } from "@veltodefi/hooks";
 import type { AppLogos } from "@veltodefi/react-app";
-import { OrderlySecondaryLogo } from "../components/icons/orderlySecondaryLogo";
 import { OrderlyTextIcon } from "../components/icons/orderlyText";
 
 export type OrderlyAppProviderConfigProps = {
@@ -16,8 +15,7 @@ export const orderlyAppProviderConfig: OrderlyAppProviderConfigProps = {
       ),
     },
     secondary: {
-      // img: "/orderly-logo-secondary.svg",
-      component: <OrderlySecondaryLogo className="oui-text-base-contrast" />,
+      img: "/logo-secondary.webp",
     },
   },
   restrictedInfo: {
