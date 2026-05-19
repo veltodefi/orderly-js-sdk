@@ -32,7 +32,7 @@
   "transfer.deposit.destinationGasFee.description": "An estimated network fee for processing your deposit. Final cost may vary.",
   "extend.transfer.tradingBalance": "Trading balance",
   "extend.transfer.walletBalance": "Wallet balance",
-  "transfer.brokerAccount": "Your {{brokerName}} Account",
+  "transfer.brokerAccount": "Your {{brokerName}} account",
   "transfer.ourTraders": "80% of our traders transfer 10–25% of their balance.",
   "extend.meme": "Meme",
   "extend.hot": "Hot"
