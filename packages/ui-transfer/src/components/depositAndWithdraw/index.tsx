@@ -3,8 +3,8 @@ import { useTranslation } from "@veltodefi/i18n";
 import { injectable } from "@veltodefi/plugin-core";
 import { useAppContext } from "@veltodefi/react-app";
 import {
-  ArrowDownSquareFillIcon,
-  ArrowUpSquareFillIcon,
+  ArrowDownToLineIcon,
+  ArrowUpFromLineIcon,
   Flex,
   InfoIcon,
   registerSimpleDialog,
@@ -83,13 +83,14 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         size="xl"
         classNames={{
           tabsList: "oui-px-0",
+          trigger: "oui-rounded-lg oui-px-4",
           tabsContent:
             "oui-flex-1 oui-min-h-0 oui-overflow-y-auto oui-pt-5 oui-text-white",
         }}
       >
         <TabPanel
           title={t("common.deposit")}
-          icon={<ArrowDownSquareFillIcon />}
+          icon={<ArrowDownToLineIcon size={16} />}
           value="deposit"
           disabled={veltoWithdrawOnlyMode}
         >
@@ -140,7 +141,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         </TabPanel>
         <TabPanel
           title={t("common.withdraw")}
-          icon={<ArrowUpSquareFillIcon />}
+          icon={<ArrowUpFromLineIcon size={16} />}
           value="withdraw"
         >
           <WithdrawSlot close={props.close} />
