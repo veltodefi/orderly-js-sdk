@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-transfer",
-  "version": "3.0.4-velto-dev.3",
+  "version": "3.0.4-velto-dev.6",
   "description": "deposit & withdraw",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
