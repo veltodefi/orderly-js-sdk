@@ -9,7 +9,7 @@ export const OrderlyProvider: FC<{ children: ReactNode }> = (props) => {
   return (
     <RouteProvider onRouteChange={onStorybookRounteChange}>
       <OrderlyLocaleProvider>
-        <WalletConnectorProvider>
+        <WalletConnectorProvider usePrivy>
           <OrderlyAppRootProvider>{props.children}</OrderlyAppRootProvider>
         </WalletConnectorProvider>
       </OrderlyLocaleProvider>
