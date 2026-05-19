@@ -44,6 +44,15 @@ export const transfer = {
   "transfer.deposit.destinationGasFee": "Destination gas fee",
   "transfer.deposit.destinationGasFee.description":
     "Additional gas tokens are required to cover operations on the destination chain. The amount shown is an estimate - please prepare extra to ensure sufficient coverage.",
+  "transfer.deposit.dialogTitle": "Set up your trading balance",
+  "transfer.deposit.dialogSubtitle":
+    "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
+  "transfer.deposit.skipForNow": "Skip for now",
+  "transfer.deposit.skipReassurance":
+    "You can deposit any time from your account",
+  "transfer.deposit.auditedProtocol": "Audited protocol",
+  "transfer.deposit.fundsMoveToTradingBalance":
+    "Funds move into your trading balance",
 
   "transfer.withdraw.unsupported.chain":
     "Withdrawals are not supported on this chain. Please switch to any of the bridgeless networks.",
