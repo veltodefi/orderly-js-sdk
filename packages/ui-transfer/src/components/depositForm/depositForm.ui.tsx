@@ -303,7 +303,11 @@ export const DepositForm: FC<Props> = (props) => {
             setActiveSubTab(value as "web3" | "exclusive_deposit")
           }
           variant="contained"
-          classNames={{ tabsList: "oui-w-fit" }}
+          classNames={{
+            tabsList: "oui-w-full !oui-space-x-0",
+            trigger:
+              "oui-flex-1 !oui-rounded-none first:!oui-rounded-l-lg last:!oui-rounded-r-lg",
+          }}
         >
           <TabPanel
             title={t("transfer.deposit.tab.connectedWallet")}
