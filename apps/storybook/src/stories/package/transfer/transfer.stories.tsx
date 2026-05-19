@@ -106,17 +106,40 @@ export const TransferForm: Story = {
 export const DepositDialog: Story = {
   decorators: [
     (Story) => (
-      <Flex justify="center" itemAlign="center" height="100vh">
-        <Button
-          onClick={() => {
-            modal.show(DepositAndWithdrawWithDialogId, {
-              activeTab: "deposit",
-            });
-          }}
-        >
-          Show Deposit Dialog
-        </Button>
-      </Flex>
+      <Scaffold>
+        <Flex justify="center" itemAlign="center" height="100vh">
+          <Button
+            onClick={() => {
+              modal.show(DepositAndWithdrawWithDialogId, {
+                activeTab: "deposit",
+              });
+            }}
+          >
+            Show Deposit Dialog
+          </Button>
+        </Flex>
+      </Scaffold>
+    ),
+  ],
+};
+
+export const DepositDialogOnboarding: Story = {
+  decorators: [
+    (Story) => (
+      <Scaffold>
+        <Flex justify="center" itemAlign="center" height="100vh">
+          <Button
+            onClick={() => {
+              modal.show(DepositAndWithdrawWithDialogId, {
+                activeTab: "deposit",
+                isOnboarding: true,
+              });
+            }}
+          >
+            Show Deposit Dialog (Onboarding)
+          </Button>
+        </Flex>
+      </Scaffold>
     ),
   ],
 };
@@ -140,17 +163,19 @@ export const DepositSheet: Story = {
 export const WithdrawDialog: Story = {
   decorators: [
     (Story) => (
-      <Flex justify="center" itemAlign="center" height="100vh">
-        <Button
-          onClick={() => {
-            modal.show(DepositAndWithdrawWithDialogId, {
-              activeTab: "withdraw",
-            });
-          }}
-        >
-          Show Withdraw Dialog
-        </Button>
-      </Flex>
+      <Scaffold>
+        <Flex justify="center" itemAlign="center" height="100vh">
+          <Button
+            onClick={() => {
+              modal.show(DepositAndWithdrawWithDialogId, {
+                activeTab: "withdraw",
+              });
+            }}
+          >
+            Show Withdraw Dialog
+          </Button>
+        </Flex>
+      </Scaffold>
     ),
   ],
 };
