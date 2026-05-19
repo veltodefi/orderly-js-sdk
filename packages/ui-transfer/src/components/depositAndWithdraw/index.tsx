@@ -71,11 +71,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
   const isDeposit = activeTab === "deposit";
 
   return (
-    <Flex
-      direction="column"
-      itemAlign="stretch"
-      className="oui-w-full oui-min-h-0 oui-max-h-[min(720px,calc(100dvh-80px))]"
-    >
+    <Flex direction="column" itemAlign="stretch" className="oui-w-full">
       <Tabs
         value={activeTab}
         onValueChange={handleTabChange}
@@ -84,8 +80,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         classNames={{
           tabsList: "oui-px-0",
           trigger: "oui-rounded-lg oui-px-4",
-          tabsContent:
-            "oui-flex-1 oui-min-h-0 oui-overflow-y-auto oui-pt-5 oui-text-white",
+          tabsContent: "oui-pt-5 oui-text-white",
         }}
       >
         <TabPanel
@@ -195,7 +190,8 @@ registerSimpleDialog(
   {
     size: "lg",
     classNames: {
-      content: "oui-border oui-border-line-6",
+      content: "oui-border oui-border-line-6 oui-max-h-[calc(100dvh-40px)]",
+      body: "oui-overflow-y-auto",
     },
   },
 );
