@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/layout-split",
-  "version": "2.0.4-velto-dev.6",
+  "version": "2.0.4-velto-dev.7",
   "description": "Split layout strategy implementation for Orderly layout system",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

@@ -189,9 +189,9 @@ registerSimpleDialog(
   InjectableDepositAndWithdraw,
   {
     size: "lg",
-    contentProps: { intensity: 900 },
     classNames: {
-      content: "oui-border oui-border-line-6 oui-max-h-[calc(100dvh-40px)]",
+      content:
+        "oui-border oui-border-line-6 oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9",
       body: "oui-overflow-y-auto",
     },
   },

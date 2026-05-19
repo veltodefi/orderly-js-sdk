@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/ui-share",
-  "version": "3.0.4-velto-dev.6",
+  "version": "3.0.4-velto-dev.7",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
