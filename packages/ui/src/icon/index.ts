@@ -33,6 +33,8 @@ export { ArrowLeftRightIcon } from "./arrowLeftRight";
 export { ArrowDownUpIcon } from "./arrowDownUp";
 export { ArrowUpSquareFillIcon } from "./arrowUpSquareFill";
 export { ArrowDownSquareFillIcon } from "./arrowDownSquareFill";
+export { ArrowDownToLineIcon } from "./arrowDownToLine";
+export { ArrowUpFromLineIcon } from "./arrowUpFromLine";
 export { ArrowLeftRightSquareFill } from "./arrowLeftRightSquareFill";
 export { ArrowRightUpSquareFillIcon } from "./arrowRightUpSquareFill";
 export { AssetIcon } from "./assetIcon";
