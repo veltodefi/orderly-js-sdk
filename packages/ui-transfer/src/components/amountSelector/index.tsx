@@ -1,7 +1,7 @@
 import { Box, cn, Flex } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 
-export type Percentages = 1 | 0.5 | 0.2 | 0.1;
+export type Percentages = 1 | 0.5 | 0.25 | 0.1;
 
 type Props = {
   maxAmount: string;
@@ -43,8 +43,8 @@ export const AmountSelector = ({
       label: "10%",
     },
     {
-      percentage: 0.2,
-      label: "20%",
+      percentage: 0.25,
+      label: "25%",
     },
     {
       percentage: 0.5,
@@ -52,7 +52,7 @@ export const AmountSelector = ({
     },
     {
       percentage: 1,
-      label: "MAX",
+      label: "Max",
     },
   ];
 
