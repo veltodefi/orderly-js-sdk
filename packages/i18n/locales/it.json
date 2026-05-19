@@ -1318,5 +1318,11 @@
   "affiliate.newReferralProgram.wereYouReferred": "Sei stato segnalato da qualcuno?",
   "affiliate.newReferralProgram.referredBy": "Sei stato segnalato da {{code}}.",
   "ui.dialog.srOnly.title": "Finestra di dialogo",
-  "ui.sheet.srOnly.title": "Pannello"
+  "ui.sheet.srOnly.title": "Pannello",
+  "transfer.deposit.dialogTitle": "Set up your trading balance",
+  "transfer.deposit.dialogSubtitle": "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
+  "transfer.deposit.skipForNow": "Skip for now",
+  "transfer.deposit.skipReassurance": "You can deposit any time from your account",
+  "transfer.deposit.auditedProtocol": "Audited protocol",
+  "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance"
 }

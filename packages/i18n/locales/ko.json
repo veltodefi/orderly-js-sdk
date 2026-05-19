@@ -1318,5 +1318,11 @@
   "affiliate.newReferralProgram.wereYouReferred": "누군가의 추천으로 가입하셨나요?",
   "affiliate.newReferralProgram.referredBy": "{{code}}님의 추천으로 가입하셨습니다.",
   "ui.dialog.srOnly.title": "대화상자",
-  "ui.sheet.srOnly.title": "시트"
+  "ui.sheet.srOnly.title": "시트",
+  "transfer.deposit.dialogTitle": "Set up your trading balance",
+  "transfer.deposit.dialogSubtitle": "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
+  "transfer.deposit.skipForNow": "Skip for now",
+  "transfer.deposit.skipReassurance": "You can deposit any time from your account",
+  "transfer.deposit.auditedProtocol": "Audited protocol",
+  "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance"
 }
