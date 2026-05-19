@@ -192,7 +192,7 @@ registerSimpleDialog(
   DepositAndWithdrawWithDialogId,
   InjectableDepositAndWithdraw,
   {
-    size: "md",
+    size: "lg",
     classNames: {
       content: "oui-border oui-border-line-6",
     },
