@@ -153,12 +153,21 @@ const config: StorybookConfig = {
       // @solana/wallet-adapter-wallets → -particle and are not
       // exercised by any current story.
       // See velto-webapp wiki/runbooks/sdk-storybook-sessions/2026-05-18.md.
+      //
+      // @trezor/device-utils@1.2.0 has the same packaging defect: its
+      // package.json declares no dependencies at all, yet
+      // lib/index.js does `require("tslib")`. Under pnpm strict
+      // isolation, esbuild walking the package can't see tslib. Pulled
+      // transitively via the wallet-adapter chain; no story exercises
+      // it directly.
+      // See velto-webapp wiki/runbooks/sdk-storybook-sessions/2026-05-20.md.
       optimizeDeps: {
         exclude: [
           "@project-serum/sol-wallet-adapter",
           "@particle-network/analytics",
           "@particle-network/auth",
           "@particle-network/crypto",
+          "@trezor/device-utils",
         ],
         include: [
           "react",

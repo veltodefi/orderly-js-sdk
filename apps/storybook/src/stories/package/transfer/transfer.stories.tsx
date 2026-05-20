@@ -112,6 +112,9 @@ export const DepositDialog: Story = {
             onClick={() => {
               modal.show(DepositAndWithdrawWithDialogId, {
                 activeTab: "deposit",
+                onInfoIconClick: () => console.log("[story] info icon clicked"),
+                onAuditLinkClick: () =>
+                  console.log("[story] audit link clicked"),
               });
             }}
           >
