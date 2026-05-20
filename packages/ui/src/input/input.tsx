@@ -32,7 +32,7 @@ const inputVariants = tv(
         "oui-outline-offset-0",
         "oui-outline-1",
         "oui-outline-transparent",
-        "focus-within:oui-outline-primary-light",
+        "focus-within:oui-outline-primary",
         "oui-input-root",
       ],
       additional: [
@@ -78,6 +78,9 @@ const inputVariants = tv(
         },
       },
       color: {
+        gray: {
+          box: ["oui-outline-base-1", "focus-within:oui-outline-success"],
+        },
         success: {
           box: ["oui-outline-success", "focus-within:oui-outline-success"],
           input: ["oui-text-success"],
