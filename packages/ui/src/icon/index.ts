@@ -35,6 +35,7 @@ export { ArrowUpSquareFillIcon } from "./arrowUpSquareFill";
 export { ArrowDownSquareFillIcon } from "./arrowDownSquareFill";
 export { ArrowDownToLineIcon } from "./arrowDownToLine";
 export { ArrowUpFromLineIcon } from "./arrowUpFromLine";
+export { OpenInNewIcon } from "./openInNew";
 export { ArrowLeftRightSquareFill } from "./arrowLeftRightSquareFill";
 export { ArrowRightUpSquareFillIcon } from "./arrowRightUpSquareFill";
 export { AssetIcon } from "./assetIcon";
