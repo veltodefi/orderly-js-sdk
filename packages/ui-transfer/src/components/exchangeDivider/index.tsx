@@ -5,12 +5,12 @@ import { ArrowDownIcon } from "../../icons";
 
 type ExchangeDividerProps = {
   icon?: ReactNode;
-  variant: "deposit" | "withdraw";
+  variant?: "deposit" | "withdraw";
 };
 
 export const ExchangeDivider: FC<ExchangeDividerProps> = ({
   icon,
-  variant,
+  variant = "deposit",
 }) => {
   const { t } = useTranslation();
 
