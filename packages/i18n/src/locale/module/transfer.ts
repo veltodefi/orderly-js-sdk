@@ -54,6 +54,8 @@ export const transfer = {
   "transfer.deposit.fundsMoveToTradingBalance":
     "Funds move into your trading balance",
 
+  "transfer.withdraw.fundsMoveToWeb3Wallet": "Funds move to your Web3 wallet",
+
   "transfer.withdraw.unsupported.chain":
     "Withdrawals are not supported on this chain. Please switch to any of the bridgeless networks.",
   "transfer.withdraw.unsupported.networkName":
