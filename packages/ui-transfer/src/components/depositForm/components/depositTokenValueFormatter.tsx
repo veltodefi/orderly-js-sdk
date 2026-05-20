@@ -45,7 +45,7 @@ export const DepositTokenValueFormatter: FC<
           {value}
         </Text>
         <ChevronDownVeltoIcon
-          size={12}
+          size={9}
           className="oui-text-secondary oui-ml-0.5"
           opacity={1}
         />

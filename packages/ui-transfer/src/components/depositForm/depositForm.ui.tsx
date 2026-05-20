@@ -12,6 +12,7 @@ import {
   Tips,
   Tabs,
   TabPanel,
+  OpenInNewIcon,
 } from "@veltodefi/ui";
 import { InputStatus } from "../../types";
 import { LtvWidget } from "../LTV";
@@ -125,7 +126,7 @@ export const DepositForm: FC<Props> = (props) => {
         <Flex
           key="usdc-content"
           direction="column"
-          className={cn("oui-text-[#C7C7C7]", animationClasses)}
+          className={cn("oui-text-base-1", animationClasses)}
           itemAlign="start"
           gap={2}
         >
@@ -141,7 +142,7 @@ export const DepositForm: FC<Props> = (props) => {
         itemAlign="start"
         mt={2}
         gap={2}
-        className={cn("oui-text-[#C7C7C7]", animationClasses)}
+        className={cn("oui-text-base-1", animationClasses)}
       >
         {needSwap && (
           <ConvertRate
@@ -190,8 +191,8 @@ export const DepositForm: FC<Props> = (props) => {
     <>
       <div>
         <Box className="oui-mb-6 lg:oui-mb-8">
-          <Box className="oui-bg-base-8" p={4} r="2xl">
-            <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
+          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
+            <Flex direction={"column"} itemAlign={"stretch"} gap={3}>
               <Web3Wallet />
 
               <ChainSelect
@@ -226,6 +227,7 @@ export const DepositForm: FC<Props> = (props) => {
                 balancesRevalidating={batchBalancesRevalidating}
                 showBalance
               />
+
               <AmountSelector
                 maxAmount={maxDepositAmount}
                 precision={sourceToken?.precision}
@@ -253,9 +255,9 @@ export const DepositForm: FC<Props> = (props) => {
             </Flex>
           </Box>
 
-          <ExchangeDivider />
+          <ExchangeDivider variant="deposit" />
 
-          <Box className="oui-bg-base-8" p={4} r="2xl">
+          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
             <Flex direction={"column"} itemAlign={"stretch"} gap={4}>
               <BrokerWallet />
               <TradingBalance
@@ -306,7 +308,7 @@ export const DepositForm: FC<Props> = (props) => {
           classNames={{
             tabsList: "oui-w-full !oui-space-x-0",
             trigger:
-              "oui-flex-1 !oui-rounded-none first:!oui-rounded-l-lg last:!oui-rounded-r-lg",
+              "oui-flex-1 !oui-rounded-none first:!oui-rounded-l-lg last:!oui-rounded-r-lg oui-h-[40px] oui-text-sm oui-font-normal data-[state=active]:oui-font-normal",
           }}
         >
           <TabPanel
@@ -342,9 +344,7 @@ const AuditLink: FC<{ onClick: () => void }> = ({ onClick }) => {
       <Text size="sm" weight="regular" className="oui-text-primary">
         {t("transfer.deposit.auditedProtocol", "Audited protocol")}
       </Text>
-      <span aria-hidden className="oui-text-primary">
-        ↗
-      </span>
+      <OpenInNewIcon aria-hidden size={16} className="oui-text-primary" />
     </button>
   );
 };
@@ -388,7 +388,7 @@ const TradingBalance = ({
   return (
     <Flex direction={"column"}>
       <Flex justify={"between"} className="oui-w-full">
-        <Text size={"sm"} weight="regular" className="oui-text-[#C7C7C7]">
+        <Text size={"sm"} weight="regular" className="oui-text-base-1">
           {`${t("extend.transfer.tradingBalance")}:`}
         </Text>
         {targetQuantityLoading ? (
@@ -414,7 +414,7 @@ const TradingBalance = ({
               <Text
                 size={"2xs"}
                 weight="regular"
-                className="oui-text-[#C7C7C7] oui-mr-1"
+                className="oui-text-base-1 oui-mr-1"
               >
                 {t("transfer.depositCap", "Deposit cap") + ":"}
               </Text>

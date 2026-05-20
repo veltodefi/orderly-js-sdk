@@ -44,7 +44,7 @@ export const Fee: FC<FeeProps> = (props) => {
         <Tooltip className="oui-p-2" content={<TooltipContent />}>
           <InfoIcon
             size={13}
-            className="oui-ml-1 oui-cursor-pointer oui-text-primary"
+            className="oui-ml-1 oui-cursor-pointer oui-text-base-1"
           />
         </Tooltip>
       </Flex>

@@ -5,24 +5,36 @@ import { ArrowDownIcon } from "../../icons";
 
 type ExchangeDividerProps = {
   icon?: ReactNode;
+  variant: "deposit" | "withdraw";
 };
 
-export const ExchangeDivider: FC<ExchangeDividerProps> = ({ icon }) => {
+export const ExchangeDivider: FC<ExchangeDividerProps> = ({
+  icon,
+  variant,
+}) => {
   const { t } = useTranslation();
 
   return (
-    <Flex height={56}>
-      <Flex height={1} className="oui-flex-1 oui-bg-base-contrast-12"></Flex>
-      <Flex className="oui-border oui-rounded-full oui-pr-1.5 oui-pl-0.5 oui-border-base-6">
-        {icon || <ArrowDownIcon className="oui-text-primary" />}
-        <Text weight="regular" size={"3xs"} className="oui-text-[#C7C7C7]">
-          {t(
-            "transfer.deposit.fundsMoveToTradingBalance",
-            "Funds move into your trading balance",
-          )}
+    <Flex className="oui-my-4">
+      <Flex height={1} className="oui-flex-1 oui-bg-base-6"></Flex>
+      <Flex
+        height={32}
+        className="oui-border oui-bg-base-8 oui-rounded-full oui-pr-3 oui-pl-2 oui-border-base-6"
+      >
+        {icon || <ArrowDownIcon className="oui-text-base-1" />}
+        <Text weight="regular" size={"2xs"} className="oui-text-base-1">
+          {variant === "deposit"
+            ? t(
+                "transfer.deposit.fundsMoveToTradingBalance",
+                "Funds move into your trading balance",
+              )
+            : t(
+                "transfer.withdraw.fundsMoveToWeb3Wallet",
+                "Funds move into your trading balance",
+              )}
         </Text>
       </Flex>
-      <Flex height={1} className="oui-flex-1 oui-bg-base-contrast-12"></Flex>
+      <Flex height={1} className="oui-flex-1 oui-bg-base-6"></Flex>
     </Flex>
   );
 };

@@ -79,7 +79,7 @@ export const LtvUI: React.FC<
         >
           <InfoIcon
             size={13}
-            className="oui-ml-1 oui-cursor-pointer oui-text-primary"
+            className="oui-ml-1 oui-cursor-pointer oui-text-base-1"
           />
         </Tooltip>
       </Flex>

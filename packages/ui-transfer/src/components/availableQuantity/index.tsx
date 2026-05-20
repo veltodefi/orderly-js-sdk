@@ -36,7 +36,7 @@ const AvailableTooltipMessage: FC<AvailableTooltipMessageProps> = ({
   }, [maxAmount]);
 
   return (
-    <Text size="sm" intensity={80}>
+    <Text size="xs" intensity={80} weight="regular">
       {t("transfer.withdraw.available.tooltip", { amount: amountText })}
     </Text>
   );
@@ -66,8 +66,8 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
   }, [quantity, token?.symbol, props.notional]);
 
   return (
-    <Flex px={2} className="oui-text-[#C7C7C7]">
-      <Text weight="regular" size="sm">
+    <Flex className="oui-text-base-1">
+      <Text weight="regular" size="xs">
         $
         <Text.numeral dp={2} padding={false} rm={Decimal.ROUND_DOWN}>
           {notional}
@@ -107,7 +107,7 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
               >
                 <Text
                   weight="regular"
-                  size="sm"
+                  size="xs"
                   className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12"
                 >
                   {`${t("common.available")}: `}
@@ -120,7 +120,7 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
               >
                 <Text
                   weight="regular"
-                  size="sm"
+                  size="xs"
                   className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12"
                 >
                   {`${t("common.available")}: `}
@@ -128,17 +128,17 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
               </Tooltip>
             )
           ) : (
-            <Text weight="regular" size="sm">
+            <Text weight="regular" size="xs">
               {`${t("common.available")}: `}
             </Text>
           )}
 
           {loading ? (
-            <Spinner size="sm" />
+            <Spinner size="xs" />
           ) : (
             <Text.numeral
               weight="regular"
-              size="sm"
+              size="xs"
               rm={Decimal.ROUND_DOWN}
               dp={dp}
               padding={false}
@@ -148,7 +148,7 @@ export const AvailableQuantity: FC<AvailableQuantityProps> = (props) => {
             </Text.numeral>
           )}
 
-          <Text size="sm" weight="regular">{` ${name}`}</Text>
+          <Text size="xs" weight="regular">{` ${name}`}</Text>
         </Flex>
 
         {props.onClick && (

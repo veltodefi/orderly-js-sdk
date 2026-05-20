@@ -8,9 +8,9 @@ import {
   DropdownMenuTrigger,
   Flex,
   Text,
-  WalletIcon,
-  CaretDownIcon,
-  CaretUpIcon,
+  // WalletIcon,
+  ChevronDownVeltoIcon,
+  ChevronUpVeltoIcon,
 } from "@veltodefi/ui";
 
 const AddIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
@@ -206,29 +206,30 @@ export const WalletSelector: FC<WalletSelectorProps> = ({
 
   return (
     <Flex justify="between" className="oui-w-full oui-mb-3">
-      <Text size="2xs" intensity={36}>
-        {t("common.wallet")}
+      <Text size="base" className="oui-text-primary-contrast">
+        {t("transfer.web3Wallet.your")}
       </Text>
       <DropdownMenuRoot open={isOpen} onOpenChange={setIsOpen}>
         <DropdownMenuTrigger asChild>
-          <div className="oui-flex oui-items-center oui-gap-1 oui-cursor-pointer oui-text-base-contrast-54 hover:oui-text-base-contrast-80">
-            {selectedWalletOpt?.name && (
+          <div className="oui-flex oui-items-center oui-gap-1 oui-cursor-pointer oui-text-base-1 hover:oui-text-base-contrast-54">
+            {/* {selectedWalletOpt?.name && (
               <WalletIcon name={selectedWalletOpt.name} size="3xs" />
-            )}
-            <Text.formatted size="2xs" intensity={54} rule="address">
+            )} */}
+            <Text.formatted
+              size="2xs"
+              weight="regular"
+              rule="address"
+              className="oui-text-inherit"
+            >
               {selectedWalletOpt?.address || ""}
             </Text.formatted>
-            <Text
-              size="2xs"
-              intensity={54}
-              className="oui-text-base-contrast-36"
-            >
+            <Text size="2xs" weight="regular" className="oui-text-inherit">
               {` (${getChainLabel(selectedWalletOpt?.network)})`}
             </Text>
             {isOpen ? (
-              <CaretUpIcon size={12} className="oui-text-inherit" />
+              <ChevronUpVeltoIcon size={10} className="oui-text-inherit" />
             ) : (
-              <CaretDownIcon size={12} className="oui-text-inherit" />
+              <ChevronDownVeltoIcon size={10} className="oui-text-inherit" />
             )}
           </div>
         </DropdownMenuTrigger>

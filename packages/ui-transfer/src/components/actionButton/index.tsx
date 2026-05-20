@@ -60,7 +60,7 @@ export const ActionButton: React.FC<ActionButtonProps> = (props) => {
     return params[actionType];
   }, [onApprove, onDeposit, actionType, symbol, t]);
 
-  const buttonSize = { initial: "md", lg: "lg" } as const;
+  const buttonSize = { initial: "lg", lg: "lg" } as const;
 
   return (
     <Box className="oui-w-full lg:oui-w-auto lg:oui-min-w-[184px]">

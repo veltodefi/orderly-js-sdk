@@ -13,6 +13,7 @@ import {
   Tooltip,
   InfoIcon,
   cn,
+  OpenInNewIcon,
 } from "@veltodefi/ui";
 import { WithdrawTo } from "../../types";
 import { LtvWidget } from "../LTV";
@@ -30,7 +31,9 @@ import { AddWalletDialog } from "./addWalletDialog";
 import { WalletSelector } from "./walletSelector";
 import { WithdrawFormScriptReturn } from "./withdrawForm.script";
 
-export type WithdrawFormProps = WithdrawFormScriptReturn;
+export type WithdrawFormProps = {
+  onAuditLinkClick?: () => void;
+} & WithdrawFormScriptReturn;
 
 export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
   const {
@@ -62,6 +65,7 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
     onAddExternalWallet,
     isEnableTrading,
     enableWithdrawToExternalWallet,
+    onAuditLinkClick,
   } = props;
 
   const { t } = useTranslation();
@@ -135,66 +139,66 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
     >
       <div>
         <Box className="oui-mb-6 lg:oui-mb-8">
-          <Box className="oui-mb-4">
-            <BrokerWallet />
-          </Box>
+          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
+            <Box className="oui-mb-4">
+              <BrokerWallet />
+            </Box>
 
-          <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
-            <QuantityInput
-              classNames={{
-                root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
-              }}
-              value={quantity}
-              iconSize="md"
-              onValueChange={onQuantityChange}
-              token={sourceToken}
-              tokens={sourceTokens}
-              onTokenChange={onSourceTokenChange}
-              status={props.inputStatus}
-              hintMessage={props.hintMessage}
-              hintSuffix={
-                isTokenUnsupported ? (
-                  <button
-                    type="button"
-                    onClick={onSwitchToSupportedNetwork}
-                    className="oui-inline-flex oui-items-center oui-gap-1 oui-text-2xs oui-font-semibold oui-text-primary"
-                  >
-                    {t("common.switch")}
-                    <ArrowLeftRightIcon
-                      size={16}
-                      className="oui-text-primary oui-mt-0.5"
-                      opacity={1}
-                    />
-                  </button>
-                ) : undefined
-              }
-              vaultBalanceList={vaultBalanceList}
-              testId="oui-testid-withdraw-dialog-quantity-input"
-              displayType="vaultBalance"
-              disabled={!props.isLoggedIn}
-            />
+            <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
+              <QuantityInput
+                classNames={{
+                  root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
+                }}
+                value={quantity}
+                iconSize="md"
+                onValueChange={onQuantityChange}
+                token={sourceToken}
+                tokens={sourceTokens}
+                onTokenChange={onSourceTokenChange}
+                status={props.inputStatus}
+                hintMessage={props.hintMessage}
+                hintSuffix={
+                  isTokenUnsupported ? (
+                    <button
+                      type="button"
+                      onClick={onSwitchToSupportedNetwork}
+                      className="oui-inline-flex oui-items-center oui-gap-1 oui-text-2xs oui-font-semibold oui-text-primary"
+                    >
+                      {t("common.switch")}
+                      <ArrowLeftRightIcon
+                        size={16}
+                        className="oui-text-primary oui-mt-0.5"
+                        opacity={1}
+                      />
+                    </button>
+                  ) : undefined
+                }
+                vaultBalanceList={vaultBalanceList}
+                testId="oui-testid-withdraw-dialog-quantity-input"
+                displayType="vaultBalance"
+                disabled={!props.isLoggedIn}
+              />
 
-            <AmountSelector
-              maxAmount={maxQuantity.toString()}
-              disabled={!maxQuantity || maxQuantity === 0}
-              selectedPercentage={selectedPercentage}
-              onClick={({ selectedPercentage, selectedValue }) => {
-                setSelectedPercentage(selectedPercentage);
-                onQuantityChange(selectedValue);
-              }}
-            />
+              <AmountSelector
+                maxAmount={maxQuantity.toString()}
+                disabled={!maxQuantity || maxQuantity === 0}
+                selectedPercentage={selectedPercentage}
+                onClick={({ selectedPercentage, selectedValue }) => {
+                  setSelectedPercentage(selectedPercentage);
+                  onQuantityChange(selectedValue);
+                }}
+              />
 
-            <AvailableQuantity
-              token={sourceToken}
-              quantity={amount}
-              maxQuantity={maxQuantity.toString()}
-              loading={props.balanceRevalidating}
-              tooltipContent={t("transfer.withdraw.available.tooltip", {
-                amount: maxQuantity.toString(),
-              })}
-            />
+              <AvailableQuantity
+                token={sourceToken}
+                quantity={amount}
+                maxQuantity={maxQuantity.toString()}
+                loading={props.balanceRevalidating}
+                tooltipContent={t("transfer.withdraw.available.tooltip", {
+                  amount: maxQuantity.toString(),
+                })}
+              />
 
-            <Box mx={2}>
               <UnsettlePnlInfo
                 unsettledPnl={props.unsettledPnL}
                 hasPositions={props.hasPositions}
@@ -202,82 +206,84 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
                 tooltipContent={t("settle.unsettled.tooltip")}
                 dialogContent={<Trans i18nKey="settle.settlePnl.description" />}
               />
-            </Box>
-          </Flex>
+            </Flex>
+          </Box>
 
-          <ExchangeDivider />
+          <ExchangeDivider variant="withdraw" />
 
-          <Tabs
-            value={withdrawTo}
-            onValueChange={props.setWithdrawTo as (tab: string) => void}
-            variant="contained"
-            size="xl"
-            classNames={{
-              tabsList: "oui-px-0",
-              tabsContent:
-                "oui-pt-4 oui-animate-in oui-fade-in oui-slide-in-from-bottom-2 oui-duration-500 oui-ease-in-out",
-              trigger:
-                "data-[state=active]:ui-bg-mainButton-inverted data-[state=active]:oui-text-white",
-            }}
-          >
-            <TabPanel
-              title={t("transfer.web3Wallet.my")}
-              value={WithdrawTo.Wallet}
+          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
+            <Tabs
+              value={withdrawTo}
+              onValueChange={props.setWithdrawTo as (tab: string) => void}
+              variant="contained"
+              classNames={{
+                tabsList: "oui-w-full !oui-space-x-0",
+                tabsContent:
+                  "oui-pt-4 oui-animate-in oui-fade-in oui-slide-in-from-bottom-2 oui-duration-500 oui-ease-in-out",
+                trigger:
+                  "oui-flex-1 !oui-rounded-none first:!oui-rounded-l-lg last:!oui-rounded-r-lg oui-h-[40px] oui-text-sm oui-font-normal data-[state=active]:oui-font-normal",
+              }}
             >
-              {isEnableTrading && enableWithdrawToExternalWallet && (
-                <WalletSelector
-                  connectedWallet={
-                    address
-                      ? {
-                          name: walletName || t("common.wallet"),
-                          address,
-                          namespace: currentChain?.namespace,
-                        }
-                      : undefined
-                  }
-                  externalWallets={externalWallets || []}
-                  selectedAddress={selectedWalletAddress ?? ""}
-                  onSelect={onSelectWallet}
-                  onAddExternalWallet={() => setAddWalletOpen(true)}
-                />
-              )}
-
-              <ChainSelect
-                chains={tokenChains}
-                value={currentChain!}
-                onValueChange={props.onChainChange}
-                wrongNetwork={props.wrongNetwork}
-                loading={settingChain}
-                disabled={!props.isLoggedIn}
-              />
-
-              <WalletBalance
-                sourceToken={sourceToken}
-                sourceQuantity={props.showQty}
-                className={"oui-mt-4"}
-              />
-
-              <Divider className="oui-bg-base-6 oui-my-4" />
-
-              <Flex
-                direction="column"
-                className="oui-text-[#C7C7C7]"
-                itemAlign="start"
-                gap={2}
-                mt={2}
+              <TabPanel
+                title={t("transfer.web3Wallet.my")}
+                value={WithdrawTo.Wallet}
               >
-                <LtvWidget
-                  showDiff={
-                    typeof quantity !== "undefined" && Number(quantity) > 0
-                  }
-                  currentLtv={props.currentLTV}
-                  nextLTV={props.nextLTV}
+                {isEnableTrading && enableWithdrawToExternalWallet && (
+                  <WalletSelector
+                    connectedWallet={
+                      address
+                        ? {
+                            name: walletName || t("common.wallet"),
+                            address,
+                            namespace: currentChain?.namespace,
+                          }
+                        : undefined
+                    }
+                    externalWallets={externalWallets || []}
+                    selectedAddress={selectedWalletAddress ?? ""}
+                    onSelect={onSelectWallet}
+                    onAddExternalWallet={() => setAddWalletOpen(true)}
+                  />
+                )}
+
+                <ChainSelect
+                  chains={tokenChains}
+                  value={currentChain!}
+                  onValueChange={props.onChainChange}
+                  wrongNetwork={props.wrongNetwork}
+                  loading={settingChain}
+                  disabled={!props.isLoggedIn}
                 />
-                <Fee fee={fee} withdrawTo={withdrawTo} />
-              </Flex>
-            </TabPanel>
-            {internalWithdrawPanel}
-          </Tabs>
+
+                <WalletBalance
+                  sourceToken={sourceToken}
+                  sourceQuantity={props.showQty}
+                  className={"oui-mt-4"}
+                />
+
+                <Divider className="oui-bg-base-6 oui-my-4" />
+
+                <Flex
+                  direction="column"
+                  className="oui-text-base-1"
+                  itemAlign="start"
+                  gap={2}
+                  mt={2}
+                >
+                  <LtvWidget
+                    showDiff={
+                      typeof quantity !== "undefined" && Number(quantity) > 0
+                    }
+                    currentLtv={props.currentLTV}
+                    nextLTV={props.nextLTV}
+                  />
+                  <Fee fee={fee} withdrawTo={withdrawTo} />
+                  {onAuditLinkClick && <AuditLink onClick={onAuditLinkClick} />}
+                </Flex>
+              </TabPanel>
+              {internalWithdrawPanel}
+            </Tabs>
+          </Box>
         </Box>
       </div>
       <div>
@@ -328,7 +334,7 @@ const WalletBalance = ({
 
   return (
     <Flex justify={"between"} className={className}>
-      <Text size={"sm"} weight="regular" className="oui-text-[#C7C7C7]">
+      <Text size={"sm"} weight="regular" className="oui-text-base-1">
         {`${t("extend.transfer.walletBalance")}:`}
       </Text>
 
@@ -378,7 +384,7 @@ const Fee = ({ fee, withdrawTo }: { fee: number; withdrawTo: string }) => {
           <Tooltip className="oui-p-2" content={<FeeTooltipContent />}>
             <InfoIcon
               size={13}
-              className="oui-ml-1 oui-cursor-pointer oui-text-primary"
+              className="oui-ml-1 oui-cursor-pointer oui-text-base-1"
             />
           </Tooltip>
         </Flex>
@@ -388,5 +394,21 @@ const Fee = ({ fee, withdrawTo }: { fee: number; withdrawTo: string }) => {
         {fee}
       </Text>
     </Flex>
+  );
+};
+
+const AuditLink: FC<{ onClick: () => void }> = ({ onClick }) => {
+  const { t } = useTranslation();
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="oui-flex oui-items-center oui-gap-1 oui-text-primary oui-text-sm oui-font-regular hover:oui-text-primary-light oui-cursor-pointer"
+    >
+      <Text size="sm" weight="regular" className="oui-text-primary">
+        {t("transfer.deposit.auditedProtocol", "Audited protocol")}
+      </Text>
+      <OpenInNewIcon aria-hidden size={16} className="oui-text-primary" />
+    </button>
   );
 };

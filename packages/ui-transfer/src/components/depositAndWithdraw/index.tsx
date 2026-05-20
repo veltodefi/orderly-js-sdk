@@ -70,6 +70,38 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
 
   const isDeposit = activeTab === "deposit";
 
+  const header = props.isOnboarding && (
+    <Flex direction="column" itemAlign="stretch" gap={3} className="oui-mb-4">
+      <Flex itemAlign="center" gap={2}>
+        <Text
+          weight="bold"
+          className="oui-text-[22px] oui-text-primary-contrast"
+        >
+          {t("transfer.deposit.dialogTitle", "Set up your trading balance")}
+        </Text>
+        {props.onInfoIconClick && (
+          <button
+            type="button"
+            onClick={props.onInfoIconClick}
+            className="oui-cursor-pointer oui-text-primary hover:oui-text-primary-light oui-flex oui-items-center"
+            aria-label={t(
+              "transfer.deposit.dialogTitle",
+              "Set up your trading balance",
+            )}
+          >
+            <InfoIcon size={18} className="oui-text-primary" />
+          </button>
+        )}
+      </Flex>
+      <Text size="sm" weight="regular" className="oui-text-base-1">
+        {t(
+          "transfer.deposit.dialogSubtitle",
+          "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
+        )}
+      </Text>
+    </Flex>
+  );
+
   return (
     <Flex direction="column" itemAlign="stretch" className="oui-w-full">
       <Tabs
@@ -78,9 +110,9 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         variant="contained"
         size="xl"
         classNames={{
-          tabsList: "oui-px-0",
-          trigger: "oui-rounded-lg oui-px-4",
-          tabsContent: "oui-pt-5 oui-text-white",
+          tabsList: "oui-px-0 oui-gap-1",
+          trigger: "oui-rounded-lg oui-px-4 oui-h-[40px] oui-text-sm oui-gap-1",
+          tabsContent: "oui-pt-6 oui-text-white",
         }}
       >
         <TabPanel
@@ -89,46 +121,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           value="deposit"
           disabled={veltoWithdrawOnlyMode}
         >
-          {props.isOnboarding && (
-            <Flex
-              direction="column"
-              itemAlign="stretch"
-              gap={3}
-              className="oui-mb-4"
-            >
-              <Flex itemAlign="center" gap={2}>
-                <Text
-                  size="xl"
-                  weight="semibold"
-                  className="oui-text-primary-contrast"
-                >
-                  {t(
-                    "transfer.deposit.dialogTitle",
-                    "Set up your trading balance",
-                  )}
-                </Text>
-                {props.onInfoIconClick && (
-                  <button
-                    type="button"
-                    onClick={props.onInfoIconClick}
-                    className="oui-cursor-pointer oui-text-primary hover:oui-text-primary-light oui-flex oui-items-center"
-                    aria-label={t(
-                      "transfer.deposit.dialogTitle",
-                      "Set up your trading balance",
-                    )}
-                  >
-                    <InfoIcon size={20} />
-                  </button>
-                )}
-              </Flex>
-              <Text size="sm" weight="regular" className="oui-text-[#C7C7C7]">
-                {t(
-                  "transfer.deposit.dialogSubtitle",
-                  "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
-                )}
-              </Text>
-            </Flex>
-          )}
+          {header}
           <DepositSlot
             close={props.close}
             onAuditLinkClick={props.onAuditLinkClick}
@@ -139,7 +132,11 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           icon={<ArrowUpFromLineIcon size={16} />}
           value="withdraw"
         >
-          <WithdrawSlot close={props.close} />
+          {header}
+          <WithdrawSlot
+            close={props.close}
+            onAuditLinkClick={props.onAuditLinkClick}
+          />
         </TabPanel>
         {sortedExtra.map((tab) => (
           <TabPanel
@@ -167,7 +164,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           >
             {t("transfer.deposit.skipForNow", "Skip for now")}
           </button>
-          <Text size="2xs" weight="regular" className="oui-text-[#C7C7C7]">
+          <Text size="2xs" weight="regular" className="oui-text-base-1">
             {t(
               "transfer.deposit.skipReassurance",
               "You can deposit any time from your account",

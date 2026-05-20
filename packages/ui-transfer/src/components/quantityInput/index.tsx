@@ -125,7 +125,7 @@ export const QuantityInput: FC<QuantityInputProps> = (props) => {
   const prefix = (
     <Box>
       <Box className="oui-absolute oui-top-1">
-        <Text size="2xs" weight="regular" className="oui-text-[#c7c7c7]">
+        <Text size="2xs" weight="regular" className="oui-text-base-1">
           {label || t("common.quantity")}
         </Text>
       </Box>
