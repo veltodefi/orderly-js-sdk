@@ -115,6 +115,7 @@ export const DepositDialog: Story = {
                 onInfoIconClick: () => console.log("[story] info icon clicked"),
                 onAuditLinkClick: () =>
                   console.log("[story] audit link clicked"),
+                onAnalyticsEvent: (e: unknown) => console.log("[analytics]", e),
               });
             }}
           >
@@ -139,6 +140,7 @@ export const DepositDialogOnboarding: Story = {
                 onInfoIconClick: () => console.log("[story] info icon clicked"),
                 onAuditLinkClick: () =>
                   console.log("[story] audit link clicked"),
+                onAnalyticsEvent: (e: unknown) => console.log("[analytics]", e),
               });
             }}
           >
@@ -175,6 +177,7 @@ export const WithdrawDialog: Story = {
             onClick={() => {
               modal.show(DepositAndWithdrawWithDialogId, {
                 activeTab: "withdraw",
+                onAnalyticsEvent: (e: unknown) => console.log("[analytics]", e),
               });
             }}
           >

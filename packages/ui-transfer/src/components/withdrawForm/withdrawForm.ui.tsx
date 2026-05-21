@@ -1,6 +1,7 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
+import { useAccount } from "@veltodefi/hooks";
 import { Trans, useTranslation } from "@veltodefi/i18n";
-import { API } from "@veltodefi/types";
+import { API, AccountStatusEnum } from "@veltodefi/types";
 import {
   Box,
   Flex,
@@ -15,6 +16,11 @@ import {
   cn,
   OpenInNewIcon,
 } from "@veltodefi/ui";
+import {
+  deriveWithdrawWarningType,
+  normalizeQuickfillPercentage,
+  useTransferAnalytics,
+} from "../../analytics";
 import { WithdrawTo } from "../../types";
 import { LtvWidget } from "../LTV";
 import { TextAreaInput } from "../accountIdInput";
@@ -69,6 +75,9 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
   } = props;
 
   const { t } = useTranslation();
+  const { emit } = useTransferAnalytics();
+  const { state: accountState } = useAccount();
+  const isConnected = accountState.status !== AccountStatusEnum.NotConnected;
   const [selectedPercentage, setSelectedPercentage] = useState<Percentages>();
   const [addWalletOpen, setAddWalletOpen] = useState(false);
 
@@ -77,7 +86,88 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
     network?: "EVM" | "SOL",
   ) => {
     onAddExternalWallet?.(address, network);
+    emit({
+      form: "withdraw",
+      name: "add_wallet_submitted",
+      network: network ?? null,
+    });
   };
+
+  const lastEmittedQuantityRef = useRef<string>("");
+  const handleQuantityFieldBlur = () => {
+    const value = quantity ?? "";
+    if (value && value !== lastEmittedQuantityRef.current) {
+      emit({
+        form: "withdraw",
+        name: "quantity_entered",
+        amount: value,
+        symbol: sourceToken?.symbol,
+      });
+      lastEmittedQuantityRef.current = value;
+    }
+  };
+
+  const externalAddressesRef = useRef(
+    new Set((externalWallets ?? []).map((w: { address: string }) => w.address)),
+  );
+  const handleSelectWallet = (addr: string) => {
+    onSelectWallet?.(addr);
+    const isExternal = addr !== address;
+    emit({
+      form: "withdraw",
+      name: "wallet_selected",
+      selection_type: isExternal ? "external" : "connected",
+      is_new_wallet: isExternal && !externalAddressesRef.current.has(addr),
+    });
+    externalAddressesRef.current.add(addr);
+  };
+
+  const handleAddWalletOpen = () => {
+    setAddWalletOpen(true);
+    emit({ form: "withdraw", name: "add_wallet_opened" });
+  };
+
+  const handleSwitchSupportedNetwork = () => {
+    emit({ form: "withdraw", name: "switch_network_clicked" });
+    onSwitchToSupportedNetwork?.();
+  };
+
+  // warning_shown
+  const prevWarningTypeRef =
+    useRef<ReturnType<typeof deriveWithdrawWarningType>>(null);
+  useEffect(() => {
+    const next = deriveWithdrawWarningType({
+      isConnected,
+      crossChainTrans: !!crossChainTrans,
+      qtyGreaterThanMaxAmount: !!qtyGreaterThanMaxAmount,
+      checkIsBridgeless: !!checkIsBridgeless,
+      message: props.warningMessage,
+    });
+    if (next && next !== prevWarningTypeRef.current) {
+      emit({ form: "withdraw", name: "warning_shown", warning_type: next });
+    }
+    prevWarningTypeRef.current = next;
+  }, [
+    isConnected,
+    crossChainTrans,
+    qtyGreaterThanMaxAmount,
+    checkIsBridgeless,
+    props.warningMessage,
+    emit,
+  ]);
+
+  // account_id_entered — fires when account lookup resolves to a valid account
+  const prevAccountIdRef = useRef<string | undefined>(undefined);
+  useEffect(() => {
+    if (props.toAccountId && props.toAccountId !== prevAccountIdRef.current) {
+      emit({
+        form: "withdraw",
+        name: "account_id_entered",
+        lookup_succeeded: !!props.toAccountInfo,
+      });
+      prevAccountIdRef.current = props.toAccountId;
+    }
+  }, [props.toAccountId, props.toAccountInfo, emit]);
 
   const internalWithdrawPanel = (
     <TabPanel
@@ -146,39 +236,41 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
             </Box>
 
             <Flex direction={"column"} itemAlign={"stretch"} gap={2}>
-              <QuantityInput
-                classNames={{
-                  root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
-                }}
-                value={quantity}
-                iconSize="md"
-                onValueChange={onQuantityChange}
-                token={sourceToken}
-                tokens={sourceTokens}
-                onTokenChange={onSourceTokenChange}
-                status={props.inputStatus}
-                hintMessage={props.hintMessage}
-                hintSuffix={
-                  isTokenUnsupported ? (
-                    <button
-                      type="button"
-                      onClick={onSwitchToSupportedNetwork}
-                      className="oui-inline-flex oui-items-center oui-gap-1 oui-text-2xs oui-font-semibold oui-text-primary"
-                    >
-                      {t("common.switch")}
-                      <ArrowLeftRightIcon
-                        size={16}
-                        className="oui-text-primary oui-mt-0.5"
-                        opacity={1}
-                      />
-                    </button>
-                  ) : undefined
-                }
-                vaultBalanceList={vaultBalanceList}
-                testId="oui-testid-withdraw-dialog-quantity-input"
-                displayType="vaultBalance"
-                disabled={!props.isLoggedIn}
-              />
+              <div onBlur={handleQuantityFieldBlur}>
+                <QuantityInput
+                  classNames={{
+                    root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
+                  }}
+                  value={quantity}
+                  iconSize="md"
+                  onValueChange={onQuantityChange}
+                  token={sourceToken}
+                  tokens={sourceTokens}
+                  onTokenChange={onSourceTokenChange}
+                  status={props.inputStatus}
+                  hintMessage={props.hintMessage}
+                  hintSuffix={
+                    isTokenUnsupported ? (
+                      <button
+                        type="button"
+                        onClick={handleSwitchSupportedNetwork}
+                        className="oui-inline-flex oui-items-center oui-gap-1 oui-text-2xs oui-font-semibold oui-text-primary"
+                      >
+                        {t("common.switch")}
+                        <ArrowLeftRightIcon
+                          size={16}
+                          className="oui-text-primary oui-mt-0.5"
+                          opacity={1}
+                        />
+                      </button>
+                    ) : undefined
+                  }
+                  vaultBalanceList={vaultBalanceList}
+                  testId="oui-testid-withdraw-dialog-quantity-input"
+                  displayType="vaultBalance"
+                  disabled={!props.isLoggedIn}
+                />
+              </div>
 
               <AmountSelector
                 maxAmount={maxQuantity.toString()}
@@ -187,6 +279,15 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
                 onClick={({ selectedPercentage, selectedValue }) => {
                   setSelectedPercentage(selectedPercentage);
                   onQuantityChange(selectedValue);
+                  lastEmittedQuantityRef.current = selectedValue;
+                  emit({
+                    form: "withdraw",
+                    name: "quickfill_clicked",
+                    percentage:
+                      normalizeQuickfillPercentage(selectedPercentage),
+                    resulting_amount: selectedValue,
+                    max_amount: maxQuantity.toString(),
+                  });
                 }}
               />
 
@@ -203,19 +304,36 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
               <UnsettlePnlInfo
                 unsettledPnl={props.unsettledPnL}
                 hasPositions={props.hasPositions}
-                onSettlePnl={props.onSettlePnl}
+                onSettlePnl={async () => {
+                  emit({
+                    form: "withdraw",
+                    name: "settle_pnl_clicked",
+                    unsettled_pnl: props.unsettledPnL,
+                  });
+                  return props.onSettlePnl?.();
+                }}
                 tooltipContent={t("settle.unsettled.tooltip")}
                 dialogContent={<Trans i18nKey="settle.settlePnl.description" />}
               />
             </Flex>
           </Box>
 
-          <ExchangeDivider variant="withdraw" />
+          <ExchangeDivider variant="withdraw" withdrawTo={withdrawTo} />
 
           <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
             <Tabs
               value={withdrawTo}
-              onValueChange={props.setWithdrawTo as (tab: string) => void}
+              onValueChange={(tab) => {
+                if (tab !== withdrawTo) {
+                  emit({
+                    form: "withdraw",
+                    name: "subtab_changed",
+                    from: withdrawTo as "wallet" | "account",
+                    to: tab as "wallet" | "account",
+                  });
+                }
+                (props.setWithdrawTo as (t: string) => void)(tab);
+              }}
               variant="contained"
               classNames={{
                 tabsList: "oui-w-full !oui-space-x-0",
@@ -242,8 +360,8 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
                     }
                     externalWallets={externalWallets || []}
                     selectedAddress={selectedWalletAddress ?? ""}
-                    onSelect={onSelectWallet}
-                    onAddExternalWallet={() => setAddWalletOpen(true)}
+                    onSelect={handleSelectWallet}
+                    onAddExternalWallet={handleAddWalletOpen}
                   />
                 )}
 

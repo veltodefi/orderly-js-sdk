@@ -1,4 +1,4 @@
-import { FC, isValidElement, useState } from "react";
+import { FC, isValidElement, useEffect, useRef, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { injectable } from "@veltodefi/plugin-core";
 import { useAppContext } from "@veltodefi/react-app";
@@ -13,6 +13,15 @@ import {
   Tabs,
   Text,
 } from "@veltodefi/ui";
+import {
+  TransferActiveTab,
+  TransferAnalyticsEvent,
+  TransferAnalyticsProvider,
+  TransferDialogCloseReason,
+  TransferDialogTrigger,
+  TransferSurface,
+  useTransferAnalytics,
+} from "../../analytics";
 import { DepositSlot } from "./depositSlot";
 import { WithdrawSlot } from "./withdrawSlot";
 
@@ -50,25 +59,126 @@ export type DepositAndWithdrawProps = {
    * design prototype).
    */
   isOnboarding?: boolean;
+  /**
+   * Receives all dialog/form analytics events. The host maps them to its own
+   * tracker (e.g. mixpanel). The SDK imports no tracker itself.
+   */
+  onAnalyticsEvent?: (event: TransferAnalyticsEvent) => void;
+  /**
+   * Stamped onto the `opened` event so funnels can discriminate origins
+   * (onboarding vs quick-start guide vs deep link, etc.). Defaults to
+   * "manual" when omitted.
+   */
+  analyticsTrigger?: TransferDialogTrigger;
+  /**
+   * Internal: set to "sheet" by the mobile sheet registrar so the envelope
+   * carries the right surface. Hosts shouldn't set this.
+   */
+  analyticsSurface?: TransferSurface;
 };
 
 export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
   const { veltoWithdrawOnlyMode } = useAppContext();
   const { extraTabs = [] } = props;
-  const [activeTab, setActiveTab] = useState<string>(
-    veltoWithdrawOnlyMode ? "withdraw" : props.activeTab || "deposit",
+  const [activeTab, setActiveTab] = useState<TransferActiveTab>(
+    veltoWithdrawOnlyMode
+      ? "withdraw"
+      : (props.activeTab as TransferActiveTab) || "deposit",
   );
+
+  return (
+    <TransferAnalyticsProvider
+      onEvent={props.onAnalyticsEvent}
+      surface={props.analyticsSurface ?? "dialog"}
+      isOnboarding={!!props.isOnboarding}
+      activeTab={activeTab}
+    >
+      <DepositAndWithdrawInner
+        {...props}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
+    </TransferAnalyticsProvider>
+  );
+};
+
+const DepositAndWithdrawInner: FC<
+  DepositAndWithdrawProps & {
+    activeTab: TransferActiveTab;
+    setActiveTab: (tab: TransferActiveTab) => void;
+  }
+> = (props) => {
+  const { veltoWithdrawOnlyMode } = useAppContext();
+  const { extraTabs = [], activeTab, setActiveTab } = props;
   const { t } = useTranslation();
+  const { emit } = useTransferAnalytics();
   const sortedExtra = [...extraTabs].sort(
     (a, b) => (a.order ?? 100) - (b.order ?? 100),
   );
 
+  const mountedAt = useRef<number>(Date.now());
+  const closeReasonRef = useRef<TransferDialogCloseReason>("unknown");
+  const lastActiveTabRef = useRef<TransferActiveTab>(activeTab);
+
+  useEffect(() => {
+    lastActiveTabRef.current = activeTab;
+  }, [activeTab]);
+
+  useEffect(() => {
+    emit({ name: "opened", trigger: props.analyticsTrigger ?? "manual" });
+    const openedAt = mountedAt.current;
+    return () => {
+      emit({
+        name: "closed",
+        dwell_ms: Date.now() - openedAt,
+        last_active_tab: lastActiveTabRef.current,
+        reason: closeReasonRef.current,
+      });
+    };
+    // mount/unmount only — emit is stable via context
+  }, []);
+
   const handleTabChange = (value: string) => {
     if (veltoWithdrawOnlyMode && value === "deposit") return;
-    setActiveTab(value);
+    if (value === activeTab) return;
+    emit({
+      name: "tab_changed",
+      from_tab: activeTab,
+      to_tab: value as TransferActiveTab,
+    });
+    setActiveTab(value as TransferActiveTab);
   };
 
   const isDeposit = activeTab === "deposit";
+
+  const wrappedClose = props.close
+    ? () => {
+        if (closeReasonRef.current === "unknown") {
+          closeReasonRef.current = "x_button";
+        }
+        props.close?.();
+      }
+    : undefined;
+
+  const handleSkip = () => {
+    closeReasonRef.current = "skip_for_now";
+    emit({ name: "skip_clicked" });
+    props.close?.();
+  };
+
+  const handleAuditLinkClick = props.onAuditLinkClick
+    ? () => {
+        emit({ name: "audit_link_clicked", from_form: activeTab });
+        props.onAuditLinkClick?.();
+      }
+    : undefined;
+
+  const handleInfoIconClick = props.onInfoIconClick
+    ? () => {
+        emit({ name: "info_clicked" });
+        props.onInfoIconClick?.();
+      }
+    : undefined;
 
   const header = props.isOnboarding && (
     <Flex direction="column" itemAlign="stretch" gap={3} className="oui-mb-4">
@@ -81,10 +191,10 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
             ? t("transfer.deposit.dialogTitle", "Set up your trading balance")
             : t("transfer.withdraw.dialogTitle", "Withdraw")}
         </Text>
-        {props.onInfoIconClick && isDeposit && (
+        {handleInfoIconClick && isDeposit && (
           <button
             type="button"
-            onClick={props.onInfoIconClick}
+            onClick={handleInfoIconClick}
             className="oui-cursor-pointer oui-text-primary hover:oui-text-primary-light oui-flex oui-items-center"
             aria-label={t(
               "transfer.deposit.dialogTitle",
@@ -138,8 +248,8 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           {header && <div className="oui-shrink-0 oui-px-5">{header}</div>}
           <div className="oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
             <DepositSlot
-              close={props.close}
-              onAuditLinkClick={props.onAuditLinkClick}
+              close={wrappedClose}
+              onAuditLinkClick={handleAuditLinkClick}
             />
           </div>
         </TabPanel>
@@ -151,8 +261,8 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           {header && <div className="oui-shrink-0 oui-px-5">{header}</div>}
           <div className="oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
             <WithdrawSlot
-              close={props.close}
-              onAuditLinkClick={props.onAuditLinkClick}
+              close={wrappedClose}
+              onAuditLinkClick={handleAuditLinkClick}
             />
           </div>
         </TabPanel>
@@ -163,7 +273,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
             icon={isValidElement(tab.icon) ? tab.icon : undefined}
             value={tab.id}
           >
-            <tab.component close={props.close} />
+            <tab.component close={wrappedClose} />
           </TabPanel>
         ))}
       </Tabs>
@@ -177,7 +287,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         >
           <button
             type="button"
-            onClick={props.close}
+            onClick={handleSkip}
             className="oui-text-primary hover:oui-text-primary-light oui-text-sm oui-font-semibold oui-cursor-pointer"
           >
             {t("transfer.deposit.skipForNow", "Skip for now")}
@@ -212,7 +322,8 @@ registerSimpleDialog(
   },
 );
 
-registerSimpleSheet(
-  DepositAndWithdrawWithSheetId,
-  InjectableDepositAndWithdraw,
+const SheetVariant: FC<DepositAndWithdrawProps> = (props) => (
+  <InjectableDepositAndWithdraw {...props} analyticsSurface="sheet" />
 );
+
+registerSimpleSheet(DepositAndWithdrawWithSheetId, SheetVariant);

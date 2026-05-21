@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   useAccount,
   useConfig,
@@ -7,8 +7,9 @@ import {
   useOrderlyContext,
 } from "@veltodefi/hooks";
 import { useAppContext } from "@veltodefi/react-app";
-import { ChainNamespace, NetworkId } from "@veltodefi/types";
+import { API, ChainNamespace, NetworkId } from "@veltodefi/types";
 import { useAuthGuard } from "@veltodefi/ui-connector";
+import { useTransferAnalytics } from "../../analytics";
 import { useActionType } from "./hooks/useActionType";
 import { useChainSelect } from "./hooks/useChainSelect";
 import { useCollateralValue } from "./hooks/useCollateralValue";
@@ -36,9 +37,34 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
   const { enableSwapDeposit } = useOrderlyContext();
   const { account } = useAccount();
   const networkId = useConfig("networkId") as NetworkId;
+  const { emit } = useTransferAnalytics();
 
-  const { chains, currentChain, settingChain, onChainChange } =
-    useChainSelect();
+  const {
+    chains,
+    currentChain,
+    settingChain,
+    onChainChange: rawOnChainChange,
+  } = useChainSelect();
+
+  const prevChainIdRef = useRef<number | undefined>(currentChain?.id);
+  useEffect(() => {
+    prevChainIdRef.current = currentChain?.id;
+  }, [currentChain?.id]);
+
+  const onChainChange = useCallback(
+    (chain: API.NetworkInfos) => {
+      const result = rawOnChainChange(chain);
+      emit({
+        form: "deposit",
+        name: "chain_changed",
+        from_chain_id: prevChainIdRef.current,
+        to_chain_id: chain.chain_id,
+        wrong_network: !!wrongNetwork,
+      });
+      return result;
+    },
+    [rawOnChainChange, emit, wrongNetwork],
+  );
 
   const swapTokens = useSwapTokens(currentChain?.id, enableSwapDeposit);
   const orderlyTokens = useOrderlyTokens(currentChain);
@@ -48,10 +74,24 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
     targetToken,
     sourceTokens,
     targetTokens,
-    onSourceTokenChange,
+    onSourceTokenChange: rawOnSourceTokenChange,
     setSourceTokens,
     onTargetTokenChange,
   } = useToken(orderlyTokens);
+
+  const onSourceTokenChange = useCallback(
+    (token: API.TokenInfo) => {
+      const result = rawOnSourceTokenChange(token);
+      emit({
+        form: "deposit",
+        name: "source_token_changed",
+        from_symbol: sourceToken?.symbol,
+        to_symbol: token.symbol ?? "unknown",
+      });
+      return result;
+    },
+    [rawOnSourceTokenChange, emit, sourceToken?.symbol],
+  );
 
   const { getIndexPrice } = useIndexPricesStream();
 
@@ -166,6 +206,10 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
     needSwap,
     swapDeposit: onSwapDeposit,
     onSuccess: onDepositSuccess,
+    analyticsContext: {
+      chain_id: currentChain?.id,
+      symbol: sourceToken?.symbol,
+    },
   });
 
   useEffect(() => {
@@ -248,12 +292,68 @@ export const useDepositFormScript = (options: DepositFormScriptOptions) => {
 
   const warningMessage = validationMessage || swapErrorMessage;
 
-  const [activeSubTab, setActiveSubTab] = useState<
+  const [activeSubTab, _setActiveSubTab] = useState<
     "web3" | "exclusive_deposit"
   >("web3");
 
+  const setActiveSubTab = useCallback(
+    (next: "web3" | "exclusive_deposit") => {
+      if (next === activeSubTab) {
+        _setActiveSubTab(next);
+        return;
+      }
+      emit({
+        form: "deposit",
+        name: "subtab_changed",
+        from_subtab: activeSubTab,
+        to_subtab: next,
+      });
+      _setActiveSubTab(next);
+    },
+    [activeSubTab, emit],
+  );
+
   const showExclusiveDeposit =
     account.walletAdapter?.chainNamespace !== ChainNamespace.solana;
+
+  const messageToString = (v: unknown): string | undefined =>
+    typeof v === "string" ? v : v != null ? String(v) : undefined;
+
+  const prevInputStatusRef = useRef(inputStatus);
+  useEffect(() => {
+    const prev = prevInputStatusRef.current;
+    if (
+      prev !== inputStatus &&
+      (inputStatus === "error" || inputStatus === "warning")
+    ) {
+      emit({
+        form: "deposit",
+        name: "error_surfaced",
+        field: "quantity",
+        message: messageToString(hintMessage),
+        status: inputStatus,
+      });
+    }
+    prevInputStatusRef.current = inputStatus;
+  }, [inputStatus, hintMessage, emit]);
+
+  const prevWarningRef = useRef<string | undefined>(
+    messageToString(warningMessage),
+  );
+  useEffect(() => {
+    const next = messageToString(warningMessage);
+    const prev = prevWarningRef.current;
+    if (!prev && next) {
+      emit({
+        form: "deposit",
+        name: "error_surfaced",
+        field: "global",
+        message: next,
+        status: "warning",
+      });
+    }
+    prevWarningRef.current = next;
+  }, [warningMessage, emit]);
 
   return {
     sourceToken,

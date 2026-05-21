@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { API } from "@veltodefi/types";
 import {
@@ -15,6 +15,10 @@ import {
   OpenInNewIcon,
   useScreen,
 } from "@veltodefi/ui";
+import {
+  normalizeQuickfillPercentage,
+  useTransferAnalytics,
+} from "../../analytics";
 import { InputStatus } from "../../types";
 import { LtvWidget } from "../LTV";
 import { ActionButton } from "../actionButton";
@@ -101,7 +105,39 @@ export const DepositForm: FC<Props> = (props) => {
 
   const { isMobile } = useScreen();
   const { t } = useTranslation();
+  const { emit } = useTransferAnalytics();
   const [selectedPercentage, setSelectedPercentage] = useState<Percentages>();
+
+  const lastEmittedQuantityRef = useRef<string>("");
+  const handleQuantityFieldBlur = () => {
+    const value = quantity ?? "";
+    if (value && value !== lastEmittedQuantityRef.current) {
+      emit({
+        form: "deposit",
+        name: "quantity_entered",
+        amount: value,
+        symbol: sourceToken?.symbol,
+      });
+      lastEmittedQuantityRef.current = value;
+    }
+  };
+
+  const lastEmittedSlippageRef = useRef<number | undefined>(slippage);
+  const handleSlippageFieldBlur = () => {
+    if (slippage !== undefined && slippage !== lastEmittedSlippageRef.current) {
+      const validation =
+        typeof slippageValidate === "function"
+          ? slippageValidate(slippage)
+          : undefined;
+      emit({
+        form: "deposit",
+        name: "slippage_changed",
+        value: slippage,
+        validate_status: validation || undefined,
+      });
+      lastEmittedSlippageRef.current = slippage;
+    }
+  };
 
   useEffect(() => {
     setSelectedPercentage(undefined);
@@ -168,13 +204,15 @@ export const DepositForm: FC<Props> = (props) => {
         />
         {needSwap && (
           <>
-            <Slippage
-              value={slippage}
-              onValueChange={onSlippageChange}
-              min={0.01}
-              max={50}
-              validate={slippageValidate}
-            />
+            <div onBlur={handleSlippageFieldBlur}>
+              <Slippage
+                value={slippage}
+                onValueChange={onSlippageChange}
+                min={0.01}
+                max={50}
+                validate={slippageValidate}
+              />
+            </div>
             <MinimumReceived
               value={swapMinReceived!}
               symbol={targetToken?.symbol ?? ""}
@@ -206,29 +244,31 @@ export const DepositForm: FC<Props> = (props) => {
                 disabled={!props.isLoggedIn}
               />
 
-              <QuantityInput
-                classNames={{
-                  root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
-                }}
-                iconSize="md"
-                value={quantity}
-                onValueChange={onQuantityChange}
-                token={sourceToken}
-                tokens={sourceTokens}
-                onTokenChange={onSourceTokenChange}
-                status={inputStatus}
-                hintMessage={hintMessage}
-                // when show deposit cap, hide select caret
-                tokenShowCaret={
-                  !showSourceDepositCap && sourceTokens?.length > 1
-                }
-                tokenValueFormatter={
-                  showSourceDepositCap ? tokenValueFormatter : undefined
-                }
-                disabled={!props.isLoggedIn}
-                balancesRevalidating={batchBalancesRevalidating}
-                showBalance
-              />
+              <div onBlur={handleQuantityFieldBlur}>
+                <QuantityInput
+                  classNames={{
+                    root: "oui-bg-transparent oui-border oui-border-base-1 oui-rounded-2xl",
+                  }}
+                  iconSize="md"
+                  value={quantity}
+                  onValueChange={onQuantityChange}
+                  token={sourceToken}
+                  tokens={sourceTokens}
+                  onTokenChange={onSourceTokenChange}
+                  status={inputStatus}
+                  hintMessage={hintMessage}
+                  // when show deposit cap, hide select caret
+                  tokenShowCaret={
+                    !showSourceDepositCap && sourceTokens?.length > 1
+                  }
+                  tokenValueFormatter={
+                    showSourceDepositCap ? tokenValueFormatter : undefined
+                  }
+                  disabled={!props.isLoggedIn}
+                  balancesRevalidating={batchBalancesRevalidating}
+                  showBalance
+                />
+              </div>
 
               <AmountSelector
                 maxAmount={maxDepositAmount}
@@ -238,6 +278,15 @@ export const DepositForm: FC<Props> = (props) => {
                 onClick={({ selectedPercentage, selectedValue }) => {
                   setSelectedPercentage(selectedPercentage);
                   onQuantityChange(selectedValue);
+                  lastEmittedQuantityRef.current = selectedValue;
+                  emit({
+                    form: "deposit",
+                    name: "quickfill_clicked",
+                    percentage:
+                      normalizeQuickfillPercentage(selectedPercentage),
+                    resulting_amount: selectedValue,
+                    max_amount: maxDepositAmount,
+                  });
                 }}
               />
 

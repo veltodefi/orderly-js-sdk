@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { PublicKey } from "@solana/web3.js";
 import {
   useAccount,
@@ -30,6 +30,7 @@ import {
   toNonExponential,
 } from "@veltodefi/utils";
 import { ethers } from "ethers";
+import { detectUserRejection, useTransferAnalytics } from "../../analytics";
 import { InputStatus, WithdrawTo } from "../../types";
 import { CurrentChain } from "../../types";
 import { useSettlePnl } from "../unsettlePnlInfo/useSettlePnl";
@@ -66,6 +67,7 @@ export type WithdrawFormScriptOptions = {
 
 export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
   const { t } = useTranslation();
+  const { emit } = useTransferAnalytics();
   const [crossChainTrans, setCrossChainTrans] = useState<boolean>(false);
   const [loading, setLoading] = useState(false);
   const [assetHistory] = useAssetsHistory(
@@ -149,6 +151,12 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
   });
 
   const onSourceTokenChange = useMemoizedFn((token: API.TokenInfo) => {
+    emit({
+      form: "withdraw",
+      name: "source_token_changed",
+      from_symbol: sourceToken?.symbol,
+      to_symbol: token.symbol ?? "unknown",
+    });
     setQuantity("");
     _OnSourceTokenChange(token);
     setPendingTokenSymbol(token.symbol);
@@ -319,6 +327,14 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
         return Promise.resolve();
       }
 
+      emit({
+        form: "withdraw",
+        name: "chain_changed",
+        from_chain_id: currentChain?.id,
+        to_chain_id: chain.chain_id,
+        wrong_network: !!wrongNetwork,
+      });
+
       return switchChain?.({
         chainId: int2hex(Number(chainInfo.network_infos?.chain_id)),
       })
@@ -335,7 +351,7 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
           toast.error(`${t("connector.switchChain.failed")}: ${error.message}`);
         });
     },
-    [currentChain, switchChain, findByChainId, t],
+    [currentChain, switchChain, findByChainId, t, emit, wrongNetwork],
   );
 
   useEffect(() => {
@@ -352,6 +368,18 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
   }, [pendingTokenSymbol, sourceTokens, onSourceTokenChange, currentChain]);
 
   const onWithdraw = async () => {
+    const analyticsBase = {
+      form: "withdraw" as const,
+      withdraw_to: withdrawTo as "wallet" | "account",
+      is_cross_chain: !!crossChainWithdraw,
+      chain_id: currentChain?.id,
+      symbol: sourceToken?.symbol,
+      amount: quantity,
+      fee,
+    };
+
+    emit({ ...analyticsBase, name: "action_clicked" });
+
     if (loading) {
       return;
     }
@@ -359,6 +387,7 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
       return;
     }
 
+    emit({ ...analyticsBase, name: "action_submitted" });
     setLoading(true);
     return withdraw({
       amount: quantity,
@@ -374,7 +403,20 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
         setQuantity("");
       })
       .catch((e) => {
-        if (e.message.indexOf("user rejected") !== -1) {
+        const isUserRejection = detectUserRejection(e);
+        emit({
+          form: "withdraw",
+          name: "action_failed",
+          withdraw_to: analyticsBase.withdraw_to,
+          is_cross_chain: analyticsBase.is_cross_chain,
+          error_code:
+            typeof e?.code === "string" || typeof e?.code === "number"
+              ? String(e.code)
+              : null,
+          error_message: e?.message ?? "Unknown error",
+          is_user_rejection: isUserRejection,
+        });
+        if (isUserRejection) {
           toast.error(t("transfer.rejectTransaction"));
           return;
         }
@@ -474,6 +516,24 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
     t,
   ]);
 
+  const prevInputStatusRef = useRef(inputStatus);
+  useEffect(() => {
+    const prev = prevInputStatusRef.current;
+    if (
+      prev !== inputStatus &&
+      (inputStatus === "error" || inputStatus === "warning")
+    ) {
+      emit({
+        form: "withdraw",
+        name: "error_surfaced",
+        field: "quantity",
+        message: hintMessage,
+        status: inputStatus,
+      });
+    }
+    prevInputStatusRef.current = inputStatus;
+  }, [inputStatus, hintMessage, emit]);
+
   const disabled =
     crossChainTrans ||
     !quantity ||
@@ -534,6 +594,24 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
     await onChainChange(targetNetwork);
   });
 
+  const onTransfer = () => {
+    const analyticsBase = {
+      form: "withdraw" as const,
+      withdraw_to: "account" as const,
+      is_cross_chain: false,
+      chain_id: currentChain?.id,
+      symbol: sourceToken?.symbol,
+      amount: quantity,
+      fee,
+    };
+    emit({ ...analyticsBase, name: "action_clicked" });
+    emit({ ...analyticsBase, name: "action_submitted" });
+    // Internal-transfer rejection is swallowed inside useWithdrawAccountId's
+    // catch; action_failed for the transfer path will be added when that
+    // hook gains an onError callback.
+    withdrawAccountIdState.onTransfer();
+  };
+
   return {
     walletName,
     address,
@@ -568,6 +646,7 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
     qtyGreaterThanMaxAmount,
     vaultBalanceList,
     ...withdrawAccountIdState,
+    onTransfer,
     withdrawTo,
     setWithdrawTo,
     currentLTV,
