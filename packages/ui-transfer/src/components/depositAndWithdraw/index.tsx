@@ -77,9 +77,11 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           weight="bold"
           className="oui-text-[22px] oui-text-primary-contrast"
         >
-          {t("transfer.deposit.dialogTitle", "Set up your trading balance")}
+          {isDeposit
+            ? t("transfer.deposit.dialogTitle", "Set up your trading balance")
+            : t("transfer.withdraw.dialogTitle", "Withdraw")}
         </Text>
-        {props.onInfoIconClick && (
+        {props.onInfoIconClick && isDeposit && (
           <button
             type="button"
             onClick={props.onInfoIconClick}
@@ -94,25 +96,37 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
         )}
       </Flex>
       <Text size="sm" weight="regular" className="oui-text-base-1">
-        {t(
-          "transfer.deposit.dialogSubtitle",
-          "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
-        )}
+        {isDeposit
+          ? t(
+              "transfer.deposit.dialogSubtitle",
+              "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
+            )
+          : t(
+              "transfer.withdraw.dialogSubtitle",
+              "Move funds from your Velto account to your Web3 wallet or another Velto account.",
+            )}
       </Text>
     </Flex>
   );
 
   return (
-    <Flex direction="column" itemAlign="stretch" className="oui-w-full">
+    <Flex
+      direction="column"
+      itemAlign="stretch"
+      className="oui-w-full oui-h-full oui-min-h-0"
+    >
       <Tabs
         value={activeTab}
         onValueChange={handleTabChange}
         variant="contained"
         size="xl"
+        className="oui-flex oui-flex-col oui-flex-1 oui-min-h-0"
         classNames={{
+          tabsListContainer: "oui-shrink-0 oui-px-5",
           tabsList: "oui-px-0 oui-gap-1",
           trigger: "oui-rounded-lg oui-px-4 oui-h-[40px] oui-text-sm oui-gap-1",
-          tabsContent: "oui-pt-6 oui-text-white",
+          tabsContent:
+            "oui-pt-6 oui-text-white data-[state=active]:oui-flex data-[state=active]:oui-flex-col oui-flex-1 oui-min-h-0",
         }}
       >
         <TabPanel
@@ -121,22 +135,26 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           value="deposit"
           disabled={veltoWithdrawOnlyMode}
         >
-          {header}
-          <DepositSlot
-            close={props.close}
-            onAuditLinkClick={props.onAuditLinkClick}
-          />
+          {header && <div className="oui-shrink-0 oui-px-5">{header}</div>}
+          <div className="oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
+            <DepositSlot
+              close={props.close}
+              onAuditLinkClick={props.onAuditLinkClick}
+            />
+          </div>
         </TabPanel>
         <TabPanel
           title={t("common.withdraw")}
           icon={<ArrowUpFromLineIcon size={16} />}
           value="withdraw"
         >
-          {header}
-          <WithdrawSlot
-            close={props.close}
-            onAuditLinkClick={props.onAuditLinkClick}
-          />
+          {header && <div className="oui-shrink-0 oui-px-5">{header}</div>}
+          <div className="oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
+            <WithdrawSlot
+              close={props.close}
+              onAuditLinkClick={props.onAuditLinkClick}
+            />
+          </div>
         </TabPanel>
         {sortedExtra.map((tab) => (
           <TabPanel
@@ -155,7 +173,7 @@ export const DepositAndWithdraw: FC<DepositAndWithdrawProps> = (props) => {
           direction="column"
           itemAlign="center"
           gap={1}
-          className="oui-flex-shrink-0 oui-pt-3"
+          className="oui-flex-shrink-0 oui-pt-3 oui-px-5"
         >
           <button
             type="button"
@@ -188,8 +206,8 @@ registerSimpleDialog(
     size: "lg",
     classNames: {
       content:
-        "oui-border oui-border-line-6 oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9",
-      body: "oui-overflow-y-auto",
+        "oui-flex oui-flex-col oui-border oui-border-line-6 oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9 !oui-px-0",
+      body: "oui-flex-1 oui-min-h-0 oui-flex oui-flex-col oui-overflow-hidden !oui-px-0",
     },
   },
 );

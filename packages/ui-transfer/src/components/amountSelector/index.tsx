@@ -70,11 +70,14 @@ export const AmountSelector = ({
             disabled={disabled}
             key={percentage}
             className={cn(
+              "oui-border-[1px]",
               "oui-bg-base-6 oui-text-[#d4d4d4]",
-              "oui-rounded-lg oui-flex-1 oui-h-[30px]",
-              "hover:oui-border-primary hover:oui-border-[1px] hover:oui-text-primary",
+              "oui-rounded-md oui-flex-1 oui-h-[30px]",
+              "hover:oui-bg-base-5",
+              "active:oui-border-[1px]",
               selectedPercentage === percentage &&
-                "oui-border-primary oui-border-[1px] oui-text-primary",
+                "oui-border-primary oui-text-primary hover:oui-bg-base-6",
+              selectedPercentage !== percentage && "oui-border-transparent",
               disabled &&
                 "oui-cursor-not-allowed hover:oui-bg-transparent hover:oui-border-base-1 hover:oui-text-base-1",
             )}

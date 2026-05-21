@@ -13,6 +13,7 @@ import {
   Tabs,
   TabPanel,
   OpenInNewIcon,
+  useScreen,
 } from "@veltodefi/ui";
 import { InputStatus } from "../../types";
 import { LtvWidget } from "../LTV";
@@ -98,6 +99,7 @@ export const DepositForm: FC<Props> = (props) => {
     onAuditLinkClick,
   } = props;
 
+  const { isMobile } = useScreen();
   const { t } = useTranslation();
   const [selectedPercentage, setSelectedPercentage] = useState<Percentages>();
 
@@ -189,9 +191,9 @@ export const DepositForm: FC<Props> = (props) => {
 
   const web3Content = (
     <>
-      <div>
+      <div className="oui-flex-1 oui-min-h-0 oui-overflow-y-auto oui-overflow-x-hidden custom-scrollbar oui-px-5">
         <Box className="oui-mb-6 lg:oui-mb-8">
-          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
+          <Box className="md:oui-bg-base-8 md:oui-p-4 oui-rounded-[16px]">
             <Flex direction={"column"} itemAlign={"stretch"} gap={3}>
               <Web3Wallet />
 
@@ -257,7 +259,7 @@ export const DepositForm: FC<Props> = (props) => {
 
           <ExchangeDivider variant="deposit" />
 
-          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
+          <Box className="md:oui-bg-base-8 md:oui-p-4 oui-rounded-[16px]">
             <Flex direction={"column"} itemAlign={"stretch"} gap={4}>
               <BrokerWallet />
               <TradingBalance
@@ -274,7 +276,7 @@ export const DepositForm: FC<Props> = (props) => {
           </Box>
         </Box>
       </div>
-      <Box>
+      <Box className="oui-shrink-0 oui-px-5 oui-pt-3">
         <Notice message={warningMessage} wrongNetwork={wrongNetwork} />
         <ActionButton
           actionType={actionType}
@@ -295,7 +297,7 @@ export const DepositForm: FC<Props> = (props) => {
       id="oui-deposit-form"
       className={cn(
         textVariants({ weight: "semibold" }),
-        "oui-justify-between oui-h-full oui-flex oui-flex-col",
+        "oui-h-full oui-min-h-0 oui-flex oui-flex-col",
       )}
     >
       {showExclusiveDeposit ? (
@@ -305,23 +307,43 @@ export const DepositForm: FC<Props> = (props) => {
             setActiveSubTab(value as "web3" | "exclusive_deposit")
           }
           variant="contained"
+          className="oui-flex oui-flex-col oui-flex-1 oui-min-h-0"
           classNames={{
+            tabsListContainer: "oui-shrink-0 oui-px-5",
             tabsList: "oui-w-full !oui-space-x-0",
+            tabsContent:
+              "data-[state=active]:oui-flex data-[state=active]:oui-flex-col oui-flex-1 oui-min-h-0",
             trigger:
               "oui-flex-1 !oui-rounded-none first:!oui-rounded-l-lg last:!oui-rounded-r-lg oui-h-[40px] oui-text-sm oui-font-normal data-[state=active]:oui-font-normal",
           }}
         >
           <TabPanel
-            title={t("transfer.deposit.tab.connectedWallet")}
+            title={
+              isMobile
+                ? t(
+                    "transfer.deposit.tab.connectedWalletShort",
+                    "Connected wallet",
+                  )
+                : t("transfer.deposit.tab.connectedWallet")
+            }
             value="web3"
           >
-            <div className="oui-pt-3">{web3Content}</div>
+            <div className="oui-pt-3 oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
+              {web3Content}
+            </div>
           </TabPanel>
           <TabPanel
-            title={t("transfer.deposit.tab.exchangeOrOtherWallet")}
+            title={
+              isMobile
+                ? t(
+                    "transfer.deposit.tab.exchangeOrOtherWalletShort",
+                    "Exchange / other wallet",
+                  )
+                : t("transfer.deposit.tab.exchangeOrOtherWallet")
+            }
             value="exclusive_deposit"
           >
-            <Box className={"oui-overflow-hidden oui-rounded-2xl"}>
+            <Box className={"oui-overflow-hidden oui-rounded-2xl oui-mx-5"}>
               <ExclusiveDeposit active={activeSubTab === "exclusive_deposit"} />
             </Box>
           </TabPanel>

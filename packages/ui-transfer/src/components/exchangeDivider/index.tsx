@@ -19,7 +19,7 @@ export const ExchangeDivider: FC<ExchangeDividerProps> = ({
       <Flex height={1} className="oui-flex-1 oui-bg-base-6"></Flex>
       <Flex
         height={32}
-        className="oui-border oui-bg-base-8 oui-rounded-full oui-pr-3 oui-pl-2 oui-border-base-6"
+        className="oui-hidden md:oui-flex oui-border oui-bg-base-8 oui-rounded-full oui-pr-3 oui-pl-2 oui-border-base-6"
       >
         {icon || <ArrowDownIcon className="oui-text-base-1" />}
         <Text weight="regular" size={"2xs"} className="oui-text-base-1">
@@ -33,6 +33,10 @@ export const ExchangeDivider: FC<ExchangeDividerProps> = ({
                 "Funds move into your trading balance",
               )}
         </Text>
+      </Flex>
+
+      <Flex height={32} className="md:oui-hidden oui-px-2">
+        {icon || <ArrowDownIcon className="oui-text-base-1" />}
       </Flex>
       <Flex height={1} className="oui-flex-1 oui-bg-base-6"></Flex>
     </Flex>

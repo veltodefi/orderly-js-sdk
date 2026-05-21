@@ -134,10 +134,10 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
       id="oui-withdraw-form"
       className={cn(
         textVariants({ weight: "semibold" }),
-        "oui-h-full oui-flex oui-flex-col oui-justify-between",
+        "oui-h-full oui-min-h-0 oui-flex oui-flex-col",
       )}
     >
-      <div>
+      <div className="oui-flex-1 oui-min-h-0 oui-overflow-y-auto oui-overflow-x-hidden custom-scrollbar oui-px-5">
         <Box className="oui-mb-6 lg:oui-mb-8">
           <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
             <Box className="oui-mb-4">
@@ -286,7 +286,7 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
           </Box>
         </Box>
       </div>
-      <div>
+      <div className="oui-shrink-0 oui-px-5 oui-pt-3">
         <WithdrawWarningMessage
           checkIsBridgeless={checkIsBridgeless}
           crossChainTrans={crossChainTrans}

@@ -108,7 +108,7 @@ export const ExclusiveDeposit: FC<ExclusiveDepositProps> = ({ active }) => {
 
         {/* Min. Deposit */}
         <Flex className="oui-w-full" justify="between">
-          <Text size="xs" intensity={36}>
+          <Text size="xs" weight="regular" className="oui-text-base-1">
             {t("transfer.exclusiveDeposit.minDeposit")}
           </Text>
           <Text
@@ -122,7 +122,7 @@ export const ExclusiveDeposit: FC<ExclusiveDepositProps> = ({ active }) => {
 
         {/* Estimated time */}
         <Flex className="oui-w-full" justify="between">
-          <Text size="xs" intensity={36}>
+          <Text size="xs" weight="regular" className="oui-text-base-1">
             {t("transfer.exclusiveDeposit.estimatedTime")}
           </Text>
           <Text size="xs" intensity={98}>

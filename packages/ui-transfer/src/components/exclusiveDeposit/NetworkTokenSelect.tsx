@@ -44,7 +44,7 @@ export const NetworkTokenSelect: FC<NetworkTokenSelectProps> = ({
     <>
       {/* Network */}
       <Flex className="oui-w-full" justify="between" itemAlign="center">
-        <Text size="xs" intensity={36}>
+        <Text size="xs" weight="regular" className="oui-text-base-1">
           {t("common.network")}
         </Text>
         <Box className="oui-ml-auto">
@@ -54,7 +54,7 @@ export const NetworkTokenSelect: FC<NetworkTokenSelectProps> = ({
             onValueChange={onNetworkChange}
             placeholder={t("transfer.exclusiveDeposit.selectNetwork")}
             variant="text"
-            classNames={{ trigger: "oui-pr-0" }}
+            classNames={{ trigger: "oui-pr-0 oui-font-normal" }}
             maxHeight={128}
             contentProps={selectContentProps}
           >
@@ -72,7 +72,7 @@ export const NetworkTokenSelect: FC<NetworkTokenSelectProps> = ({
 
       {/* Token */}
       <Flex className="oui-w-full" justify="between" itemAlign="center">
-        <Text size="xs" intensity={36}>
+        <Text size="xs" weight="regular" className="oui-text-base-1">
           {t("common.token")}
         </Text>
         <Box className="oui-ml-auto">
@@ -82,9 +82,10 @@ export const NetworkTokenSelect: FC<NetworkTokenSelectProps> = ({
             onValueChange={onTokenChange}
             placeholder={t("transfer.exclusiveDeposit.selectToken")}
             variant="text"
-            classNames={{ trigger: "oui-pr-0" }}
+            classNames={{ trigger: "oui-pr-0 oui-font-normal" }}
             maxHeight={128}
             contentProps={selectContentProps}
+            disabled={tokenOptions.length === 0}
           >
             {tokenOptions.map((opt) => (
               <SelectItem key={opt.value} value={opt.value}>
