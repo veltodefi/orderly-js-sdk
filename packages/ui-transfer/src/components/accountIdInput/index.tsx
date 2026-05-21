@@ -44,9 +44,22 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
     setAccountDropdownOpen,
   } = props;
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [wrapperWidth, setWrapperWidth] = useState<number | undefined>();
   const [selectedAccount, setSelectedAccount] = useState<AccountInfo | null>(
     null,
   );
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    setWrapperWidth(el.getBoundingClientRect().width);
+    const ro = new ResizeObserver(([entry]) => {
+      setWrapperWidth(entry.contentRect.width);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const displayStatus: InputStatus | undefined = status;
   const displayHint = hintMessage;
@@ -106,7 +119,7 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
   );
 
   const textareaNode = (
-    <div className="oui-relative">
+    <div ref={wrapperRef} className="oui-relative">
       {prefix}
       <div
         className={cn(
@@ -183,15 +196,16 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
         }
       }}
     >
-      <DropdownMenuTrigger asChild>
-        <div>{textareaNode}</div>
-      </DropdownMenuTrigger>
+      {textareaNode}
       {displayHint && message}
+      <DropdownMenuTrigger asChild>
+        <span className="oui-invisible oui-w-0 oui-h-0 oui-overflow-hidden" />
+      </DropdownMenuTrigger>
       {accountInfo && accountDropdownOpen && (
         <DropdownMenuPortal>
           <DropdownMenuContent
             align="start"
-            style={{ width: "var(--radix-dropdown-menu-trigger-width)" }}
+            style={wrapperWidth ? { width: wrapperWidth } : undefined}
             className={cn(
               "oui-bg-base-8",
               "oui-rounded-2xl oui-shadow-lg",
@@ -245,7 +259,7 @@ const AccountResultItem = ({
       )}
       onClick={() => !disabled && onSelect(item)}
     >
-      <div className="oui-flex oui-flex-col oui-items-start oui-gap-0.5">
+      <div className="oui-flex oui-min-w-0 oui-flex-1 oui-flex-col oui-items-start oui-gap-0.5">
         <Text
           size="sm"
           intensity={54}
@@ -262,11 +276,11 @@ const AccountResultItem = ({
             {item.accountId}
           </Text.formatted>
         </Text>
-        <Text size="2xs" intensity={36}>
+        <Text size="2xs" intensity={36} className="oui-w-full oui-truncate">
           ({item.address})
         </Text>
       </div>
-      <Checkbox checked={!!selected} />
+      <Checkbox checked={!!selected} className="oui-shrink-0" />
     </div>
   );
 };
