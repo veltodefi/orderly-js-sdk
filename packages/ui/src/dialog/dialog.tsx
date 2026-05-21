@@ -50,7 +50,12 @@ const dialogVariants = tv({
       "sm:oui-rounded-xl",
       "oui-overflow-hidden",
     ],
-    body: ["oui-dialog-body", "oui-py-4 lg:oui-py-5", "oui-text-xs"],
+    body: [
+      "oui-dialog-body",
+      "oui-py-4 lg:oui-py-5",
+      "oui-text-xs",
+      "oui-font-normal",
+    ],
     close: [
       "oui-dialog-close-btn",
       "oui-absolute",
@@ -65,12 +70,7 @@ const dialogVariants = tv({
       "oui-p-2",
       "oui-rounded-lg",
     ],
-    header: [
-      "oui-dialog-header",
-      "oui-flex",
-      "oui-flex-col",
-      // "oui-pb-4"
-    ],
+    header: ["oui-dialog-header", "oui-flex", "oui-flex-col"],
     footer: [
       "oui-dialog-footer",
       "oui-flex",
@@ -89,7 +89,7 @@ const dialogVariants = tv({
       "oui-text-xl",
       "oui-pt-2",
       // "oui-pb-2",
-      "oui-min-h-16 lg:oui-min-h-[46px]",
+      "oui-min-h-16 lg:oui-min-h-[68px]",
       "oui-flex",
       "oui-items-center",
       "oui-text-base-contrast",
