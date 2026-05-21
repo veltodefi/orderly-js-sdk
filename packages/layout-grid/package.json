@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/layout-grid",
-  "version": "2.0.4-velto-main.12",
+  "version": "2.0.4-velto-main.13",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
