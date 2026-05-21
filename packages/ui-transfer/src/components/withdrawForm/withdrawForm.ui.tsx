@@ -99,11 +99,12 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
         accountDropdownOpen={props.toAccountInfoDropdownOpen}
         setAccountDropdownOpen={props.setToAccountInfoDropdownOpen}
       />
-      <Box px={2} className="oui-mt-[-4px] oui-text-[#c7c7c7]">
+      {/* <Box px={2} className="oui-mt-[-4px] oui-text-base-1 oui-flex oui-items-center oui-gap-1">
+        <InfoIcon size={10} className="oui-text-base-1" />
         <Text size="xs" weight="regular">
           {t("transfer.withdraw.accountIdOrAddress.hint")}
         </Text>
-      </Box>
+      </Box> */}
 
       <WalletBalance
         sourceToken={sourceToken}
@@ -114,7 +115,7 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
 
       <Flex
         direction="column"
-        className="oui-text-[#C7C7C7]"
+        className="oui-text-base-1"
         itemAlign="start"
         gap={2}
         mt={2}
