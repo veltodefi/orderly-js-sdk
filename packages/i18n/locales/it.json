@@ -895,7 +895,7 @@
   "transfer.withdraw.accountId.tips": "Inserisci un ID account invece di un indirizzo wallet.",
   "transfer.withdraw.accountId.invalid": "Nessun account trovato",
   "transfer.withdraw.available.tooltip": "L'importo disponibile per il prelievo è pari al tuo collaterale libero. Se hai PnL non liquidato, liquidalo prima nella finestra di prelievo per aumentare l'importo disponibile. Il prelievo massimo attuale per richiesta è {{amount}} USDC. Per prelevare di più, invia più richieste.",
-  "transfer.withdraw.accountIdOrAddress.placeholder": "ID account o indirizzo",
+  "transfer.withdraw.accountIdOrAddress.placeholder": "ID account o indirizzo wallet",
   "transfer.withdraw.accountIdOrAddress.hint": "Inserisci un ID account o un indirizzo per trovare l'account",
   "transfer.withdraw.addExternalWallet": "Aggiungi portafoglio esterno",
   "transfer.withdraw.addExternalWallet.addressDescription": "Compila e conferma l'indirizzo per ricevere i fondi sulla catena di destinazione.",

@@ -102,7 +102,8 @@ export const transfer = {
   "transfer.withdraw.accountId.invalid": "No account found",
   "transfer.withdraw.available.tooltip":
     "Available to withdraw equals your free collateral. If you have unsettled PnL, please settle first in the withdraw modal to increase available amount. Current maximum withdrawal per request is {{amount}} USDC. To withdraw more, please submit multiple requests.",
-  "transfer.withdraw.accountIdOrAddress.placeholder": "Account ID or address",
+  "transfer.withdraw.accountIdOrAddress.placeholder":
+    "Account ID or wallet address",
   "transfer.withdraw.accountIdOrAddress.hint":
     "Enter an account ID or address to find the account",
   "transfer.withdraw.addExternalWallet": "Add external wallet",

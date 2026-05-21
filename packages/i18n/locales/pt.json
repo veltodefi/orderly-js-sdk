@@ -895,7 +895,7 @@
   "transfer.withdraw.accountId.tips": "Por favor, insira um ID de conta em vez de um endereço de carteira.",
   "transfer.withdraw.accountId.invalid": "Nenhuma conta encontrada",
   "transfer.withdraw.available.tooltip": "O valor disponível para saque equivale ao seu colateral livre. Se você tiver PnL não liquidado, liquide-o primeiro na janela de saque para aumentar o valor disponível. O saque máximo atual por solicitação é {{amount}} USDC. Para sacar mais, envie múltiplas solicitações.",
-  "transfer.withdraw.accountIdOrAddress.placeholder": "ID da conta ou endereço",
+  "transfer.withdraw.accountIdOrAddress.placeholder": "ID da conta ou endereço da carteira",
   "transfer.withdraw.accountIdOrAddress.hint": "Digite um ID de conta ou endereço para encontrar a conta",
   "transfer.withdraw.addExternalWallet": "Adicionar carteira externa",
   "transfer.withdraw.addExternalWallet.addressDescription": "Preencha e confirme o endereço para receber os fundos na cadeia de destino.",
