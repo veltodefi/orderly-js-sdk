@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Fonlar Web3 cüzdanınıza aktarılır",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "Fonlar başka bir Velto hesabına aktarılır",
   "transfer.withdraw.dialogTitle": "Çekim",
   "transfer.withdraw.dialogSubtitle": "Velto hesabınızdan Web3 cüzdanınıza veya başka bir Velto hesabına fon aktarın.",
   "transfer.withdraw.unsupported.chain": "Bu zincirde para çekme işlemi desteklenmiyor. Lütfen köprüsüz ağlardan herhangi birine geçin.",

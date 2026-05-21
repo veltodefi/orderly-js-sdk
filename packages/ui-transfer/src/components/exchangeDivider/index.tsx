@@ -2,17 +2,36 @@ import { FC, ReactNode } from "react";
 import { useTranslation } from "@veltodefi/i18n";
 import { Flex, Text } from "@veltodefi/ui";
 import { ArrowDownIcon } from "../../icons";
+import { WithdrawTo } from "../../types";
 
 type ExchangeDividerProps = {
   icon?: ReactNode;
   variant?: "deposit" | "withdraw";
+  withdrawTo?: WithdrawTo;
 };
 
 export const ExchangeDivider: FC<ExchangeDividerProps> = ({
   icon,
   variant = "deposit",
+  withdrawTo = WithdrawTo.Wallet,
 }) => {
   const { t } = useTranslation();
+
+  const label =
+    variant === "deposit"
+      ? t(
+          "transfer.deposit.fundsMoveToTradingBalance",
+          "Funds move into your trading balance",
+        )
+      : withdrawTo === WithdrawTo.Account
+        ? t(
+            "transfer.withdraw.fundsMoveToVeltoAccount",
+            "Funds move to another Velto account",
+          )
+        : t(
+            "transfer.withdraw.fundsMoveToWeb3Wallet",
+            "Funds move to your Web3 wallet",
+          );
 
   return (
     <Flex className="oui-my-4">
@@ -23,15 +42,7 @@ export const ExchangeDivider: FC<ExchangeDividerProps> = ({
       >
         {icon || <ArrowDownIcon className="oui-text-base-1" />}
         <Text weight="regular" size={"2xs"} className="oui-text-base-1">
-          {variant === "deposit"
-            ? t(
-                "transfer.deposit.fundsMoveToTradingBalance",
-                "Funds move into your trading balance",
-              )
-            : t(
-                "transfer.withdraw.fundsMoveToWeb3Wallet",
-                "Funds move into your trading balance",
-              )}
+          {label}
         </Text>
       </Flex>
 

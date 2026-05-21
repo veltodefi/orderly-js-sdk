@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "자금이 Web3 지갑으로 이동됩니다",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "자금이 다른 Velto 계정으로 이동합니다",
   "transfer.withdraw.dialogTitle": "출금",
   "transfer.withdraw.dialogSubtitle": "Velto 계정에서 Web3 지갑 또는 다른 Velto 계정으로 자금을 이동합니다.",
   "transfer.withdraw.unsupported.chain": "이 체인에서는 출금이 지원되지 않습니다. 브릿지리스 네트워크 중 하나로 전환하세요.",

@@ -57,6 +57,8 @@ export const transfer = {
     "Funds move into your trading balance",
 
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Funds move to your Web3 wallet",
+  "transfer.withdraw.fundsMoveToVeltoAccount":
+    "Funds move to another Velto account",
   "transfer.withdraw.dialogTitle": "Withdraw",
   "transfer.withdraw.dialogSubtitle":
     "Move funds from your Velto account to your Web3 wallet or another Velto account.",

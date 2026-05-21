@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Los fondos se transfieren a tu billetera Web3",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "Los fondos se mueven a otra cuenta Velto",
   "transfer.withdraw.dialogTitle": "Retirar",
   "transfer.withdraw.dialogSubtitle": "Mueve fondos de tu cuenta Velto a tu billetera Web3 o a otra cuenta Velto.",
   "transfer.withdraw.unsupported.chain": "Los retiros no están soportados en esta cadena. Por favor cambia a cualquiera de las redes sin puente.",

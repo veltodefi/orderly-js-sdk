@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Кошти переходять до вашого Web3-гаманця",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "Кошти переводяться на інший обліковий запис Velto",
   "transfer.withdraw.dialogTitle": "Вивести",
   "transfer.withdraw.dialogSubtitle": "Перекажіть кошти зі свого облікового запису Velto на ваш Web3-гаманець або інший обліковий запис Velto.",
   "transfer.withdraw.unsupported.chain": "Виведення не підтримується в цій мережі. Будь ласка, переключіться на будь-яку з мереж без мосту.",

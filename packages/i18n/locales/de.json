@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Das Guthaben wird in dein Web3-Wallet übertragen",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "Gelder werden auf ein anderes Velto-Konto übertragen",
   "transfer.withdraw.dialogTitle": "Abheben",
   "transfer.withdraw.dialogSubtitle": "Überweise Gelder von deinem Velto-Konto an deine Web3-Wallet oder ein anderes Velto-Konto.",
   "transfer.withdraw.unsupported.chain": "Auszahlungen werden auf dieser Chain nicht unterstützt. Bitte wechseln Sie zu einem der brückenlosen Netzwerke.",

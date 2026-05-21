@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "資金は Web3 ウォレットに移動します",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "資金は別の Velto アカウントへ移動します",
   "transfer.withdraw.dialogTitle": "出金",
   "transfer.withdraw.dialogSubtitle": "Velto アカウントから Web3 ウォレットまたは別の Velto アカウントへ資金を移動します。",
   "transfer.withdraw.unsupported.chain": "このチェーンでは出金がサポートされていません。ブリッジレスネットワークのいずれかに切り替えてください。",

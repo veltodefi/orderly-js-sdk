@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Dana berpindah ke dompet Web3 Anda",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "Dana berpindah ke akun Velto lain",
   "transfer.withdraw.dialogTitle": "Tarik",
   "transfer.withdraw.dialogSubtitle": "Pindahkan dana dari akun Velto Anda ke dompet Web3 atau akun Velto lainnya.",
   "transfer.withdraw.unsupported.chain": "Penarikan tidak didukung di chain ini. Harap beralih ke salah satu jaringan tanpa jembatan.",

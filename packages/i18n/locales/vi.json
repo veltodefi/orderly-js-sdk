@@ -873,6 +873,7 @@
   "transfer.deposit.auditedProtocol": "Audited protocol",
   "transfer.deposit.fundsMoveToTradingBalance": "Funds move into your trading balance",
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Tiền chuyển vào ví Web3 của bạn",
+  "transfer.withdraw.fundsMoveToVeltoAccount": "Tiền chuyển sang tài khoản Velto khác",
   "transfer.withdraw.dialogTitle": "Rút tiền",
   "transfer.withdraw.dialogSubtitle": "Chuyển tiền từ tài khoản Velto của bạn sang ví Web3 hoặc tài khoản Velto khác.",
   "transfer.withdraw.unsupported.chain": "Rút tiền không được hỗ trợ trên chuỗi này. Vui lòng chuyển sang bất kỳ mạng không cần cầu nối nào.",
