@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/markets",
-  "version": "3.0.4-velto-main.11",
+  "version": "3.0.4-velto-main.12",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
