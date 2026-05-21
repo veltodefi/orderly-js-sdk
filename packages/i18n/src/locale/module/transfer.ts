@@ -36,7 +36,9 @@ export const transfer = {
   "transfer.deposit.closeToMaxLimit":
     "Deposit amount too close to maximum limit. To ensure your transaction succeeds, please reduce the amount",
   "transfer.deposit.tab.connectedWallet": "From connected wallet",
+  "transfer.deposit.tab.connectedWalletShort": "Connected wallet",
   "transfer.deposit.tab.exchangeOrOtherWallet": "From exchange / other wallet",
+  "transfer.deposit.tab.exchangeOrOtherWalletShort": "Exchange / other wallet",
 
   "transfer.deposit.estGasFee": "Est. gas fee",
   "transfer.deposit.estGasFee.tooltip":
@@ -55,6 +57,9 @@ export const transfer = {
     "Funds move into your trading balance",
 
   "transfer.withdraw.fundsMoveToWeb3Wallet": "Funds move to your Web3 wallet",
+  "transfer.withdraw.dialogTitle": "Withdraw",
+  "transfer.withdraw.dialogSubtitle":
+    "Move funds from your Velto account to your Web3 wallet or another Velto account.",
 
   "transfer.withdraw.unsupported.chain":
     "Withdrawals are not supported on this chain. Please switch to any of the bridgeless networks.",
