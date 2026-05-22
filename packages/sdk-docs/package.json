@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/sdk-docs",
-  "version": "1.0.4-velto-dev.14",
+  "version": "1.0.4-velto-dev.15",
   "type": "module",
   "description": "Orderly SDK documentation runtime: MCP server, exact indexes, and narrative (QMD) retrieval",
   "license": "MIT",

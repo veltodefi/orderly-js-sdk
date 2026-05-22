@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/devkit",
-  "version": "1.0.4-velto-dev.17",
+  "version": "1.0.4-velto-dev.18",
   "description": "CLI toolkit for scaffolding and building DEXs, plugins, and modules with Orderly",
   "main": "",
   "bin": {
