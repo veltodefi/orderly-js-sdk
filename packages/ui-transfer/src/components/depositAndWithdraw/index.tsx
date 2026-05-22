@@ -329,7 +329,7 @@ const SheetVariant: FC<DepositAndWithdrawProps> = (props) => (
 registerSimpleSheet(DepositAndWithdrawWithSheetId, SheetVariant, {
   classNames: {
     content:
-      "oui-flex oui-flex-col oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9 !oui-px-0 oui-pt-4",
+      "oui-flex oui-flex-col oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9 !oui-px-0 oui-py-4",
     body: "oui-flex-1 oui-min-h-0 oui-flex oui-flex-col oui-overflow-hidden !oui-px-0 !oui-py-0",
   },
 });
