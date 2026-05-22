@@ -189,7 +189,6 @@ const DefaultFallback: React.FC<{
   veltoCurrentView?: string;
   disabledConnect?: boolean;
   veltoIsEmptyView?: boolean;
-  
 }> = (props) => {
   const { buttonProps, labels, descriptions, veltoIsEmptyView } = props;
   const { t } = useTranslation();
@@ -208,23 +207,36 @@ const DefaultFallback: React.FC<{
       );
   };
 
-  const onConnectWallet = async () => {
-    const res = await connectWallet();
+  const onConnectWallet = async (sendToOnboarding?: boolean) => {
+    const defaultConnectWallet = async () => {
+      const res = await connectWallet();
 
-    if (!res) {
+      if (!res) {
+        return;
+      }
+
+      if (res.wrongNetwork) {
+        switchChain();
+      } else {
+        if (
+          (res?.status ?? AccountStatusEnum.NotConnected) <
+          AccountStatusEnum.EnableTrading
+        ) {
+          onConnectOrderly();
+        }
+      }
+    };
+
+    // Velto handoff — delegate to the webapp-provided onConnectWallet (e.g.
+    // redirectToOnboarding) when present, so the main "Get started" CTA
+    // routes users into Velto's onboarding flow instead of opening Orderly's
+    // wallet modal directly. Regressed during the 3.0 upstream sync — restore.
+    if (veltoProps?.onConnectWallet) {
+      veltoProps.onConnectWallet(defaultConnectWallet, sendToOnboarding);
       return;
     }
 
-    if (res.wrongNetwork) {
-      switchChain();
-    } else {
-      if (
-        (res?.status ?? AccountStatusEnum.NotConnected) <
-        AccountStatusEnum.EnableTrading
-      ) {
-        onConnectOrderly();
-      }
-    }
+    await defaultConnectWallet();
   };
 
   const switchChain = () => {
