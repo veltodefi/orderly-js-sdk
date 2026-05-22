@@ -15,6 +15,7 @@ import {
   OpenInNewIcon,
   useScreen,
 } from "@veltodefi/ui";
+import { Decimal } from "@veltodefi/utils";
 import {
   normalizeQuickfillPercentage,
   useTransferAnalytics,
@@ -43,6 +44,15 @@ import { Notice } from "./components/notice";
 import { type DepositFormScriptReturn } from "./depositForm.script";
 
 type Props = { onAuditLinkClick?: () => void } & DepositFormScriptReturn;
+
+const isNonPositive = (value: unknown): boolean => {
+  if (value === null || value === undefined || value === "") return true;
+  try {
+    return new Decimal(String(value)).lte(0);
+  } catch {
+    return true;
+  }
+};
 
 // Common animation classes for reusability
 const animationClasses =
@@ -273,7 +283,7 @@ export const DepositForm: FC<Props> = (props) => {
               <AmountSelector
                 maxAmount={maxDepositAmount}
                 precision={sourceToken?.precision}
-                disabled={!maxDepositAmount || maxDepositAmount === "0"}
+                disabled={isNonPositive(maxDepositAmount)}
                 selectedPercentage={selectedPercentage}
                 onClick={({ selectedPercentage, selectedValue }) => {
                   setSelectedPercentage(selectedPercentage);
@@ -318,6 +328,7 @@ export const DepositForm: FC<Props> = (props) => {
                 showTargetDepositCap={showTargetDepositCap}
                 targetHintMessage={targetHintMessage}
                 targetInputStatus={targetInputStatus}
+                sourceInputStatus={inputStatus}
               />
               <Divider className="oui-bg-base-6" />
               {renderContent(targetToken?.symbol)}
@@ -427,6 +438,7 @@ const TradingBalance = ({
   targetHintMessage,
   targetInputStatus,
   showTargetDepositCap,
+  sourceInputStatus,
 }: {
   targetQuantityLoading: boolean;
   targetQuantity?: string;
@@ -434,7 +446,13 @@ const TradingBalance = ({
   targetHintMessage?: string;
   targetInputStatus?: InputStatus;
   showTargetDepositCap?: boolean;
+  sourceInputStatus?: InputStatus;
 }) => {
+  // When the source input fails validation (e.g. insufficient wallet
+  // balance), suppress the preview so we don't imply the typed amount will
+  // land in the trading balance. Show "0" — matching the empty-input state.
+  const displayQuantity =
+    sourceInputStatus === "error" ? undefined : targetQuantity;
   const { t } = useTranslation();
 
   const tipContent = (
@@ -469,7 +487,9 @@ const TradingBalance = ({
             size={"lg"}
             className="oui-text-primary-contrast oui-font-semibold"
           >
-            {targetToken ? `${targetQuantity || 0} ${targetToken.symbol}` : "0"}
+            {targetToken
+              ? `${displayQuantity || 0} ${targetToken.symbol}`
+              : "0"}
           </Text>
         )}
       </Flex>

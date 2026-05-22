@@ -16,6 +16,7 @@ import {
   cn,
   OpenInNewIcon,
 } from "@veltodefi/ui";
+import { Decimal } from "@veltodefi/utils";
 import {
   deriveWithdrawWarningType,
   normalizeQuickfillPercentage,
@@ -40,6 +41,15 @@ import { WithdrawFormScriptReturn } from "./withdrawForm.script";
 export type WithdrawFormProps = {
   onAuditLinkClick?: () => void;
 } & WithdrawFormScriptReturn;
+
+const isNonPositive = (value: unknown): boolean => {
+  if (value === null || value === undefined || value === "") return true;
+  try {
+    return new Decimal(String(value)).lte(0);
+  } catch {
+    return true;
+  }
+};
 
 export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
   const {
@@ -274,7 +284,7 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
 
               <AmountSelector
                 maxAmount={maxQuantity.toString()}
-                disabled={!maxQuantity || maxQuantity === 0}
+                disabled={isNonPositive(maxQuantity)}
                 selectedPercentage={selectedPercentage}
                 onClick={({ selectedPercentage, selectedValue }) => {
                   setSelectedPercentage(selectedPercentage);
