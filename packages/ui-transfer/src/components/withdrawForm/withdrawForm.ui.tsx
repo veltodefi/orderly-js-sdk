@@ -40,6 +40,12 @@ import { WithdrawFormScriptReturn } from "./withdrawForm.script";
 
 export type WithdrawFormProps = {
   onAuditLinkClick?: () => void;
+  /**
+   * Optional node rendered inside the form's scroll container, above the
+   * fields. The dialog passes its onboarding header (title + subtitle) here
+   * so it scrolls with the rest of the form on short viewports.
+   */
+  header?: React.ReactNode;
 } & WithdrawFormScriptReturn;
 
 const isNonPositive = (value: unknown): boolean => {
@@ -238,8 +244,11 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
         "oui-h-full oui-min-h-0 oui-flex oui-flex-col",
       )}
     >
-      <div className="oui-flex-1 oui-min-h-0 oui-overflow-y-auto oui-overflow-x-hidden custom-scrollbar oui-px-5">
-        <Box className="oui-mb-6 lg:oui-mb-8">
+      <div className="oui-flex-1 oui-min-h-0 oui-overflow-y-auto oui-overflow-x-hidden custom-scrollbar oui-flex oui-flex-col">
+        {props.header && (
+          <div className="oui-shrink-0 oui-px-5">{props.header}</div>
+        )}
+        <Box className="oui-mb-6 lg:oui-mb-8 oui-px-5">
           <Box className="md:oui-bg-base-8 md:oui-p-4 oui-rounded-[16px]">
             <Box className="oui-mb-4">
               <BrokerWallet />
@@ -330,7 +339,7 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
 
           <ExchangeDivider variant="withdraw" withdrawTo={withdrawTo} />
 
-          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
+          <Box className="md:oui-bg-base-8 md:oui-p-4 oui-rounded-[16px]">
             <Tabs
               value={withdrawTo}
               onValueChange={(tab) => {

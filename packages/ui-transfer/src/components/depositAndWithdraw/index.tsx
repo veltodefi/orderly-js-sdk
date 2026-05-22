@@ -258,13 +258,11 @@ const DepositAndWithdrawInner: FC<
           icon={<ArrowUpFromLineIcon size={16} />}
           value="withdraw"
         >
-          {header && (
-            <div className="oui-shrink-0 oui-px-4 md:oui-px-5">{header}</div>
-          )}
           <div className="oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
             <WithdrawSlot
               close={wrappedClose}
               onAuditLinkClick={handleAuditLinkClick}
+              header={header || undefined}
             />
           </div>
         </TabPanel>
