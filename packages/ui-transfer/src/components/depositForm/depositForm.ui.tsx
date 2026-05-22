@@ -41,6 +41,10 @@ import { YieldBearingReminder } from "../yieldBearingReminder";
 import { ConvertRate } from "./components/convertRate";
 import { DepositTokenValueFormatter } from "./components/depositTokenValueFormatter";
 import { Notice } from "./components/notice";
+import {
+  shouldShowEstimatedFee,
+  TradingBalance,
+} from "./components/tradingBalance";
 import { type DepositFormScriptReturn } from "./depositForm.script";
 
 type Props = { onAuditLinkClick?: () => void } & DepositFormScriptReturn;
@@ -178,7 +182,7 @@ export const DepositForm: FC<Props> = (props) => {
           itemAlign="start"
           gap={2}
         >
-          {inputStatus !== "error" && (
+          {shouldShowEstimatedFee(inputStatus) && (
             <Fee {...fee} nativeSymbol={props.nativeSymbol} />
           )}
           {onAuditLinkClick && <AuditLink onClick={onAuditLinkClick} />}
@@ -233,7 +237,7 @@ export const DepositForm: FC<Props> = (props) => {
           </>
         )}
 
-        {inputStatus !== "error" && (
+        {shouldShowEstimatedFee(inputStatus) && (
           <Fee {...fee} nativeSymbol={props.nativeSymbol} />
         )}
         {onAuditLinkClick && <AuditLink onClick={onAuditLinkClick} />}
@@ -432,118 +436,5 @@ const AuditLink: FC<{ onClick: () => void }> = ({ onClick }) => {
       </Text>
       <OpenInNewIcon aria-hidden size={16} className="oui-text-primary" />
     </button>
-  );
-};
-
-const TradingBalance = ({
-  targetQuantityLoading,
-  targetQuantity,
-  targetToken,
-  targetHintMessage,
-  targetInputStatus,
-  showTargetDepositCap,
-  sourceInputStatus,
-}: {
-  targetQuantityLoading: boolean;
-  targetQuantity?: string;
-  targetToken?: API.TokenInfo;
-  targetHintMessage?: string;
-  targetInputStatus?: InputStatus;
-  showTargetDepositCap?: boolean;
-  sourceInputStatus?: InputStatus;
-}) => {
-  // When the source input fails validation (e.g. insufficient wallet
-  // balance), suppress the preview so we don't imply the typed amount will
-  // land in the trading balance. Show "0" — matching the empty-input state.
-  const displayQuantity =
-    sourceInputStatus === "error" ? undefined : targetQuantity;
-  const { t } = useTranslation();
-
-  const tipContent = (
-    <Flex direction="column" itemAlign="start">
-      <Text size="2xs" weight="semibold" intensity={36}>
-        {t("transfer.depositCap.tooltip")}
-        <Text as="span" size="2xs" weight="semibold" intensity={80}>
-          {targetToken?.symbol}.
-        </Text>
-      </Text>
-      <a
-        href="https://orderly.network/docs/introduction/trade-on-orderly/multi-collateral#max-deposits-user"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="oui-text-2xs oui-text-primary"
-      >
-        {t("common.learnMore")}
-      </a>
-    </Flex>
-  );
-
-  return (
-    <Flex direction={"column"}>
-      <Flex justify={"between"} className="oui-w-full">
-        <Text size={"sm"} weight="regular" className="oui-text-base-1">
-          {`${t("extend.transfer.tradingBalance")}:`}
-        </Text>
-        {targetQuantityLoading ? (
-          <Spinner size="sm" className="oui-h-[26px]" />
-        ) : (
-          <Text
-            size={"lg"}
-            className="oui-text-primary-contrast oui-font-semibold"
-          >
-            {targetToken
-              ? `${displayQuantity || 0} ${targetToken.symbol}`
-              : "0"}
-          </Text>
-        )}
-      </Flex>
-      {showTargetDepositCap && (
-        <div
-          className={cn(
-            "oui-w-full oui-my-2 oui-p-2 oui-rounded-lg oui-bg-base-6",
-            animationClasses,
-          )}
-        >
-          <Flex justify={"between"} className="oui-w-full">
-            <Flex>
-              <Text
-                size={"2xs"}
-                weight="regular"
-                className="oui-text-base-1 oui-mr-1"
-              >
-                {t("transfer.depositCap", "Deposit cap") + ":"}
-              </Text>
-              <Tips content={tipContent} title={t("common.tips")} />
-            </Flex>
-            <Text
-              as="span"
-              size="2xs"
-              intensity={98}
-              weight="regular"
-              className="oui-leading-[10px]"
-            >
-              <Text.numeral dp={0}>
-                {targetToken?.user_max_qty ?? 0}
-              </Text.numeral>{" "}
-              {targetToken?.symbol}
-            </Text>
-          </Flex>
-          {targetHintMessage && (
-            <Flex mt={1} justify="between" itemAlign="center">
-              <Text
-                size="2xs"
-                className={cn(
-                  "oui-font-normal",
-                  targetInputStatus === "error" && "oui-text-danger-light",
-                  targetInputStatus === "warning" && "oui-text-warning-light",
-                )}
-              >
-                {targetHintMessage}
-              </Text>
-            </Flex>
-          )}
-        </div>
-      )}
-    </Flex>
   );
 };
