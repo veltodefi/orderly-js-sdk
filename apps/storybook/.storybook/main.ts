@@ -142,9 +142,33 @@ const config: StorybookConfig = {
          */
         dedupe: ["react", "react-dom"],
       },
-      // Optimize dependencies to handle missing peer dependencies
+      // Optimize dependencies to handle missing peer dependencies.
+      // @particle-network/* declare `uuidv4` in package.json but import
+      // `v4` from `"uuid"`. Under pnpm strict isolation esbuild can't
+      // resolve "uuid" from those packages, which either crashes
+      // optimize-deps (no addons) or wedges it indefinitely
+      // (Chromatic addon swallows the error into an unhandled
+      // rejection). Excluding them stops esbuild from walking the bad
+      // packages. They are pulled transitively via
+      // @solana/wallet-adapter-wallets → -particle and are not
+      // exercised by any current story.
+      // See velto-webapp wiki/runbooks/sdk-storybook-sessions/2026-05-18.md.
+      //
+      // @trezor/device-utils@1.2.0 has the same packaging defect: its
+      // package.json declares no dependencies at all, yet
+      // lib/index.js does `require("tslib")`. Under pnpm strict
+      // isolation, esbuild walking the package can't see tslib. Pulled
+      // transitively via the wallet-adapter chain; no story exercises
+      // it directly.
+      // See velto-webapp wiki/runbooks/sdk-storybook-sessions/2026-05-20.md.
       optimizeDeps: {
-        exclude: ["@project-serum/sol-wallet-adapter"],
+        exclude: [
+          "@project-serum/sol-wallet-adapter",
+          "@particle-network/analytics",
+          "@particle-network/auth",
+          "@particle-network/crypto",
+          "@trezor/device-utils",
+        ],
         include: [
           "react",
           "react/jsx-runtime",

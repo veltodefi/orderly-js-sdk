@@ -44,9 +44,22 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
     setAccountDropdownOpen,
   } = props;
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const [wrapperWidth, setWrapperWidth] = useState<number | undefined>();
   const [selectedAccount, setSelectedAccount] = useState<AccountInfo | null>(
     null,
   );
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    setWrapperWidth(el.getBoundingClientRect().width);
+    const ro = new ResizeObserver(([entry]) => {
+      setWrapperWidth(entry.contentRect.width);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const displayStatus: InputStatus | undefined = status;
   const displayHint = hintMessage;
@@ -75,8 +88,8 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
   }, [value, selectedAccount?.address]);
 
   const prefix = (
-    <div className="oui-absolute oui-left-4 oui-top-0.5 oui-z-[1]">
-      <Text size="2xs" weight="regular" className="oui-text-[#C7C7C7]">
+    <div className="oui-absolute oui-left-4 oui-top-1 oui-z-[1]">
+      <Text size="2xs" weight="regular" className="oui-text-base-1">
         {label}
       </Text>
     </div>
@@ -106,11 +119,11 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
   );
 
   const textareaNode = (
-    <div className="oui-relative">
+    <div ref={wrapperRef} className="oui-relative">
       {prefix}
       <div
         className={cn(
-          "oui-w-full oui-rounded-lg oui-border oui-border-line oui-mb-1",
+          "oui-w-full oui-rounded-lg oui-border oui-border-base-1 oui-mb-1",
           "oui-bg-base-5 oui-text-sm oui-text-base-contrast",
           "focus-within:oui-border-primary-light",
           displayStatus === "error" &&
@@ -118,6 +131,7 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
           displayStatus === "warning" &&
             "oui-border-warning-light focus-within:oui-border-warning-light",
           "disabled:oui-cursor-not-allowed",
+          "oui-rounded-[11.5px]",
         )}
       >
         <textarea
@@ -127,10 +141,10 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
             // hide resize height control and scrollbar
             "oui-resize-none oui-overflow-y-hidden",
             "oui-block oui-w-full oui-bg-base-8",
-            "oui-px-4 oui-pt-6",
-            selectedAccount?.address ? "oui-pb-0" : "oui-pb-2",
+            "oui-px-4 oui-pt-7",
+            selectedAccount?.address ? "oui-pb-2" : "oui-pb-2",
             "oui-text-sm oui-text-base-contrast",
-            "oui-rounded-lg oui-outline-none",
+            "oui-outline-none oui-rounded-[11.5px]",
             "placeholder:oui-text-base-contrast-20 placeholder:oui-font-normal",
             props.className,
           )}
@@ -145,10 +159,11 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
           disabled={props.disabled}
         />
         {selectedAccount?.address && (
-          <div className="oui-flex oui-items-center oui-justify-between oui-px-3 oui-pb-2 oui-pt-1">
+          <div className="oui-flex oui-items-center oui-justify-between oui-px-3 oui-pb-2 oui-pt-2">
             <Text
               size="2xs"
-              intensity={36}
+              intensity={54}
+              weight="regular"
               className="oui-truncate oui-leading-[15px]"
             >
               ({t("common.address")}:{" "}
@@ -158,11 +173,6 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
               )
             </Text>
           </div>
-        )}
-        {enableAccountLookup && (
-          <DropdownMenuTrigger asChild>
-            <span className="oui-absolute oui-left-0 oui-bottom-0 oui-w-0 oui-h-0" />
-          </DropdownMenuTrigger>
         )}
       </div>
     </div>
@@ -195,10 +205,11 @@ export const TextAreaInput = (props: TextAreaInputProps) => {
         <DropdownMenuPortal>
           <DropdownMenuContent
             align="start"
+            style={wrapperWidth ? { width: wrapperWidth } : undefined}
             className={cn(
               "oui-bg-base-8",
-              "oui-rounded-md oui-shadow-lg",
-              "oui--mt-1 oui-w-[378px] oui-p-1",
+              "oui-rounded-2xl oui-shadow-lg",
+              "oui--mt-1 oui-p-1",
             )}
             {...({
               onOpenAutoFocus: (event: any) => event.preventDefault(),
@@ -248,7 +259,7 @@ const AccountResultItem = ({
       )}
       onClick={() => !disabled && onSelect(item)}
     >
-      <div className="oui-flex oui-flex-col oui-items-start oui-gap-0.5">
+      <div className="oui-flex oui-min-w-0 oui-flex-1 oui-flex-col oui-items-start oui-gap-0.5">
         <Text
           size="sm"
           intensity={54}
@@ -265,11 +276,11 @@ const AccountResultItem = ({
             {item.accountId}
           </Text.formatted>
         </Text>
-        <Text size="2xs" intensity={36}>
+        <Text size="2xs" intensity={36} className="oui-w-full oui-truncate">
           ({item.address})
         </Text>
       </div>
-      <Checkbox checked={!!selected} />
+      <Checkbox checked={!!selected} className="oui-shrink-0" />
     </div>
   );
 };

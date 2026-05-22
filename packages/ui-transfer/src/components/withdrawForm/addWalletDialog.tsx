@@ -4,7 +4,7 @@ import { useTranslation } from "@veltodefi/i18n";
 import { ChainNamespace } from "@veltodefi/types";
 import {
   Box,
-  Button,
+  MainButton,
   Input,
   SimpleDialog,
   Text,
@@ -115,20 +115,22 @@ export const AddWalletDialog: FC<AddWalletDialogProps> = ({
     >
       <Box className="oui-flex oui-flex-col oui-gap-6 oui-font-semibold oui-tracking-[0.03em]">
         <Flex justify="between">
-          <Text size="sm" intensity={54}>
+          <Text size="sm" intensity={98}>
             {t("common.network")}
           </Text>
-          <Flex gapX={1}>
+          <Flex gapX={2}>
             <ChainIcon chainId={"" + chain?.id} className="oui-w-4 oui-h-4" />
-            <Text size="sm">{chain?.info?.network_infos?.shortName}</Text>
+            <Text size="sm" intensity={98}>
+              {chain?.info?.network_infos?.shortName}
+            </Text>
           </Flex>
         </Flex>
         <Flex direction="column" itemAlign="start" gapY={2}>
-          <Text size="sm" intensity={54}>
+          <Text size="sm" weight="regular">
             {t("transfer.withdraw.addExternalWallet.addressDescription")}
           </Text>
           {requiredNetworkLabel && (
-            <Text size="sm" intensity={54}>
+            <Text size="sm" weight="regular">
               {t("transfer.withdraw.addExternalWallet.addressWarning", {
                 networkLabel: requiredNetworkLabel,
               })}
@@ -137,7 +139,7 @@ export const AddWalletDialog: FC<AddWalletDialogProps> = ({
         </Flex>
         <Box className="oui-flex oui-flex-col oui-gap-1">
           <Flex justify="between">
-            <Text size="2xs" intensity={54}>
+            <Text size="2xs" weight="regular">
               {t("transfer.withdraw.addExternalWallet.label")}
             </Text>
             {isValidating && (
@@ -165,9 +167,11 @@ export const AddWalletDialog: FC<AddWalletDialogProps> = ({
             value={address}
             onValueChange={onAddressChange}
             autoFocus
-            color={showBorderDanger ? "danger" : undefined}
+            color={showBorderDanger ? "danger" : "gray"}
             className={cn("oui-bg-base-6 oui-bg-transparent")}
-            classNames={{ input: "oui-text-base-contrast" }}
+            classNames={{
+              input: "oui-text-base-contrast",
+            }}
             suffix={
               address && (
                 <Box className="oui-ml-2.5 oui-mr-2 oui-cursor-pointer">
@@ -198,15 +202,15 @@ export const AddWalletDialog: FC<AddWalletDialogProps> = ({
             </Flex>
           )}
         </Box>
-        <Button
-          variant="contained"
+        <MainButton
+          variant="primary"
           fullWidth
           onClick={handleConfirm}
           disabled={!address || isValidating || !isValid || isNetworkMismatch}
           className="oui-mt-2"
         >
           {t("common.confirm")}
-        </Button>
+        </MainButton>
       </Box>
     </SimpleDialog>
   );

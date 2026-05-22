@@ -218,7 +218,7 @@ const SelectTrigger = React.forwardRef<
               asChild
               className="oui-transition-transform group-data-[state=open]:oui-rotate-180 group-data-[state=closed]:oui-rotate-0"
             >
-              <ChevronDownVeltoIcon size={12} color={"white"} opacity={1} />
+              <ChevronDownVeltoIcon size={9} color={"white"} opacity={1} />
             </SelectPrimitive.Icon>
           )}
         </>

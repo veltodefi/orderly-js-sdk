@@ -33,7 +33,7 @@ export const UnsettlePnlInfo = (props: UnsettlePnlInfoProps) => {
     return (
       <Flex itemAlign="center" justify="start" gap={1}>
         <ExclamationFillIcon size={14} className="oui-text-warning-darken" />
-        <Text className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12">
+        <Text className="oui-cursor-pointer oui-border-b oui-border-dashed oui-border-line-12 oui-font-normal">
           {`${t("settle.unsettled")}:`}
         </Text>
       </Flex>
@@ -73,7 +73,7 @@ export const UnsettlePnlInfo = (props: UnsettlePnlInfoProps) => {
             </button>
           ) : (
             <Tooltip
-              className="oui-max-w-[274px] oui-font-semibold"
+              className="oui-max-w-[274px] oui-font-normal"
               content={tooltipContent as any}
             >
               {renderUnsettledLabel()}
@@ -85,13 +85,13 @@ export const UnsettlePnlInfo = (props: UnsettlePnlInfoProps) => {
         <Text.numeral
           showIdentifier
           coloring
-          weight="semibold"
+          weight="regular"
           dp={6}
           data-testid="oui-testid-withdraw-dialog-unsettledPnl-value"
         >
           {unsettledPnl ?? "--"}
         </Text.numeral>
-        <Text>USDC</Text>
+        <Text weight="regular">USDC</Text>
       </Flex>
       <Flex itemAlign="center" gap={1} className="oui-cursor-pointer">
         <RefreshIcon className="oui-text-primary" />
@@ -99,7 +99,7 @@ export const UnsettlePnlInfo = (props: UnsettlePnlInfoProps) => {
           data-testid="oui-testid-withdraw-dialog-settle-text"
           size="2xs"
           color="primary"
-          className=" oui-select-none"
+          className="oui-select-none oui-font-normal"
           onClick={settlePnlDialog}
         >
           {t("common.settle")}

@@ -36,7 +36,9 @@ export const transfer = {
   "transfer.deposit.closeToMaxLimit":
     "Deposit amount too close to maximum limit. To ensure your transaction succeeds, please reduce the amount",
   "transfer.deposit.tab.connectedWallet": "From connected wallet",
+  "transfer.deposit.tab.connectedWalletShort": "Connected wallet",
   "transfer.deposit.tab.exchangeOrOtherWallet": "From exchange / other wallet",
+  "transfer.deposit.tab.exchangeOrOtherWalletShort": "Exchange / other wallet",
 
   "transfer.deposit.estGasFee": "Est. gas fee",
   "transfer.deposit.estGasFee.tooltip":
@@ -44,6 +46,22 @@ export const transfer = {
   "transfer.deposit.destinationGasFee": "Destination gas fee",
   "transfer.deposit.destinationGasFee.description":
     "Additional gas tokens are required to cover operations on the destination chain. The amount shown is an estimate - please prepare extra to ensure sufficient coverage.",
+  "transfer.deposit.dialogTitle": "Set up your trading balance",
+  "transfer.deposit.dialogSubtitle":
+    "Your USDC stays on-chain in your name — Velto is non-custodial and never holds your funds. Withdraw anytime.",
+  "transfer.deposit.skipForNow": "Skip for now",
+  "transfer.deposit.skipReassurance":
+    "You can deposit any time from your account",
+  "transfer.deposit.auditedProtocol": "Audited protocol",
+  "transfer.deposit.fundsMoveToTradingBalance":
+    "Funds move into your trading balance",
+
+  "transfer.withdraw.fundsMoveToWeb3Wallet": "Funds move to your Web3 wallet",
+  "transfer.withdraw.fundsMoveToVeltoAccount":
+    "Funds move to another Velto account",
+  "transfer.withdraw.dialogTitle": "Withdraw",
+  "transfer.withdraw.dialogSubtitle":
+    "Move funds from your Velto account to your Web3 wallet or another Velto account.",
 
   "transfer.withdraw.unsupported.chain":
     "Withdrawals are not supported on this chain. Please switch to any of the bridgeless networks.",
@@ -86,7 +104,8 @@ export const transfer = {
   "transfer.withdraw.accountId.invalid": "No account found",
   "transfer.withdraw.available.tooltip":
     "Available to withdraw equals your free collateral. If you have unsettled PnL, please settle first in the withdraw modal to increase available amount. Current maximum withdrawal per request is {{amount}} USDC. To withdraw more, please submit multiple requests.",
-  "transfer.withdraw.accountIdOrAddress.placeholder": "Account ID or address",
+  "transfer.withdraw.accountIdOrAddress.placeholder":
+    "Account ID or wallet address",
   "transfer.withdraw.accountIdOrAddress.hint":
     "Enter an account ID or address to find the account",
   "transfer.withdraw.addExternalWallet": "Add external wallet",

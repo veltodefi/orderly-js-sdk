@@ -12,7 +12,7 @@ const baseTriggerClasses = [
   "hover:oui-text-mainButton-invertedHoverContrast",
   "active:oui-bg-mainButton-invertedPressed",
   "active:oui-text-mainButton-invertedPressedContrast",
-  "active:oui-font-bold",
+  "active:oui-font-semibold",
   "focus:oui-bg-mainButton-invertedFocus",
   "focus:oui-text-mainButton-invertedFocusContrast",
   "disabled:oui-bg-mainButton-invertedDisabled",
@@ -23,8 +23,9 @@ const baseTriggerClasses = [
   "data-[loading=true]:[&_.oui-spinner]:oui-text-mainButton-invertedLoadingSpinner",
   "data-[state=active]:oui-bg-mainButton-invertedPressed",
   "data-[state=active]:oui-text-mainButton-invertedPressedContrast",
-  "data-[state=active]:oui-font-bold",
+  "data-[state=active]:oui-font-semibold",
   "-ml-[1px]",
+  "oui-text-[#8f8f8f]", // Velto tab override
 ];
 
 const tabsVariants = tv({
@@ -52,7 +53,7 @@ const tabsVariants = tv({
       "oui-justify-center",
       "oui-whitespace-nowrap",
       "oui-box-content",
-      "oui-font-medium",
+      "oui-font-semibold",
       "oui-text-base-contrast-36 hover:oui-text-base-contrast-54",
       "oui-ring-offset-background",
       "oui-transition-all",

@@ -28,7 +28,12 @@ export const Web3Wallet: FC = () => {
       </Text>
 
       <Flex gapX={1}>
-        <Text.formatted size="sm" rule="address" className="oui-text-base-1">
+        <Text.formatted
+          size="2xs"
+          weight="regular"
+          rule="address"
+          className="oui-text-base-1"
+        >
           {address}
         </Text.formatted>
       </Flex>

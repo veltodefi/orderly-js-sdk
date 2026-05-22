@@ -67,7 +67,7 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
     if (selectable) {
       return (
         <ChevronDownVeltoIcon
-          size={12}
+          size={9}
           opacity={1}
           className="oui-text-primary"
         />
@@ -77,9 +77,8 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
 
   const trigger = (
     <Flex
-      intensity={500}
       className={cn(
-        "oui-rounded-2xl oui-h-[58px]",
+        "oui-bg-base-6 oui-rounded-2xl oui-h-[58px]",
         disabled
           ? "oui-cursor-not-allowed"
           : selectable
@@ -92,14 +91,9 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
       itemAlign="center"
     >
       <div>
-        <Flex>
-          <Text size="2xs" weight="regular" className="oui-text-[#c7c7c7]">
-            {t("transfer.network")}
-          </Text>
-        </Flex>
         <Flex gapX={1} itemAlign="center" className="oui-mt-0.5">
           {chainIcon}
-          <Text size="sm" weight="regular" className="oui-text-[#c7c7c7]">
+          <Text size="base" className="oui-text-white oui-font-medium">
             {chainName}
           </Text>
           {!isCurrentChainSupported && (
@@ -130,9 +124,9 @@ export const ChainSelect: React.FC<ChainSelectProps> = (props) => {
           "oui-deposit-network-select-item",
           "oui-h-[30px]",
           isSupported
-            ? "hover:oui-bg-base-5 oui-cursor-pointer"
+            ? "hover:oui-bg-base-6 oui-cursor-pointer"
             : "oui-cursor-not-allowed",
-          isActive && "oui-bg-base-5",
+          isActive && "oui-bg-base-6",
           index !== 0 && "oui-mt-[2px]",
         )}
         onClick={async () => {

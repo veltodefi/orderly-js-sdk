@@ -1,7 +1,7 @@
 import { Box, cn, Flex } from "@veltodefi/ui";
 import { Decimal } from "@veltodefi/utils";
 
-export type Percentages = 1 | 0.5 | 0.2 | 0.1;
+export type Percentages = 1 | 0.5 | 0.25 | 0.1;
 
 type Props = {
   maxAmount: string;
@@ -43,8 +43,8 @@ export const AmountSelector = ({
       label: "10%",
     },
     {
-      percentage: 0.2,
-      label: "20%",
+      percentage: 0.25,
+      label: "25%",
     },
     {
       percentage: 0.5,
@@ -52,7 +52,7 @@ export const AmountSelector = ({
     },
     {
       percentage: 1,
-      label: "MAX",
+      label: "Max",
     },
   ];
 
@@ -70,12 +70,19 @@ export const AmountSelector = ({
             disabled={disabled}
             key={percentage}
             className={cn(
-              "oui-border oui-border-base-1 oui-rounded-lg oui-flex-1 oui-h-10 oui-text-base-1",
-              "hover:oui-bg-base-6 hover:oui-border-base-6 hover:oui-text-primary",
+              "oui-text-xs",
+              "oui-border-[1px]",
+              "oui-bg-base-6 oui-text-[#d4d4d4]",
+              "oui-rounded-md oui-flex-1 oui-h-[30px]",
+              "active:oui-border-[1px]",
+              !disabled && "hover:oui-bg-base-5",
               selectedPercentage === percentage &&
-                "oui-bg-base-5 oui-text-primary oui-border-base-5",
-              disabled &&
-                "oui-cursor-not-allowed hover:oui-bg-transparent hover:oui-border-base-1 hover:oui-text-base-1",
+                "oui-border-primary oui-text-primary",
+              selectedPercentage === percentage &&
+                !disabled &&
+                "hover:oui-bg-base-6",
+              selectedPercentage !== percentage && "oui-border-transparent",
+              disabled && "oui-cursor-not-allowed oui-opacity-50",
             )}
             onClick={() =>
               onClick({

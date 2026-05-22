@@ -1,13 +1,13 @@
 {
   "name": "@veltodefi/ui-connector",
-  "version": "3.0.4-velto-dev.3",
+  "version": "3.0.4-velto-dev.22",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "scripts": {
     "build": "tsup && pnpm run build:css",
     "build:css": "tailwindcss build src/tailwind.css -o dist/styles.css --minify",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [
     "Orderly",
@@ -30,8 +30,16 @@
     "@veltodefi/ui-chain-selector": "workspace:*"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@testing-library/react": "^14.2.1",
+    "@types/jest": "^29.5.14",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
+    "babel-jest": "^29.6.1",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.4",

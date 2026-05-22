@@ -81,6 +81,7 @@ import {
   VaultsIcon,
   LeftNavVaultsIcon,
   NewsFillIcon,
+  OpenInNewIcon,
 } from "@veltodefi/ui";
 
 const meta: Meta<typeof Icon> = {
@@ -220,6 +221,7 @@ const iconConfigs = [
   { component: PeopleIcon, name: "PeopleIcon" },
   { component: PersonIcon, name: "PersonIcon" },
   { component: NewsFillIcon, name: "NewsFillIcon" },
+  { component: OpenInNewIcon, name: "OpenInNewIcon" },
 ];
 
 export const Icons: Story = {

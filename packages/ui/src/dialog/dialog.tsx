@@ -31,7 +31,7 @@ const dialogVariants = tv({
       // "oui-gap-4",
       // "oui-bg-base-8",
       "oui-text-base-contrast-54",
-      "oui-px-4 lg:oui-px-5",
+      "oui-px-5",
 
       "!oui-bg-base-8",
 
@@ -50,27 +50,27 @@ const dialogVariants = tv({
       "sm:oui-rounded-xl",
       "oui-overflow-hidden",
     ],
-    body: ["oui-dialog-body", "oui-py-4 lg:oui-py-5", "oui-text-xs"],
+    body: [
+      "oui-dialog-body",
+      "oui-py-4 lg:oui-py-5",
+      "oui-text-xs",
+      "oui-font-normal",
+    ],
     close: [
       "oui-dialog-close-btn",
       "oui-absolute",
-      "oui-right-4",
-      "oui-top-4",
+      "oui-right-[20px]",
+      "oui-top-[20px]",
       "oui-ring-offset-background",
       "oui-transition-opacity",
       "hover:oui-opacity-100",
       "disabled:oui-pointer-events-none",
       "oui-border",
       "oui-border-mainButton",
-      "oui-p-1",
+      "oui-p-2",
       "oui-rounded-lg",
     ],
-    header: [
-      "oui-dialog-header",
-      "oui-flex",
-      "oui-flex-col",
-      // "oui-pb-4"
-    ],
+    header: ["oui-dialog-header", "oui-flex", "oui-flex-col"],
     footer: [
       "oui-dialog-footer",
       "oui-flex",
@@ -86,12 +86,14 @@ const dialogVariants = tv({
     title: [
       "oui-dialog-title",
       "oui-text-base",
-      // "oui-pt-3",
+      "oui-text-xl",
+      "oui-pt-2",
       // "oui-pb-2",
-      "oui-min-h-11 lg:oui-min-h-[46px]",
+      "oui-min-h-16 lg:oui-min-h-[68px]",
       "oui-flex",
       "oui-items-center",
       "oui-text-base-contrast",
+      "oui-font-medium",
     ],
     desc: [
       "oui-dialog-desc",
@@ -220,7 +222,7 @@ const DialogContent = React.forwardRef<
               data-testid="oui-testid-dialog-content-close-btn"
             >
               <CloseIcon
-                size={16}
+                size={14}
                 className="oui-text-mainButton"
                 opacity={1}
               />

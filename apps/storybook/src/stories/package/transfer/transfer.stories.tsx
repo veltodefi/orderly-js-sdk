@@ -43,7 +43,7 @@ export const DepositFormBoth: Story = {
       <Scaffold>
         <Flex justify="center" itemAlign={"start"} gap={6}>
           <Box width={420} r="lg">
-            <DepositFormWidget layout="onboarding" />
+            <DepositFormWidget />
           </Box>
 
           <Box width={420} p={2} r="lg" className="oui-bg-base-8">
@@ -106,17 +106,48 @@ export const TransferForm: Story = {
 export const DepositDialog: Story = {
   decorators: [
     (Story) => (
-      <Flex justify="center" itemAlign="center" height="100vh">
-        <Button
-          onClick={() => {
-            modal.show(DepositAndWithdrawWithDialogId, {
-              activeTab: "deposit",
-            });
-          }}
-        >
-          Show Deposit Dialog
-        </Button>
-      </Flex>
+      <Scaffold>
+        <Flex justify="center" itemAlign="center" height="100vh">
+          <Button
+            onClick={() => {
+              modal.show(DepositAndWithdrawWithDialogId, {
+                activeTab: "deposit",
+                onInfoIconClick: () => console.log("[story] info icon clicked"),
+                onAuditLinkClick: () =>
+                  console.log("[story] audit link clicked"),
+                onAnalyticsEvent: (e: unknown) => console.log("[analytics]", e),
+              });
+            }}
+          >
+            Show Deposit Dialog
+          </Button>
+        </Flex>
+      </Scaffold>
+    ),
+  ],
+};
+
+export const DepositDialogOnboarding: Story = {
+  decorators: [
+    (Story) => (
+      <Scaffold>
+        <Flex justify="center" itemAlign="center" height="100vh">
+          <Button
+            onClick={() => {
+              modal.show(DepositAndWithdrawWithDialogId, {
+                activeTab: "deposit",
+                isOnboarding: true,
+                onInfoIconClick: () => console.log("[story] info icon clicked"),
+                onAuditLinkClick: () =>
+                  console.log("[story] audit link clicked"),
+                onAnalyticsEvent: (e: unknown) => console.log("[analytics]", e),
+              });
+            }}
+          >
+            Show Deposit Dialog (Onboarding)
+          </Button>
+        </Flex>
+      </Scaffold>
     ),
   ],
 };
@@ -127,7 +158,10 @@ export const DepositSheet: Story = {
       <Flex justify="center" itemAlign="center" height="100vh">
         <Button
           onClick={() => {
-            modal.show(DepositAndWithdrawWithSheetId, { activeTab: "deposit" });
+            modal.show(DepositAndWithdrawWithSheetId, {
+              activeTab: "deposit",
+              isOnboarding: true,
+            });
           }}
         >
           Show Deposit Sheet
@@ -140,17 +174,20 @@ export const DepositSheet: Story = {
 export const WithdrawDialog: Story = {
   decorators: [
     (Story) => (
-      <Flex justify="center" itemAlign="center" height="100vh">
-        <Button
-          onClick={() => {
-            modal.show(DepositAndWithdrawWithDialogId, {
-              activeTab: "withdraw",
-            });
-          }}
-        >
-          Show Withdraw Dialog
-        </Button>
-      </Flex>
+      <Scaffold>
+        <Flex justify="center" itemAlign="center" height="100vh">
+          <Button
+            onClick={() => {
+              modal.show(DepositAndWithdrawWithDialogId, {
+                activeTab: "withdraw",
+                onAnalyticsEvent: (e: unknown) => console.log("[analytics]", e),
+              });
+            }}
+          >
+            Show Withdraw Dialog
+          </Button>
+        </Flex>
+      </Scaffold>
     ),
   ],
 };

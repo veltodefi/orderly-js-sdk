@@ -74,7 +74,7 @@ export const WithdrawAction = (props: IProps) => {
     onWithdraw();
   };
 
-  const buttonSize = { initial: "md", lg: "lg" } as const;
+  const buttonSize = { initial: "lg", lg: "lg" } as const;
 
   const renderButton = () => {
     if (props.withdrawTo === WithdrawTo.Account) {
