@@ -178,7 +178,9 @@ export const DepositForm: FC<Props> = (props) => {
           itemAlign="start"
           gap={2}
         >
-          <Fee {...fee} nativeSymbol={props.nativeSymbol} />
+          {inputStatus !== "error" && (
+            <Fee {...fee} nativeSymbol={props.nativeSymbol} />
+          )}
           {onAuditLinkClick && <AuditLink onClick={onAuditLinkClick} />}
         </Flex>
       );
@@ -231,7 +233,9 @@ export const DepositForm: FC<Props> = (props) => {
           </>
         )}
 
-        <Fee {...fee} nativeSymbol={props.nativeSymbol} />
+        {inputStatus !== "error" && (
+          <Fee {...fee} nativeSymbol={props.nativeSymbol} />
+        )}
         {onAuditLinkClick && <AuditLink onClick={onAuditLinkClick} />}
       </Flex>
     );

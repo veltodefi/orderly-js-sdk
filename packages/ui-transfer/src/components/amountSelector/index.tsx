@@ -73,13 +73,15 @@ export const AmountSelector = ({
               "oui-border-[1px]",
               "oui-bg-base-6 oui-text-[#d4d4d4]",
               "oui-rounded-md oui-flex-1 oui-h-[30px]",
-              "hover:oui-bg-base-5",
               "active:oui-border-[1px]",
+              !disabled && "hover:oui-bg-base-5",
               selectedPercentage === percentage &&
-                "oui-border-primary oui-text-primary hover:oui-bg-base-6",
+                "oui-border-primary oui-text-primary",
+              selectedPercentage === percentage &&
+                !disabled &&
+                "hover:oui-bg-base-6",
               selectedPercentage !== percentage && "oui-border-transparent",
-              disabled &&
-                "oui-cursor-not-allowed hover:oui-bg-transparent hover:oui-border-base-1 hover:oui-text-base-1",
+              disabled && "oui-cursor-not-allowed oui-opacity-50",
             )}
             onClick={() =>
               onClick({
