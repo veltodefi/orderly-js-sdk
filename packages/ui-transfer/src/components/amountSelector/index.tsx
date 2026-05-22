@@ -70,6 +70,7 @@ export const AmountSelector = ({
             disabled={disabled}
             key={percentage}
             className={cn(
+              "oui-text-xs",
               "oui-border-[1px]",
               "oui-bg-base-6 oui-text-[#d4d4d4]",
               "oui-rounded-md oui-flex-1 oui-h-[30px]",

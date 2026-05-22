@@ -240,7 +240,7 @@ export const WithdrawForm: React.FC<WithdrawFormProps> = (props) => {
     >
       <div className="oui-flex-1 oui-min-h-0 oui-overflow-y-auto oui-overflow-x-hidden custom-scrollbar oui-px-5">
         <Box className="oui-mb-6 lg:oui-mb-8">
-          <Box className="oui-bg-base-8 oui-rounded-[16px]" p={4}>
+          <Box className="md:oui-bg-base-8 md:oui-p-4 oui-rounded-[16px]">
             <Box className="oui-mb-4">
               <BrokerWallet />
             </Box>

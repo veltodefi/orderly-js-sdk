@@ -1,6 +1,6 @@
 {
   "name": "@veltodefi/plugin-core",
-  "version": "3.0.4-velto-dev.18",
+  "version": "3.0.4-velto-dev.19",
   "description": "Orderly SDK plugin system - interceptors, registry, scope",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
