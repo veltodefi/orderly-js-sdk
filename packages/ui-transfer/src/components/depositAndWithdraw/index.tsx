@@ -232,7 +232,7 @@ const DepositAndWithdrawInner: FC<
         size="xl"
         className="oui-flex oui-flex-col oui-flex-1 oui-min-h-0"
         classNames={{
-          tabsListContainer: "oui-shrink-0 oui-px-5",
+          tabsListContainer: "oui-shrink-0 oui-px-4 md:oui-px-5",
           tabsList: "oui-px-0 oui-gap-1",
           trigger: "oui-rounded-lg oui-px-4 oui-h-[40px] oui-text-sm oui-gap-1",
           tabsContent:
@@ -245,11 +245,11 @@ const DepositAndWithdrawInner: FC<
           value="deposit"
           disabled={veltoWithdrawOnlyMode}
         >
-          {header && <div className="oui-shrink-0 oui-px-5">{header}</div>}
           <div className="oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
             <DepositSlot
               close={wrappedClose}
               onAuditLinkClick={handleAuditLinkClick}
+              header={header || undefined}
             />
           </div>
         </TabPanel>
@@ -258,7 +258,9 @@ const DepositAndWithdrawInner: FC<
           icon={<ArrowUpFromLineIcon size={16} />}
           value="withdraw"
         >
-          {header && <div className="oui-shrink-0 oui-px-5">{header}</div>}
+          {header && (
+            <div className="oui-shrink-0 oui-px-4 md:oui-px-5">{header}</div>
+          )}
           <div className="oui-flex-1 oui-min-h-0 oui-flex oui-flex-col">
             <WithdrawSlot
               close={wrappedClose}
@@ -283,7 +285,7 @@ const DepositAndWithdrawInner: FC<
           direction="column"
           itemAlign="center"
           gap={1}
-          className="oui-flex-shrink-0 oui-pt-3 oui-px-5"
+          className="oui-flex-shrink-0 oui-pt-3 oui-px-4 md:oui-px-5"
         >
           <button
             type="button"
@@ -326,4 +328,10 @@ const SheetVariant: FC<DepositAndWithdrawProps> = (props) => (
   <InjectableDepositAndWithdraw {...props} analyticsSurface="sheet" />
 );
 
-registerSimpleSheet(DepositAndWithdrawWithSheetId, SheetVariant);
+registerSimpleSheet(DepositAndWithdrawWithSheetId, SheetVariant, {
+  classNames: {
+    content:
+      "oui-flex oui-flex-col oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9 !oui-px-0 oui-pt-4",
+    body: "oui-flex-1 oui-min-h-0 oui-flex oui-flex-col oui-overflow-hidden !oui-px-0 !oui-py-0",
+  },
+});

@@ -13,9 +13,22 @@ export type DepositFormWidgetProps = DepositFormScriptOptions & {
    * (e.g. a Security & Transparency dialog in the webapp).
    */
   onAuditLinkClick?: () => void;
+  /**
+   * Optional node rendered inside the form's scroll container, above the
+   * sub-tabs. The dialog wrapper passes its onboarding header (title +
+   * subtitle) here so it scrolls with the rest of the form on short
+   * viewports.
+   */
+  header?: React.ReactNode;
 };
 
 export const DepositFormWidget: FC<DepositFormWidgetProps> = (props) => {
   const state = useDepositFormScript(props);
-  return <DepositForm {...state} onAuditLinkClick={props.onAuditLinkClick} />;
+  return (
+    <DepositForm
+      {...state}
+      onAuditLinkClick={props.onAuditLinkClick}
+      header={props.header}
+    />
+  );
 };

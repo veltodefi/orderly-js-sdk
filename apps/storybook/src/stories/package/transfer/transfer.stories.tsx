@@ -158,7 +158,10 @@ export const DepositSheet: Story = {
       <Flex justify="center" itemAlign="center" height="100vh">
         <Button
           onClick={() => {
-            modal.show(DepositAndWithdrawWithSheetId, { activeTab: "deposit" });
+            modal.show(DepositAndWithdrawWithSheetId, {
+              activeTab: "deposit",
+              isOnboarding: true,
+            });
           }}
         >
           Show Deposit Sheet
