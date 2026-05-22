@@ -316,7 +316,7 @@ registerSimpleDialog(
     size: "lg",
     classNames: {
       content:
-        "oui-flex oui-flex-col oui-border oui-border-line-6 oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9 !oui-px-0",
+        "oui-flex oui-flex-col oui-border oui-border-line-6 oui-h-[min(904px,calc(100dvh-40px))] oui-max-h-[calc(100dvh-40px)] !oui-bg-base-9 !oui-px-0",
       body: "oui-flex-1 oui-min-h-0 oui-flex oui-flex-col oui-overflow-hidden !oui-px-0",
     },
   },
