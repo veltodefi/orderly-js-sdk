@@ -369,7 +369,13 @@ export const useWithdrawFormScript = (options: WithdrawFormScriptOptions) => {
     })
       .then((res) => {
         toast.success(t("transfer.withdraw.requested"));
-        ee.emit("withdraw:requested");
+        ee.emit("withdraw:requested", {
+          amount: parseFloat(quantity),
+          token: sourceToken?.symbol,
+          chainId: currentChain?.id,
+          receiver: selectedWalletAddress,
+          crossChain: crossChainWithdraw,
+        });
         options.close?.();
         setQuantity("");
       })
